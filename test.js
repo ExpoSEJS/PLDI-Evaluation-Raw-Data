@@ -13,8 +13,11 @@ function Expand(switcher, target) {
 	for (let i in target) {
 		if (typeof target[i] === "function") {
 			console.log('Pushing ' + target[i].name);
-			properties.push(i);
-		}
+            properties.push(i);
+        }
+        if (typeof target[i] === "object") { 
+            Expand(symbolic ObjectSwitcher initial 0, target[i]); 
+        }
 	}
 
 	for (var functionIndex = 0; functionIndex < properties.length; functionIndex++) {
@@ -26,7 +29,7 @@ function Expand(switcher, target) {
 			// TODO Make a array with a custom getter that returns a new symbol on unknown lookups and then records it
 
 			var args = (new Array(targetFunction.length)).map(function(item) { symbolic ExpansionArg });
-			target[properties[switcher]](args);
+            target[properties[switcher]](args);
 		}
 	}
 }
@@ -36,7 +39,7 @@ var switcher = symbolic Switcher initial -1;
 
 if (switcher == -1) {
 	var constructedObject = target(symbolic Arg, symbolic Arg2);
-	var constructedObjectSwitcher = symbolic Target_Switcher initial 0;
+	var constructedObjectSwitcher = symbolic TargetSwitcher initial 0;
 	Expand(constructedObjectSwitcher, constructedObject);
 } else {
 	Expand(switcher, target);

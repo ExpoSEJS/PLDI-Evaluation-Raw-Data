@@ -12,46 +12,35 @@ function Expand(switcher, target) {
 
 	for (let i in target) {
 		if (typeof target[i] === "function") {
-			properties.push(i);
-		}
+			console.log('Pushing ' + target[i].name);
+            properties.push(i);
+        }
+        if (typeof target[i] === "object") { 
+            Expand(symbolic ObjectSwitcher initial 0, target[i]); 
+        }
 	}
 
 	for (var functionIndex = 0; functionIndex < properties.length; functionIndex++) {
 		if (switcher == functionIndex) {
-            var targetFunction = target[properties[functionIndex]];
+            var targetFunction = properties[functionIndex];
             console.log('Testing ' + targetFunction + ' ' + target[targetFunction]);
 			
 			// Can't do a for loop without erasing the symbolic nature of all but the last variable
 			// TODO Make a array with a custom getter that returns a new symbol on unknown lookups and then records it
 
-			var args = [];
-
-			for (var i = 0; i < targetFunction.length; i++) {
-				args.push(symbolic ExpansionArg initial '');
-			}
-
-			targetFunction.apply(target, args);
+			var args = (new Array(targetFunction.length)).map(function(item) { symbolic ExpansionArg });
+            target[properties[switcher]](args);
 		}
 	}
 }
 
-function Construct(fn) {
-	var args = [];
-
-	for (var i = 0; i < fn.length; i++) {
-		args.push(symbolic ExpansionArg initial '');
-	}
-	
-	return fn.apply(this, args);
-}
-
 // Creates the symbolic variable to explore all possible functions and constructing an object
-var switcher = symbolic Switcher initial false;
+var switcher = symbolic Switcher initial -1;
 
-if (switcher) {
-	var constructedObject = Construct(target);
-	var constructedObjectSwitcher = symbolic Target_Switcher initial 0;
+if (switcher == -1) {
+	var constructedObject = target(symbolic Arg, symbolic Arg2);
+	var constructedObjectSwitcher = symbolic TargetSwitcher initial 0;
 	Expand(constructedObjectSwitcher, constructedObject);
 } else {
-	Expand(symbolic Target_Switch_Base initial 0, target);
+	Expand(switcher, target);
 }
