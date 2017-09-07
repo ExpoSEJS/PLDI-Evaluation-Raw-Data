@@ -6,7 +6,7 @@ function SymbolicArray() {
 	assume x < 3;
 	var array = [];
 	for (var i = 0; i < x; i++) {
-		array.push(symbolic Arg initial);
+		array.push(symbolic Arg initial '');
 	}
 	return array;
 }
