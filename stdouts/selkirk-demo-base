@@ -1,0 +1,1487 @@
+/root/Targets/selkirk-demo-base
+└─┬ selkirk-demo-base@1.0.5 
+  ├─┬ backbone@1.3.3 
+  │ └── underscore@1.8.3 
+  └── jquery@1.11.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/selkirk-demo-base/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0783 took 6.9652s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Deleting local variable in strict mode (1286:20) on program var _ = require('underscore'),
+		$ = require("jquery"),
+		Backbone = require("backbone");
+
+/**
+ * 1) require('selkirk-demo-base')(window);
+ * 2) expose all window.
+ */
+module.exports = function(window, undefined){
+	window._ = _;
+	window.$ = window.jQuery = $;
+	window.Backbone = Backbone;
+
+    _.templateSettings = {
+        interpolate: /\{\{(.+?)\}\}/g
+    };
+
+    /**
+     *  @namespace SEL
+     *  @global
+     */
+    var SEL = {
+        prevHash: null,
+        currentPageView:null,
+        View:{},
+        Model:{},
+        Collection:{},
+        Notification:{},
+        _pollers: {},
+        //Holds any cross browser event names, webkitTransitionEnd, msTransitionEnd etc
+        event: {},
+        //Preferences are stored by User in local storage
+        preference: function(name,val){
+          var creds = this.hasLogin();
+          var prefs = $.localStorage("app-pref-" + creds.username) || {};
+
+            if (!val && arguments.length == 1) {
+                return prefs[name];
+            }
+
+            if(!val && arguments.length> 1){
+                delete prefs[name];
+            }
+            else{
+                prefs[name] = val;
+            }
+
+          $.localStorage("app-pref-" + creds.username,prefs);
+
+          return prefs[name];
+        },
+        session: function(name, val){
+            return $.sessionStorage(name,val);
+        },
+        loadPageView: function(view,options){
+            this.info("Loading View: " + view.prototype.id);
+
+
+            return this.currentPageView = new view(options);
+        },
+        getViewById: function(id){
+            for(var view in SEL.View){
+                if(SEL.View.hasOwnProperty(view) && SEL.View[view].id == id){
+                    return SEL.View[view];
+                }
+            }
+
+            return null;
+        },
+        getViewByElement: function(el){
+            el = el.length ? el[0] : el;
+            for (var view in SEL.View) {
+                if (SEL.View.hasOwnProperty(view) && SEL.View[view].el === el) {
+                    return SEL.View[view];
+                }
+            }
+            return null;
+        },
+        /**
+         * Gets the current login credentials
+         * @returns {Object} Username and Password
+         */
+        hasLogin: function(){
+            return $.localStorage("app-login");
+
+        },
+        /**
+         * Pass login credentials to the server
+         * @param {Object} creds username & password
+         * @param {Object} [options]  success and error callback functions
+         */
+        login: function(creds,options){
+            SEL.info("Attempting Login");
+            options = options ? options :{};
+
+            var data = creds;
+            options.error = options.error ? options.error : function(){};
+            options.success = options.success ? options.success : function(){};
+
+            $.ajax({
+                url: "resources/j_spring_security_check",
+                dataType: 'html',
+                data: data,
+                type: "POST",
+                success: function () {
+                    $.ajax({
+                        url: ("./index.jsp"),
+                        dataType: 'html',
+                        success: function(response){
+                            //var userName = response.match(/userName\s*:\s*"([\w-]+)"/);
+                            var userReg = /SEL\.user\s*=\s*({.+})/i;
+                            var exec = userReg.exec(response);
+
+                            if(!exec || !exec[1]){
+                                options.error("Internal Server Error");
+                                return;
+                            }
+
+                            var data = JSON.parse(exec[1]);
+
+                            if (data && data.username !== "anonymousUser") {
+                                data.isLogin = true;
+                                SEL.user = data;
+
+                                console.info("Login Successful!");
+                                options.success(response);
+
+                            } else {
+                                var msg = "Incorrect Username or Password: Please try again";
+                                console.info(msg);
+                                options.error(msg);
+                            }
+
+                        },
+                        error: options.error
+                    });
+                },
+                error : function(err){
+                    options.error(err);
+                }
+            });
+
+        },
+        /**
+         * Clears local storage of login credentials
+         */
+        logout: function(){
+            $.localStorage("app-login", null);
+        },
+        initBackbone: function(obj){
+            if(obj === this.View || obj === this.Model || obj === this.Collection){
+                for(var prop in obj){
+                    if(obj.hasOwnProperty(prop) && $.isFunction(obj[prop])){
+                        obj[prop] = new obj[prop]();
+                    }
+                }
+            }
+            else{
+                console.log("Unable to intialize: Not a View, Model, or Collection");
+            }
+        },
+        /**
+         * Delegate method invoked when the application is ready
+         * @abstract
+         */
+        load: function(){
+            SEL.info("Application Ready");
+        },
+        /**
+         * Wrapper for console.log can be configured.
+         * @see SEL.config
+         * @param {string} msg message
+         * @param {object} [obj] variable to display with the message
+         */
+        info: function(msg,obj){
+            if(this._config.log){
+                if(obj){
+                    console.log(msg, obj);
+                }else{
+                    console.log(msg);
+                }
+
+            }
+        },
+        /**
+         * Sets per project configurations
+         * @param {Object} params configuration options
+         */
+        config: function(params){
+            $.extend(this._config,params);
+        },
+        /**
+         * Clears the browser current text selection
+         */
+        clearBrowserSelection: function(){
+            if (window.getSelection) {
+                if (window.getSelection().empty) {  // Chrome
+                    window.getSelection().empty();
+                } else if (window.getSelection().removeAllRanges) {  // Firefox
+                    window.getSelection().removeAllRanges();
+                }
+            } else if (document.selection) {  // IE?
+                document.selection.empty();
+            }
+        },
+        /**
+         * Create a unique GUID
+         * @returns {string}
+         */
+        createGUID: function(){
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        },
+        /**
+         * Selects text
+         * @param {HTMLElement} element DOM element containing text
+         * @param {number} start starting point of selection
+         * @param {number} end ending point of selection
+         */
+        selectText: function(element,start, end){
+            //Better results are achieved when a selection is a little slow
+            setTimeout(function(){
+                if (element.createTextRange) {
+                    var selRange = element.createTextRange();
+                    selRange.collapse(true);
+                    selRange.moveStart('character', start);
+                    selRange.moveEnd('character', end);
+                    selRange.select();
+                    element.focus();
+                } else if (element.setSelectionRange) {
+                    element.focus();
+                    element.setSelectionRange(start, end);
+                } else if (typeof element.selectionStart != 'undefined') {
+                    element.selectionStart = start;
+                    element.selectionEnd = end;
+                    element.focus();
+                }
+            },100)
+        },
+        isKeyCodeNumeric: function (key) {
+            return (
+                key == 8 ||
+                    key == 9 ||
+                    key == 13 ||
+                    key == 46 ||
+                    key == 110 ||
+                    (key >= 35 && key <= 40) ||
+                    (key >= 48 && key <= 57) ||
+                    (key >= 96 && key <= 105));
+        },
+        isKeyCodeCoordinate: function (key) {
+            return (
+                key == 8 ||
+                    key == 9 ||
+                    key == 13 ||
+                    key == 46 ||
+                    key == 110 ||
+                    key == 190 ||
+                    key == 189 ||
+                    key == 109 ||
+                    (key >= 35 && key <= 40) ||
+                    (key >= 48 && key <= 57) ||
+                    (key >= 96 && key <= 105));
+        },
+        adjustValueAsLatDegree: function (number) {
+            number = parseInt(number, 10);
+            if (number > 90) {
+                return 90;
+            }
+
+            if (number < -90) {
+                return -90;
+            }
+
+            return number;
+        },
+        adjustValueAsLngDegree: function (number) {
+            number = parseInt(number, 10);
+            if (number > 180) {
+                return 180;
+            }
+
+            if (number < -180) {
+                return -180;
+            }
+            return number;
+        },
+        adjustValueAsLocMinutes: function (number) {
+            var newNumber = parseInt(number, 10);
+            if (newNumber > 59.999) {
+                return 59.999;
+            }
+
+            if (newNumber < 0) {
+                return 0;
+            }
+            return number;
+        },
+        showAppLoading: function(){
+            $(document.body).append($("#app-loading-tpl").html());
+
+            setTimeout(function () {
+                $("#app-loading").addClass("show");
+            }, 40);
+        },
+        hideAppLoading: function(callback){
+            var pageLoadingE = $("#app-loading");
+            pageLoadingE.on(SEL.event.transitionEnd, function () {
+                pageLoadingE.remove();
+                if(callback)callback();
+            });
+
+            pageLoadingE.addClass('hide');
+        },
+        showLoading: function(element){
+            if(element){
+                $(element).css('position','relative');
+                $(element).append("<div class='center-vert'><div><img src='images/loading-in-page.gif' class='loading-gif'/></div></div>");
+                return;
+            }
+
+            $(document.body).append($("#page-loading-tpl").html());
+
+            setTimeout(function(){
+                $("#page-loading").addClass("show");
+            },40);
+
+        },
+        hideLoading: function(element){
+            var pageLoadingE = $("#page-loading");
+            if(element){
+                $(element).children(".loading-gif").remove();
+                return;
+            }
+
+            pageLoadingE.on(SEL.event.transitionEnd, function(){
+                pageLoadingE.remove();
+            });
+
+            pageLoadingE.removeClass('show');
+        },
+        disableSelection: function(){
+            document.onselectstart = function () {
+                return false;
+            };
+        },
+        enableSelection: function(){
+            document.onselectstart = null;
+        },
+        serializedArrayToObj: function(arr){
+            var len = arr.length,
+                ret = {},
+                dateMatch = /^date:(.*)?$/i;
+
+            for (var i = 0; i < len; i++) {
+                var obj = arr[i],
+                    name = obj.name,
+                    match;
+
+                if((match = dateMatch.exec(name))){
+                    ret[match[1]] = moment && obj.value ? moment(new Date(obj.value)).valueOf() : obj.value;
+                    continue;
+                }
+
+                ret[name] = obj.value != 'undefined' ? obj.value : "";
+            }
+
+            return ret;
+        },
+        generateDataObject: function(container){
+            container = $(container);
+
+            var inputs = this.serializedArrayToObj(container.find("input,select").serializeArray()),
+                customSelections = this.serializedArrayToObj(container.find("*[data-name]").map(function(){
+                    var selected, val;
+
+                    //HANDLE: Image scroller component
+                    if($(this).hasClass('img-scroller')){
+                        val = $(this).find("li:not(.add)>img").map(function () {
+                            return $(this).attr('src');
+                        }).get();
+                    }else{
+                        selected = $(this).find(".selected");
+                        val = selected.length ? selected.attr('data-value') : "";
+                    }
+
+                    return {name:$(this).attr('data-name'),value:val}
+                }));
+
+            return $.extend({}, inputs, customSelections);
+        },
+        toggleFullScreen: function(){
+            var doc = window.document;
+            var docEl = doc.documentElement;
+
+            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                requestFullScreen.call(docEl);
+            }
+            else {
+                cancelFullScreen.call(doc);
+            }
+        },
+        distanceBetweenLatLng: function (lat1, lon1, lat2, lon2) {
+            //Returns distance in Kilometers
+            var R = 6371;
+            var a =
+                0.5 - Math.cos((lat2 - lat1) * Math.PI / 180) / 2 +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                        (1 - Math.cos((lon2 - lon1) * Math.PI / 180)) / 2;
+
+            return R * 2 * Math.asin(Math.sqrt(a));
+        },
+        startPolling: function(obj,time){
+            (function(){
+                obj.fetch();
+                setTimeout(arguments.callee,time);
+            })();
+        }
+    };
+
+
+    Array.prototype.sortByInnerProp = function (name) {
+        this.sort(function (a, b) {
+            if (a[name] < b[name])
+                return -1;
+            if (a[name] > b[name])
+                return 1;
+            return 0;
+        });
+        return this;
+    };
+
+    //Backbone custom cleanup
+    var oldRemove = Backbone.View.prototype.remove;
+
+    //Any views that need addtional clean up when removing should implement
+    //onRemove.
+    Backbone.View.prototype.remove = function(){
+        if(this.onRemove){
+            this.onRemove();
+        }
+        this.unbind();
+        oldRemove.call(this);
+
+    };
+
+    //Sometimes I want to append the View instead of overwritting html, this is for transition effects mostly
+    Backbone.View.prototype.appendToContainer = false;
+
+    //I wanted a system to allow us to trigger a ready event when all models in a view were ready
+    //By Default for this to work any models you want to wait for first sync must be added via addModel()
+    Backbone.View.prototype._modelsCount = 0;
+    Backbone.View.prototype._modelsReady = 0;
+    Backbone.View.prototype.addModel = function(model){
+        this.listenToOnce(model,"sync", this.modelsSynced);
+        this._modelsCount++;
+        return model;
+    };
+    Backbone.View.prototype.modelsSynced = function(){
+        this._modelsReady++;
+
+        if (this._modelsReady >= this._modelsCount) {
+            this.trigger("ready");
+        }
+    };
+
+    /**
+     * Mathematical Helper functions
+     * @namespace
+     */
+    SEL.Math ={
+        /**
+         * Determine is a x,y coordinate exists in an already defined polygon of x,y coordinates
+         * @param {Object} poly
+         * @param {number} x
+         * @param {number} y
+         * @returns {boolean}
+         */
+        isPointInPoly: function(poly, x,y){
+            var pt = {x:x,y:y};
+            for (var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
+                ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
+                    && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
+                && (c = !c);
+            return c;
+        },
+        /**
+         * Creates an object of x,y coordinates that represent a square polygon
+         * @param {number} x
+         * @param {number} y
+         * @param {number} radius
+         * @returns {Array<Object>}
+         */
+        createSquarePolyFromPoint: function(x,y,radius){
+            radius = radius ? radius : 50;
+
+            return [
+                {x: x - radius, y: y - radius},
+                {x: x - radius, y: y + radius},
+                {x: x + radius, y: y + radius},
+                {x: x + radius, y: y - radius}
+            ]
+        },
+        /**
+         * Determine the distance between two x,y coordinates
+         * @param {Object} point1 x and y coordinates
+         * @param {Object} point2 x and y coordinates
+         * @returns {number}
+         */
+        distanceBetweenPoints: function(point1, point2){
+            var xs = 0;
+            var ys = 0;
+
+            xs = point2.x - point1.x;
+            xs = xs * xs;
+
+            ys = point2.y - point1.y;
+            ys = ys * ys;
+
+            return Math.sqrt(xs + ys);
+        },
+        /**
+         * Generates a semi-random number that lands between a minimum and maximum value
+         * @param {number} min
+         * @param {number} max
+         * @returns {number}
+         */
+        randomNum: function(min,max){
+            return Math.floor(Math.random()*(max-min-+1)+min);
+        }
+    };
+
+    /**
+     * Mobile Specific Functionality
+     * @namespace
+     */
+    SEL.Mobile = {
+        /**
+         * Changes Page for mobile web application
+         * @param {string} id  Backbone.View.Id
+         * @param {object} [params] parameters you want to pass to the page render method
+         */
+        switchPage: function (id, params) {
+
+            if (!SEL.hasLogin() && id != "login") {
+                this.switchPage("login");
+                Backbone.history.fragment = null;
+                return;
+            }
+
+            var view = this.getViewById(id);
+            params = params ? params : {};
+
+            //Default Options
+            var options = {
+                changeHash: false
+            };
+
+            //Extend and overwrite any default behaviors with params
+            options = $.extend(options, params);
+
+            if (view) {
+                $.mobile.changePage(view.$el, options);
+            }
+            else {
+                //$.mobile.changePage(id,options);
+                SEL.logout();
+                Backbone.history.fragment = null;
+                $.mobile.navigate("");
+                return;
+            }
+
+
+            if (options.changeHash) {
+                var url = options.params ? id + options.params : id;
+                SEL.Router.navigate("#" + url, options);
+            }
+
+            //Convert parameters to a object before passing it to the view
+            options.params = options.params ? options.params.toObject() : null;
+
+            //HANDLE: onBeforeRender specified call if return true
+            if (params.onBeforeRender && params.onBeforeRender(view) != false) {
+                view.render(options);
+            } else {
+                view.render(options);
+            }
+
+
+        }
+    };
+
+    /* SEL.Math tests
+
+    var square2 = SEL.Math.createSquarePolyFromPoint(200, 200, 100);
+    console.log(SEL.Math.isPointInPoly(square2,{x:201,y:299}));
+
+    console.log(SEL.Math.distanceBetweenPoints({x:0,y:0},{x:100,y:100}));
+    console.log(SEL.Math.distanceBetweenPoints({x: 10, y: 10}, {x: 100, y: 100}));
+    console.log(SEL.Math.distanceBetweenPoints({x: 0, y: 0}, {x: 101, y: 101}));
+
+    */
+
+    //Test to set the transitionEnd syntax
+    //User SEL.event.transitionEnd when adding an event listener for transition ends
+    (function whichTransitionEvent() {
+        var t;
+        var el = document.createElement('fakeelement');
+        var transitions = {
+            'transition': 'transitionend',
+            'OTransition': 'oTransitionEnd',
+            'MozTransition': 'transitionend',
+            'WebkitTransition': 'webkitTransitionEnd'
+        }
+
+        for (t in transitions) {
+            if (el.style[t] !== undefined) {
+                SEL.event.transitionEnd =  transitions[t];
+            }
+        }
+    })();
+
+    //Default configuration options
+    SEL._config = {
+        log: false
+    };
+
+    //{{ var }}
+    //{{ var.key1.key }}
+    //{{ var1 || var2 || "constant" }}
+    //{{ var1 >= val ? var1 : "constant" }}
+    //{{ var1 == val ? var1 : "constant" }}
+    //{{ var1 <= val ? var1 : "constant" }}
+    //{{ var1 != val ? var1 : "constant" }}
+    //{{ var1 < val ? var1 : "constant" }}
+    //{{ var1 > val ? var1 : "constant" }}
+    //{{ var ? var1 : "constant" }}
+    // {{ var | time }}    // support time, date, datetime
+
+    //{{ var:for }} ... {{ var:forelse }} ... {{ var:forend }}
+
+    /**
+     * HTML Template engine
+     * @namespace
+     * @example var template = SEL.template('<div>{{name}}</div>')
+     * @example var html = template({name:"Selkirk"})
+     * @example html = <div>Selkrik</div>
+     */
+    SEL.template = (function (){
+        // since RE pair match not support nest , workaround varname:for .... varname:forend
+        var forRE = /\{\{\s*(\w+):for\s*\}\}([\s\S]*?)\{\{\s*\1:forend\s*\}\}/;
+        var optionRE = /<option/;
+        var wordRE = /^[\w-]+$/;
+        var hashRE = /^\w+(\.\w+)*$/;
+        var defRE = /\s*\|\|\s*/;
+        var dblQuoteRE = /^"(.*?)"$/;
+        var doesNotEqualRE = /^!/;
+        var evalRE = /^(.+?)\s*\?\s*(.+?)\s*:\s*(.+?)$/;
+        var logicRE = /^(.+?)\s*?([!><=]+)\s*?(.+)$/;
+        var pipeRE = /^(.*?)\|\s*(\w+)(\([^)]+\))?\s*$/;
+        var dateFormat = /^date:(.*)?$/i;
+        var momentFormat = /^moment:(.*)?$/i;
+        var timeReg = /[t ]?(\d+):(\d+)/i;
+        var numberFormat = /^number:(.*)?$/i;
+
+        /**
+         * Internal string match method
+         * @protected
+         * @param {string} key
+         * @param {object} vars
+         * @returns {string}
+         */
+
+        var fnDecide = function (key, vars) {
+            var match;
+            if(match = key.match(doesNotEqualRE)){
+                var modKey = key.replace("!",'');
+                if (vars[modKey] == false){
+                    return modKey;
+                }
+            }
+            else if (match = key.match(wordRE)) {
+                return vars[match[0]];
+            } else if (match = key.match(hashRE)) {
+                return _.reduce(key.split("."), function (memo, k) {
+                    return ($.isPlainObject(memo) || $.isArray(memo)) ? memo[k] : undefined;
+                }, vars);
+            } else if (match = key.match(dblQuoteRE)) {
+                return match[1];
+            } else if(match = key.match(logicRE)){
+                return evaluateLogic(match,key,vars);
+            }
+        };
+
+        //This is basic conditional logic for {{ var ? var1 : "constant" }} you can now use
+        var evaluateLogic = function(match,key, vars){
+            var condi = logicRE.exec(key);
+            var expr = condi[2];
+            var val = condi[3].replace(/ |"/g,'');
+            var prop = condi[1];
+
+            var objVal = _.reduce(prop.split("."), function (memo, k) {
+                return ($.isPlainObject(memo) || $.isArray(memo)) ? memo[k] : undefined;
+            }, vars);
+
+            if (objVal == undefined) return;
+
+            if ($.isNumeric(val)) {
+                val = parseInt(val, 10);
+                objVal = parseInt(objVal, 10);
+
+                if (val == null || objVal == null) return;
+            }
+
+            if (expr == ">" && objVal > val) return val;
+            if (expr == "<" && objVal < val) return val;
+            if (expr == "==" && objVal == val) return val;
+            if (expr == ">=" && objVal >= val) return val;
+            if (expr == "<=" && objVal <= val) return val;
+            if (expr == "!=" && objVal != val) return val;
+        };
+
+        var fnPipe = /** @lends SEL.template **/{
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{localTime | time}}</div>')
+             * @example var html = template({localTime:"32198409814"})
+             * @example html = <div>12:45am</div>
+             * @member
+             */
+            "time": function (ts) {
+
+                if(timezoneJS){
+                    return new timezoneJS.Date(ts, SEL.serverTimeZone).toTime();
+                }
+
+                return $.isNumeric(ts) ? new Date(ts).getNorthAmericaMin().split(" ")[1] : "";
+
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{localDate | date}}</div>')
+             * @example var html = template({localDate:"32198409814"})
+             * @example html = <div>11/09/2014</div>
+             * @member
+             */
+            "date": function (ts) {
+                var m, d, y,date;
+
+                if (typeof timezoneJS !== 'undefined' && SEL.serverTimeZone) {
+                    date = new timezoneJS.Date(ts, SEL.serverTimeZone);
+                    m = date.getMonth() + 1;
+                    d = date.getDate();
+                    y = date.getFullYear();
+
+                    m = m<10 ? "0" + m : m;
+                    d = d<10 ? "0" + d : d;
+
+                    return m + "/" + d + "/" + y;
+                }
+
+                return $.isNumeric(ts) ? new Date(ts).getNorthAmericaMin().split(" ")[0] : "";
+            },
+            "capitalize" : function(v){
+                return v.capitalize();
+            },
+            "zeroIsBlank": function(ts){
+                if(ts == 0){
+                    return "";
+                }
+
+                return ts;
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{localDate | shortMonthDay}}</div>')
+             * @example var html = template({localDate:"32198409814"})
+             * @example html = <div>July 15</div>
+             * @member
+             */
+            "shortMonthDay": function (ts) {
+                if ($.isNumeric(ts)) {
+                    var d = new Date(ts);
+                    return d.getMonthName() + " " + d.getDate();
+                }
+                return "";
+            },
+
+            "dateFormat": function(ts,format){
+                ts = parseInt(ts, 10);
+            	if (typeof timezoneJS !== 'undefined' && SEL.serverTimeZone) {
+                    var date = new timezoneJS.Date(ts, SEL.serverTimeZone);
+                    var m = date.getMonth() + 1;
+                    var d = date.getDate();
+                    m = m<10 ? "0" + m : m;
+                    d = d<10 ? "0" + d : d;
+                    return format.replace("YYYY", date.getFullYear()).replace("MM", m).replace("DD", d);
+                }
+                return moment(ts).format(format);
+            },
+            momentFormat: function(ts,format){
+                ts = parseInt(ts, 10);
+
+                if (typeof timezoneJS !== 'undefined' && SEL.serverTimeZone) {
+                	return moment(new timezoneJS.Date(ts, SEL.serverTimeZone).toString()).format(format);
+                }
+                return moment(new Date(ts).toString()).format(format);
+            },
+            "numberFormat":function(v,format){
+                return $.isNumeric(v) ? numeral(v).format(format) : v;
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{localDate | shortMonthDay}}</div>')
+             * @example var html = template({localDate:"32198409814"})
+             * @example html = <div>July 15, 2013</div>
+             * @member
+             */
+            "monthDayYear" : function(ts){
+                var date = new Date(ts);
+                var regExp = /^\w+ (\w+) (\d+) \d+$/i;
+                var match = regExp.exec(date.toDateString());
+
+                if (!match) {
+                    return null;
+                }
+
+                return match[1] + " " + match[2] +", " + date.getFullYear();
+            },
+            longMonthDayYear: function (ts) {
+                return new Date(ts).toLongDate();
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{localTime | datetime}}</div>')
+             * @example var html = template({localTime:"32198409814"})
+             * @example html = <div>/04/09/2014- 09:00am</div>
+             * @member
+             */
+            "datetime": function (ts) {
+                return $.isNumeric(ts) ? new Date(ts).getNorthAmericaMin() : "";
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{count | round}}</div>')
+             * @example var html = template({count:"4.6"})
+             * @example html = <div>5</div>
+             * @member
+             */
+            "round": function (num, decimal) {
+                num = parseFloat(num);
+                decimal = parseInt(decimal) || 0;
+
+                var num = Math.round(num * Math.pow(10, decimal)) / Math.pow(10, decimal) + "";
+                if (decimal < 1) return num;
+
+                var re = new RegExp("\\." + new Array(decimal + 1).join("\\d") + "$");
+
+                for (var i = 0; !re.test(num) && i < decimal; i++) {
+                    num += /\./.test(num) ? "0" : ".0";
+                }
+
+                return num;
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{sampleDeg | deg}}</div>')
+             * @example var html = template({sampleDeg:"467214"})
+             * @example html = <div>45 deg</div>
+             * @member
+             */
+            "deg": function (dec) {
+                var dec = parseFloat(dec),
+                    sign = (dec > 0 ? "" : "-"),
+                    dec = Math.abs(dec),
+                    rnd = Math.floor(dec);
+                return sign + rnd + '&#176;' + fnPipe.round((dec - rnd) * 60, 3);
+            },
+            "pref_area": function (ha, decimal) {
+                if (!$.isNumeric(ha)) return "";
+
+                // default is ha
+                var unit = SEL.getPreference("area-unit");
+                if (unit === "ac") {
+                    return fnPipe.round(ha * 2.4711, decimal) + " ac";
+                } else {
+                    return fnPipe.round(ha, decimal) + " ha";
+                }
+            },
+            "roundToDecimal" : function(ts){
+                return Math.round(ts * 10) / 10;
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{value | truncate}}</div>')
+             * @example var html = template({value:"Selkirk"})
+             * @example html = <div>Sel</div>
+             * @member
+             */
+            "truncate": function (str, len) {
+                if (str.length > len) {
+                    return str.substr(0, len) + "...";
+                } else {
+                    return str;
+                }
+            },
+            /**
+             * HTML template formatting function
+             * @protected
+             * @example var template = SEL.template('<div>{{value | camelcase}}</div>')
+             * @example var html = template({value:"calendardate"})
+             * @example html = <div>calendarDate</div>
+             * @member
+             */
+            "camelcase": function (str) {
+                return str.replace(/(\w)_(\w)/, "$1 $2").replace(/(\w)(\w+)/g, function (_, a, b) {
+                    return a.toUpperCase() + b.toLowerCase();
+                })
+            },
+            "substr": function(str, start) {
+            	return _.isString(str) ? str.substr(parseInt(start)) : str;
+            }
+        };
+        /**
+         * @memberOf SEL.template
+         * @protected
+         * @param {object} tpl obj to match against string template
+         */
+        var render = function (tpl, hashVar) {
+            var match;
+
+            if (tpl == undefined) {
+                console.warn("Undefined Template: Unable to find specified html script template");
+                return "";
+            }
+
+            //HANDLE: option elements and the "Select Attribute"
+            if(hashVar.hasOwnProperty("selected") && hashVar.selected && (match = tpl.match(optionRE))){
+                tpl = tpl.replace(optionRE,"<option selected");
+            }
+
+            if (match = tpl.match(forRE)) {
+                var loopTpl = match[2], elseTpl;
+
+                var forElseRE = new RegExp("\{\{\\s*" + match[1] + ":forelse\\s*\}\}");
+                var tpl2 = loopTpl.split(forElseRE);
+                if (tpl2.length > 1) {
+                    loopTpl = tpl2[0];
+                    elseTpl = tpl2[1];
+                }
+
+                var loopVar = hashVar[match[1]], loop = "";
+
+                if (loopVar && loopVar.length) {
+                    loop = $.map(loopVar,function (va, ix) {
+                        return render(loopTpl, va);
+                    }).join("");
+                } else if (elseTpl) {
+                    loop = render(elseTpl, hashVar);
+                }
+
+                return render(tpl.replace(match[0], loop), hashVar);
+
+            } else {
+                return tpl.replace(/\{\{(.+?)\}\}/g, function (_, va) {
+                    var match, va = va.trim().replace(/&quot;/g,'"'), place,dateMatch;
+
+                    if (va.match(defRE)) {
+                        var opts = va.split(defRE);
+                        if(opts[1]) opts[1] = opts[1].replace(/&#39;/g, '"');
+                        var grp = $.grep($.map(opts, function (key) {
+                            return fnDecide(key, hashVar)
+                        }), function (nm) {
+                            return nm !== undefined && nm !== null && nm !== ""
+                        });
+
+                        if (grp.length) {
+                            place = grp[0];
+                        }
+                    } else if (match = va.match(evalRE)) {
+                        var condi = fnDecide(match[1], hashVar);
+                        place = (condi === undefined || condi === null || condi === false) ? fnDecide(match[3], hashVar) : fnDecide(match[2], hashVar);
+
+                    } else if (match = va.match(pipeRE)) {
+                        place = fnDecide(match[1].trim(), hashVar);
+
+                        if (place !== undefined && place !== null && (dateMatch = dateFormat.exec(match[2]))) {
+                            match[2] = "dateFormat";
+                        }
+                        else if (place !== undefined && place !== null && (dateMatch = momentFormat.exec(match[2]))) {
+                            match[2] = "momentFormat";
+                        }
+                        else if (place !== undefined && place !== null && (dateMatch = numberFormat.exec(match[2]))) {
+                            match[2] = "numberFormat";
+                        }
+
+
+                        if (place !== undefined && place !== null && fnPipe[match[2]]) {
+                            var args = [place];
+                            if (match[3] && (match[3] = match[3].trim().replace(/^.|.$/g, ""))) {
+                                args = args.concat($.grep(match[3].split(/\s*,\s*/), function (one) {
+                                    return !!one
+                                }));
+                            }
+
+                            if(match[2] == "dateFormat" || match[2] == "momentFormat") args.push(dateMatch[1]);
+
+                            if(match[2] == "numberFormat") args.push(dateMatch[1]);
+
+                            place = fnPipe[match[2]].apply(this, args);
+                        }
+                    } else {
+                        place = fnDecide(va, hashVar);
+                    }
+
+
+                    // never ever spit out
+                    return (place === undefined || place === null) ? "" : place;
+                });
+            }
+        }
+
+        return function (tpl) {
+            return tpl ? function (hashVar) {
+                return render(tpl, hashVar);
+            } : fnPipe;
+        }
+
+    })();
+
+    function Filter(name, value){
+        this.name = name;
+        this.value = value;
+    }
+
+    Function.prototype.slow = function (msec) {
+        var fn = this, tm = 0, scope, args,
+            calmDn = function () {
+                fn.apply(scope, args);
+                tm = 0;
+            };
+
+        return function () {
+            tm && clearTimeout(tm);
+            tm = window.setTimeout(calmDn, msec);
+
+            scope = this;
+            args = [].slice.call(arguments);
+        }
+    };
+    Function.prototype.bind = function(callThis/*, args...*/) {
+    	var fn = this,	args = [].slice.call(arguments, 1);
+    	return function() {
+    		var callArgs = args.concat([].slice.call(arguments));
+    		if (this !== window) callArgs.push(this);
+    		return fn.apply(callThis, callArgs);
+    	};
+    };
+
+    /**
+     * Extends the native Date Object
+     * @name Date
+     * @class
+     */
+
+    /**
+     * Get a short date representation of the date
+     * @memberOf Date.prototype
+     * @return {string}
+     * @example "July 24"
+     */
+    Date.prototype.toShortDate = function () {
+        var regExp = /^\w+ (\w+) (\d+) \d+$/i;
+        var match = regExp.exec(this.toDateString());
+
+        if (!match) {
+            return null;
+        }
+
+        return match[1] + " " + match[2];
+    };
+    /**
+     * Return the North American time of a date object
+     * @memberOf Date.prototype
+     * @return {string}
+     * @example "2:00pm"
+     */
+    Date.prototype.toTime = function(){
+        var ts = this.getTime();
+        return $.isNumeric(ts) ? new Date(ts).getNorthAmericaMin().split(" ")[1] : "";
+    };
+    Date.prototype.getNorthAmericaMin = function () {
+        return this.getFullYear() + "/"
+            + (this.getMonth() < 9 ? "0" : "") + (this.getMonth() + 1) + "/"
+            + (this.getDate() < 10 ? "0" : "") + this.getDate() + " "
+            + (this.getHours() < 10 ? "0" : "") + this.getHours() + ":"
+            + (this.getMinutes() < 10 ? "0" : "") + this.getMinutes();
+    };
+    Date.prototype.toLongDate = function () {
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var m = months[this.getMonth()];
+
+        return m + " " + this.getDate() + ", " + this.getFullYear();
+    };
+    Number.prototype.toDeg = function(){
+        var dec = parseFloat(this),
+            sign = (dec > 0 ? "" : "-"),
+            dec = Math.abs(dec),
+            rnd = Math.floor(dec);
+        return sign + rnd + '&#176;' + Number.round((dec - rnd) * 60, 3);
+    };
+
+    Number.round = function(num, decimal){
+        num = parseFloat(num);
+        decimal = parseInt(decimal) || 0;
+
+        var num = Math.round(num * Math.pow(10, decimal)) / Math.pow(10, decimal) + "";
+        if (decimal < 1) return num;
+
+        var re = new RegExp("\\." + new Array(decimal + 1).join("\\d") + "$");
+
+        for (var i = 0; !re.test(num) && i < decimal; i++) {
+            num += /\./.test(num) ? "0" : ".0";
+        }
+
+        return num;
+    };
+
+    String.prototype.toObject = function(){
+        var params = {};
+        var pairs = this.match(/[\w-]+=.+?(?=&|$)/g) || [];
+        $.each(pairs, function (_, v) {
+            var pair = v.split("=");
+            params[pair[0]] = decodeURIComponent(pair[1]).split(",");
+        });
+        return params;
+    };
+
+    String.prototype.capitalize = function(){
+        return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+    };
+
+    //HANDLE Mobile Jquery Mobile and Backbone Router conflicts
+    if($.mobile){
+        $.extend($.mobile, {
+            linkBindingEnabled: false,
+            hashListeningEnabled: false,
+            pushStateEnabled: false,
+            ajaxEnabled: false
+        });
+    }
+
+    //Handle no support for console commands IE9 blah
+    if(!window.console){
+        window.console = {
+            info: function(msg){},
+            error: function(msg){},
+            warning: function(msg){},
+            log: function(msg){}
+        }
+    }
+
+    $.ajaxSetup({
+        timeout: 30000,
+        cache: false
+    });
+
+    SEL.setUnsavedChanges = function (val) {
+        if (val) {
+            $(document.body).addClass("unsaved");
+            return;
+        }
+
+        $(document.body).removeClass("unsaved");
+    };
+
+    $(document).ajaxStart(function(evt, request,settings){
+        SEL.showLoading();
+    });
+
+    $(document).ajaxStop(function(evt,request,settings){
+        SEL.hideLoading();
+    });
+    SEL.Error = {
+        isUnauthorized: function (response) {
+            return response && response[0] && response[0].status == 401;
+        },
+        isNoNetworkConnection: function (response) {
+            if (response && response[0] && response[0].status == 0 && response[0].responseText == "") {
+                var popup = new ErrorPopup(new Backbone.Model({
+                    title: "Error",
+                    message: "Unable to connect to server"
+                }));
+
+                popup.render();
+                return true;
+            }
+            return false;
+        },
+        isTimeout: function (response) {
+            if (response && response[0] && response[0].status == 0 && response[0].statusText == "timeout") {
+                var popup = new ErrorPopup(new Backbone.Model({
+                    title: "Error",
+                    message: "Server failed to respond, try again or contact your system administrator"
+                }));
+
+                popup.render();
+                return true;
+            }
+            return false;
+        }
+    };
+
+    window.SEL = SEL;
+
+    // Check if native implementation available
+    if (typeof Object.create !== 'function') {
+        Object.create = function (o) {
+            function F() {
+            }  // empty constructor
+            F.prototype = o; // set base object as prototype
+            return new F();  // return empty object with right [[Prototype]]
+        };
+    }
+
+    SEL.BatchFetch = function(options){
+        this.items = [];
+        this.onComplete = options.onComplete || function(){};
+        this.onError = options.onError || function(){};
+        this.count = 0;
+        this.done = 0;
+    };
+
+    SEL.BatchFetch.prototype = {
+        add: function(obj){
+            var fetch = obj.fetch;
+            var that = this;
+            this.items.push(obj);
+
+            this.count ++;
+
+            obj.fetch = function(){
+                var success,
+                    error;
+
+                if(arguments[0]){
+                    success= arguments[0].success ? arguments[0].success : null;
+                    error = arguments[0].error ? arguments[0].error : null;
+                }
+
+                var options = $.extend({}, arguments[0]);
+
+                options.success = function(){
+                    complete();
+                    if(success)success.apply(obj,arguments);
+                };
+
+                options.error = function(){
+                    complete();
+                    if(error)error.apply(obj,arguments);
+                };
+
+                fetch.call(obj,options);
+
+            };
+
+            function complete(){
+                that.done++;
+                obj.fetch = fetch;
+                if(that.done>=that.count){
+
+                    that.onComplete();
+                    delete that;
+                }
+            }
+        }
+    };
+
+	SEL.decimalDegreeToDegreeMinuteSecondString = function(doubleCoordVal, numDegreeDigits) {
+		var absCoordVal = Math.abs(doubleCoordVal);
+		var degrees = Math.trunc(absCoordVal);
+		var minutes = Math.trunc((absCoordVal - degrees) * 60);
+		var seconds = Math.round10((absCoordVal - degrees - (minutes/60) ) * 3600, -2);
+
+		var result = this.createLeftPaddedStringFromNumber(degrees, numDegreeDigits) + " " + SEL.createLeftPaddedStringFromNumber(minutes, 2) + " " + SEL.rightPadDecimalPortionAndLeftPadWholePortionOfNumber(seconds, 2, 2);
+
+		if(doubleCoordVal < 0) {
+			result = "-" + result;
+		}
+
+		return result;
+	};
+
+	SEL.rightPadDecimalPortionAndLeftPadWholePortionOfNumber = function(number, desiredWholePoritionLength, desiredDecimalPlaces) {
+		var wholePortionPadded = SEL.createLeftPaddedStringFromNumber(number, desiredWholePoritionLength);
+		return SEL.rightPadDecmialPortionOfNumberString(wholePortionPadded, desiredDecimalPlaces);
+	};
+
+	SEL.rightPadDecmialPortionOfNumberString = function(numberString, numDecimalPlaces) {
+		var decimalPortion = "";
+		var dotIndex = numberString.indexOf(".");
+
+		if(dotIndex == -1) {
+			while(decimalPortion.length < numDecimalPlaces) {
+				decimalPortion += "0";
+			}
+			return numberString + "." + decimalPortion;
+		}
+
+		decimalPortion = numberString.substring(dotIndex+1);
+
+		while(decimalPortion.length < numDecimalPlaces) {
+			decimalPortion += "0";
+		}
+
+		return numberString.substring(0, dotIndex) + "." + decimalPortion;
+
+	};
+
+	SEL.createLeftPaddedStringFromNumber = function(number, desiredLength) {
+		var numberString = Math.abs(number).toString();
+
+		var wholePortion = Math.trunc(Math.abs(number)).toString();
+		while(wholePortion.length < desiredLength) {
+			wholePortion = "0" + wholePortion;
+		}
+
+		var dotIndex = number.toString().indexOf(".");
+		var decimalPortion = "";
+		if(dotIndex > -1) {
+			decimalPortion = number.toString().substring(dotIndex + 1);
+		}
+
+		numberString = wholePortion + (decimalPortion.length > 0 ? "." + decimalPortion : "");
+
+		if(number < 0) {
+			numberString  = "-" + numberString;
+		}
+
+		return numberString;
+	};
+
+	SEL.decimalDegreeToDegreeDecimalMinuteString = function(doubleCoordVal, numDegreeDigits) {
+		var absCoordVal = Math.abs(doubleCoordVal);
+		var degrees = Math.trunc(absCoordVal);
+		var decimalMinutes = Math.round10((absCoordVal - degrees) *60, -4);
+
+		var result = this.createLeftPaddedStringFromNumber(degrees, numDegreeDigits) + " " + SEL.rightPadDecimalPortionAndLeftPadWholePortionOfNumber(decimalMinutes, 2, 4);
+
+		if(doubleCoordVal < 0) {
+			result = "-" + result;
+		}
+
+		return result;
+	};
+
+	SEL.degreesMinutesSecondsToDecimalDegrees = function(degreesMinutesSecondsString) {
+		var splitString = degreesMinutesSecondsString.split(" ");
+		var degrees = Math.abs(Number(splitString[0]));
+		var minutes = Number(splitString[1]);
+		var seconds = Number(splitString[2]);
+		var result = Math.round10(degrees + (minutes/60) + (seconds/3600), -6);
+		if(Number(splitString[0]) < 0) {
+			result = -result;
+		}
+
+		return result;
+	};
+
+	SEL.degreesDecimalMinutesToDecimalDegrees = function(degreesDecimalMinutesString) {
+		var splitString = degreesDecimalMinutesString.split(" ");
+		var degrees = Math.abs(Number(splitString[0]));
+		var minutes = Number(splitString[1]);
+
+		var result =  Math.round10(degrees + (minutes / 60), -6);
+
+		if(Number(splitString[0]) < 0) {
+			result *= -1;
+		}
+
+
+		return result;
+	};
+
+	(function() {
+		/**
+		 * Decimal adjustment of a number.
+		 *
+		 * @param {String}  type  The type of adjustment.
+		 * @param {Number}  value The number.
+		 * @param {Integer} exp   The exponent (the 10 logarithm of the adjustment base).
+		 * @returns {Number} The adjusted value.
+		 */
+		function decimalAdjust(type, value, exp) {
+			// If the exp is undefined or zero...
+			if (typeof exp === 'undefined' || +exp === 0) {
+				return Math[type](value);
+			}
+			value = +value;
+			exp = +exp;
+			// If the value is not a number or the exp is not an integer...
+			if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+				return NaN;
+			}
+			// Shift
+			value = value.toString().split('e');
+			value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+			// Shift back
+			value = value.toString().split('e');
+			return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+		}
+
+		// Decimal round
+		if (!Math.round10) {
+			Math.round10 = function(value, exp) {
+				return decimalAdjust('round', value, exp);
+			};
+		}
+		// Decimal floor
+		if (!Math.floor10) {
+			Math.floor10 = function(value, exp) {
+				return decimalAdjust('floor', value, exp);
+			};
+		}
+		// Decimal ceil
+		if (!Math.ceil10) {
+			Math.ceil10 = function(value, exp) {
+				return decimalAdjust('ceil', value, exp);
+			};
+		}
+	})();
+
+	//Call SEL.load when the application is ready, all projects should override the SEL.load function to start application.
+  $(document).ready(function (evt) {
+      console.log("Application Ready");
+      SEL.load(evt);
+  });
+
+  return SEL;
+}
+ at SyntaxError: Deleting local variable in strict mode (1286:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:31:155)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:709:33)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

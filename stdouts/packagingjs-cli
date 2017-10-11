@@ -1,0 +1,99 @@
+/root/Targets/packagingjs-cli
+└─┬ packagingjs-cli@0.1.0 
+  ├── commander@2.11.0 
+  └─┬ packagingjs@0.4.2 
+    └── source-map@0.5.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/packagingjs-cli/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0366 took 2.6675s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var packagingjs = require('packagingjs');
+var program = require('commander');
+var Babel = require('./babel.min.js');
+var fs = require('fs');
+
+program
+	.arguments('<file>')
+	.option('-o, --out <outputfile>', 'The file to output to.')
+	.option('-p, --packagingjs', 'Do PackagingJS style module packaging.')
+	.option('-b, --babel', 'To transpile ES6 via babel.')
+	.option('-r, --react', 'Compile React JSX when using babel.')
+	.option('--autorun <static|instance|none>', 'The autorun mode to use if using PackagingJS. (static default)')
+	.option('--global <globalname>', 'The object that PackagingJS should use as global (window by default, which is for browsers).')
+	.action(function(f){ file = f; })
+	.parse(process.argv);
+
+var file; // gets set in program action callback
+
+if (!file) {
+	console.log('Please specify a base file/class to compile.');
+	process.exit();
+}
+
+// if none of 3 major options is chosen it assumes you want everything (PackagingJS, then Babel including JSX compiling)
+if (!program.packagingjs && !program.babel) {
+	program.packagingjs = true;
+	program.babel = true;
+	program.react = true;
+}
+
+var options = {
+	strict: true,
+	sourcemap: false, // babel takes incoming sourcemaps poorly this way. Look to gulp-packagingjs for that, works great with babel there.
+	autorun: program.autorun,
+	global: program.global || 'window'
+};
+
+try {
+//-----------------------------------------------------------------------
+	
+	if (program.packagingjs) {
+		var output = packagingjs(file.replace(/\.js$/, ''), options);
+	} else {
+		var output = {code:fs.readFileSync(file)};
+	}
+	
+	if (program.babel) {
+		var presets = ['es2015', 'stage-0'];
+		if (program.react) presets.push('react');
+		output.code = Babel.transform(output.code, { presets:presets }).code;
+	}
+	
+	var outName = program.out || 'app.'+file+(file.match(/\.js$/)?'':'.js');
+	fs.writeFileSync(outName, output.code);
+	console.log('compiled to "'+outName+'"');
+
+//-----------------------------------------------------------------------
+}
+catch (e) {
+	throw e;
+	console.log(e);
+	process.exit();
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

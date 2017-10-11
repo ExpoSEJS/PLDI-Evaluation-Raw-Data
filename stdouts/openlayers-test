@@ -1,0 +1,16 @@
+
+> ws@0.4.32 install /root/Targets/openlayers-test/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/openlayers-test/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/openlayers-test/node_modules/ws/build'
+
+> openlayers-test@3.1.0-pre.4 install /root/Targets/openlayers-test/node_modules/openlayers-test
+> node tasks/install.js
+
+
+> closure-util@1.2.0 postinstall /root/Targets/openlayers-test/node_modules/closure-util
+> node ./bin/closure-util.js update
+

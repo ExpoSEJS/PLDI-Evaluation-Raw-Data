@@ -1,0 +1,44 @@
+/root/Targets/nodekit-scripts-platform-android
+└─┬ nodekit-scripts-platform-android@6.1.2 
+  ├─┬ elementtree@0.1.7 
+  │ └── sax@1.1.4 
+  ├─┬ nopt@3.0.6 
+  │ └── abbrev@1.1.1 
+  ├── properties-parser@0.2.3 
+  ├── q@1.5.0 
+  └── shelljs@0.5.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nodekit-scripts-platform-android/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Error","Number","toString","RegExp","bind","create","reduce","fromCharCode"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0531 took 20.4312s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'nodekit-scripts'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/nodekit-scripts-platform-android/bin/nodekit-scripts/Api.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/nodekit-scripts-platform-android/bin/nodekit-scripts/lib/AndroidProject.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/properties-parser/index.js. Coverage (Term): 5% Coverage (LOC): 10%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/nodekit-scripts-platform-android/bin/nodekit-scripts/lib/AndroidManifest.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/elementtree.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/sprintf.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/elementpath.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/errors.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/treebuilder.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/parser.js. Coverage (Term): 58% Coverage (LOC): 60%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/parsers/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/parsers/sax.js. Coverage (Term): 32% Coverage (LOC): 60%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/sax/lib/sax.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nodekit-scripts-platform-android/node_modules/elementtree/lib/constants.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,59 @@
+/root/Targets/helprs
+└── helprs@0.21.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/helprs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 99% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 99% coverage ] ****** [2 done /1 queued / 1 running / 2 errors / 99% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 99% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 99% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","random","pow","floor","Array","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0559 took 358.1289s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Cannot read property 'random' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1,"ExpansionArg_type":0} start 364.9928 took 381.2772s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1,"ExpansionArg_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 80% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/helprs/node_modules/helprs/index.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/helprs/node_modules/helprs/util/rdm.js. Coverage (Term): 32% Coverage (LOC): 46%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/index.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/basics/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/months.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/ccTypes.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/currencyTypes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/colorNames.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/fileExtension.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/timezones.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/phonecodes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/currencycodes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/nationalities.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/usStates.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/usStatesAndDC.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/counties.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/territories.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/provinces.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/canadianProvinces.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/canadianPostalCodes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/armedForces.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/streetSuffixes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/usZipCodes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/person/lastNames.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/person/firstNames.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/country.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/countryISO3.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/ISO2.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/toISO3.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/capitals.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/continentcodes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/data/src/countries/countryRegions.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/helprs/node_modules/helprs/util/blueimp.js. Coverage (Term): 6% Coverage (LOC): 23%
+*- File /root/Targets/helprs/node_modules/helprs/util/mtwist.js. Coverage (Term): 26% Coverage (LOC): 39%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 2 errors **

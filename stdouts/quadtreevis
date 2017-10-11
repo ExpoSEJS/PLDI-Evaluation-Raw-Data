@@ -1,0 +1,189 @@
+
+> contextify@0.1.15 install /root/Targets/quadtreevis/node_modules/contextify
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/quadtreevis/node_modules/contextify/build'
+  CXX(target) Release/obj.target/contextify/src/contextify.o
+contextify.target.mk:94: recipe for target 'Release/obj.target/contextify/src/contextify.o' failed
+make: Leaving directory '/root/Targets/quadtreevis/node_modules/contextify/build'
+/root/Targets/quadtreevis
+└─┬ quadtreevis@0.1.0 
+  ├── quadtreelabeler@0.3.2 
+  ├─┬ quadtreemap@0.5.2 
+  │ └── one-at@0.1.1 
+  ├─┬ quadtreenodereport@0.1.1 
+  │ └── underscore@1.6.0 
+  ├─┬ quadtreetree@0.3.0 
+  │ └── lodash@2.4.1 
+  ├─┬ strokerouter@0.2.1 
+  │ └─┬ d3@3.0.8 
+  │   └─┬ jsdom@0.3.4 
+  │     ├── cssom@0.2.5 
+  │     ├─┬ cssstyle@0.2.37 
+  │     │ └── cssom@0.3.2 
+  │     ├── htmlparser@1.7.7 
+  │     ├── nwmatcher@1.4.2 
+  │     └─┬ request@2.83.0 
+  │       ├── aws-sign2@0.7.0 
+  │       ├── aws4@1.6.0 
+  │       ├── caseless@0.12.0 
+  │       ├─┬ combined-stream@1.0.5 
+  │       │ └── delayed-stream@1.0.0 
+  │       ├── extend@3.0.1 
+  │       ├── forever-agent@0.6.1 
+  │       ├─┬ form-data@2.3.1 
+  │       │ └── asynckit@0.4.0 
+  │       ├─┬ har-validator@5.0.3 
+  │       │ ├─┬ ajv@5.2.3 
+  │       │ │ ├── co@4.6.0 
+  │       │ │ ├── fast-deep-equal@1.0.0 
+  │       │ │ ├── json-schema-traverse@0.3.1 
+  │       │ │ └─┬ json-stable-stringify@1.0.1 
+  │       │ │   └── jsonify@0.0.0 
+  │       │ └── har-schema@2.0.0 
+  │       ├─┬ hawk@6.0.2 
+  │       │ ├── boom@4.3.1 
+  │       │ ├─┬ cryptiles@3.1.2 
+  │       │ │ └── boom@5.2.0 
+  │       │ ├── hoek@4.2.0 
+  │       │ └── sntp@2.0.2 
+  │       ├─┬ http-signature@1.2.0 
+  │       │ ├── assert-plus@1.0.0 
+  │       │ ├─┬ jsprim@1.4.1 
+  │       │ │ ├── extsprintf@1.3.0 
+  │       │ │ ├── json-schema@0.2.3 
+  │       │ │ └─┬ verror@1.10.0 
+  │       │ │   └── core-util-is@1.0.2 
+  │       │ └─┬ sshpk@1.13.1 
+  │       │   ├── asn1@0.2.3 
+  │       │   ├── bcrypt-pbkdf@1.0.1 
+  │       │   ├── dashdash@1.14.1 
+  │       │   ├── ecc-jsbn@0.1.1 
+  │       │   ├── getpass@0.1.7 
+  │       │   ├── jsbn@0.1.1 
+  │       │   └── tweetnacl@0.14.5 
+  │       ├── is-typedarray@1.0.0 
+  │       ├── isstream@0.1.2 
+  │       ├── json-stringify-safe@5.0.1 
+  │       ├─┬ mime-types@2.1.17 
+  │       │ └── mime-db@1.30.0 
+  │       ├── oauth-sign@0.8.2 
+  │       ├── performance-now@2.1.0 
+  │       ├── qs@6.5.1 
+  │       ├── safe-buffer@5.1.1 
+  │       ├── stringstream@0.0.5 
+  │       ├─┬ tough-cookie@2.3.3 
+  │       │ └── punycode@1.4.1 
+  │       ├── tunnel-agent@0.6.0 
+  │       └── uuid@3.1.0 
+  └── svgcamera@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/quadtreevis/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0513 took 4.7665s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html>
+<head>
+  <title>Quadtree with visible internal nodes</title>
+  <link rel="stylesheet" type="text/css" href="quadtreevis.css" />
+</head>
+
+<body>
+
+<h2>Quadtree</h2>
+
+<p>
+A <a href="http://en.wikipedia.org/wiki/Quadtree">quadtree</a> is a tree in which each node has at most four children. <a href="https://github.com/mbostock/d3/wiki/Quadtree-Geom">D3's quadtree</a> implementation (<a href="https://github.com/mbostock/d3/blob/master/src/geom/quadtree.js">source</a>) is for storing points in a rectangular space in a way that can be quickly searched. This is a common use case for quadtrees.</p>
+<p class="aside">
+  A quadtree used to divide up a 2D space is analogous to a <a href="http://en.wikipedia.org/wiki/Binary_tree">binary tree</a> dividing a 1D space (a line). If you have random points on a line, you can arrange points in a binary tree in such a way that the two children of the root node each represent halves of the line, and the grandchildren each represent quarters of the line, and so forth. So, when you search for a given point on the line, rather than examining every point on the line, you can simply walk down the tree.
+</p>
+<p>In the D3 quadtree, each node is either a leaf or a non-leaf.</p>
+<ul>
+  <li>Each leaf stores information describing a point: x and y values.</li>
+  <li>Each non-leaf represents a quadrant, a sub-rectangle within the space, and has children, which are either leaves (points) or other non-leaves (quadrants).</li>
+</ul>
+<p>
+When a new point is inserted, the D3 quadtree <a href="https://github.com/mbostock/d3/blob/master/src/geom/quadtree.js#L101">decides which quadrant</a> of the root node that the point should be in (by checking the point's x and y against the horiontal center and vertical centers of the node's quad). If there is a leaf node (let's call it N) in that quadrant, <a href="https://github.com/mbostock/d3/blob/master/src/geom/quadtree.js#L84">it moves N's point into a child of N</a> and adds the new point as a child of N as well. N <a href="https://github.com/mbostock/d3/blob/master/src/geom/quadtree.js#L108">becomes a non-leaf</a> when it gets children.
+
+</p>
+<p>
+I put this together to better understand how a quadtree rearranges itself to accommodate points that are added to it. <a href="https://github.com/jimkang/quadtreevis">The source is here.</a>
+
+<p class="instructions">Hit <strong>N, space, enter, or the down arrow</strong> to add a point with a random position to the quadtree.</p>
+
+<svg id="quadtreemap" width="49%" height="75%">
+  <g id="quadroot"></g>
+  <g id="pointroot"></g>
+</svg>
+
+<svg id="quadtreetree" width="49%" height="75%">
+  <g id="treeroot"></g>
+</svg>
+
+<div>
+  <pre class="details-box">
+  </pre>
+</div>
+
+
+<p class="instructions">The left panel will update to display the territory covered by the quadtree nodes. The right panel will show the quadtree's internal node tree. You can <strong>drag</strong> to pan around the panel and use the <strong>mouse wheel</strong> to zoom.</p>
+
+
+<script src="lib/d3.js"></script>
+<script src="node_modules/quadtreenodereport/quadtreenodereport.js"></script>
+<script src="node_modules/quadtreelabeler/quadtreelabeler.js"></script>
+
+<script src="node_modules/quadtreetree/node_modules/lodash/dist/lodash.min.js"></script>
+<script src="node_modules/quadtreetree/node_modules/one-at/one-at.js"></script>
+
+<script src="node_modules/quadtreetree/accessors.js"></script>
+<script src="node_modules/quadtreetree/idmaker.js"></script>
+<script src="node_modules/quadtreetree/quadtree-to-layout-tree.js"></script>
+<script src="node_modules/quadtreetree/quadtreetree.js"></script>
+
+<script src="node_modules/quadtreemap/renderquadtreepoints.js"></script>
+<script src="node_modules/quadtreemap/quadtreemap.js"></script>
+
+<script src="node_modules/svgcamera/camera.js"></script>
+
+<script type="text/javascript" src="example-quadtree.js"></script>
+<script type="text/javascript" src="exhibit-helpers.js"></script>
+<script type="text/javascript" src="exhibit-reporter.js"></script>
+<script type="text/javascript" src="point-keeper.js"></script>
+<script type="text/javascript" src="exhibit-controller.js"></script>
+
+<script type="text/javascript">
+// var exercise = createQuadtreeExercise();
+// console.log(quadtree.nodes);
+
+</script>
+
+</body>
+</html>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

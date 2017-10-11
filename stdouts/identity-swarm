@@ -1,0 +1,256 @@
+
+> sodium-native@1.10.3 install /root/Targets/identity-swarm/node_modules/sodium-native
+> node-gyp-build "node preinstall.js" "node postinstall.js"
+
+/root/Targets/identity-swarm
+└─┬ identity-swarm@1.0.1 
+  ├─┬ chloride@2.2.7 
+  │ ├── is-electron@2.1.0 
+  │ ├─┬ sodium-browserify@1.2.1 
+  │ │ ├─┬ libsodium-wrappers@0.2.12 
+  │ │ │ └── libsodium@0.2.12 
+  │ │ ├── sha.js@2.4.5 
+  │ │ └── tweetnacl@0.14.5 
+  │ ├─┬ sodium-browserify-tweetnacl@0.2.3 
+  │ │ ├─┬ chloride-test@1.2.2 
+  │ │ │ └── json-buffer@2.0.11 
+  │ │ ├── ed2curve@0.1.4 
+  │ │ ├── sha.js@2.4.9 
+  │ │ └── tweetnacl-auth@0.3.1 
+  │ ├── sodium-chloride@1.1.0 
+  │ └─┬ sodium-native@1.10.3 
+  │   ├── nan@2.7.0 
+  │   └── node-gyp-build@3.2.2 
+  ├─┬ crypto-browserify@3.11.1 
+  │ ├─┬ browserify-cipher@1.0.0 
+  │ │ ├─┬ browserify-aes@1.0.8 
+  │ │ │ └── buffer-xor@1.0.3 
+  │ │ ├─┬ browserify-des@1.0.0 
+  │ │ │ └── des.js@1.0.0 
+  │ │ └─┬ evp_bytestokey@1.0.3 
+  │ │   └─┬ md5.js@1.3.4 
+  │ │     └── hash-base@3.0.4 
+  │ ├─┬ browserify-sign@4.0.4 
+  │ │ ├── bn.js@4.11.8 
+  │ │ ├── browserify-rsa@4.0.1 
+  │ │ ├─┬ elliptic@6.4.0 
+  │ │ │ ├── brorand@1.1.0 
+  │ │ │ ├── hash.js@1.1.3 
+  │ │ │ ├── hmac-drbg@1.0.1 
+  │ │ │ ├── minimalistic-assert@1.0.0 
+  │ │ │ └── minimalistic-crypto-utils@1.0.1 
+  │ │ └─┬ parse-asn1@5.1.0 
+  │ │   └── asn1.js@4.9.1 
+  │ ├── create-ecdh@4.0.0 
+  │ ├─┬ create-hash@1.1.3 
+  │ │ ├── cipher-base@1.0.4 
+  │ │ └─┬ ripemd160@2.0.1 
+  │ │   └── hash-base@2.0.2 
+  │ ├─┬ create-hmac@1.1.6 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ └── sha.js@2.4.9 
+  │ ├─┬ diffie-hellman@5.0.2 
+  │ │ └── miller-rabin@4.0.1 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ pbkdf2@3.0.14 
+  │ │ └── sha.js@2.4.9 
+  │ ├── public-encrypt@4.0.0 
+  │ └── randombytes@2.0.5 
+  └─┬ swarmlog@1.4.0 
+    ├── defined@1.0.0 
+    ├─┬ hyperlog@4.12.1 
+    │ ├── after-all@2.0.2 
+    │ ├── bitfield@1.1.2 
+    │ ├─┬ brfs@1.4.3 
+    │ │ ├─┬ quote-stream@1.0.2 
+    │ │ │ └── buffer-equal@0.0.1 
+    │ │ ├─┬ resolve@1.4.0 
+    │ │ │ └── path-parse@1.0.5 
+    │ │ └─┬ static-module@1.5.0 
+    │ │   ├─┬ concat-stream@1.6.0 
+    │ │   │ └── typedarray@0.0.6 
+    │ │   ├─┬ duplexer2@0.0.2 
+    │ │   │ └─┬ readable-stream@1.1.14 
+    │ │   │   ├── isarray@0.0.1 
+    │ │   │   └── string_decoder@0.10.31 
+    │ │   ├─┬ escodegen@1.3.3 
+    │ │   │ ├── esprima@1.1.1 
+    │ │   │ ├── estraverse@1.5.1 
+    │ │   │ ├── esutils@1.0.0 
+    │ │   │ └─┬ source-map@0.1.43 
+    │ │   │   └── amdefine@1.0.1 
+    │ │   ├─┬ falafel@2.1.0 
+    │ │   │ ├── acorn@5.1.2 
+    │ │   │ ├── foreach@2.0.5 
+    │ │   │ ├── isarray@0.0.1 
+    │ │   │ └── object-keys@1.0.11 
+    │ │   ├─┬ has@1.0.1 
+    │ │   │ └── function-bind@1.1.1 
+    │ │   ├── object-inspect@0.4.0 
+    │ │   ├─┬ quote-stream@0.0.0 
+    │ │   │ └── minimist@0.0.8 
+    │ │   ├─┬ readable-stream@1.0.34 
+    │ │   │ ├── isarray@0.0.1 
+    │ │   │ └── string_decoder@0.10.31 
+    │ │   ├── shallow-copy@0.0.1 
+    │ │   ├─┬ static-eval@0.2.4 
+    │ │   │ └─┬ escodegen@0.0.28 
+    │ │   │   ├── esprima@1.0.4 
+    │ │   │   └── estraverse@1.3.2 
+    │ │   └─┬ through2@0.4.2 
+    │ │     └─┬ xtend@2.1.2 
+    │ │       └── object-keys@0.4.0 
+    │ ├─┬ cuid@1.3.8 
+    │ │ ├── browser-fingerprint@0.0.1 
+    │ │ ├── core-js@1.2.7 
+    │ │ └── node-fingerprint@0.0.2 
+    │ ├─┬ debug@2.6.9 
+    │ │ └── ms@2.0.0 
+    │ ├─┬ duplexify@3.5.1 
+    │ │ └── stream-shift@1.0.0 
+    │ ├── framed-hash@1.1.0 
+    │ ├── from2@2.3.0 
+    │ ├─┬ length-prefixed-stream@1.5.1 
+    │ │ └── varint@5.0.0 
+    │ ├── level-enumerate@1.0.1 
+    │ ├─┬ level-logs@1.2.0 
+    │ │ ├─┬ from2@1.3.0 
+    │ │ │ └─┬ readable-stream@1.1.14 
+    │ │ │   ├── isarray@0.0.1 
+    │ │ │   └── string_decoder@0.10.31 
+    │ │ └─┬ through2@0.6.5 
+    │ │   └── readable-stream@1.0.34 
+    │ ├── lexicographic-integer@1.1.0 
+    │ ├── mutexify@1.2.0 
+    │ ├─┬ protocol-buffers@3.2.1 
+    │ │ ├── generate-function@2.0.0 
+    │ │ ├─┬ generate-object-property@1.2.0 
+    │ │ │ └── is-property@1.0.2 
+    │ │ ├── protocol-buffers-schema@3.3.2 
+    │ │ └── signed-varint@2.0.1 
+    │ ├── run-parallel@1.1.6 
+    │ ├── run-waterfall@1.1.3 
+    │ └── stream-collector@1.0.1 
+    ├─┬ hyperlog-sodium@2.0.0 
+    │ ├── buffer-equals@1.0.4 
+    │ ├── isarray@0.0.1 
+    │ └── xtend@4.0.1 
+    ├─┬ pump@1.0.2 
+    │ ├── end-of-stream@1.4.0 
+    │ └─┬ once@1.4.0 
+    │   └── wrappy@1.0.2 
+    ├─┬ signalhub@4.8.0 
+    │ ├─┬ corsify@2.1.0 
+    │ │ └─┬ http-methods@0.1.0 
+    │ │   ├── body@0.1.0 
+    │ │   └─┬ content-types@0.1.0 
+    │ │     └─┬ iterators@0.1.0 
+    │ │       └── ap@0.1.0 
+    │ ├─┬ event-source-stream@1.5.0 
+    │ │ ├─┬ request@2.83.0 
+    │ │ │ ├── aws-sign2@0.7.0 
+    │ │ │ ├── aws4@1.6.0 
+    │ │ │ ├── caseless@0.12.0 
+    │ │ │ ├─┬ combined-stream@1.0.5 
+    │ │ │ │ └── delayed-stream@1.0.0 
+    │ │ │ ├── extend@3.0.1 
+    │ │ │ ├── forever-agent@0.6.1 
+    │ │ │ ├─┬ form-data@2.3.1 
+    │ │ │ │ └── asynckit@0.4.0 
+    │ │ │ ├─┬ har-validator@5.0.3 
+    │ │ │ │ ├─┬ ajv@5.2.3 
+    │ │ │ │ │ ├── co@4.6.0 
+    │ │ │ │ │ ├── fast-deep-equal@1.0.0 
+    │ │ │ │ │ ├── json-schema-traverse@0.3.1 
+    │ │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+    │ │ │ │ │   └── jsonify@0.0.0 
+    │ │ │ │ └── har-schema@2.0.0 
+    │ │ │ ├─┬ hawk@6.0.2 
+    │ │ │ │ ├── boom@4.3.1 
+    │ │ │ │ ├─┬ cryptiles@3.1.2 
+    │ │ │ │ │ └── boom@5.2.0 
+    │ │ │ │ ├── hoek@4.2.0 
+    │ │ │ │ └── sntp@2.0.2 
+    │ │ │ ├─┬ http-signature@1.2.0 
+    │ │ │ │ ├── assert-plus@1.0.0 
+    │ │ │ │ ├─┬ jsprim@1.4.1 
+    │ │ │ │ │ ├── extsprintf@1.3.0 
+    │ │ │ │ │ ├── json-schema@0.2.3 
+    │ │ │ │ │ └── verror@1.10.0 
+    │ │ │ │ └─┬ sshpk@1.13.1 
+    │ │ │ │   ├── asn1@0.2.3 
+    │ │ │ │   ├── bcrypt-pbkdf@1.0.1 
+    │ │ │ │   ├── dashdash@1.14.1 
+    │ │ │ │   ├── ecc-jsbn@0.1.1 
+    │ │ │ │   ├── getpass@0.1.7 
+    │ │ │ │   └── jsbn@0.1.1 
+    │ │ │ ├── is-typedarray@1.0.0 
+    │ │ │ ├── isstream@0.1.2 
+    │ │ │ ├── json-stringify-safe@5.0.1 
+    │ │ │ ├─┬ mime-types@2.1.17 
+    │ │ │ │ └── mime-db@1.30.0 
+    │ │ │ ├── oauth-sign@0.8.2 
+    │ │ │ ├── performance-now@2.1.0 
+    │ │ │ ├── qs@6.5.1 
+    │ │ │ ├── stringstream@0.0.5 
+    │ │ │ ├─┬ tough-cookie@2.3.3 
+    │ │ │ │ └── punycode@1.4.1 
+    │ │ │ ├── tunnel-agent@0.6.0 
+    │ │ │ └── uuid@3.1.0 
+    │ │ └─┬ split2@0.1.2 
+    │ │   └─┬ through2@0.4.2 
+    │ │     ├─┬ readable-stream@1.0.34 
+    │ │     │ ├── isarray@0.0.1 
+    │ │     │ └── string_decoder@0.10.31 
+    │ │     └─┬ xtend@2.1.2 
+    │ │       └── object-keys@0.4.0 
+    │ ├── minimist@1.2.0 
+    │ ├─┬ nets@3.2.0 
+    │ │ └─┬ xhr@2.4.0 
+    │ │   ├─┬ global@4.3.2 
+    │ │   │ ├─┬ min-document@2.19.0 
+    │ │   │ │ └── dom-walk@0.1.1 
+    │ │   │ └── process@0.5.2 
+    │ │   ├── is-function@1.0.1 
+    │ │   └─┬ parse-headers@2.0.1 
+    │ │     ├── for-each@0.3.2 
+    │ │     └── trim@0.0.1 
+    │ ├── random-iterate@1.0.1 
+    │ ├─┬ size-limit-stream@1.0.0 
+    │ │ └─┬ through2@0.6.5 
+    │ │   └─┬ readable-stream@1.0.34 
+    │ │     ├── isarray@0.0.1 
+    │ │     └── string_decoder@0.10.31 
+    │ └─┬ through2@0.6.5 
+    │   └─┬ readable-stream@1.0.34 
+    │     ├── isarray@0.0.1 
+    │     └── string_decoder@0.10.31 
+    ├─┬ through2@2.0.3 
+    │ └─┬ readable-stream@2.3.3 
+    │   ├── core-util-is@1.0.2 
+    │   ├── isarray@1.0.0 
+    │   ├── process-nextick-args@1.0.7 
+    │   ├── string_decoder@1.0.3 
+    │   └── util-deprecate@1.0.2 
+    └─┬ webrtc-swarm@2.8.0 
+      └─┬ simple-peer@6.4.4 
+        └── get-browser-rtc@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/identity-swarm/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0374 took 2.356s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (3:0)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

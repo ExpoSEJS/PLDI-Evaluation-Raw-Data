@@ -1,0 +1,186 @@
+/root/Targets/exprestify
+└── exprestify@0.3.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/exprestify/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 93% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","parseInt","charCodeAt","abs","Number","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","toString","toUpperCase","join","call","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0506 took 101.0839s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (9:15) on program var path = require('path');
+var fs = require('fs');
+
+module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
+
+function mkdirP (p, mode, f, made) {
+    if (typeof mode === 'function' || mode === undefined) {
+        f = mode;
+        mode = 0777 & (~process.umask());
+    }
+    if (!made) made = null;
+
+    var cb = f || function () {};
+    if (typeof mode === 'string') mode = parseInt(mode, 8);
+    p = path.resolve(p);
+
+    fs.mkdir(p, mode, function (er) {
+        if (!er) {
+            made = made || p;
+            return cb(null, made);
+        }
+        switch (er.code) {
+            case 'ENOENT':
+                mkdirP(path.dirname(p), mode, function (er, made) {
+                    if (er) cb(er, made);
+                    else mkdirP(p, mode, cb, made);
+                });
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                fs.stat(p, function (er2, stat) {
+                    // if the stat fails, then that's super weird.
+                    // let the original error be the failure reason.
+                    if (er2 || !stat.isDirectory()) cb(er, made)
+                    else cb(null, made);
+                });
+                break;
+        }
+    });
+}
+
+mkdirP.sync = function sync (p, mode, made) {
+    if (mode === undefined) {
+        mode = 0777 & (~process.umask());
+    }
+    if (!made) made = null;
+
+    if (typeof mode === 'string') mode = parseInt(mode, 8);
+    p = path.resolve(p);
+
+    try {
+        fs.mkdirSync(p, mode);
+        made = made || p;
+    }
+    catch (err0) {
+        switch (err0.code) {
+            case 'ENOENT' :
+                made = sync(path.dirname(p), mode, made);
+                sync(p, mode, made);
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                var stat;
+                try {
+                    stat = fs.statSync(p);
+                }
+                catch (err1) {
+                    throw err0;
+                }
+                if (!stat.isDirectory()) throw err0;
+                break;
+        }
+    }
+
+    return made;
+};
+ at SyntaxError: Invalid number (9:15)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1607:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/exprestify/node_modules/exprestify/index.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/exprestify/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/exprestify/node_modules/express/lib/express.js. Coverage (Term): 62% Coverage (LOC): 68%
+*- File /root/Targets/exprestify/node_modules/merge-descriptors/index.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/exprestify/node_modules/express/lib/application.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/exprestify/node_modules/finalhandler/index.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/exprestify/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/exprestify/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/exprestify/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/exprestify/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/exprestify/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/exprestify/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/exprestify/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/exprestify/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/exprestify/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/exprestify/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/exprestify/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/exprestify/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/exprestify/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/exprestify/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/exprestify/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/exprestify/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/exprestify/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/exprestify/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/exprestify/node_modules/express/lib/middleware/init.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/exprestify/node_modules/express/lib/middleware/query.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/exprestify/node_modules/express/node_modules/qs/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/exprestify/node_modules/express/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/express/node_modules/qs/lib/utils.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/exprestify/node_modules/express/node_modules/qs/lib/formats.js. Coverage (Term): 61% Coverage (LOC): 87%
+*- File /root/Targets/exprestify/node_modules/express/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/exprestify/node_modules/express/lib/view.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/exprestify/node_modules/express/lib/utils.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/exprestify/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/exprestify/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/send/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/exprestify/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/exprestify/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File eval. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/exprestify/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/exprestify/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/exprestify/node_modules/fresh/index.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/exprestify/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/exprestify/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/exprestify/node_modules/proxy-addr/index.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/exprestify/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/exprestify/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 27% Coverage (LOC): 52%
+*- File /root/Targets/exprestify/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/exprestify/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/exprestify/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/exprestify/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/exprestify/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/exprestify/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/exprestify/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/exprestify/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/exprestify/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/exprestify/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/exprestify/node_modules/vary/index.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/exprestify/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/exprestify/node_modules/multer/index.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/exprestify/node_modules/busboy/lib/main.js. Coverage (Term): 21% Coverage (LOC): 22%
+*- File /root/Targets/exprestify/node_modules/busboy/lib/utils.js. Coverage (Term): 25% Coverage (LOC): 58%
+*- File /root/Targets/exprestify/node_modules/busboy/deps/encoding/encoding.js. Coverage (Term): 12% Coverage (LOC): 30%
+*- File /root/Targets/exprestify/node_modules/busboy/deps/encoding/encoding-indexes.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/exprestify/node_modules/busboy/lib/types/multipart.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/exprestify/node_modules/dicer/lib/Dicer.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/exprestify/node_modules/streamsearch/lib/sbmh.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/exprestify/node_modules/dicer/lib/PartStream.js. Coverage (Term): 69% Coverage (LOC): 89%
+*- File /root/Targets/exprestify/node_modules/dicer/lib/HeaderParser.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/exprestify/node_modules/busboy/lib/types/urlencoded.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

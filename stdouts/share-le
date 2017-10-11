@@ -1,0 +1,121 @@
+/root/Targets/share-le
+└── share-le@0.2.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/share-le/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0513 took 3.5094s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (2:0) on program /*分享按钮*/
+#shareBtn{
+    color:#4e4f4b;
+    font-size:36px;
+    width:100px;
+    height:100px;
+    background:rgba(255,255,255,0.6);
+    line-height:100px;
+    display:block;
+    border-radius:100%;
+    text-align:center;
+    position:fixed;
+    top: 278px;
+    right: 10px;
+}
+
+/*************分享碳层***********/
+/* share_dialog */
+.share_dialog{
+    background-color:white; padding:30px; width:100%; display:none;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    position:fixed; z-index:805; bottom:0; left:0;
+    text-align:center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    display: none;
+}
+.share_dialog:before{
+    content:'分享到'; display:block; font-size:28px; color:#525252;
+}
+.share_dialog .share_list{
+    overflow:hidden;
+}
+.share_dialog .share_item{
+    margin:55px 0; display:inline-block; width:19%;
+}
+.share_dialog .share_item:after{
+    content:attr(data-share); text-align:center; font-size:20px; color:#2b2b2b;
+    display:block;margin-top:20px;
+}
+.share_dialog .share_item i{
+    width:90px; height:90px; display:inline-block;
+}
+.share_dialog .wx_appmessage.dn, .share_dialog .wx_timeline.dn, .share_dialog .wb_sina.dn, .share_dialog .qq.dn, .share_dialog .qzone.dn{display:none;}
+.share_dialog .wx_appmessage i{
+    background: url('https://jr.letv.com/a1/M00/17/CB/Cm5d0Vi9NEOAE0c_AAAJc7vO-DY429.png') no-repeat center; background-size:contain;
+}
+.share_dialog .qq i{
+    background: url('https://jr.letv.com/a1/M00/17/CB/Cm5d0Vi9NAaAYdwiAAAERS6V3fI836.png') no-repeat center; background-size:contain;;
+}
+.share_dialog .qzone i{
+    background: url('https://jr.letv.com/a1/M00/15/15/Cm5dyFi9NB-AY2rmAAAE7bmTTTg744.png') no-repeat center; background-size:contain;
+}
+.share_dialog .wx_timeline i{
+    background: url('https://jr.letv.com/a1/M00/17/CB/Cm5d0Vi9NF2AVlZXAAALEt01o_k345.png') no-repeat center; background-size:contain;
+}
+.share_dialog .wb_sina i{
+    background: url('https://jr.letv.com/a1/M00/15/15/Cm5dyFi9NDCAepgjAAALLpc-1C4656.png') no-repeat center; background-size:contain;
+}
+.share_dialog .cancel_btn{
+    display:block;
+    width:690px;
+    height:80px;
+    line-height:80px;
+    background-color: #f0f1f2;
+    border: 1px solid #d3d2d1;
+    font-size:40px;
+    color:#73787e;
+    border-radius:6px;margin:0;
+    margin:0 auto;
+}
+/* back_blur */
+.back_blur{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;/* js控制html,和body高度为100%，或者js计算可视窗的高度 */ z-index:800; display:none;
+    background-color:rgba(0,0,0,.6);
+}
+/*------分享引导层-------*/
+.share_guide {position: fixed;top:20px;right:20px;z-index: 801;width:504px;height:408px;}
+.share_guide img{width:100%;height:100%;}
+
+ at SyntaxError: Unexpected character '#' (2:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/share-le/node_modules/share-le/index.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

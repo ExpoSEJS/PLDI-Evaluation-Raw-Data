@@ -1,0 +1,167 @@
+
+> node-webplay@0.0.6 install /root/Targets/node-webplay/node_modules/node-webplay
+> node ./dowloadtools.js
+
+PLAT  linux   x64
+/root/Targets/node-webplay
+└── node-webplay@0.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-webplay/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0379 took 4.8035s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+"use strict";
+
+var _express = require("express");
+
+var _express2 = _interopRequireDefault(_express);
+
+var _server = require("../uploader/server.js");
+
+var _server2 = _interopRequireDefault(_server);
+
+var _procman = require("../processor/procman.js");
+
+var _procman2 = _interopRequireDefault(_procman);
+
+var _path = require("path");
+
+var _path2 = _interopRequireDefault(_path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function optval(name, def) {
+    if (null == process.env[name]) {
+        return def;
+    }
+
+    return process.env[name];
+}
+
+var status_man_use = optval("NODEPLAYSTATUSMAN", "../processor/statmanfs.js");
+var processor_use = optval("NODEPLAYPROCESSOR", "../processor/index.js");
+var def_owner = optval("NODEPLAYDEFOWNER", "uploader");
+
+var port = optval("NODEPLAYPORT", 3000);
+
+var statusman = new _procman2.default({ statusman: status_man_use, processor: processor_use });
+
+_express2.default.static.mime.define({ "application/dash+xml": ["mpd"] });
+
+var app = (0, _express2.default)();
+
+var env_path = process.env.PATH;
+
+var rootdir = _path2.default.normalize(_path2.default.join(__dirname, "../.."));
+var dirname = _path2.default.normalize(_path2.default.join(rootdir, "./bin"));
+var distdir = _path2.default.normalize(_path2.default.join(rootdir, "./dist"));
+
+process.env.PATH = dirname + _path2.default.delimiter + env_path;
+
+/*
+console.log("PATH: ", dirname, " ", env_path);
+console.log("---------------------");
+console.log(process.env.PATH);
+console.log("---------------------");
+*/
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
+app.use("/play", _express2.default.static(rootdir));
+
+app.use("/upload", (0, _server2.default)());
+
+app.get("/clientaccesspolicy.xml", function (req, res) {
+
+    var clientaccesspolicy = "<?xml version=\"1.0\" encoding=\"utf-8\" ?> \n<access-policy>\n<cross-domain-access>\n<policy>\n<allow-from http-methods=\"*\" http-request-headers=\"*\">\n<domain uri=\"http://*\" /> \n</allow-from>\n<grant-to>\n<resource path=\"/\" include-subpaths=\"true\" /> \n</grant-to>\n</policy>\n</cross-domain-access>\n</access-policy>\n";
+
+    res.send(clientaccesspolicy);
+});
+
+app.get("/api/list", function (req, res, next) {
+
+    statusman.list(def_owner).then(function (list) {
+        res.json(list);
+    }, function (err) {
+        next(err);
+    });
+});
+
+app.get("/api/status/:id", function (req, res, next) {
+
+    var id = req.params.id;
+
+    statusman.status(def_owner, id).then(function (stat) {
+        res.json(stat);
+    }, function (err) {
+        next(err);
+    });
+});
+
+app.get("/api/upload/:name", function (req, res, next) {
+
+    var name = req.params.name;
+
+    statusman.reserve_name(def_owner, name).then(function (id) {
+        return res.json({ id: id });
+    }, function (err) {
+        return next(err);
+    });
+});
+
+app.put("/upload/:id?", function (req, res) {
+
+    console.log("-------------****");
+    //console.log(JSON.stringify(req.headers));
+    console.log(req.uploader);
+    console.log("-------------**--");
+
+    var id = req.params.id;
+
+    if (null != id) {
+
+        statusman.queue_job(def_owner, id //, path.basename(req.uploader)
+        , req.uploader).then(function () {}, function (err) {
+            console.log("QYE", err.toString());
+            statusman.record_error(def_owner, id, err, "QUEUE JOB ERROR");
+        });
+    }
+
+    res.send("OK");
+});
+
+app.use(_express2.default.static(distdir));
+
+app.listen(port, function () {
+    console.log("app listening on port " + port + "!");
+});
+//# sourceMappingURL=index.js.map
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

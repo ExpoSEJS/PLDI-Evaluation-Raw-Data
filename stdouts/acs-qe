@@ -1,0 +1,228 @@
+
+> mongodb@0.9.9 install /root/Targets/acs-qe/node_modules/mongodb
+> node install.js
+
+================================================================================
+=                                                                              =
+=  To install with C++ bson parser do <npm install mongodb --mongodb:native>   =
+=                                                                              =
+================================================================================
+
+> ws@0.4.32 install /root/Targets/acs-qe/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/acs-qe/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/acs-qe/node_modules/ws/build'
+/root/Targets/acs-qe
+└─┬ acs-qe@0.9.13 
+  ├── acs@0.1.4 
+  ├── colors@0.6.0-1 
+  ├── commander@0.6.1 
+  ├─┬ connect@2.3.5 
+  │ ├── bytes@0.0.1 
+  │ ├── cookie@0.0.4 
+  │ ├── crc@0.2.0 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├── formidable@1.0.11 
+  │ ├── fresh@0.0.1 
+  │ ├── mime@1.2.4 
+  │ ├── qs@0.4.2 
+  │ └── range-parser@0.0.4 
+  ├─┬ connect-mongo@0.1.9 
+  │ └── mongodb@0.9.9 
+  ├── ejs@0.8.0 
+  ├─┬ express@2.5.11 
+  │ ├── connect@1.9.2 
+  │ └── mkdirp@0.3.0 
+  ├─┬ fstream@0.1.18 
+  │ ├── graceful-fs@1.1.14 
+  │ ├── inherits@1.0.2 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├─┬ inflight@1.0.6 
+  │     │ └── wrappy@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     ├── once@1.4.0 
+  │     └── path-is-absolute@1.0.1 
+  ├─┬ log4js@0.5.1 
+  │ └── async@0.1.15 
+  ├── longjohn@0.0.3 
+  ├── mkdirp@0.3.3 
+  ├── node-uuid@1.3.3 
+  ├── pkginfo@0.2.2 
+  ├─┬ socket.io@0.9.6 
+  │ ├── policyfile@0.0.4 
+  │ ├── redis@0.6.7 
+  │ └─┬ socket.io-client@0.9.6 
+  │   ├─┬ active-x-obfuscator@0.0.1 
+  │   │ └── zeparser@0.0.5 
+  │   ├── uglify-js@1.2.5 
+  │   ├─┬ ws@0.4.32 
+  │   │ ├── commander@2.1.0 
+  │   │ ├── nan@1.0.0 
+  │   │ ├── options@0.0.6 
+  │   │ └── tinycolor@0.0.1 
+  │   └── xmlhttprequest@1.2.2 
+  ├─┬ tar@0.1.13 
+  │ └─┬ block-stream@0.0.9 
+  │   └── inherits@2.0.3 
+  ├── temp@0.4.0 
+  ├── uglify-js@1.3.2 
+  ├── underscore@1.3.3 
+  └── wrench@1.3.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/acs-qe/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1493 took 16.8825s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (42:9) on program var pkginfo = require('pkginfo'),
+	colors = require('colors'),
+	fs = require('fs'),
+	path = require('path'),
+	u = require('./util.js'),
+	logFileStream,
+	useColors = true,
+	useDates = false;
+	
+exports.colors = function(b)
+{
+	useColors = b;
+}
+
+exports.dates = function(b)
+{
+	useDates = b;
+}
+
+exports.isColorEnabled = function()
+{
+	return useColors;
+}
+
+exports.isDatesEnabled = function()
+{
+	return useDates;
+}
+
+exports.setLogDir = function(dir)
+{
+	if (!u.exists(dir))
+	{
+		u.die("Log Directory (" + dir + ") doesn't exist");
+	}
+	useColors = false; // when logging to file, always turn off colors
+	useDates = true; // when logging to file, always use dates
+	var logfile = path.join(dir,program.name+'.log');
+	logFileStream = fs.createWriteStream(logfile,{
+		'flags':'a+',
+		'encoding':'utf-8',
+		'mode':0666
+	});
+	
+	process.on('exit', function ()
+	{
+		if (logFileStream)
+		{
+			logFileStream.close();
+			logFileStream = null;
+		}
+	});	
+};
+
+function formatLogMessage (label, msg)
+{
+	var fmt;
+	if (useDates)
+	{
+		var now = new Date;
+		fmt = u.lpad(now.getMonth(),2,'0') + '/' +
+			  u.lpad(now.getDate(),2,'0') + '/' +
+			  now.getFullYear() + ' ' + 
+			  u.lpad(now.getHours(),2,'0') + ':' +
+			  u.lpad(now.getMinutes(),2,'0') + ':' +
+			  u.lpad(now.getSeconds(),3,'0') + '.' + 
+			  u.lpad(now.getMilliseconds(),3,'0') ;
+	}
+	var lbl = useColors ? label : colors.stripColors(label);		  
+	var str = useColors ? String(msg) : colors.stripColors(msg);
+	var f = fmt ? useColors ? fmt.grey : colors.stripColors(fmt) : null;
+	var log = (useDates ? [f,u.rpad(lbl,7),str] : [u.rpad(lbl,7),str]).join(' ');
+	return log;
+}
+
+function log(label, msg, error)
+{
+	var log = formatLogMessage(label,msg);
+	if (error)
+	{
+		(logFileStream || process.stderr).write(log + '\n','utf-8');
+	}
+	else
+	{
+		(logFileStream || process.stdout).write(log + '\n','utf-8');
+	}
+}
+
+exports.info = function(x)
+{
+	log('[INFO]'.yellow, String(x).white);
+}
+
+exports.debug = function(x)
+{
+	log('[DEBUG]'.grey, String(x).grey);
+}
+
+exports.error = function(x)
+{
+	log('[ERROR]'.yellow, String(x).red, true);
+}
+
+exports.warn = function(x)
+{
+	log('[WARN]'.yellow, String(x).magenta);
+}
+
+exports.log = function(x)
+{
+	exports.info(x);
+}
+
+exports.formatLogMessage = formatLogMessage; at SyntaxError: Invalid number (42:9)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parsePropertyValue (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1997:14)
+    at Parser.pp$3.parseObj (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1989:14)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/acs-qe/node_modules/acs-qe/lib/nettle.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/acs-qe/node_modules/commander/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/acs-qe/node_modules/commander/lib/commander.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/acs-qe/node_modules/wrench/lib/wrench.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/acs-qe/node_modules/underscore/underscore.js. Coverage (Term): 17% Coverage (LOC): 32%
+*- File /root/Targets/acs-qe/node_modules/acs-qe/lib/util.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

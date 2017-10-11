@@ -1,0 +1,436 @@
+
+> sharp@0.18.4 install /root/Targets/express-processimage/node_modules/sharp
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/express-processimage/node_modules/sharp/build'
+  TOUCH Release/obj.target/libvips-cpp.stamp
+  CXX(target) Release/obj.target/sharp/src/common.o
+  CXX(target) Release/obj.target/sharp/src/metadata.o
+  CXX(target) Release/obj.target/sharp/src/operations.o
+  CXX(target) Release/obj.target/sharp/src/pipeline.o
+  CXX(target) Release/obj.target/sharp/src/sharp.o
+  CXX(target) Release/obj.target/sharp/src/utilities.o
+  SOLINK_MODULE(target) Release/obj.target/sharp.node
+  COPY Release/sharp.node
+  TOUCH Release/obj.target/win_copy_dlls.stamp
+make: Leaving directory '/root/Targets/express-processimage/node_modules/sharp/build'
+
+> jpegtran-bin@3.0.4 postinstall /root/Targets/express-processimage/node_modules/jpegtran-bin
+> node lib/install.js
+
+
+> optipng-bin@3.0.2 postinstall /root/Targets/express-processimage/node_modules/optipng-bin
+> node lib/install.js
+
+
+> pngcrush-bin@3.0.0 postinstall /root/Targets/express-processimage/node_modules/pngcrush-bin
+> node lib/install.js
+
+
+> pngquant-bin@3.1.1 postinstall /root/Targets/express-processimage/node_modules/pngquant-bin
+> node lib/install.js
+
+/root/Targets/express-processimage
+└─┬ express-processimage@7.5.0 
+  ├─┬ accepts@1.3.4 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ └── negotiator@0.6.1 
+  ├─┬ animated-gif-detector@1.2.0 
+  │ └── inherits@2.0.3 
+  ├── bluebird@3.3.4 
+  ├── createerror@1.1.0 
+  ├── exif-reader-paras20xx@1.1.1 
+  ├─┬ gm-papandreou@1.23.0-patch1 
+  │ ├── array-parallel@0.1.3 
+  │ ├── array-series@0.1.5 
+  │ ├─┬ cross-spawn@4.0.2 
+  │ │ └─┬ lru-cache@4.1.1 
+  │ │   ├── pseudomap@1.0.2 
+  │ │   └── yallist@2.1.2 
+  │ └─┬ debug@2.2.0 
+  │   └── ms@0.7.1 
+  ├── hijackresponse@2.0.1 
+  ├── httperrors@2.0.1 
+  ├── icc@0.0.2 
+  ├─┬ inkscape@1.1.1 
+  │ ├── async@0.2.9 
+  │ └── gettemporaryfilepath@1.0.0 
+  ├─┬ jpegtran@1.0.5 
+  │ ├─┬ jpegtran-bin@3.0.4 
+  │ │ ├─┬ bin-build@2.2.0 
+  │ │ │ ├─┬ archive-type@3.2.0 
+  │ │ │ │ └── file-type@3.9.0 
+  │ │ │ ├─┬ decompress@3.0.0 
+  │ │ │ │ ├── buffer-to-vinyl@1.1.0 
+  │ │ │ │ ├─┬ concat-stream@1.6.0 
+  │ │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ │ ├─┬ decompress-tar@3.1.0 
+  │ │ │ │ │ ├── is-tar@1.0.0 
+  │ │ │ │ │ ├── object-assign@2.1.1 
+  │ │ │ │ │ ├─┬ strip-dirs@1.1.1 
+  │ │ │ │ │ │ ├── is-natural-number@2.1.1 
+  │ │ │ │ │ │ └── sum-up@1.0.3 
+  │ │ │ │ │ ├─┬ tar-stream@1.5.4 
+  │ │ │ │ │ │ ├── bl@1.2.1 
+  │ │ │ │ │ │ ├── end-of-stream@1.4.0 
+  │ │ │ │ │ │ └── xtend@4.0.1 
+  │ │ │ │ │ ├─┬ through2@0.6.5 
+  │ │ │ │ │ │ └─┬ readable-stream@1.0.34 
+  │ │ │ │ │ │   ├── isarray@0.0.1 
+  │ │ │ │ │ │   └── string_decoder@0.10.31 
+  │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ ├─┬ decompress-tarbz2@3.1.0 
+  │ │ │ │ │ ├── is-bzip2@1.0.0 
+  │ │ │ │ │ ├─┬ seek-bzip@1.0.5 
+  │ │ │ │ │ │ └─┬ commander@2.8.1 
+  │ │ │ │ │ │   └── graceful-readlink@1.0.1 
+  │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ ├─┬ decompress-targz@3.1.0 
+  │ │ │ │ │ ├── is-gzip@1.0.0 
+  │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ ├─┬ decompress-unzip@3.4.0 
+  │ │ │ │ │ ├── is-zip@1.0.0 
+  │ │ │ │ │ ├── stat-mode@0.2.2 
+  │ │ │ │ │ ├── through2@2.0.3 
+  │ │ │ │ │ └─┬ yauzl@2.8.0 
+  │ │ │ │ │   ├── buffer-crc32@0.2.13 
+  │ │ │ │ │   └─┬ fd-slicer@1.0.1 
+  │ │ │ │ │     └── pend@1.2.0 
+  │ │ │ │ ├─┬ stream-combiner2@1.1.1 
+  │ │ │ │ │ └── duplexer2@0.1.4 
+  │ │ │ │ ├─┬ vinyl-assign@1.2.1 
+  │ │ │ │ │ └── object-assign@4.1.1 
+  │ │ │ │ └─┬ vinyl-fs@2.4.4 
+  │ │ │ │   ├─┬ duplexify@3.5.1 
+  │ │ │ │   │ └── stream-shift@1.0.0 
+  │ │ │ │   ├─┬ glob-stream@5.3.5 
+  │ │ │ │   │ ├── extend@3.0.1 
+  │ │ │ │   │ ├── glob@5.0.15 
+  │ │ │ │   │ ├─┬ glob-parent@3.1.0 
+  │ │ │ │   │ │ ├─┬ is-glob@3.1.0 
+  │ │ │ │   │ │ │ └── is-extglob@2.1.1 
+  │ │ │ │   │ │ └── path-dirname@1.0.2 
+  │ │ │ │   │ ├─┬ micromatch@2.3.11 
+  │ │ │ │   │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │   │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │   │ │ ├── array-unique@0.2.1 
+  │ │ │ │   │ │ ├─┬ braces@1.8.5 
+  │ │ │ │   │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │   │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │   │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │   │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │   │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │   │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │   │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │   │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │   │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │   │ │ │ ├── preserve@0.2.0 
+  │ │ │ │   │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │   │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │   │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │   │ │ ├─┬ extglob@0.3.2 
+  │ │ │ │   │ │ │ └── is-extglob@1.0.0 
+  │ │ │ │   │ │ ├── filename-regex@2.0.1 
+  │ │ │ │   │ │ ├── is-extglob@1.0.0 
+  │ │ │ │   │ │ ├── is-glob@2.0.1 
+  │ │ │ │   │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │   │ │ │ └── is-buffer@1.1.5 
+  │ │ │ │   │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ │   │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ │ │   │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │   │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │   │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │   │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │   │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │   │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │   │ │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ │   │ │ │ │ └─┬ is-glob@2.0.1 
+  │ │ │ │   │ │ │ │   └── is-extglob@1.0.0 
+  │ │ │ │   │ │ │ ├── is-dotfile@1.0.3 
+  │ │ │ │   │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ │   │ │ │ └── is-glob@2.0.1 
+  │ │ │ │   │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │   │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │   │ │     └── is-primitive@2.0.0 
+  │ │ │ │   │ ├── ordered-read-streams@0.3.0 
+  │ │ │ │   │ ├─┬ to-absolute-glob@0.1.1 
+  │ │ │ │   │ │ └── extend-shallow@2.0.1 
+  │ │ │ │   │ └─┬ unique-stream@2.2.1 
+  │ │ │ │   │   └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   │     └── jsonify@0.0.0 
+  │ │ │ │   ├── graceful-fs@4.1.11 
+  │ │ │ │   ├─┬ gulp-sourcemaps@1.6.0 
+  │ │ │ │   │ ├── convert-source-map@1.5.0 
+  │ │ │ │   │ └── through2@2.0.3 
+  │ │ │ │   ├── is-valid-glob@0.3.0 
+  │ │ │ │   ├── lazystream@1.0.0 
+  │ │ │ │   ├── lodash.isequal@4.5.0 
+  │ │ │ │   ├── merge-stream@1.0.1 
+  │ │ │ │   ├── object-assign@4.1.1 
+  │ │ │ │   ├─┬ strip-bom@2.0.0 
+  │ │ │ │   │ └── is-utf8@0.2.1 
+  │ │ │ │   ├─┬ strip-bom-stream@1.0.0 
+  │ │ │ │   │ └── first-chunk-stream@1.0.0 
+  │ │ │ │   ├── through2@2.0.3 
+  │ │ │ │   ├─┬ through2-filter@2.0.0 
+  │ │ │ │   │ └── through2@2.0.3 
+  │ │ │ │   └── vali-date@1.0.0 
+  │ │ │ ├─┬ download@4.4.3 
+  │ │ │ │ ├─┬ caw@1.2.0 
+  │ │ │ │ │ ├─┬ get-proxy@1.1.0 
+  │ │ │ │ │ │ └─┬ rc@1.2.1 
+  │ │ │ │ │ │   ├── deep-extend@0.4.2 
+  │ │ │ │ │ │   └── strip-json-comments@2.0.1 
+  │ │ │ │ │ ├── is-obj@1.0.1 
+  │ │ │ │ │ ├── object-assign@3.0.0 
+  │ │ │ │ │ └── tunnel-agent@0.4.3 
+  │ │ │ │ ├─┬ filenamify@1.2.1 
+  │ │ │ │ │ ├── filename-reserved-regex@1.0.0 
+  │ │ │ │ │ ├── strip-outer@1.0.0 
+  │ │ │ │ │ └── trim-repeated@1.0.0 
+  │ │ │ │ ├─┬ got@5.7.1 
+  │ │ │ │ │ ├─┬ create-error-class@3.0.2 
+  │ │ │ │ │ │ └── capture-stack-trace@1.0.0 
+  │ │ │ │ │ ├── is-redirect@1.0.0 
+  │ │ │ │ │ ├── is-retry-allowed@1.1.0 
+  │ │ │ │ │ ├── is-stream@1.1.0 
+  │ │ │ │ │ ├── lowercase-keys@1.0.0 
+  │ │ │ │ │ ├── node-status-codes@1.0.0 
+  │ │ │ │ │ ├── object-assign@4.1.1 
+  │ │ │ │ │ ├─┬ parse-json@2.2.0 
+  │ │ │ │ │ │ └─┬ error-ex@1.3.1 
+  │ │ │ │ │ │   └── is-arrayish@0.2.1 
+  │ │ │ │ │ ├─┬ pinkie-promise@2.0.1 
+  │ │ │ │ │ │ └── pinkie@2.0.4 
+  │ │ │ │ │ ├── timed-out@3.1.3 
+  │ │ │ │ │ ├── unzip-response@1.0.2 
+  │ │ │ │ │ └─┬ url-parse-lax@1.0.0 
+  │ │ │ │ │   └── prepend-http@1.0.4 
+  │ │ │ │ ├─┬ gulp-decompress@1.2.0 
+  │ │ │ │ │ └─┬ gulp-util@3.0.8 
+  │ │ │ │ │   ├── array-differ@1.0.0 
+  │ │ │ │ │   ├── array-uniq@1.0.3 
+  │ │ │ │ │   ├── beeper@1.1.1 
+  │ │ │ │ │   ├── dateformat@2.2.0 
+  │ │ │ │ │   ├─┬ fancy-log@1.3.0 
+  │ │ │ │ │   │ └── time-stamp@1.1.0 
+  │ │ │ │ │   ├─┬ gulplog@1.0.0 
+  │ │ │ │ │   │ └── glogg@1.0.0 
+  │ │ │ │ │   ├─┬ has-gulplog@0.1.0 
+  │ │ │ │ │   │ └── sparkles@1.0.0 
+  │ │ │ │ │   ├── lodash._reescape@3.0.0 
+  │ │ │ │ │   ├── lodash._reevaluate@3.0.0 
+  │ │ │ │ │   ├── lodash._reinterpolate@3.0.0 
+  │ │ │ │ │   ├─┬ lodash.template@3.6.2 
+  │ │ │ │ │   │ ├── lodash._basecopy@3.0.1 
+  │ │ │ │ │   │ ├── lodash._basetostring@3.0.1 
+  │ │ │ │ │   │ ├── lodash._basevalues@3.0.0 
+  │ │ │ │ │   │ ├── lodash._isiterateecall@3.0.9 
+  │ │ │ │ │   │ ├─┬ lodash.escape@3.2.0 
+  │ │ │ │ │   │ │ └── lodash._root@3.0.1 
+  │ │ │ │ │   │ ├─┬ lodash.keys@3.1.2 
+  │ │ │ │ │   │ │ ├── lodash._getnative@3.9.1 
+  │ │ │ │ │   │ │ ├── lodash.isarguments@3.1.0 
+  │ │ │ │ │   │ │ └── lodash.isarray@3.0.4 
+  │ │ │ │ │   │ ├── lodash.restparam@3.6.1 
+  │ │ │ │ │   │ └── lodash.templatesettings@3.1.1 
+  │ │ │ │ │   ├─┬ multipipe@0.1.2 
+  │ │ │ │ │   │ └─┬ duplexer2@0.0.2 
+  │ │ │ │ │   │   └─┬ readable-stream@1.1.14 
+  │ │ │ │ │   │     ├── isarray@0.0.1 
+  │ │ │ │ │   │     └── string_decoder@0.10.31 
+  │ │ │ │ │   ├── object-assign@3.0.0 
+  │ │ │ │ │   ├── through2@2.0.3 
+  │ │ │ │ │   └── vinyl@0.5.3 
+  │ │ │ │ ├── gulp-rename@1.2.2 
+  │ │ │ │ ├── is-url@1.2.2 
+  │ │ │ │ ├── object-assign@4.1.1 
+  │ │ │ │ ├── read-all-stream@3.1.0 
+  │ │ │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ │ ├── isarray@1.0.0 
+  │ │ │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ │ │ ├── string_decoder@1.0.3 
+  │ │ │ │ │ └── util-deprecate@1.0.2 
+  │ │ │ │ ├─┬ vinyl@1.2.0 
+  │ │ │ │ │ ├── clone@1.0.2 
+  │ │ │ │ │ ├── clone-stats@0.0.1 
+  │ │ │ │ │ └── replace-ext@0.0.1 
+  │ │ │ │ └─┬ ware@1.3.0 
+  │ │ │ │   └─┬ wrap-fn@0.1.5 
+  │ │ │ │     └── co@3.1.0 
+  │ │ │ ├─┬ exec-series@1.0.3 
+  │ │ │ │ ├── async-each-series@1.1.0 
+  │ │ │ │ └── object-assign@4.1.1 
+  │ │ │ ├─┬ rimraf@2.6.2 
+  │ │ │ │ └─┬ glob@7.1.2 
+  │ │ │ │   ├── fs.realpath@1.0.0 
+  │ │ │ │   ├── inflight@1.0.6 
+  │ │ │ │   ├─┬ minimatch@3.0.4 
+  │ │ │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │   │   ├── balanced-match@1.0.0 
+  │ │ │ │   │   └── concat-map@0.0.1 
+  │ │ │ │   └── path-is-absolute@1.0.1 
+  │ │ │ ├─┬ tempfile@1.1.1 
+  │ │ │ │ ├── os-tmpdir@1.0.2 
+  │ │ │ │ └── uuid@2.0.3 
+  │ │ │ └─┬ url-regex@3.2.0 
+  │ │ │   └── ip-regex@1.0.3 
+  │ │ ├─┬ bin-wrapper@3.0.2 
+  │ │ │ ├─┬ bin-check@2.0.0 
+  │ │ │ │ └─┬ executable@1.1.0 
+  │ │ │ │   └─┬ meow@3.7.0 
+  │ │ │ │     ├─┬ camelcase-keys@2.1.0 
+  │ │ │ │     │ └── camelcase@2.1.1 
+  │ │ │ │     ├── decamelize@1.2.0 
+  │ │ │ │     ├─┬ loud-rejection@1.6.0 
+  │ │ │ │     │ ├─┬ currently-unhandled@0.4.1 
+  │ │ │ │     │ │ └── array-find-index@1.0.2 
+  │ │ │ │     │ └── signal-exit@3.0.2 
+  │ │ │ │     ├── map-obj@1.0.1 
+  │ │ │ │     ├─┬ normalize-package-data@2.4.0 
+  │ │ │ │     │ ├── hosted-git-info@2.5.0 
+  │ │ │ │     │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ │     │ │ └── builtin-modules@1.1.1 
+  │ │ │ │     │ └─┬ validate-npm-package-license@3.0.1 
+  │ │ │ │     │   ├─┬ spdx-correct@1.0.2 
+  │ │ │ │     │   │ └── spdx-license-ids@1.2.2 
+  │ │ │ │     │   └── spdx-expression-parse@1.0.4 
+  │ │ │ │     ├── object-assign@4.1.1 
+  │ │ │ │     ├─┬ read-pkg-up@1.0.1 
+  │ │ │ │     │ ├─┬ find-up@1.1.2 
+  │ │ │ │     │ │ └── path-exists@2.1.0 
+  │ │ │ │     │ └─┬ read-pkg@1.1.0 
+  │ │ │ │     │   ├─┬ load-json-file@1.1.0 
+  │ │ │ │     │   │ └── pify@2.3.0 
+  │ │ │ │     │   └── path-type@1.1.0 
+  │ │ │ │     ├─┬ redent@1.0.0 
+  │ │ │ │     │ └── strip-indent@1.0.1 
+  │ │ │ │     └── trim-newlines@1.0.0 
+  │ │ │ ├─┬ bin-version-check@2.1.0 
+  │ │ │ │ ├─┬ bin-version@1.0.4 
+  │ │ │ │ │ └─┬ find-versions@1.2.1 
+  │ │ │ │ │   └── semver-regex@1.0.0 
+  │ │ │ │ ├── minimist@1.2.0 
+  │ │ │ │ ├── semver@4.3.6 
+  │ │ │ │ └── semver-truncate@1.1.2 
+  │ │ │ ├─┬ each-async@1.1.1 
+  │ │ │ │ ├── onetime@1.1.0 
+  │ │ │ │ └── set-immediate-shim@1.0.1 
+  │ │ │ ├── lazy-req@1.1.0 
+  │ │ │ └── os-filter-obj@1.0.3 
+  │ │ └─┬ logalot@2.1.0 
+  │ │   ├─┬ figures@1.7.0 
+  │ │   │ ├── escape-string-regexp@1.0.5 
+  │ │   │ └── object-assign@4.1.1 
+  │ │   └─┬ squeak@1.3.0 
+  │ │     ├─┬ chalk@1.1.3 
+  │ │     │ ├── ansi-styles@2.2.1 
+  │ │     │ ├─┬ has-ansi@2.0.0 
+  │ │     │ │ └── ansi-regex@2.1.1 
+  │ │     │ ├── strip-ansi@3.0.1 
+  │ │     │ └── supports-color@2.0.0 
+  │ │     ├── console-stream@0.1.1 
+  │ │     └─┬ lpad-align@1.1.2 
+  │ │       ├── get-stdin@4.0.1 
+  │ │       ├─┬ indent-string@2.1.0 
+  │ │       │ └─┬ repeating@2.0.1 
+  │ │       │   └─┬ is-finite@1.0.2 
+  │ │       │     └── number-is-nan@1.0.1 
+  │ │       └── longest@1.0.1 
+  │ ├─┬ memoizeasync@0.9.0 
+  │ │ └── lru-cache@2.5.0 
+  │ └─┬ which@1.1.1 
+  │   └─┬ is-absolute@0.1.7 
+  │     └── is-relative@0.1.3 
+  ├── mime@1.3.4 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├─┬ optipng@1.0.0 
+  │ ├── gettemporaryfilepath@0.0.1 
+  │ ├── memoizeasync@0.0.1 
+  │ ├── optipng-bin@3.0.2 
+  │ └── which@1.0.5 
+  ├── passerror@1.1.1 
+  ├─┬ pngcrush@1.1.1 
+  │ ├── gettemporaryfilepath@0.0.1 
+  │ ├── pngcrush-bin@3.0.0 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ pngquant@1.2.0 
+  │ ├─┬ memoizeasync@0.8.0 
+  │ │ ├── lru-cache@2.5.0 
+  │ │ └── passerror@0.0.2 
+  │ ├── pngquant-bin@3.1.1 
+  │ └── which@1.1.2 
+  ├─┬ sharp@0.18.4 
+  │ ├─┬ caw@2.0.1 
+  │ │ ├─┬ get-proxy@2.1.0 
+  │ │ │ └─┬ npm-conf@1.1.2 
+  │ │ │   ├─┬ config-chain@1.1.11 
+  │ │ │   │ ├── ini@1.3.4 
+  │ │ │   │ └── proto-list@1.2.4 
+  │ │ │   └── pify@3.0.0 
+  │ │ ├─┬ isurl@1.0.0 
+  │ │ │ ├─┬ has-to-string-tag-x@1.4.1 
+  │ │ │ │ └── has-symbol-support-x@1.4.1 
+  │ │ │ └── is-object@1.0.1 
+  │ │ ├─┬ tunnel-agent@0.6.0 
+  │ │ │ └── safe-buffer@5.1.1 
+  │ │ └── url-to-options@1.0.1 
+  │ ├─┬ color@2.0.0 
+  │ │ ├─┬ color-convert@1.9.0 
+  │ │ │ └── color-name@1.1.3 
+  │ │ └─┬ color-string@1.5.2 
+  │ │   └─┬ simple-swizzle@0.2.2 
+  │ │     └── is-arrayish@0.3.1 
+  │ ├── detect-libc@0.2.0 
+  │ ├── nan@2.7.0 
+  │ ├── semver@5.4.1 
+  │ ├─┬ simple-get@2.7.0 
+  │ │ ├─┬ decompress-response@3.3.0 
+  │ │ │ └── mimic-response@1.0.0 
+  │ │ ├─┬ once@1.4.0 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ └── simple-concat@1.0.0 
+  │ └─┬ tar@3.2.1 
+  │   ├── chownr@1.0.1 
+  │   ├─┬ minipass@2.2.1 
+  │   │ └── yallist@3.0.2 
+  │   ├── minizlib@1.0.3 
+  │   ├─┬ mkdirp@0.5.1 
+  │   │ └── minimist@0.0.8 
+  │   └── yallist@3.0.2 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/express-processimage/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","create","toUpperCase"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0907 took 20.8413s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: IDENTIFYING is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/express-processimage/node_modules/express-processimage/lib/processImage.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/express-processimage/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/express-processimage/node_modules/httperrors/lib/HttpError.js. Coverage (Term): 57% Coverage (LOC): 80%
+*- File /root/Targets/express-processimage/node_modules/createerror/lib/createError.js. Coverage (Term): 50% Coverage (LOC): 46%
+*- File /root/Targets/express-processimage/node_modules/express-processimage/lib/getFilterInfosAndTargetContentTypeFromQueryString.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/express-processimage/node_modules/gm-papandreou/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/express-processimage/node_modules/gm-papandreou/lib/options.js. Coverage (Term): 41% Coverage (LOC): 54%
+*- File /root/Targets/express-processimage/node_modules/gm-papandreou/lib/getters.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

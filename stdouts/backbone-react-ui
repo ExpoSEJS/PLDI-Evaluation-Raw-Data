@@ -1,0 +1,193 @@
+/root/Targets/backbone-react-ui
+└── backbone-react-ui@0.1.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/backbone-react-ui/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0555 took 3.4108s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (82:15) on program /** @jsx React.DOM */
+var React = require('react/addons');
+$ = jQuery = require('jquery');
+bootstrap = require('../../bower_components/bootstrap/dist/js/bootstrap')
+var Backbone = require('backbone');
+require('backbone.paginator');
+var _ = require('lodash');
+
+/*
+Options:
+
+initialCollection : a backbone pageable collection
+maximumPages : the number of pages to display before using an ellipsis, defaults to 10
+
+*/
+
+module.exports = React.createClass({displayName: 'exports',
+  getInitialState: function() {
+    return {
+      collection: this.props.initialCollection,
+      currentPage: this.props.currentPage,
+      totalPages: this.props.totalPages
+    }
+  },
+  /**
+   * Next page button being clicked
+   */
+  nextPage: function(e) {
+    e.preventDefault();
+    var self = this;
+    if(this.state.collection.mode == 'client'){
+      this.state.collection.getNextPage();
+      this.props.onChangePage(this.state.collection);
+      this.forceUpdate();
+    } else {
+      this.state.collection.getNextPage().done(function () {
+        self.props.onChangePage(self.state.collection);
+      });
+    }
+  },
+  /**
+   * Previous page button being clicked
+   */
+  previousPage: function(e) {
+    e.preventDefault();
+    var self = this;
+    if(this.state.collection.mode == 'client'){
+      this.state.collection.getPreviousPage();
+      this.props.onChangePage(this.state.collection);
+      this.forceUpdate();
+    } else {
+      this.state.collection.getPreviousPage().done(function () {
+        self.props.onChangePage(self.state.collection);
+      });
+    }
+  },
+  /**
+   * Change page being clicked
+   * @param {Event} e Event of the page number being clicked
+   */
+  changePage: function(e) {
+    e.preventDefault();
+    var pageNumber = $(e.currentTarget).data('page');
+
+    var self = this;
+    if(this.state.collection.mode == 'client'){
+      this.state.collection.getPage(pageNumber);
+      this.props.onChangePage(this.state.collection);
+      this.forceUpdate();
+    } else {
+      this.state.collection.getPage(pageNumber).done(function () {
+        self.props.onChangePage(self.state.collection);
+      });
+    }
+  },
+  /**
+   * Render function for the next page button.
+   * If the current page is the last then it shouldn't render a clickable next page
+   */
+  renderNext: function() {
+    if(this.state.currentPage < this.state.totalPages){
+       return (<li className=""><a href="javascript: void 0;" onClick={this.nextPage}>&raquo;</a></li>)
+    } else {
+      return (<li className="disabled"><a href="javascript: void 0;">&raquo;</a></li>)
+    }
+  },
+  /**
+   * Render functon for the pages
+   * If the number of maximumPages is exceeded by the number of pages then that must be handled with an ellipsis
+   * If the page is active then it should have the active class
+   *
+   */
+  renderPages: function(){
+    var pages = [];
+    var starterPage = 1;
+    if(this.state.currentPage >= 4) {
+      starterPage = this.state.currentPage - 2;
+    }
+
+    if(this.props.maximumPages > this.state.totalPages) {
+      for(page = 1; page <= this.state.totalPages; page++){
+        if(page !== this.state.currentPage) {
+          pages.push(<li><a href="javascript: void 0;" onClick={this.changePage} data-page={page} className="">{page}</a></li>)
+        } else {
+          pages.push(<li className="active"><a href="javascript: void 0;" >{page}</a></li>)
+
+        }
+      }
+    } else {
+      if(this.state.currentPage >= 4) {
+        pages.push(<li><a href="javascript: void 0;" onClick={this.changePage} data-page={1} className="">{1}</a></li>)
+        pages.push(<li className="disabled"><a href="javascript: void 0;">&hellip;</a></li>)
+
+      }
+      for(page = starterPage; page <= this.state.totalPages; ++page) {
+        if((starterPage + this.props.maximumPages) < page) {
+          pages.push(<li className="disabled"><a href="javascript: void 0;">&hellip;</a></li>)
+          pages.push(<li><a href="javascript: void 0;" onClick={this.changePage} data-page={this.state.totalPages} className="">{this.state.totalPages}</a></li>)
+          break;
+        } else if (page !== this.state.currentPage){
+          pages.push(<li><a href="javascript: void 0;" onClick={this.changePage} data-page={page} className="">{page}</a></li>)
+        } else {
+          pages.push(<li className="active"><a href="javascript: void 0;" >{page}</a></li>)
+
+        }
+      }
+    }
+    return pages;
+
+  },
+  /**
+   * Render function for the previous page button.
+   * If the current page is the first then it shouldn't render a clickable previous page
+   */
+  renderPrevious : function() {
+    if(this.state.currentPage > 1){
+      return (<li className=""><a href="javascript: void 0;" onClick={this.previousPage}>&laquo;</a></li>)
+
+    }else {
+      return (<li className="disabled"><a href="javascript: void 0;" >&laquo;</a></li>)
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var cx = React.addons.classSet;
+    if(this.state.collection) {
+      this.state.currentPage = this.state.collection.state.currentPage;
+      this.state.totalPages = this.state.collection.state.totalPages;
+    }
+    var next = this.renderNext();
+    var pages = this.renderPages();
+    var previous = this.renderPrevious();
+    return(
+    <ul className="pagination">
+      {previous}
+      {pages}
+      {next}
+    </ul>)
+  }
+});
+ at SyntaxError: Unexpected token (82:15)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/backbone-react-ui/node_modules/backbone-react-ui/index.js. Coverage (Term): 35% Coverage (LOC): 57%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

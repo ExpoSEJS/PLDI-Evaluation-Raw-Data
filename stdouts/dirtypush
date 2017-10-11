@@ -1,0 +1,133 @@
+/root/Targets/dirtypush
+└─┬ dirtypush@0.0.3 
+  ├─┬ cssparser@0.2.2 
+  │ ├── colors@1.1.2 
+  │ └─┬ nomnom@1.8.1 
+  │   ├─┬ chalk@0.4.0 
+  │   │ ├── ansi-styles@1.0.0 
+  │   │ ├── has-color@0.1.7 
+  │   │ └── strip-ansi@0.1.1 
+  │   └── underscore@1.6.0 
+  └─┬ express@3.3.8 
+    ├── buffer-crc32@0.2.1 
+    ├─┬ commander@1.2.0 
+    │ └── keypress@0.1.0 
+    ├─┬ connect@2.8.8 
+    │ ├── bytes@0.2.0 
+    │ ├── formidable@1.0.14 
+    │ ├── pause@0.0.1 
+    │ ├── qs@0.6.5 
+    │ └── uid2@0.0.2 
+    ├── cookie@0.1.0 
+    ├── cookie-signature@1.0.1 
+    ├─┬ debug@3.1.0 
+    │ └── ms@2.0.0 
+    ├── fresh@0.2.0 
+    ├── methods@0.0.1 
+    ├── mkdirp@0.3.5 
+    ├── range-parser@0.0.4 
+    └─┬ send@0.1.4 
+      └── mime@1.2.11 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dirtypush/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0552 took 2.8944s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+// required modules
+var express = require('express');
+var fs = require('fs');
+var cssparser = require('cssparser');
+var parser = new cssparser.Parser();
+
+// initialize our app
+var app = express();
+
+app.set('views', __dirname+'/views');
+app.use(express.static(__dirname+'/public'));
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+
+// port that server will listen on
+var port = 3000;
+var saveFile = './unload.css';
+
+// start listening...
+app.listen(port);
+
+console.log('dirtypush running at http://localhost:'+port+'/unload.css');
+
+app.get('/unload.css', function (req, res) {
+	fs.readFile(saveFile, 'utf8', function (err,data) {
+		res.send(data);
+		return;
+	});
+});
+
+app.post('/unload.css', function (req, res) {
+
+	fs.readFile(saveFile, 'utf8', function (err,data) {
+		var change = '\n'+req.body.content;
+		var json = parser.parse(data+change);
+		var rulelist = json.rulelist;
+		var selectors = {};
+
+		for (var i in rulelist) {
+
+			var rule = rulelist[i];
+			if (rule.type == 'style'){
+				selectors[rule.selector] = rule.declarations;
+			}	
+		}
+
+		var fileBody = '';
+
+		for (var style in selectors) {
+			fileBody += style+' {';
+
+			var obj = selectors[style];
+			for (var key in obj) {
+				fileBody += '\n  '+key+': '+obj[key]+';';
+			}
+
+			fileBody += '\n}\n'
+		}
+
+		fs.writeFile(saveFile, fileBody, function (err) {
+
+			var message = 'the following edit has been saved to ';
+			message += saveFile+'\n';
+			message += '-------------------------------------------------';		
+			message += change;
+
+			console.log(message);
+			res.send(message);
+			return;
+		});
+		
+	});
+}); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,35 @@
+/root/Targets/cstd
+└─┬ cstd@0.0.1 
+  └── coffee-script@1.9.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cstd/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 85% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","charCodeAt","lastIndexOf","max","pop","RegExp","apply","toUpperCase","splice","create","reverse","sort","SyntaxError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.06 took 25.4643s
+*-- Errors occured in test {"_bound":0}
+* Error: /root/Targets/cstd/node_modules/cstd/lib/error.coffee:32:5: error: cannot call super outside of an instance method.
+    super
+    ^^^^^
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cstd/node_modules/cstd/cstd.js. Coverage (Term): 38% Coverage (LOC): 29%
+*- File /root/Targets/cstd/node_modules/coffee-script/register.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/register.js. Coverage (Term): 80% Coverage (LOC): 79%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/coffee-script.js. Coverage (Term): 31% Coverage (LOC): 38%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/lexer.js. Coverage (Term): 68% Coverage (LOC): 73%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/rewriter.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/helpers.js. Coverage (Term): 58% Coverage (LOC): 65%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/parser.js. Coverage (Term): 83% Coverage (LOC): 98%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/sourcemap.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/nodes.js. Coverage (Term): 46% Coverage (LOC): 58%
+*- File /root/Targets/cstd/node_modules/coffee-script/lib/coffee-script/scope.js. Coverage (Term): 78% Coverage (LOC): 86%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

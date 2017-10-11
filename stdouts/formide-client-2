@@ -1,0 +1,46 @@
+
+> formide-drivers@6.6.10 install /root/Targets/formide-client-2/node_modules/formide-drivers
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/formide-client-2/node_modules/formide-drivers/build'
+  CXX(target) Release/obj.target/Formidriver/src/handler/Buffer/GCodeBuffer.o
+  CXX(target) Release/obj.target/Formidriver/src/utils/Logger/Logger.o
+  CXX(target) Release/obj.target/Formidriver/src/handler/CommunicationLogger/CommLogger.o
+  CXX(target) Release/obj.target/Formidriver/src/handler/DeviceCenter/DeviceCenter.o
+  CXX(target) Release/obj.target/Formidriver/src/handler/PrinterData/PrinterData.o
+  CXX(target) Release/obj.target/Formidriver/src/handler/Blocker/Blocker.o
+  CXX(target) Release/obj.target/Formidriver/src/handler/Checksum/ChecksumControl.o
+  CXX(target) Release/obj.target/Formidriver/src/driver/MarlinDriver/MarlinDriver.o
+  CXX(target) Release/obj.target/Formidriver/src/utils/Timer/Timer.o
+  CC(target) Release/obj.target/Formidriver/src/driver/utilities/utilities.o
+  CXX(target) Release/obj.target/Formidriver/src/FormiThread.o
+  CXX(target) Release/obj.target/Formidriver/src/Formidriver.o
+  CXX(target) Release/obj.target/Formidriver/src/driver/Serial/Serial.o
+  SOLINK_MODULE(target) Release/obj.target/Formidriver.node
+  COPY Release/Formidriver.node
+  COPY /root/Targets/formide-client-2/node_modules/formide-drivers/lib/binding/Formidriver.node
+  TOUCH Release/obj.target/action_after_build.stamp
+make: Leaving directory '/root/Targets/formide-client-2/node_modules/formide-drivers/build'
+/root/Targets/formide-client-2
+└─┬ formide-client-2@2.1.3 
+  └── formide-drivers@6.6.10  (git://github.com/printr3d/formide-drivers.git#0aa582a1fdb25e8b3bb6afe81d81045664aa119b)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/formide-client-2/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0509 took 4.8459s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: os is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/formide-client-2/node_modules/formide-client-2/app.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

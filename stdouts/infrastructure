@@ -1,0 +1,425 @@
+
+> bufferutil@1.2.1 install /root/Targets/infrastructure/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/infrastructure/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+make: Leaving directory '/root/Targets/infrastructure/node_modules/bufferutil/build'
+
+> utf-8-validate@1.2.2 install /root/Targets/infrastructure/node_modules/utf-8-validate
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/infrastructure/node_modules/utf-8-validate/build'
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/infrastructure/node_modules/utf-8-validate/build'
+/root/Targets/infrastructure
+└─┬ infrastructure@1.4.4 
+  ├── backbone@1.3.3 
+  ├─┬ bulk-require@1.0.1 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├─┬ inflight@1.0.6 
+  │   │ └── wrappy@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── once@1.4.0 
+  │   └── path-is-absolute@1.0.1 
+  ├── coffee-script@1.12.7 
+  ├── hanson@1.2.0 
+  ├─┬ jsdom@7.2.2 
+  │ ├── abab@1.0.4 
+  │ ├── acorn@2.7.0 
+  │ ├── acorn-globals@1.0.9 
+  │ ├── cssom@0.3.2 
+  │ ├── cssstyle@0.2.37 
+  │ ├─┬ escodegen@1.9.0 
+  │ │ ├── esprima@3.1.3 
+  │ │ ├── estraverse@4.2.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ ├─┬ optionator@0.8.2 
+  │ │ │ ├── deep-is@0.1.3 
+  │ │ │ ├── fast-levenshtein@2.0.6 
+  │ │ │ ├── levn@0.3.0 
+  │ │ │ ├── prelude-ls@1.1.2 
+  │ │ │ ├── type-check@0.3.2 
+  │ │ │ └── wordwrap@1.0.0 
+  │ │ └── source-map@0.5.7 
+  │ ├── nwmatcher@1.4.2 
+  │ ├── parse5@1.5.1 
+  │ ├── sax@1.2.4 
+  │ ├── symbol-tree@3.2.2 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── webidl-conversions@2.0.1 
+  │ ├─┬ whatwg-url-compat@0.6.5 
+  │ │ └── tr46@0.0.3 
+  │ └── xml-name-validator@2.0.1 
+  ├── minimist@1.2.0 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── core-util-is@1.0.2 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  ├── underscore@1.8.3 
+  ├─┬ ws@0.8.1 
+  │ ├─┬ bufferutil@1.2.1 
+  │ │ ├── bindings@1.2.1 
+  │ │ └── nan@2.7.0 
+  │ ├── options@0.0.6 
+  │ ├── ultron@1.0.2 
+  │ └─┬ utf-8-validate@1.2.2 
+  │   └── nan@2.4.0 
+  └─┬ yamljs@0.3.0 
+    └─┬ argparse@1.0.9 
+      └── sprintf-js@1.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/infrastructure/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","isArray","Array"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0499 took 11.8145s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Deleting local variable in strict mode (259:6) on program var _       = require("underscore");
+var cluster = require("cluster");
+
+module.exports = function(env, cb){
+
+  var config = env.config;
+  var path   = require("path");
+  var fs     = require("fs");
+
+  var _      = require("underscore");
+  var bulk   = require("bulk-require");
+
+  var actual_do;
+
+  env.testSetup = [];
+  env.stops     = [];
+
+  env.stop = function(cb){ env.helpers.chain(env.stops)(cb); };
+
+  env.getCached = function(target){
+    if(!target.__cached) { target.__cached = target.apply(env); }
+    return target.__cached;
+  };
+
+  env.structureLoader = function(name, setup, cb, cached){
+    var structureConfig = env.config.structures[name];
+    if(!structureConfig.path && !structureConfig.instances) return cb();
+    
+    // REMOVE ME - nonsense
+    // if(!structureConfig) return cb(new Error("Cant find config: env.config.structures."+name + " structure "+name));
+    
+    if(structureConfig.path){
+      var stagePath = path.join(env.config.rootDir, Array.isArray(structureConfig.path)?structureConfig.path[0]:structureConfig.path);
+      if(fs.existsSync(stagePath)) {
+        try{
+          env.i[name] = bulk(stagePath, Array.isArray(structureConfig.path)?structureConfig.path[1]:["**/*.js", "**/*.coffee"]);
+        }
+        catch(err){
+          return cb(err);
+        }
+      }
+      else{
+        env.i[name] = {};
+      }
+    }
+    else{
+      env.i[name] = {};
+    }
+
+
+    var initializers = [], structureInit;
+
+    env.i[name].do = env.i.do;
+
+
+    if(env.i[name].index) {
+      structureInit = env.i[name].index;
+      delete env.i[name].index;
+    }
+
+    if(structureInit) structureInit.call(env, function(err, postinit){
+      if(err) return cb(err);
+      if(postinit) go(function(err){
+        if(err) return cb(err);
+        postinit(cb);
+      });
+      else go(cb);
+    });
+    else go(cb);
+
+    function go(cb){
+      env.helpers.traverse(env.i[name], function(target, nodeName, parent, path){
+        if( nodeName === "do" || (nodeName === "stop" && parent === env.i[name].__run  )    ) return;
+        if(_.isFunction(target)) {
+          var Node;
+          if(setup)        Node = setup(nodeName, cached? env.getCached(target) : target, path );
+          else if (cached) Node = env.getCached(target);
+          else             Node = target;
+
+          if(Node){
+            parent[nodeName] = Node;
+            if(Node.setupNode) initializers.push(Node.setupNode);
+          }
+          else delete parent[nodeName];
+        }
+        else target.do = actual_do;
+      });
+      env.i[name].__run = { stop: env.stop };
+      
+      if(initializers.length) env.helpers.chain(initializers)(cb, env);
+      else                                                    cb(); 
+    }
+
+  }
+
+  env.engines = {};
+  env.i       = {};
+  env.classes = {};
+
+
+  function findCbAndRespond(args, msg){
+    var cb = _.last(args);
+    if(_.isFunction(cb)) cb(msg)
+  }
+
+
+  var no_target = "Can't find target: ", 
+    sl = Array.prototype.slice, 
+    resolve = env.helpers.resolve,
+    i = env.i,
+    respond = findCbAndRespond;
+
+var DO = function(address){
+  var args=sl.call(arguments,1)
+  var parts=address.split(".")
+  var root=i[parts[0]]
+  if(!root) return respond(args,no_target+address)
+  var last=parts.pop()
+  var ctx=resolve(i, parts.join("."))
+  if(!ctx||!(_.isFunction(ctx[last]))) return respond(args,no_target+address)
+  var whitelist=ctx.callable||ctx.methods
+  if(whitelist&&whitelist.indexOf(last)===-1) return respond(args,no_target+address)
+  if(ctx.parseArguments) try{args=ctx.parseArguments(args)}catch(err){respond(args,err)}
+  try{ctx[last].apply(ctx,args)}
+  catch(err){respond( args,err)}
+};
+
+
+  // var DO = function(address){
+  //   var args          = Array.prototype.slice.call(arguments);
+  //   var address       = args[0];
+  //   var address_parts = address.split(".");
+  //   var root          = env.i[address_parts[0]];
+  //   if(!root) return findCbAndRespond(args, "Can't find target: ", address);
+  //   var last          = _.last(address_parts);
+  //   var context       = env.helpers.resolve(env.i, address_parts.slice(0, -1).join("."));
+  //   if(!context || !(_.isFunction(context[last]))) return findCbAndRespond(args, "Can't find target: "+address);
+    
+  //   if(context.parseArguments) args = context.parseArguments(args.slice(1));
+  //   else args = args.slice(1);
+  //   context[last].apply(context, args);
+  // };
+
+
+  if(config.process_mode === "cluster"){
+
+    var ExpireStore = require("./lib/ExpireStore.js");
+    var cb_store = new ExpireStore(config.callback_timeout || 60000);
+
+    var cb_index = 0;
+    env.serializeCallback = function serializeCallback(fn){
+      cb_index++;
+      cb_store.set(cb_index, fn);
+      return cb_index;
+    }
+
+    env.runCallback = function runCallback(data){
+      var fn = cb_store.pull(data.run_cb[1]);
+      fn && fn.apply(global, data.args);
+    }
+
+    env.deserializeCallback = function deserializeCallback(cb_data){
+      var cb = Array.prototype.slice.call(cb_data);
+      return function(){
+        process.send({
+          address: cb[0],
+          run_cb: cb,
+          args: Array.prototype.slice.call(arguments)
+        });
+      }
+    }
+
+    cb_store.on("expire", function(cb_id, fn){
+      fn("Callback timeout error");
+    });
+
+    env.stops.push(function(cb){
+      env.serializeCallback = function(fn){ fn("Process termination in progress"); };
+      cb_store.map.forEach(function(fn, key, store){
+        env.serializeCallback(fn);
+      });
+      cb_store.stop();
+      cb(); 
+    });
+
+    cb_store.start(config.callback_check_timeout_interval || 5000);
+    // var cb_check_interval = setInterval(function(){
+    //   cb_store.check();
+    // }, config.callback_check_timeout_interval || 5000);
+
+    var listeners = new Map(), listeners_index = 0;
+    env.serializeListener = function serializeListener(fn){
+      listeners_index++;
+      listeners.set(listeners_index, fn);
+      return listeners_index;
+    }
+
+    env.runListener = function runListener(data){
+      var fn = listeners.get(data.run_listener[1]);
+      fn && fn.apply(global, data.args);
+    }
+
+    env.dropListener = function runListener(data){
+      var l_id = data.run_listener[1], fn = listeners.get(l_id);
+      fn && listeners.delete(l_id);
+    }
+
+    env.deserializeListener = function deserializeListener(listener_data){
+      var listener = Array.prototype.slice.call(listener_data);
+      var deserialized = function(){
+        process.send({
+          address: listener[0],
+          run_listener: listener,
+          args: Array.prototype.slice.call(arguments)
+        });
+      }
+      deserialized.drop = function(){ process.send({ address: listener[0], drop_cb: listener }); };
+      return deserialized;
+    }
+
+    var cluster = require("cluster");
+    if(cluster.isMaster){
+      require("./init/process/master.js")(env, cb);
+    }
+    else{
+
+      actual_do = env.i.do;
+
+      require("./init/process/worker.js")(env, cb);
+    }
+  }
+  else {
+    // Flatten partial configurations in structures
+    if(config.structures){
+      _.each(config.structures, function(structure){
+        if(structure.config){
+          var partial_config = structure.config;
+          _.extend(config, partial_config);
+          delete structure.config;
+        }
+      });
+    }
+
+    actual_do = DO;
+   
+
+    var calls_cache = [];
+    env.i.do = function(){
+      calls_cache.push(arguments);
+    }
+    require("./init/process/single.js")(env, function(err){
+      if(err) return cb(err);
+
+      env.i.do = DO;
+
+      for(var i=0;i<calls_cache.length; i++){
+        DO.apply(env.i, calls_cache[i]);
+      }
+      delete calls_cache;
+
+      cb(null, env);
+    });
+  }
+
+};
+ at SyntaxError: Deleting local variable in strict mode (259:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:31:155)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/infrastructure/node_modules/infrastructure/index.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/infrastructure/node_modules/underscore/underscore.js. Coverage (Term): 28% Coverage (LOC): 41%
+*- File /root/Targets/infrastructure/node_modules/infrastructure/lib/helpers.js. Coverage (Term): 4% Coverage (LOC): 13%
+*- File /root/Targets/infrastructure/node_modules/minimist/index.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

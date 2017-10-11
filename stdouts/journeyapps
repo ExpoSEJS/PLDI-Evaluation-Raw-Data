@@ -1,0 +1,35 @@
+/root/Targets/journeyapps
+└─┬ journeyapps@2.0.2 
+  ├─┬ isomorphic-fetch@2.2.1 
+  │ └── whatwg-fetch@2.0.3 
+  ├── lodash@4.17.4 
+  ├── moment@2.0.0 
+  ├─┬ node-fetch@1.7.3 
+  │ ├─┬ encoding@0.1.12 
+  │ │ └── iconv-lite@0.4.19 
+  │ └── is-stream@1.1.0 
+  ├── promise.prototype.finally@1.0.1 
+  ├─┬ source-map-support@0.4.18 
+  │ └── source-map@0.5.7 
+  ├── urijs@1.19.0 
+  └── xmldom@0.1.27 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/journeyapps/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0829 took 5.5695s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: app is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/journeyapps/node_modules/journeyapps/lib/index.js. Coverage (Term): 5% Coverage (LOC): 7%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,171 @@
+/root/Targets/grunt-dev-exitprocess
+└─┬ grunt-dev-exitprocess@0.4.0 
+  ├── async@0.1.22 
+  ├── coffee-script@1.3.3 
+  ├── colors@0.6.2 
+  ├── dateformat@1.0.2-1.2.3 
+  ├── eventemitter2@0.4.14 
+  ├─┬ findup-sync@0.1.3 
+  │ ├─┬ glob@3.2.11 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── minimatch@0.3.0 
+  │ └── lodash@2.4.2 
+  ├─┬ glob@3.1.21 
+  │ ├── graceful-fs@1.2.3 
+  │ └── inherits@1.0.2 
+  ├── hooker@0.2.3 
+  ├── iconv-lite@0.2.11 
+  ├─┬ js-yaml@1.0.3 
+  │ └─┬ argparse@0.1.16 
+  │   ├── underscore@1.7.0 
+  │   └── underscore.string@2.4.0 
+  ├── lodash@0.9.2 
+  ├─┬ minimatch@0.2.14 
+  │ ├── lru-cache@2.7.3 
+  │ └── sigmund@1.0.1 
+  ├─┬ nopt@1.0.10 
+  │ └── abbrev@1.1.1 
+  ├─┬ rimraf@2.0.3 
+  │ └── graceful-fs@1.1.14 
+  ├── underscore.string@2.2.1 
+  └── which@1.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/grunt-dev-exitprocess/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 82% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","Object","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0579 took 92.5902s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (5:0) on program (function(_) { return function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+
+ if (obj.useStrict) { ;
+__p += '\'use strict\';\n';
+ } ;
+__p += 'var index, value, iteratee = ' +
+((__t = ( firstArg )) == null ? '' : __t) +
+', result = ' +
+((__t = ( firstArg )) == null ? '' : __t) +
+';\nif (!' +
+((__t = ( firstArg )) == null ? '' : __t) +
+') return result;\n' +
+((__t = ( top )) == null ? '' : __t) +
+';\n';
+ if (arrayLoop) { ;
+__p += 'var length = iteratee.length; index = -1;\nif (typeof length == \'number\') {  ';
+ if (noCharByIndex) { ;
+__p += '\n  if (isString(iteratee)) {\n    iteratee = iteratee.split(\'\')\n  }  ';
+ } ;
+__p += '\n  while (++index < length) {\n    value = iteratee[index];\n    ' +
+((__t = ( arrayLoop )) == null ? '' : __t) +
+'\n  }\n}\nelse {  ';
+  } else if (noArgsEnum) { ;
+__p += '\n  var length = iteratee.length; index = -1;\n  if (length && isArguments(iteratee)) {\n    while (++index < length) {\n      value = iteratee[index += \'\'];\n      ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n    }\n  } else {  ';
+ } ;
+__p += '  ';
+ if (!hasDontEnumBug) { ;
+__p += '\n  var skipProto = typeof iteratee == \'function\' && \n    propertyIsEnumerable.call(iteratee, \'prototype\');\n  ';
+ } ;
+__p += '  ';
+ if (isKeysFast && useHas) { ;
+__p += '\n  var ownIndex = -1,\n      ownProps = objectTypes[typeof iteratee] ? nativeKeys(iteratee) : [],\n      length = ownProps.length;\n\n  while (++ownIndex < length) {\n    index = ownProps[ownIndex];\n    ';
+ if (!hasDontEnumBug) { ;
+__p += 'if (!(skipProto && index == \'prototype\')) {\n  ';
+ } ;
+__p += '    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n    ';
+ if (!hasDontEnumBug) { ;
+__p += '}\n';
+ } ;
+__p += '  }  ';
+ } else { ;
+__p += '\n  for (index in iteratee) {';
+    if (!hasDontEnumBug || useHas) { ;
+__p += '\n    if (';
+      if (!hasDontEnumBug) { ;
+__p += '!(skipProto && index == \'prototype\')';
+ }      if (!hasDontEnumBug && useHas) { ;
+__p += ' && ';
+ }      if (useHas) { ;
+__p += 'hasOwnProperty.call(iteratee, index)';
+ }    ;
+__p += ') {    ';
+ } ;
+__p += '\n    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+';    ';
+ if (!hasDontEnumBug || useHas) { ;
+__p += '\n    }';
+ } ;
+__p += '\n  }  ';
+ } ;
+__p += '  ';
+ if (hasDontEnumBug) { ;
+__p += '\n\n  var ctor = iteratee.constructor;\n    ';
+ for (var k = 0; k < 7; k++) { ;
+__p += '\n  index = \'' +
+((__t = ( shadowed[k] )) == null ? '' : __t) +
+'\';\n  if (';
+      if (shadowed[k] == 'constructor') {        ;
+__p += '!(ctor && ctor.prototype === iteratee) && ';
+      } ;
+__p += 'hasOwnProperty.call(iteratee, index)) {\n    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n  }    ';
+ } ;
+__p += '  ';
+ } ;
+__p += '  ';
+ if (arrayLoop || noArgsEnum) { ;
+__p += '\n}';
+ } ;
+__p += '\n' +
+((__t = ( bottom )) == null ? '' : __t) +
+';\nreturn result';
+
+}
+return __p
+} }) at SyntaxError: 'with' in strict mode (5:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/grunt-dev-exitprocess/lib/grunt.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/coffee-script.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/lexer.js. Coverage (Term): 15% Coverage (LOC): 30%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/rewriter.js. Coverage (Term): 14% Coverage (LOC): 36%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/helpers.js. Coverage (Term): 19% Coverage (LOC): 36%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/parser.js. Coverage (Term): 86% Coverage (LOC): 98%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/nodes.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/coffee-script/lib/coffee-script/scope.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/grunt-dev-exitprocess/lib/grunt/util.js. Coverage (Term): 13% Coverage (LOC): 13%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/grunt-dev-exitprocess/lib/util/task.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/grunt-dev-exitprocess/lib/util/exit.js. Coverage (Term): 31% Coverage (LOC): 38%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/grunt-dev-exitprocess/lib/util/namespace.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/hooker/lib/hooker.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/async/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/grunt-dev-exitprocess/node_modules/lodash/lodash.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

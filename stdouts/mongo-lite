@@ -1,0 +1,63 @@
+
+> mongodb@0.9.9 install /root/Targets/mongo-lite/node_modules/mongodb
+> node install.js
+
+================================================================================
+=                                                                              =
+=  To install with C++ bson parser do <npm install mongodb --mongodb:native>   =
+=                                                                              =
+================================================================================
+/root/Targets/mongo-lite
+└─┬ mongo-lite@0.3.2 
+  ├── mongodb@0.9.9 
+  └── underscore@1.3.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mongo-lite/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","sort","apply","pow","random","parseInt","RegExp","isNaN","isFinite"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0459 took 33.6107s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: eErrorMessages is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mongo-lite/node_modules/mongo-lite/lib/driver.js. Coverage (Term): 29% Coverage (LOC): 48%
+*- File /root/Targets/mongo-lite/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 34%
+*- File /root/Targets/mongo-lite/node_modules/mongo-lite/lib/helper.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/mongo-lite/node_modules/mongo-lite/lib/connection.js. Coverage (Term): 7% Coverage (LOC): 5%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/index.js. Coverage (Term): 34% Coverage (LOC): 34%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/bson.js. Coverage (Term): 11% Coverage (LOC): 37%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/binary_parser.js. Coverage (Term): 8% Coverage (LOC): 31%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/double.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/objectid.js. Coverage (Term): 18% Coverage (LOC): 31%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/symbol.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/code.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/min_key.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/max_key.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/db_ref.js. Coverage (Term): 35% Coverage (LOC): 43%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/binary.js. Coverage (Term): 22% Coverage (LOC): 42%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/float_parser.js. Coverage (Term): 3% Coverage (LOC): 11%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/external-libs/bson/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/base_command.js. Coverage (Term): 69% Coverage (LOC): 79%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/db_command.js. Coverage (Term): 15% Coverage (LOC): 33%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/query_command.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/insert_command.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/delete_command.js. Coverage (Term): 11% Coverage (LOC): 13%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/get_more_command.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/bson/binary_utils.js. Coverage (Term): 17% Coverage (LOC): 43%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/kill_cursor_command.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/commands/update_command.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/responses/mongo_reply.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/admin.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/mongo-lite/node_modules/mongodb/lib/mongodb/collection.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

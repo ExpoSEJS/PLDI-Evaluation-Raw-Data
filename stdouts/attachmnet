@@ -1,0 +1,137 @@
+/root/Targets/attachmnet
+└── attachmnet@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/attachmnet/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0659 took 2.2838s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<html lang="us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>附件管理工具</title>
+    <link rel="stylesheet" type="text/css" href="plugin/DataTables-1.10.8/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="plugin/jquery-ui-1.11.4.custom/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="plugin/zTree_v3-master/css/zTreeStyle/zTreeStyle.css">
+  </head>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="plugin/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <script type="text/javascript" src="plugin/jquery.ui-contextmenu.js"></script>
+  <script type="text/javascript" src="plugin/DataTables-1.10.8/media/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="plugin/jquery.layout.js"></script>
+
+  <script type="text/javascript" src="plugin/zTree_v3-master/js/jquery.ztree.all-3.5.js"></script>
+
+  <script type="text/javascript" src="js/attachment-interface.js"></script>
+  <script>
+
+    openAttachTool();
+  </script>
+
+  <!-- 设置文字一处省略显示...
+  -->
+  <style>
+    table
+    {
+      white-space:nowrap; 
+    }
+    .ui-menu
+    {
+      width:120px;
+      font-size:0.9em;
+    }
+    .blue
+    {
+      background-color:blue;
+    }
+  </style>
+  <body onselectstart="return false" onkeydown="javascript:keyPress(event);" onkeyup="javascript:keyRelease(event);">
+
+    <div class="ui-layout-west">
+      <select id="switch" onchange="onChangeSwitch()">
+        <option value="filetype">按扩展名排序</option>
+        <option value="account">按帐号排序</option>
+      </select>
+      <br></br>
+      <hr noshade="noshade"/>
+      <ul id="tree" class="ztree"></ul>
+
+      <ul id="treeMenu" class="ui-helper-hidden">
+        <li id="addFolderNode" onclick="onClickNewTypeFolder()"><span class="ui-icon ui-icon-document"></span>新建类别</li>
+        <li id="addTypeNode" onclick="onClickNewType()"><span class="ui-icon ui-icon-plus"></span>添加扩展名</li>
+        <li id="renameNode" onclick="onClickRenameTreeNode()"><span class="ui-icon ui-icon-copy"></span>重命名</li>
+        <li id="deleteNode" onclick="onClickDeleteTreeNode()"><span class="ui-icon ui-icon-close"></span>删除</li>
+      </ul>
+    </div>
+
+
+    <div class="ui-layout-center">
+      <input id="save" type="file" style="display:none"/>
+      <table id="tblAttachList" class="display" cellspacing="0" width="100%"></table>
+
+      <ul id="attachMenu" class="ui-helper-hidden">
+        <li id="openAttachment" onclick="onClickOpenAttachment()"><span class="ui-icon ui-icon-folder-open"></span>打开附件</li>
+        <li id="openType">打开方式
+        <ul>
+          <li id="chooseProgram" onclick="onClickChooseProgram()"><span class="ui-icon ui-icon-circle-zoomin"></span>选择程序...</li>
+        </ul>
+        </li>
+        <li id="saveAs" onclick="onClickSaveAs()"><span class="ui-icon ui-icon-copy"></span>保存附件</li>
+        <li id="delAttachment" onclick="onClickDelAttachment()"><span class="ui-icon ui-icon-trash"></span>删除附件</li>
+      </ul>
+    </div>
+    <!-- 选择程序对话框 -->
+    <div id="chooseProgramDialog" title="选择程序">
+      <form>
+      </form>
+    </div>
+
+
+
+    <!-- 添加类别对话框 -->
+    <div id="addTypeFolder" title="新建类别">
+      <form>
+          <label for="name">类别名称:</label>
+          <input type="text" name="newTypeFolderName" id="newTypeFolderName" class="text ui-widget-content ui-corner-all">
+      </form>
+    </div>
+
+    <!-- 添加扩展名对话框 -->
+    <div id="addType" title="添加扩展名">
+      <form>
+          <label for="name">名称:</label>
+          <input type="text" name="newTypeName" id="newTypeName" class="text ui-widget-content ui-corner-all">
+          <br>
+          <label for="type">扩展名:</label>
+          <input type="text" name="newType" id="newType" class="text ui-widget-content ui-corner-all">
+      </form>
+    </div>
+
+  </body>
+</html>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

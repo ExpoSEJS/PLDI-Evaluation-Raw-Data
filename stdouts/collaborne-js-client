@@ -1,0 +1,41 @@
+/root/Targets/collaborne-js-client
+└─┬ collaborne-js-client@0.13.0 
+  ├─┬ cuid@1.3.8 
+  │ ├── browser-fingerprint@0.0.1 
+  │ ├── core-js@1.2.7 
+  │ └── node-fingerprint@0.0.2 
+  ├── lodash.get@4.4.2 
+  ├── lodash.pull@4.1.0 
+  ├── lodash.set@4.3.2 
+  ├── lodash.unescape@4.0.1 
+  └── urijs@1.18.12 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/collaborne-js-client/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","setPrototypeOf","pow"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0482 took 9.3852s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'lodash/set'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/index.js. Coverage (Term): 54% Coverage (LOC): 46%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/file-upload/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/file-upload/mediaitem-upload.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- File /root/Targets/collaborne-js-client/node_modules/urijs/src/URI.js. Coverage (Term): 9% Coverage (LOC): 19%
+*- File /root/Targets/collaborne-js-client/node_modules/urijs/src/punycode.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/collaborne-js-client/node_modules/urijs/src/IPv6.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/collaborne-js-client/node_modules/urijs/src/SecondLevelDomains.js. Coverage (Term): 39% Coverage (LOC): 76%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/file-upload/progress-tracker.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/collaborne-js-client/node_modules/cuid/dist/node-cuid.js. Coverage (Term): 24% Coverage (LOC): 49%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/model/index.js. Coverage (Term): 37% Coverage (LOC): 29%
+*- File /root/Targets/collaborne-js-client/node_modules/collaborne-js-client/lib/model/activity.js. Coverage (Term): 5% Coverage (LOC): 7%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,38 @@
+/root/Targets/karto
+└─┬ karto@2.2.0 
+  ├── d3-geo@0.0.0 
+  ├─┬ d3-scale@0.6.4 
+  │ ├── d3-array@0.7.1 
+  │ ├── d3-collection@0.1.2 
+  │ ├── d3-color@0.4.2 
+  │ ├── d3-format@0.5.1 
+  │ ├── d3-interpolate@0.7.0 
+  │ ├── d3-time@0.2.6 
+  │ └── d3-time-format@0.3.2 
+  ├─┬ idris-geojson-bbox@1.1.0 
+  │ └── idris-geojson-points@1.1.0 
+  └── tilebelt@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/karto/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 14.000000000000002% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0319 took 18.3196s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'document' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/karto/node_modules/karto/index.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/karto/node_modules/karto/lib/svg/index.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/karto/node_modules/karto/lib/get-proj.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/karto/node_modules/d3-geo/index.js. Coverage (Term): 5% Coverage (LOC): 13%
+*- File /root/Targets/karto/node_modules/karto/lib/file-saver.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

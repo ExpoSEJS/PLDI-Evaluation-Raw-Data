@@ -1,0 +1,243 @@
+
+> kerberos@0.0.23 install /root/Targets/pl-sails-hook-jobs/node_modules/kerberos
+> (node-gyp rebuild) || (exit 0)
+
+make: Entering directory '/root/Targets/pl-sails-hook-jobs/node_modules/kerberos/build'
+  CXX(target) Release/obj.target/kerberos/lib/kerberos.o
+kerberos.target.mk:98: recipe for target 'Release/obj.target/kerberos/lib/kerberos.o' failed
+make: Leaving directory '/root/Targets/pl-sails-hook-jobs/node_modules/kerberos/build'
+/root/Targets/pl-sails-hook-jobs
+└─┬ pl-sails-hook-jobs@0.1.9 
+  ├─┬ agenda@0.8.1 
+  │ ├── cron@1.1.1 
+  │ ├─┬ date.js@0.3.1 
+  │ │ ├── debug@0.7.4 
+  │ │ ├── lodash.filter@4.6.0 
+  │ │ ├── lodash.findkey@4.6.0 
+  │ │ ├── lodash.foreach@4.5.0 
+  │ │ ├── lodash.includes@4.3.0 
+  │ │ ├── lodash.isempty@4.4.0 
+  │ │ ├── lodash.partition@4.6.0 
+  │ │ └── lodash.trim@4.5.1 
+  │ ├── human-interval@0.1.6 
+  │ ├─┬ moment-timezone@0.5.13 
+  │ │ └── moment@2.18.1 
+  │ └─┬ mongodb@2.0.34 
+  │   ├─┬ mongodb-core@1.2.0 
+  │   │ ├── bson@0.4.23 
+  │   │ └─┬ kerberos@0.0.23 
+  │   │   └── nan@2.5.1 
+  │   └─┬ readable-stream@1.0.31 
+  │     ├── core-util-is@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├── isarray@0.0.1 
+  │     └── string_decoder@0.10.31 
+  ├─┬ include-all@0.1.6 
+  │ └── underscore.string@2.3.1 
+  └── lodash@2.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pl-sails-hook-jobs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0557 took 1.5967s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (93:7) on program module.exports = function(sails) {
+
+  var Agenda = require('agenda'),
+    util   = require('util'),
+    _      = require('lodash'),
+    os     = require("os"),
+    agenda = new Agenda()
+
+  agenda.sails = sails;
+
+  var stopServer = function() {
+    agenda.stop(function() {
+      console.log("agenda stopped");
+    });
+  };
+
+  sails.on("lower", stopServer);
+  sails.on("lowering", stopServer);
+
+  // return hook
+  return {
+    
+    // expose agenda in sails.hooks.jobs.agenda
+    jobs: agenda,
+    
+    // Defaults config
+    defaults: {
+
+      jobs: {
+        "globalJobsObjectName": "Jobs",
+        "jobsDirectory": "api/jobs",
+        "startEvent" : 'start-agenda',
+        "db": { 
+            "address"    : "localhost:27017/jobs",
+            "collection" : "agendaJobs" 
+        },
+        "name": os.hostname() + '-' + process.pid,
+        "processEvery": "1 minutes",
+        "maxConcurrency": 20,
+        "defaultConcurrency": 5,
+        "defaultLockLifetime": 10000,
+        
+      }
+    },
+
+    // Runs automatically when the hook initializes
+    initialize: function (cb) {
+      var hook = this
+        , config = sails.config.jobs
+
+     // init agenda
+     sails.log.verbose("Create agenda with : ");
+     sails.log.verbose("DB Addr: " + config.db.address);
+     sails.log.verbose("DB Collection: " + config.db.collection);
+     sails.log.verbose("Name: " + config.name);
+      agenda
+        .database(config.db.address, config.db.collection)
+        .name(config.name)
+        .processEvery(config.processEvery)
+        .maxConcurrency(config.maxConcurrency)
+        .defaultConcurrency(config.defaultConcurrency)
+        .defaultLockLifetime(config.defaultLockLifetime)
+
+      global[config.globalJobsObjectName] = agenda;
+
+      // Enable jobs using coffeescript
+      try {
+        require('coffee-script/register');
+      } catch(e0) {
+        try {
+          var path = require('path');
+          var appPath = sails.config.appPath || process.cwd();
+          require(path.join(appPath, 'node_modules/coffee-script/register'));
+        } catch(e1) {
+          sails.log.verbose('Please run `npm install coffee-script` to use coffescript (skipping for now)');
+        }
+      }
+
+      // Find all jobs
+      var jobs = require('include-all')({
+          dirname     : sails.config.appPath + '/' + config.jobsDirectory,
+          filter      : /(.+Job).(?:js|coffee)$/,
+          excludeDirs : /^\.(git|svn)$/,
+          optional    : true
+      });
+
+      // init jobs
+      agenda.on('ready', function() {
+        sails.log.verbose("Agenda ready !!");
+        hook.initJobs(jobs);
+        agenda.start();
+        sails.log.verbose("sails jobs started")
+      };
+      
+      // Lets wait on some of the sails core hooks to
+      // finish loading before we load our hook
+      // that talks about cats. 
+      var eventsToWaitFor = [];
+
+      if (sails.hooks.orm)
+        eventsToWaitFor.push('hook:orm:loaded');
+
+      if (sails.hooks.pubsub)
+        eventsToWaitFor.push('hook:pubsub:loaded');
+
+      sails.on(config.startEvent, function(){
+
+      });
+
+      sails.after(eventsToWaitFor, function(){
+        
+//        if (jobs.length > 0) {
+          // start agenda
+          //agenda.start();
+          //sails.log.verbose("sails jobs started")
+//        }
+        
+        // Now we will return the callback and our hook
+        // will be usable.
+        return cb();
+      });
+    },
+
+    /**
+     * Function that initialize jobs
+     */
+    initJobs: function(jobs, namespace) {
+      var hook = this
+      if (!namespace) namespace = "jobs";
+      sails.log.verbose("looking for job in " + namespace + "... ")
+      _.forEach(jobs, function(job, name){
+        if (typeof job === 'function') {
+          var log = ""
+            , _job = job(agenda)
+            , _dn   = namespace + "." + name
+            , _name = _job.name || _dn.substr(_dn.indexOf('.') +1);
+
+          if (_job.disabled) {
+            log += "-> Disabled Job '" + _name + "' found in '" + namespace + "." + name + "'.";
+          } else {
+            var options = (typeof _job.options === 'object')?_job.options:{}
+              , freq = _job.frequency
+              , error = false;
+
+            if (typeof _job.run === "function")
+              agenda.define(_name, options, _job.run);
+
+            log += "-> Job '" + _name + "' found in '" + namespace + "." + name + "', defined in agenda";
+            if (typeof freq === 'string') {
+              freq = freq.trim().toLowerCase();
+              if (freq.indexOf('every') == 0) {
+                var interval = freq.substr(6).trim();
+                agenda.every(interval, _name, _job.data);
+                log += " and will run " + freq;
+              } else if (freq.indexOf('schedule') == 0) {
+                var when = freq.substr(9).trim();
+                agenda.schedule(when, _name, _job.data);
+                log += " and scheduled " + when;
+              } else if (freq === 'now') {
+                agenda.now(_name, _job.data);
+                log += " and started";
+              } else {
+                error = true;
+                log += " but frequency is not supported";
+              }
+            }
+          }
+          log += ".";
+          if (error) sails.log.error(log);
+          else sails.log.verbose(log);
+        } else {
+          hook.initJobs(job, namespace + "." + name);
+        }
+      })
+    }
+  }
+};
+ at SyntaxError: Unexpected token (93:7)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2152:16)
+    at Parser.pp$3.parseSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1741:35)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1718:17)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

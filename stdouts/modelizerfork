@@ -1,0 +1,444 @@
+/root/Targets/modelizerfork
+└─┬ modelizerfork@2.0.0 
+  ├─┬ express@4.13.4 
+  │ ├─┬ accepts@1.2.13 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.5.3 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.1 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.1.5 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.2.0 
+  │ │ └── ms@0.7.1 
+  │ ├── depd@1.1.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.7.0 
+  │ ├─┬ finalhandler@0.4.1 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.3.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.0.10 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.0.5 
+  │ ├── qs@4.0.0 
+  │ ├── range-parser@1.0.3 
+  │ ├─┬ send@0.13.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ ├── http-errors@1.3.1 
+  │ │ ├── mime@1.3.4 
+  │ │ └── statuses@1.2.1 
+  │ ├─┬ serve-static@1.10.3 
+  │ │ └── send@0.13.2 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.0.1 
+  ├─┬ mongodb@2.1.12 
+  │ ├── es6-promise@3.0.2 
+  │ ├─┬ mongodb-core@1.3.11 
+  │ │ ├── bson@0.4.23 
+  │ │ └─┬ require_optional@1.0.1 
+  │ │   ├── resolve-from@2.0.0 
+  │ │   └── semver@5.4.1 
+  │ └─┬ readable-stream@1.0.31 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@0.0.1 
+  │   └── string_decoder@0.10.31 
+  ├─┬ mongojs@2.3.0 
+  │ ├── each-series@1.0.0 
+  │ ├─┬ once@1.4.0 
+  │ │ └── wrappy@1.0.2 
+  │ ├── parse-mongo-url@1.1.1 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ ├── thunky@0.1.0 
+  │ ├── to-mongodb-core@2.0.0 
+  │ └── xtend@4.0.1 
+  ├── objectid-browser@0.0.1 
+  └── q@1.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/modelizerfork/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0229 took 2.4175s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (11:4) on program /**
+ *  The Modelizer node.js implementation
+ *  (This runs on the server)
+ */
+
+
+var Model = require('./model');
+
+var Q = require('q');
+
+var assert = require('./microlibs').assert;
+var check = require('./microlibs').check;
+var isEmptyObject = require('./microlibs').isEmptyObject;
+
+var ObjectId = require('./objectid');
+
+var API_BASEURL = "/api/v1";
+
+// The Storage-System using Mongo-DB
+Model.MongoConnector = function (databaseConnection) {
+  var db = databaseConnection;
+
+  return function (theModel) {
+    var collection = db.collection(theModel.modelName);
+
+    // extensions for operation & factory call
+    collection.callOperation = function (opName, params, HTMLrequest) {
+      var deferred = Q.defer();
+
+      var res;
+      if (theModel.operations.hasOwnProperty(opName)) {  // call is an operation
+        res = theModel.operationImpls[opName](params, HTMLrequest);
+      } else if (theModel.factorys.hasOwnProperty(opName)) {  // call is a factory
+        res = theModel.factoryImpls[opName](params, HTMLrequest);
+      } else {
+        assert(false, "Call '" + opName + "' was not defined");
+      }
+
+      if (res != undefined && res.name == 'promise') return res;  // if the function already returns a promise
+      deferred.resolve(res);
+      return deferred.promise;
+    };
+
+    /*    // findOne overwrite - workaround for Bug #10
+     collection.findOne = function (search, callback) {
+     collection.find(search, function (err, docs) {
+     if (err) {
+     callback(err, docs);
+     return;
+     }
+     if (docs.length < 1) {
+     callback(err, null);
+     return;
+     }
+     callback(err, docs[0]);
+     });
+     };
+     */
+    return collection;  // the collection for this model
+  }
+};
+
+// setup webserver stuff
+Model.prototype.express = function (app) {
+  this.app = app;
+};
+
+Model.prototype.serve = function () {
+  var self = this;
+
+  // filter to allow cross origin requests
+  this.app.all(API_BASEURL + '/*', function (req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    //res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'OPTIONS,GET,POST,PUT,DELETE');
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+    if ('OPTIONS' == req.method) {
+      return res.send(200);
+    }
+    next();
+  });
+
+  // REST - GET all
+  this.app.get(API_BASEURL + '/' + this.modelName + '/all', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    self.filtered_allQ(req)
+      .then(function (docs) {
+        // pack data for transport
+        for (var i = 0; i < docs.length; i++) {
+          self._transform(self, docs[i], "pack");
+        }
+        res.send(JSON.stringify(docs, null, 2));
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - all()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+  });
+
+  /*
+   * Security Issue
+   * transform ObjectID!!
+   */
+
+  // REST - GET find
+  this.app.post(API_BASEURL + '/' + this.modelName + '/find', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    self.filtered_findQ(req.body, req)
+      .then(function (docs) {
+        // pack data for transport
+        for (var i = 0; i < docs.length; i++) {
+          self._transform(self, docs[i], "pack");
+        }
+        res.send(JSON.stringify(docs, null, 2));
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - find()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+  });
+
+  // REST - GET id
+  this.app.get(API_BASEURL + '/' + this.modelName + '/:id', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    self.filtered_getQ(req.params.id, req)
+      .then(function (doc) {
+        // pack data for transport
+        self._transform(self, doc, "pack");
+        res.send(JSON.stringify(doc, null, 2));
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - get()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+  });
+
+  // REST - save doc
+  this.app.put(API_BASEURL + '/' + this.modelName, function (req, res) {
+    assert(req.body != undefined, "request body missing! Use bodyParser!");
+
+    res.setHeader('Content-Type', 'application/json');
+
+    // client sendet obj._id als string ->  in ObjectId umwandeln
+    if (req.body._id != undefined) {
+      try {
+        req.body._id = ObjectId(req.body._id);
+      } catch (e) {
+        res.send(err.statusCode || 400, {error: "Invalid ObjectId Format"});
+        return;
+      }
+    }
+
+    // unpack data for storage
+    self._transform(self, req.body, "unpack");
+
+    self.filtered_saveQ(req.body, req)
+      .then(function (doc) {
+        res.send(JSON.stringify(doc, null, 2));
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - save()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+  });
+
+  // REST - remove doc
+  this.app.delete(API_BASEURL + '/' + this.modelName + '/:id', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    self.filtered_removeQ(req.params.id, req)
+      .then(function () {
+        res.send(200, {status: "OK"});
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - remove()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+  });
+
+  // REST - PUT operation
+  this.app.put(API_BASEURL + '/' + this.modelName + '/:op', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    assert(req.body != undefined, "No body in request!");
+    self.filtered_callOpQ(req.params.op, req.body, req)
+      .then(function (result) {
+        if (typeof result != 'object') {
+          result = {"result": result};
+        }
+
+        res.send(200, result);
+      })
+      .fail(function (err) {
+        if (!err.statusCode) console.log("Error in HTTP GET - operation()\n", err.message, "\nStack:\n", err.stack);
+        res.send(err.statusCode || 500, {error: err.message});
+      }).done();
+
+  });
+
+};
+
+// use default get
+Model.prototype.filtered_getQ = function (id_str, req) {
+  var id;
+
+  try {
+    id = ObjectId(id_str);
+  } catch (e) {
+    var deferred = Q.defer();
+    deferred.reject(new Error("Invalid ObjectId Format"));
+    return deferred.promise;
+  }
+
+  return this.filtered_findQ({_id: id}, req)
+    .then(function (docs) {
+      if (docs.length != 1) {
+        var deferred = Q.defer();
+        deferred.reject(new Error("Object not found!"));
+        return deferred.promise;
+      }
+
+      return docs[0];
+    });
+};
+
+Model.prototype.filtered_findQ = function (search, req) {
+  var self = this;
+
+  return this._getReadFilter(req)
+    .then(function (filter) {
+      if (filter === false) {  // deny all
+        var deniedError = new Error("Access denied!");
+        deniedError.statusCode = 401;
+        throw deniedError;
+      }
+
+      // copy
+      for (var i in filter) {  // erweitere die Suche um den filter
+        search[i] = filter[i];
+        // Achtung: security! Suche muss mit Filterkriterien überschrieben werden!!
+      }
+
+      // weiterrichen an die eigentliche Suche
+      return self.findQ(search);
+
+    });
+};
+
+Model.prototype.filtered_allQ = function (req) {
+  return this.filtered_findQ({}, req);
+};
+
+Model.prototype.filtered_saveQ = function (obj, req) {
+  // TODO: ich übergebe da eigentlich ein doc kein obj!!
+
+  var self = this;
+
+  return this._getWriteFilter(obj, req)
+    .then(function (filter) {
+      if (filter === false) {  // deny all
+        var deniedError = new Error("Access denied!");
+        deniedError.statusCode = 401;
+        throw deniedError;
+      }
+
+      // TODO: der Filter muss irgendwie angewand werden -> da braucht es noch ein Konzept
+      //      // copy
+      //      for (var i in filter) {  // erweitere die Suche um den filter
+      //        search[i] = filter[i];
+      //        // Achtung: security! Suche muss mit Filterkriterien überschrieben werden!!
+      //      }
+
+      // weiterrichen an den Aufruf
+      return self.saveQ(obj);
+    });
+
+};
+
+Model.prototype.filtered_removeQ = function (id_str, req) {
+  var self = this;
+  var deferred = Q.defer();
+
+  var id;
+  try {
+    id = ObjectId(id_str);
+  } catch (e) {
+    deferred.reject(new Error("Invalid ObjectId Format"));
+    return deferred.promise;
+  }
+
+  return self.getQ(id)
+    .then(function (obj) {
+      return Q(self._getWriteFilter(obj, req));
+    })
+    .then(function (filter) {
+
+      if (filter === false) {  // deny all
+        var deniedError = new Error("Access denied!");
+        deniedError.statusCode = 401;
+        throw deniedError;
+      }
+
+      // weiterrichen an den Aufruf
+      return self.removeQ(id);
+    })
+};
+
+Model.prototype.filtered_callOpQ = function (operationName, params, HTMLrequest) {
+  // todo security
+  // todo: assure that operationName is in this.operations (security)
+  return this.callOpQ(operationName, params, HTMLrequest);
+};
+
+Model.runSimpleServer = function (dir, port, mongostr) {
+
+  // init mongodb database connection
+  var mongojs = require('mongojs');
+  var db = mongojs(mongostr);
+
+  // init express webserver
+  var express = require('express');
+  var app = express();
+
+  app.use(express.logger());
+  app.use(express.bodyParser());
+  app.use(express.cookieParser());
+  app.use(express.session({
+    secret: 'Session Secret',
+    store: new express.session.MemoryStore
+  }));
+
+  // serve the Modelizer library
+  app.use(express.static(__dirname));
+  app.use(express.static(dir));
+
+  app.set('json spaces', 2);
+  app.listen(port);
+
+  Model.simpleServer = {};
+  Model.simpleServer.app = app;
+  Model.simpleServer.connector = Model.MongoConnector(db);
+
+  console.log("Server setup at Port", port);
+  //console.log("Server dir", __dirname)
+};
+
+module.exports = Model; at SyntaxError: Unexpected token (11:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

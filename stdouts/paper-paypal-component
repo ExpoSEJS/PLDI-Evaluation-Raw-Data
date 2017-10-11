@@ -1,0 +1,406 @@
+/root/Targets/paper-paypal-component
+└─┬ paper-paypal-component@1.3.2 
+  ├─┬ body-parser@1.18.1 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ └── inherits@2.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   └── media-typer@0.3.0 
+  ├── btoa@1.1.2 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.0.5 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├─┬ form-data@1.0.1 
+  │ ├─┬ async@2.5.0 
+  │ │ └── lodash@4.17.4 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ └─┬ mime-types@2.1.17 
+  │   └── mime-db@1.30.0 
+  ├── http@0.0.0 
+  ├─┬ path@0.12.7 
+  │ ├── process@0.11.10 
+  │ └─┬ util@0.10.3 
+  │   └── inherits@2.0.1 
+  └── xmlhttprequest@1.8.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/paper-paypal-component/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0623 took 5.1213s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (153:16) on program /**
+ * Dependencies
+ * @type {[type]}
+ */
+var express 		= require('express');
+var XMLHttpRequest 	= require("xmlhttprequest").XMLHttpRequest
+var btoa 			= require("btoa");
+var url 			= require('url');
+var path 			= require('path');
+
+/**
+ * [paypal description]
+ * @type {Object}
+ */
+var paypal = {};
+var helper = {};
+
+paypal.version = "0.0.1";
+paypal.config = {
+	'clientID': '',
+	'secret': ''
+};
+paypal.urls = {
+	auth: {
+		url: "https://api.sandbox.paypal.com/v1/oauth2/token",
+		headers: [
+			{
+				header: "Accept",
+				value: "application/json"
+			}
+		],
+		data: {grant_type: "client_credentials"}
+	},
+	payment: {
+		url: "https://api.sandbox.paypal.com/v1/payments/payment",
+		headers: [
+			{
+				header: "Content-Type",
+				value: "application/json"
+			}
+		],
+		data: {}
+	},
+	execute: {
+		url: "https://api.sandbox.paypal.com/v1/payments/payment/[paymentId]/execute/",
+		headers: [
+			{
+				header: "Content-Type",
+				value: "application/json"
+			}
+		],
+		data: {}
+	}
+};
+
+/**
+ * Simple test method to test the node module
+ * @return void
+ */
+paypal.init = function (app, dir) {
+	console.log("[paypal] Paypal module ready to use");
+
+	app.get('/config.json', function (req, res) {
+		res.sendFile(dir + '/config.json');
+	});
+
+	/**
+	 * Create namespace paypal to load dependencies
+	 * @param  {[type]} req  [description]
+	 * @param  {[type]} res) {		res.sendFile(path.resolve('dist/paypal/paypal-api.js'));	} [description]
+	 * @return {[type]}      [description]
+	 */
+	app.get('/paypal/paypal-api.js', function (req, res) {
+		res.sendFile(path.resolve('dist/paypal/paypal-api.js'));
+	});
+
+	app.get('/paypal/gettoken', function (req, res) {
+		var url = req.protocol + '://' + req.get('host');
+		paypal.getConfig(url, req, res);
+	});
+
+	app.post('/paypal/payment', function (req, res) {
+		var data = req.body.transaction;
+		var res = res;
+
+		paypal.payment({
+			type: 'POST',
+			data: data,
+			callback: function (response) {
+				res.status(response.status);
+				res.setHeader('content-Type', 'application/json');
+				res.send(response.responseText);
+			},
+			failure: function (response) {
+				res.status(response.status);
+				res.setHeader('content-Type', 'application/json');
+				res.send({"error": "transaction error"});
+			},
+			headers: [
+				{header: 'Authorization', value: req.get('Authorization')},
+				{header: 'Content-Type', value: 'application/json'}
+			]
+		});
+	});
+
+	app.post('/paypal/execute', function (req, res) {
+		var data = {payer_id: {payer_id: req.body.payer_id}, paymentId: req.body.paymentId};
+		var res = res;
+		console.log(data);
+		paypal.execute({
+			type: 'POST',
+			data: data,
+			callback: function (response) {
+				res.status(response.status);
+				res.setHeader('content-Type', 'application/json');
+				res.send(response.responseText);
+			},
+			failure: function (response) {
+				res.status(response.status);
+				res.setHeader('content-Type', 'application/json');
+				res.send({"error": "transaction error"});
+			},
+			headers: [
+				{header: 'Authorization', value: req.get('Authorization')},
+				{header: 'Content-Type', value: 'application/json'}
+			]
+		});
+	});
+
+	// FIXME : define all route
+	// ...
+};
+
+/**
+ * [getConfig description]
+ * @return {[type]} [description]
+ */
+paypal.getConfig = function (url, req, res) {
+	var url = typeof url !== 'undefined' ?  url : null;
+	var req = typeof req !== 'undefined' ?  req : null;
+	var res = typeof res !== 'undefined' ?  res : null;
+
+	if (null) {
+		return;
+	}
+
+	// FIXME: Assure the the url is the good one
+	helper.ajax({
+		url: url + '/config.json',
+		type: "GET",
+		callback: function (request) {
+			var data = JSON.parse(request.responseText);
+			console.log("\033[0;34m[paypal] Config loaded with success\033[0m");
+			paypal.config = data;
+			
+			// Get the oauth token
+			// And return the json response to the api
+			paypal.oauth({
+				endPoint: paypal.urls.auth.url,
+				user: paypal.config.clientID,
+				password: paypal.config.secret,
+				callback: function (request) {
+					if (JSON.parse(request.responseText)) {
+						res.setHeader('Content-Type', 'application/json');
+						res.send(JSON.stringify(JSON.parse(request.responseText)))
+					}
+				}
+			});
+		}
+	});
+};
+
+/**
+ * [showConfig description]
+ * @return {[type]} [description]
+ */
+paypal.showConfig = function () {
+	console.log(paypal.config);
+};
+
+/**
+ * [oauth description]
+ * @param  {[type]} param [description]
+ * @return {[type]}       [description]
+ */
+paypal.oauth = function (param) {
+	var endPoint 	= typeof param.endPoint !== 'undefined' ? param.endPoint : paypal.urls.auth.url;
+	var user 		= typeof param.user !== 'undefined' ? param.user : null;
+	var password 	= typeof param.password !== 'undefined' ? param.password : null;
+	var callback 	= typeof param.callback !== 'undefined' ? param.callback : function () {};
+
+	helper.ajax({
+		url: endPoint + '?grant_type=client_credentials',
+		type: 'POST',
+		callback: callback,
+		user: user,
+		password: password
+	});
+};
+
+/**
+ * [payment description]
+ * @param  {[type]} param [description]
+ * @return {[type]}       [description]
+ */
+paypal.payment = function (param) {
+	var endPoint 	= typeof param.endPoint !== 'undefined' ? param.endPoint : paypal.urls.payment.url;
+	var headers		= typeof param.headers !== 'undefined' ? param.headers : paypal.urls.payment.headers;
+	var data 		= typeof param.data !== 'undefined' ? param.data : {};
+	var callback	= typeof param.callback !== 'undefined' ? param.callback : function () {};
+	var failure		= typeof param.failure !== 'undefined' ? param.failure : function () {};
+
+	helper.ajax({
+		url: endPoint,
+		type: 'POST',
+		data: data,
+		callback: callback,
+		failure: failure,
+		headers: headers
+	});
+};
+
+paypal.execute = function (param) {
+	var endPoint 	= typeof param.endPoint !== 'undefined' ? param.endPoint : paypal.urls.execute.url;
+	var headers		= typeof param.headers !== 'undefined' ? param.headers : paypal.urls.execute.headers;
+	var data 		= typeof param.data !== 'undefined' ? param.data : {};
+	var callback	= typeof param.callback !== 'undefined' ? param.callback : function () {};
+	var failure		= typeof param.failure !== 'undefined' ? param.failure : function () {};
+
+	endPoint = endPoint.replace('[paymentId]', data.paymentId);
+
+	helper.ajax({
+		url: endPoint,
+		type: 'POST',
+		data: data.payer_id,
+		callback: callback,
+		failure: failure,
+		headers: headers
+	});
+}
+
+/**
+ * [ajax description]
+ * @param  {[type]} url
+ * @param  {[type]} type
+ * @param  {[type]} data
+ * @param  {[type]} callback
+ * @param  {[type]} failure
+ * @param  {[type]} headers
+ * @return {[type]}
+ */
+helper.ajax = function (param) {
+	var url 		= typeof param.url !== 'undefined' ? param.url  : "/";
+	var type 		= typeof param.type !== 'undefined' ? param.type  : "GET";
+	var data 		= typeof param.data !== 'undefined' ? helper.encodeData(param.data)  : helper.encodeData({});
+	var callback 	= typeof param.callback !== 'undefined' ? param.callback  : function () {};
+	var failure 	= typeof param.failure !== 'undefined' ? param.failure  : function () {};
+	var headers 	= typeof param.headers !== 'undefined' ? param.headers  : [{'header': 'X-Requested-With', 'value': 'XMLHttpRequest'}];
+	var user 		= typeof param.user !== 'undefined' ? param.user  : null;
+	var password	= typeof param.password !== 'undefined' ? param.password  : null;
+
+	var request = new XMLHttpRequest();
+	request.open(type, url, true, user, password);
+	request.withCredentials = true;
+
+	for (var i = 0; i < headers.length; i++) {
+		request.setRequestHeader(headers[i].header, headers[i].value);
+	};
+
+	if (data !== "" && type.toLowerCase() == "post") {
+		request.setRequestHeader("Content-type", "application/json");
+
+		var data = JSON.stringify(param.data);
+	}
+
+	request.onload = function() {
+		if (request.status >= 200 && request.status < 400) {
+			// Success!
+			callback(request);
+		} else {
+			// Error!
+			console.log(request.status, " error: ", request.responseText);
+			failure(request);
+		}
+	};
+
+	request.onerror = function() {
+	  // There was a connection error of some sort
+	  console.log(request.status);
+	};
+
+	request.send(data);
+};
+
+/**
+ * [encodeData description]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
+helper.encodeData = function (data) {
+    var queryString = Object.keys(data).map(function(key) {
+            return encodeURIComponent(key) + '=' +
+                encodeURIComponent(data[key]);
+        }).join('&');
+    return encodeURI(queryString);
+}
+
+/**
+ * Module exports.
+ * @public
+ */
+exports.version 	= paypal.version;
+exports.init 		= paypal.init;
+exports.login 		= paypal.login;
+exports.getConfig 	= paypal.getConfig;
+exports.showConfig 	= paypal.showConfig;
+ at SyntaxError: Octal literal in strict mode (153:16)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parseSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1738:37)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

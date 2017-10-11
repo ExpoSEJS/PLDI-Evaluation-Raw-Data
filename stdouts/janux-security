@@ -1,0 +1,37 @@
+/root/Targets/janux-security
+└─┬ janux-security@0.5.1 
+  ├── amdefine@0.0.5 
+  ├─┬ log4js@0.6.5 
+  │ ├── async@0.1.15 
+  │ ├── dequeue@1.0.3 
+  │ ├─┬ readable-stream@1.0.34 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── semver@1.1.4 
+  ├── sprintf-js@0.0.7 
+  └── underscore@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/janux-security/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 0 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","isArray","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.1031 took 9.3284s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 43% Coverage (LOC): 51%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/janux-security/node_modules/janux-security/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/janux-security/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/janux-security/node_modules/janux-security/lib/PermissionContext.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/janux-security/node_modules/amdefine/amdefine.js. Coverage (Term): 50% Coverage (LOC): 55%
+*- File /root/Targets/janux-security/node_modules/sprintf-js/src/sprintf.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/janux-security/node_modules/janux-security/lib/Role.js. Coverage (Term): 41% Coverage (LOC): 51%
+*- File /root/Targets/janux-security/node_modules/janux-security/lib/PermissionHolder.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 0 errors **

@@ -1,0 +1,201 @@
+/root/Targets/barbeque
+└── barbeque@0.2.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/barbeque/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0785 took 5.3879s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (7:4) on program /*
+ * lib/index.js
+ */
+
+'use strict';
+
+var assert = require('assert'),
+    events = require('events'),
+    util = require('util');
+
+var _ = require('lodash');
+
+var C = require('./constant');
+
+function Barbeque(config) {
+  assert(_.isPlainObject(config) || _.isUndefined(config),
+         '"config" must be a plain object or undefined.');
+
+  if (_.isUndefined(config)) { config = {}; }
+
+  assert((_.isString(config.host) && !_.isEmpty(config.host)) || _.isUndefined(config.host),
+         '"config.host" must be a non-empty string or undefined.');
+  assert((_.isNumber(config.port) && (parseInt(config.port, 10) === config.port)) || _.isUndefined(config.port),
+         '"config.port" must be an integer or undefined.');
+  assert((_.isString(config.password) && !_.isEmpty(config.password)) || _.isNull(config.password) || _.isUndefined(config.password),
+         '"config.password" must be a non-empty string or null/undefined.');
+  assert((_.isString(config.namespace) && !_.isEmpty(config.namespace)) || _.isNull(config.namespace) || _.isUndefined(config.namespace),
+         '"config.namespace" must be a non-empty string or null/undefined.');
+  assert((_.isString(config.prefix) && !_.isEmpty(config.prefix)) || _.isUndefined(config.prefix),
+         '"config.prefix" must be a non-empty string or undefined.');
+
+  if (_.isEmpty(config)) { config = {}; }
+  if (_.isEmpty(config.host)) { config.host = C.DEFAULT_HOST; }
+  if (_.isUndefined(config.port)) { config.port = C.DEFAULT_PORT; }
+  if (_.isEmpty(config.password)) { config.password = C.DEFAULT_PASSWORD; }
+  if (_.isEmpty(config.namespace)) { config.namespace = C.DEFAULT_NAMESPACE; }
+  if (_.isEmpty(config.prefix)) { config.prefix = C.DEFAULT_PREFIX; }
+
+  this._config = config;
+  this._builder = new (require('./builder'))(config.namespace, config.prefix);
+  this._worker = new (require('./worker'))(this);
+
+  this.on('error', function () {});
+}
+
+util.inherits(Barbeque, events.EventEmitter);
+
+Barbeque.prototype.admin = function (options, cb) {
+  assert(_.isObject(options) || _.isUndefined(options), '"options" must be an object or undefined.');
+  assert(_.isFunction(cb) || _.isUndefined(cb), '"cb" must be a function or undefined.')
+
+  return new (require('../admin'))(options, cb);
+};
+
+Barbeque.prototype.create = function (type, data) {
+  assert(_.isString(type) && !_.isEmpty(type), '"type" must be a non-empty string.');
+
+  return new (require('./task'))(this, type, data);
+};
+
+Barbeque.prototype.listen = function () {
+  if (!this._worker) {
+    this._worker = new (require('./worker'))(this);
+  }
+
+  this._worker.listen();
+
+  return this;
+};
+
+Barbeque.prototype.process = function (type, fn) {
+  assert(_.isString(type) && !_.isEmpty(type), '"type" must be a non-empty string.');
+  assert(_.isFunction(fn), '"fn" must be a function.');
+
+  this._worker.watch(type, fn);
+
+  return this;
+};
+
+Barbeque.prototype.processAll = function (nestableObject) {
+  assert(_.isObject(nestableObject), '"nestableObject" must be an object type.');
+
+  var self = this,
+      flattenObject = require('./helper').flattenDot(nestableObject),
+      n = _.size(flattenObject);
+
+  _.each(_.keys(flattenObject), function (type, i) {
+    var fn = flattenObject[type],
+        skipProcess = (i + 1 < n);
+
+    assert(_.isString(type) && !_.isEmpty(type), '"type" must be a non-empty string.');
+    assert(_.isFunction(fn), '"fn" must be a function (type: ' + type + ')');
+
+    self._worker.watch(type, fn, skipProcess);
+  });
+
+  return this;
+};
+
+// TODO
+Barbeque.prototype.query = function (query, cb, queryDetail) {
+  if (_.isFunction(query) && _.isUndefined(cb)) {
+    detail = cb;
+    cb = query;
+    query = void 0;
+  }
+
+  assert(_.isFunction(cb),
+         '"cb" must be a function.');
+  assert(_.isBoolean(queryDetail) || _.isUndefined(queryDetail),
+         '"queryDetail" must be a boolean.');
+
+  if (_.isEmpty(query)) {
+    // Find all
+    cb(null, ['TASK1', 'TASK2', 'TASK3']);
+  } else if (_.isArray(query)) {
+    // Find many
+    cb(null, ['TASK1', 'TASK2']);
+  } else if (_.isString(query)) {
+    // Find one
+    cb(null, 'TASK');
+  } else {
+    cb(new Error('Invalid query: ' + JSON.stringify(query)));
+  }
+};
+
+// TODO
+Barbeque.prototype.queryDetail = function (query, cb) {
+  return this.query(query, cb, true);
+};
+
+Barbeque.prototype.run = function (fn, data, cb) {
+  assert(_.isFunction(fn), '"fn" must be a funciton.');
+
+  var self = this,
+      currentTime = new Date();
+
+  fn({
+    id: null,
+    type: null,
+    data: data,
+    createdAt: currentTime,
+    updatedAt: currentTime,
+    // extra
+    create: create,
+    log: log,
+    progress: progress
+  }, cb);
+
+  function create() {
+    return self.create.apply(self, arguments);
+  }
+
+  function log() {
+    console.info('[LOG] ' + util.format.apply(null, arguments));
+  }
+
+  function progress(completed, total) {
+    console.info('[PROGRESS] %s of %s', completed, total);
+  }
+};
+
+// TODO
+Barbeque.prototype.update = function (taskId, task, cb) {
+  cb(null, taskId);
+};
+
+// Public API
+exports = module.exports = Barbeque;
+ at SyntaxError: Unexpected token (7:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/barbeque/node_modules/barbeque/index.js. Coverage (Term): 78% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

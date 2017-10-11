@@ -1,0 +1,66 @@
+/root/Targets/sails-generate-new-with-mast
+└─┬ sails-generate-new-with-mast@0.11.1 
+  ├── async@0.2.10 
+  ├─┬ fs-extra@0.8.1 
+  │ ├── jsonfile@1.1.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── ncp@0.4.2 
+  │ └── rimraf@2.2.8 
+  ├── lodash@4.17.4 
+  └─┬ merge-defaults@0.2.1 
+    └── lodash@2.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sails-generate-new-with-mast/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0758 took 46.7109s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (9:5) on program /**
+ * .sailsrc
+ *
+ * @param  {[type]} scope [description]
+ * @return {[type]}       [description]
+ */
+module.exports = function(scope) {
+
+	var package = {};
+	package.generators = {};
+	package.generators.modules = {};
+
+	//
+	// if scope has exceptional config, include it in the rc file:
+	// The module to use for each known type of generator
+	// 
+	
+	if (scope.coffee) {
+		package.generators.modules.model = 'sails-generate-model-coffee';
+		package.generators.modules.controller = 'sails-generate-controller-coffee';
+	}
+
+	return package;
+}; at SyntaxError: The keyword 'package' is reserved (9:5)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sails-generate-new-with-mast/node_modules/sails-generate-new-with-mast/lib/index.js. Coverage (Term): 27% Coverage (LOC): 16%
+*- File /root/Targets/sails-generate-new-with-mast/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/sails-generate-new-with-mast/node_modules/sails-generate-new-with-mast/json/package.json.js. Coverage (Term): 17% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

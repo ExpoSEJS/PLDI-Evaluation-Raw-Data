@@ -1,0 +1,1074 @@
+
+> leveldown@1.5.0 install /root/Targets/gpii-pouchdb-lucene/node_modules/leveldown
+> prebuild --install
+
+
+> gpii-pouchdb-lucene@0.1.0-dev.20170523T095210Z.7508cd5 postinstall /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-pouchdb-lucene
+> npm run build
+
+
+> gpii-pouchdb-lucene@0.1.0-dev.20170523T095210Z.7508cd5 build /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-pouchdb-lucene
+> node bin/build_couchdb_lucene.js
+
+Infusion at path /root/Targets/gpii-pouchdb-lucene/node_modules/infusion is at top level 
+03:07:09.986:  Registering module myapp from path 
+03:07:09.990:  Registering module infusion from path /root/Targets/gpii-pouchdb-lucene/node_modules/infusion
+03:07:09.993:  Registering module infusion from path /root/Targets/gpii-pouchdb-lucene/node_modules/infusion
+03:07:10.025:  Registering module kettle from path /root/Targets/gpii-pouchdb-lucene/node_modules/kettle
+03:07:11.458:  Registering module gpii-launcher from path /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-launcher
+03:07:11.459:  Registering module gpii-pouchdb-lucene from path /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-pouchdb-lucene
+03:07:12.327:  Cleaned up build and source directories...
+03:07:15.152:  Cloned couchb-lucene repository...
+03:07:15.262:  Checked out couchb-lucene tagged version...
+03:07:15.317:  ASSERTION FAILED: {
+    "0": {
+        "killed": false,
+        "code": 127,
+        "signal": null,
+        "cmd": "mvn -q -D maven.test.skip=true"
+    }
+}
+03:07:15.318:  Current activity: 
+    while firing to listener to event named onError of component {
+    "typeName": "builderConf",
+    "id": "4zksg1p7-46",
+    "lifecycleStatus": "treeConstructed",
+    "destroy": { Function
+        
+    },
+    "options": {
+        "gradeNames": [
+            "kettle.config",
+            "fluid.component",
+            "gpii.pouchdb.builder",
+            "builderConf"
+        ],
+        "buildDir": "%gpii-pouchdb-lucene/build",
+        "srcDir": "%gpii-pouchdb-lucene/build/couchdb-lucene",
+        "zipPath": "%gpii-pouchdb-lucene/build/couchdb-lucene/target/couchdb-lucene-1.0.2-dist.zip",
+        "url": "https://github.com/rnewson/couchdb-lucene.git",
+        "hash": "ce773de1becf8a400e0344a43cf6eea3134dcc63",
+        "version": "1.0.2",
+        "listeners": {
+            "onCreate.checkForZip": [
+                {
+                    "funcName": "gpii.pouchdb.builder.checkForZip",
+                    "args": [
+                        "{that}"
+                    ],
+                    "componentSource": "gpii.pouchdb.builder"
+                }
+            ],
+            "o .... [output suppressed at 1024 chars - for more output, increase fluid.logObjectRenderChars]
+03:07:15.320:  FATAL ERROR: Uncaught exception: Assertion failure - check console for more details: {
+    "0": {
+        "killed": false,
+        "code": 127,
+        "signal": null,
+        "cmd": "mvn -q -D maven.test.skip=true"
+    }
+}
+Error: Assertion failure - check console for more details: {
+    "0": {
+        "killed": false,
+        "code": 127,
+        "signal": null,
+        "cmd": "mvn -q -D maven.test.skip=true"
+    }
+}
+    at fluid.FluidError (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/Fluid.js:174:26)
+    at Object.fluid.builtinFail (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/Fluid.js:198:15)
+    at kettle.failureHandler (/root/Targets/gpii-pouchdb-lucene/node_modules/kettle/lib/KettleUtils.js:57:11)
+    at Object.fire (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/Fluid.js:1533:40)
+    at fluid.fail (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/Fluid.js:213:32)
+    at togo (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/FluidIoC.js:1800:33)
+    at Object.fire (/root/Targets/gpii-pouchdb-lucene/node_modules/infusion/src/framework/core/js/Fluid.js:1533:40)
+    at /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-pouchdb-lucene/bin/build_couchdb_lucene.js:73:33
+    at ChildProcess.exithandler (child_process.js:218:5)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:192:7)
+    at maybeClose (internal/child_process.js:890:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+03:07:15.320:  Current activity: 
+/root/Targets/gpii-pouchdb-lucene
+└─┬ gpii-pouchdb-lucene@0.1.0-dev.20170523T095210Z.7508cd5 
+  ├── adm-zip@0.4.7 
+  ├─┬ gpii-express@1.0.7 
+  │ ├─┬ body-parser@1.17.1 
+  │ │ ├── bytes@2.4.0 
+  │ │ ├── content-type@1.0.4 
+  │ │ ├─┬ debug@2.6.1 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├── depd@1.1.1 
+  │ │ ├── http-errors@1.6.2 
+  │ │ ├── iconv-lite@0.4.15 
+  │ │ ├─┬ on-finished@2.3.0 
+  │ │ │ └── ee-first@1.1.1 
+  │ │ ├─┬ raw-body@2.2.0 
+  │ │ │ └── unpipe@1.0.0 
+  │ │ └─┬ type-is@1.6.15 
+  │ │   └── media-typer@0.3.0 
+  │ ├─┬ cookie-parser@1.4.3 
+  │ │ ├── cookie@0.3.1 
+  │ │ └── cookie-signature@1.0.6 
+  │ ├─┬ express@4.15.2 
+  │ │ ├─┬ accepts@1.3.4 
+  │ │ │ └── negotiator@0.6.1 
+  │ │ ├── array-flatten@1.1.1 
+  │ │ ├── content-disposition@0.5.2 
+  │ │ ├── encodeurl@1.0.1 
+  │ │ ├── escape-html@1.0.3 
+  │ │ ├── etag@1.8.1 
+  │ │ ├─┬ finalhandler@1.0.6 
+  │ │ │ └─┬ debug@2.6.9 
+  │ │ │   └── ms@2.0.0 
+  │ │ ├── fresh@0.5.0 
+  │ │ ├── merge-descriptors@1.0.1 
+  │ │ ├── methods@1.1.2 
+  │ │ ├── parseurl@1.3.2 
+  │ │ ├── path-to-regexp@0.1.7 
+  │ │ ├─┬ proxy-addr@1.1.5 
+  │ │ │ ├── forwarded@0.1.2 
+  │ │ │ └── ipaddr.js@1.4.0 
+  │ │ ├── range-parser@1.2.0 
+  │ │ ├─┬ send@0.15.1 
+  │ │ │ ├── destroy@1.0.4 
+  │ │ │ └── mime@1.3.4 
+  │ │ ├── serve-static@1.12.1 
+  │ │ ├── setprototypeof@1.0.3 
+  │ │ ├── statuses@1.3.1 
+  │ │ ├── utils-merge@1.0.0 
+  │ │ └── vary@1.1.2 
+  │ └─┬ express-session@1.15.2 
+  │   ├── crc@3.4.4 
+  │   ├── debug@2.6.3 
+  │   ├── on-headers@1.0.1 
+  │   └─┬ uid-safe@2.1.5 
+  │     └── random-bytes@1.0.0 
+  ├─┬ gpii-launcher@1.0.0-dev.20170504T113435Z.c5b7001 
+  │ ├─┬ istanbul@0.4.5 
+  │ │ ├── abbrev@1.0.9 
+  │ │ ├── async@1.5.2 
+  │ │ ├─┬ escodegen@1.8.1 
+  │ │ │ ├── estraverse@1.9.3 
+  │ │ │ ├── esutils@2.0.2 
+  │ │ │ ├─┬ optionator@0.8.2 
+  │ │ │ │ ├── deep-is@0.1.3 
+  │ │ │ │ ├── fast-levenshtein@2.0.6 
+  │ │ │ │ ├── levn@0.3.0 
+  │ │ │ │ ├── prelude-ls@1.1.2 
+  │ │ │ │ └── type-check@0.3.2 
+  │ │ │ └─┬ source-map@0.2.0 
+  │ │ │   └── amdefine@1.0.1 
+  │ │ ├── esprima@2.7.3 
+  │ │ ├── glob@5.0.15 
+  │ │ ├─┬ handlebars@4.0.10 
+  │ │ │ ├─┬ optimist@0.6.1 
+  │ │ │ │ ├── minimist@0.0.10 
+  │ │ │ │ └── wordwrap@0.0.3 
+  │ │ │ ├── source-map@0.4.4 
+  │ │ │ └─┬ uglify-js@2.8.29 
+  │ │ │   ├── source-map@0.5.7 
+  │ │ │   ├── uglify-to-browserify@1.0.2 
+  │ │ │   └─┬ yargs@3.10.0 
+  │ │ │     ├── camelcase@1.2.1 
+  │ │ │     ├─┬ cliui@2.1.0 
+  │ │ │     │ ├─┬ center-align@0.1.3 
+  │ │ │     │ │ ├─┬ align-text@0.1.4 
+  │ │ │     │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │     │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │     │ │ │ ├── longest@1.0.1 
+  │ │ │     │ │ │ └── repeat-string@1.6.1 
+  │ │ │     │ │ └── lazy-cache@1.0.4 
+  │ │ │     │ ├── right-align@0.1.3 
+  │ │ │     │ └── wordwrap@0.0.2 
+  │ │ │     └── window-size@0.1.0 
+  │ │ ├─┬ js-yaml@3.10.0 
+  │ │ │ ├─┬ argparse@1.0.9 
+  │ │ │ │ └── sprintf-js@1.0.3 
+  │ │ │ └── esprima@4.0.0 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ ├── nopt@3.0.6 
+  │ │ ├─┬ once@1.4.0 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── resolve@1.1.7 
+  │ │ ├─┬ supports-color@3.2.3 
+  │ │ │ └── has-flag@1.0.0 
+  │ │ ├─┬ which@1.3.0 
+  │ │ │ └── isexe@2.0.0 
+  │ │ └── wordwrap@1.0.0 
+  │ ├─┬ kettle@1.5.0 
+  │ │ ├── fluid-resolve@1.2.0 
+  │ │ ├── json5@0.5.1 
+  │ │ ├─┬ jsonlint@1.6.2 
+  │ │ │ ├── JSV@4.0.2 
+  │ │ │ └─┬ nomnom@1.8.1 
+  │ │ │   ├─┬ chalk@0.4.0 
+  │ │ │   │ ├── ansi-styles@1.0.0 
+  │ │ │   │ ├── has-color@0.1.7 
+  │ │ │   │ └── strip-ansi@0.1.1 
+  │ │ │   └── underscore@1.6.0 
+  │ │ ├─┬ path-to-regexp@1.7.0 
+  │ │ │ └── isarray@0.0.1 
+  │ │ ├─┬ serve-static@1.12.2 
+  │ │ │ └─┬ send@0.15.2 
+  │ │ │   ├─┬ debug@2.6.4 
+  │ │ │   │ └── ms@0.7.3 
+  │ │ │   └── ms@1.0.0 
+  │ │ └─┬ ws@2.3.1 
+  │ │   └── ultron@1.1.0 
+  │ └─┬ yargs@7.1.0 
+  │   ├── camelcase@3.0.0 
+  │   ├─┬ cliui@3.2.0 
+  │   │ ├── strip-ansi@3.0.1 
+  │   │ └─┬ wrap-ansi@2.1.0 
+  │   │   └── strip-ansi@3.0.1 
+  │   ├── decamelize@1.2.0 
+  │   ├── get-caller-file@1.0.2 
+  │   ├─┬ os-locale@1.4.0 
+  │   │ └─┬ lcid@1.0.0 
+  │   │   └── invert-kv@1.0.0 
+  │   ├─┬ read-pkg-up@1.0.1 
+  │   │ ├─┬ find-up@1.1.2 
+  │   │ │ ├── path-exists@2.1.0 
+  │   │ │ └─┬ pinkie-promise@2.0.1 
+  │   │ │   └── pinkie@2.0.4 
+  │   │ └─┬ read-pkg@1.1.0 
+  │   │   ├─┬ load-json-file@1.1.0 
+  │   │   │ ├─┬ parse-json@2.2.0 
+  │   │   │ │ └─┬ error-ex@1.3.1 
+  │   │   │ │   └── is-arrayish@0.2.1 
+  │   │   │ ├── pify@2.3.0 
+  │   │   │ └─┬ strip-bom@2.0.0 
+  │   │   │   └── is-utf8@0.2.1 
+  │   │   ├─┬ normalize-package-data@2.4.0 
+  │   │   │ ├── hosted-git-info@2.5.0 
+  │   │   │ ├─┬ is-builtin-module@1.0.0 
+  │   │   │ │ └── builtin-modules@1.1.1 
+  │   │   │ └─┬ validate-npm-package-license@3.0.1 
+  │   │   │   ├─┬ spdx-correct@1.0.2 
+  │   │   │   │ └── spdx-license-ids@1.2.2 
+  │   │   │   └── spdx-expression-parse@1.0.4 
+  │   │   └── path-type@1.1.0 
+  │   ├── require-directory@2.1.1 
+  │   ├── require-main-filename@1.0.1 
+  │   ├── set-blocking@2.0.0 
+  │   ├─┬ string-width@1.0.2 
+  │   │ ├── code-point-at@1.1.0 
+  │   │ ├─┬ is-fullwidth-code-point@1.0.0 
+  │   │ │ └── number-is-nan@1.0.1 
+  │   │ └─┬ strip-ansi@3.0.1 
+  │   │   └── ansi-regex@2.1.1 
+  │   ├── which-module@1.0.0 
+  │   ├── y18n@3.2.1 
+  │   └─┬ yargs-parser@5.0.0 
+  │     └── camelcase@3.0.0 
+  ├─┬ gpii-pouchdb@1.0.2 
+  │ ├─┬ express-pouchdb@2.1.0  (git://github.com/the-t-in-rtf/express-pouchdb.git#1b89c3968b612a955c51a1c5e45b2ffc75620aeb)
+  │ │ ├── basic-auth@1.0.4 
+  │ │ ├── bluebird@3.4.1 
+  │ │ ├─┬ body-parser@1.15.2 
+  │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ └── ms@0.7.1 
+  │ │ │ ├─┬ http-errors@1.5.1 
+  │ │ │ │ └── setprototypeof@1.0.2 
+  │ │ │ ├── iconv-lite@0.4.13 
+  │ │ │ └── qs@6.2.0 
+  │ │ ├─┬ compression@1.6.2 
+  │ │ │ ├── bytes@2.3.0 
+  │ │ │ ├── compressible@2.0.11 
+  │ │ │ └─┬ debug@2.2.0 
+  │ │ │   └── ms@0.7.1 
+  │ │ ├─┬ cookie-parser@1.4.1 
+  │ │ │ └── cookie@0.2.3 
+  │ │ ├── extend@1.3.0 
+  │ │ ├── header-case-normalizer@1.0.3 
+  │ │ ├─┬ multiparty@3.3.2 
+  │ │ │ ├── readable-stream@1.1.14 
+  │ │ │ └── stream-counter@0.2.0 
+  │ │ ├── node-uuid@1.4.7 
+  │ │ ├─┬ pouchdb-all-dbs@1.0.2  (git://github.com/the-t-in-rtf/pouchdb-all-dbs.git#6b09e649ddfa34ecd7f0d0b3cd3eee864414cdb3)
+  │ │ │ ├─┬ es3ify@0.1.4 
+  │ │ │ │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ │ │ │ ├─┬ jstransform@3.0.0 
+  │ │ │ │ │ ├── base62@0.1.1 
+  │ │ │ │ │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ │ │ │ │ └── source-map@0.1.31 
+  │ │ │ │ └── through@2.3.8 
+  │ │ │ ├─┬ pouchdb-promise@5.4.3 
+  │ │ │ │ └─┬ lie@3.0.4 
+  │ │ │ │   ├─┬ es3ify@0.2.2 
+  │ │ │ │   │ └─┬ jstransform@11.0.3 
+  │ │ │ │   │   ├── base62@1.2.0 
+  │ │ │ │   │   ├─┬ commoner@0.10.8 
+  │ │ │ │   │   │ ├─┬ detective@4.5.0 
+  │ │ │ │   │   │ │ ├── acorn@4.0.13 
+  │ │ │ │   │   │ │ └── defined@1.0.0 
+  │ │ │ │   │   │ ├── q@1.5.0 
+  │ │ │ │   │   │ └─┬ recast@0.11.23 
+  │ │ │ │   │   │   ├── ast-types@0.9.6 
+  │ │ │ │   │   │   ├── esprima@3.1.3 
+  │ │ │ │   │   │   └── source-map@0.5.7 
+  │ │ │ │   │   ├── esprima-fb@15001.1.0-dev-harmony-fb 
+  │ │ │ │   │   ├── object-assign@2.1.1 
+  │ │ │ │   │   └── source-map@0.4.4 
+  │ │ │ │   ├─┬ inline-process-browser@1.0.0 
+  │ │ │ │   │ ├─┬ falafel@1.2.0 
+  │ │ │ │   │ │ ├── acorn@1.2.2 
+  │ │ │ │   │ │ ├── foreach@2.0.5 
+  │ │ │ │   │ │ └── object-keys@1.0.11 
+  │ │ │ │   │ └─┬ through2@0.6.5 
+  │ │ │ │   │   └── readable-stream@1.0.34 
+  │ │ │ │   └─┬ unreachable-branch-transform@0.3.0 
+  │ │ │ │     ├── esmangle-evaluator@1.0.1 
+  │ │ │ │     └─┬ recast@0.10.43 
+  │ │ │ │       ├── ast-types@0.8.15 
+  │ │ │ │       ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │ │ │       ├── private@0.1.7 
+  │ │ │ │       └── source-map@0.5.7 
+  │ │ │ └── tiny-queue@0.2.1 
+  │ │ ├─┬ pouchdb-auth@2.1.1 
+  │ │ │ ├─┬ base64url@1.0.6 
+  │ │ │ │ ├─┬ concat-stream@1.4.10 
+  │ │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ │ └─┬ meow@2.0.0 
+  │ │ │ │   ├─┬ camelcase-keys@1.0.0 
+  │ │ │ │   │ └── map-obj@1.0.1 
+  │ │ │ │   ├─┬ indent-string@1.2.2 
+  │ │ │ │   │ ├── get-stdin@4.0.1 
+  │ │ │ │   │ ├── minimist@1.2.0 
+  │ │ │ │   │ └─┬ repeating@1.1.3 
+  │ │ │ │   │   └── is-finite@1.0.2 
+  │ │ │ │   ├── minimist@1.2.0 
+  │ │ │ │   └── object-assign@1.0.0 
+  │ │ │ ├─┬ couchdb-calculate-session-id@1.1.2 
+  │ │ │ │ ├── aproba@1.2.0 
+  │ │ │ │ ├── base64url@2.0.0 
+  │ │ │ │ └── crypto-lite@0.2.0 
+  │ │ │ ├── crypto-lite@0.1.0 
+  │ │ │ ├─┬ pouchdb-bulkdocs-wrapper@1.0.2 
+  │ │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │ │   ├── bluebird@1.2.4 
+  │ │ │ │   └── lie@2.7.7 
+  │ │ │ ├── pouchdb-plugin-error@1.0.1 
+  │ │ │ ├─┬ pouchdb-req-http-query@1.0.4 
+  │ │ │ │ ├─┬ pouchdb-promise@0.0.0 
+  │ │ │ │ │ ├── bluebird@1.2.4 
+  │ │ │ │ │ └── lie@2.7.7 
+  │ │ │ │ └─┬ xmlhttprequest-cookie@0.9.4 
+  │ │ │ │   └── xmlhttprequest@1.8.0 
+  │ │ │ ├── pouchdb-system-db@1.0.4 
+  │ │ │ ├── promise-nodify@1.0.2 
+  │ │ │ └── secure-random@1.1.1 
+  │ │ ├─┬ pouchdb-find@0.10.3 
+  │ │ │ ├── is-array@1.0.1 
+  │ │ │ ├── pouchdb-collate@1.2.0 
+  │ │ │ ├── pouchdb-extend@0.1.2 
+  │ │ │ ├─┬ pouchdb-promise@5.4.0 
+  │ │ │ │ └─┬ lie@3.0.4 
+  │ │ │ │   └─┬ es3ify@0.2.2 
+  │ │ │ │     └─┬ jstransform@11.0.3 
+  │ │ │ │       ├── base62@1.2.0 
+  │ │ │ │       ├── esprima-fb@15001.1.0-dev-harmony-fb 
+  │ │ │ │       └── source-map@0.4.4 
+  │ │ │ ├── pouchdb-upsert@2.0.2 
+  │ │ │ └── spark-md5@0.0.5 
+  │ │ ├─┬ pouchdb-list@1.1.0 
+  │ │ │ ├─┬ couchdb-objects@1.0.7 
+  │ │ │ │ ├── is-empty@0.0.1 
+  │ │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │ │   ├── bluebird@1.2.4 
+  │ │ │ │   └── lie@2.7.7 
+  │ │ │ ├── couchdb-render@1.0.1 
+  │ │ │ ├── extend@3.0.1 
+  │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │   ├── bluebird@1.2.4 
+  │ │ │   └── lie@2.7.7 
+  │ │ ├─┬ pouchdb-replicator@2.1.3 
+  │ │ │ ├─┬ equals@1.0.5 
+  │ │ │ │ └── jkroso-type@1.1.1 
+  │ │ │ ├─┬ pouchdb-promise@0.0.0 
+  │ │ │ │ ├── bluebird@1.2.4 
+  │ │ │ │ └── lie@2.7.7 
+  │ │ │ └── random-uuid-v4@0.0.4 
+  │ │ ├─┬ pouchdb-rewrite@1.0.7 
+  │ │ │ └── pouchdb-route@1.0.3 
+  │ │ ├─┬ pouchdb-security@1.2.6 
+  │ │ │ ├── pouchdb-changeslike-wrapper@1.0.1 
+  │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │   ├── bluebird@1.2.4 
+  │ │ │   └── lie@2.7.7 
+  │ │ ├─┬ pouchdb-show@1.0.8 
+  │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │   ├── bluebird@1.2.4 
+  │ │ │   └── lie@2.7.7 
+  │ │ ├─┬ pouchdb-size@1.2.2 
+  │ │ │ ├── bluebird@2.11.0 
+  │ │ │ └─┬ get-folder-size@0.1.1 
+  │ │ │   ├── async@0.9.2 
+  │ │ │   └── minimist@0.1.0 
+  │ │ ├─┬ pouchdb-update@1.0.8 
+  │ │ │ ├── couchdb-eval@1.0.6 
+  │ │ │ ├── couchdb-resp-completer@1.0.3 
+  │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │   ├── bluebird@1.2.4 
+  │ │ │   └── lie@2.7.7 
+  │ │ ├─┬ pouchdb-validation@1.2.1 
+  │ │ │ └─┬ pouchdb-promise@0.0.0 
+  │ │ │   ├── bluebird@1.2.4 
+  │ │ │   └── lie@2.7.7 
+  │ │ ├── pouchdb-vhost@1.0.2 
+  │ │ ├── pouchdb-wrappers@1.3.6 
+  │ │ └── raw-body@2.1.7 
+  │ ├── graceful-fs@4.1.11 
+  │ ├─┬ lie@3.1.1 
+  │ │ └── immediate@3.0.6 
+  │ ├─┬ memdown@1.2.4 
+  │ │ ├─┬ abstract-leveldown@2.4.1 
+  │ │ │ └── xtend@4.0.1 
+  │ │ ├── functional-red-black-tree@1.0.1 
+  │ │ ├── immediate@3.2.3 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── ltgt@2.1.3 
+  │ ├─┬ pouchdb@6.1.1 
+  │ │ ├── argsarray@0.0.1 
+  │ │ ├─┬ buffer-from@0.1.1 
+  │ │ │ └─┬ is-array-buffer-x@1.7.0 
+  │ │ │   ├── attempt-x@1.1.1 
+  │ │ │   ├─┬ has-to-string-tag-x@1.4.1 
+  │ │ │   │ └── has-symbol-support-x@1.4.1 
+  │ │ │   ├─┬ is-object-like-x@1.5.1 
+  │ │ │   │ ├─┬ is-function-x@3.2.0 
+  │ │ │   │ │ ├─┬ normalize-space-x@2.0.0 
+  │ │ │   │ │ │ ├─┬ trim-x@2.0.2 
+  │ │ │   │ │ │ │ ├── trim-left-x@2.0.1 
+  │ │ │   │ │ │ │ └── trim-right-x@2.0.1 
+  │ │ │   │ │ │ └── white-space-x@2.0.3 
+  │ │ │   │ │ ├─┬ replace-comments-x@2.0.0 
+  │ │ │   │ │ │ └── require-coercible-to-string-x@1.0.0 
+  │ │ │   │ │ └── to-boolean-x@1.0.1 
+  │ │ │   │ └── is-primitive@2.0.0 
+  │ │ │   ├─┬ object-get-own-property-descriptor-x@3.2.0 
+  │ │ │   │ ├── has-own-property-x@3.1.1 
+  │ │ │   │ ├── is-falsey-x@1.0.1 
+  │ │ │   │ ├─┬ is-index-x@1.0.0 
+  │ │ │   │ │ ├── math-clamp-x@1.1.0 
+  │ │ │   │ │ ├── max-safe-integer@1.0.1 
+  │ │ │   │ │ ├─┬ safe-to-string-x@2.0.3 
+  │ │ │   │ │ │ └── to-string-symbols-supported-x@1.0.0 
+  │ │ │   │ │ ├─┬ to-integer-x@2.1.0 
+  │ │ │   │ │ │ ├─┬ is-finite-x@3.0.2 
+  │ │ │   │ │ │ │ └── infinity-x@1.0.0 
+  │ │ │   │ │ │ ├── is-nan-x@1.0.1 
+  │ │ │   │ │ │ └── math-sign-x@2.1.0 
+  │ │ │   │ │ └─┬ to-number-x@1.1.0 
+  │ │ │   │ │   └─┬ trim-x@1.0.4 
+  │ │ │   │ │     ├── trim-left-x@1.3.7 
+  │ │ │   │ │     └── trim-right-x@1.3.4 
+  │ │ │   │ ├── is-string@1.0.4 
+  │ │ │   │ ├── property-is-enumerable-x@1.1.0 
+  │ │ │   │ ├─┬ to-object-x@1.5.0 
+  │ │ │   │ │ ├── cached-constructors-x@1.0.0 
+  │ │ │   │ │ └─┬ require-object-coercible-x@1.4.1 
+  │ │ │   │ │   └── is-nil-x@1.4.1 
+  │ │ │   │ └─┬ to-property-key-x@2.0.2 
+  │ │ │   │   ├─┬ to-primitive-x@1.1.0 
+  │ │ │   │   │ ├── is-date-object@1.0.1 
+  │ │ │   │   │ └── is-symbol@1.0.1 
+  │ │ │   │   └── to-string-x@1.4.2 
+  │ │ │   └─┬ to-string-tag-x@1.4.2 
+  │ │ │     ├── lodash.isnull@3.0.0 
+  │ │ │     └── validate.io-undefined@1.0.3 
+  │ │ ├── clone-buffer@1.0.0 
+  │ │ ├── debug@2.6.0 
+  │ │ ├── double-ended-queue@2.1.0-0 
+  │ │ ├── level-codec@6.2.0 
+  │ │ ├─┬ level-write-stream@1.0.0 
+  │ │ │ └─┬ end-stream@0.1.0 
+  │ │ │   └─┬ write-stream@0.4.3 
+  │ │ │     └── readable-stream@0.0.4 
+  │ │ ├─┬ leveldown@1.5.0 
+  │ │ │ ├── abstract-leveldown@2.6.3 
+  │ │ │ ├── bindings@1.2.1 
+  │ │ │ ├── fast-future@1.0.2 
+  │ │ │ ├── nan@2.4.0 
+  │ │ │ └─┬ prebuild@4.5.0 
+  │ │ │   ├─┬ execspawn@1.0.1 
+  │ │ │   │ └── util-extend@1.0.3 
+  │ │ │   ├── expand-template@1.1.0 
+  │ │ │   ├─┬ ghreleases@1.0.6 
+  │ │ │   │ ├── after@0.8.2 
+  │ │ │   │ ├── ghrepos@2.0.0 
+  │ │ │   │ ├─┬ ghutils@3.2.1 
+  │ │ │   │ │ └─┬ jsonist@1.3.0 
+  │ │ │   │ │   └─┬ hyperquest@1.2.0 
+  │ │ │   │ │     └── duplexer2@0.0.2 
+  │ │ │   │ ├── simple-mime@0.1.0 
+  │ │ │   │ └── url-template@2.0.8 
+  │ │ │   ├── github-from-package@0.0.0 
+  │ │ │   ├── minimist@1.2.0 
+  │ │ │   ├─┬ node-gyp@3.6.2 
+  │ │ │   │ ├── fstream@1.0.11 
+  │ │ │   │ ├── glob@7.1.2 
+  │ │ │   │ ├─┬ osenv@0.1.4 
+  │ │ │   │ │ └── os-tmpdir@1.0.2 
+  │ │ │   │ ├── semver@5.3.0 
+  │ │ │   │ └─┬ tar@2.2.1 
+  │ │ │   │   └── block-stream@0.0.9 
+  │ │ │   ├─┬ node-ninja@1.0.2 
+  │ │ │   │ └─┬ path-array@1.0.1 
+  │ │ │   │   └─┬ array-index@1.0.0 
+  │ │ │   │     └─┬ es6-symbol@3.1.1 
+  │ │ │   │       ├── d@1.0.0 
+  │ │ │   │       └─┬ es5-ext@0.10.30 
+  │ │ │   │         └── es6-iterator@2.0.1 
+  │ │ │   ├── noop-logger@0.1.1 
+  │ │ │   ├─┬ npmlog@2.0.4 
+  │ │ │   │ ├── ansi@0.3.1 
+  │ │ │   │ └─┬ gauge@1.2.7 
+  │ │ │   │   ├── lodash.pad@4.5.1 
+  │ │ │   │   ├── lodash.padend@4.6.1 
+  │ │ │   │   └── lodash.padstart@4.6.1 
+  │ │ │   ├── os-homedir@1.0.2 
+  │ │ │   ├─┬ pump@1.0.2 
+  │ │ │   │ └── end-of-stream@1.4.0 
+  │ │ │   ├─┬ rc@1.2.1 
+  │ │ │   │ ├── deep-extend@0.4.2 
+  │ │ │   │ ├── ini@1.3.4 
+  │ │ │   │ ├── minimist@1.2.0 
+  │ │ │   │ └── strip-json-comments@2.0.1 
+  │ │ │   ├─┬ simple-get@1.4.3 
+  │ │ │   │ └── unzip-response@1.0.2 
+  │ │ │   ├─┬ tar-fs@1.15.3 
+  │ │ │   │ └── chownr@1.0.1 
+  │ │ │   └─┬ tar-stream@1.5.4 
+  │ │ │     ├─┬ bl@1.0.3 
+  │ │ │     │ └─┬ readable-stream@2.0.6 
+  │ │ │     │   └── isarray@1.0.0 
+  │ │ │     └─┬ readable-stream@2.3.3 
+  │ │ │       ├── isarray@1.0.0 
+  │ │ │       ├── safe-buffer@5.1.1 
+  │ │ │       └── string_decoder@1.0.3 
+  │ │ ├─┬ levelup@1.3.3 
+  │ │ │ ├─┬ deferred-leveldown@1.2.2 
+  │ │ │ │ └── abstract-leveldown@2.6.3 
+  │ │ │ ├── level-codec@6.1.0 
+  │ │ │ ├─┬ level-errors@1.0.5 
+  │ │ │ │ └─┬ errno@0.1.4 
+  │ │ │ │   └── prr@0.0.0 
+  │ │ │ ├── level-iterator-stream@1.3.1 
+  │ │ │ ├── prr@1.0.1 
+  │ │ │ └── semver@5.1.1 
+  │ │ ├── lie@3.1.0 
+  │ │ ├── ltgt@2.1.2 
+  │ │ ├─┬ readable-stream@1.0.33 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ ├─┬ request@2.79.0 
+  │ │ │ ├── caseless@0.11.0 
+  │ │ │ ├── extend@3.0.1 
+  │ │ │ ├─┬ har-validator@2.0.6 
+  │ │ │ │ ├─┬ chalk@1.1.3 
+  │ │ │ │ │ ├── ansi-styles@2.2.1 
+  │ │ │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │ │ │ │ ├── has-ansi@2.0.0 
+  │ │ │ │ │ ├── strip-ansi@3.0.1 
+  │ │ │ │ │ └── supports-color@2.0.0 
+  │ │ │ │ └─┬ is-my-json-valid@2.16.1 
+  │ │ │ │   ├── generate-function@2.0.0 
+  │ │ │ │   ├─┬ generate-object-property@1.2.0 
+  │ │ │ │   │ └── is-property@1.0.2 
+  │ │ │ │   └── jsonpointer@4.0.1 
+  │ │ │ ├── qs@6.3.2 
+  │ │ │ ├── tunnel-agent@0.4.3 
+  │ │ │ └── uuid@3.1.0 
+  │ │ ├── scope-eval@0.0.3 
+  │ │ ├── spark-md5@3.0.0 
+  │ │ ├─┬ through2@2.0.1 
+  │ │ │ └─┬ readable-stream@2.0.6 
+  │ │ │   ├── isarray@1.0.0 
+  │ │ │   ├── process-nextick-args@1.0.7 
+  │ │ │   └── util-deprecate@1.0.2 
+  │ │ └── vuvuzela@1.0.3 
+  │ ├─┬ testem@1.13.0 
+  │ │ ├─┬ backbone@1.3.3 
+  │ │ │ └── underscore@1.8.3 
+  │ │ ├── bluebird@3.5.0 
+  │ │ ├── charm@1.0.2 
+  │ │ ├── commander@2.11.0 
+  │ │ ├── consolidate@0.14.5 
+  │ │ ├─┬ cross-spawn@4.0.2 
+  │ │ │ └─┬ lru-cache@4.1.1 
+  │ │ │   ├── pseudomap@1.0.2 
+  │ │ │   └── yallist@2.1.2 
+  │ │ ├── did_it_work@0.0.6 
+  │ │ ├─┬ fireworm@0.7.1 
+  │ │ │ ├── async@0.2.10 
+  │ │ │ ├── is-type@0.0.1 
+  │ │ │ ├─┬ lodash.debounce@3.1.1 
+  │ │ │ │ └── lodash._getnative@3.9.1 
+  │ │ │ └─┬ lodash.flatten@3.0.2 
+  │ │ │   ├─┬ lodash._baseflatten@3.1.4 
+  │ │ │   │ ├── lodash.isarguments@3.1.0 
+  │ │ │   │ └── lodash.isarray@3.0.4 
+  │ │ │   └── lodash._isiterateecall@3.0.9 
+  │ │ ├── glob@7.1.2 
+  │ │ ├─┬ http-proxy@1.16.2 
+  │ │ │ ├── eventemitter3@1.2.0 
+  │ │ │ └── requires-port@1.0.0 
+  │ │ ├── lodash.assignin@4.2.0 
+  │ │ ├── lodash.clonedeep@4.5.0 
+  │ │ ├── lodash.find@4.6.0 
+  │ │ ├── mustache@2.3.0 
+  │ │ ├─┬ node-notifier@4.6.1 
+  │ │ │ ├─┬ cli-usage@0.1.4 
+  │ │ │ │ ├── marked@0.3.6 
+  │ │ │ │ └─┬ marked-terminal@1.7.0 
+  │ │ │ │   ├─┬ cardinal@1.0.0 
+  │ │ │ │   │ ├── ansicolors@0.2.1 
+  │ │ │ │   │ └─┬ redeyed@1.0.1 
+  │ │ │ │   │   └── esprima@3.0.0 
+  │ │ │ │   ├─┬ chalk@1.1.3 
+  │ │ │ │   │ ├── ansi-styles@2.2.1 
+  │ │ │ │   │ ├── strip-ansi@3.0.1 
+  │ │ │ │   │ └── supports-color@2.0.0 
+  │ │ │ │   ├─┬ cli-table@0.3.1 
+  │ │ │ │   │ └── colors@1.0.3 
+  │ │ │ │   ├── lodash.assign@4.2.0 
+  │ │ │ │   └─┬ node-emoji@1.8.1 
+  │ │ │ │     └── lodash.toarray@4.4.0 
+  │ │ │ ├── growly@1.3.0 
+  │ │ │ ├─┬ lodash.clonedeep@3.0.2 
+  │ │ │ │ ├─┬ lodash._baseclone@3.3.0 
+  │ │ │ │ │ ├── lodash._arraycopy@3.0.0 
+  │ │ │ │ │ ├── lodash._arrayeach@3.0.0 
+  │ │ │ │ │ ├─┬ lodash._baseassign@3.2.0 
+  │ │ │ │ │ │ └── lodash._basecopy@3.0.1 
+  │ │ │ │ │ ├── lodash._basefor@3.0.3 
+  │ │ │ │ │ └── lodash.keys@3.1.2 
+  │ │ │ │ └── lodash._bindcallback@3.0.1 
+  │ │ │ ├── minimist@1.2.0 
+  │ │ │ ├── semver@5.4.1 
+  │ │ │ └── shellwords@0.1.1 
+  │ │ ├─┬ npmlog@4.1.2 
+  │ │ │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ │ │ ├── delegates@1.0.0 
+  │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │   ├── safe-buffer@5.1.1 
+  │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ ├── console-control-strings@1.1.0 
+  │ │ │ └─┬ gauge@2.7.4 
+  │ │ │   ├── has-unicode@2.0.1 
+  │ │ │   ├── object-assign@4.1.1 
+  │ │ │   ├── signal-exit@3.0.2 
+  │ │ │   ├── strip-ansi@3.0.1 
+  │ │ │   └── wide-align@1.1.2 
+  │ │ ├── printf@0.2.5 
+  │ │ ├─┬ socket.io@1.5.0 
+  │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ └── ms@0.7.1 
+  │ │ │ ├─┬ engine.io@1.7.0 
+  │ │ │ │ ├── accepts@1.3.3 
+  │ │ │ │ ├── base64id@0.1.0 
+  │ │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ │ └── ms@0.7.1 
+  │ │ │ │ ├─┬ engine.io-parser@1.3.0 
+  │ │ │ │ │ ├── after@0.8.1 
+  │ │ │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ │ │ │ ├── blob@0.0.4 
+  │ │ │ │ │ ├── has-binary@0.1.6 
+  │ │ │ │ │ └── wtf-8@1.0.0 
+  │ │ │ │ └─┬ ws@1.1.1 
+  │ │ │ │   ├── options@0.0.6 
+  │ │ │ │   └── ultron@1.0.2 
+  │ │ │ ├── has-binary@0.1.7 
+  │ │ │ ├─┬ socket.io-adapter@0.4.0 
+  │ │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ │ └── ms@0.7.1 
+  │ │ │ │ └─┬ socket.io-parser@2.2.2 
+  │ │ │ │   ├── debug@0.7.4 
+  │ │ │ │   └── json3@3.2.6 
+  │ │ │ ├─┬ socket.io-client@1.5.0 
+  │ │ │ │ ├── backo2@1.0.2 
+  │ │ │ │ ├── component-bind@1.0.0 
+  │ │ │ │ ├── component-emitter@1.2.0 
+  │ │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ │ └── ms@0.7.1 
+  │ │ │ │ ├─┬ engine.io-client@1.7.0 
+  │ │ │ │ │ ├── component-inherit@0.0.3 
+  │ │ │ │ │ ├─┬ debug@2.2.0 
+  │ │ │ │ │ │ └── ms@0.7.1 
+  │ │ │ │ │ ├── has-cors@1.1.0 
+  │ │ │ │ │ ├── parsejson@0.0.1 
+  │ │ │ │ │ ├── parseqs@0.0.2 
+  │ │ │ │ │ ├─┬ ws@1.1.1 
+  │ │ │ │ │ │ └── ultron@1.0.2 
+  │ │ │ │ │ ├── xmlhttprequest-ssl@1.5.1 
+  │ │ │ │ │ └── yeast@0.1.2 
+  │ │ │ │ ├── indexof@0.0.1 
+  │ │ │ │ ├── object-component@0.0.3 
+  │ │ │ │ ├─┬ parseuri@0.0.4 
+  │ │ │ │ │ └─┬ better-assert@1.0.2 
+  │ │ │ │ │   └── callsite@1.0.0 
+  │ │ │ │ └── to-array@0.1.4 
+  │ │ │ └─┬ socket.io-parser@2.2.6 
+  │ │ │   ├── benchmark@1.0.0 
+  │ │ │   ├── component-emitter@1.1.2 
+  │ │ │   ├─┬ debug@2.2.0 
+  │ │ │   │ └── ms@0.7.1 
+  │ │ │   └── json3@3.3.2 
+  │ │ ├── spawn-args@0.2.0 
+  │ │ ├── styled_string@0.0.1 
+  │ │ ├─┬ tap-parser@1.3.2 
+  │ │ │ ├── events-to-array@1.1.2 
+  │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │   ├── isarray@1.0.0 
+  │ │ │   ├── safe-buffer@5.1.1 
+  │ │ │   └── string_decoder@1.0.3 
+  │ │ └── xmldom@0.1.27 
+  │ └── underscore-node@0.1.2 
+  ├─┬ infusion@3.0.0-dev.20170322T234120Z.278de35 
+  │ └─┬ resolve@1.3.2 
+  │   └── path-parse@1.0.5 
+  ├─┬ request@2.81.0 
+  │ ├── aws-sign2@0.6.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.1.4 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@4.2.1 
+  │ │ ├─┬ ajv@4.11.8 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@1.0.5 
+  │ ├─┬ hawk@3.1.3 
+  │ │ ├── boom@2.10.1 
+  │ │ ├── cryptiles@2.0.5 
+  │ │ ├── hoek@2.16.3 
+  │ │ └── sntp@1.0.9 
+  │ ├─┬ http-signature@1.1.1 
+  │ │ ├── assert-plus@0.2.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── assert-plus@1.0.0 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── assert-plus@1.0.0 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├─┬ dashdash@1.14.1 
+  │ │   │ └── assert-plus@1.0.0 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├─┬ getpass@0.1.7 
+  │ │   │ └── assert-plus@1.0.0 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@0.2.0 
+  │ ├── qs@6.4.0 
+  │ ├── safe-buffer@5.0.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  └─┬ rimraf@2.6.1 
+    └─┬ glob@7.1.2 
+      ├── fs.realpath@1.0.0 
+      ├── inflight@1.0.6 
+      ├─┬ minimatch@3.0.4 
+      │ └─┬ brace-expansion@1.1.8 
+      │   ├── balanced-match@1.0.0 
+      │   └── concat-map@0.0.1 
+      └── path-is-absolute@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gpii-pouchdb-lucene/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0517 took 4.3158s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'return' outside of function (197:8) on program /*
+Copyright 2012-2016 OCAD University
+Copyright 2012 Raising the Floor - US
+Copyright 2014-2016 Raising the Floor - International
+
+Licensed under the Educational Community License (ECL), Version 2.0 or the New
+BSD license. You may not use this file except in compliance with one these
+Licenses.
+
+You may obtain a copy of the ECL 2.0 License and BSD License at
+https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
+*/
+/* eslint-env node */
+/* global global */
+"use strict";
+
+var fs = require("fs"),
+    path = require("path"),
+    vm = require("vm"),
+    resolve = require("resolve");
+
+var moduleBaseDir = path.resolve(__dirname, "../..");
+
+var getBaseDir = function () {
+    return __dirname;
+};
+
+var buildPath = function (pathSeg) {
+    return path.join(getBaseDir(), pathSeg);
+};
+
+// Report of experiments performed with node.js globals done on 1/9/14 - what we might like to write at this point is
+// fluid: {global: GLOBAL}; - this "nearly" works but unfortunately the process of transporting the "pan-global" object
+// across the sandbox initialization boundary ends up shredding it. We end up with a situation where in this file,
+// fluid.global.fluid === fluid - but from within Fluid.js, fluid.global.fluid === undefined. node.js docs on sandboxing
+// do report that the results can be fragile and version unstable. However, we need to continue with sandboxing because of
+// the delicate expectations, for example, on visible globals caused by QUnit's sniffing code.
+// Experiment performed with node.js 0.8.6 on Windows.
+// We achieve a lot of what we might want via "global.fluid = fluid" below. However, other top-level names constructed
+// via fluid.registerNamespace will not be exported up to the pan-global.
+
+var context = vm.createContext({
+    console: console,
+    setTimeout: setTimeout,
+    clearTimeout: clearTimeout,
+    setInterval: setInterval,
+    clearInterval: clearInterval,
+    __dirname: __dirname,
+    path: path,
+    require: require
+});
+
+context.window = context;
+
+/** Load a standard, non-require-aware Fluid framework file into the Fluid context, given a filename
+ * relative to this directory (src/module) **/
+
+var loadInContext = function (path) {
+    var fullpath = buildPath(path);
+    var data = fs.readFileSync(fullpath);
+    vm.runInContext(data, context, fullpath);
+};
+
+var loadIncludes = function (path) {
+    var includes = require(buildPath(path));
+    for (var i = 0; i < includes.length; ++i) {
+        loadInContext(includes[i]);
+    }
+};
+
+loadIncludes("includes.json");
+
+var fluid = context.fluid;
+// FLUID-4913: QUnit calls window.addEventListener on load. We need to add
+// it to the context it will be loaded in.
+context.addEventListener = fluid.identity;
+
+// As well as for efficiency, it's useful to customise this because an uncaught
+// exception fired from a a setTimeout handler in node.js will prevent any
+// further from being serviced, which impedes testing these handlers
+fluid.invokeLater = function (func) {
+    process.nextTick(func);
+};
+
+fluid.logObjectRenderChars = 1024;
+
+fluid.onUncaughtException = fluid.makeEventFirer({
+    name: "Global uncaught exception handler"
+});
+
+// This registry of priorities will be removed once the implementation of FLUID-5506 is complete
+fluid.handlerPriorities = {
+    uncaughtException: {
+        log: 100, // high priority - do all logging first
+        logActivity: "after:log",
+        fail: "last"
+    }
+};
+
+process.on("uncaughtException", function onUncaughtException(err) {
+    fluid.onUncaughtException.fire(err);
+});
+
+fluid.logUncaughtException = function (err) {
+    var message = "FATAL ERROR: Uncaught exception: " + err.message;
+    fluid.log(fluid.logLevel.FATAL, message);
+    console.log(err.stack);
+};
+
+fluid.onUncaughtException.addListener(fluid.logUncaughtException, "log",
+    fluid.handlerPriorities.uncaughtException.log);
+
+fluid.onUncaughtException.addListener(function () {fluid.logActivity();}, "logActivity",
+    fluid.handlerPriorities.uncaughtException.logActivity);
+
+// Convert an argument intended for console.log in the node environment to a readable form (the
+// default action of util.inspect censors at depth 1)
+fluid.renderLoggingArg = function (arg) {
+    var togo = arg && fluid.isPrimitive(arg) ? arg : fluid.prettyPrintJSON(arg, {maxRenderChars: fluid.logObjectRenderChars});
+    if (typeof(togo) === "string" && togo.length > fluid.logObjectRenderChars) {
+        togo = togo.substring(0, fluid.logObjectRenderChars) + " .... [output suppressed at " + fluid.logObjectRenderChars + " chars - for more output, increase fluid.logObjectRenderChars]";
+    }
+    return togo;
+};
+
+// Monkey-patch the built-in fluid.doLog utility to improve its behaviour within node.js - see FLUID-5475
+fluid.doLog = function (args) {
+    args = fluid.transform(args, fluid.renderLoggingArg);
+    console.log(args.join(""));
+};
+
+fluid.prepareV8StackTrace = function (err, stack) {
+    return stack;
+};
+
+// Monkey-patch the fluid.getCallerInfo utility from FluidDebugging.js for the V8 API - see https://github.com/v8/v8/wiki/Stack-Trace-API
+
+fluid.getCallerInfo = function (atDepth) {
+    var origPrepare = Error.prepareStackTrace;
+    try {
+        Error.prepareStackTrace = fluid.prepareV8StackTrace;
+        var err = new Error();
+        var element = err.stack[atDepth];
+        var filename = element.getFileName();
+        return {
+            path: path.dirname(filename),
+            filename: path.basename(filename),
+            index: element.getLineNumber() + ":" + element.getColumnNumber()
+        };
+    } catch (e) {
+    } finally {
+        Error.prepareStackTrace = origPrepare;
+    }
+};
+
+fluid.loadInContext = loadInContext;
+fluid.loadIncludes = loadIncludes;
+
+/**
+ * Set up testing environment with jqUnit and IoC Test Utils in node.
+ * This function will load everything necessary for running node jqUnit.
+ */
+fluid.loadTestingSupport = function () {
+    fluid.loadIncludes("devIncludes.json");
+};
+
+/** Implementation for FLUID-5822 to avoid requirement for dedupe-infusion **/
+
+// Version of resolve.sync which does not throw when module is not found
+fluid.module.resolveSync = function (moduleId, fromPath) {
+    try {
+        return resolve.sync(moduleId, {
+            basedir: fromPath
+        });
+    } catch (e) {
+        return null;
+    }
+};
+
+// Method 1: Resolve to the highest infusion which is observable through the "pre-inspection" method of looking
+// literally into the filesystem for package.json files which can be successfully loaded
+
+var moduleInfo = fluid.module.modulesToRoot(__dirname);
+
+var highestInfusionIndex = fluid.find(moduleInfo.names, function (name, index) {
+    return name === "infusion" ? index : undefined;
+});
+
+if (highestInfusionIndex !== undefined) {
+    // If this require throws, there is some other undesirable problem with the thing appearing to be an Infusion at
+    // this path which should be reported as an uncaught exception
+    var highestInfusionPath = moduleInfo.paths[highestInfusionIndex];
+    var infusionModule = require(highestInfusionPath);
+    if (infusionModule.module && infusionModule.module.modules.infusion.baseDir !== moduleBaseDir) {
+        console.log("Pre-inspection from path " + __dirname + " resolved to infusion at higher path " + highestInfusionPath);
+        module.exports = infusionModule;
+        return;
+    }
+}
+
+// Method 2: Resolve to any infusion which is observable to the standard node loader at a path strictly higher than ours
+// TODO: Is this completely subsumed by Method 1?
+
+var upInfusion;
+
+var upPath = path.resolve(__dirname, "../../../../..");
+var upInfusionPath = fluid.module.resolveSync("infusion", upPath);
+if (upInfusionPath) {
+    upInfusion = require(upInfusionPath);
+}
+
+// Fix for FLUID-5940, when Infusion is a dependency of a Node.js project that is located in the
+// root of a filesystem we were resolving to the current version of Infusion. Doing a 'require'
+// on the same version of Infusion results in an empty object since we have not completed our own assignment to
+// module.exports yet
+if (upInfusion && upInfusion.module) {
+    upInfusion.log("Resolved infusion from path " + __dirname + " to " + upInfusion.module.modules.infusion.baseDir);
+    module.exports = upInfusion;
+    return;
+} else {
+    console.log("Infusion at path " + moduleBaseDir + " is at top level ");
+}
+
+// If we reach here without hitting the "return" statements above, we believe ourselves to be the highest resolvable
+// Infusion in the filesystem. If we are wrong, some other Infusion has already registered itself in node's
+// pan-module global registry - if we find it there, we should bail out with a fatal error since corruption will
+// shortly soon result in the grade registry and component tree.
+
+if (global.fluid) {
+    var oldPath = global.fluid.module.modules.infusion.baseDir;
+    fluid.fail("Error loading infusion - infusion has already been loaded from the path \n\t" + path.resolve(oldPath) +
+        "\n - please delete the duplicate copy which is found at \n\t" + path.resolve(__dirname) +
+        "\n This can be done automatically by running the task \"grunt dedupe-infusion\"");
+}
+
+// Pre-inspect any other module (there should be at most one) which is loading at top level so that it is self-resolvable
+// via fluid.require("%other-module") for whatever it is
+
+fluid.module.preInspect();
+
+fluid.module.register("infusion", moduleBaseDir, require);
+
+// Export the fluid object into the pan-module node.js global object
+global.fluid = fluid;
+
+module.exports = fluid;
+ at SyntaxError: 'return' outside of function (197:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:831:12)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:709:33)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseIfStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:824:28)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:698:30)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/gpii-pouchdb-lucene/node_modules/gpii-pouchdb-lucene/index.js. Coverage (Term): 53% Coverage (LOC): 83%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

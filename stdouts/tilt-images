@@ -1,0 +1,87 @@
+/root/Targets/tilt-images
+└── tilt-images@7.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tilt-images/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0274 took 3.0661s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (35:37) on program const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config');
+const express = require('express');
+const proxy = require('proxy-middleware');
+const url = require('url');
+const { match, RoutingContext } = require('react-router');
+const routes = require('./server/routes');
+const React = require('react');
+const { renderToString } = require('react-dom/server');
+
+const app = express();
+
+app.use('/favicon.ico', function(req,res) {
+    res.sendStatus(404);
+});
+
+app.use('/assets', proxy(url.parse('http://localhost:7002/assets')));
+app.use(webpackDevMiddleware(webpack(config), {
+    contentBase: __dirname,
+    publicPath: '/assets/',
+    quiet: true,
+    stats: { colors: true }
+}));
+
+app.set('views', __dirname + '/server/views');
+app.use(function(req, res){
+  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    if (error) {
+      res.send(500, error.message)
+    } else if (redirectLocation) {
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+    } else if (renderProps) {
+      const content = renderToString(<RoutingContext {...renderProps} />);
+      res.render('index.ejs', {content: content});
+    } else {
+      res.send(404, 'Not found')
+    }
+  });
+});
+
+const server = new WebpackDevServer(webpack(config), {
+  contentBase: __dirname,
+  publicPath: '/assets/',
+  quiet: true,
+  stats: { colors: true }
+});
+
+server.listen(7002, 'localhost', function() {
+  console.info('Webpack server listening on 7002');
+});
+
+app.listen(7001, function() {
+    console.info('Express server listening on 7001');
+});
+ at SyntaxError: Unexpected token (35:37)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2165:22)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

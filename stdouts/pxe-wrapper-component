@@ -1,0 +1,96 @@
+/root/Targets/pxe-wrapper-component
+├── camelcase@3.0.0 
+├── intl@1.2.5 
+├── intl-format-cache@2.0.5 
+├─┬ intl-messageformat@2.1.0 
+│ └── intl-messageformat-parser@1.2.0 
+├── intl-relativeformat@2.0.0 
+├─┬ invariant@2.2.2 
+│ └─┬ loose-envify@1.3.1 
+│   └── js-tokens@3.0.2 
+├── parse5@2.2.3 
+├─┬ pxe-wrapper-component@1.0.3 
+│ ├── UNMET PEER DEPENDENCY prop-types@^15.5.4
+│ ├── UNMET PEER DEPENDENCY react@^0.14.9 || ^15.0.0 || ^16.0.0
+│ ├── UNMET PEER DEPENDENCY react-dom@^15.0.1
+│ ├── UNMET PEER DEPENDENCY react-intl@2.4.0
+│ ├── react-popup@0.5.0 
+│ ├─┬ react-render-html@0.1.6 
+│ │ ├── react-attr-converter@0.1.1 
+│ │ └─┬ uppercamelcase@1.1.0 
+│ │   └── camelcase@1.2.1 
+│ └── UNMET PEER DEPENDENCY react-tap-event-plugin@~2.0.1
+├── UNMET PEER DEPENDENCY react-intl@~2.1.5
+└── UNMET PEER DEPENDENCY react-tap-event-plugin@~2.0.1
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pxe-wrapper-component/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0226 took 1.221s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (30:6) on program import './main.scss';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { addLocaleData, IntlProvider } from 'react-intl';
+import frLocaleData from 'react-intl/locale-data/fr';
+import itLocaleData from 'react-intl/locale-data/it';
+import nlLocaleData from 'react-intl/locale-data/nl';
+import frJson from './translations/fr.json';
+import itJson from './translations/it.json';
+import nlJson from './translations/nl.json';
+
+import ComponentOwner from './src/js/Component-owner';
+
+const translations = {
+  'fr' : frJson,
+  'it' : itJson,
+  'nl' : nlJson
+};
+
+export default class PxeWrapperComponent {
+  constructor(props) {
+    addLocaleData(frLocaleData);
+    addLocaleData(itLocaleData);
+    addLocaleData(nlLocaleData);
+    this.init(props);
+  }
+
+  init=(config)=> {
+    const locale = config.locale ? config.locale : 'en';
+    ReactDOM.render(
+      <IntlProvider locale={locale} messages={translations[locale]}>
+        <ComponentOwner bookUrl = "https://content.openclass.com/eps/pearson-reader/api/item/0c0c9911-1724-41d7-8d05-f1be29193d3c/1/file/qatesting_changing_planet_v2_sjg/changing_planet/OPS/s9ml/chapter02/why_are_age_structures_and_dependency_ratios_important.xhtml" isFromComponent = {true}  />
+      </IntlProvider>,
+        document.getElementById(config.contentId)
+    );
+  };  
+};
+
+export Wrapper from './src/js/Wrapper';
+// Listen for client events to initialize a new PopUp Component
+document.body.addEventListener('o.InitWrapper', e => new PxeWrapperComponent(e.detail));
+ at SyntaxError: Unexpected token (30:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1813:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,1076 @@
+/root/Targets/aiota-console
+└─┬ aiota-console@0.0.23 
+  ├─┬ aiota-utils@0.0.58 
+  │ ├── crypto@1.0.1 
+  │ ├─┬ forever-monitor@1.7.1 
+  │ │ ├─┬ broadway@0.3.6 
+  │ │ │ ├─┬ cliff@0.1.9 
+  │ │ │ │ ├── colors@0.6.2 
+  │ │ │ │ └── eyes@0.1.8 
+  │ │ │ ├── eventemitter2@0.4.14 
+  │ │ │ ├─┬ nconf@0.6.9 
+  │ │ │ │ ├── async@0.2.9 
+  │ │ │ │ ├── ini@1.3.4 
+  │ │ │ │ └─┬ optimist@0.6.0 
+  │ │ │ │   ├── minimist@0.0.10 
+  │ │ │ │   └── wordwrap@0.0.3 
+  │ │ │ └─┬ winston@0.8.0 
+  │ │ │   ├── cycle@1.0.3 
+  │ │ │   ├── pkginfo@0.3.1 
+  │ │ │   └── stack-trace@0.0.10 
+  │ │ ├─┬ chokidar@1.7.0 
+  │ │ │ ├─┬ anymatch@1.3.2 
+  │ │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ │ ├── extglob@0.3.2 
+  │ │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ │ └─┬ normalize-path@2.1.1 
+  │ │ │ │   └── remove-trailing-separator@1.1.0 
+  │ │ │ ├── async-each@1.0.1 
+  │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ ├─┬ is-binary-path@1.0.1 
+  │ │ │ │ └── binary-extensions@1.10.0 
+  │ │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ │ └── is-extglob@1.0.0 
+  │ │ │ ├── path-is-absolute@1.0.1 
+  │ │ │ └─┬ readdirp@2.1.0 
+  │ │ │   ├── graceful-fs@4.1.11 
+  │ │ │   ├── readable-stream@2.3.3 
+  │ │ │   └── set-immediate-shim@1.0.1 
+  │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ ├─┬ ps-tree@0.0.3 
+  │ │ │ └─┬ event-stream@0.5.3 
+  │ │ │   └── optimist@0.2.8 
+  │ │ └─┬ utile@0.2.1 
+  │ │   ├── async@0.2.10 
+  │ │   ├── deep-equal@1.0.1 
+  │ │   ├── i@0.3.5 
+  │ │   ├─┬ mkdirp@0.5.1 
+  │ │   │ └── minimist@0.0.8 
+  │ │   ├── ncp@0.4.2 
+  │ │   └─┬ rimraf@2.6.2 
+  │ │     └─┬ glob@7.1.2 
+  │ │       ├── fs.realpath@1.0.0 
+  │ │       ├─┬ inflight@1.0.6 
+  │ │       │ └── wrappy@1.0.2 
+  │ │       └── once@1.4.0 
+  │ ├── jsonschema@1.2.0 
+  │ └── node-uuid@1.4.8 
+  ├─┬ cookie-parser@1.4.3 
+  │ ├── cookie@0.3.1 
+  │ └── cookie-signature@1.0.6 
+  ├── ejs@2.5.7 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.0.5 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ ├── http-errors@1.6.2 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├── method-override@2.3.9 
+  └─┬ mongodb@2.2.31 
+    ├── es6-promise@3.2.1 
+    ├─┬ mongodb-core@2.1.15 
+    │ ├── bson@1.0.4 
+    │ └─┬ require_optional@1.0.1 
+    │   ├── resolve-from@2.0.0 
+    │   └── semver@5.4.1 
+    └─┬ readable-stream@2.2.7 
+      ├── buffer-shims@1.0.0 
+      ├── core-util-is@1.0.2 
+      ├── inherits@2.0.3 
+      ├── isarray@1.0.0 
+      ├── process-nextick-args@1.0.7 
+      ├─┬ string_decoder@1.0.3 
+      │ └── safe-buffer@5.1.1 
+      └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/aiota-console/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0982 took 6.3259s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'public' is reserved (174:21) on program // AIoTA Utility Functions
+var crypto = require("crypto");
+var uuid = require("node-uuid");
+var jsonValidate = require("jsonschema").validate;
+var forever = require("forever-monitor");
+var processes = [];
+
+var bodySchemas = {
+	"system":		{
+						"register":		{
+											type: "object",
+											properties: {
+												name: { type: "string", required: true },
+												product: { type: "string", required: true }
+											}
+										},
+									
+						"session":		{
+											type: "object",
+											properties: {
+												timeout: { type: "integer", minimum: 0, required: true }
+											}
+										},
+									
+						"unregister":	{
+											type: "object"
+										},
+									
+						"verify":		{
+											type: "object",
+											properties: {
+												requestId: { type: "string", required: true },
+												verificationCode: {
+													type: "array",
+													items: { type: "integer", minimum: 0 },
+													minItems: 2,
+													maxItems: 2,
+													required: true
+												},
+											}
+										}
+					},
+				
+	"device":		{
+						"telemetry":	{
+											type: "object",
+										}
+					},
+				
+	"longpolling":	{
+						"poll":			{
+											type: "object",
+											properties: {
+												timeout: { type: "integer", minimum: 0, required: true }
+											}
+										}
+					},
+					
+	"response":		{
+						"ack":			{
+											type: "object",
+											properties: {
+												requestId: { type: "string", required: true },
+												progress: { type: "integer", default: 0, minimum: 0, maximum: 100 }
+											}
+										},
+										
+						"nack":			{
+											type: "object",
+											properties: {
+												requestId: { type: "string", required: true },
+												reason: { type: "string", default: "" },
+											}
+										},
+					}
+};
+
+function getClassGroupTypeEnum(group)
+{
+	var typeEnum = [];
+	
+	switch (group) {
+	case "system":			typeEnum.push("register");
+							typeEnum.push("session");
+							typeEnum.push("unregister");
+							typeEnum.push("verify");
+							break;
+	case "device":			typeEnum.push("telemetry");
+							break;
+	case "longpolling":		typeEnum.push("poll");
+							break;
+	case "response":		typeEnum.push("ack");
+							typeEnum.push("nack");
+							break;
+	}
+	
+	return typeEnum;
+}
+
+function validateJSONSchema(instance, schema)
+{
+	var v = jsonValidate(instance, schema);
+
+	if (v.errors.length == 0) {
+		for (var prop in schema.properties) {
+		   if (!schema.properties[prop].required && schema.properties[prop].hasOwnProperty("default") && !instance.hasOwnProperty(prop)) {
+			   instance[prop] = schema.properties[prop]["default"];
+		   }
+		}
+
+		return { isValid: true };
+	}
+	else {
+		return { isValid: false, error: v.errors };
+	}
+}
+
+function getApplication(db, payload, callback)
+{
+	// Get the application associated with the token card uuid in the header
+	db.collection("applications", function(err, collection) {
+		if (err) {
+			callback(200001, err);
+			return;
+		}
+
+		collection.findOne({ "_id": payload.header.encryption.tokencardId }, { tokens: 1 }, function(err, app) {
+			if (err) {
+				callback(200002, err);
+				return;
+			}
+			
+			if (app == null) {
+				callback(100004, "The header.encryption.tokencardId parameter in the request does not exist.");
+				return;
+			}
+			else {
+				var schema = {
+					type: "object",
+					properties: {
+						_id: { type: "string", required: true },
+						tokens: { 
+							type: "array",
+							items: { type: "string" },
+							minItems: 1
+						},
+						required: true
+					}
+				};
+						
+				var v = validateJSONSchema(app, schema);
+				
+				if (v.isValid) {
+					var numTokens = app["tokens"].length;
+					
+					if (payload.header.encryption.keyIndex >= numTokens) {
+						callback(100005, "The header.encryption.keyIndex parameter is invalid.");
+					}
+					else if (payload.header.encryption.ivIndex >= numTokens) {
+						callback(100006, "The header.encryption.ivIndex parameter is invalid.");
+					}
+					else {
+						callback(0, app);
+					}
+				}
+				else {
+					callback(100003, "The application is not properly defined.");
+				}
+			}
+		});
+	});
+}
+
+function constructIV(public, private)
+{
+	var ivPrivate = private.substring(0, 4);
+	var ivPublic = (public % 4294967296).toString(16);
+	
+	while (ivPublic.length < 8) {
+		ivPublic = "0" + ivPublic;
+	}
+	
+	return new Buffer(ivPublic + ivPrivate);
+}
+
+function encrypt(header, body, key, i, nonce, callback)
+{
+	switch (header.encryption.method) {
+	case "none":			// No encryption
+							callback(0, body);
+							break;
+	case "hmac-sha-256":	// HMAC-SHA-256 signature
+							encryptHMACSHA256(header, body, key, function(err, enc) {
+								callback(err, enc);
+							});
+							break;
+	case "aes-256-gcm":		// AES-256-GCM encryption
+							encryptAES256GCM(header, body, key, i, nonce, function(err, enc) {
+								callback(err, enc);
+							});
+	}
+}
+
+function encryptHMACSHA256(header, body, key, callback)
+{
+	try {
+		var hmac = crypto.createHmac("SHA256", key);
+		var obj = { header: header, body: body };
+		hmac.update(JSON.stringify(obj));
+		callback(0, { body: body, signature: hmac.digest("hex") });
+	}
+	catch(err) {
+		callback(100033, err);
+	}
+}
+
+function encryptAES256GCM(header, body, key, i, nonce, callback)
+{
+	var iv = constructIV(nonce, i);
+
+	try {
+		var aad = new Buffer(JSON.stringify(header));
+	}
+	catch(err) {
+		callback(100007, err);
+		return;
+	}
+	
+	try {
+		var payload = JSON.stringify(body);
+	}
+	catch(err) {
+		callback(100007, err);
+		return;
+	}
+
+	try {
+		var cipher = crypto.createCipheriv("aes-256-gcm", new Buffer(key), iv);
+		cipher.setAAD(aad);
+		var encrypted = cipher.update(payload, "utf8", "hex");
+		encrypted += cipher.final("hex");
+		var tag = cipher.getAuthTag().toString("hex");
+	}
+	catch(err) {
+		callback(100027, err);
+		return;
+	}
+	
+	callback(0, { ciphertext: encrypted, tag: tag });
+}
+
+function decrypt(payload, app, callback)
+{
+	switch (payload.header.encryption.method) {
+	case "none":			callback(0, payload.body);
+							break;
+	case "hmac-sha-256":	decryptHMACSHA256(payload, app, function(err, dec) {
+								callback(err, dec);
+							});
+							break;
+	case "aes-256-gcm":		decryptAES256GCM(payload, app, function(err, dec) {
+								callback(err, dec);
+							});
+							break;
+	}
+}
+
+function decryptHMACSHA256(payload, app, callback)
+{
+	try {
+		var hmac = crypto.createHmac("SHA256", app.tokens[payload.header.encryption.keyIndex]);
+		var obj = { header: payload.header, body: payload.body };
+		hmac.update(JSON.stringify(obj));
+		
+		var signature = hmac.digest("hex");
+		
+		if (signature == payload.icv) {
+			callback(0, payload.body);
+		}
+		else {
+			callback(100034, "Invalid message signature");
+		}
+	}
+	catch(err) {
+		callback(100033, err);
+	}
+}
+
+function decryptAES256GCM(payload, app, callback)
+{
+	var iv = constructIV(payload.header.encryption.nonce, app.tokens[payload.header.encryption.ivIndex]);
+
+	try {
+		var aad = new Buffer(JSON.stringify(payload.header));
+	}
+	catch(err) {
+		callback(100007, err);
+		return;
+	}
+	
+	try {
+		var decipher = crypto.createDecipheriv("aes-256-gcm", new Buffer(app.tokens[payload.header.encryption.keyIndex]), iv);
+		decipher.setAAD(aad);
+		decipher.setAuthTag(new Buffer(payload.icv, "hex"));
+		var dec = decipher.update(payload.body, "hex", "utf8");
+		dec += decipher.final("utf8");
+	}
+	catch(err) {
+		callback(100008, err);
+		return;
+	}
+
+	try {
+		var bodyObj = JSON.parse(dec);
+	}
+	catch(err) {
+		callback(100009, err);
+		return;
+	}
+	
+	callback(0, bodyObj);
+}
+
+function validateBody(db, payload, obj, callback)
+{
+	if (bodySchemas.hasOwnProperty(payload.header.class.group)) {
+		if (bodySchemas[payload.header.class.group].hasOwnProperty(payload.header.class.type)) {		
+			var v = validateJSONSchema(obj, bodySchemas[payload.header.class.group][payload.header.class.type]);
+			
+			if (v.isValid) {
+				var now = Date.now();
+				
+				var success = { header: { requestId: payload.header.requestId, deviceId: payload.header.deviceId, type: payload.header.class.type, timestamp: now, ttl: payload.header.ttl, encryption: { method: payload.header.encryption.method, tokencardId: payload.header.encryption.tokencardId } }, body: obj };
+		
+				// Check if the device exists
+				db.collection("devices", function(err, collection) {
+					if (err) {
+						callback(true, err);
+						return;
+					}
+			
+					collection.findOne({ _id: payload.header.deviceId }, { _id: 0, apps: 1 }, function(err, device) {
+						if (err) {
+							callback(true, err);
+							return;
+						}
+						
+						if (device == null) {
+							// The device does not exist
+							if ((payload.header.class.group == "system") && (payload.header.class.type == "register")) {
+								callback(0, success);
+							}
+							else {
+								callback(100011, "The device does not not exist. Please register the application first.");
+							}
+							return;
+						}
+						else {
+							var schema = {
+								type: "object",
+								properties: {
+									apps: { 
+										type: "object",
+										required: true
+									},
+									required: true
+								}
+							};
+									
+							var v = validateJSONSchema(device, schema);
+							
+							if (v.isValid) {
+								if (device.apps.hasOwnProperty(payload.header.encryption.tokencardId)) {
+									// The application has been registered on this device
+									if ((payload.header.class.group == "system") && (payload.header.class.type == "register")) {
+										callback(100021, "The application has already been registered on this device.");
+									}
+									else if ((payload.header.class.group == "system") && (payload.header.class.type == "unregister")) {
+										callback(0, success);
+									}
+									else if ((payload.header.class.group == "system") && (payload.header.class.type == "verify")) {
+										if (device.apps[payload.header.encryption.tokencardId].status == "pending") {
+											callback(0, success);
+										}
+										else {
+											callback(100029, "The application registration is not pending on this device.");
+										}
+									}
+									else {
+										var set = {};
+										if (payload.header.class.group == "longpolling") {
+											set["apps." + payload.header.encryption.tokencardId + ".nonce"] = device.apps[payload.header.encryption.tokencardId].nonce + 1;
+										}
+										set["apps." + payload.header.encryption.tokencardId + ".lastRequest"] = Date.now();
+										
+										collection.update({ _id: payload.header.deviceId }, { $set: set }, function(err, result) {
+											if (err) {
+												callback(200004, err);
+												return;
+											}
+											
+											if (device.apps[payload.header.encryption.tokencardId].status == "registered") {
+												if (payload.header.class.group == "device") {
+													// Check if the session token is correct
+													if (device.apps[payload.header.encryption.tokencardId].session.id == payload.header.sessionId) {
+														if ((device.apps[payload.header.encryption.tokencardId].session.timeoutAt > 0) && (device.apps[payload.header.encryption.tokencardId].session.timeoutAt <= now)) {
+															callback(100014, "The session has timed out.");
+														}
+														else {
+															// Check the schema
+															db.collection("schema_definitions", function(err, collection) {
+																if (err) {
+																	callback(200001, err);
+																	return;
+																}
+														
+																collection.findOne({ schemaId: payload.header.schema.id, version: payload.header.schema.version }, { _id: 0, storage: 1, updateDevice: 1, schema: 1 }, function(err, def) {
+																	if (err) {
+																		callback(200002, err);
+																		return;
+																	}
+																	
+																	var v = validateJSONSchema(obj.telemetry, def.schema);
+																	
+																	if (v.isValid) {																
+																		success.storage = def.storage;
+																		success["updateDevice"] = def.updateDevice;
+																								
+																		callback(0, success);
+																	}
+																	else {
+																		callback(100003, "Device message body does not match schema definition.");
+																	}
+																});
+															});
+														}
+													}
+													else {
+														callback(100015, "Invalid session id.");
+													}
+												}
+												else {
+													if (payload.header.class.group == "longpolling") {
+														success["nonce"] = Math.floor(Math.random() * 4294967296);
+													}
+													callback(0, success);
+												}
+											}
+											else {
+												if ((payload.header.class.group == "longpolling") || (payload.header.class.group == "response")) {
+													if (payload.header.class.group == "longpolling") {
+														success["nonce"] = Math.floor(Math.random() * 4294967296);
+													}
+													callback(0, success);
+												}
+												else {
+													callback(100013, "The application registration is pending on this device.");
+												}
+											}
+										});
+									}
+								}
+								else {
+									// The application has not yet been registered on this device
+									if ((payload.header.class.group == "system") && (payload.header.class.type == "register")) {
+										callback(0, success);
+									}
+									else {
+										callback(100012, "The application has not been registered on this device.");
+									}
+								}
+							}
+							else {
+								callback(100003, "The device is not properly defined.");
+							}
+						}
+					});
+				});
+			}
+			else {
+				callback(100003, v.error);
+			}
+		}
+		else {
+			callback(100022, "A payload schema for this message type does not exist. (" + payload.header.class.group + "/" + payload.header.class.type + ")");
+		}
+	}
+	else {
+		callback(100028, "This message group does not exist. (" + payload.header.class.group + ")");
+	}
+}
+
+function createLog(processName, server, db, data)
+{
+	var now = new Date();
+
+	if (db) {
+		db.collection("logs", function(err, collection) {
+			if (err) {
+				console.log("[" + processName + " (pid: " + process.pid + ")] > " + getTimeString(now) + " > " + JSON.stringify(err));
+				return;
+			}
+	
+			collection.insert({ process: processName, server: server, pid: process.pid, timestamp: now, data: data }, function(err, result) {
+				if (err) {
+					console.log("[" + processName + " (pid: " + process.pid + ")] > " + getTimeString(now) + " > " + JSON.stringify(err));
+				}
+			});
+		});
+	}
+	else {
+		console.log("[" + processName + " (pid: " + process.pid + ")] > " + getTimeString(now) + " > " + JSON.stringify(data));
+	}
+}
+
+function getTimeString(date)
+{
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var hrs = date.getHours();
+	var mins = date.getMinutes();
+	var secs = date.getSeconds();
+	
+	var str = (("" + day).length < 2 ? "0" : "") + day + "-";
+	str += (("" + month).length < 2 ? "0" : "") + month + "-";
+	str += date.getFullYear() + " ";
+	str += (("" + hrs).length < 2 ? "0" : "") + hrs + ":";
+	str += (("" + mins).length < 2 ? "0" : "") + mins + ":";
+	str += (("" + secs).length < 2 ? "0" : "") + secs;
+	
+	return str;
+}
+			
+module.exports = {
+	validate: function(db, payload, callback) {		
+		var schema = { 
+			type: "object",
+			properties: {
+				header: {
+					type: "object",
+					properties: {
+						"requestId": { type: "string", required: true },
+						"deviceId": { type: "string", required: true },
+						class: {
+							type: "object",
+							properties: {
+								group: { type: "string", required: true },
+								type: { type: "string", required: true }
+							},
+							required: true
+						},
+						ttl: { type: "integer", minimum: 0, maximum: 86400, required: true },
+						encryption: {
+							type: "object",
+							properties: {
+								method: { type: "string", enum: [ "none", "hmac-sha-256", "aes-256-gcm" ], required: true },
+								tokencardId: { type: "string", required: true },
+								keyIndex: { type: "integer", minimum: 0, maximum: 63 },
+								ivIndex: { type: "integer", minimum: 0, maximum: 63 },
+								nonce: { type: "integer", minimum: 0, maximum: 4294967296 }
+							},
+							required: true
+						},
+					},
+					required: true
+				},
+			}
+		};
+				
+		var v = validateJSONSchema(payload, schema);
+		
+		if (v.isValid) {
+			schema.properties.header.properties.class.properties.type["enum"] = getClassGroupTypeEnum(payload.header.class.group);
+			
+			if (payload.header.class.group == "device") {
+				schema.properties.header.properties["sessionId"] = { type: "string", required: true };
+				schema.properties.header.properties["schema"] = { 
+					type: "object",
+					properties: {
+						id: { type: "string", required: true },
+						version: {
+							type: "object",
+							properties: {
+								major: { type: "integer", required: true },
+								minor: { type: "integer", required: true }
+							},
+							required: true
+						}
+					},
+					required: true
+				};
+			}
+			
+			switch (payload.header.encryption.method) {
+			case "none":			// No encryption
+									schema.properties["body"] = { type: "object", required: true };
+									break;
+			case "hmac-sha-256":	// HMAC-SHA-256 signature
+									schema.properties.header.properties.encryption.properties.keyIndex["required"] = true;
+									schema.properties.header.properties.encryption.properties.nonce["required"] = true;
+									schema.properties["body"] = { type: "object", required: true };
+									schema.properties["icv"] = { type: "string", required: true };
+									break;
+			case "aes-256-gcm":		// AES-256-GCM encryption
+									schema.properties.header.properties.encryption.properties.keyIndex["required"] = true;
+									schema.properties.header.properties.encryption.properties.ivIndex["required"] = true;
+									schema.properties.header.properties.encryption.properties.nonce["required"] = true;
+									schema.properties["body"] = { type: "string", required: true };
+									schema.properties["icv"] = { type: "string", required: true };
+									break;
+			}
+					
+			var reply = {};
+		
+			var v = validateJSONSchema(payload, schema);
+			
+			if (v.isValid) {
+				if (payload.header.deviceId == "") {
+					callback(true, { nack: payload.header["requestId"], reason: "The header.deviceId field may not be empty.", errorCode: 100010 });
+					return;
+				}
+				
+				// Get the application which sent the request 
+				getApplication(db, payload, function(err, app) {
+					if (err > 0) {
+						callback(true, { nack: payload.header["requestId"], reason: app, errorCode: err });
+						return;
+					}
+					
+					decrypt(payload, app, function(err, dec) {
+						if (err > 0) {
+							callback(true, { nack: payload.header["requestId"], reason: dec, errorCode: err });
+							return;
+						}
+						
+						validateBody(db, payload, dec, function(err, result) {
+							if (err > 0) {
+								callback(true, { nack: payload.header["requestId"], reason: result, errorCode: err });
+								return;
+							}
+						
+							callback(false, { ack: payload.header["requestId"] }, result);
+						});
+					});
+				});
+			}
+			else {
+				callback(true, { nack: payload.header["requestId"], reason: v.error, errorCode: 100003 });
+			}
+		}
+		else {
+			if (payload.hasOwnProperty("header")) {
+				if (payload.header.hasOwnProperty("requestId")) {
+					callback(true, { nack: payload.header["requestId"], reason: v.error, errorCode: 100003 });
+				}
+				else {
+					callback(true, { error: "Message does not have a valid request id.", errorCode: 100002 });
+				}
+			}
+			else {
+				callback(true, { error: "Malformed message.", errorCode: 100001 });
+			}
+		}
+	},
+	
+	respond: function(requestId, deviceId, respondClass, encryptionMethod, tokencardId, tokens, nonce, payload, callback) {
+		var response = { 
+			header: {
+				requestId: (requestId ? requestId : uuid.v4()),
+				deviceId: deviceId,
+				class: respondClass,
+				ttl: 0,
+				encryption: {
+					method: encryptionMethod,
+					tokencardId: tokencardId,
+				}
+			}
+		};
+	
+		switch (encryptionMethod) {
+		case "hmac-sha-256":	// HMAC-SHA-256 signature
+								response.header.encryption["keyIndex"] = Math.floor(Math.random() * tokens.length);
+								response.header.encryption["nonce"] = nonce;
+								break;
+		case "aes-256-gcm":		// AES-256-GCM encryption
+								response.header.encryption["keyIndex"] = Math.floor(Math.random() * tokens.length);
+								response.header.encryption["ivIndex"] = Math.floor(Math.random() * tokens.length);
+								response.header.encryption["nonce"] = nonce;
+								break;
+		}
+
+		encrypt(response.header, payload, tokens[response.header.encryption.keyIndex], tokens[response.header.encryption.ivIndex], response.header.encryption.nonce, function(err, enc) {
+			if (err > 0) {
+				callback({ error: enc, errorCode: err });
+				return;
+			}
+			
+			switch (encryptionMethod) {
+			case "none":			// No encryption
+									response.body = enc;
+									break;
+			case "hmac-sha-256":	// HMAC-SHA-256 signature
+									response.body = enc.body;
+									response.icv = enc.signature;
+									break;
+			case "aes-256-gcm":		// AES-256-GCM encryption
+									response.body = enc.ciphertext;
+									response.icv = enc.tag;
+									break;
+			}
+
+			callback(response);
+		});
+	},
+	
+	getQueue: function(c) {
+		switch (c.group) {
+		case "device":			return "telemetry-queue";
+		case "longpolling":		return "longpolling-queue";
+		case "response":		return "response-queue";
+		case "system":			switch (c.type) {
+								case "register":	return "register-queue";
+								case "session":		return "session-queue";
+								case "unregister":	return "register-queue";
+								case "verify":		return "register-queue";
+								default:			return "";
+								}							
+		default:				return "";
+		}
+	},
+
+	getConfig: function(db, callback) {
+		db.collection("config", function(err, collection) {
+			if (err) {
+				console.log(err);
+				callback(null);
+				return;
+			}
+	
+			collection.findOne({ _id: 0 }, function(err, config) {
+				if (err) {
+					console.log(err);
+					callback(null);
+				}
+				else {
+					callback(config);
+				}
+			});
+		});
+	},
+	
+	log: function(processName, server, db, data) {
+		createLog(processName, server, db, data);
+	},
+
+	heartbeat: function(processName, server, db) {
+		db.collection("running_processes", function(err, collection) {
+			if (err) {
+				createLog(processName, server, db, err);
+				return;
+			}
+	
+			collection.update({ process: processName, server: server, pid: process.pid }, { $set: { lastSync: Date.now() }, $setOnInsert: { launchTime: 0, status: "ghost", runs: { current: 0, maxRuns: 0 } } }, { upsert: true }, function(err, result) {
+				if (err) {
+					createLog(processName, server, db, err);
+				}
+			});
+		});
+	},
+
+	startProcess: function(db, proc) {
+		var child = new (forever.Monitor)(proc.directory + "/" + proc.module + "/" + proc.script, {
+			max: proc.maxRuns,
+			silent: true,
+			killTree: true,
+			minUptime: 2000,
+			spinSleepTime: 1000,
+			args: proc.args,
+			logFile: proc.logFile,
+			outFile: proc.logFile,
+			errFile: proc.logFile
+		});
+	
+		child.on("start", function (process, data) {
+			db.collection("running_processes", function(err, collection) {
+				if (err) {
+					createLog(proc.launchingProcess, proc.server, db, err);
+					return;
+				}
+		
+				collection.insert({ process: proc.script, server: proc.server, pid: data.pid, status: "running", runs: { current: (child.times + 1), maxRuns: child.max }, launchTime: Date.now(), lastSync: Date.now() }, function(err, result) {
+					if (err) {
+						createLog(proc.launchingProcess, proc.server, db, err);
+					}
+					
+					createLog(proc.launchingProcess, proc.server, db, proc.description + " process (" + proc.script + ", pid " + data.pid + ") has been started.");
+				});
+			});
+		});
+	
+		child.on("restart", function (process, data) {
+			db.collection("running_processes", function(err, collection) {
+				if (err) {
+					createLog(proc.launchingProcess, proc.server, db, err);
+					return;
+				}
+		
+				collection.insert({ process: proc.script, server: proc.server, pid: data.pid, status: "running", runs: { current: (child.times + 1), maxRuns: child.max }, launchTime: Date.now(), lastSync: Date.now() }, function(err, result) {
+					if (err) {
+						createLog(proc.launchingProcess, proc.server, db, err);
+					}
+					
+					createLog(proc.launchingProcess, proc.server, db, proc.description + " process (" + proc.script + ", pid " + data.pid + ") has been restarted.");
+				});
+			});
+		});
+	
+		child.on("exit", function () {
+			createLog(proc.launchingProcess, proc.server, db, proc.description + " process (" + proc.script + ") has exited (permanently).");
+		});
+		
+		child.start();
+		
+		processes.push(child);
+	},
+
+	restartProcess: function(processName, server, pid, db) {
+		for (var i = 0; i < processes.length; ++i) {
+			if (processes[i].child.pid == pid) {
+				var index = i;
+				
+				db.collection("running_processes", function(err, collection) {
+					if (err) {
+						createLog(processName, server, db, err);
+						return;
+					}
+			
+					collection.update({ process: processName, server: server, pid: pid }, { $set: { lastSync: Date.now(), status: "restarted" } }, function(err, result) {
+						if (err) {
+							createLog(processName, server, db, err);
+						}
+						
+						processes[index].restart();
+					});
+				});
+				
+				i += processes.length;
+			}
+		}
+	},
+
+	stopProcess: function(processName, server, pid, db) {
+		for (var i = 0; i < processes.length; ++i) {
+			if (processes[i].child.pid == pid) {
+				var index = i;
+				
+				db.collection("running_processes", function(err, collection) {
+					if (err) {
+						createLog(processName, server, db, err);
+						return;
+					}
+			
+					collection.update({ process: processName, server: server, pid: pid }, { $set: { lastSync: Date.now(), status: "stopped" } }, function(err, result) {
+						if (err) {
+							createLog(processName, server, db, err);
+						}
+						
+						processes[index].kill(true);
+					});
+				});
+
+				i += processes.length;
+			}
+		}
+	},
+
+	killProcess: function(pid) {
+		process.kill(pid, "SIGTERM");
+	},
+		
+	terminateProcess: function(processName, server, db, callback) {
+		db.collection("running_processes", function(err, collection) {
+			if (err) {
+				createLog(processName, server, db, err);
+				return;
+			}
+	
+			collection.update({ process: processName, server: server, pid: process.pid }, { $set: { lastSync: Date.now(), status: "killed" } }, function(err, result) {
+				if (err) {
+					createLog(processName, server, db, err);
+				}
+				
+				callback();
+			});
+		});
+	}
+}
+ at SyntaxError: The keyword 'public' is reserved (174:21)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$1.parseFunctionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:818:17)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:694:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/aiota-console/node_modules/aiota-console/console.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

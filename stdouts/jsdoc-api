@@ -1,0 +1,65 @@
+/root/Targets/jsdoc-api
+└─┬ jsdoc-api@4.0.0 
+  ├─┬ array-back@2.0.0 
+  │ └── typical@2.6.1 
+  ├─┬ cache-point@0.4.1 
+  │ └── mkdirp2@1.0.3 
+  ├─┬ collect-all@1.0.3 
+  │ ├─┬ stream-connect@1.0.2 
+  │ │ └── array-back@1.0.4 
+  │ └── stream-via@1.0.4 
+  ├─┬ file-set@1.1.1 
+  │ ├── array-back@1.0.4 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├─┬ inflight@1.0.6 
+  │   │ └── wrappy@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── once@1.4.0 
+  │   └── path-is-absolute@1.0.1 
+  ├── fs-then-native@2.0.0 
+  ├─┬ jsdoc@3.5.5 
+  │ ├── babylon@7.0.0-beta.19 
+  │ ├── bluebird@3.5.0 
+  │ ├─┬ catharsis@0.8.9 
+  │ │ └─┬ underscore-contrib@0.3.0 
+  │ │   └── underscore@1.6.0 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ js2xmlparser@3.0.0 
+  │ │ └── xmlcreate@1.0.2 
+  │ ├─┬ klaw@2.0.0 
+  │ │ └── graceful-fs@4.1.11 
+  │ ├── marked@0.3.6 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ requizzle@0.2.1 
+  │ │ └── underscore@1.6.0 
+  │ ├── strip-json-comments@2.0.1 
+  │ ├── taffydb@2.6.2 
+  │ └── underscore@1.8.3 
+  ├── object-to-spawn-args@1.1.1 
+  ├── temp-path@1.0.0 
+  └── walk-back@3.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jsdoc-api/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0586 took 1.6739s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,131 @@
+
+> deasync@0.1.10 install /root/Targets/pry/node_modules/deasync
+> node ./build.js
+
+`linux-x64-node-7` exists; testing
+Binary is fine; exiting
+/root/Targets/pry
+└─┬ pry@0.7.0 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── coffee-script@1.12.7 
+  ├─┬ deasync@0.1.10 
+  │ ├── bindings@1.2.1 
+  │ └── nan@2.7.0 
+  └─┬ pygmentize-bundled@2.3.0 
+    ├─┬ bl@0.4.2 
+    │ └─┬ readable-stream@1.0.34 
+    │   ├── core-util-is@1.0.2 
+    │   ├── inherits@2.0.3 
+    │   ├── isarray@0.0.1 
+    │   └── string_decoder@0.10.31 
+    └─┬ through2@0.2.3 
+      ├── readable-stream@1.1.14 
+      └─┬ xtend@2.1.2 
+        └── object-keys@0.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pry/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 44% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","bind","defineProperties","toString","toUpperCase"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0509 took 9.5676s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to arguments in strict mode (15:28) on program J$.iids = {"8":[9,13,9,78],"9":[1,20,1,27],"10":[7,35,7,42],"16":[9,13,9,78],"17":[1,28,1,32],"18":[7,44,7,47],"24":[7,35,7,42],"25":[1,20,1,33],"33":[1,20,1,33],"34":[7,44,7,47],"41":[1,20,1,33],"42":[9,45,9,78],"49":[2,26,2,38],"50":[11,20,11,74],"57":[2,26,2,45],"58":[12,37,12,48],"65":[2,26,2,45],"73":[2,26,2,45],"81":[5,10,5,17],"89":[5,18,5,22],"97":[5,10,5,23],"105":[5,10,5,23],"113":[5,5,5,24],"121":[6,11,6,13],"129":[6,26,6,35],"137":[6,11,6,36],"139":[6,11,6,25],"145":[6,11,6,36],"153":[6,5,6,37],"161":[7,14,7,15],"169":[7,14,7,15],"177":[7,23,7,26],"185":[7,23,7,33],"193":[7,23,7,33],"201":[7,10,7,15],"209":[7,35,7,36],"217":[7,39,7,42],"233":[7,44,7,45],"241":[7,44,7,47],"257":[8,16,8,19],"265":[8,20,8,21],"273":[8,16,8,22],"281":[8,16,8,22],"289":[8,9,8,23],"297":[9,13,9,17],"305":[9,24,9,40],"313":[9,13,9,41],"315":[9,13,9,23],"321":[9,46,9,50],"329":[9,57,9,77],"337":[9,46,9,78],"339":[9,46,9,56],"345":[10,20,10,24],"353":[10,32,10,33],"361":[10,35,10,39],"369":[10,48,10,51],"377":[10,35,10,52],"379":[10,35,10,47],"385":[10,20,10,53],"387":[10,20,10,31],"393":[10,20,10,53],"401":[10,13,10,54],"409":[11,20,11,24],"417":[11,35,11,36],"425":[11,38,11,39],"433":[11,20,11,40],"435":[11,20,11,34],"441":[11,20,11,54],"443":[11,20,11,52],"449":[11,57,11,61],"457":[11,72,11,73],"465":[11,57,11,74],"467":[11,57,11,71],"473":[11,20,11,74],"481":[11,13,11,75],"489":[12,13,12,20],"497":[12,21,12,25],"505":[12,29,12,36],"513":[12,37,12,41],"521":[12,44,12,48],"529":[12,29,12,49],"537":[12,13,12,49],"545":[12,13,12,50],"553":[3,2,15,2],"561":[3,2,15,2],"569":[3,2,15,2],"577":[3,2,15,2],"585":[3,2,15,2],"593":[3,2,15,2],"601":[3,2,15,2],"609":[3,2,15,2],"617":[3,2,15,2],"625":[15,8,15,12],"633":[3,2,15,13],"635":[3,2,15,7],"641":[3,1,15,15],"649":[1,1,15,15],"657":[1,1,15,15],"665":[1,1,15,15],"673":[9,9,13,10],"681":[7,5,14,6],"689":[7,5,14,6],"697":[7,5,14,6],"705":[3,2,15,2],"713":[3,2,15,2],"721":[1,1,15,15],"729":[1,1,15,15],"nBranches":6,"originalCodeFileName":"/root/Targets/pry/node_modules/pry/lib/pry/commands/index.js","instrumentedCodeFileName":"/root/Targets/pry/node_modules/pry/lib/pry/commands/index_jalangi_.js","code":"(function() {\n  var file, fs, i, len, name, ref;\n\n  fs = require('fs');\n\n  ref = fs.readdirSync(__dirname);\n  for (i = 0, len = ref.length; i < len; i++) {\n    file = ref[i];\n    if (file.match(/\\.(coffee|js)$/) && !file.match(/index\\.(js|coffee)/)) {\n      file = file.substr(0, file.indexOf('.'));\n      name = file.substring(0, 1).toUpperCase() + file.substring(1);\n      exports[name] = require(\"./\" + file);\n    }\n  }\n\n}).call(this);\n"};
+jalangiLabel159:
+    while (true) {
+        try {
+            J$.Se(649, '/root/Targets/pry/node_modules/pry/lib/pry/commands/index_jalangi_.js', '/root/Targets/pry/node_modules/pry/lib/pry/commands/index.js');
+            J$.N(657, '__secret__S$', __secret__S$, 0);
+            J$.N(665, '__secret__traits__', __secret__traits__, 0);
+            var __secret__S$ = J$.X1(41, J$.W(33, '__secret__S$', J$.F(25, J$.R(9, 'require', require, 2), 0)(J$.T(17, 'S$', 21, false)), __secret__S$, 3));
+            var __secret__traits__ = J$.X1(73, J$.W(65, '__secret__traits__', J$.G(57, J$.R(49, '__secret__S$', __secret__S$, 1), 'Traits', 0), __secret__traits__, 3));
+            J$.X1(641, J$.M(633, J$.T(617, function () {
+                jalangiLabel158:
+                    while (true) {
+                        try {
+                            J$.Fe(553, arguments.callee, this, arguments);
+                            arguments = J$.N(561, 'arguments', arguments, 4);
+                            J$.N(569, 'file', file, 0);
+                            J$.N(577, 'fs', fs, 0);
+                            J$.N(585, 'i', i, 0);
+                            J$.N(593, 'len', len, 0);
+                            J$.N(601, 'name', name, 0);
+                            J$.N(609, 'ref', ref, 0);
+                            var file, fs, i, len, name, ref;
+                            J$.X1(113, fs = J$.W(105, 'fs', J$.F(97, J$.R(81, 'require', require, 2), 0)(J$.T(89, 'fs', 21, false)), fs, 0));
+                            J$.X1(153, ref = J$.W(145, 'ref', J$.M(137, J$.R(121, 'fs', fs, 0), 'readdirSync', 0)(J$.R(129, '__dirname', __dirname, 2)), ref, 0));
+                            for (J$.X1(689, (J$.X1(201, i = J$.W(169, 'i', J$.T(161, 0, 22, false), i, 0)), len = J$.W(193, 'len', J$.G(185, J$.R(177, 'ref', ref, 0), 'length', 0), len, 0))); J$.X1(681, J$.C(24, J$.B(10, '<', J$.R(209, 'i', i, 0), J$.R(217, 'len', len, 0), 0))); J$.X1(697, J$.B(34, '-', i = J$.W(241, 'i', J$.B(26, '+', J$.U(18, '+', J$.R(233, 'i', i, 0)), J$.T(225, 1, 22, false), 0), i, 0), J$.T(249, 1, 22, false), 0))) {
+                                J$.X1(289, file = J$.W(281, 'file', J$.G(273, J$.R(257, 'ref', ref, 0), J$.R(265, 'i', i, 0), 4), file, 0));
+                                if (J$.X1(673, J$.C(16, J$.C(8, J$.M(313, J$.R(297, 'file', file, 0), 'match', 0)(J$.T(305, /\.(coffee|js)$/, 14, false))) ? J$.U(42, '!', J$.M(337, J$.R(321, 'file', file, 0), 'match', 0)(J$.T(329, /index\.(js|coffee)/, 14, false))) : J$._()))) {
+                                    J$.X1(401, file = J$.W(393, 'file', J$.M(385, J$.R(345, 'file', file, 0), 'substr', 0)(J$.T(353, 0, 22, false), J$.M(377, J$.R(361, 'file', file, 0), 'indexOf', 0)(J$.T(369, '.', 21, false))), file, 0));
+                                    J$.X1(481, name = J$.W(473, 'name', J$.B(50, '+', J$.M(441, J$.M(433, J$.R(409, 'file', file, 0), 'substring', 0)(J$.T(417, 0, 22, false), J$.T(425, 1, 22, false)), 'toUpperCase', 0)(), J$.M(465, J$.R(449, 'file', file, 0), 'substring', 0)(J$.T(457, 1, 22, false)), 0), name, 0));
+                                    J$.X1(545, J$.P(537, J$.R(489, 'exports', exports, 2), J$.R(497, 'name', name, 0), J$.F(529, J$.R(505, 'require', require, 2), 0)(J$.B(58, '+', J$.T(513, './', 21, false), J$.R(521, 'file', file, 0), 0)), 2));
+                                }
+                            }
+                        } catch (J$e) {
+                            J$.Ex(705, J$e);
+                        } finally {
+                            if (J$.Fr(713))
+                                continue jalangiLabel158;
+                            else
+                                return J$.Ra();
+                        }
+                    }
+            }, 12, false, 553), 'call', 0)(J$.R(625, 'this', this, 0)));
+        } catch (J$e) {
+            J$.Ex(721, J$e);
+        } finally {
+            if (J$.Sr(729)) {
+                J$.L();
+                continue jalangiLabel159;
+            } else {
+                J$.L();
+                break jalangiLabel159;
+            }
+        }
+    }
+// JALANGI DO NOT INSTRUMENT
+ at SyntaxError: Assigning to arguments in strict mode (15:28)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1472:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1606:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseTryStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:897:23)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:702:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/pry/node_modules/pry/lib/pry.js. Coverage (Term): 17% Coverage (LOC): 17%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/app.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/sync_prompt.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/pry/node_modules/deasync/index.js. Coverage (Term): 54% Coverage (LOC): 50%
+*- File /root/Targets/pry/node_modules/chalk/index.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/pry/node_modules/escape-string-regexp/index.js. Coverage (Term): 85% Coverage (LOC): 90%
+*- File /root/Targets/pry/node_modules/ansi-styles/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pry/node_modules/strip-ansi/index.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/pry/node_modules/ansi-regex/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/pry/node_modules/has-ansi/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pry/node_modules/supports-color/index.js. Coverage (Term): 63% Coverage (LOC): 56%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/output/local_output.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/pry/node_modules/pry/lib/libs/better_inspect.js. Coverage (Term): 9% Coverage (LOC): 28%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/commands/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/commands/help.js. Coverage (Term): 46% Coverage (LOC): 46%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/command.js. Coverage (Term): 38% Coverage (LOC): 55%
+*- File /root/Targets/pry/node_modules/pry/lib/pry/range.js. Coverage (Term): 59% Coverage (LOC): 74%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

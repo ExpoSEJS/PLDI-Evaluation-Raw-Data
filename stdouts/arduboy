@@ -1,0 +1,450 @@
+/root/Targets/arduboy
+└─┬ arduboy@0.0.8 
+  ├── abbrev@1.1.1 
+  ├─┬ config-chain@1.1.11 
+  │ ├── ini@1.3.4 
+  │ └── proto-list@1.2.4 
+  ├── editor@1.0.0 
+  ├─┬ fs-write-stream-atomic@1.0.10 
+  │ ├── iferr@0.1.5 
+  │ ├── imurmurhash@0.1.4 
+  │ └─┬ readable-stream@2.3.3 
+  │   ├── core-util-is@1.0.2 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── safe-buffer@5.1.1 
+  │   ├── string_decoder@1.0.3 
+  │   └── util-deprecate@1.0.2 
+  ├─┬ gm@1.23.0 
+  │ ├── array-parallel@0.1.3 
+  │ ├── array-series@0.1.5 
+  │ ├─┬ cross-spawn@4.0.2 
+  │ │ └─┬ lru-cache@4.1.1 
+  │ │   ├── pseudomap@1.0.2 
+  │ │   └── yallist@2.1.2 
+  │ └─┬ debug@2.2.0 
+  │   └── ms@0.7.1 
+  ├── graceful-fs@4.1.11 
+  ├── inherits@2.0.3 
+  ├─┬ jimp@0.2.28 
+  │ ├── bignumber.js@2.4.0 
+  │ ├── bmp-js@0.0.3 
+  │ ├── es6-promise@3.3.1 
+  │ ├── exif-parser@0.1.12 
+  │ ├── file-type@3.9.0 
+  │ ├── jpeg-js@0.2.0 
+  │ ├─┬ load-bmfont@1.3.0 
+  │ │ ├── buffer-equal@0.0.1 
+  │ │ ├── parse-bmfont-ascii@1.0.6 
+  │ │ ├── parse-bmfont-binary@1.0.6 
+  │ │ ├─┬ parse-bmfont-xml@1.1.3 
+  │ │ │ ├── xml-parse-from-string@1.0.1 
+  │ │ │ └─┬ xml2js@0.4.19 
+  │ │ │   ├── sax@1.2.4 
+  │ │ │   └── xmlbuilder@9.0.4 
+  │ │ ├─┬ xhr@2.4.0 
+  │ │ │ ├─┬ global@4.3.2 
+  │ │ │ │ ├─┬ min-document@2.19.0 
+  │ │ │ │ │ └── dom-walk@0.1.1 
+  │ │ │ │ └── process@0.5.2 
+  │ │ │ ├── is-function@1.0.1 
+  │ │ │ └─┬ parse-headers@2.0.1 
+  │ │ │   ├── for-each@0.3.2 
+  │ │ │   └── trim@0.0.1 
+  │ │ └── xtend@4.0.1 
+  │ ├── mime@1.4.1 
+  │ ├── pixelmatch@4.0.2 
+  │ ├── pngjs@3.3.0 
+  │ ├── read-chunk@1.0.1 
+  │ ├─┬ request@2.83.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.3 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.10.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── qs@6.5.1 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ ├─┬ stream-to-buffer@0.1.0 
+  │ │ └── stream-to@0.2.2 
+  │ ├── tinycolor2@1.4.1 
+  │ └─┬ url-regex@3.2.0 
+  │   └── ip-regex@1.0.3 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├─┬ module@1.2.5 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ ├─┬ concat-stream@1.5.1 
+  │ │ ├─┬ readable-stream@2.0.6 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── typedarray@0.0.6 
+  │ ├─┬ lodash.template@4.2.4 
+  │ │ ├── lodash._reinterpolate@3.0.0 
+  │ │ ├── lodash.assigninwith@4.2.0 
+  │ │ ├── lodash.keys@4.2.0 
+  │ │ ├── lodash.rest@4.0.5 
+  │ │ ├── lodash.templatesettings@4.1.0 
+  │ │ └── lodash.tostring@4.1.4 
+  │ ├── map-stream@0.0.6 
+  │ ├── tildify@1.2.0 
+  │ ├─┬ vinyl-fs@2.4.3 
+  │ │ ├─┬ duplexify@3.5.1 
+  │ │ │ ├── end-of-stream@1.4.0 
+  │ │ │ └── stream-shift@1.0.0 
+  │ │ ├─┬ glob-stream@5.3.5 
+  │ │ │ ├── glob@5.0.15 
+  │ │ │ ├─┬ glob-parent@3.1.0 
+  │ │ │ │ ├─┬ is-glob@3.1.0 
+  │ │ │ │ │ └── is-extglob@2.1.1 
+  │ │ │ │ └── path-dirname@1.0.2 
+  │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ ├─┬ extglob@0.3.2 
+  │ │ │ │ │ └── is-extglob@1.0.0 
+  │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ │ ├── is-glob@2.0.1 
+  │ │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ │ │ │ └─┬ is-glob@2.0.1 
+  │ │ │ │ │ │   └── is-extglob@1.0.0 
+  │ │ │ │ │ ├── is-dotfile@1.0.3 
+  │ │ │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ │ │ └── is-glob@2.0.1 
+  │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ ├─┬ ordered-read-streams@0.3.0 
+  │ │ │ │ └── is-stream@1.1.0 
+  │ │ │ ├─┬ through2@0.6.5 
+  │ │ │ │ └─┬ readable-stream@1.0.34 
+  │ │ │ │   ├── isarray@0.0.1 
+  │ │ │ │   └── string_decoder@0.10.31 
+  │ │ │ ├─┬ to-absolute-glob@0.1.1 
+  │ │ │ │ └── extend-shallow@2.0.1 
+  │ │ │ └── unique-stream@2.2.1 
+  │ │ ├─┬ gulp-sourcemaps@1.12.0 
+  │ │ │ ├── @gulp-sourcemaps/map-sources@1.0.0 
+  │ │ │ ├── acorn@4.0.13 
+  │ │ │ ├── convert-source-map@1.5.0 
+  │ │ │ ├─┬ css@2.2.1 
+  │ │ │ │ ├─┬ source-map@0.1.43 
+  │ │ │ │ │ └── amdefine@1.0.1 
+  │ │ │ │ ├─┬ source-map-resolve@0.3.1 
+  │ │ │ │ │ ├── atob@1.1.3 
+  │ │ │ │ │ ├── resolve-url@0.2.1 
+  │ │ │ │ │ └── source-map-url@0.3.0 
+  │ │ │ │ └── urix@0.1.0 
+  │ │ │ ├─┬ debug-fabulous@0.0.4 
+  │ │ │ │ ├── lazy-debug-legacy@0.0.1 
+  │ │ │ │ └── object-assign@4.1.0 
+  │ │ │ ├── detect-newline@2.1.0 
+  │ │ │ └── source-map@0.6.1 
+  │ │ ├── is-valid-glob@0.3.0 
+  │ │ ├── lazystream@1.0.0 
+  │ │ ├── lodash.isequal@4.5.0 
+  │ │ ├── merge-stream@1.0.1 
+  │ │ ├── object-assign@4.1.1 
+  │ │ ├─┬ strip-bom@2.0.0 
+  │ │ │ └── is-utf8@0.2.1 
+  │ │ ├─┬ strip-bom-stream@1.0.0 
+  │ │ │ └── first-chunk-stream@1.0.0 
+  │ │ ├── through2@2.0.3 
+  │ │ ├── through2-filter@2.0.0 
+  │ │ ├── vali-date@1.0.0 
+  │ │ └─┬ vinyl@1.2.0 
+  │ │   ├── clone@1.0.2 
+  │ │   ├── clone-stats@0.0.1 
+  │ │   └── replace-ext@0.0.1 
+  │ └─┬ yargs@4.6.0 
+  │   ├── camelcase@2.1.1 
+  │   ├─┬ cliui@3.2.0 
+  │   │ └── wrap-ansi@2.1.0 
+  │   ├── decamelize@1.2.0 
+  │   ├── lodash.assign@4.2.0 
+  │   ├─┬ os-locale@1.4.0 
+  │   │ └─┬ lcid@1.0.0 
+  │   │   └── invert-kv@1.0.0 
+  │   ├─┬ pkg-conf@1.1.3 
+  │   │ ├─┬ find-up@1.1.2 
+  │   │ │ ├── path-exists@2.1.0 
+  │   │ │ └─┬ pinkie-promise@2.0.1 
+  │   │ │   └── pinkie@2.0.4 
+  │   │ ├─┬ load-json-file@1.1.0 
+  │   │ │ ├─┬ parse-json@2.2.0 
+  │   │ │ │ └─┬ error-ex@1.3.1 
+  │   │ │ │   └── is-arrayish@0.2.1 
+  │   │ │ └── pify@2.3.0 
+  │   │ └── symbol@0.2.3 
+  │   ├─┬ read-pkg-up@1.0.1 
+  │   │ └─┬ read-pkg@1.1.0 
+  │   │   ├─┬ normalize-package-data@2.4.0 
+  │   │   │ ├── hosted-git-info@2.5.0 
+  │   │   │ ├─┬ is-builtin-module@1.0.0 
+  │   │   │ │ └── builtin-modules@1.1.1 
+  │   │   │ └─┬ validate-npm-package-license@3.0.1 
+  │   │   │   ├─┬ spdx-correct@1.0.2 
+  │   │   │   │ └── spdx-license-ids@1.2.2 
+  │   │   │   └── spdx-expression-parse@1.0.4 
+  │   │   └── path-type@1.1.0 
+  │   ├── require-main-filename@1.0.1 
+  │   ├─┬ string-width@1.0.2 
+  │   │ ├── code-point-at@1.1.0 
+  │   │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │   └── number-is-nan@1.0.1 
+  │   ├── window-size@0.2.0 
+  │   ├── y18n@3.2.1 
+  │   └─┬ yargs-parser@2.4.1 
+  │     └── camelcase@3.0.0 
+  ├── nopt@3.0.6 
+  ├─┬ npmlog@2.0.4 
+  │ ├── ansi@0.3.1 
+  │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ └── delegates@1.0.0 
+  │ └─┬ gauge@1.2.7 
+  │   ├── has-unicode@2.0.1 
+  │   ├── lodash.pad@4.5.1 
+  │   ├── lodash.padend@4.6.1 
+  │   └── lodash.padstart@4.6.1 
+  ├─┬ once@1.4.0 
+  │ └── wrappy@1.0.2 
+  ├── opener@1.4.3 
+  ├─┬ osenv@0.1.4 
+  │ ├── os-homedir@1.0.2 
+  │ └── os-tmpdir@1.0.2 
+  ├─┬ read@1.0.7 
+  │ └── mute-stream@0.0.7 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├── inflight@1.0.6 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   └── path-is-absolute@1.0.1 
+  ├── semver@5.4.1 
+  ├── slide@1.1.6 
+  ├── uid-number@0.0.6 
+  ├── umask@1.1.0 
+  ├─┬ validate-npm-package-name@2.2.2 
+  │ └── builtins@0.0.7 
+  ├─┬ which@1.3.0 
+  │ └── isexe@2.0.0 
+  └── write-file-atomic@1.3.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/arduboy/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","getOwnPropertyDescriptor","call","create","apply","RegExp","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0417 took 30.0616s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (23:4) on program 
+/**
+ * Accepts any node Stream instance and hijacks its "write()" function,
+ * so that it can count any newlines that get written to the output.
+ *
+ * When a '\n' byte is encountered, then a "newline" event will be emitted
+ * on the stream, with no arguments. It is up to the listeners to determine
+ * any necessary deltas required for their use-case.
+ *
+ * Ex:
+ *
+ *   var cursor = ansi(process.stdout)
+ *     , ln = 0
+ *   process.stdout.on('newline', function () {
+ *    ln++
+ *   })
+ */
+
+/**
+ * Module dependencies.
+ */
+
+var assert = require('assert')
+var NEWLINE = '\n'.charCodeAt(0)
+
+function emitNewlineEvents (stream) {
+  if (stream._emittingNewlines) {
+    // already emitting newline events
+    return
+  }
+
+  var write = stream.write
+
+  stream.write = function (data) {
+    // first write the data
+    var rtn = write.apply(stream, arguments)
+
+    if (stream.listeners('newline').length > 0) {
+      var len = data.length
+        , i = 0
+      // now try to calculate any deltas
+      if (typeof data == 'string') {
+        for (; i<len; i++) {
+          processByte(stream, data.charCodeAt(i))
+        }
+      } else {
+        // buffer
+        for (; i<len; i++) {
+          processByte(stream, data[i])
+        }
+      }
+    }
+
+    return rtn
+  }
+
+  stream._emittingNewlines = true
+}
+module.exports = emitNewlineEvents
+
+
+/**
+ * Processes an individual byte being written to a stream
+ */
+
+function processByte (stream, b) {
+  assert.equal(typeof b, 'number')
+  if (b === NEWLINE) {
+    stream.emit('newline')
+  }
+}
+ at SyntaxError: Unexpected token (23:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/arduboy/node_modules/arduboy/lib/arduboy.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/arduboy/node_modules/graceful-fs/graceful-fs.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/arduboy/node_modules/graceful-fs/polyfills.js. Coverage (Term): 35% Coverage (LOC): 43%
+*- File /root/Targets/arduboy/node_modules/graceful-fs/fs.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/arduboy/node_modules/graceful-fs/legacy-streams.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/arduboy/node_modules/arduboy/lib/config/core.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/arduboy/node_modules/config-chain/index.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/arduboy/node_modules/proto-list/proto-list.js. Coverage (Term): 7% Coverage (LOC): 21%
+*- File /root/Targets/arduboy/node_modules/ini/ini.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/arduboy/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/arduboy/node_modules/arduboy/lib/config/defaults.js. Coverage (Term): 10% Coverage (LOC): 6%
+*- File /root/Targets/arduboy/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/arduboy/node_modules/nopt/lib/nopt.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/arduboy/node_modules/abbrev/abbrev.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/arduboy/node_modules/osenv/osenv.js. Coverage (Term): 32% Coverage (LOC): 51%
+*- File /root/Targets/arduboy/node_modules/os-tmpdir/index.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/arduboy/node_modules/os-homedir/index.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /root/Targets/arduboy/node_modules/arduboy/lib/utils/umask.js. Coverage (Term): 29% Coverage (LOC): 31%
+*- File /root/Targets/arduboy/node_modules/umask/index.js. Coverage (Term): 27% Coverage (LOC): 37%
+*- File /root/Targets/arduboy/node_modules/npmlog/log.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/arduboy/node_modules/are-we-there-yet/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/arduboy/node_modules/are-we-there-yet/tracker-group.js. Coverage (Term): 17% Coverage (LOC): 29%
+*- File /root/Targets/arduboy/node_modules/are-we-there-yet/tracker-base.js. Coverage (Term): 68% Coverage (LOC): 75%
+*- File /root/Targets/arduboy/node_modules/are-we-there-yet/tracker.js. Coverage (Term): 34% Coverage (LOC): 57%
+*- File /root/Targets/arduboy/node_modules/are-we-there-yet/tracker-stream.js. Coverage (Term): 42% Coverage (LOC): 57%
+*- File /root/Targets/arduboy/node_modules/readable-stream/readable.js. Coverage (Term): 61% Coverage (LOC): 60%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/arduboy/node_modules/process-nextick-args/index.js. Coverage (Term): 22% Coverage (LOC): 19%
+*- File /root/Targets/arduboy/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/internal/streams/stream.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/arduboy/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/arduboy/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/internal/streams/BufferList.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/internal/streams/destroy.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/arduboy/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/arduboy/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/arduboy/node_modules/delegates/index.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/arduboy/node_modules/gauge/progress-bar.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/arduboy/node_modules/has-unicode/index.js. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/arduboy/node_modules/ansi/lib/ansi.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

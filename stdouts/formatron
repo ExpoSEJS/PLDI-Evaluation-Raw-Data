@@ -1,0 +1,435 @@
+/root/Targets/formatron
+└─┬ formatron@0.0.42 
+  ├── classnames@2.2.5 
+  ├── debounce@1.0.2 
+  ├── es6-error@4.0.2 
+  ├── font-awesome@4.7.0 
+  ├─┬ font-awesome-webpack-2@1.0.0 
+  │ ├─┬ css-loader@0.26.4 
+  │ │ ├─┬ babel-code-frame@6.26.0 
+  │ │ │ ├─┬ chalk@1.1.3 
+  │ │ │ │ ├── ansi-styles@2.2.1 
+  │ │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │ │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ │ ├── strip-ansi@3.0.1 
+  │ │ │ │ └── supports-color@2.0.0 
+  │ │ │ └── esutils@2.0.2 
+  │ │ ├─┬ css-selector-tokenizer@0.7.0 
+  │ │ │ ├── cssesc@0.1.0 
+  │ │ │ ├── fastparse@1.1.1 
+  │ │ │ └─┬ regexpu-core@1.0.0 
+  │ │ │   ├── regenerate@1.3.3 
+  │ │ │   ├── regjsgen@0.2.0 
+  │ │ │   └─┬ regjsparser@0.1.5 
+  │ │ │     └── jsesc@0.5.0 
+  │ │ ├─┬ cssnano@3.10.0 
+  │ │ │ ├─┬ autoprefixer@6.7.7 
+  │ │ │ │ ├─┬ browserslist@1.7.7 
+  │ │ │ │ │ └── electron-to-chromium@1.3.21 
+  │ │ │ │ ├── caniuse-db@1.0.30000733 
+  │ │ │ │ ├── normalize-range@0.1.2 
+  │ │ │ │ └── num2fraction@1.2.2 
+  │ │ │ ├── decamelize@1.2.0 
+  │ │ │ ├── defined@1.0.0 
+  │ │ │ ├─┬ has@1.0.1 
+  │ │ │ │ └── function-bind@1.1.1 
+  │ │ │ ├─┬ postcss-calc@5.3.1 
+  │ │ │ │ ├── postcss-message-helpers@2.0.0 
+  │ │ │ │ └─┬ reduce-css-calc@1.3.0 
+  │ │ │ │   ├── balanced-match@0.4.2 
+  │ │ │ │   ├── math-expression-evaluator@1.2.17 
+  │ │ │ │   └── reduce-function-call@1.0.2 
+  │ │ │ ├─┬ postcss-colormin@2.2.2 
+  │ │ │ │ └─┬ colormin@1.1.2 
+  │ │ │ │   ├─┬ color@0.11.4 
+  │ │ │ │   │ ├── clone@1.0.2 
+  │ │ │ │   │ └── color-string@0.3.0 
+  │ │ │ │   └── css-color-names@0.0.4 
+  │ │ │ ├── postcss-convert-values@2.6.1 
+  │ │ │ ├── postcss-discard-comments@2.0.4 
+  │ │ │ ├── postcss-discard-duplicates@2.1.0 
+  │ │ │ ├── postcss-discard-empty@2.1.0 
+  │ │ │ ├── postcss-discard-overridden@0.1.1 
+  │ │ │ ├─┬ postcss-discard-unused@2.2.3 
+  │ │ │ │ └── uniqs@2.0.0 
+  │ │ │ ├─┬ postcss-filter-plugins@2.0.2 
+  │ │ │ │ └─┬ uniqid@4.1.1 
+  │ │ │ │   └── macaddress@0.2.8 
+  │ │ │ ├── postcss-merge-idents@2.1.7 
+  │ │ │ ├── postcss-merge-longhand@2.0.2 
+  │ │ │ ├─┬ postcss-merge-rules@2.1.2 
+  │ │ │ │ ├─┬ caniuse-api@1.6.1 
+  │ │ │ │ │ ├── lodash.memoize@4.1.2 
+  │ │ │ │ │ └── lodash.uniq@4.5.0 
+  │ │ │ │ ├─┬ postcss-selector-parser@2.2.3 
+  │ │ │ │ │ ├── flatten@1.0.2 
+  │ │ │ │ │ ├── indexes-of@1.0.1 
+  │ │ │ │ │ └── uniq@1.0.1 
+  │ │ │ │ └── vendors@1.0.1 
+  │ │ │ ├── postcss-minify-font-values@1.0.5 
+  │ │ │ ├── postcss-minify-gradients@1.0.5 
+  │ │ │ ├─┬ postcss-minify-params@1.2.2 
+  │ │ │ │ └── alphanum-sort@1.0.2 
+  │ │ │ ├── postcss-minify-selectors@2.1.1 
+  │ │ │ ├── postcss-normalize-charset@1.1.1 
+  │ │ │ ├─┬ postcss-normalize-url@3.0.8 
+  │ │ │ │ ├── is-absolute-url@2.1.0 
+  │ │ │ │ └─┬ normalize-url@1.9.1 
+  │ │ │ │   ├── prepend-http@1.0.4 
+  │ │ │ │   ├─┬ query-string@4.3.4 
+  │ │ │ │   │ └── strict-uri-encode@1.1.0 
+  │ │ │ │   └─┬ sort-keys@1.1.2 
+  │ │ │ │     └── is-plain-obj@1.1.0 
+  │ │ │ ├── postcss-ordered-values@2.2.3 
+  │ │ │ ├── postcss-reduce-idents@2.4.0 
+  │ │ │ ├── postcss-reduce-initial@1.0.1 
+  │ │ │ ├── postcss-reduce-transforms@1.0.4 
+  │ │ │ ├─┬ postcss-svgo@2.1.6 
+  │ │ │ │ ├─┬ is-svg@2.1.0 
+  │ │ │ │ │ └── html-comment-regex@1.1.1 
+  │ │ │ │ └─┬ svgo@0.7.2 
+  │ │ │ │   ├─┬ coa@1.0.4 
+  │ │ │ │   │ └── q@1.5.0 
+  │ │ │ │   ├── colors@1.1.2 
+  │ │ │ │   ├─┬ csso@2.3.2 
+  │ │ │ │   │ └── clap@1.2.3 
+  │ │ │ │   ├─┬ js-yaml@3.7.0 
+  │ │ │ │   │ ├─┬ argparse@1.0.9 
+  │ │ │ │   │ │ └── sprintf-js@1.0.3 
+  │ │ │ │   │ └── esprima@2.7.3 
+  │ │ │ │   ├── sax@1.2.4 
+  │ │ │ │   └── whet.extend@0.9.9 
+  │ │ │ ├── postcss-unique-selectors@2.0.2 
+  │ │ │ ├── postcss-value-parser@3.3.0 
+  │ │ │ └── postcss-zindex@2.2.0 
+  │ │ ├─┬ loader-utils@1.1.0 
+  │ │ │ ├── big.js@3.2.0 
+  │ │ │ ├── emojis-list@2.1.0 
+  │ │ │ └── json5@0.5.1 
+  │ │ ├── lodash.camelcase@4.3.0 
+  │ │ ├─┬ postcss@5.2.17 
+  │ │ │ ├── js-base64@2.3.2 
+  │ │ │ └─┬ supports-color@3.2.3 
+  │ │ │   └── has-flag@1.0.0 
+  │ │ ├─┬ postcss-modules-extract-imports@1.1.0 
+  │ │ │ └─┬ postcss@6.0.11 
+  │ │ │   ├─┬ chalk@2.1.0 
+  │ │ │   │ └── ansi-styles@3.2.0 
+  │ │ │   └─┬ supports-color@4.4.0 
+  │ │ │     └── has-flag@2.0.0 
+  │ │ ├─┬ postcss-modules-local-by-default@1.2.0 
+  │ │ │ └─┬ postcss@6.0.11 
+  │ │ │   ├─┬ chalk@2.1.0 
+  │ │ │   │ └── ansi-styles@3.2.0 
+  │ │ │   └─┬ supports-color@4.4.0 
+  │ │ │     └── has-flag@2.0.0 
+  │ │ ├─┬ postcss-modules-scope@1.1.0 
+  │ │ │ └─┬ postcss@6.0.11 
+  │ │ │   ├─┬ chalk@2.1.0 
+  │ │ │   │ └── ansi-styles@3.2.0 
+  │ │ │   └─┬ supports-color@4.4.0 
+  │ │ │     └── has-flag@2.0.0 
+  │ │ ├─┬ postcss-modules-values@1.3.0 
+  │ │ │ ├── icss-replace-symbols@1.1.0 
+  │ │ │ └─┬ postcss@6.0.11 
+  │ │ │   ├─┬ chalk@2.1.0 
+  │ │ │   │ └── ansi-styles@3.2.0 
+  │ │ │   └─┬ supports-color@4.4.0 
+  │ │ │     └── has-flag@2.0.0 
+  │ │ └── source-list-map@0.1.8 
+  │ ├─┬ less-loader@2.2.3 
+  │ │ └── loader-utils@0.2.17 
+  │ └── style-loader@0.13.2 
+  ├── google-libphonenumber@1.1.2 
+  ├── UNMET PEER DEPENDENCY immutable@4.0.0-rc.2
+  ├─┬ less@2.7.2 
+  │ ├─┬ errno@0.1.4 
+  │ │ └── prr@0.0.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── image-size@0.5.5 
+  │ ├── mime@1.4.0 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ promise@7.3.1 
+  │ │ └── asap@2.0.6 
+  │ ├─┬ request@2.82.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.2 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └─┬ verror@1.10.0 
+  │ │ │ │   └── core-util-is@1.0.2 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── qs@6.5.1 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ └── source-map@0.5.7 
+  ├── moment@2.18.1 
+  ├─┬ react@15.6.1 
+  │ ├── create-react-class@15.6.0 
+  │ ├─┬ fbjs@0.8.15 
+  │ │ ├── core-js@1.2.7 
+  │ │ ├─┬ isomorphic-fetch@2.2.1 
+  │ │ │ ├─┬ node-fetch@1.7.3 
+  │ │ │ │ ├─┬ encoding@0.1.12 
+  │ │ │ │ │ └── iconv-lite@0.4.19 
+  │ │ │ │ └── is-stream@1.1.0 
+  │ │ │ └── whatwg-fetch@2.0.3 
+  │ │ ├── setimmediate@1.0.5 
+  │ │ └── ua-parser-js@0.7.14 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ ├── object-assign@4.1.1 
+  │ └── prop-types@15.5.10 
+  ├─┬ react-currency-input@1.3.4 
+  │ └── react-dom@15.6.1 
+  ├─┬ react-debounce-input@2.4.2 
+  │ └── lodash.debounce@4.0.8 
+  ├─┬ react-dropzone@3.13.4 
+  │ └── attr-accept@1.1.0 
+  ├── react-immutable-proptypes@2.1.0 
+  ├─┬ react-maskedinput@3.3.4 
+  │ └── inputmask-core@2.2.0 
+  ├── react-portal@3.1.0 
+  ├─┬ react-rte@0.11.0 
+  │ ├── class-autobind@0.1.4 
+  │ ├─┬ draft-js@0.9.1 
+  │ │ └── immutable@3.7.6 
+  │ ├─┬ draft-js-export-html@0.5.4 
+  │ │ └── UNMET PEER DEPENDENCY immutable@3.x.x
+  │ ├─┬ draft-js-export-markdown@0.2.2 
+  │ │ └── UNMET PEER DEPENDENCY immutable@3.x.x
+  │ ├─┬ draft-js-import-html@0.3.2 
+  │ │ ├─┬ draft-js-import-element@0.4.3 
+  │ │ │ └── UNMET PEER DEPENDENCY immutable@3.x.x
+  │ │ └── UNMET PEER DEPENDENCY immutable@3.x.x
+  │ ├─┬ draft-js-import-markdown@0.2.3 
+  │ │ ├── UNMET PEER DEPENDENCY immutable@3.x.x
+  │ │ └── synthetic-dom@0.2.1 
+  │ ├── draft-js-utils@0.1.7 
+  │ └── UNMET PEER DEPENDENCY immutable@3.8.1
+  ├─┬ react-select@1.0.0-rc.10 
+  │ └── react-input-autosize@2.0.1 
+  ├─┬ react-tabs@0.7.0 
+  │ └── js-stylesheet@0.0.1 
+  ├─┬ react-tether@0.5.7 
+  │ └── tether@1.4.0 
+  ├─┬ react-virtualized@9.10.1 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ └── dom-helpers@3.2.1 
+  ├── react-virtualized-select@3.1.0 
+  └─┬ yet-another-datetime-picker@1.0.4 
+    ├── blacklist@1.1.4 
+    ├─┬ color@2.0.0 
+    │ ├─┬ color-convert@1.9.0 
+    │ │ └── color-name@1.1.3 
+    │ └─┬ color-string@1.5.2 
+    │   └─┬ simple-swizzle@0.2.2 
+    │     └── is-arrayish@0.3.1 
+    ├─┬ jss-nested@5.0.0 
+    │ └── warning@3.0.0 
+    ├── lodash@4.17.4 
+    ├── react-input-slider@1.6.0 
+    └─┬ react-jss@7.1.0 
+      ├── hoist-non-react-statics@1.2.0 
+      ├─┬ jss@8.1.0 
+      │ └── is-in-browser@1.1.3 
+      ├─┬ jss-preset-default@3.0.0 
+      │ ├── jss-camel-case@5.0.0 
+      │ ├── jss-compose@4.0.0 
+      │ ├── jss-default-unit@7.0.0 
+      │ ├── jss-expand@4.0.1 
+      │ ├── jss-extend@5.0.0 
+      │ ├── jss-global@2.0.0 
+      │ ├── jss-props-sort@5.0.0 
+      │ └─┬ jss-vendor-prefixer@6.0.0 
+      │   └── css-vendor@0.3.8 
+      └─┬ theming@1.1.0 
+        ├── brcast@2.0.2 
+        ├── is-function@1.0.1 
+        └─┬ is-plain-object@2.0.4 
+          └── isobject@3.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/formatron/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 68% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","imul","WeakMap","Symbol","getOwnPropertySymbols","setPrototypeOf","call","RegExp","Array","random","Object","bind","bound registerType","getOwnPropertyNames","fromCharCode","join","assign","freeze","for","Map","Set"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0521 took 109.8569s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '�' (1:78) on program �PNG
+
+   IHDR   �   �   �>a�   gAMA  ��7��   tEXtSoftware Adobe ImageReadyq�e<  +IDATx��]K�fU�����4�3��8�M4>zbP��$%W��n\H�;7�qCԝA����D| >t C�a��������U�U�����s�y���J*�ӷ����:UuNՍ��!��S�3�B�y9A^�������ߐ�@�#o"7�[UVPU)�I����7"�E�Y7j�W�E����f @�h�-�Ǒg3c�5�V����'��|1 ���U �[���ծ;�����oG^fkP�-!� h<�G�.��qN�G�oE�(�)�sU@T�q�dD�OX�c�I��ȯT�9�������U}��� �H��_#o �C��_B��b�M�~�	俲?P��S"��S&_�O�����,��O��sl�#K2gXfZv?*� �/C��剈X�޲�05��Ǌ�T�s+�MM���yځ��Y����-�8 9��}�8��7��E�9���B��/��ukh �Gf8bٿ��m#�F~'�a褭�$��o�������D�� �4�4�C��@�4�ܐ�{����D~	�ϽOsܿ�Ȃ����1�~��?�|���e7�����P~���&� �ŷs����������� 8�JuAo0Ї ��&��3�?�lB��:[�_���@�Kɗ�!_W�b)������ �0�\�&os������9#�o�5�� �u6�׃���0��
+�|�g���]f/���j�&��`�
+Xp�������/��Ex��݀���gRܚ�	^�:��<���iA`��Y��gk+ ���~0���3�W�l����5�D������; e�����*�t-�J{��/��Cqʖzx���6���,�&ݐ^��H��~+o�&��2!�Ap���y�1}6!~�> ����r�z:Tc�Yz���O$����������i�9r�k f���t3�\}�&��lH�C,����K8
+��&�����qp�{?�yg���q/'IZ�&��qx�R����?k�� �1�^����˚X�����n�Yp���F� z��C ,�xgZ��X�$긇ev���_/g��i Щ�qA}&���+�@��g���zɘw��y�1*�9�\�ɡ���N����E���y�9~�i|>ኦl�|%����}"�l �����4T�DL ���!&�N�^F�����7a��AN�L|��q?�1�6�g� �p�tPs�����!�A������w�hN+�s~�_5Lʡ[0p4�gF0�r��V���߃v���������d����8OzCC?�*Nd��Gݢt @��/8�c�{:M.�|�����D���5
+� �4�~bE� w��9&f�c�-�+7x����7�g۠ˆ~��<۩i�yjT��(�}�> ��e���7�Ҝt ��X�Q H��N�{�d}�/��<b�
+��TG?��
+]J�ۢb�f�e���H�.!�q� @�:�?	�ӹ���IE��(K96���6j#�|��v?h���9H��g�_7���Y�
+������OF�?�ȸ�2Vue$9_�:f������U������_*z���]Щ]�
+X�;�(�1�~�^�;y_RD��&��r�tv��Nɛ�>�����j�4����r��އ)�������R�~�^Z&�UC�ƕ ��CU"��Ej�@w֯��៟�AP$A���CӀ� �s����C�wo㟟c]�bx���W>� �4@��7�	(��(��1�2��ȁ��dFʜd^`��b9rm��+�����~�$��$���������rH��c$l�P&J��n$g��
+�����-��5�2��Sh�'�Gk��� �,|�'>k�z%.T$/���'�;��_�N��0'-�����~��i�"e��lbf���b�5�HyфA����2�����kJ���EJ�d�(��/o+��Vs�5N�̲��s(��ȶ� ����>OZ�h�[ɕЮf^W��(�H����_tO�I�����D���'/�o(�}�4;�ˠ�5&�$M+{~jh��_9����Z�׃���)?Y,��l�W}�Mudp�	t��턹��p�����\�^u��]��LHʞ�����"k"��%���o�RC>��A�j�$"h@E>��S��/;�D☓���J��vC�I%�0�{?9އ�&��q&�cs�S o��J��?(1z���P�O�0�
+�F�Ճqo:���0��J�Ŏ'`�W�ЬC�3 �����8��)v��T��l�� ���e� \���+d�|2(.]��d^��s��iy�"�5� �]ߗc�A ��8M���t �����C�� l9@��8@
+>_v �%����-4a���q�H�A��g�$���Xq�lLHK�j:D���,�d�e�y]<Q&�Xr���S�u�\a��h��3h�d��N�S�[I�4���karO}�7R,�CH�v�xؔ����K}��.��JQh��u~�uw���)�*��l�W>M:�[zM��c�$/ G�Q�A���o@�>�h�P{��?S�vL��j��.�V��Q��M�T����ׄ�Y������~�n0��J�֐A-ͫ��߳��Nq�\"��d4 �A΋CU���SʶЫ<\��C�W��P�1���ʡly8��Qy�2��\��ݜ�� ��
+Ȑi	&k�M��R��S�$�1�*6�*�~�@�)TB�� Hz�&F	/���LM.�T�]���ɛg=�J��$'�CO���'����P����S�"��5I��PE�kT�Xť1�>�����t��5���B�O�1@�}D�����O�s��ӏ \����S�V��t�I5���P���$��{/�~� �'r(2�vl�r��~G9z��R��Im�8@r�Q��3I�횲�G9:�8Ykйe[	���=�dՒٖ\Q+1Q����7�D	���W S��M��bj,+*�~
+��w��Sh�'̦�U9i��S8 |�)�K��W����t�E�}~e�]��M,"eU���_�S���.���-���~�l��OO!׹��\��c$
+ 𧧐�����\Jr�������+
+ �d��G�K�s)��Me��)����38s�>�� ���C�{��^��]��-Fv}@\y
+ _�cd��B.z
+ɉ����b���ǘ薀h(�o����ԫ�1
+�����/9lO!�Ki��*  �c ��m~�)��ɞBj�=�<�M-��B?V�E�\��f�-����:r[�� ��O�D���l ��l�g ���a�˽�Fe@�r� f(|��a"�K�w0�  �;{ ���9 �	�;c ���9 ���b�ۂj�Չ/s����V R���D�T��ͽo)�U3}��a�? 5� B
+�R"    IEND�B`� at SyntaxError: Unexpected character '�' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/formatron/node_modules/formatron/lib/index.js. Coverage (Term): 31% Coverage (LOC): 29%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/index.js. Coverage (Term): 54% Coverage (LOC): 55%
+*- File /root/Targets/formatron/node_modules/immutable/dist/immutable.js. Coverage (Term): 16% Coverage (LOC): 28%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/register.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/bool.js. Coverage (Term): 51% Coverage (LOC): 65%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/index.js. Coverage (Term): 30% Coverage (LOC): 55%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/type.js. Coverage (Term): 64% Coverage (LOC): 84%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/validationError.js. Coverage (Term): 60% Coverage (LOC): 73%
+*- File /root/Targets/formatron/node_modules/es6-error/lib/index.js. Coverage (Term): 43% Coverage (LOC): 51%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/date.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/formatron/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/dict.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/list.js. Coverage (Term): 24% Coverage (LOC): 41%
+*- File /root/Targets/formatron/node_modules/formatron/lib/renderers/renderData.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/index.js. Coverage (Term): 34% Coverage (LOC): 56%
+*- File /root/Targets/formatron/node_modules/formatron/lib/refs.js. Coverage (Term): 32% Coverage (LOC): 52%
+*- File /root/Targets/formatron/node_modules/formatron/lib/renderers/index.js. Coverage (Term): 35% Coverage (LOC): 60%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/index.js. Coverage (Term): 41% Coverage (LOC): 59%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/enum.js. Coverage (Term): 33% Coverage (LOC): 49%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/map.js. Coverage (Term): 19% Coverage (LOC): 35%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/number.js. Coverage (Term): 40% Coverage (LOC): 54%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/data/text.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/formatron/node_modules/google-libphonenumber/dist/libphonenumber.js. Coverage (Term): 49% Coverage (LOC): 87%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/button.js. Coverage (Term): 47% Coverage (LOC): 65%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/calendar.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/checkbox.js. Coverage (Term): 64% Coverage (LOC): 81%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/currency.js. Coverage (Term): 55% Coverage (LOC): 67%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/dropDown.js. Coverage (Term): 51% Coverage (LOC): 71%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/link.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/number.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/percent.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/table.js. Coverage (Term): 51% Coverage (LOC): 63%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/data/text.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/display/grid.js. Coverage (Term): 43% Coverage (LOC): 61%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/display/index.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/display/header.js. Coverage (Term): 57% Coverage (LOC): 74%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/display/static.js. Coverage (Term): 49% Coverage (LOC): 65%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/display/tabs.js. Coverage (Term): 41% Coverage (LOC): 58%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/index.js. Coverage (Term): 55% Coverage (LOC): 77%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/computed.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/utils.js. Coverage (Term): 39% Coverage (LOC): 57%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/condition.js. Coverage (Term): 33% Coverage (LOC): 60%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/function.js. Coverage (Term): 35% Coverage (LOC): 59%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/method.js. Coverage (Term): 39% Coverage (LOC): 60%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/property.js. Coverage (Term): 47% Coverage (LOC): 66%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/switch.js. Coverage (Term): 33% Coverage (LOC): 55%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/template.js. Coverage (Term): 64% Coverage (LOC): 82%
+*- File /root/Targets/formatron/node_modules/formatron/lib/template.js. Coverage (Term): 22% Coverage (LOC): 42%
+*- File /root/Targets/formatron/node_modules/formatron/lib/types/view/value/variable.js. Coverage (Term): 56% Coverage (LOC): 77%
+*- File /root/Targets/formatron/node_modules/formatron/lib/react/index.js. Coverage (Term): 18% Coverage (LOC): 12%
+*- File /root/Targets/formatron/node_modules/formatron/lib/react/components/form.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/formatron/node_modules/classnames/index.js. Coverage (Term): 24% Coverage (LOC): 27%
+*- File /root/Targets/formatron/node_modules/react/react.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/React.js. Coverage (Term): 64% Coverage (LOC): 79%
+*- File /root/Targets/formatron/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactBaseClasses.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/formatron/node_modules/react/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactNoopUpdateQueue.js. Coverage (Term): 28% Coverage (LOC): 60%
+*- File /root/Targets/formatron/node_modules/fbjs/lib/warning.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/formatron/node_modules/fbjs/lib/emptyFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/formatron/node_modules/react/lib/canDefineProperty.js. Coverage (Term): 87% Coverage (LOC): 92%
+*- File /root/Targets/formatron/node_modules/fbjs/lib/emptyObject.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/fbjs/lib/invariant.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/formatron/node_modules/react/lib/lowPriorityWarning.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactChildren.js. Coverage (Term): 22% Coverage (LOC): 39%
+*- File /root/Targets/formatron/node_modules/react/lib/PooledClass.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactElement.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactCurrentOwner.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/formatron/node_modules/react/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/formatron/node_modules/react/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactDOMFactories.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactElementValidator.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactComponentTreeHook.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/formatron/node_modules/react/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactPropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/prop-types/factory.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/prop-types/factoryWithTypeCheckers.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/formatron/node_modules/prop-types/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/prop-types/checkPropTypes.js. Coverage (Term): 28% Coverage (LOC): 41%
+*- File /root/Targets/formatron/node_modules/react/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/react/lib/createClass.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/formatron/node_modules/create-react-class/factory.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/formatron/node_modules/react/lib/onlyChild.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File /root/Targets/formatron/node_modules/react-immutable-proptypes/dist/ImmutablePropTypes.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/formatron/node_modules/formatron/lib/react/components/loading.js. Coverage (Term): 65% Coverage (LOC): 85%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

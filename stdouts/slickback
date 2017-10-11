@@ -1,0 +1,33 @@
+/root/Targets/slickback
+└── slickback@0.3.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/slickback/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0758 took 20.885s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'Collection' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/slickback/node_modules/slickback/index.js. Coverage (Term): 54% Coverage (LOC): 57%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback.js. Coverage (Term): 95% Coverage (LOC): 97%
+*- File /root/Targets/slickback/node_modules/underscore/underscore.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/scope.js. Coverage (Term): 44% Coverage (LOC): 57%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/scoped_model_mixin.js. Coverage (Term): 49% Coverage (LOC): 66%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/collection_events_mixin.js. Coverage (Term): 80% Coverage (LOC): 85%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/paginated_collection_mixin.js. Coverage (Term): 45% Coverage (LOC): 56%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/pager_adaptor_mixin.js. Coverage (Term): 46% Coverage (LOC): 53%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/event_translation_mixin.js. Coverage (Term): 58% Coverage (LOC): 58%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/collection_adaptor_mixin.js. Coverage (Term): 75% Coverage (LOC): 88%
+*- File /root/Targets/slickback/node_modules/slickback/lib/slickback/collection.js. Coverage (Term): 83% Coverage (LOC): 90%
+*- File /root/Targets/slickback/node_modules/backbone/backbone.js. Coverage (Term): 9% Coverage (LOC): 23%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

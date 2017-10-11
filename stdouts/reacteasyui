@@ -1,0 +1,68 @@
+/root/Targets/reacteasyui
+└── reacteasyui@1.0.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/reacteasyui/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.059 took 2.7402s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:85) on program export AutoComplete from "./plugin/Base/AutoComplete";
+export FreeCheckBox from "./plugin/Base/FreeCheckBox"
+export TextWithCount from "./plugin/Base/TextWithCount"
+export DelIconInput from "./plugin/Base/DelIconInput";
+export SwitchBtn from "./plugin/Base/SwitchBtn";
+
+export DateRangePicker from "./plugin/Date/DateRangePicker";
+export {DateChooser, MODE} from "./plugin/Date/DateChooser";
+export Calender from "./plugin/Date/Calendar";
+export AppCalender from "./plugin/Date/AppCalendar";
+export Timer from "./plugin/Date/Timer";
+
+export Table from "./plugin/List/Table";
+
+export Pie from "./plugin/ECharts/Pie";
+export PieAndLineChart from "./plugin/ECharts/PieAndLineChart";
+export PieWithLabel from "./plugin/ECharts/PieWithLabel";
+export Scatter from "./plugin/ECharts/Scatter";
+export Line from "./plugin/ECharts/Line";
+export SimpleBar from "./plugin/ECharts/SimpleBar";
+export VerticalBar from "./plugin/ECharts/VerticalBar";
+export HorizontalBar from "./plugin/ECharts/HorizontalBar";
+export MultipleBar from "./plugin/ECharts/MultipleBar";
+export LineAndPopupChart from "./plugin/ECharts/LineAndPopupChart";
+export MapChart from "./plugin/ECharts/MapChart";
+export DoubleYLineChart from "./plugin/ECharts/DoubleYLineChart";
+
+export ProgressBar from "./plugin/Progress/ProgressBar";
+export Compare from "./plugin/Progress/Compare";
+export Ring from "./plugin/Progress/Ring";
+export PieChart from "./plugin/Progress/PieChart";
+export ProgressChart from "./plugin/Progress/ProgressChart";
+export Loading from "./plugin/Progress/Loading";
+export Progress from "./plugin/Progress/Progress";
+export Overlap from "./plugin/Progress/Overlap";
+
+export AudioPlay from "./plugin/Others/AudioPlay";
+export IframeLoad from "./plugin/Others/IframeLoad"; at SyntaxError: Unexpected token (1:85)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$1.parseExportSpecifiers (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1215:10)
+    at Parser.pp$1.parseExport (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1186:30)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:719:71)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

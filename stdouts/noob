@@ -1,0 +1,159 @@
+
+> ref@1.3.5 install /root/Targets/noob/node_modules/ref
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/noob/node_modules/ref/build'
+  CXX(target) Release/obj.target/binding/src/binding.o
+  SOLINK_MODULE(target) Release/obj.target/binding.node
+  COPY Release/binding.node
+make: Leaving directory '/root/Targets/noob/node_modules/ref/build'
+
+> ffi@2.2.0 install /root/Targets/noob/node_modules/ffi
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/noob/node_modules/ffi/build'
+  CC(target) Release/obj.target/ffi/deps/libffi/src/prep_cif.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/types.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/raw_api.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/java_raw_api.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/closures.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/ffi.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/ffi64.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/unix64.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/sysv.o
+  AR(target) Release/obj.target/deps/libffi/libffi.a
+  COPY Release/libffi.a
+  CXX(target) Release/obj.target/ffi_bindings/src/ffi.o
+  CXX(target) Release/obj.target/ffi_bindings/src/callback_info.o
+  CXX(target) Release/obj.target/ffi_bindings/src/threaded_callback_invokation.o
+  SOLINK_MODULE(target) Release/obj.target/ffi_bindings.node
+  COPY Release/ffi_bindings.node
+make: Leaving directory '/root/Targets/noob/node_modules/ffi/build'
+/root/Targets/noob
+└─┬ noob@0.0.1 
+  └─┬ execSync@0.0.4 
+    └─┬ ffi@2.2.0 
+      ├── bindings@1.2.1 
+      ├─┬ debug@2.6.9 
+      │ └── ms@2.0.0 
+      ├── nan@2.7.0 
+      ├── ref@1.3.5 
+      └── ref-struct@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/noob/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0454 took 2.9965s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+var noob = module.exports = {};
+var execSync = require('execSync').exec;
+
+var importantPackages = ["fstream","event-stream","amdefine","restler","growl","htmlparser","sugar","highlight.js","nomnom","hook.io","traverse","cli-table","eco","cradle","walk","markdown","cli","dnode","iconv-lite","send","escodegen","jasmine-node","open","flatiron","lru-cache","sqlite3","bcrypt","clone","xmldom","amqp","chokidar","node-markdown","restify","seq","grunt-lib-contrib","libxmljs","serialport","which","connect-redis","string","xmlhttprequest","batch","gm","irc","websocket","utile","watchr","JSONStream","sinon","xml2json","dustjs-linkedin","progress","resolve","structr","cookie","fibers","imagemagick","detective","eyespect","graceful-fs","iconv","bunyan","cookies","methods","xmlbuilder","bower","csv","generic-pool","extend","filed","node-expat","read","swig","nano","node.extend","outcome","data2xml","ecstatic","hashish","inflection","npmlog","pegjs","phantomjs","yaml","argparse","github","hypher","duplexer","ini","mongoskin","concat-stream","forever","levelup","noflo","source-map","emitter-component","falafel","underscore","async","request","optimist","express","coffee-script","commander","colors","uglify-js","mkdirp","socket.io","connect","jade","redis","lodash","debug","mime","node-uuid","glob","winston","ejs","moment","mongodb","q","mongoose","stylus","less","jsdom","wrench","pkginfo","grunt","xml2js","through","semver","marked","handlebars","underscore.string","mocha","cheerio","rimraf","backbone","nopt","browserify","oauth","superagent","mysql","js-yaml","should","jquery","step","hiredis","cli-color","ws","esprima","http-proxy","nconf","eventemitter2","qs","minimatch","nib","requirejs","fs-extra","passport","prompt","clean-css","temp","vows","npm","mustache","watch","passport-oauth","socket.io-client","nodemailer","validator","dateformat","formidable","yeoman-generator","required-keys","hogan.js","inherits","when","bindings","findit","log4js","pg","readable-stream","shelljs","sprintf","canvas","jshint","node-static","nodeunit","tar","sax","xtend","knox","chai","consolidate","eyes","ncp"];
+// straight from repl
+var nativePackages = ['assert', 'buffer', 'child_process', 'cluster',
+  'crypto', 'dgram', 'dns', 'events', 'fs', 'http', 'https', 'net',
+  'os', 'path', 'punycode', 'querystring', 'readline', 'repl',
+  'string_decoder', 'tls', 'tty', 'url', 'util', 'vm', 'zlib'];
+
+var noobApp = null;
+var npmCacheDir = __dirname + '/npm-cache';
+var nodeExec = process.argv[0];
+var npmExec = nodeExec.replace(/node$/, 'npm');
+
+function moduleFromCache(name) {
+  return require(npmCacheDir + '/node_modules/' + name);
+}
+
+noob.enable = function() {
+  var splitter = process.platform === 'win32' ? ';' : ':';
+  var nodePaths = process.env.NODE_PATH.split(splitter);
+  process.env.NODE_PATH = nodePaths.concat([npmCacheDir + '/node_modules']).join(splitter);
+  require('module')._initPaths();
+
+  nativePackages.forEach(function(pkg) {
+    Object.defineProperty(root, pkg, {
+      enumerable: false,
+      get: function() { return require(pkg); }
+    });
+  });
+
+  importantPackages.forEach(function(pkg) {
+    Object.defineProperty(root, pkg, {
+      enumerable: false,
+      get: function() {
+        try {
+          return require(pkg);
+        } catch(err) {
+          try {
+            console.log(err.toString());
+            console.log('Trying to server cached module');
+            return moduleFromCache(pkg);
+          } catch(err) {
+            console.log(err.toString());
+            console.log('Trying to install...');
+            var cmd = 'cd ' + npmCacheDir + ' && ' + npmExec + ' install ' + pkg;
+            var result = execSync(cmd);
+            console.log(result.stdout);
+            if (result.code) {
+              throw err;
+            } else {
+              return moduleFromCache(pkg);
+            }
+          }
+        }
+      }
+    });
+  });
+
+  Object.defineProperty(root, 'app', {
+    enumerable: false,
+    get: function() {
+      if (noobApp != null) { return noobApp; }
+      return noobApp = express();
+    }
+  });
+};
+
+if (!module.parent) {
+  noob.enable();
+
+  if (process.argv.length <= 2) {
+    require('repl').start({
+      prompt: 'noob> ',
+      input: process.stdin,
+      output: process.stdout,
+      useGlobal: true
+    });
+  } else {
+    process.argv = [nodeExec].concat(process.argv.slice(2));
+    var scriptName = process.argv[1];
+    if (scriptName[0] != '/') {
+      scriptName = process.cwd() + '/' + scriptName;
+    }
+    require(scriptName);
+  }
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,154 @@
+/root/Targets/sensedemowebserver
+└── sensedemowebserver@0.2.95 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sensedemowebserver/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0276 took 4.0543s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var http = require('http');
+var express=require('express');
+var promptly=require('promptly');
+var fs=require('fs');
+
+var app = express();
+
+app.use(express.static(__dirname)); 
+
+
+var validator = function (value) {
+    // if (value.length < 2) {
+        // throw new Error('Min length of 2');
+    // }
+    return value;
+};
+
+console.log('         -----------------------------------------------------------------------');
+promptly.prompt('Where your QVF applications are hosted (example: "localhost"), type "no" to skip setup: ', { validator: validator }, function (err, url) {
+	console.log('         -----------------------------------------------------------------------');
+	if(url!="no"){
+		promptly.prompt('Specify the port (example: "4848" or "443" if using HTTPS): ', { validator: validator }, function (err, port) {
+			console.log('         -----------------------------------------------------------------------');
+			console.log('INFO:    Changing Sense URL to', url+' ...');
+			console.log('INFO:    Changing Sense Port to', port+' ...');
+			console.log('         -----------------------------------------------------------------------');
+			var protocol=port=="443"?'https://':'http://';
+			secured=port=="443"?true:false;
+			var fileContent=fs.readFileSync(__dirname+'/mashupsdashboard/js/mashup_exec.js').toString();
+			fileContent=updateJS(fileContent,url,port,secured)
+			fs.writeFile(__dirname+"/mashupsdashboard/js/mashup_exec.js", fileContent, function (err) {
+				if (err) throw err;
+				logUpdate('mashup_exec.js');
+				fileContent=fs.readFileSync(__dirname+'/mashupsdashboard/costcenter.html').toString();
+				fileContent=updateHTML(fileContent,'js/mashup_exec',protocol,url,port);
+				fs.writeFile(__dirname+"/mashupsdashboard/costcenter.html", fileContent, function (err) {
+					if (err) throw err;
+					logUpdate('costcenter.html');
+					fileContent=fs.readFileSync(__dirname+'/mashups/js/init.js').toString();
+					fileContent=updateJS(fileContent,url,port,secured);
+					fs.writeFile(__dirname+"/mashups/js/init.js", fileContent, function (err) {
+						if (err) throw err;
+						logUpdate('init.js');
+						var fileContent=fs.readFileSync(__dirname+'/mashups/mashups.html').toString();
+						fileContent=updateHTML(fileContent,'js/init',protocol,url,port);
+						fs.writeFile(__dirname+"/mashups/mashups.html", fileContent, function (err) {
+							if (err) throw err;
+							logUpdate('mashups.html');
+							fileContent=fs.readFileSync(__dirname+'/startapp/assets/js/initMashups.js').toString();
+							fileContent=updateJS(fileContent,url,port,secured);
+							fs.writeFile(__dirname+"/startapp/assets/js/initMashups.js", fileContent, function (err) {
+								if (err) throw err;
+								logUpdate('initMashups.js');
+								var fileContent=fs.readFileSync(__dirname+'/startapp/index.html').toString();
+								fileContent=updateHTML(fileContent,'assets/js/initMashups',protocol,url,port);
+								fs.writeFile(__dirname+"/startapp/index.html", fileContent, function (err) {
+									if (err) throw err;
+									logUpdate('index.html');
+									logFinished();
+									startServer();
+								});
+							});	
+						})
+					})
+				})
+			})			
+		});
+	}
+	else{
+		console.log('INFO:    Launching Server... ');
+		startServer();
+	}		
+});
+
+function logUpdate(name){
+	console.log('INFO:    '+name+' is updated !');
+	console.log('         -----------------------------------------------------------------------');
+}
+
+function logFinished(){
+	console.log('INFO:    Update Finished ! ');
+	console.log('         -----------------------------------------------------------------------');
+	console.log('INFO:    Launching Server... ');
+}
+
+function updateJS(fileContent,url,port,secured){
+	var start=fileContent.indexOf('//GEN')+5;
+	var end=fileContent.indexOf('//ENDGEN');
+	fileContent=fileContent.substring(0,start)+'\r'+'\thost: "'+url+'",\r'+'\tport : "'+port+'",\r'+'\tisSecure :'+ secured+',\r\t' + fileContent.substring(end,fileContent.length);
+	return fileContent;
+}
+
+function updateHTML(fileContent,scriptName,protocol,url,port){
+	var start=fileContent.indexOf('<!--GEN-->')+10;
+	var end=fileContent.indexOf('<!--ENDGEN-->');
+	var one='\r\t\t<script data-main="'+scriptName+'" src="'+protocol+url+':'+port+'/resources/js/external/requirejs/require.js"></script>\r';
+	var two='\t\t<link rel="stylesheet" href="'+protocol+url+':'+port+'/resources/assets/client/client.css" media="all">\r';
+	var three='\t\t<link rel="stylesheet" href="'+protocol+url+':'+port+'/resources/assets/qirby/autogenerated/qirby.css">\r\t\t';
+	fileContent=fileContent.substring(0,start)+ one+two+three+ fileContent.substring(end,fileContent.length);
+	return fileContent;
+}
+
+function startServer(){
+	http.createServer(app).listen(8081);
+	console.log('         -----------------------------------------------------------------------');
+	console.log('INFO:    Demo Server is now running at http://localhost:8081/');
+	console.log('         -----------------------------------------------------------------------');
+	console.log('INFO:    1st sample is running at http://localhost:8081/mashupsdashboard/costcenter.html');
+	console.log('INFO:    2nd sample is running at http://localhost:8081/mashups/mashups.html');
+	console.log('INFO:    3rd sample is running at http://localhost:8081/startapp/index.html');
+	console.log('         -----------------------------------------------------------------------');
+	console.log('WARN:    DO NOT FORGET TO DEPLOY QVF ON YOUR SENSE DESKTOP OR SERVER !!!!!');
+	console.log('         -----------------------------------------------------------------------');
+	console.log('...')
+}
+
+function getUserHome() {
+  return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
+
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

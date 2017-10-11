@@ -1,0 +1,60 @@
+/root/Targets/psd-parse
+└─┬ psd-parse@0.0.4 
+  ├── coffee-script@1.12.7 
+  ├─┬ jsonfile@2.4.0 
+  │ └── graceful-fs@4.1.11 
+  ├── node-uuid@1.4.8 
+  ├─┬ psd@2.1.0 
+  │ ├─┬ coffee-script@1.7.1 
+  │ │ └── mkdirp@0.3.5 
+  │ ├── coffeescript-module@0.2.1 
+  │ ├── iconv-lite@0.4.19 
+  │ ├── jspack@0.0.4 
+  │ ├── lodash@2.4.2 
+  │ ├── parse-engine-data@0.1.2 
+  │ ├── pngjs@0.4.0 
+  │ └── rsvp@3.0.21 
+  └─┬ underscore-contrib@0.3.0 
+    └── underscore@1.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/psd-parse/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 88% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","join","charCodeAt","max","lastIndexOf","pop","toUpperCase","splice","apply","reverse","sort","now","create","Array","isArray","parseInt","toString","pow","Date","SyntaxError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0562 took 120.6077s
+*-- Errors occured in test {"_bound":0}
+* Error: /root/Targets/psd-parse/node_modules/psd/lib/psd/descriptor.coffee:6:17: error: reserved word "class" can't be assigned
+    @data.class = @parseClass()
+                ^
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/psd-parse/node_modules/psd-parse/index.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/psd-parse/node_modules/psd/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/register.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/register.js. Coverage (Term): 80% Coverage (LOC): 79%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/coffee-script.js. Coverage (Term): 28% Coverage (LOC): 35%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/lexer.js. Coverage (Term): 75% Coverage (LOC): 82%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/rewriter.js. Coverage (Term): 86% Coverage (LOC): 90%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/helpers.js. Coverage (Term): 59% Coverage (LOC): 66%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/parser.js. Coverage (Term): 92% Coverage (LOC): 99%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/sourcemap.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/nodes.js. Coverage (Term): 64% Coverage (LOC): 74%
+*- File /root/Targets/psd-parse/node_modules/psd/node_modules/coffee-script/lib/coffee-script/scope.js. Coverage (Term): 88% Coverage (LOC): 94%
+*- File /root/Targets/psd-parse/node_modules/rsvp/dist/rsvp.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/psd-parse/node_modules/coffeescript-module/lib/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/psd-parse/node_modules/coffeescript-module/lib/module.js. Coverage (Term): 18% Coverage (LOC): 34%
+*- File /root/Targets/psd-parse/node_modules/jspack/jspack.js. Coverage (Term): 16% Coverage (LOC): 49%
+*- File /root/Targets/psd-parse/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/psd-parse/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/psd-parse/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/psd-parse/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/psd-parse/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,161 @@
+/root/Targets/solidus-client
+└─┬ solidus-client@1.3.3 
+  ├── extend@2.0.1 
+  ├─┬ handlebars-helper@0.0.12 
+  │ ├── JSON@1.0.0 
+  │ ├─┬ lodash.isarray@2.4.1 
+  │ │ └── lodash._isnative@2.4.1 
+  │ ├─┬ lodash.reduce@2.4.1 
+  │ │ ├─┬ lodash.createcallback@2.4.4 
+  │ │ │ ├─┬ lodash._basecreatecallback@2.4.1 
+  │ │ │ │ ├─┬ lodash._setbinddata@2.4.1 
+  │ │ │ │ │ └── lodash.noop@2.4.1 
+  │ │ │ │ ├─┬ lodash.bind@2.4.1 
+  │ │ │ │ │ ├─┬ lodash._createwrapper@2.4.1 
+  │ │ │ │ │ │ ├─┬ lodash._basebind@2.4.1 
+  │ │ │ │ │ │ │ └── lodash._basecreate@2.4.1 
+  │ │ │ │ │ │ └── lodash._basecreatewrapper@2.4.1 
+  │ │ │ │ │ └── lodash._slice@2.4.1 
+  │ │ │ │ ├── lodash.identity@2.4.1 
+  │ │ │ │ └── lodash.support@2.4.1 
+  │ │ │ ├─┬ lodash._baseisequal@2.4.1 
+  │ │ │ │ ├─┬ lodash._getarray@2.4.1 
+  │ │ │ │ │ └── lodash._arraypool@2.4.1 
+  │ │ │ │ ├─┬ lodash._releasearray@2.4.1 
+  │ │ │ │ │ └── lodash._maxpoolsize@2.4.1 
+  │ │ │ │ ├── lodash.forin@2.4.1 
+  │ │ │ │ └── lodash.isfunction@2.4.1 
+  │ │ │ ├── lodash.isobject@2.4.1 
+  │ │ │ ├─┬ lodash.keys@2.4.1 
+  │ │ │ │ └── lodash._shimkeys@2.4.1 
+  │ │ │ └── lodash.property@2.4.1 
+  │ │ └─┬ lodash.forown@2.4.1 
+  │ │   └── lodash._objecttypes@2.4.1 
+  │ ├─┬ new-date@0.2.0 
+  │ │ ├── is@0.2.6 
+  │ │ └── isodate@0.0.1  (git://github.com/segmentio/isodate.git#1655de8e65e7cd34be3d840eb24510306244f1bb)
+  │ └── strftime@0.7.0 
+  ├── qs@2.4.2 
+  ├─┬ superagent@1.1.0 
+  │ ├── component-emitter@1.1.2 
+  │ ├── cookiejar@2.0.1 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── extend@1.2.1 
+  │ ├─┬ form-data@0.1.3 
+  │ │ ├── async@0.9.2 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├── formidable@1.0.14 
+  │ ├── methods@1.0.1 
+  │ ├── mime@1.2.11 
+  │ ├── qs@2.3.3 
+  │ ├─┬ readable-stream@1.0.27-1 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── reduce-component@1.0.1 
+  └── underscore@1.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/solidus-client/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Object","join","RegExp","sort","reduce","parseInt","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0333 took 18.934s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/solidus-client/node_modules/solidus-client/index.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/solidus-client/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/index.js. Coverage (Term): 84% Coverage (LOC): 91%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/lowercase.js. Coverage (Term): 57% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/uppercase.js. Coverage (Term): 57% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/replace.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/encode.js. Coverage (Term): 61% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/length.js. Coverage (Term): 31% Coverage (LOC): 31%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/contains.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/first.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/last.js. Coverage (Term): 25% Coverage (LOC): 27%
+*- File /root/Targets/solidus-client/node_modules/lodash.isarray/index.js. Coverage (Term): 63% Coverage (LOC): 91%
+*- File /root/Targets/solidus-client/node_modules/lodash._isnative/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/lodash.reduce/index.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /root/Targets/solidus-client/node_modules/lodash.createcallback/index.js. Coverage (Term): 25% Coverage (LOC): 20%
+*- File /root/Targets/solidus-client/node_modules/lodash._basecreatecallback/index.js. Coverage (Term): 22% Coverage (LOC): 17%
+*- File /root/Targets/solidus-client/node_modules/lodash.bind/index.js. Coverage (Term): 49% Coverage (LOC): 83%
+*- File /root/Targets/solidus-client/node_modules/lodash._createwrapper/index.js. Coverage (Term): 18% Coverage (LOC): 13%
+*- File /root/Targets/solidus-client/node_modules/lodash._basebind/index.js. Coverage (Term): 36% Coverage (LOC): 35%
+*- File /root/Targets/solidus-client/node_modules/lodash._basecreate/index.js. Coverage (Term): 44% Coverage (LOC): 44%
+*- File /root/Targets/solidus-client/node_modules/lodash.isobject/index.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/solidus-client/node_modules/lodash._objecttypes/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/lodash.noop/index.js. Coverage (Term): 79% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/lodash._setbinddata/index.js. Coverage (Term): 80% Coverage (LOC): 82%
+*- File /root/Targets/solidus-client/node_modules/lodash._slice/index.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/solidus-client/node_modules/lodash._basecreatewrapper/index.js. Coverage (Term): 20% Coverage (LOC): 16%
+*- File /root/Targets/solidus-client/node_modules/lodash.isfunction/index.js. Coverage (Term): 61% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/lodash.identity/index.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/solidus-client/node_modules/lodash.support/index.js. Coverage (Term): 87% Coverage (LOC): 90%
+*- File /root/Targets/solidus-client/node_modules/lodash._baseisequal/index.js. Coverage (Term): 15% Coverage (LOC): 8%
+*- File /root/Targets/solidus-client/node_modules/lodash.forin/index.js. Coverage (Term): 32% Coverage (LOC): 31%
+*- File /root/Targets/solidus-client/node_modules/lodash._getarray/index.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/solidus-client/node_modules/lodash._arraypool/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/lodash._releasearray/index.js. Coverage (Term): 60% Coverage (LOC): 56%
+*- File /root/Targets/solidus-client/node_modules/lodash._maxpoolsize/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/lodash.keys/index.js. Coverage (Term): 72% Coverage (LOC): 64%
+*- File /root/Targets/solidus-client/node_modules/lodash._shimkeys/index.js. Coverage (Term): 42% Coverage (LOC): 39%
+*- File /root/Targets/solidus-client/node_modules/lodash.property/index.js. Coverage (Term): 50% Coverage (LOC): 67%
+*- File /root/Targets/solidus-client/node_modules/lodash.forown/index.js. Coverage (Term): 27% Coverage (LOC): 28%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/between.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/range.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/where.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/shuffle.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/reverse.js. Coverage (Term): 29% Coverage (LOC): 44%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/join.js. Coverage (Term): 22% Coverage (LOC): 29%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/ago.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/solidus-client/node_modules/new-date/lib/index.js. Coverage (Term): 32% Coverage (LOC): 30%
+*- File /root/Targets/solidus-client/node_modules/is/index.js. Coverage (Term): 16% Coverage (LOC): 41%
+*- File /root/Targets/solidus-client/node_modules/isodate/index.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/solidus-client/node_modules/new-date/lib/milliseconds.js. Coverage (Term): 47% Coverage (LOC): 70%
+*- File /root/Targets/solidus-client/node_modules/new-date/lib/seconds.js. Coverage (Term): 45% Coverage (LOC): 70%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/formatDate.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/solidus-client/node_modules/strftime/strftime.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/equal.js. Coverage (Term): 25% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/greater.js. Coverage (Term): 25% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/less.js. Coverage (Term): 25% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/times.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/add.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/subtract.js. Coverage (Term): 23% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/multiply.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/handlebars-helper/lib/helpers/divide.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/solidus-client/node_modules/solidus-client/lib/resource.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/solidus-client/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/qs/lib/stringify.js. Coverage (Term): 10% Coverage (LOC): 22%
+*- File /root/Targets/solidus-client/node_modules/qs/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/solidus-client/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/solidus-client/node_modules/superagent/lib/node/index.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/solidus-client/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/solidus-client/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/solidus-client/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/solidus-client/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/incoming_form.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/file.js. Coverage (Term): 27% Coverage (LOC): 27%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/multipart_parser.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/querystring_parser.js. Coverage (Term): 34% Coverage (LOC): 52%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/octet_parser.js. Coverage (Term): 51% Coverage (LOC): 63%
+*- File /root/Targets/solidus-client/node_modules/formidable/lib/json_parser.js. Coverage (Term): 28% Coverage (LOC): 41%
+*- File /root/Targets/solidus-client/node_modules/form-data/lib/form_data.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/solidus-client/node_modules/combined-stream/lib/combined_stream.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/solidus-client/node_modules/delayed-stream/lib/delayed_stream.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

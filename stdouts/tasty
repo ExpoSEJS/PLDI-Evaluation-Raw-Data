@@ -1,0 +1,70 @@
+
+> uws@0.14.5 install /root/Targets/tasty/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+/root/Targets/tasty
+└─┬ tasty@0.12.9 
+  ├─┬ debug@3.1.0 
+  │ └── ms@2.0.0 
+  ├─┬ engine.io@3.1.2 
+  │ ├─┬ accepts@1.3.3 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── base64id@1.0.0 
+  │ ├── cookie@0.3.1 
+  │ ├── debug@2.6.9 
+  │ ├─┬ engine.io-parser@2.1.1 
+  │ │ ├── after@0.8.2 
+  │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ ├── blob@0.0.4 
+  │ │ └─┬ has-binary2@1.0.2 
+  │ │   └── isarray@2.0.1 
+  │ ├── uws@0.14.5 
+  │ └─┬ ws@2.3.1 
+  │   ├── safe-buffer@5.0.1 
+  │   └── ultron@1.1.0 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── once@1.4.0 
+  │ └── path-is-absolute@1.0.1 
+  ├── minimist@1.2.0 
+  ├── platform@1.3.4 
+  ├─┬ requireg@0.1.7 
+  │ ├── nested-error-stacks@2.0.0 
+  │ ├─┬ rc@1.0.3 
+  │ │ ├── deep-extend@0.2.11 
+  │ │ ├── ini@1.3.4 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── strip-json-comments@0.1.3 
+  │ └── resolve@0.6.3 
+  └─┬ tasty-sandbox@2.0.6 
+    ├── require-like@0.1.2 
+    └── stack-trace@0.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tasty/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.034 took 4.3126s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

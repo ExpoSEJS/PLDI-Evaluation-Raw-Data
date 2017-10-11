@@ -1,0 +1,25 @@
+/root/Targets/jspdf-yworks
+└─┬ jspdf-yworks@1.2.70 
+  ├── adler32cs@0.0.1  (git://github.com/chick307/adler32cs.js.git#c6576b4ed91b4216973bf85d8478a49970934515)
+  ├── cf-blob.js@0.0.1 
+  └── filesaver.js@1.0.0  (git://github.com/andyinabox/FileSaver.js.git#973b433b8fbaee9a11d53b9ae423b046742cfe32)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jspdf-yworks/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 3% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0424 took 29.959s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot set property 'AcroForm' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jspdf-yworks/node_modules/jspdf-yworks/dist/jspdf.min.js. Coverage (Term): 0% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

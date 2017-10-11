@@ -1,0 +1,121 @@
+/root/Targets/gitbook-start-team-noejaco2017
+└── gitbook-start-team-noejaco2017@1.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gitbook-start-team-noejaco2017/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0686 took 5.196s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+var express = require('express');
+var app = express()
+var path = require('path');
+var fs= require('fs-extra');
+var ejs=require('ejs');
+
+//DIRECTORIO CON TEMPLATES
+app.set('views', path.join(__dirname, 'template'));
+app.set('view engine', 'ejs');
+
+//MINIMIST
+var argv = require('minimist')(process.argv.slice(2));
+console.dir(argv);
+
+// console.log("argv_ ",argv._);//los que no tienen opcion asociada
+// console.log("argv ",argv);
+// console.log("nombre "+argv.autor);
+// console.log("url "+argv.url);
+// console.log("wiki "+argv.wiki);
+// console.log("version "+argv.version);
+// console.log("email "+argv.email);
+
+
+if(argv.h || argv.help){
+    
+    //MENU
+    console.log("gitbook-start [OPTIONS]\n"+
+    "--autor: autor del libro a crear node gitbook-star -a AutorDelLibro\n"+
+    "--email: email de contacto del usuario\n"+
+    "--version: version repositorio github contra el que se va a trabajar -r github.com/repo.git\n"+
+    "--url: repositorio github contra el que se va a trabajar -r github.com/repo.git\n"+
+    "--wiki: direccion web de la wiki en github -w github.com/repo.wiki.git\n"+
+    "--directorio: nombre del directorio a crear\n"+
+    "--help: muestra ayuda sobre las opciones disponibles\n");
+    
+    
+}else{
+    
+//EJS RENDERFILE cargamos la plantilla
+var direct = process.cwd() + '/template/';
+
+    //Creamos el directorio
+    fs.mkdirsSync(direct + argv.directorio);
+    
+    //Creamos una copia de los scripts
+    fs.copy(path.join(__dirname, '../template', 'scripts') , path.join(direct, `${argv.directorio}`,'scripts'), function(err){
+        if(err) return console.error(err)
+    }); 
+    //Creamos una copia de los txt
+    fs.copy(path.join(__dirname, '../template', 'txt') , path.join(direct, `${argv.directorio}`,'txt'), function(err){
+        if(err) return console.error(err)
+    });
+    //Creamos una copia de Readme
+    fs.copy(path.join(__dirname, '../template', 'README.md') , path.join(direct, `${argv.directorio}`,'README.md'), function(err){
+        if(err) return console.error(err)
+    });
+    //Creamos gulpfile
+    fs.copy(path.join(__dirname, '../template', 'gulpfile.js') , path.join(direct, `${argv.directorio}`,'gulpfile.js'), function(err){
+        if(err) return console.error(err)
+    });
+    
+
+    
+    //Creamos el packeage.json a traves de la plantilla
+    ejs.renderFile(path.join(__dirname, '../template', 'package.ejs'),{nombre:argv.name, num:argv.version, direcciongit:argv.url, direccionwiki:argv.wiki, autor:argv.autor, email:argv.email},function(err, result) {
+   // render on success
+   
+           if (!err) {
+               // result.nombre=argv.name;
+               // result.direcciongit=argv.url;
+               // result.direccionwiki='argv.wiki';
+                console.log(result);
+                    //CREAMOS EL PACKAGE.JSON del template
+                       //var write=fs.writeFile("./template/package.json",result, (err) => {
+                        fs.writeFile(path.join(direct, `${argv.directorio}`, 'package.json'), result);
+                               if (err) throw err;
+                               console.log('CREADO PACKAGE.JSON');
+                     
+           }
+           // render or error
+           else {
+                    console.log('Error renderFile(package.ejs)');
+                    console.log(err);
+           }
+    });
+}   
+
+
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

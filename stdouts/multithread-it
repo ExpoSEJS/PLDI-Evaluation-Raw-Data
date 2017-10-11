@@ -1,0 +1,66 @@
+/root/Targets/multithread-it
+└─┬ multithread-it@0.1.3 
+  ├─┬ babel-polyfill@6.26.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.10.5 
+  ├─┬ dom-delegator@13.1.0 
+  │ ├─┬ cuid@1.3.8 
+  │ │ ├── browser-fingerprint@0.0.1 
+  │ │ ├── core-js@1.2.7 
+  │ │ └── node-fingerprint@0.0.2 
+  │ ├─┬ ev-store@7.0.0 
+  │ │ └── individual@3.0.0 
+  │ ├─┬ global@4.3.2 
+  │ │ ├─┬ min-document@2.19.0 
+  │ │ │ └── dom-walk@0.1.1 
+  │ │ └── process@0.5.2 
+  │ ├── individual@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├── weakmap-shim@1.1.1 
+  │ └── xtend@2.2.0 
+  ├── es6-promise@3.3.1 
+  ├── pseudo-worker@1.1.1 
+  ├─┬ redux@3.7.2 
+  │ ├── lodash@4.17.4 
+  │ ├── lodash-es@4.17.4 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ └── symbol-observable@1.0.4 
+  ├─┬ redux-logger@2.10.2 
+  │ └── deep-diff@0.3.4 
+  ├── redux-thunk@2.2.0 
+  ├── vdom-as-json@1.0.11 
+  ├─┬ vdom-serialized-patch@1.0.8 
+  │ └── vdom-as-json@1.0.9 
+  └─┬ virtual-dom@2.1.1 
+    ├── browser-split@0.0.1 
+    ├─┬ error@4.4.0 
+    │ ├── camelize@1.0.0 
+    │ ├── string-template@0.2.1 
+    │ └── xtend@4.0.1 
+    ├── is-object@1.0.1 
+    ├── next-tick@0.2.2 
+    ├── x-is-array@0.1.0 
+    └── x-is-string@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/multithread-it/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0378 took 4.9275s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Identifier 'app' has already been declared
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/multithread-it/node_modules/multithread-it/lib/index.js. Coverage (Term): 26% Coverage (LOC): 23%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,56 @@
+/root/Targets/epry
+└─┬ epry@1.0.7 
+  ├─┬ http-proxy@1.11.3 
+  │ ├── eventemitter3@1.2.0 
+  │ └── requires-port@0.0.1 
+  ├── iconv-lite@0.2.11 
+  ├─┬ less@1.4.2 
+  │ ├── mkdirp@0.3.5 
+  │ └── ycssmin@1.0.1 
+  ├── mime@1.2.11 
+  ├─┬ optimist@0.3.7 
+  │ └── wordwrap@0.0.3 
+  ├── pkginfo@0.3.1 
+  ├─┬ request@2.12.0 
+  │ ├─┬ form-data@0.0.3 
+  │ │ ├── async@0.1.9 
+  │ │ └─┬ combined-stream@0.0.3 
+  │ │   └── delayed-stream@0.0.5 
+  │ └── mime@1.2.7 
+  └─┬ watchr@2.4.13 
+    ├── eachr@2.0.4 
+    ├─┬ extendr@2.1.0 
+    │ └── typechecker@2.0.8 
+    ├─┬ extract-opts@2.2.0 
+    │ └── typechecker@2.0.8 
+    ├─┬ ignorefs@1.2.0 
+    │ ├── editions@1.3.3 
+    │ └── ignorepatterns@1.1.0 
+    ├─┬ safefs@3.2.2 
+    │ └── graceful-fs@4.1.11 
+    ├── scandirectory@2.5.0 
+    ├─┬ taskgroup@4.3.1 
+    │ ├─┬ ambi@2.5.0 
+    │ │ └── typechecker@4.4.1 
+    │ └─┬ csextends@1.1.1 
+    │   └── coffee-script@1.12.7 
+    └── typechecker@2.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/epry/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0588 took 2.4653s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'epry'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

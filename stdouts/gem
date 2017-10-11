@@ -1,0 +1,32 @@
+/root/Targets/gem
+└─┬ gem@2.4.2 
+  ├── hashmap@2.0.5-minfiedBugFix 
+  ├─┬ observe@1.3.8 
+  │ └── proto@1.0.11 
+  ├── proto@1.0.19 
+  └── trimArguments@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gem/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0356 took 8.2658s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/gem/node_modules/gem/src/node_modules/Gem.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/gem/node_modules/gem/src/node_modules/EventEmitterB.js. Coverage (Term): 13% Coverage (LOC): 22%
+*- File /root/Targets/gem/node_modules/proto/proto.js. Coverage (Term): 43% Coverage (LOC): 48%
+*- File /root/Targets/gem/node_modules/gem/src/node_modules/utils.js. Coverage (Term): 17% Coverage (LOC): 29%
+*- File /root/Targets/gem/node_modules/gem/src/node_modules/devFlag.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File evalIndirect. Coverage (Term): 6% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

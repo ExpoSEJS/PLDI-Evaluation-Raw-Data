@@ -1,0 +1,47 @@
+/root/Targets/jaydata-server
+└─┬ jaydata-server@1.3.6 
+  └─┬ jaydata-core@1.3.6 
+    ├── acorn@0.1.0 
+    ├── datajs@1.0.3 
+    ├── q@0.8.5 
+    ├── qs@0.5.0 
+    ├─┬ url@0.11.0 
+    │ ├── punycode@1.3.2 
+    │ └── querystring@0.2.0 
+    └── xmldom@0.1.11 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jaydata-server/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","sort","stringify","Function","RegExp","create","splice","bind","bound bind","Error","getFileName","bound call","freeze"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0623 took 21.8355s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-server/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-server/lib/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/index.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/node.js. Coverage (Term): 51% Coverage (LOC): 70%
+*- File /root/Targets/jaydata-server/node_modules/acorn/acorn.js. Coverage (Term): 13% Coverage (LOC): 23%
+*- File evalIndirect. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/jaydata-server/node_modules/xmldom/dom-parser.js. Coverage (Term): 15% Coverage (LOC): 31%
+*- File /root/Targets/jaydata-server/node_modules/xmldom/sax.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/jaydata-server/node_modules/xmldom/dom.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/TypeSystem/initializeJayData.js. Coverage (Term): 60% Coverage (LOC): 63%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/TypeSystem/Exception.js. Coverage (Term): 35% Coverage (LOC): 43%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/TypeSystem/utils.js. Coverage (Term): 19% Coverage (LOC): 35%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/TypeSystem/PreHtml5Compatible.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-core/lib/TypeSystem/TypeSystem.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/jaydata-server/node_modules/jaydata-server/lib/JayDataModules/qDeferred.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/jaydata-server/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

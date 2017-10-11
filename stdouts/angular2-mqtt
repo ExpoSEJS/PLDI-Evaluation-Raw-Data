@@ -1,0 +1,132 @@
+/root/Targets/angular2-mqtt
+└─┬ angular2-mqtt@1.7.1 
+  ├── @angular/core@2.4.10 
+  ├─┬ @types/mqtt@0.0.33 
+  │ └── @types/node@8.0.32 
+  ├─┬ mqtt@2.4.0 
+  │ ├─┬ commist@1.0.0 
+  │ │ └── leven@1.0.2 
+  │ ├─┬ concat-stream@1.6.0 
+  │ │ └── typedarray@0.0.6 
+  │ ├─┬ end-of-stream@1.4.0 
+  │ │ └─┬ once@1.4.0 
+  │ │   └── wrappy@1.0.2 
+  │ ├─┬ help-me@1.1.0 
+  │ │ ├── callback-stream@1.1.0 
+  │ │ ├─┬ glob-stream@6.1.0 
+  │ │ │ ├── extend@3.0.1 
+  │ │ │ ├─┬ glob@7.1.2 
+  │ │ │ │ ├── fs.realpath@1.0.0 
+  │ │ │ │ ├── inflight@1.0.6 
+  │ │ │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │ │   ├── balanced-match@1.0.0 
+  │ │ │ │ │   └── concat-map@0.0.1 
+  │ │ │ │ └── path-is-absolute@1.0.1 
+  │ │ │ ├─┬ glob-parent@3.1.0 
+  │ │ │ │ ├─┬ is-glob@3.1.0 
+  │ │ │ │ │ └── is-extglob@2.1.1 
+  │ │ │ │ └── path-dirname@1.0.2 
+  │ │ │ ├── is-negated-glob@1.0.0 
+  │ │ │ ├── ordered-read-streams@1.0.1 
+  │ │ │ ├── pumpify@1.3.5 
+  │ │ │ ├── remove-trailing-separator@1.1.0 
+  │ │ │ ├─┬ to-absolute-glob@2.0.1 
+  │ │ │ │ ├─┬ extend-shallow@2.0.1 
+  │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ └─┬ is-absolute@0.2.6 
+  │ │ │ │   ├─┬ is-relative@0.2.1 
+  │ │ │ │   │ └─┬ is-unc-path@0.1.2 
+  │ │ │ │   │   └── unc-path-regex@0.1.2 
+  │ │ │ │   └── is-windows@0.2.0 
+  │ │ │ └─┬ unique-stream@2.2.1 
+  │ │ │   ├─┬ json-stable-stringify@1.0.1 
+  │ │ │   │ └── jsonify@0.0.0 
+  │ │ │   └── through2-filter@2.0.0 
+  │ │ └── through2@2.0.3 
+  │ ├── inherits@2.0.3 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ mqtt-packet@5.4.0 
+  │ │ ├── bl@1.2.1 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ └── safe-buffer@5.1.1 
+  │ ├── pump@1.0.2 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ ├── reinterval@1.1.0 
+  │ ├── split2@2.2.0 
+  │ ├─┬ websocket-stream@3.3.3 
+  │ │ ├─┬ duplexify@3.5.1 
+  │ │ │ └── stream-shift@1.0.0 
+  │ │ └─┬ ws@1.1.4 
+  │ │   ├── options@0.0.6 
+  │ │   └── ultron@1.0.2 
+  │ └── xtend@4.0.1 
+  ├─┬ rxjs@5.4.3 
+  │ └── symbol-observable@1.0.4 
+  └── UNMET PEER DEPENDENCY zone.js@^0.7.2
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular2-mqtt/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 36% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Symbol","for","create","Object","Map","call","has","set","freeze","apply","isArray","charCodeAt","Uint8Array","subarray"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1 took 105.3233s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'originalCodeFileName' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/angular2-mqtt/node_modules/angular2-mqtt/bundles/angular2-mqtt.min.js. Coverage (Term): 9% Coverage (LOC): 20%
+*- File /root/Targets/angular2-mqtt/node_modules/@angular/core/bundles/core.umd.js. Coverage (Term): 27% Coverage (LOC): 44%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/symbol/observable.js. Coverage (Term): 89% Coverage (LOC): 89%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/root.js. Coverage (Term): 79% Coverage (LOC): 92%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Subject.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Observable.js. Coverage (Term): 25% Coverage (LOC): 32%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/toSubscriber.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Subscriber.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/isFunction.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Subscription.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/isArray.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/isObject.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/tryCatch.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/errorObject.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/UnsubscriptionError.js. Coverage (Term): 51% Coverage (LOC): 67%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Observer.js. Coverage (Term): 56% Coverage (LOC): 90%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/symbol/rxSubscriber.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/ObjectUnsubscribedError.js. Coverage (Term): 67% Coverage (LOC): 80%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/SubjectSubscription.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/BehaviorSubject.js. Coverage (Term): 54% Coverage (LOC): 66%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/add/operator/filter.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/operator/filter.js. Coverage (Term): 49% Coverage (LOC): 63%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/add/operator/publishReplay.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/operator/publishReplay.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/ReplaySubject.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/queue.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/QueueAction.js. Coverage (Term): 38% Coverage (LOC): 48%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/AsyncAction.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/Action.js. Coverage (Term): 70% Coverage (LOC): 79%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/QueueScheduler.js. Coverage (Term): 80% Coverage (LOC): 89%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/scheduler/AsyncScheduler.js. Coverage (Term): 61% Coverage (LOC): 59%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Scheduler.js. Coverage (Term): 64% Coverage (LOC): 76%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/operator/observeOn.js. Coverage (Term): 45% Coverage (LOC): 62%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/Notification.js. Coverage (Term): 33% Coverage (LOC): 45%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/operator/multicast.js. Coverage (Term): 30% Coverage (LOC): 39%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/observable/ConnectableObservable.js. Coverage (Term): 38% Coverage (LOC): 48%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/observable/UsingObservable.js. Coverage (Term): 49% Coverage (LOC): 59%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/subscribeToResult.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/isArrayLike.js. Coverage (Term): 56% Coverage (LOC): 83%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/util/isPromise.js. Coverage (Term): 50% Coverage (LOC): 83%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/symbol/iterator.js. Coverage (Term): 45% Coverage (LOC): 47%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/InnerSubscriber.js. Coverage (Term): 54% Coverage (LOC): 70%
+*- File /root/Targets/angular2-mqtt/node_modules/rxjs/OuterSubscriber.js. Coverage (Term): 64% Coverage (LOC): 85%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

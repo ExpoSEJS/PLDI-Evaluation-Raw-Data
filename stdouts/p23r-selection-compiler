@@ -1,0 +1,54 @@
+/root/Targets/p23r-selection-compiler
+└─┬ p23r-selection-compiler@1.0.0 
+  ├─┬ cli@0.6.6 
+  │ ├── exit@0.1.2 
+  │ └─┬ glob@3.2.11 
+  │   ├── inherits@2.0.3 
+  │   └─┬ minimatch@0.3.0 
+  │     ├── lru-cache@2.7.3 
+  │     └── sigmund@1.0.1 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/p23r-selection-compiler/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 7.000000000000001% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 7.000000000000001% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 7.000000000000001% coverage ] ****** [2 done /1 queued / 2 running / 2 errors / 12% coverage ] ****** [2 done /0 queued / 3 running / 2 errors / 12% coverage ] ****** [2 done /0 queued / 3 running / 2 errors / 12% coverage ] ****** [3 done /0 queued / 3 running / 3 errors / 12% coverage ] ****** [3 done /0 queued / 3 running / 3 errors / 12% coverage ] ****** [4 done /0 queued / 2 running / 3 errors / 12% coverage ] ****** [5 done /1 queued / 2 running / 4 errors / 12% coverage ] ****** [5 done /0 queued / 3 running / 4 errors / 12% coverage ] ****** [5 done /0 queued / 3 running / 4 errors / 12% coverage ] ****** [6 done /0 queued / 3 running / 5 errors / 12% coverage ] ****** [6 done /0 queued / 3 running / 5 errors / 12% coverage ] ****** [7 done /0 queued / 2 running / 6 errors / 12% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound parse","call","pow","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.031 took 57.2957s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
+* Error: TypeError: Cannot read property 'charAt' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1} start 58.4095 took 29.8313s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}
+* Error: TypeError: Cannot read property 'charAt' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2} start 58.162 took 46.7493s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}
+* Error: TypeError: Cannot read property 'charAt' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"_bound":2} start 88.6165 took 32.3389s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 88.5025 took 33.0548s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 105.2884 took 50.5641s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"_bound":4} start 122.4742 took 54.0651s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"_bound":4}
+* Error: TypeError: Cannot read property 'charAt' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"_bound":4}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 81% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
+*- File /root/Targets/p23r-selection-compiler/node_modules/p23r-selection-compiler/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/p23r-selection-compiler/node_modules/p23r-selection-compiler/dist/lib/js/selectionConnector.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/p23r-selection-compiler/node_modules/p23r-selection-compiler/dist/lib/js/selectionProcessor.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/p23r-selection-compiler/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 7 paths with 6 errors **

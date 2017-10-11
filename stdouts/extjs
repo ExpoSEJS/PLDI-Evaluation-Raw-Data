@@ -1,0 +1,34 @@
+/root/Targets/extjs
+└── extjs@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/extjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","parseInt","splice","sort","join","RegExp","isArray","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0655 took 14.124s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/extjs/node_modules/extjs/index.js. Coverage (Term): 59% Coverage (LOC): 61%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/Ext.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/version/Version.js. Coverage (Term): 39% Coverage (LOC): 58%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Array.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Date.js. Coverage (Term): 17% Coverage (LOC): 52%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Function.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Number.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Object.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/String.js. Coverage (Term): 26% Coverage (LOC): 51%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/class/Base.js. Coverage (Term): 8% Coverage (LOC): 17%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/class/Class.js. Coverage (Term): 49% Coverage (LOC): 60%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/class/ClassManager.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/extjs/node_modules/extjs/lib/Ext/core/src/lang/Error.js. Coverage (Term): 6% Coverage (LOC): 13%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

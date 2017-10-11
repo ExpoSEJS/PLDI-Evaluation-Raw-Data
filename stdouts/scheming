@@ -1,0 +1,53 @@
+/root/Targets/scheming
+└── scheming@2.1.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/scheming/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 34% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 34% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 34% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 34% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 35% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 35% coverage ] ****** [4 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [4 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [5 done /0 queued / 1 running / 1 errors / 37% coverage ] ****** [5 done /0 queued / 1 running / 1 errors / 37% coverage ] ****** [6 done /0 queued / 1 running / 2 errors / 38% coverage ] ****** [6 done /0 queued / 1 running / 2 errors / 38% coverage ] ****** [7 done /0 queued / 1 running / 3 errors / 38% coverage ] ****** [7 done /0 queued / 1 running / 3 errors / 38% coverage ] ****** [8 done /0 queued / 1 running / 3 errors / 38% coverage ] ****** [8 done /0 queued / 1 running / 3 errors / 38% coverage ] ****** [9 done /0 queued / 1 running / 4 errors / 38% coverage ] ****** [9 done /0 queued / 1 running / 4 errors / 38% coverage ] ****** [10 done /0 queued / 1 running / 4 errors / 38% coverage ] ****** [10 done /0 queued / 1 running / 4 errors / 38% coverage ] ****** [11 done /0 queued / 1 running / 4 errors / 40% coverage ] ****** [11 done /0 queued / 1 running / 4 errors / 40% coverage ] ****** [12 done /0 queued / 1 running / 5 errors / 43% coverage ] ****** [12 done /0 queued / 1 running / 5 errors / 43% coverage ] ****** [13 done /0 queued / 0 running / 5 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","apply","isArray","some","toString","bound ","now","random","floor","Error","reduce","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0642 took 9.1554s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 9.3584 took 7.6162s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":2} start 17.062 took 6.8421s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpandedSwitcher":0,"_bound":3} start 23.9978 took 6.9223s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpandedSwitcher":0,"_bound":4} start 30.9773 took 10.3456s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"ExpandedSwitcher":0,"_bound":4}
+* Error: Error: Error resolving field. Schema type must be defined.
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"ExpandedSwitcher":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":5,"_bound":5} start 41.4093 took 7.1537s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":5,"_bound":5}
+* Error: Error: Throttle option must be set to one of the strategies specified on Scheming.THROTTLE
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":5,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":6,"_bound":6} start 48.6321 took 7.7751s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":6,"_bound":6}
+* Error: Error: Callback must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":6,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":7,"_bound":7,"ExpandedSwitcher":0} start 56.44 took 7.8442s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":8,"ExpandedSwitcher":0,"_bound":8} start 64.3415 took 8.2976s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":8,"ExpandedSwitcher":0,"_bound":8}
+* Error: Error: Callback must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":8,"ExpandedSwitcher":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":9,"_bound":9,"ExpandedSwitcher":0} start 72.7255 took 7.9373s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":10,"ExpandedSwitcher":0,"_bound":10} start 80.7087 took 8.5075s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":11,"ExpandedSwitcher":0,"_bound":11} start 89.2623 took 6.3477s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":11,"ExpandedSwitcher":0,"_bound":11}
+* Error: Error: SchemingModel0 is not a valid function name.
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":11,"ExpandedSwitcher":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":12,"_bound":12} start 95.6788 took 5.0917s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/Scheming.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/Types.js. Coverage (Term): 37% Coverage (LOC): 58%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/utilities.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/Registry.js. Coverage (Term): 78% Coverage (LOC): 85%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/ChangeManager.js. Coverage (Term): 49% Coverage (LOC): 60%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/ModelFactory.js. Coverage (Term): 35% Coverage (LOC): 38%
+*- File /root/Targets/scheming/node_modules/scheming/dest/node/InstanceFactory.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File evalIndirect. Coverage (Term): 11% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 13 paths with 5 errors **

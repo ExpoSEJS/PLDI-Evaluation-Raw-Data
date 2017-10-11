@@ -1,0 +1,285 @@
+/root/Targets/pm-tutdown
+└─┬ pm-tutdown@0.0.2 
+  ├── async@0.2.10 
+  ├── coffee-script@1.6.3 
+  ├─┬ dox@0.4.6 
+  │ ├── commander@0.6.1 
+  │ └── marked@0.3.6 
+  ├─┬ funcd@0.1.2 
+  │ ├── coffee-script@1.3.3 
+  │ └── underscore@1.3.3 
+  ├─┬ handlebars@1.0.12 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├── highlight.js@7.3.0  (git://github.com/mgutz/highlight.js.git#586a1d1a97d4bcdb7bc538c1e25f71adfdec5fd0)
+  ├─┬ js-beautify@1.4.2 
+  │ ├─┬ config-chain@1.1.11 
+  │ │ ├── ini@1.3.4 
+  │ │ └── proto-list@1.2.4 
+  │ ├── mkdirp@0.3.5 
+  │ └─┬ nopt@2.1.2 
+  │   └── abbrev@1.1.1 
+  ├── marked@0.2.9  (git://github.com/mgutz/marked.git#8d1c426c9f4c758b3460ba3ba2a5498a0336ea75)
+  ├─┬ temp@0.5.1 
+  │ └─┬ rimraf@2.1.4 
+  │   └── graceful-fs@1.2.3 
+  ├── underscore@1.4.4 
+  └── underscore.string@2.3.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pm-tutdown/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 61% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","splice"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0611 took 19.4398s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (100:20) on program var fs   = require('fs'),
+    os   = require('os'),
+    path = require('path'),
+    cnst = require('constants');
+
+/* HELPERS */
+
+var RDWR_EXCL = cnst.O_CREAT | cnst.O_TRUNC | cnst.O_RDWR | cnst.O_EXCL;
+
+var environmentVariables = ['TMPDIR', 'TMP', 'TEMP'];
+
+var generateName = function(rawAffixes, defaultPrefix) {
+  var affixes = parseAffixes(rawAffixes, defaultPrefix);
+  var now = new Date();
+  var name = [affixes.prefix,
+              now.getYear(), now.getMonth(), now.getDate(),
+              '-',
+              process.pid,
+              '-',
+              (Math.random() * 0x100000000 + 1).toString(36),
+              affixes.suffix].join('');
+  return path.join(exports.dir, name);
+}
+
+var parseAffixes = function(rawAffixes, defaultPrefix) {
+  var affixes = {prefix: null, suffix: null};
+  if(rawAffixes) {
+    switch (typeof(rawAffixes)) {
+    case 'string':
+      affixes.prefix = rawAffixes;
+      break;
+    case 'object':
+      affixes = rawAffixes;
+      break
+    default:
+      throw("Unknown affix declaration: " + affixes);
+    }
+  } else {
+    affixes.prefix = defaultPrefix;
+  }
+  return affixes;
+}
+
+/* EXIT HANDLERS */
+
+/*
+ * When any temp file or directory is created, it is added to filesToDelete
+ * or dirsToDelete. The first time any temp file is created, a listener is
+ * added to remove all temp files and directories at exit.
+ */
+var exitListenerAttached = false;
+var filesToDelete = [];
+var dirsToDelete = [];
+
+var deleteFileOnExit = function(filePath) {
+  attachExitListener();
+  filesToDelete.push(filePath);
+};
+
+var deleteDirOnExit = function(dirPath) {
+  attachExitListener();
+  dirsToDelete.push(dirPath);
+};
+
+var attachExitListener = function() {
+  if (!exitListenerAttached) {
+    process.addListener('exit', cleanup);
+    exitListenerAttached = true;
+  }
+};
+
+var cleanupFiles = function() {
+  for (var i=0; i < filesToDelete.length; i++) {
+    try { fs.unlinkSync(filesToDelete[i]); }
+    catch (rmErr) { /* removed normally */ }
+  }
+};
+
+var cleanupDirs = function() {
+  var rimrafSync = require('rimraf').sync;
+  for (var i=0; i < dirsToDelete.length; i++) {
+    try {
+      rimrafSync(dirsToDelete[i], function (er) {
+        if (er) throw er
+      });
+    }
+    catch (rmErr) { /* removed normally */ }
+  }
+};
+
+var cleanup = function() {
+  cleanupFiles();
+  cleanupDirs();
+}
+
+/* DIRECTORIES */
+
+var mkdir = function(affixes, callback) {
+  var dirPath = generateName(affixes, 'd-');
+  fs.mkdir(dirPath, 0700, function(err) {
+    if (!err) {
+      deleteDirOnExit(dirPath);
+    }
+    if (callback)
+      callback(err, dirPath);
+  });
+}
+var mkdirSync = function(affixes) {
+  var dirPath = generateName(affixes, 'd-');
+  fs.mkdirSync(dirPath, 0700);
+  deleteDirOnExit(dirPath);
+  return dirPath;
+}
+
+/* FILES */
+
+var open = function(affixes, callback) {
+  var filePath = generateName(affixes, 'f-')
+  fs.open(filePath, RDWR_EXCL, 0600, function(err, fd) {
+    if (!err)
+      deleteFileOnExit(filePath);
+    if (callback)
+      callback(err, {path: filePath, fd: fd});
+  });
+}
+
+var openSync = function(affixes) {
+  var filePath = generateName(affixes, 'f-')
+  var fd = fs.openSync(filePath, RDWR_EXCL, 0600);
+  deleteFileOnExit(filePath);
+  return {path: filePath, fd: fd};
+}
+
+var createWriteStream = function(affixes) {
+  var filePath = generateName(affixes, 's-')
+  var stream = fs.createWriteStream(filePath, {flags: RDWR_EXCL, mode: 0600});
+  deleteFileOnExit(filePath);
+  return stream;
+}
+
+/* EXPORTS */
+exports.dir               = os.tmpDir();
+exports.mkdir             = mkdir;
+exports.mkdirSync         = mkdirSync;
+exports.open              = open;
+exports.openSync          = openSync;
+exports.path              = generateName;
+exports.cleanup           = cleanup;
+exports.createWriteStream = createWriteStream;
+
+
+ at SyntaxError: Invalid number (100:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:10)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2152:16)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdownFilter.js. Coverage (Term): 13% Coverage (LOC): 11%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdown/index.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdown/defaultRenderer.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdown/render.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/pm-tutdown/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/pm-tutdown/node_modules/underscore.string/lib/underscore.string.js. Coverage (Term): 8% Coverage (LOC): 20%
+*- File /root/Targets/pm-tutdown/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdown/utils.js. Coverage (Term): 14% Coverage (LOC): 26%
+*- File /root/Targets/pm-tutdown/node_modules/pm-tutdown/dist/lib/tutdown/codeFilter.js. Coverage (Term): 6% Coverage (LOC): 4%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/highlight.js. Coverage (Term): 31% Coverage (LOC): 32%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/vbscript.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/ruby.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/haml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/rsl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/html.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/delphi.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/lasso.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/axapta.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/erlang.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/cs.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/sql.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/objectivec.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/actionscript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/xml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/handlebars.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/dos.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/lisp.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/java.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/r.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/asciidoc.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/d.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/erlang-repl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/scss.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/scala.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/javascript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/brainfuck.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/parser3.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/php.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/mizar.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/perl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/diff.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/python.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/haskell.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/json.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/coffeescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/cmake.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/vhdl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/tex.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/apache.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/rust.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/markdown.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/ruleslanguage.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/go.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/bash.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/matlab.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/css.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/django.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/glsl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/vala.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/mel.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/avrasm.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/http.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/profile.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/rib.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/fsharp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/vbnet.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/nginx.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/smalltalk.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/lua.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/applescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/ini.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/clojure.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/1c.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pm-tutdown/node_modules/highlight.js/build/cpp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

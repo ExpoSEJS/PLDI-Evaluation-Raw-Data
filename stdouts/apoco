@@ -1,0 +1,47 @@
+/root/Targets/apoco
+└─┬ apoco@0.4.19 
+  ├─┬ clone-deep@0.2.4 
+  │ ├─┬ for-own@0.1.5 
+  │ │ └── for-in@1.0.2 
+  │ ├─┬ is-plain-object@2.0.4 
+  │ │ └── isobject@3.0.1 
+  │ ├─┬ kind-of@3.2.2 
+  │ │ └── is-buffer@1.1.5 
+  │ ├── lazy-cache@1.0.4 
+  │ └─┬ shallow-clone@0.1.2 
+  │   ├── is-extendable@0.1.1 
+  │   ├── kind-of@2.0.1 
+  │   ├── lazy-cache@0.2.7 
+  │   └─┬ mixin-object@2.0.1 
+  │     └── for-in@0.1.8 
+  └── es6-promise@4.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/apoco/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","call","Array","random","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0646 took 12.6502s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/apoco/node_modules/apoco/index.js. Coverage (Term): 24% Coverage (LOC): 27%
+*- File /root/Targets/apoco/node_modules/apoco/declare.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/apoco/node_modules/apoco/Core.js. Coverage (Term): 28% Coverage (LOC): 32%
+*- File /root/Targets/apoco/node_modules/apoco/Utils.js. Coverage (Term): 4% Coverage (LOC): 9%
+*- File /root/Targets/apoco/node_modules/clone-deep/index.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/apoco/node_modules/clone-deep/utils.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/apoco/node_modules/lazy-cache/index.js. Coverage (Term): 75% Coverage (LOC): 81%
+*- File /root/Targets/apoco/node_modules/apoco/Panel.js. Coverage (Term): 4% Coverage (LOC): 10%
+*- File /root/Targets/apoco/node_modules/apoco/Popups.js. Coverage (Term): 5% Coverage (LOC): 14%
+*- File /root/Targets/apoco/node_modules/apoco/Window.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/apoco/node_modules/es6-promise/dist/es6-promise.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

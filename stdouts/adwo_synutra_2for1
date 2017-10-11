@@ -1,0 +1,28 @@
+/root/Targets/adwo_synutra_2for1
+└─┬ adwo_synutra_2for1@1.0.0 
+  ├── angular2@2.0.0-beta.17 
+  ├── es6-shim@0.35.3 
+  ├── reflect-metadata@0.1.2 
+  ├── rxjs@5.0.0-beta.6 
+  ├─┬ systemjs@0.19.26 
+  │ └── when@3.7.8 
+  └── zone.js@0.6.12 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/adwo_synutra_2for1/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.096 took 4.8169s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'adwo_synutra_2for1'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

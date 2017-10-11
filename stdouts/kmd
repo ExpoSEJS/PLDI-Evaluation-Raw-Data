@@ -1,0 +1,188 @@
+/root/Targets/kmd
+└─┬ kmd@1.0.29 
+  └── iconv-lite@0.4.19 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/kmd/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0946 took 3.3531s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (26:36) on program var S = require("./loader/seed"),
+    compiler = require("./compiler"),
+    path = require("path"),
+    fs = require("fs");
+
+require('./log')();
+
+var cache = {
+    dependencies:{}
+};
+
+S.config("debug", false);
+
+var loadModsFn = S.config("loadModsFn");
+
+S.config("loadModsFn", function(rs, config) {
+    loadModsFn.apply(null,arguments);
+});
+
+
+function getModuleInfo(filePath) {
+    var packages = S.config("packages"),
+        _package,
+        moduleName;
+
+    S.Utils.each(packages, function(package) {
+        var base = package.base,
+            name = package.name;
+
+        if(filePath.indexOf(name) == 0) {
+            moduleName = filePath;
+            return false;
+        }
+
+        var relative = path.relative(base,filePath);
+
+        if(relative.indexOf("..") == -1){
+            _package = package;
+            moduleName = relative;
+            if(moduleName.indexOf(package.name)!==0) {
+                moduleName = path.join(name, relative);
+            }
+            moduleName = moduleName.replace(/\\/g,"/");
+            return false;
+        }
+    });
+    return {
+        charset: _package && _package.charset,
+        package:_package,
+        moduleName:moduleName.replace(/\.js$/,"")
+    }
+}
+function convert (code,options) {
+    var dependencies,
+        options = options || {},
+        moduleInfo = {},
+        _code;
+
+    options.fixModuleName = options.fixModuleName ===  false?false:true;
+
+    code = ' '+code;
+    if(options.requireCss === false) {
+        var requireRegExp = /[^.'"]\s*require\s*\((['"])([^)]+)\1\)\s*;?/g;
+        code = code.replace(requireRegExp, function(match, _, dep){
+            if(/\.css$/.test(dep)) {
+                return match.replace(/require\s*\((['"])([^)]+)\1\)\s*;?/,'');
+            }
+            return match;
+        });
+    }
+
+    if(options.moduleInfo) {
+        moduleInfo = options.moduleInfo
+    }else if(options.filePath) {
+        moduleInfo = getModuleInfo(options.filePath);
+    }
+    if(moduleInfo.moduleName) {
+        if(cache.dependencies[moduleInfo.moduleName]) {
+            dependencies = cache.dependencies[moduleInfo.moduleName];
+        }else {
+           dependencies = S.Utils.getRequiresFromFn(code);
+           cache.dependencies[moduleInfo.moduleName]
+        }
+    }else{
+        dependencies = S.Utils.getRequiresFromFn(code);
+    }
+
+    _code = compiler.wrap(code,{
+        define:options.define,
+        modulex: options.modulex,
+        kissy: options.kissy,
+        requires:dependencies,
+        moduleName: options.fixModuleName ? moduleInfo.moduleName:null,
+        charset: moduleInfo.charset
+    });
+
+    return {
+        source:_code,
+        moduleInfo:moduleInfo,
+        dependencies:S.Utils.getRequiresFromFn(code)
+    }
+}
+
+function clearLoadedModule() {
+    S.Utils.each(S.Env.mods, function(mod){
+        if(mod.status) {
+            if(mod.packageInfo && mod.packageInfo.name!=="core" && mod.packageInfo.base!=="http://core/"){
+                mod.status = 0;
+            }
+        }
+    });
+}
+
+function combo(filePath,options) {
+
+    var options = options || {};
+    var moduleInfo = getModuleInfo(filePath),
+        mods = S.Utils.createModules([moduleInfo.moduleName]),
+        modules = [];
+        source = [],
+        minify = [],
+        files = [],
+        loader =new S.Loader.ComboLoader();
+
+    clearLoadedModule();
+
+    S.Utils.each(mods, function (mod) {
+        modules.push.apply(modules, mod.getNormalizedModules());
+    });
+
+    mods = loader.calculate(modules,[]);
+
+    S.Utils.each(mods, function(mod) {
+        var pkg = mod.packageInfo,
+            name = mod.name;
+        if(pkg.name == "core") {
+            return true;
+        }
+        files.push(name);
+    });
+
+    return files;
+}
+
+function config(key,value) {
+    return S.config.apply(S,arguments);
+}
+
+
+module.exports = {
+                     config:config,
+                     combo:combo,
+                     convert: convert,
+                     getModuleInfo:getModuleInfo,
+                     utils:S.Utils
+                 } at SyntaxError: The keyword 'package' is reserved (26:36)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/kmd/node_modules/kmd/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

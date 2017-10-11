@@ -1,0 +1,23 @@
+/root/Targets/cssobj-plugin-post-cssom
+└─┬ cssobj-plugin-post-cssom@1.0.24 
+  └── cssobj-helper@0.1.12  (git://github.com/cssobj/cssobj-helper.git#e4e2e7bb2cedadfe48bfacabd5e769fe60b8412d)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cssobj-plugin-post-cssom/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","join","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0516 took 5.4056s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cssobj-plugin-post-cssom/node_modules/cssobj-plugin-post-cssom/dist/cssobj-plugin-post-cssom.cjs.js. Coverage (Term): 4% Coverage (LOC): 8%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

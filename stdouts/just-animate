@@ -1,0 +1,33 @@
+/root/Targets/just-animate
+└─┬ just-animate@2.5.0 
+  └── just-curves@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/just-animate/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0333 took 6.3909s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: requestAnimationFrame is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/main.js. Coverage (Term): 28% Coverage (LOC): 37%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/timeline.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/utils/uuid.js. Coverage (Term): 36% Coverage (LOC): 75%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/utils/lists.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/utils/inspect.js. Coverage (Term): 38% Coverage (LOC): 70%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/utils/constants.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/actions.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/store.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/reducers/index.js. Coverage (Term): 21% Coverage (LOC): 16%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/reducers/cancel.js. Coverage (Term): 25% Coverage (LOC): 28%
+*- File /root/Targets/just-animate/node_modules/just-animate/lib/lib/core/timeloop.js. Coverage (Term): 24% Coverage (LOC): 24%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

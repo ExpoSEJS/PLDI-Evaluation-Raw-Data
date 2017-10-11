@@ -1,0 +1,304 @@
+/root/Targets/murkel
+└─┬ murkel@1.0.1 
+  ├── es6-promise@2.3.0 
+  ├── marked@0.3.6 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── ncp@2.0.0 
+  ├─┬ readdirp@1.3.0 
+  │ ├── graceful-fs@2.0.3 
+  │ ├─┬ minimatch@0.2.14 
+  │ │ ├── lru-cache@2.7.3 
+  │ │ └── sigmund@1.0.1 
+  │ └─┬ readable-stream@1.0.34 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@0.0.1 
+  │   └── string_decoder@0.10.31 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├─┬ inflight@1.0.6 
+  │   │ └── wrappy@1.0.2 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── once@1.4.0 
+  │   └── path-is-absolute@1.0.1 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/murkel/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0073 took 1.8306s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:90) on program _ = require 'underscore'
+marked = require 'marked'
+fs = require 'fs'
+readdirp = require 'readdirp'
+path = require 'path'
+EventEmitter = require('events').EventEmitter
+rimraf = require 'rimraf'
+ncp = require('ncp').ncp
+
+Promise = require('es6-promise').Promise
+
+
+mkdirp = require 'mkdirp'
+cwd = process.cwd()
+
+pages = []
+
+createDirectories = (list) -> new Promise (resolve, reject) ->
+
+
+	len = list.length
+	count = 0
+
+	# emitter.on 'ready', 
+	tht = @
+
+	for d in list
+		mkdirp path.join(cwd, 'static_site', d), do (len) -> (err) ->
+
+			count++
+
+			if count is len
+				resolve()
+
+
+readFiles = (files) -> new Promise (resolve, reject) ->
+
+	collection = []
+
+	len = files.length
+	count = 0
+
+	for file, index in files
+		fs.readFile path.join(cwd, 'pages', file.path), 'utf8', do (file, len, index) -> (err, data) ->
+			if (err) then console.log err
+					
+			files[index].raw_data = data
+
+			count++
+
+			if count is files.length
+				resolve(files)
+
+
+
+
+
+
+hasKey = (ob, key) ->
+	for i in ob
+		if _.has i, key
+			return i[key]
+
+	return false
+
+
+namespace = (base, string, end) ->
+	parts = string.split('/')
+
+	for key, index in parts
+		res = hasKey base, key
+		if not res
+			tmp = {}
+			tmp[key] = []
+			base.push tmp
+			base = tmp[key]
+		else
+			base = res
+
+	base.push end
+
+prettyData = (ugly) ->
+
+	tree = []
+
+	for item in ugly
+		namespace tree, item.parent, _.omit(item, 'raw_data', 'content', 'menu')
+
+
+	return tree
+
+getTemplates = (cb) ->
+
+	search = readdirp({ root: path.join(cwd, 'scaffolding'), fileFilter: '*.html'})
+
+	templates = []
+	paths = []
+
+	search.on 'data', (entry) ->
+		paths.push entry.path
+
+	search.on 'end', ->
+		len = paths.length
+
+		for fname in paths
+			fs.readFile path.join(cwd, 'scaffolding', fname), 'utf8', do (fname, len) -> (err, data) ->
+
+				templates.push
+					data: data,
+					name: path.basename(fname, '.html')
+
+				if templates.length is len
+					cb templates
+
+
+compileData = (collection) -> new Promise (resolve, reject) -> getTemplates (templates) ->
+
+
+	for file, index in collection
+
+		content = file.raw_data
+		data = {}
+
+		info_reg = /^-{3}\n((.|\n)*?)\n-{3}/
+
+		if info_reg.test(content)
+			json = "{#{info_reg.exec(content)[1]}}"
+			data = JSON.parse json
+			content = content.replace(info_reg, "").replace(/^\n/, "")
+
+		if path.extname(file.path) is '.md'
+			content = marked content
+			collection[index].path = toHtmlExt(file.path)
+
+		collection[index].content = content
+		collection[index].data = data
+
+		resolve
+			collection: collection
+			templates: templates
+
+
+templetize = (collection, templates) -> new Promise (resolve, reject) ->
+
+	page_data = prettyData(_.where(collection, { menu: true }))[0].menu
+
+	for file, index in collection
+
+		view = {
+			content: file.content
+		}
+
+		page_view = {
+			pages: page_data
+			page_path: file.path
+		}
+
+		if file.data.title
+			page_view.page_title = file.data.title
+		else
+			page_view.page_title = path.basename(file.path, '.html')
+
+
+		for i in templates when i.name isnt 'page'
+			templ = _.template(i.data)
+			view[i.name] = templ(page_view)
+
+
+		page = _.findWhere templates, { name: 'page' }
+		templ = _.template(page.data)
+
+		collection[index].content = templ view
+
+
+	resolve collection
+
+
+toHtmlExt = (path) ->
+	dots = path.split('.')
+	dots.splice dots.length - 1, 1
+	name = dots.join('.')
+	name += ".html"
+
+	return name
+
+
+
+writeFiles = (collection) -> new Promise (resolve, reject) ->
+	count = 0
+	len = collection.length
+
+	for file in collection
+
+		if path.extname(file.path) isnt '.html' then file.path = toHtmlExt(file.path)
+
+		fs.writeFile path.join(cwd, 'static_site', file.path), file.content, do (len) -> (err) ->
+			count++
+			if count is len then resolve()
+
+
+cloneAssets = -> new Promise (resolve, reject) ->
+
+	outpath = path.join(cwd, 'static_site/assets')
+
+	rimraf outpath, ->
+		fs.lstat path.join(cwd, 'assets'), (err, stats) ->
+			if not err and stats.isDirectory()
+				ncp path.join(cwd, 'assets'), outpath, (err)->
+					resolve()
+
+
+
+
+initialize = ->
+
+	directories = _.uniq(_.pluck(_.where(pages, { menu: true }), 'parent'))
+	files = _.extend(_.clone(pages), pages.unlinked)
+
+	createDirectories(directories).then ->
+		readFiles(files).then (collection) ->
+			compileData(collection).then (data) ->
+				templetize(data.collection, data.templates).then (collection) ->
+					writeFiles(collection).then ->
+						cloneAssets().then ->
+							console.log 'done!'
+
+
+
+
+browse = readdirp({ root: path.join(cwd, 'pages'), fileFilter: ['*.html', '*.md']})
+
+browse.on 'data', (entry) ->
+
+	split = entry.parentDir.split('/')
+
+	file = {
+		name: entry.name
+		path: entry.path
+		parent: entry.parentDir
+	}
+
+	file.menu = split[0] is 'menu'
+
+	pages.push file
+
+browse.on 'end', -> initialize()
+ at SyntaxError: Unexpected token (1:90)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

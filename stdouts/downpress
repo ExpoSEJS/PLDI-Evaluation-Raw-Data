@@ -1,0 +1,587 @@
+/root/Targets/downpress
+└─┬ downpress@0.1.21 
+  ├── colors@0.6.2 
+  ├─┬ connect@2.14.3 
+  │ ├── basic-auth-connect@1.0.0 
+  │ ├── bytes@0.2.1 
+  │ ├─┬ compression@1.0.0 
+  │ │ ├── compressible@1.0.0 
+  │ │ └── negotiator@0.3.0 
+  │ ├── connect-timeout@1.0.0 
+  │ ├─┬ cookie-parser@1.0.1 
+  │ │ └── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.3 
+  │ ├─┬ csurf@1.0.0 
+  │ │ └── uid2@0.0.3 
+  │ ├── debug@0.8.1 
+  │ ├── errorhandler@1.0.0 
+  │ ├─┬ express-session@1.0.2 
+  │ │ ├── buffer-crc32@0.2.1 
+  │ │ ├── debug@0.7.4 
+  │ │ └── utils-merge@1.0.0 
+  │ ├── fresh@0.2.2 
+  │ ├─┬ method-override@1.0.0 
+  │ │ └── methods@1.1.2 
+  │ ├── morgan@1.0.0 
+  │ ├─┬ multiparty@2.2.0 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── stream-counter@0.2.0 
+  │ ├── pause@0.0.1 
+  │ ├── qs@0.6.6 
+  │ ├── raw-body@1.1.3 
+  │ ├── response-time@1.0.0 
+  │ ├─┬ serve-index@1.0.1 
+  │ │ ├── batch@0.5.0 
+  │ │ └── negotiator@0.4.2 
+  │ ├─┬ serve-static@1.0.2 
+  │ │ └─┬ send@0.2.0 
+  │ │   ├── mime@1.2.11 
+  │ │   └── range-parser@1.0.3 
+  │ ├── static-favicon@1.0.2 
+  │ └── vhost@1.0.0 
+  ├── filequeue@0.5.0 
+  ├─┬ fs-extra@0.8.1 
+  │ ├── jsonfile@1.1.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── ncp@0.4.2 
+  │ └── rimraf@2.2.8 
+  ├─┬ gaze@0.5.1 
+  │ └─┬ globule@0.1.0 
+  │   ├── lodash@1.0.2 
+  │   └─┬ minimatch@0.2.14 
+  │     ├── lru-cache@2.7.3 
+  │     └── sigmund@1.0.1 
+  ├─┬ markdown@0.5.0 
+  │ └─┬ nopt@2.1.2 
+  │   └── abbrev@1.1.0 
+  ├─┬ node-minify@0.10.2 
+  │ ├─┬ clean-css@2.2.23 
+  │ │ └── commander@2.2.0 
+  │ ├─┬ csso@1.8.2 
+  │ │ ├─┬ clap@1.2.3 
+  │ │ │ └─┬ chalk@1.1.3 
+  │ │ │   ├── ansi-styles@2.2.1 
+  │ │ │   ├── escape-string-regexp@1.0.5 
+  │ │ │   ├─┬ has-ansi@2.0.0 
+  │ │ │   │ └── ansi-regex@2.1.1 
+  │ │ │   ├── strip-ansi@3.0.1 
+  │ │ │   └── supports-color@2.0.0 
+  │ │ └── source-map@0.5.7 
+  │ ├─┬ glob@3.1.21 
+  │ │ ├── graceful-fs@1.2.3 
+  │ │ └── inherits@1.0.2 
+  │ ├── sqwish@0.2.2 
+  │ └─┬ uglify-js@3.1.2 
+  │   └── commander@2.11.0 
+  └─┬ walk@2.3.1 
+    └─┬ forEachAsync@2.2.1 
+      └── sequence@2.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/downpress/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0329 took 4.7411s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+
+    "use strict";
+
+
+	/**
+	 *  This is constructed always when user types `downpress` to the terminal
+	 */
+    var Downpress = function(){
+
+		var that = this;
+
+	    // inherit "this" from the class boilerplate (underscore, events..)
+        require("../library/_Boilerplate").call(this);
+
+	    // if is not a valid package, break software
+        this.packageJsonParsing();
+
+		// after package.json is parsed successfully
+		this.on("package-parsed", function(){
+			that.parseSecondConsoleArgument();
+		});
+
+    };
+
+
+    require("util").inherits(Downpress, require("../library/_Boilerplate"));
+
+
+	/**
+	 *  Parsing second argument typed to console (like `downpress run`)
+	 */
+	Downpress.prototype.parseSecondConsoleArgument = function(){
+
+		// user types in the console also a second parameter
+		var consoleArgument = process.argv[2];
+		switch (consoleArgument) {
+
+			case "report" :
+				this.initReport(); break;
+
+			case "help" :
+				this.initHelp(); break;
+
+			case "run" :
+				this.initRun(); break;
+
+			case "init" :
+				this.initInit(); break;
+
+			default :
+				this.initWithoutArgument(); break;
+
+		}
+
+	};
+
+
+	/**
+	 *  Attach on website this, user can send also the personal data about his computer and OS and Node
+	 */
+    Downpress.prototype.initReport = function(){
+
+        console.log("");
+        this.log("report a bug?");
+        this.log("  1: browse website github.com/downpress/package/issues");
+        this.log("  2: copy below infos about your computer and go ahead!");
+
+        console.log("");
+        this.log("versions:");
+        this.log("  node: " + process.versions.node);
+        this.log("  http_parser: " + process.versions.http_parser);
+        this.log("  v8: " + process.versions.v8);
+        this.log("  ares: " + process.versions.ares);
+        this.log("  uv: " + process.versions.uv);
+        this.log("  zlib: " + process.versions.zlib);
+        this.log("  modules: " + process.versions.modules);
+        this.log("  openssl: " + process.versions.openssl);
+
+        console.log("");
+        this.log("details:");
+        this.log("  arch: " + process.arch);
+        this.log("  platform: " + process.platform);
+        this.log("  argv: " + process.argv);
+        this.log("  env.PWD: " + process.env.PWD);
+        this.log("  env.OLDPWD: " + process.env.OLDPWD);
+        this.log("  env._: " + process.env._);
+        this.log("  pid: " + process.pid);
+        this.log("  features.debug: " + process.features.debug);
+        this.log("  features.ipv6: " + process.features.ipv6);
+        this.log("  version openssl: " + process.versions.openssl);
+
+        console.log("");
+	    process.kill();
+
+    };
+
+
+	/**
+	 *  When user type `downpress help`, TODO should be implemented in next version for every command
+	 */
+    Downpress.prototype.initHelp = function(){
+
+        this.log("help is gonna be implemented in version 0.3, sorry", true);
+	    process.kill();
+
+    };
+
+
+	/**
+	 *  When user type `downpress run` and package.json does exist in root of project
+	 */
+    Downpress.prototype.initRun = function(){
+
+	    var port = global.downpress.config["localhost-port"];
+
+        console.log();
+        this.log("browse http://localhost:" + port + " for a build preview");
+        this.log("watching "+process.env.PWD);
+
+        this.createTemplatesFolder();
+        this.watchLocalhost();
+        this.watchDirectories();
+
+    };
+
+
+	/**
+	 *  When user type `downpress init` and wants to create a new project boilerplate
+	 */
+    Downpress.prototype.initInit = function(){
+
+        var that = this;
+        var i = 0;
+
+        function handleFolderErrors(err){
+
+            if (err) {
+                that.log("ERROR: folder "+ err.path + "already does exist!", true);
+                process.kill();
+            } else if (++i===9) {
+	            that.whenAllInitFoldersAreCreated();
+            }
+
+        }
+
+        this.fs.mkdir("./articles", handleFolderErrors);
+	    this.fs.mkdir("./%templates", handleFolderErrors);
+	    this.fs.mkdir("./%build", handleFolderErrors);
+	    this.fs.mkdir("./page", handleFolderErrors);
+	    this.fs.mkdir("./statics", handleFolderErrors);
+	    this.fs.mkdir("./articles/1st", handleFolderErrors);
+	    this.fs.mkdir("./articles/2nd", handleFolderErrors);
+	    this.fs.mkdir("./articles/3rd", handleFolderErrors);
+	    this.fs.mkdir("./articles/4th", handleFolderErrors);
+
+	    // TODO
+	    // maybe this can be created without files, just with some inteligent parameter
+	    // something like ~ i want create this file also if the root directory doesn't exist
+
+    };
+
+
+	/**
+	 *  On command `init` create also files, after directories are already created
+	 */
+    Downpress.prototype.whenAllInitFoldersAreCreated = function(){
+
+        var i = 0;
+	    var that = this;
+
+        function handleFolderErrors(err){
+
+            if (err) {
+                that.log("file already exists: "+ err.path, true);
+                process.kill();
+            } else if (++i===13) {
+	            that.log("success —- all files created successfully");
+                that.log("type `downpress run` and open browser");
+            }
+
+        }
+
+        var msg = {};
+
+        var msg1 = "<!-- in this file use classic html -->\n{{ local._content }}";
+        var msg2 = "--\ntemplate : article\n---\n\n**hello, i am content of articles!**";
+        var msg7 = "--\ntemplate : index\n---\n\n**hello, i am in /index.md!**";
+        var msg6 = "--\ntemplate : page\n---\n\n**hello, i am in /page/index.md**";
+        var msg4 = "if you will not use '---' meta tags in MD,\nfile is copied only and not parsed";
+        var msg3 = "html { background: #ccc }";
+        var msg8 = "console.log('hello');";
+        var msg5 = "all content in this folder will be removed!! and replaced with build";
+
+        msg.index = "\n\t{{ local._content }}<br>\n";
+        msg.index += "\n\t<script src=\"/statics/client.js\"></script>\n";
+        msg.index += "\n\t<link href=\"statics/stylesheet.css\" rel=\"stylesheet\" /><br>\n";
+        msg.index += "\t<a href=\"/articles/1st/\">1st blog</a><br/>\n";
+        msg.index += "\t<a href=\"/articles/2nd/\">2nd blog</a><br/>\n";
+        msg.index += "\t<a href=\"/articles/3rd/\">3rd blog</a><br/>\n";
+        msg.index += "\t<a href=\"/articles/4th/\">4th blog</a><br/>\n";
+        msg.index += "\t<a href=\"/page/\">page</a><br/>\n";
+
+	    this.fs.appendFile("./readme.md", msg4, handleFolderErrors);
+	    this.fs.appendFile("./%templates/index.html", msg.index, handleFolderErrors);
+	    this.fs.appendFile("./%templates/page.html", msg1, handleFolderErrors);
+	    this.fs.appendFile("./%templates/article.html", msg1, handleFolderErrors);
+	    this.fs.appendFile("./%build/build-folder.md", msg5, handleFolderErrors);
+	    this.fs.appendFile("./page/index.md", msg6, handleFolderErrors);
+	    this.fs.appendFile("./articles/1st/index.md", msg2, handleFolderErrors);
+	    this.fs.appendFile("./articles/2nd/index.md", msg2, handleFolderErrors);
+	    this.fs.appendFile("./articles/3rd/index.md", msg2, handleFolderErrors);
+	    this.fs.appendFile("./articles/4th/index.md", msg2, handleFolderErrors);
+	    this.fs.appendFile("./statics/stylesheet.css", msg3, handleFolderErrors);
+	    this.fs.appendFile("./statics/client.js", msg8, handleFolderErrors);
+        this.fs.appendFile("./index.md", msg7, handleFolderErrors);
+
+    };
+
+
+	/**
+	 *  When Downpress is run without a valid argument (second - `downpress something`)
+	 */
+    Downpress.prototype.initWithoutArgument = function(){
+
+	    this.log("ERROR -- use only subcommands: `run`, `init` or `report`", true);
+	    this.log("downpress killed", true);
+	    process.kill();
+
+    };
+
+
+	/**
+	 *  Check if %Templates folder does exist, if no - create a new one, if yes - nothing
+	 */
+    Downpress.prototype.createTemplatesFolder = function(){
+
+	    // TODO mkdir is synch operation because this is not happening everytime
+	    // the relevant question ~ how to solve callbacks if are optional?
+
+	    var FOLDER = "./" + global.downpress.config["dir-templates"];
+	    var that = this;
+
+	    function doesntExists(){
+		    that.fs.mkdirSync(FOLDER);
+		    that.log(FOLDER + " folder created to the root of a website", true);
+	    }
+
+	    this.fs.exists(FOLDER, function(exists){
+		    if (!exists) { doesntExists(); }
+	    });
+
+    };
+
+
+	/**
+	 *  Create the server on localhost with an optional port (default 8088)
+	 */
+    Downpress.prototype.watchLocalhost = function(){
+
+        var connect = require("connect");
+	    var buildFolder = "./" + global.downpress.config["dir-build"];
+        var options = connect().use(connect.static(buildFolder));
+
+	    var server = require("http").createServer(options);
+
+	    server.listen(8088);
+	    server.on("error", (function(error){
+		    this.portAlreadyExists(error);
+	    }).bind(this));
+
+    };
+
+
+	/**
+	 *  If port is already listening on something, report error to console
+	 */
+	Downpress.prototype.portAlreadyExists = function(error){
+
+		var isAlreadyUsed = ("EADDRINUSE"===error.code);
+		var usedPort = global.downpress.config["localhost-port"];
+
+		if (isAlreadyUsed) {
+
+			this.log("ERROR: port "+usedPort+" is already used by other process (maybe with downpress)", true);
+			this.log("maybe your have downpress already run somewhere (??)", true);
+			this.log("if you want to use more downpress ins. in one moment, change port in package.json", true);
+			console.log();
+
+		} else {
+
+			this.log("TODO: this is unknown error of server creating", true);
+			this.log("please report this, so we can handle this error", true);
+			console.log(error);
+
+		}
+
+		process.kill();
+
+	};
+
+
+	/**
+	 *  Chokidar options for watcher of folders, what should be watched, in which interval
+	 */
+    Downpress.prototype.chokidarOptions = function(){
+
+	    return {
+		    // ignored : global.downpress.config["watch-ignored"],
+		    // persistent : true,
+		    // interval : global.downpress.config["watch-interval"],
+		    // binaryInterval : global.downpress.config["watch-interval-binaries"],
+		    // ignoreInitial : true
+	    };
+
+    };
+
+
+	/**
+	 *  Choikar watches all folders with settings and on change runs Plugins.js
+	 */
+    Downpress.prototype.watchDirectories = function(){
+
+	    var options = this.chokidarOptions();
+	    var that = this;
+        global.downpress.isGenerating = false;
+
+        // initial build without any inital changes, just needs to be build
+        global.downpress.isInitial = true;
+        require("./Plugins")();
+
+        // watch every change in project
+        require("gaze")("**/*", function(err) {
+
+            if (err) throw err;
+
+            this.on("all", function(event, filepath) {
+                that.onWatchingChangeChoikar(event, filepath);
+            });
+
+        });
+
+
+
+    };
+
+
+	/**
+	 *  Run on every change of Choikar in all directories
+	 */
+	Downpress.prototype.onWatchingChangeChoikar = function(event, path){
+
+		var that = this;
+
+        var buildDir = "/" + global.downpress.config["dir-build"] + "/";
+        if (path.indexOf(buildDir)!==-1) { return; }
+
+		global.downpress.lastChanged = { event : event, path : path };
+
+        // what if next change is faster than folder is regenerated?
+		if (!global.downpress.isGenerating) {
+			that.log("`"+event+"` in `"+path +"`");
+			require("./Plugins")();
+		}
+
+	};
+
+
+	/**
+	 *  Read package.json file from filesystem, this file is mandatory
+	 */
+    Downpress.prototype.packageJsonParsing = function(){
+
+	    // package.json is a convention used in nodejs/grunt prjts
+	    var FILE_NAME = "./package.json";
+	    var that = this;
+
+	    // read package from filesystem, check if is there
+	    this.fs.readFile(FILE_NAME, function(error, data){
+            if (error) { that.errorOnPackageJsonRead(error); }
+            // TODO unvalid json error catch
+            var parsedJsonFile = JSON.parse(data);
+            that.successOnPackageJsonRead(parsedJsonFile);
+	    });
+
+	    // this is global object valid everywhere in application
+	    global.downpress = {};
+
+    };
+
+
+	/**
+	 *  When file package.json does exist
+	 */
+	Downpress.prototype.successOnPackageJsonRead = function(data){
+
+		// if package.json file doens't contain downpress object, throw error
+		var isDownpressPackage = data.downpress;
+		if (!isDownpressPackage) { this.errorOnMissingDownpressInPackage(); }
+
+		// we can access to whole package.json file via package object
+		global.downpress.package = data;
+
+		// or we can access to downpress object directly and edit it)
+		global.downpress.config = data.downpress;
+
+		// if port is not defined, set default to 8088
+		global.downpress.config["localhost-port"] = data.downpress["localhost-port"] || "8088";
+		global.downpress.config["localhost-port"] += ""; // sanitate in case of a number
+
+		// check existing name of templates folder
+		global.downpress.config["dir-templates"] = data.downpress["dir-templates"] || "%templates";
+
+		// check existing name of build folder
+		global.downpress.config["dir-build"] = data.downpress["dir-build"] || "%build";
+
+		// interval of text files polling
+		global.downpress.config["watch-interval"] = data.downpress["watch-interval"] || "50";
+		global.downpress.config["watch-interval"] += "";
+
+		// interval of text files polling
+		global.downpress.config["watch-interval-binaries"] = data.downpress["watch-interval-binaries"] || "300";
+		global.downpress.config["watch-interval-binaries"] += "";
+
+		// delimiter of header in markdown files for meta data
+		global.downpress.config["markdown-delimiter"] = data.downpress["markdown-delimiter"] || "---";
+
+		// interval of text files polling
+		// TODO, this needs to be implemented, as regexp or function or array
+		global.downpress.config["watch-ignored"] = /%build/;
+
+		// package.json exists and is parsed successfully
+		this.emit("package-parsed");
+
+	};
+
+
+	/**
+	 *  When file package.json doesn't exists in root of project (when DP is run)
+	 */
+	Downpress.prototype.errorOnPackageJsonRead = function(error){
+
+		var isNotExists = error.code = "ENOENT";
+		if (!isNotExists) { return; }
+
+		// log error message
+		this.log("ERROR", true);
+		this.log("  reason: file package.json doesn't exists in project", true);
+		this.log("  solution: create file package.json in your root", true);
+
+		// kill process and finish the package run
+		process.kill();
+
+	};
+
+
+	/**
+	 *  When we have a package.json file, but inside is missing required "downpress" object
+	 */
+	Downpress.prototype.errorOnMissingDownpressInPackage = function(){
+
+		// log error message
+		this.log("ERROR", true);
+		this.log("  reason: file package.json has no object downpress", true);
+		this.log("  solution: create in package.json 'downpress : {}' object", true);
+
+		// kill process and finish the package run
+		process.kill();
+
+	};
+
+
+    // run application
+
+    new Downpress();
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

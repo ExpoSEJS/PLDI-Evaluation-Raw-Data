@@ -1,0 +1,168 @@
+/root/Targets/id3-scatter-example
+├── UNMET PEER DEPENDENCY d3@^3.5.5
+├── id3-scatter-example@1.8.0 
+└── UNMET PEER DEPENDENCY react@^0.14.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/id3-scatter-example/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0571 took 10.0289s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (134:14) on program 'use strict';
+
+var d3 = require("d3");
+var React  = require("react");
+require('./block.less');
+
+
+module.exports = React.createClass({displayName: "ExtendingArcs",
+  getDefaultProps: function() {
+    return {
+      width: 960,
+      height: 480,
+      color: "#4169e1",
+      data: [],
+      config:{
+        "xAxis": "column1",//Specify the key that you want to be the x-axis
+        "yAxis": "column2",//Specify the key that you want to be the y-axis
+        columnNames:[]
+      }
+    };
+  },
+
+  componentDidMount: function(){
+  	var that = this;
+    that.m = [30, 20, 30, 50];
+    that.w = that.props.width - that.m[1] - that.m[3];
+    that.h = that.props.height - that.m[0] - that.m[2];
+
+    that.line = d3.svg.line();
+
+    that.x = d3.scale.linear()
+    	.range([0,that.w]);
+
+
+    that.y = d3.scale.linear()
+    	.range([that.h, 0]);
+
+    that.dragging = {};
+
+    that.yAxis = d3.svg.axis()
+    	.scale(that.y)
+    	.ticks(10)
+    	.orient("left");
+
+    that.xAxis = d3.svg.axis()
+    	.scale(that.x)
+    	.ticks(10)
+    	.orient("bottom")
+    	.tickFormat(d3.format("04d"));
+
+    that.canvas = d3.select(this.getDOMNode()).append("svg") 
+        .attr("width", that.w + that.m[1] + that.m[3])
+        .attr("height", that.h + that.m[0] + that.m[2])
+      .append("g")
+        .attr("transform", "translate(" + that.m[3] + "," + that.m[0] + ")")
+        .attr("class", "canvas");
+
+    that.tooltip = d3.select("body").append("div")
+    	.attr("class", "tooltip")
+    	.style("opacity", 0);
+
+    that.componentDidUpdate();
+     
+  },
+
+  componentDidUpdate: function(){
+  	var that = this;
+
+  	var xAxisConfig = this.props.config.xAxis;
+  	var yAxisConfig = this.props.config.yAxis;
+
+  	var xDomain = d3.extent(this.props.data, function(data){ return data[xAxisConfig]; });
+  	var yDomain = [0, d3.max(this.props.data, function(data){return data[yAxisConfig]; })];
+
+  	that.x.domain(xDomain).nice();
+  	that.y.domain(yDomain).nice();
+
+  	that.line.x(function(d){ return that.x(d[xAxisConfig]); })
+  		.y(function(d){ return that.y(d[yAxisConfig]); });
+
+  	that.canvas.selectAll(".axis").remove();
+
+  	that.canvas.append("g")
+  		.attr("class", "x axis")
+  		.attr("transform", "translate(0,"+ that.h + ")")
+  		.call(that.xAxis)
+	  	.append("text")
+	      .attr("class", "label")
+	      .attr("x", that.w)
+	      .attr("y", -6)
+	      .style("text-anchor", "end")
+	      .text(xAxisConfig);	
+
+  	that.canvas.append("g")
+  		.attr("class", "y axis")
+  		.call(that.yAxis)
+  		.append("text")
+  		.attr("transform", "rotate(-90)")
+  		.attr("y", "6")
+  		.attr("dy", ".71em")
+  		.style("text-anchor", "end")
+  		.text(yAxisConfig);
+
+  	var xValue = function(d){ return that.x(d[xAxisConfig]); };
+  	var yValue = function(d){ return that.y(d[yAxisConfig]); };
+
+  	that.canvas.selectAll(".dot").remove();
+
+  	that.dots = that.canvas.selectAll(".dot")
+  		.data(this.props.data)
+  		.enter().append("circle")
+  		.attr("class", "dot")
+  		.attr("r", 3)
+  		.attr("cx", function(d){ return that.x(d[xAxisConfig]); })
+  		.attr("cy", function(d){ return that.y(d[yAxisConfig]); })
+  		.attr("fill",function(d){ return that.props.color;})
+  		.on("mouseover",function(d){
+  			that.tooltip.transition()
+  				.duration(100)
+  				.style("opacity", 1);
+  			that.tooltip.html(d.name)
+  				.style("left", (d3.event.pageX + 5) + "px")
+  				.style("top", (d3.event.pageY -28) + "px");
+  		})
+  		.on("mouseout", function(d){
+  			that.tooltip.transition()
+  				.duration(100)
+  				.style("opacity", 0);
+  		});
+
+  },
+
+  render: function() {
+     return ( <div className="ExtendingArcs"></div> ) ;
+  }
+ }); at SyntaxError: Unexpected token (134:14)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

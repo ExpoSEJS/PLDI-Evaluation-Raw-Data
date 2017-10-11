@@ -1,0 +1,73 @@
+
+> bson@0.1.8 install /root/Targets/applyjs/node_modules/mongodb/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/applyjs/node_modules/mongodb/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:90: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/applyjs/node_modules/mongodb/node_modules/bson/build'
+/root/Targets/applyjs
+└─┬ applyjs@0.0.32 
+  ├── bson@1.0.4 
+  └─┬ mongodb@1.2.14 
+    └── bson@0.1.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/applyjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 28.000000000000004% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 28.000000000000004% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","apply","call","pow","random","parseInt","RegExp","isNaN","isFinite","toString","reverse","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0863 took 61.9572s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Cannot read property 'unresolved' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 62.3644 took 61.274s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/applyjs/node_modules/applyjs/dist/node/apply.node.js. Coverage (Term): 47% Coverage (LOC): 58%
+*- File /root/Targets/applyjs/node_modules/mongodb/lib/mongodb/index.js. Coverage (Term): 74% Coverage (LOC): 75%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/index.js. Coverage (Term): 39% Coverage (LOC): 39%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/bson.js. Coverage (Term): 9% Coverage (LOC): 34%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/double.js. Coverage (Term): 41% Coverage (LOC): 57%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/objectid.js. Coverage (Term): 17% Coverage (LOC): 36%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/binary_parser.js. Coverage (Term): 8% Coverage (LOC): 30%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/symbol.js. Coverage (Term): 41% Coverage (LOC): 60%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/code.js. Coverage (Term): 33% Coverage (LOC): 43%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/min_key.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/max_key.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/db_ref.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/binary.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/lib/bson/float_parser.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/applyjs/node_modules/mongodb/node_modules/bson/ext/index.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/applyjs/node_modules/mongodb/lib/mongodb/commands/base_command.js. Coverage (Term): 60% Coverage (LOC): 80%
+*- File /root/Targets/applyjs/node_modules/mongodb/lib/mongodb/admin.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/applyjs/node_modules/mongodb/lib/mongodb/collection.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/applyjs/node_modules/bson/index.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/bson.js. Coverage (Term): 55% Coverage (LOC): 69%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/float_parser.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/map.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/double.js. Coverage (Term): 45% Coverage (LOC): 60%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/objectid.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/regexp.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/symbol.js. Coverage (Term): 44% Coverage (LOC): 62%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/int_32.js. Coverage (Term): 47% Coverage (LOC): 60%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/code.js. Coverage (Term): 42% Coverage (LOC): 47%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/decimal128.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/min_key.js. Coverage (Term): 56% Coverage (LOC): 63%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/max_key.js. Coverage (Term): 56% Coverage (LOC): 63%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/db_ref.js. Coverage (Term): 34% Coverage (LOC): 41%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/binary.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/parser/deserializer.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/parser/serializer.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/applyjs/node_modules/bson/lib/bson/parser/calculate_size.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

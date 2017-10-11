@@ -1,0 +1,103 @@
+/root/Targets/react-rails-hellojs
+└─┬ react-rails-hellojs@0.1.0 
+  ├─┬ 6to5@1.15.0 
+  │ ├── acorn-6to5@0.9.1-12 
+  │ ├── ast-types@0.6.5 
+  │ ├─┬ chokidar@0.11.1 
+  │ │ ├── async-each@0.1.6 
+  │ │ └─┬ readdirp@1.1.0 
+  │ │   ├── graceful-fs@2.0.3 
+  │ │   ├─┬ minimatch@0.2.14 
+  │ │   │ ├── lru-cache@2.7.3 
+  │ │   │ └── sigmund@1.0.1 
+  │ │   └─┬ readable-stream@1.0.34 
+  │ │     ├── core-util-is@1.0.2 
+  │ │     ├── inherits@2.0.3 
+  │ │     ├── isarray@0.0.1 
+  │ │     └── string_decoder@0.10.31 
+  │ ├── commander@2.5.0 
+  │ ├── es6-shim@0.21.0 
+  │ ├─┬ es6-symbol@0.1.1 
+  │ │ ├── d@0.1.1 
+  │ │ └─┬ es5-ext@0.10.30 
+  │ │   ├─┬ es6-iterator@2.0.1 
+  │ │   │ ├── d@1.0.0 
+  │ │   │ └── es6-symbol@3.1.1 
+  │ │   └─┬ es6-symbol@3.1.1 
+  │ │     └── d@1.0.0 
+  │ ├── estraverse@1.8.0 
+  │ ├── esutils@1.1.6 
+  │ ├── fs-readdir-recursive@0.1.0 
+  │ ├── lodash@2.4.1 
+  │ ├─┬ mkdirp@0.5.0 
+  │ │ └── minimist@0.0.8 
+  │ ├── private@0.1.6 
+  │ ├─┬ regexpu@0.3.0 
+  │ │ ├─┬ recast@0.8.8 
+  │ │ │ ├── ast-types@0.5.7 
+  │ │ │ ├── cls@0.1.5 
+  │ │ │ ├── depd@1.0.1 
+  │ │ │ └── source-map@0.1.32 
+  │ │ ├── regenerate@1.3.3 
+  │ │ ├── regjsgen@0.2.0 
+  │ │ └─┬ regjsparser@0.1.5 
+  │ │   └── jsesc@0.5.0 
+  │ ├─┬ source-map@0.1.40 
+  │ │ └── amdefine@1.0.1 
+  │ └─┬ source-map-support@0.2.8 
+  │   └── source-map@0.1.32 
+  ├── bluebird@2.11.0 
+  ├── co@3.1.0 
+  ├─┬ lodash-next@0.1.9 
+  │ ├── fast-json-patch@0.4.0 
+  │ ├─┬ regenerator@0.6.10 
+  │ │ ├── commander@2.3.0 
+  │ │ ├─┬ defs@1.0.1 
+  │ │ │ ├─┬ alter@0.2.0 
+  │ │ │ │ └── stable@0.1.6 
+  │ │ │ ├── ast-traverse@0.1.1 
+  │ │ │ ├── breakable@1.0.0 
+  │ │ │ ├── esprima@1.1.0-dev-harmony  (git://github.com/ariya/esprima.git#a65a3eb93b9a5dce9a1184ca2d1bd0b184c6b8fd)
+  │ │ │ ├── simple-fmt@0.1.0 
+  │ │ │ ├── simple-is@0.2.0 
+  │ │ │ ├── stringmap@0.2.2 
+  │ │ │ ├── stringset@0.2.1 
+  │ │ │ ├── tryor@0.1.2 
+  │ │ │ └── yargs@1.3.3 
+  │ │ ├── esprima-fb@7001.1.0-dev-harmony-fb 
+  │ │ ├─┬ promise@6.0.1 
+  │ │ │ └── asap@1.0.0 
+  │ │ ├─┬ recast@0.9.18 
+  │ │ │ └── esprima-fb@10001.1.0-dev-harmony-fb 
+  │ │ └── through@2.3.8 
+  │ └─┬ sha256@0.1.1 
+  │   ├── convert-hex@0.1.0 
+  │   └── convert-string@0.1.0 
+  └─┬ should@4.6.5 
+    ├── should-equal@0.3.1 
+    ├── should-format@0.0.7 
+    └── should-type@0.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-rails-hellojs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 6% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0585 took 14.0369s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/react-rails-hellojs/node_modules/react-rails-hellojs/dist/index.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/react-rails-hellojs/node_modules/6to5/polyfill.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/react-rails-hellojs/node_modules/6to5/lib/6to5/polyfill.js. Coverage (Term): 18% Coverage (LOC): 31%
+*- File /root/Targets/react-rails-hellojs/node_modules/es6-shim/es6-shim.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

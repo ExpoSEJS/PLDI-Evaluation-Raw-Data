@@ -1,0 +1,207 @@
+/root/Targets/node-atlas
+└─┬ node-atlas@2.0.0-beta50 
+  └─┬ imagemin-svgo@5.2.2
+    └─┬ svgo@0.7.2
+      └─┬ csso@2.3.2
+        └── clap@1.2.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-atlas/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.078 took 3.2807s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+/*------------------------------------*\
+	SUMMARY
+\*------------------------------------*/
+/* jslint node: true */
+
+/*
+ * ABOUT..........................Informations about NodeAtlas.
+ * ALIAS..........................Come from index.js into this file.
+ * SUMMARY........................It's me !
+ * NODE ATLAS FUNCTION............Creation of Main Function.
+ *   CONFIGURATION................Global configuration variables, command tool and webconfig.
+ *   GLOBAL FUNCTIONS.............Neutral functions used more once.
+ *   NODE MODULES.................Functions used to load Node Modules.
+ *   WEB SERVER...................Functions used to run pages on http(s) protocol and use middlewares.
+ *   ROUTES.......................Functions used to add route to the server.
+ *   FRONT-END PART...............Functions used for manage Front-end part.
+ *   TOOLS........................Functions used for manage Back-end part.
+ *   ASSETS GENERATION............Functions used for create HTML assets.
+ *   INIT.........................Run all JavaScript.
+ * RUN............................Starting program.
+ */
+
+
+
+
+
+/*------------------------------------*\
+	NODE ATLAS FUNCTION
+\*------------------------------------*/
+
+var configuration = require("../lib/configuration"),
+	modules = require("../lib/modules"),
+	globals = require("../lib/globals"),
+	server = require("../lib/server"),
+	routes = require("../lib/routes"),
+	response = require("../lib/response"),
+	tools = require("../lib/tools"),
+	generation = require("../lib/generation"),
+	init = require("../lib/init"),
+
+/**
+ * Creates a new instance of NodeAtlas Website.
+ * @class NA
+ */
+NA = function () {
+
+	/* Shortcut for use NA without `new` keyword. */
+	if (!(this instanceof NA)) {
+		return new NA();
+	}
+
+	/* INIT */
+	this.configuration = init.configuration;
+	this.afterGeneration = init.afterGeneration;
+	this.afterClosing = init.afterClosing;
+	this.afterRunning = init.afterRunning;
+	this.afterNewProject = init.afterNewProject;
+};
+
+/* CONFIGURATION */
+NA.prototype.initCliConfiguration = configuration.initCliConfiguration;
+NA.prototype.initRequiredVars = configuration.initRequiredVars;
+NA.prototype.initRequiredNpmModulesVars = configuration.initRequiredNpmModulesVars;
+NA.prototype.initWebsite = configuration.initWebsite;
+NA.prototype.initServerModules = configuration.initServerModules;
+NA.prototype.createWebconfig = configuration.createWebconfig;
+
+/* NODE MODULES */
+NA.prototype.initNodeModules = modules.initNodeModules;
+NA.prototype.initNpmModules = modules.initNpmModules;
+
+/* GLOBAL FUNCTIONS */
+NA.prototype.openConfiguration = globals.openConfiguration;
+NA.prototype.log = globals.log;
+NA.prototype.openController = globals.openController;
+NA.prototype.openView = globals.openView;
+NA.prototype.openVariation = globals.openVariation;
+NA.prototype.extend = globals.extend;
+NA.prototype.clone = globals.clone;
+NA.prototype.forEach = globals.forEach;
+NA.prototype.ifFileExist = globals.ifFileExist;
+NA.prototype.common = globals.common;
+NA.prototype.specific = globals.specific;
+NA.prototype.view = globals.view;
+
+/* WEB SERVER */
+NA.prototype.simpleWebServer = server.simpleWebServer;
+NA.prototype.nodeAtlasWebServer = server.nodeAtlasWebServer;
+NA.prototype.initMiddlewares = server.initMiddlewares;
+NA.prototype.initLessProcess = server.initLessProcess;
+NA.prototype.initStylusProcess = server.initStylusProcess;
+NA.prototype.initSessions = server.initSessions;
+NA.prototype.initSockets = server.initSockets;
+NA.prototype.initConfigurations = server.initConfigurations;
+NA.prototype.initServer = server.initServer;
+
+/* ROUTES */
+NA.prototype.initStatics = routes.initStatics;
+NA.prototype.initRoutes = routes.initRoutes;
+NA.prototype.indexPage = routes.indexPage;
+
+NA.prototype.sendResponse = routes.sendResponse;
+NA.prototype.redirect = routes.redirect;
+NA.prototype.executeRequest = routes.executeRequest;
+NA.prototype.request = routes.request;
+NA.prototype.requestRegex = routes.requestRegex;
+NA.prototype.pageNotFound = routes.pageNotFound;
+
+/* RESPONSE */
+NA.prototype.prepareResponse = response.prepareResponse;
+NA.prototype.prepareHeaders = response.prepareHeaders;
+
+NA.prototype.prepareRenderLanguage = response.prepareRenderLanguage;
+NA.prototype.prepareRenderPath = response.prepareRenderPath;
+NA.prototype.prepareRenderVariation = response.prepareRenderVariation;
+NA.prototype.changeVariationsCommon = response.changeVariationsCommon;
+NA.prototype.changeVariationsSpecific = response.changeVariationsSpecific;
+NA.prototype.changeDomCommon = response.changeDomCommon;
+NA.prototype.changeDomSpecific = response.changeDomSpecific;
+NA.prototype.intoBrowserAndFiles = response.intoBrowserAndFiles;
+NA.prototype.renderTemplate = response.renderTemplate;
+
+/* TOOLS */
+NA.prototype.cssAlreadyParse = tools.cssAlreadyParse;
+NA.prototype.injectCssAuth = tools.injectCssAuth;
+NA.prototype.prepareCssInjection = tools.prepareCssInjection;
+NA.prototype.injectCss = tools.injectCss;
+NA.prototype.lessCompilation = tools.lessCompilation;
+NA.prototype.stylusCompilation = tools.stylusCompilation;
+NA.prototype.cssCompilation = tools.cssCompilation;
+NA.prototype.cssMinification = tools.cssMinification;
+NA.prototype.imgOptimization = tools.imgOptimization;
+NA.prototype.jsObfuscation = tools.jsObfuscation;
+
+/* ASSETS GENERATION */
+NA.prototype.createTemplateProject = generation.createTemplateProject;
+NA.prototype.initOutputs = generation.initOutputs;
+NA.prototype.publicsGeneration = generation.publicsGeneration;
+NA.prototype.staticsGeneration = generation.staticsGeneration;
+NA.prototype.generateAssets = generation.generateAssets;
+NA.prototype.saveRender = generation.saveRender;
+
+/* INIT */
+NA.prototype.changeLanguage = init.changeLanguage;
+NA.prototype.init = init.init;
+NA.prototype.generated = init.generated;
+NA.prototype.started = init.started;
+NA.prototype.created = init.created;
+NA.prototype.stopped = init.stopped;
+NA.prototype.stop = init.stop;
+NA.prototype.start = init.start;
+NA.prototype.run = init.run;
+
+
+
+
+
+/*------------------------------------*\
+	RUN
+\*------------------------------------*/
+
+/* Run script with CLI. */
+if (require.main === module) {
+	/* Expose the NA object for isomorphism */
+	global.NA = new NA();
+	global.NA.start();
+}
+
+/* Run script with require as an API. */
+module.exports = NA; at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/node-atlas/node_modules/node-atlas/index.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

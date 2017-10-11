@@ -1,0 +1,705 @@
+
+> node-opcua-client@0.1.0-7 postinstall /root/Targets/node-opcua/node_modules/node-opcua-client
+> node test_helpers/create_certificates.js certificate -s -o certificates/client_selfsigned_cert_1024.pem
+
+ Creating default g_config file  /root/Targets/node-opcua/node_modules/node-opcua-client/certificates/config.js
+ configuration = 
+   subject                        : /C=FR/ST=IDF/L=Paris/O=NodeOPCUA/CN=NodeOPCUA-TEST
+   validity                       : 5475
+   keySize                        : 2048
+   certificateDir                 : /root/Targets/node-opcua/node_modules/node-opcua-client/certificates
+   CAFolder                       : /root/Targets/node-opcua/node_modules/node-opcua-client/certificates/CA
+   PKIFolder                      : /root/Targets/node-opcua/node_modules/node-opcua-client/certificates/PKI
+   privateKey                     : /root/Targets/node-opcua/node_modules/node-opcua-client/certificates/PKI
+   applicationUri                 : urn:expose1.lxd:Node-OPCUA-Server
+   outputFile                     : certificates/client_selfsigned_cert_1024.pem
+   altNames                       : 
+   dns                            : expose1.lxd
+   ip                             : 
+OpenSSL version :  OpenSSL 1.0.2g  1 Mar 2016
+
+> node-opcua-server@0.1.0-7 postinstall /root/Targets/node-opcua/node_modules/node-opcua-server
+> node test_helpers/create_certificates.js certificate -s -o certificates/server_selfsigned_cert_2048.pem
+
+ Creating default g_config file  /root/Targets/node-opcua/node_modules/node-opcua-server/certificates/config.js
+ configuration = 
+   subject                        : /C=FR/ST=IDF/L=Paris/O=NodeOPCUA/CN=NodeOPCUA-TEST
+   validity                       : 5475
+   keySize                        : 2048
+   certificateDir                 : /root/Targets/node-opcua/node_modules/node-opcua-server/certificates
+   CAFolder                       : /root/Targets/node-opcua/node_modules/node-opcua-server/certificates/CA
+   PKIFolder                      : /root/Targets/node-opcua/node_modules/node-opcua-server/certificates/PKI
+   privateKey                     : /root/Targets/node-opcua/node_modules/node-opcua-server/certificates/PKI
+   applicationUri                 : urn:expose1.lxd:Node-OPCUA-Server
+   outputFile                     : certificates/server_selfsigned_cert_2048.pem
+   altNames                       : 
+   dns                            : expose1.lxd
+   ip                             : 
+OpenSSL version :  OpenSSL 1.0.2g  1 Mar 2016
+
+> node-opcua-server-discovery@0.1.0-7 postinstall /root/Targets/node-opcua/node_modules/node-opcua-server-discovery
+> node test_helpers/create_certificates.js certificate -s -o certificates/server_selfsigned_cert_2048.pem
+
+ Creating default g_config file  /root/Targets/node-opcua/node_modules/node-opcua-server-discovery/certificates/config.js
+ configuration = 
+   subject                        : /C=FR/ST=IDF/L=Paris/O=NodeOPCUA/CN=NodeOPCUA-TEST
+   validity                       : 5475
+   keySize                        : 2048
+   certificateDir                 : /root/Targets/node-opcua/node_modules/node-opcua-server-discovery/certificates
+   CAFolder                       : /root/Targets/node-opcua/node_modules/node-opcua-server-discovery/certificates/CA
+   PKIFolder                      : /root/Targets/node-opcua/node_modules/node-opcua-server-discovery/certificates/PKI
+   privateKey                     : /root/Targets/node-opcua/node_modules/node-opcua-server-discovery/certificates/PKI
+   applicationUri                 : urn:expose1.lxd:Node-OPCUA-Server
+   outputFile                     : certificates/server_selfsigned_cert_2048.pem
+   altNames                       : 
+   dns                            : expose1.lxd
+   ip                             : 
+OpenSSL version :  OpenSSL 1.0.2g  1 Mar 2016
+/root/Targets/node-opcua
+└─┬ node-opcua@0.1.0-7 
+  ├─┬ node-opcua-address-space@0.1.0-7 
+  │ ├─┬ async@2.5.0 
+  │ │ └── lodash@4.17.4 
+  │ ├── dequeue@1.0.5 
+  │ ├── node-opcua-basic-types@0.1.0-7 
+  │ ├── node-opcua-binary-stream@0.1.0-7 
+  │ ├── node-opcua-date-time@0.1.0-7 
+  │ ├── node-opcua-object-registry@0.1.0-7 
+  │ ├─┬ node-opcua-xml2json@0.1.0-7 
+  │ │ ├── bomstrip@0.1.4 
+  │ │ └─┬ ltx@2.7.1 
+  │ │   └── inherits@2.0.3 
+  │ ├── set-prototype-of@1.0.0 
+  │ ├── underscore@1.8.3 
+  │ └── xml-writer@1.7.0 
+  ├── node-opcua-address-space-for-conformance-testing@0.1.0-7 
+  ├─┬ node-opcua-assert@0.1.0-4 
+  │ └─┬ better-assert@1.0.2 
+  │   └── callsite@1.0.0 
+  ├─┬ node-opcua-client@0.1.0-7 
+  │ ├── delayed@1.0.1 
+  │ ├── node-opcua-buffer-utils@0.1.0-4 
+  │ ├─┬ node-opcua-pki@0.0.17 
+  │ │ ├── byline@5.0.0 
+  │ │ ├─┬ cli-table@0.3.1 
+  │ │ │ └── colors@1.0.3 
+  │ │ ├─┬ del@3.0.0 
+  │ │ │ ├─┬ globby@6.1.0 
+  │ │ │ │ ├─┬ array-union@1.0.2 
+  │ │ │ │ │ └── array-uniq@1.0.3 
+  │ │ │ │ ├─┬ glob@7.1.2 
+  │ │ │ │ │ ├── fs.realpath@1.0.0 
+  │ │ │ │ │ ├── inflight@1.0.6 
+  │ │ │ │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │ │ │   ├── balanced-match@1.0.0 
+  │ │ │ │ │ │   └── concat-map@0.0.1 
+  │ │ │ │ │ └── path-is-absolute@1.0.1 
+  │ │ │ │ ├── object-assign@4.1.1 
+  │ │ │ │ ├── pify@2.3.0 
+  │ │ │ │ └─┬ pinkie-promise@2.0.1 
+  │ │ │ │   └── pinkie@2.0.4 
+  │ │ │ ├── is-path-cwd@1.0.0 
+  │ │ │ ├─┬ is-path-in-cwd@1.0.0 
+  │ │ │ │ └─┬ is-path-inside@1.0.0 
+  │ │ │ │   └── path-is-inside@1.0.2 
+  │ │ │ ├── p-map@1.2.0 
+  │ │ │ ├── pify@3.0.0 
+  │ │ │ └── rimraf@2.6.2 
+  │ │ ├── progress@2.0.0 
+  │ │ ├─┬ requirish@0.3.0 
+  │ │ │ ├─┬ resolve@1.4.0 
+  │ │ │ │ └── path-parse@1.0.5 
+  │ │ │ └─┬ through2@2.0.3 
+  │ │ │   ├─┬ readable-stream@2.3.3 
+  │ │ │   │ ├── core-util-is@1.0.2 
+  │ │ │   │ ├── isarray@1.0.0 
+  │ │ │   │ ├── process-nextick-args@1.0.7 
+  │ │ │   │ ├── safe-buffer@5.1.1 
+  │ │ │   │ ├── string_decoder@1.0.3 
+  │ │ │   │ └── util-deprecate@1.0.2 
+  │ │ │   └── xtend@4.0.1 
+  │ │ ├─┬ walk@2.3.9 
+  │ │ │ └── foreachasync@3.0.0 
+  │ │ ├─┬ wget-improved@1.5.0 
+  │ │ │ ├── minimist@1.2.0 
+  │ │ │ └── tunnel@0.0.2 
+  │ │ ├─┬ yargs@8.0.2 
+  │ │ │ ├── camelcase@4.1.0 
+  │ │ │ ├─┬ cliui@3.2.0 
+  │ │ │ │ ├─┬ string-width@1.0.2 
+  │ │ │ │ │ ├── code-point-at@1.1.0 
+  │ │ │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │ │ │ │   └── number-is-nan@1.0.1 
+  │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ │ └─┬ wrap-ansi@2.1.0 
+  │ │ │ │   └── string-width@1.0.2 
+  │ │ │ ├── decamelize@1.2.0 
+  │ │ │ ├── get-caller-file@1.0.2 
+  │ │ │ ├─┬ os-locale@2.1.0 
+  │ │ │ │ ├─┬ execa@0.7.0 
+  │ │ │ │ │ ├─┬ cross-spawn@5.1.0 
+  │ │ │ │ │ │ ├─┬ lru-cache@4.1.1 
+  │ │ │ │ │ │ │ ├── pseudomap@1.0.2 
+  │ │ │ │ │ │ │ └── yallist@2.1.2 
+  │ │ │ │ │ │ ├─┬ shebang-command@1.2.0 
+  │ │ │ │ │ │ │ └── shebang-regex@1.0.0 
+  │ │ │ │ │ │ └─┬ which@1.3.0 
+  │ │ │ │ │ │   └── isexe@2.0.0 
+  │ │ │ │ │ ├── get-stream@3.0.0 
+  │ │ │ │ │ ├── is-stream@1.1.0 
+  │ │ │ │ │ ├─┬ npm-run-path@2.0.2 
+  │ │ │ │ │ │ └── path-key@2.0.1 
+  │ │ │ │ │ ├── p-finally@1.0.0 
+  │ │ │ │ │ ├── signal-exit@3.0.2 
+  │ │ │ │ │ └── strip-eof@1.0.0 
+  │ │ │ │ ├─┬ lcid@1.0.0 
+  │ │ │ │ │ └── invert-kv@1.0.0 
+  │ │ │ │ └─┬ mem@1.1.0 
+  │ │ │ │   └── mimic-fn@1.1.0 
+  │ │ │ ├─┬ read-pkg-up@2.0.0 
+  │ │ │ │ ├─┬ find-up@2.1.0 
+  │ │ │ │ │ └─┬ locate-path@2.0.0 
+  │ │ │ │ │   ├─┬ p-locate@2.0.0 
+  │ │ │ │ │   │ └── p-limit@1.1.0 
+  │ │ │ │ │   └── path-exists@3.0.0 
+  │ │ │ │ └─┬ read-pkg@2.0.0 
+  │ │ │ │   ├─┬ load-json-file@2.0.0 
+  │ │ │ │   │ ├── graceful-fs@4.1.11 
+  │ │ │ │   │ ├─┬ parse-json@2.2.0 
+  │ │ │ │   │ │ └─┬ error-ex@1.3.1 
+  │ │ │ │   │ │   └── is-arrayish@0.2.1 
+  │ │ │ │   │ ├── pify@2.3.0 
+  │ │ │ │   │ └── strip-bom@3.0.0 
+  │ │ │ │   ├─┬ normalize-package-data@2.4.0 
+  │ │ │ │   │ ├── hosted-git-info@2.5.0 
+  │ │ │ │   │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ │   │ │ └── builtin-modules@1.1.1 
+  │ │ │ │   │ ├── semver@5.4.1 
+  │ │ │ │   │ └─┬ validate-npm-package-license@3.0.1 
+  │ │ │ │   │   ├─┬ spdx-correct@1.0.2 
+  │ │ │ │   │   │ └── spdx-license-ids@1.2.2 
+  │ │ │ │   │   └── spdx-expression-parse@1.0.4 
+  │ │ │ │   └─┬ path-type@2.0.0 
+  │ │ │ │     └── pify@2.3.0 
+  │ │ │ ├── require-directory@2.1.1 
+  │ │ │ ├── require-main-filename@1.0.1 
+  │ │ │ ├── set-blocking@2.0.0 
+  │ │ │ ├─┬ string-width@2.1.1 
+  │ │ │ │ ├── is-fullwidth-code-point@2.0.0 
+  │ │ │ │ └─┬ strip-ansi@4.0.0 
+  │ │ │ │   └── ansi-regex@3.0.0 
+  │ │ │ ├── which-module@2.0.0 
+  │ │ │ ├── y18n@3.2.1 
+  │ │ │ └── yargs-parser@7.0.0 
+  │ │ └─┬ yauzl@2.8.0 
+  │ │   ├── buffer-crc32@0.2.13 
+  │ │   └─┬ fd-slicer@1.0.1 
+  │ │     └── pend@1.2.0 
+  │ └─┬ once@1.4.0 
+  │   └── wrappy@1.0.2 
+  ├── node-opcua-client-crawler@0.1.0-7 
+  ├── node-opcua-common@0.1.0-7 
+  ├── node-opcua-constants@0.1.0-4 
+  ├─┬ node-opcua-crypto@0.0.11 
+  │ ├── colors@1.1.2 
+  │ ├── hexy@0.2.10 
+  │ ├── jsrsasign@7.2.2 
+  │ └─┬ ssh-key-to-pem@0.11.1 
+  │   ├── asn1@0.1.11 
+  │   └── ctype@0.5.2 
+  ├── node-opcua-data-access@0.1.0-7 
+  ├── node-opcua-data-model@0.1.0-7 
+  ├── node-opcua-data-value@0.1.0-7 
+  ├── node-opcua-debug@0.1.0-7 
+  ├── node-opcua-enum@0.1.0-7 
+  ├─┬ node-opcua-factory@0.1.0-7 
+  │ └── node-opcua-guid@0.1.0-7 
+  ├─┬ node-opcua-hostname@0.1.0-4 
+  │ └─┬ fqdn@0.0.3 
+  │   └── shelljs@0.3.0 
+  ├── node-opcua-nodeid@0.1.0-7 
+  ├── node-opcua-nodesets@0.1.0-7 
+  ├── node-opcua-numeric-range@0.1.0-7 
+  ├── node-opcua-packet-analyzer@0.1.0-7 
+  ├─┬ node-opcua-secure-channel@0.1.0-7 
+  │ ├─┬ backoff@2.5.0 
+  │ │ └── precond@0.2.3 
+  │ └── node-opcua-chunkmanager@0.1.0-7 
+  ├── node-opcua-server@0.1.0-7 
+  ├── node-opcua-server-discovery@0.1.0-7 
+  ├── node-opcua-service-browse@0.1.0-7 
+  ├── node-opcua-service-call@0.1.0-7 
+  ├── node-opcua-service-endpoints@0.1.0-7 
+  ├── node-opcua-service-filter@0.1.0-7 
+  ├─┬ node-opcua-service-history@0.1.0-7 
+  │ └── node-opcua-extension-object@0.1.0-7 
+  ├── node-opcua-service-node-management@0.1.0-7 
+  ├── node-opcua-service-query@0.1.0-7 
+  ├── node-opcua-service-read@0.1.0-7 
+  ├── node-opcua-service-register-node@0.1.0-7 
+  ├── node-opcua-service-register-server@0.1.0-7 
+  ├── node-opcua-service-secure-channel@0.1.0-7 
+  ├── node-opcua-service-session@0.1.0-7 
+  ├── node-opcua-service-subscription@0.1.0-7 
+  ├── node-opcua-service-translate-browse-path@0.1.0-7 
+  ├── node-opcua-service-write@0.1.0-7 
+  ├── node-opcua-status-code@0.1.0-7 
+  ├─┬ node-opcua-transport@0.1.0-7 
+  │ └── node-opcua-packet-assembler@0.1.0-7 
+  ├── node-opcua-utils@0.1.0-7 
+  ├── node-opcua-variant@0.1.0-7 
+  └─┬ node-opcua-vendor-diagnostic@0.1.0-7 
+    └── humanize@0.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-opcua/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0926 took 4.3855s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (8:4) on program "use strict";
+/* global Buffer */
+/**
+ * @module opcua.datamodel
+ */
+
+var Enum = require("node-opcua-enum");
+var assert = require("node-opcua-assert");
+var isValidGuid = require("node-opcua-guid").isValidGuid;
+var emptyGuid = require("node-opcua-guid").emptyGuid;
+var _ = require("underscore");
+/**
+ * `NodeIdType` an enumeration that specifies the possible types of a `NodeId` value.
+ * @class NodeIdType
+ */
+var NodeIdType = new Enum({
+    /**
+     * @static
+     * @property NUMERIC
+     * @type EnumItem
+     * @default 0x1
+     */
+    NUMERIC: 0x01,
+    /**
+     * @static
+     * @property STRING
+     * @type EnumItem
+     * @default 0x2
+     */
+    STRING: 0x02,
+    /**
+     * @static
+     * @property GUID
+     * @type EnumItem
+     * @default 0x3
+     */
+    GUID: 0x03,
+    /**
+     * @static
+     * @property BYTESTRING
+     * @type EnumItem
+     * @default 0x4
+     */
+    BYTESTRING: 0x04
+});
+exports.NodeIdType = NodeIdType;
+
+/**
+ * Construct a node ID
+ *
+ * @class NodeId
+ * @param {NodeIdType}                identifierType   - the nodeID type
+ * @param {Number|String|GUID|Buffer} value            - the node id value. The type of Value depends on identifierType.
+ * @param {Number}                    namespace        - the index of the related namespace (optional , default value = 0 )
+ * @example
+ *
+ *    ``` javascript
+ *    var nodeId = new NodeId(NodeIdType.NUMERIC,123,1);
+ *    ```
+ * @constructor
+ */
+function NodeId(identifierType, value, namespace) {
+
+    /**
+     * @property identifierType
+     * @type {NodeIdType}
+     */
+    this.identifierType = NodeIdType.get(identifierType.value);
+
+    assert(this.identifierType);
+    /**
+     * @property  value
+     * @type  {*}
+     */
+
+    this.value = value;
+    /**
+     * @property namespace
+     * @type {Number}
+     */
+    this.namespace = namespace || 0;
+
+    // namespace shall be a UInt16
+    assert(this.namespace >= 0 && this.namespace <= 0xFFFF);
+
+    assert(this.identifierType !== NodeIdType.NUMERIC || (this.value >= 0 && this.value <= 0xFFFFFFFF));
+    assert(this.identifierType !== NodeIdType.GUID || isValidGuid(this.value));
+    assert(this.identifierType !== NodeIdType.STRING || typeof this.value === "string");
+
+}
+NodeId.NodeIdType = NodeIdType;
+
+/**
+ * get the string representation of the nodeID.
+ *
+ * @method toString
+ * @example
+ *
+ *    ``` javascript
+ *    var nodeid = new NodeId(NodeIdType.NUMERIC, 123,1);
+ *    console.log(nodeid.toString());
+ *    ```
+ *
+ *    ```
+ *    >"ns=1;i=123"
+ *    ```
+ *
+ * @param [options.addressSpace] {AddressSpace}
+ * @return {String}
+ */
+NodeId.prototype.toString = function (options) {
+
+    var addressSpace = options ? options.addressSpace : null;
+    var str;
+    switch (this.identifierType) {
+        case NodeIdType.NUMERIC:
+            str = "ns=" + this.namespace + ";i=" + this.value;
+            break;
+        case NodeIdType.STRING:
+            str = "ns=" + this.namespace + ";s=" + this.value;
+            break;
+        case NodeIdType.GUID:
+            str = "ns=" + this.namespace + ";g=" + this.value;
+            break;
+        default:
+            assert(this.identifierType === NodeIdType.BYTESTRING, "invalid identifierType in NodeId : " + this.identifierType);
+            str = "ns=" + this.namespace + ";b=" + this.value.toString("hex");
+            break;
+    }
+
+    if (addressSpace) {
+        if (this.namespace === 0 && (this.identifierType === NodeIdType.NUMERIC)) {
+            // find standard browse name
+            var name = reverse_map(this.value) || "<undefined>";
+            str += " " + name.green.bold;
+        } else {
+            // let use the provided address space to figure out the browseNode of this node.
+            // to make the message a little bit more useful.
+            var n = addressSpace.findNode(this);
+            str += " " + (n ? n.browseName.toString().green : " (????)");
+        }
+    }
+    return str;
+};
+
+
+/**
+ * convert nodeId to a JSON string. same as {@link NodeId#toString }
+ * @method  toJSON
+ * @return {String}
+ */
+NodeId.prototype.toJSON = function () {
+    return this.toString();
+};
+
+
+/**
+ * @method isEmpty
+ * @return {Boolean} true if the NodeId is null or empty
+ */
+NodeId.prototype.isEmpty = function () {
+    switch (this.identifierType) {
+        case NodeIdType.NUMERIC:
+            return this.value === 0;
+        case NodeIdType.STRING:
+            return !this.value || this.value.length === 0;
+        case NodeIdType.GUID:
+            return !this.value || this.value === emptyGuid;
+        default:
+            assert(this.identifierType === NodeIdType.BYTESTRING, "invalid identifierType in NodeId : " + this.identifierType);
+            return !this.value || this.value.length === 0;
+    }
+};
+
+NodeId.NullNodeId = new NodeId(NodeIdType.NUMERIC,0);
+
+exports.NodeId = NodeId;
+
+
+var rege_ns_i = /ns=([0-9]+);i=([0-9]+)/;
+var rege_ns_s = /ns=([0-9]+);s=(.*)/;
+var rege_ns_b = /ns=([0-9]+);b=(.*)/;
+var rege_ns_g = /ns=([0-9]+);g=(.*)/;
+
+
+/**
+ * Convert a value into a nodeId:
+ * @class opcua
+ * @method coerceNodeId
+ * @static
+ *
+ * @description:
+ *    - if nodeId is a string of form : "i=1234" => nodeId({ namespace: 0 , value=1234  , identifierType: NodeIdType.NUMERIC})
+ *    - if nodeId is a string of form : "s=foo"  => nodeId({ namespace: 0 , value="foo" , identifierType: NodeIdType.STRING})
+ *    - if nodeId is a {@link NodeId} :  coerceNodeId returns value
+ *
+ * @param value
+ * @param namespace {Integer}
+ */
+function coerceNodeId(value, namespace) {
+
+    var matches, two_first;
+
+    if (value instanceof NodeId) {
+        return value;
+    }
+
+    value = value || 0;
+    namespace = namespace || 0;
+
+    var identifierType = NodeIdType.NUMERIC;
+
+    if (typeof value === "string") {
+        identifierType = NodeIdType.STRING;
+
+        two_first = value.substr(0, 2);
+        if (two_first === "i=") {
+
+            identifierType = NodeIdType.NUMERIC;
+            value = parseInt(value.substr(2), 10);
+
+        } else if (two_first === "s=") {
+
+            identifierType = NodeIdType.STRING;
+            value = value.substr(2);
+
+        } else if (two_first === "b=") {
+
+            identifierType = NodeIdType.BYTESTRING;
+            value = Buffer.from(value.substr(2), "hex");
+
+        } else if (two_first === "g=") {
+
+            identifierType = NodeIdType.GUID;
+            value = value.substr(2);
+
+        } else if (isValidGuid(value)) {
+
+            identifierType = NodeIdType.GUID;
+
+        } else if ((matches = rege_ns_i.exec(value)) !== null) {
+            identifierType = NodeIdType.NUMERIC;
+            namespace = parseInt(matches[1], 10);
+            value = parseInt(matches[2], 10);
+
+        } else if ((matches = rege_ns_s.exec(value)) !== null) {
+
+            identifierType = NodeIdType.STRING;
+            namespace = parseInt(matches[1], 10);
+            value = matches[2];
+
+        } else if ((matches = rege_ns_b.exec(value)) !== null) {
+            identifierType = NodeIdType.BYTESTRING;
+            namespace = parseInt(matches[1], 10);
+            value = Buffer.from(matches[2], "hex");
+
+        } else if ((matches = rege_ns_g.exec(value)) !== null) {
+            identifierType = NodeIdType.GUID;
+            namespace = parseInt(matches[1], 10);
+            value = matches[2];
+        } else {
+            throw new Error("String cannot be coerced to a nodeId : " + value);
+        }
+
+    } else if (value instanceof Buffer) {
+        identifierType = NodeIdType.BYTESTRING;
+
+    } else if (value instanceof Object) {
+
+        console.log( "xxxx VALUE = ",value);
+
+        var tmp = value;
+        value = tmp.value;
+        namespace = namespace || tmp.namespace;
+        identifierType = tmp.identifierTypes;
+        return new NodeId(value, namespace);
+    }
+    return new NodeId(identifierType, value, namespace);
+}
+exports.coerceNodeId = coerceNodeId;
+
+
+/**
+ * construct a node Id from a value and a namespace.
+ * @class opcua
+ * @method makeNodeId
+ * @static
+ * @param {String|Buffer} value
+ * @param [namespace]=0 {Number} the node id namespace
+ * @return {NodeId}
+ */
+var makeNodeId = function makeNodeId(value, namespace) {
+
+    value = value || 0;
+    namespace = namespace || 0;
+
+    var identifierType = NodeIdType.NUMERIC;
+    if (typeof value === "string") {
+        //            1         2         3
+        //  012345678901234567890123456789012345
+        // "72962B91-FA75-4AE6-8D28-B404DC7DAF63"
+        if (isValidGuid(value)) {
+            identifierType = NodeIdType.GUID;
+        } else {
+            identifierType = NodeIdType.STRING;
+            // detect accidental string of form "ns=x;x";
+            assert(value.indexOf("ns=") === -1, " makeNodeId(string) ? did you mean using coerceNodeId instead? ");
+        }
+    } else if (value instanceof Buffer) {
+        identifierType = NodeIdType.BYTESTRING;
+    }
+
+    var nodeId = new NodeId(identifierType, value, namespace);
+
+    assert(nodeId.hasOwnProperty("identifierType"));
+
+    return nodeId;
+};
+
+exports.makeNodeId = makeNodeId;
+
+var constants = require("node-opcua-constants");
+
+var DataTypeIds = constants.DataTypeIds;
+var VariableIds = constants.VariableIds;
+var ObjectIds = constants.ObjectIds;
+var ObjectTypeIds = constants.ObjectTypeIds;
+var VariableTypeIds = constants.VariableTypeIds;
+var MethodIds = constants.MethodIds;
+var ReferenceTypeIds = constants.ReferenceTypeIds;
+
+// reverse maps
+var _nodeid_to_name_index = {};
+var _name_to_nodeid_index = {};
+
+(function build_standard_nodeid_indexes() {
+
+    function expand_map(direct_index) {
+        for (var name in direct_index) {
+            if (direct_index.hasOwnProperty(name)) {
+                var value = direct_index[name];
+                _nodeid_to_name_index[value] = name;
+                _name_to_nodeid_index[name] = new NodeId(NodeIdType.NUMERIC, value, 0);
+            }
+        }
+    }
+
+    _nodeid_to_name_index = {};
+    _name_to_nodeid_index = {};
+    expand_map(ObjectIds);
+    expand_map(ObjectTypeIds);
+    expand_map(VariableIds);
+    expand_map(VariableTypeIds);
+    expand_map(MethodIds);
+    expand_map(ReferenceTypeIds);
+    expand_map(DataTypeIds);
+
+})();
+
+function reverse_map(nodeId) {
+    return _nodeid_to_name_index[nodeId];
+}
+
+
+/**
+ * @class opcua
+ * @method resolveNodeId
+ * @static
+ * @param node_or_string {NodeId|String}
+ * @return {NodeId}
+ */
+function resolveNodeId(node_or_string) {
+
+    var nodeId;
+    var raw_id = _name_to_nodeid_index[node_or_string];
+    if (raw_id !== undefined) {
+        return raw_id;
+    } else {
+        nodeId = coerceNodeId(node_or_string);
+    }
+    return nodeId;
+}
+
+exports.resolveNodeId = resolveNodeId;
+
+
+/**
+ * @class NodeId
+ * @method displayText
+ * @return {String}
+ */
+NodeId.prototype.displayText = function () {
+
+    if (this.namespace === 0 && this.identifierType === NodeIdType.NUMERIC) {
+        var name = reverse_map(this.value);
+        if (name) {
+            return name + " (" + this.toString() + ")";
+        }
+    }
+    return this.toString();
+
+};
+
+
+
+function sameNodeId(n1,n2) {
+    if (n1.identifierType.value !== n2.identifierType.value) {
+        return false;
+    }
+    if (n1.namespace !== n2.namespace) {
+        return false;
+    }
+    switch(n1.identifierType.value) {
+        case NodeIdType.NUMERIC.value:
+        case NodeIdType.STRING.value:
+            return n1.value === n2.value;
+        default:
+            return _.isEqual(n1.value,n2.value);
+    }
+}
+exports.sameNodeId = sameNodeId;
+ at SyntaxError: Unexpected token (8:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/node-opcua/node_modules/node-opcua/index.js. Coverage (Term): 2% Coverage (LOC): 4%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,37 @@
+
+> clientjs@1.0.0-rc.1 postinstall /root/Targets/deep-framework/node_modules/clientjs
+> node scripts/install.js
+
+/root/Targets/deep-framework
+└─┬ deep-framework@1.12.46 
+  ├─┬ deep-db@1.12.25
+  │ ├── local-dynamo@0.1.2  (git://github.com/mitocgroup/local-dynamo.git#45d5c671a5508c874eb11a979c77a372476a8aff)
+  │ └── vogels@2.2.0  (git://github.com/mitocgroup/vogels.git#dff8d9143cb2300e28427bddb35497c101fb5c23)
+  ├─┬ deep-event@1.12.11
+  │ └── clientjs@1.0.0-rc.1  (git://github.com/mitocgroup/clientjs.git#94647b2fad9e185827ce04b7d3d5672cdb0c33e1)
+  ├─┬ deep-fs@1.12.11
+  │ ├── relative-fs@0.0.1  (git://github.com/mitocgroup/relative-fs.git#71c6509f57eae081d0f72191072b3ea6fcd6581e)
+  │ └── s3fs@2.4.0  (git://github.com/mitocgroup/s3fs.git#306c7b5e968ada4b4d7062dcdb3113f4e48c4c27)
+  ├─┬ deep-security@1.12.16
+  │ └── amazon-cognito-js@1.0.0  (git://github.com/mitocgroup/amazon-cognito-js.git#2e5e68bdc82487b8a85351733a59108e04324d81)
+  └── uglify-js@2.8.22  (git://github.com/mishoo/UglifyJS2.git#278577f3cb75e72320564805ee91be63e5f9c806)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/deep-framework/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0392 took 3.1825s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token .
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/deep-framework/node_modules/deep-framework/lib.compiled/bootstrap.js. Coverage (Term): 21% Coverage (LOC): 16%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

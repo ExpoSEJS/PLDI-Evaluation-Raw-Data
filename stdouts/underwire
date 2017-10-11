@@ -1,0 +1,112 @@
+
+> underwire@0.0.7 preuninstall /root/Targets/underwire/node_modules/underwire
+> rm -rf dist/; rm -rf web/site/; rm -rf plugins/hapi-swagger/node_modules/
+
+
+> underwire@0.0.7 install /root/Targets/underwire/node_modules/underwire
+> npm run compile
+
+
+> underwire@0.0.7 compile /root/Targets/underwire/node_modules/underwire
+> npm run compile-ui
+
+
+> underwire@0.0.7 compile-ui /root/Targets/underwire/node_modules/underwire
+> NODE_ENV=production rm -rf web/site/; webpack --colors --display-error-details --config configs/webpack.client.js
+
+Hash: [1md6158ea56f32eebde32e[22m
+Version: webpack [1m1.15.0[22m
+Time: [1m2351[22mms
+     [1mAsset[22m       [1mSize[22m  [1mChunks[22m  [1m[22m           [1mChunk Names[22m
+    [1m[32mapp.js[39m[22m    22.4 kB       [1m0[22m  [1m[32m[emitted][39m[22m  main
+[1m[32mindex.html[39m[22m  888 bytes        [1m[22m  [1m[32m[emitted][39m[22m  
+   [0] [1mmulti main[22m 40 bytes {[1m[33m0[39m[22m}[1m[32m [built][39m[22m[1m[31m [2 errors][39m[22m
+    + 1 hidden modules
+
+[1m[31mERROR in multi main
+Module not found: Error: Cannot resolve module 'webpack-hot-middleware/client' in /root/Targets/underwire/node_modules/underwire/configs
+resolve module webpack-hot-middleware/client in /root/Targets/underwire/node_modules/underwire/configs
+  looking for modules in /root/Targets/underwire/node_modules
+    /root/Targets/underwire/node_modules/webpack-hot-middleware doesn't exist (module as directory)
+[/root/Targets/underwire/node_modules/webpack-hot-middleware]
+ @ multi main[39m[22m
+
+[1m[31mERROR in ../web/src/app.js
+Module parse failed: /root/Targets/underwire/node_modules/underwire/web/src/app.js Unexpected token (9:2)
+You may need an appropriate loader to handle this file type.
+SyntaxError: Unexpected token (9:2)
+    at Parser.pp$4.raise (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.pp$3.parseExprSubscripts (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.pp$3.parseMaybeUnary (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1692:19)
+    at Parser.pp$3.parseExprOps (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExprList (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:2165:22)
+    at Parser.pp$3.parseSubscripts (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1741:35)
+    at Parser.pp$3.parseExprSubscripts (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1718:17)
+    at Parser.pp$3.parseMaybeUnary (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1692:19)
+    at Parser.pp$3.parseExprOps (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.pp$1.parseTopLevel (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/Targets/underwire/node_modules/webpack/node_modules/acorn/dist/acorn.js:3098:39)
+    at Parser.parse (/root/Targets/underwire/node_modules/webpack/lib/Parser.js:902:15)
+    at NormalModule.<anonymous> (/root/Targets/underwire/node_modules/webpack/lib/NormalModule.js:104:16)
+    at NormalModule.onModuleBuild (/root/Targets/underwire/node_modules/webpack-core/lib/NormalModuleMixin.js:310:10)
+    at nextLoader (/root/Targets/underwire/node_modules/webpack-core/lib/NormalModuleMixin.js:275:25)
+    at /root/Targets/underwire/node_modules/webpack-core/lib/NormalModuleMixin.js:259:5
+    at Storage.finished (/root/Targets/underwire/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:38:16)
+    at /root/Targets/underwire/node_modules/graceful-fs/graceful-fs.js:78:16
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:416:3)
+ @ multi main[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+        + 3 hidden modules
+/root/Targets/underwire
+└─┬ underwire@0.0.7 
+  ├── codemirror@5.30.0 
+  └─┬ css-loader@0.23.1
+    └─┬ cssnano@3.10.0
+      └─┬ postcss-svgo@2.1.6
+        └─┬ svgo@0.7.2
+          └─┬ csso@2.3.2
+            └── clap@1.2.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/underwire/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0455 took 4.5261s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+'use strict';
+
+require('babel-register');
+require('../lib/setup');
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

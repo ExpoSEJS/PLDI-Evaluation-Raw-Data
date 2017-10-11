@@ -1,0 +1,98 @@
+
+> hexo-math@3.0.4 postinstall /root/Targets/hexo-math/node_modules/hexo-math
+> cd ../.. && npm install --save hexo-inject
+
+/root/Targets/hexo-math
+└─┬ hexo-inject@1.0.0 
+  ├─┬ babel-plugin-transform-decorators-legacy@1.3.4 
+  │ ├── babel-plugin-syntax-decorators@6.13.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ └─┬ babel-template@6.26.0 
+  │   ├─┬ babel-traverse@6.26.0 
+  │   │ ├─┬ babel-code-frame@6.26.0 
+  │   │ │ ├─┬ chalk@1.1.3 
+  │   │ │ │ ├── ansi-styles@2.2.1 
+  │   │ │ │ ├── escape-string-regexp@1.0.5 
+  │   │ │ │ ├─┬ has-ansi@2.0.0 
+  │   │ │ │ │ └── ansi-regex@2.1.1 
+  │   │ │ │ ├── strip-ansi@3.0.1 
+  │   │ │ │ └── supports-color@2.0.0 
+  │   │ │ └── js-tokens@3.0.2 
+  │   │ ├── babel-messages@6.23.0 
+  │   │ ├─┬ debug@2.6.9 
+  │   │ │ └── ms@2.0.0 
+  │   │ ├── globals@9.18.0 
+  │   │ └─┬ invariant@2.2.2 
+  │   │   └── loose-envify@1.3.1 
+  │   ├─┬ babel-types@6.26.0 
+  │   │ ├── esutils@2.0.2 
+  │   │ └── to-fast-properties@1.0.3 
+  │   ├── babylon@6.18.0 
+  │   └── lodash@4.17.4 
+  ├─┬ babel-polyfill@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.10.5 
+  ├── bluebird@3.5.1 
+  └── core-decorators@0.11.2 
+
+/root/Targets/hexo-math
+└─┬ hexo-math@3.0.4 
+  ├── html-entities@1.2.1 
+  ├─┬ katex@0.6.0 
+  │ └── match-at@0.1.1 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hexo-math/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 83% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","fromCharCode","RegExp","call","pow","join","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.023 took 56.0176s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: hexo is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/index.js. Coverage (Term): 75% Coverage (LOC): 89%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/main.js. Coverage (Term): 65% Coverage (LOC): 76%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/tag/math.js. Coverage (Term): 52% Coverage (LOC): 70%
+*- File /root/Targets/hexo-math/node_modules/html-entities/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/hexo-math/node_modules/html-entities/lib/xml-entities.js. Coverage (Term): 20% Coverage (LOC): 43%
+*- File /root/Targets/hexo-math/node_modules/html-entities/lib/html4-entities.js. Coverage (Term): 62% Coverage (LOC): 90%
+*- File /root/Targets/hexo-math/node_modules/html-entities/lib/html5-entities.js. Coverage (Term): 95% Coverage (LOC): 99%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/consts.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/hexo-math/node_modules/katex/katex.js. Coverage (Term): 37% Coverage (LOC): 55%
+*- File /root/Targets/hexo-math/node_modules/katex/src/ParseError.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/hexo-math/node_modules/katex/src/Settings.js. Coverage (Term): 30% Coverage (LOC): 50%
+*- File /root/Targets/hexo-math/node_modules/katex/src/buildTree.js. Coverage (Term): 45% Coverage (LOC): 37%
+*- File /root/Targets/hexo-math/node_modules/katex/src/buildHTML.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/hexo-math/node_modules/katex/src/Style.js. Coverage (Term): 74% Coverage (LOC): 93%
+*- File /root/Targets/hexo-math/node_modules/katex/src/buildCommon.js. Coverage (Term): 16% Coverage (LOC): 40%
+*- File /root/Targets/hexo-math/node_modules/katex/src/domTree.js. Coverage (Term): 8% Coverage (LOC): 17%
+*- File /root/Targets/hexo-math/node_modules/katex/src/utils.js. Coverage (Term): 30% Coverage (LOC): 52%
+*- File /root/Targets/hexo-math/node_modules/katex/src/fontMetrics.js. Coverage (Term): 73% Coverage (LOC): 82%
+*- File /root/Targets/hexo-math/node_modules/katex/src/fontMetricsData.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/hexo-math/node_modules/katex/src/symbols.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/hexo-math/node_modules/katex/src/delimiter.js. Coverage (Term): 16% Coverage (LOC): 36%
+*- File /root/Targets/hexo-math/node_modules/katex/src/buildMathML.js. Coverage (Term): 12% Coverage (LOC): 25%
+*- File /root/Targets/hexo-math/node_modules/katex/src/mathMLTree.js. Coverage (Term): 19% Coverage (LOC): 38%
+*- File /root/Targets/hexo-math/node_modules/katex/src/Options.js. Coverage (Term): 38% Coverage (LOC): 68%
+*- File /root/Targets/hexo-math/node_modules/katex/src/parseTree.js. Coverage (Term): 59% Coverage (LOC): 71%
+*- File /root/Targets/hexo-math/node_modules/katex/src/Parser.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/hexo-math/node_modules/katex/src/functions.js. Coverage (Term): 46% Coverage (LOC): 70%
+*- File /root/Targets/hexo-math/node_modules/katex/src/environments.js. Coverage (Term): 22% Coverage (LOC): 23%
+*- File /root/Targets/hexo-math/node_modules/katex/src/parseData.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/hexo-math/node_modules/katex/src/Lexer.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/hexo-math/node_modules/match-at/lib/matchAt.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/hexo-math/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/filter/inject.js. Coverage (Term): 46% Coverage (LOC): 59%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/filter/post.js. Coverage (Term): 53% Coverage (LOC): 67%
+*- File /root/Targets/hexo-math/node_modules/hexo-math/lib/option.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

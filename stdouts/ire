@@ -1,0 +1,147 @@
+/root/Targets/ire
+└── ire@0.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ire/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0394 took 3.089s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node 
+
+var fs = require("fs");
+var readline = require("readline");
+
+var Block = require("./block");
+var pp = require("./pp");
+
+var DEBUG=false;
+
+var code = null, i, addprint = false, filename;
+
+// Handle options
+for(i=2; i<process.argv.length; i++) {
+    if(/^--?e/.test(process.argv[i])) {
+        i++;
+
+        code = process.argv[i];
+    } else if(/^--?p/.test(process.argv[i])) {
+        addprint = true;
+    } else {
+        filename = process.argv[i];
+    }
+}
+
+if(code === null) {
+    if(filename) {
+        code = fs.readFileSync(process.argv[process.argv.length - 1], "utf8");
+    } else {
+        console.error("Missing filename");
+        process.exit(1);
+    }
+}
+
+if(addprint) {
+    code += "\n//$0\\n/btp";
+}
+
+// Run code through the preprocessor
+code = pp(code);
+
+if(DEBUG) {
+    console.log(code);
+}
+
+// Prepare blocks
+
+var parent_block = null;
+var main = new Block();
+var indent = [""];
+
+code.forEach(function(line) {
+    if(DEBUG) {
+        console.log("Line is:", line)
+    }
+
+    while(!new RegExp("^" + indent.join("")).test(line)) {
+        main = main.parent_block;
+
+        indent.pop();
+
+        if(DEBUG) {
+            console.log("Going up");
+        }
+    }
+
+    line = line.replace(new RegExp("^" + indent.join("")), "");
+
+    if(/^\s/.test(line)) {
+        // Descend
+        indent.push(line.replace(/\S.*$/, ""));
+
+        line = line.replace(/^\s+/, "");
+
+        main = main.children[main.children.length - 1];
+
+        if(DEBUG) {
+            console.log("Descending");
+        }
+    }
+
+    main.add_child(line);
+});
+
+while(main.parent_block !== null) {
+    main = main.parent_block;
+}
+
+if(DEBUG) {
+    console.log("Main");
+    main.print(true);
+    console.log("\nStarting\n");
+}
+
+// Execute the code!
+
+if(process.stdin.isTTY) {
+    // Interactive mode
+    main.execute("");
+} else {
+    // Loop over stdin
+    var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdin
+    });
+
+    rl.on("line", function(line) {
+        rl.pause();
+
+        line = line.replace(/\n$/, "");
+
+        main.execute(line, false, function() {
+            rl.pause();
+        });
+    });
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

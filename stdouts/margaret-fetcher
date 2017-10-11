@@ -1,0 +1,32 @@
+/root/Targets/margaret-fetcher
+└─┬ margaret-fetcher@0.11.1 
+  ├─┬ fetch-everywhere@1.0.5 
+  │ ├─┬ node-fetch@1.7.3 
+  │ │ ├─┬ encoding@0.1.12 
+  │ │ │ └── iconv-lite@0.4.19 
+  │ │ └── is-stream@1.1.0 
+  │ └── whatwg-fetch@2.0.3 
+  ├── lodash@4.17.4 
+  └─┬ url@0.11.0 
+    ├── punycode@1.3.2 
+    └── querystring@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/margaret-fetcher/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","Object","binding","max","now","apply","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","create"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0506 took 27.2363s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'fetch' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/margaret-fetcher/node_modules/margaret-fetcher/dist/index.js. Coverage (Term): 33% Coverage (LOC): 44%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

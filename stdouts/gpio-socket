@@ -1,0 +1,58 @@
+
+> bufferutil@1.2.1 install /root/Targets/gpio-socket/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/gpio-socket/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+make: Leaving directory '/root/Targets/gpio-socket/node_modules/bufferutil/build'
+
+> epoll@0.1.22 install /root/Targets/gpio-socket/node_modules/epoll
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/gpio-socket/node_modules/epoll/build'
+  CXX(target) Release/obj.target/epoll/src/epoll.o
+  SOLINK_MODULE(target) Release/obj.target/epoll.node
+  COPY Release/epoll.node
+make: Leaving directory '/root/Targets/gpio-socket/node_modules/epoll/build'
+
+> utf-8-validate@1.2.2 install /root/Targets/gpio-socket/node_modules/utf-8-validate
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/gpio-socket/node_modules/utf-8-validate/build'
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/gpio-socket/node_modules/utf-8-validate/build'
+/root/Targets/gpio-socket
+└─┬ gpio-socket@0.1.1 
+  ├─┬ onoff@1.0.2 
+  │ └─┬ epoll@0.1.22 
+  │   ├── bindings@1.2.1 
+  │   └── nan@2.6.2 
+  └─┬ ws@0.8.0 
+    ├── bufferutil@1.2.1 
+    ├── options@0.0.6 
+    ├── ultron@1.0.2 
+    └─┬ utf-8-validate@1.2.2 
+      └── nan@2.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gpio-socket/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0446 took 2.7924s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'gpio-socket'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

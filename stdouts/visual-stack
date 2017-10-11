@@ -1,0 +1,62 @@
+/root/Targets/visual-stack
+└─┬ visual-stack@0.0.0 
+  └── colors@0.6.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/visual-stack/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0544 took 2.6085s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+define = require('./define');
+settings = require('./settings');
+
+define('/trace/trace_server', require('./trace/trace_server'));
+define('/core/fn', require('./core/fn'));
+define('/core/acorn', require('./core/acorn'));
+define('/core/acorn_tools', require('./core/acorn_tools'));
+define('/core/io_channel', require('./core/io_channel'));
+define('/trace/instrument', require('./trace/instrument'));
+define('/core/io_server', require('./core/io_server'));
+define('/core/gl_browser', require('./core/gl_browser'));
+define('/core/gl', require('./core/gl'));
+define('/core/ext_lib', require('./core/ext_lib'));
+define('/core/ui_draw', require('./core/ui_draw'));
+define('/core/ui', require('./core/ui'));
+define('/core/controls_mix', require('./core/controls_mix'));
+define('/core/controls', require('./core/controls'));
+define('/core/themes', require('./core/themes'));
+define('/core/text_mix', require('./core/text_mix'));
+define('/trace/trace_db', require('./trace/trace_db'));
+define('/core/text_shaders', require('./core/text_shaders'));
+define('/trace/code_db', require('./trace/code_db'));
+define('/trace/list_view', require('./trace/list_view'));
+define('/trace/code_view', require('./trace/code_view'));
+define('/trace/hover_text', require('./trace/hover_text'));
+define('/trace/code_bubble', require('./trace/code_bubble'));
+define('/trace/trace_client', require('./trace/trace_client'));
+
+define.factory["/trace/trace_server"](define.mkreq("/trace/trace_server"));
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

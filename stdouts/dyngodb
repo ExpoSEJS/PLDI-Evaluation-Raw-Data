@@ -1,0 +1,43 @@
+/root/Targets/dyngodb
+└─┬ dyngodb@0.1.73 
+  ├── async@0.2.10 
+  ├─┬ aws-sdk@1.4.1 
+  │ ├─┬ xml2js@0.2.4 
+  │ │ └── sax@1.2.4 
+  │ └── xmlbuilder@9.0.4 
+  ├── carrier@0.1.14 
+  ├─┬ circularclone@0.1.7 
+  │ └─┬ circularjs@0.1.3 
+  │   └── underscore@1.6.0 
+  ├── colors@0.6.2 
+  ├── csv@0.3.7 
+  ├── deep-diff@0.1.7 
+  ├── gson@0.1.5 
+  ├── node-uuid@1.4.8 
+  ├── node-zip@1.0.1 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├── querystring@0.2.0 
+  ├── ret@0.1.15 
+  └── underscore@1.5.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dyngodb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 12% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0649 took 5.3059s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: _nu is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/dyngodb/node_modules/dyngodb/index.js. Coverage (Term): 1% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

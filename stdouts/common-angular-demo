@@ -1,0 +1,29 @@
+/root/Targets/common-angular-demo
+└─┬ common-angular-demo@0.5.0 
+  ├── large-num@0.2.0 
+  └─┬ lodash.get@4.3.0 
+    └─┬ lodash._stringtopath@4.8.0 
+      └── lodash._basetostring@4.12.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/common-angular-demo/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0622 took 4.6038s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'angular'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/common-angular-demo/node_modules/common-angular-demo/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/common-angular-demo/node_modules/common-angular-demo/src/js/index.js. Coverage (Term): 71% Coverage (LOC): 100%
+*- File /root/Targets/common-angular-demo/node_modules/common-angular-demo/src/js/filter-large-num.js. Coverage (Term): 46% Coverage (LOC): 63%
+*- File /root/Targets/common-angular-demo/node_modules/common-angular-demo/src/js/module.js. Coverage (Term): 56% Coverage (LOC): 83%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

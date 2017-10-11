@@ -1,0 +1,54 @@
+/root/Targets/wind-codepublish
+└─┬ wind-codepublish@0.0.8 
+  ├─┬ clean-css@3.4.28 
+  │ ├─┬ commander@2.8.1 
+  │ │ └── graceful-readlink@1.0.1 
+  │ └─┬ source-map@0.4.4 
+  │   └── amdefine@1.0.1 
+  ├─┬ ftp@0.3.10 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── xregexp@2.0.0 
+  └─┬ uglify-js@2.8.29 
+    ├── source-map@0.5.7 
+    ├── uglify-to-browserify@1.0.2 
+    └─┬ yargs@3.10.0 
+      ├── camelcase@1.2.1 
+      ├─┬ cliui@2.1.0 
+      │ ├─┬ center-align@0.1.3 
+      │ │ ├─┬ align-text@0.1.4 
+      │ │ │ ├─┬ kind-of@3.2.2 
+      │ │ │ │ └── is-buffer@1.1.5 
+      │ │ │ ├── longest@1.0.1 
+      │ │ │ └── repeat-string@1.6.1 
+      │ │ └── lazy-cache@1.0.4 
+      │ ├── right-align@0.1.3 
+      │ └── wordwrap@0.0.2 
+      ├── decamelize@1.2.0 
+      └── window-size@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wind-codepublish/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","setBlocking","join","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0971 took 46.3604s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/wind-codepublish/node_modules/wind-codepublish/run.js. Coverage (Term): 17% Coverage (LOC): 33%
+*- File /root/Targets/wind-codepublish/node_modules/wind-codepublish/main.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/wind-codepublish/node_modules/uglify-js/tools/node.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File evalIndirect. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

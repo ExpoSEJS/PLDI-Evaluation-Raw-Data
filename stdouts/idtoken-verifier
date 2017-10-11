@@ -1,0 +1,54 @@
+/root/Targets/idtoken-verifier
+└─┬ idtoken-verifier@1.1.0 
+  ├── base64-js@1.2.1 
+  ├── crypto-js@3.1.9-1 
+  ├── jsbn@0.1.1 
+  ├─┬ superagent@3.6.2 
+  │ ├── component-emitter@1.2.1 
+  │ ├── cookiejar@2.1.1 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├── extend@3.0.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ ├── asynckit@0.4.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ └─┬ mime-types@2.1.17 
+  │ │   └── mime-db@1.30.0 
+  │ ├── formidable@1.1.1 
+  │ ├── methods@1.1.2 
+  │ ├── mime@2.0.3 
+  │ ├── qs@6.5.1 
+  │ └─┬ readable-stream@2.3.3 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── safe-buffer@5.1.1 
+  │   ├── string_decoder@1.0.3 
+  │   └── util-deprecate@1.0.2 
+  └── url-join@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/idtoken-verifier/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","Array","charCodeAt","Date","getTime","create","sqrt"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0625 took 17.8785s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/idtoken-verifier/node_modules/idtoken-verifier/src/index.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/idtoken-verifier/node_modules/idtoken-verifier/src/helpers/rsa-verifier.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/idtoken-verifier/node_modules/jsbn/index.js. Coverage (Term): 15% Coverage (LOC): 31%
+*- File /root/Targets/idtoken-verifier/node_modules/crypto-js/sha256.js. Coverage (Term): 28% Coverage (LOC): 43%
+*- File /root/Targets/idtoken-verifier/node_modules/crypto-js/core.js. Coverage (Term): 18% Coverage (LOC): 36%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

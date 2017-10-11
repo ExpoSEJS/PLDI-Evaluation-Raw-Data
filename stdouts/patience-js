@@ -1,0 +1,42 @@
+/root/Targets/patience-js
+└─┬ patience-js@0.1.1 
+  ├─┬ axios@0.5.4 
+  │ └── es6-promise@2.3.0 
+  ├── pubsub-js@1.5.7 
+  ├── q@1.5.0 
+  └─┬ qretry@0.3.0 
+    └── q@1.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/patience-js/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","isNaN","Array","isArray","resolve","Error","Number","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0603 took 22.0435s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/patience-js/node_modules/patience-js/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/patience-js/node_modules/patience-js/src/patience.js. Coverage (Term): 16% Coverage (LOC): 31%
+*- File /root/Targets/patience-js/node_modules/axios/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/patience-js/node_modules/axios/lib/axios.js. Coverage (Term): 40% Coverage (LOC): 44%
+*- File /root/Targets/patience-js/node_modules/axios/lib/defaults.js. Coverage (Term): 34% Coverage (LOC): 44%
+*- File /root/Targets/patience-js/node_modules/axios/lib/utils.js. Coverage (Term): 49% Coverage (LOC): 75%
+*- File /root/Targets/patience-js/node_modules/axios/lib/helpers/deprecatedMethod.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/patience-js/node_modules/axios/lib/core/dispatchRequest.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/patience-js/node_modules/axios/lib/core/InterceptorManager.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/patience-js/node_modules/es6-promise/dist/es6-promise.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File /root/Targets/patience-js/node_modules/axios/lib/helpers/spread.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/patience-js/node_modules/qretry/src/qretry.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/patience-js/node_modules/qretry/node_modules/q/q.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/patience-js/node_modules/pubsub-js/src/pubsub.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/patience-js/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

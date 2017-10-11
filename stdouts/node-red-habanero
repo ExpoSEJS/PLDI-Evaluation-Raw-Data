@@ -1,0 +1,257 @@
+
+> bufferutil@1.2.1 install /root/Targets/node-red-habanero/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/node-red-habanero/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:95: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/node-red-habanero/node_modules/bufferutil/build'
+
+> bcrypt@0.8.5 install /root/Targets/node-red-habanero/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/node-red-habanero/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+bcrypt_lib.target.mk:96: recipe for target 'Release/obj.target/bcrypt_lib/src/bcrypt_node.o' failed
+make: Leaving directory '/root/Targets/node-red-habanero/node_modules/bcrypt/build'
+/root/Targets/node-red-habanero
+└── node-red-habanero@1.1.20 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-red-habanero/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","create","reduce","RegExp","random","join","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","getOwnPropertyDescriptor","parseInt","Array","toString","toUpperCase"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0242 took 35.0453s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (19:4) on program /**
+ * Copyright 2014, 2016 IBM Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
+
+var when = require("when");
+var clone = require("clone");
+var assert = require("assert");
+var log = require("./log");
+
+var userSettings = null;
+var globalSettings = null;
+var storage = null;
+
+var persistentSettings = {
+    init: function(settings) {
+        userSettings = settings;
+        for (var i in settings) {
+            /* istanbul ignore else */
+            if (settings.hasOwnProperty(i) && i !== 'load' && i !== 'get' && i !== 'set' && i !== 'available' && i !== 'reset') {
+                // Don't allow any of the core functions get replaced via settings
+                (function() {
+                    var j = i;
+                    persistentSettings.__defineGetter__(j,function() { return userSettings[j]; });
+                    persistentSettings.__defineSetter__(j,function() { throw new Error("Property '"+j+"' is read-only"); });
+                })();
+            }
+        }
+        globalSettings = null;
+    },
+    load: function(_storage) {
+        storage = _storage;
+        return storage.getSettings().then(function(_settings) {
+            globalSettings = _settings;
+        });
+    },
+    get: function(prop) {
+        if (userSettings.hasOwnProperty(prop)) {
+            return clone(userSettings[prop]);
+        }
+        if (globalSettings === null) {
+            throw new Error(log._("settings.not-available"));
+        }
+        return clone(globalSettings[prop]);
+    },
+
+    set: function(prop,value) {
+        if (userSettings.hasOwnProperty(prop)) {
+            throw new Error(log._("settings.property-read-only", {prop:prop}));
+        }
+        if (globalSettings === null) {
+            throw new Error(log._("settings.not-available"));
+        }
+        var current = globalSettings[prop];
+        globalSettings[prop] = value;
+        try {
+            assert.deepEqual(current,value);
+            return when.resolve();
+        } catch(err) {
+            return storage.saveSettings(globalSettings);
+        }
+    },
+
+    available: function() {
+        return (globalSettings !== null);
+    },
+
+    reset: function() {
+        for (var i in userSettings) {
+            /* istanbul ignore else */
+            if (userSettings.hasOwnProperty(i)) {
+                delete persistentSettings[i];
+            }
+        }
+        userSettings = null;
+        globalSettings = null;
+        storage = null;
+    }
+}
+
+module.exports = persistentSettings;
+ at SyntaxError: Unexpected token (19:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/red.js. Coverage (Term): 11% Coverage (LOC): 10%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/index.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/node-red-habanero/node_modules/when/when.js. Coverage (Term): 48% Coverage (LOC): 62%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/timed.js. Coverage (Term): 33% Coverage (LOC): 49%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/env.js. Coverage (Term): 37% Coverage (LOC): 48%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/TimeoutError.js. Coverage (Term): 62% Coverage (LOC): 67%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/array.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/state.js. Coverage (Term): 47% Coverage (LOC): 65%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/apply.js. Coverage (Term): 37% Coverage (LOC): 45%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/flow.js. Coverage (Term): 29% Coverage (LOC): 49%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/fold.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/inspect.js. Coverage (Term): 78% Coverage (LOC): 93%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/iterate.js. Coverage (Term): 39% Coverage (LOC): 52%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/progress.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/with.js. Coverage (Term): 63% Coverage (LOC): 71%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/decorators/unhandledRejection.js. Coverage (Term): 42% Coverage (LOC): 60%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/format.js. Coverage (Term): 38% Coverage (LOC): 60%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/Promise.js. Coverage (Term): 91% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/makePromise.js. Coverage (Term): 21% Coverage (LOC): 35%
+*- File /root/Targets/node-red-habanero/node_modules/when/lib/Scheduler.js. Coverage (Term): 43% Coverage (LOC): 56%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/index.js. Coverage (Term): 45% Coverage (LOC): 63%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/index.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/events.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/registry.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/loader.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/node-red-habanero/node_modules/semver/semver.js. Coverage (Term): 25% Coverage (LOC): 27%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/localfilesystem.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/installer.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/log.js. Coverage (Term): 21% Coverage (LOC): 44%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/i18n.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/node-red-habanero/node_modules/i18next/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/i18next/lib/i18next.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/node-red-habanero/node_modules/i18next/lib/i18nextWrapper.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/node-red-habanero/node_modules/i18next-client/i18next.js. Coverage (Term): 14% Coverage (LOC): 44%
+*- File /root/Targets/node-red-habanero/node_modules/cookies/index.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/node-red-habanero/node_modules/depd/index.js. Coverage (Term): 39% Coverage (LOC): 43%
+*- File /root/Targets/node-red-habanero/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/node-red-habanero/node_modules/keygrip/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/node-red-habanero/node_modules/i18next/lib/i18nextWTWrapper.js. Coverage (Term): 26% Coverage (LOC): 57%
+*- File /root/Targets/node-red-habanero/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/express.js. Coverage (Term): 66% Coverage (LOC): 75%
+*- File /root/Targets/node-red-habanero/node_modules/merge-descriptors/index.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/application.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/node-red-habanero/node_modules/finalhandler/index.js. Coverage (Term): 20% Coverage (LOC): 22%
+*- File /root/Targets/node-red-habanero/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/node-red-habanero/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/node-red-habanero/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/node-red-habanero/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/node-red-habanero/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/node-red-habanero/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/node-red-habanero/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/node-red-habanero/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/router/layer.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/node-red-habanero/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/node-red-habanero/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/node-red-habanero/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/node-red-habanero/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/middleware/init.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/middleware/query.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File /root/Targets/node-red-habanero/node_modules/express/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/express/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 19%
+*- File /root/Targets/node-red-habanero/node_modules/express/node_modules/qs/lib/utils.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/node-red-habanero/node_modules/express/node_modules/qs/lib/parse.js. Coverage (Term): 6% Coverage (LOC): 17%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/view.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/utils.js. Coverage (Term): 23% Coverage (LOC): 30%
+*- File /root/Targets/node-red-habanero/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/node-red-habanero/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/send/node_modules/http-errors/index.js. Coverage (Term): 42% Coverage (LOC): 37%
+*- File /root/Targets/node-red-habanero/node_modules/send/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
+*- File /root/Targets/node-red-habanero/node_modules/inherits/inherits.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/node-red-habanero/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/node-red-habanero/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/node-red-habanero/node_modules/fresh/index.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/node-red-habanero/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 34%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/node-red-habanero/node_modules/proxy-addr/index.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/node-red-habanero/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/node-red-habanero/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/request.js. Coverage (Term): 27% Coverage (LOC): 43%
+*- File /root/Targets/node-red-habanero/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/node-red-habanero/node_modules/negotiator/index.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/node-red-habanero/node_modules/negotiator/lib/charset.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/node-red-habanero/node_modules/negotiator/lib/encoding.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/node-red-habanero/node_modules/negotiator/lib/language.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/node-red-habanero/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/node-red-habanero/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/node-red-habanero/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/node-red-habanero/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/node-red-habanero/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/node-red-habanero/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/node-red-habanero/node_modules/cookie/index.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/node-red-habanero/node_modules/express/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/node-red-habanero/node_modules/serve-static/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/node-red-habanero/node_modules/serve-static/node_modules/http-errors/index.js. Coverage (Term): 42% Coverage (LOC): 37%
+*- File /root/Targets/node-red-habanero/node_modules/serve-static/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
+*- File /root/Targets/node-red-habanero/node_modules/i18next/lib/filesync.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/node-red-habanero/node_modules/json5/lib/json5.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/credentials.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/flows/index.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/node-red-habanero/node_modules/clone/clone.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/flows/Flow.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/util.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/flows/util.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/context.js. Coverage (Term): 22% Coverage (LOC): 29%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/registry/deprecated.js. Coverage (Term): 84% Coverage (LOC): 96%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/nodes/Node.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/node-red-habanero/node_modules/node-red-habanero/red/runtime/storage/index.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

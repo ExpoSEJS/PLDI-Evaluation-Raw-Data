@@ -1,0 +1,943 @@
+/root/Targets/generator-nc-portal
+└─┬ generator-nc-portal@0.1.13 
+  └─┬ yeoman-generator@2.0.0 
+    ├── async@2.5.0 
+    ├─┬ chalk@2.1.0 
+    │ ├─┬ ansi-styles@3.2.0 
+    │ │ └─┬ color-convert@1.9.0 
+    │ │   └── color-name@1.1.3 
+    │ ├── escape-string-regexp@1.0.5 
+    │ └─┬ supports-color@4.4.0 
+    │   └── has-flag@2.0.0 
+    ├─┬ cli-table@0.3.1 
+    │ └── colors@1.0.3 
+    ├─┬ cross-spawn@5.1.0 
+    │ ├─┬ lru-cache@4.1.1 
+    │ │ ├── pseudomap@1.0.2 
+    │ │ └── yallist@2.1.2 
+    │ ├─┬ shebang-command@1.2.0 
+    │ │ └── shebang-regex@1.0.0 
+    │ └─┬ which@1.3.0 
+    │   └── isexe@2.0.0 
+    ├── dargs@5.1.0 
+    ├── dateformat@2.2.0 
+    ├─┬ debug@3.0.1 
+    │ └── ms@2.0.0 
+    ├── detect-conflict@1.0.1 
+    ├─┬ error@7.0.2 
+    │ ├── string-template@0.2.1 
+    │ └── xtend@4.0.1 
+    ├─┬ find-up@2.1.0 
+    │ └─┬ locate-path@2.0.0 
+    │   ├─┬ p-locate@2.0.0 
+    │   │ └── p-limit@1.1.0 
+    │   └── path-exists@3.0.0 
+    ├─┬ github-username@4.1.0 
+    │ └─┬ gh-got@6.0.0 
+    │   ├─┬ got@7.1.0 
+    │   │ ├─┬ decompress-response@3.3.0 
+    │   │ │ └── mimic-response@1.0.0 
+    │   │ ├── duplexer3@0.1.4 
+    │   │ ├── get-stream@3.0.0 
+    │   │ ├── is-retry-allowed@1.1.0 
+    │   │ ├── is-stream@1.1.0 
+    │   │ ├─┬ isurl@1.0.0 
+    │   │ │ ├─┬ has-to-string-tag-x@1.4.1 
+    │   │ │ │ └── has-symbol-support-x@1.4.1 
+    │   │ │ └── is-object@1.0.1 
+    │   │ ├── lowercase-keys@1.0.0 
+    │   │ ├── p-cancelable@0.3.0 
+    │   │ ├─┬ p-timeout@1.2.0 
+    │   │ │ └── p-finally@1.0.0 
+    │   │ ├── timed-out@4.0.1 
+    │   │ ├─┬ url-parse-lax@1.0.0 
+    │   │ │ └── prepend-http@1.0.4 
+    │   │ └── url-to-options@1.0.1 
+    │   └── is-plain-obj@1.1.0 
+    ├─┬ istextorbinary@2.1.0 
+    │ ├── binaryextensions@2.0.0 
+    │ ├── editions@1.3.3 
+    │ └── textextensions@2.1.0 
+    ├── lodash@4.17.4 
+    ├─┬ make-dir@1.0.0 
+    │ └── pify@2.3.0 
+    ├─┬ mem-fs-editor@3.0.2 
+    │ ├── commondir@1.0.1 
+    │ ├── deep-extend@0.4.2 
+    │ ├── ejs@2.5.7 
+    │ ├─┬ glob@7.1.2 
+    │ │ ├── fs.realpath@1.0.0 
+    │ │ ├─┬ inflight@1.0.6 
+    │ │ │ └── wrappy@1.0.2 
+    │ │ ├── inherits@2.0.3 
+    │ │ ├─┬ minimatch@3.0.4 
+    │ │ │ └─┬ brace-expansion@1.1.8 
+    │ │ │   ├── balanced-match@1.0.0 
+    │ │ │   └── concat-map@0.0.1 
+    │ │ ├── once@1.4.0 
+    │ │ └── path-is-absolute@1.0.1 
+    │ ├─┬ globby@6.1.0 
+    │ │ ├─┬ array-union@1.0.2 
+    │ │ │ └── array-uniq@1.0.3 
+    │ │ ├── object-assign@4.1.1 
+    │ │ └─┬ pinkie-promise@2.0.1 
+    │ │   └── pinkie@2.0.4 
+    │ ├─┬ mkdirp@0.5.1 
+    │ │ └── minimist@0.0.8 
+    │ ├─┬ multimatch@2.1.0 
+    │ │ ├── array-differ@1.0.0 
+    │ │ └── arrify@1.0.1 
+    │ └─┬ vinyl@2.1.0 
+    │   ├── clone@2.1.1 
+    │   ├── clone-buffer@1.0.0 
+    │   ├── clone-stats@1.0.0 
+    │   ├── cloneable-readable@1.0.0 
+    │   ├── remove-trailing-separator@1.1.0 
+    │   └── replace-ext@1.0.0 
+    ├── minimist@1.2.0 
+    ├── pretty-bytes@4.0.2 
+    ├─┬ read-chunk@2.1.0 
+    │ ├── pify@3.0.0 
+    │ └── safe-buffer@5.1.1 
+    ├─┬ read-pkg-up@2.0.0 
+    │ └─┬ read-pkg@2.0.0 
+    │   ├─┬ load-json-file@2.0.0 
+    │   │ ├── graceful-fs@4.1.11 
+    │   │ ├─┬ parse-json@2.2.0 
+    │   │ │ └─┬ error-ex@1.3.1 
+    │   │ │   └── is-arrayish@0.2.1 
+    │   │ └── strip-bom@3.0.0 
+    │   ├─┬ normalize-package-data@2.4.0 
+    │   │ ├── hosted-git-info@2.5.0 
+    │   │ ├─┬ is-builtin-module@1.0.0 
+    │   │ │ └── builtin-modules@1.1.1 
+    │   │ ├── semver@5.4.1 
+    │   │ └─┬ validate-npm-package-license@3.0.1 
+    │   │   ├─┬ spdx-correct@1.0.2 
+    │   │   │ └── spdx-license-ids@1.2.2 
+    │   │   └── spdx-expression-parse@1.0.4 
+    │   └── path-type@2.0.0 
+    ├── rimraf@2.6.2 
+    ├─┬ run-async@2.3.0 
+    │ └── is-promise@2.1.0 
+    ├─┬ shelljs@0.7.8 
+    │ ├── interpret@1.0.4 
+    │ └─┬ rechoir@0.6.2 
+    │   └─┬ resolve@1.4.0 
+    │     └── path-parse@1.0.5 
+    ├── text-table@0.2.0 
+    ├─┬ through2@2.0.3 
+    │ └─┬ readable-stream@2.3.3 
+    │   ├── core-util-is@1.0.2 
+    │   ├── isarray@1.0.0 
+    │   ├── process-nextick-args@1.0.7 
+    │   ├── string_decoder@1.0.3 
+    │   └── util-deprecate@1.0.2 
+    └─┬ yeoman-environment@2.0.3 
+      ├─┬ chalk@1.1.3 
+      │ ├── ansi-styles@2.2.1 
+      │ ├─┬ has-ansi@2.0.0 
+      │ │ └── ansi-regex@2.1.1 
+      │ ├── strip-ansi@3.0.1 
+      │ └── supports-color@2.0.0 
+      ├── debug@2.6.8 
+      ├── diff@3.3.1 
+      ├── grouped-queue@0.3.3 
+      ├─┬ inquirer@3.3.0 
+      │ ├── ansi-escapes@3.0.0 
+      │ ├─┬ cli-cursor@2.1.0 
+      │ │ └─┬ restore-cursor@2.0.0 
+      │ │   ├─┬ onetime@2.0.1 
+      │ │   │ └── mimic-fn@1.1.0 
+      │ │   └── signal-exit@3.0.2 
+      │ ├── cli-width@2.2.0 
+      │ ├─┬ external-editor@2.0.5 
+      │ │ ├── iconv-lite@0.4.19 
+      │ │ ├── jschardet@1.5.1 
+      │ │ └─┬ tmp@0.0.33 
+      │ │   └── os-tmpdir@1.0.2 
+      │ ├── figures@2.0.0 
+      │ ├── mute-stream@0.0.7 
+      │ ├── rx-lite@4.0.8 
+      │ ├── rx-lite-aggregates@4.0.8 
+      │ ├─┬ string-width@2.1.1 
+      │ │ ├── is-fullwidth-code-point@2.0.0 
+      │ │ └─┬ strip-ansi@4.0.0 
+      │ │   └── ansi-regex@3.0.0 
+      │ ├─┬ strip-ansi@4.0.0 
+      │ │ └── ansi-regex@3.0.0 
+      │ └── through@2.3.8 
+      ├─┬ is-scoped@1.0.0 
+      │ └── scoped-regex@1.0.0 
+      ├─┬ log-symbols@1.0.2 
+      │ └─┬ chalk@1.1.3 
+      │   ├── ansi-styles@2.2.1 
+      │   └── supports-color@2.0.0 
+      ├─┬ mem-fs@1.1.3 
+      │ ├─┬ vinyl@1.2.0 
+      │ │ ├── clone@1.0.2 
+      │ │ ├── clone-stats@0.0.1 
+      │ │ └── replace-ext@0.0.1 
+      │ └─┬ vinyl-file@2.0.0 
+      │   ├─┬ strip-bom@2.0.0 
+      │   │ └── is-utf8@0.2.1 
+      │   ├─┬ strip-bom-stream@2.0.0 
+      │   │ ├── first-chunk-stream@2.0.0 
+      │   │ └── strip-bom@2.0.0 
+      │   └─┬ vinyl@1.2.0 
+      │     ├── clone@1.0.2 
+      │     ├── clone-stats@0.0.1 
+      │     └── replace-ext@0.0.1 
+      └── untildify@3.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/generator-nc-portal/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0476 took 4.8518s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (6:6) on program 'use strict';
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+const EventEmitter = require('events');
+const assert = require('assert');
+const _ = require('lodash');
+const findUp = require('find-up');
+const readPkgUp = require('read-pkg-up');
+const chalk = require('chalk');
+const makeDir = require('make-dir');
+const minimist = require('minimist');
+const runAsync = require('run-async');
+const through = require('through2');
+const FileEditor = require('mem-fs-editor');
+const debug = require('debug')('yeoman:generator');
+const Conflicter = require('./util/conflicter');
+const Storage = require('./util/storage');
+const promptSuggestion = require('./util/prompt-suggestion');
+
+const EMPTY = '@@_YEOMAN_EMPTY_MARKER_@@';
+
+/**
+ * The `Generator` class provides the common API shared by all generators.
+ * It define options, arguments, file, prompt, log, API, etc.
+ *
+ * It mixes into its prototype all the methods found in the `actions/` mixins.
+ *
+ * Every generator should extend this base class.
+ *
+ * @constructor
+ * @mixes actions/help
+ * @mixes actions/install
+ * @mixes actions/spawn-command
+ * @mixes actions/user
+ * @mixes nodejs/EventEmitter
+ *
+ * @param {String|Array} args
+ * @param {Object} options
+ *
+ * @property {Object}   env         - the current Environment being run
+ * @property {Object}   args        - Provide arguments at initialization
+ * @property {String}   resolved    - the path to the current generator
+ * @property {String}   description - Used in `--help` output
+ * @property {String}   appname     - The application name
+ * @property {Storage}  config      - `.yo-rc` config file manager
+ * @property {Object}   fs          - An instance of {@link https://github.com/SBoudrias/mem-fs-editor Mem-fs-editor}
+ * @property {Function} log         - Output content through Interface Adapter
+ *
+ * @example
+ * const Generator = require('yeoman-generator');
+ * module.exports = class extends Generator {
+ *   writing() {
+ *     this.fs.write(this.destinationPath('index.js'), 'const foo = 1;');
+ *   }
+ * };
+ */
+class Generator extends EventEmitter {
+  constructor(args, options) {
+    super();
+
+    if (!Array.isArray(args)) {
+      options = args;
+      args = [];
+    }
+
+    this.options = options || {};
+    this._initOptions = _.clone(options);
+    this._args = args || [];
+    this._options = {};
+    this._arguments = [];
+    this._composedWith = [];
+    this._transformStreams = [];
+
+    this.option('help', {
+      type: Boolean,
+      alias: 'h',
+      description: 'Print the generator\'s options and usage'
+    });
+
+    this.option('skip-cache', {
+      type: Boolean,
+      description: 'Do not remember prompt answers',
+      default: false
+    });
+
+    this.option('skip-install', {
+      type: Boolean,
+      description: 'Do not automatically install dependencies',
+      default: false
+    });
+
+    // Checks required paramaters
+    assert(this.options.env, 'You must provide the environment object. Use env#create() to create a new generator.');
+    assert(this.options.resolved, 'You must provide the resolved path value. Use env#create() to create a new generator.');
+    this.env = this.options.env;
+    this.resolved = this.options.resolved;
+
+    // Ensure the environment support features this yeoman-generator version require.
+    require('yeoman-environment').enforceUpdate(this.env);
+
+    this.description = this.description || '';
+
+    this.async = () => () => {};
+
+    this.fs = FileEditor.create(this.env.sharedFs);
+    this.conflicter = new Conflicter(this.env.adapter, this.options.force);
+
+    // Mirror the adapter log method on the generator.
+    //
+    // example:
+    // this.log('foo');
+    // this.log.error('bar');
+    this.log = this.env.adapter.log;
+
+    // Determine the app root
+    this.contextRoot = this.env.cwd;
+
+    let rootPath = findUp.sync('.yo-rc.json', {
+      cwd: this.env.cwd
+    });
+    rootPath = rootPath ? path.dirname(rootPath) : this.env.cwd;
+
+    if (rootPath !== this.env.cwd) {
+      this.log([
+        '',
+        'Just found a `.yo-rc.json` in a parent directory.',
+        'Setting the project root at: ' + rootPath
+      ].join('\n'));
+      this.destinationRoot(rootPath);
+    }
+
+    this.appname = this.determineAppname();
+    this.config = this._getStorage();
+    this._globalConfig = this._getGlobalStorage();
+
+    // Ensure source/destination path, can be configured from subclasses
+    this.sourceRoot(path.join(path.dirname(this.resolved), 'templates'));
+  }
+
+  /*
+   * Prompt user to answer questions. The signature of this method is the same as {@link https://github.com/SBoudrias/Inquirer.js Inquirer.js}
+   *
+   * On top of the Inquirer.js API, you can provide a `{cache: true}` property for
+   * every question descriptor. When set to true, Yeoman will store/fetch the
+   * user's answers as defaults.
+   *
+   * @param  {array} questions  Array of question descriptor objects. See {@link https://github.com/SBoudrias/Inquirer.js/blob/master/README.md Documentation}
+   * @return {Promise}
+   */
+  prompt(questions) {
+    questions = promptSuggestion.prefillQuestions(this._globalConfig, questions);
+    questions = promptSuggestion.prefillQuestions(this.config, questions);
+
+    return this.env.adapter.prompt(questions).then(answers => {
+      if (!this.options['skip-cache']) {
+        promptSuggestion.storeAnswers(this._globalConfig, questions, answers, false);
+        promptSuggestion.storeAnswers(this.config, questions, answers, true);
+      }
+
+      return answers;
+    });
+  }
+
+  /**
+   * Adds an option to the set of generator expected options, only used to
+   * generate generator usage. By default, generators get all the cli options
+   * parsed by nopt as a `this.options` hash object.
+   *
+   * ### Options:
+   *
+   *   - `description` Description for the option
+   *   - `type` Either Boolean, String or Number
+   *   - `alias` Option name alias (example `-h` and --help`)
+   *   - `default` Default value
+   *   - `hide` Boolean whether to hide from help
+   *
+   * @param {String} name
+   * @param {Object} config
+   */
+  option(name, config) {
+    config = config || {};
+
+    // Alias default to defaults for backward compatibility.
+    if ('defaults' in config) {
+      config.default = config.defaults;
+    }
+    config.description = config.description || config.desc;
+
+    _.defaults(config, {
+      name,
+      description: 'Description for ' + name,
+      type: Boolean,
+      hide: false
+    });
+
+    // Check whether boolean option is invalid (starts with no-)
+    const boolOptionRegex = /^no-/;
+    if (config.type === Boolean && name.match(boolOptionRegex)) {
+      const simpleName = name.replace(boolOptionRegex, '');
+      return this.emit('error', new Error([
+        `Option name ${chalk.yellow(name)} cannot start with ${chalk.red('no-')}\n`,
+        `Option name prefixed by ${chalk.yellow('--no')} are parsed as implicit`,
+        ` boolean. To use ${chalk.yellow('--' + name)} as an option, use\n`,
+        chalk.cyan(`  this.option('${simpleName}', {type: Boolean})`)
+      ].join('')));
+    }
+
+    if (this._options[name] === null || this._options[name] === undefined) {
+      this._options[name] = config;
+    }
+
+    this.parseOptions();
+    return this;
+  }
+
+  /**
+   * Adds an argument to the class and creates an attribute getter for it.
+   *
+   * Arguments are different from options in several aspects. The first one
+   * is how they are parsed from the command line, arguments are retrieved
+   * based on their position.
+   *
+   * Besides, arguments are used inside your code as a property (`this.argument`),
+   * while options are all kept in a hash (`this.options`).
+   *
+   * ### Options:
+   *
+   *   - `description` Description for the argument
+   *   - `required` Boolean whether it is required
+   *   - `optional` Boolean whether it is optional
+   *   - `type` String, Number, Array, or Object
+   *   - `default` Default value for this argument
+   *
+   * @param {String} name
+   * @param {Object} config
+   */
+  argument(name, config) {
+    config = config || {};
+
+    // Alias default to defaults for backward compatibility.
+    if ('defaults' in config) {
+      config.default = config.defaults;
+    }
+    config.description = config.description || config.desc;
+
+    _.defaults(config, {
+      name,
+      required: config.default === null || config.default === undefined,
+      type: String
+    });
+
+    this._arguments.push(config);
+
+    this.parseOptions();
+    return this;
+  }
+
+  parseOptions() {
+    const minimistDef = {
+      string: [],
+      boolean: [],
+      alias: {},
+      default: {}
+    };
+
+    _.each(this._options, option => {
+      if (option.type === Boolean) {
+        minimistDef.boolean.push(option.name);
+        if (!('default' in option) && !option.required) {
+          minimistDef.default[option.name] = EMPTY;
+        }
+      } else {
+        minimistDef.string.push(option.name);
+      }
+
+      if (option.alias) {
+        minimistDef.alias[option.alias] = option.name;
+      }
+
+      // Only apply default values if we don't already have a value injected from
+      // the runner
+      if (option.name in this._initOptions) {
+        minimistDef.default[option.name] = this._initOptions[option.name];
+      } else if (option.alias && option.alias in this._initOptions) {
+        minimistDef.default[option.name] = this._initOptions[option.alias];
+      } else if ('default' in option) {
+        minimistDef.default[option.name] = option.default;
+      }
+    });
+
+    const parsedOpts = minimist(this._args, minimistDef);
+
+    // Parse options to the desired type
+    _.each(parsedOpts, (option, name) => {
+      // Manually set value as undefined if it should be.
+      if (option === EMPTY) {
+        parsedOpts[name] = undefined;
+        return;
+      }
+      if (this._options[name] && option !== undefined) {
+        parsedOpts[name] = this._options[name].type(option);
+      }
+    });
+
+    // Parse positional arguments to valid options
+    this._arguments.forEach((config, index) => {
+      let value;
+      if (index >= parsedOpts._.length) {
+        if (config.name in this._initOptions) {
+          value = this._initOptions[config.name];
+        } else if ('default' in config) {
+          value = config.default;
+        } else {
+          return;
+        }
+      } else if (config.type === Array) {
+        value = parsedOpts._.slice(index, parsedOpts._.length);
+      } else {
+        value = config.type(parsedOpts._[index]);
+      }
+
+      parsedOpts[config.name] = value;
+    });
+
+    // Make the parsed options available to the instance
+    Object.assign(this.options, parsedOpts);
+    this.args = parsedOpts._;
+    this.arguments = parsedOpts._;
+
+    // Make sure required args are all present
+    this.checkRequiredArgs();
+  }
+
+  checkRequiredArgs() {
+    // If the help option was provided, we don't want to check for required
+    // arguments, since we're only going to print the help message anyway.
+    if (this.options.help) {
+      return;
+    }
+
+    // Bail early if it's not possible to have a missing required arg
+    if (this.args.length > this._arguments.length) {
+      return;
+    }
+
+    this._arguments.forEach((config, position) => {
+      // If the help option was not provided, check whether the argument was
+      // required, and whether a value was provided.
+      if (config.required && position >= this.args.length) {
+        return this.emit('error', new Error(`Did not provide required argument ${chalk.bold(config.name)}!`));
+      }
+    });
+  }
+
+  /**
+   * Runs the generator, scheduling prototype methods on a run queue. Method names
+   * will determine the order each method is run. Methods without special names
+   * will run in the default queue.
+   *
+   * Any method named `constructor` and any methods prefixed by a `_` won't be scheduled.
+   *
+   * You can also supply the arguments for the method to be invoked. If none are
+   * provided, the same values used to initialize the invoker are used to
+   * initialize the invoked.
+   *
+   * @param {Function} [cb]
+   */
+  run(cb) {
+    cb = cb || (() => {});
+
+    const self = this;
+    this._running = true;
+    this.emit('run');
+
+    const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(this));
+    const validMethods = methods.filter(methodIsValid);
+    assert(validMethods.length, 'This Generator is empty. Add at least one method for it to run.');
+
+    this.env.runLoop.once('end', () => {
+      this.emit('end');
+      cb();
+    });
+
+    // Ensure a prototype method is a candidate run by default
+    function methodIsValid(name) {
+      return name.charAt(0) !== '_' && name !== 'constructor';
+    }
+
+    function addMethod(method, methodName, queueName) {
+      queueName = queueName || 'default';
+      debug(`Queueing ${methodName} in ${queueName}`);
+      self.env.runLoop.add(queueName, completed => {
+        debug(`Running ${methodName}`);
+        self.emit(`method:${methodName}`);
+
+        runAsync(function () {
+          self.async = () => this.async();
+          return method.apply(self, self.args);
+        })().then(completed).catch(err => {
+          debug(`An error occured while running ${methodName}`, err);
+
+          // Ensure we emit the error event outside the promise context so it won't be
+          // swallowed when there's no listeners.
+          setImmediate(() => {
+            self.emit('error', err);
+            cb(err);
+          });
+        });
+      });
+    }
+
+    function addInQueue(name) {
+      const item = Object.getPrototypeOf(self)[name];
+      const queueName = self.env.runLoop.queueNames.indexOf(name) === -1 ? null : name;
+
+      // Name points to a function; run it!
+      if (typeof item === 'function') {
+        return addMethod(item, name, queueName);
+      }
+
+      // Not a queue hash; stop
+      if (!queueName) {
+        return;
+      }
+
+      // Run each queue items
+      _.each(item, (method, methodName) => {
+        if (!_.isFunction(method) || !methodIsValid(methodName)) {
+          return;
+        }
+
+        addMethod(method, methodName, queueName);
+      });
+    }
+
+    validMethods.forEach(addInQueue);
+
+    const writeFiles = () => {
+      this.env.runLoop.add('conflicts', this._writeFiles.bind(this), {
+        once: 'write memory fs to disk'
+      });
+    };
+
+    this.env.sharedFs.on('change', writeFiles);
+    writeFiles();
+
+    // Add the default conflicts handling
+    this.env.runLoop.add('conflicts', done => {
+      this.conflicter.resolve(err => {
+        if (err) {
+          this.emit('error', err);
+        }
+
+        done();
+      });
+    });
+
+    _.invokeMap(this._composedWith, 'run');
+    return this;
+  }
+
+  /**
+   * Compose this generator with another one.
+   * @param  {String} namespace  The generator namespace to compose with
+   * @param  {Object} options    The options passed to the Generator
+   * @param  {Object} [settings] Settings hash on the composition relation
+   * @param  {string} [settings.local]        Path to a locally stored generator
+   * @param  {String} [settings.link="weak"]  If "strong", the composition will occured
+   *                                          even when the composition is initialized by
+   *                                          the end user
+   * @return {this}
+   *
+   * @example <caption>Using a peerDependency generator</caption>
+   * this.composeWith('bootstrap', { sass: true });
+   *
+   * @example <caption>Using a direct dependency generator</caption>
+   * this.composeWith(require.resolve('generator-bootstrap/app/main.js'), { sass: true });
+   */
+  composeWith(modulePath, options) {
+    let generator;
+    options = options || {};
+
+    // Pass down the default options so they're correclty mirrored down the chain.
+    options = _.extend({
+      skipInstall: this.options.skipInstall,
+      'skip-install': this.options.skipInstall,
+      skipCache: this.options.skipCache,
+      'skip-cache': this.options.skipCache
+    }, options);
+
+    try {
+      const Generator = require(modulePath); // eslint-disable-line import/no-dynamic-require
+      Generator.resolved = require.resolve(modulePath);
+      Generator.namespace = this.env.namespace(modulePath);
+      generator = this.env.instantiate(Generator, {
+        options,
+        arguments: options.arguments
+      });
+    } catch (err) {
+      if (err.code === 'MODULE_NOT_FOUND') {
+        generator = this.env.create(modulePath, {
+          options,
+          arguments: options.arguments
+        });
+      } else {
+        throw err;
+      }
+    }
+
+    if (this._running) {
+      generator.run();
+    } else {
+      this._composedWith.push(generator);
+    }
+
+    return this;
+  }
+
+  /**
+   * Determine the root generator name (the one who's extending Generator).
+   * @return {String} The name of the root generator
+   */
+  rootGeneratorName() {
+    const pkg = readPkgUp.sync({cwd: this.resolved}).pkg;
+    return pkg ? pkg.name : '*';
+  }
+
+  /**
+   * Determine the root generator version (the one who's extending Generator).
+   * @return {String} The version of the root generator
+   */
+  rootGeneratorVersion() {
+    const pkg = readPkgUp.sync({cwd: this.resolved}).pkg;
+    return pkg ? pkg.version : '0.0.0';
+  }
+
+  /**
+   * Return a storage instance.
+   * @return {Storage} Generator storage
+   * @private
+   */
+  _getStorage() {
+    const storePath = path.join(this.destinationRoot(), '.yo-rc.json');
+    return new Storage(this.rootGeneratorName(), this.fs, storePath);
+  }
+
+  /**
+   * Setup a globalConfig storage instance.
+   * @return {Storage} Global config storage
+   * @private
+   */
+  _getGlobalStorage() {
+    const storePath = path.join(os.homedir(), '.yo-rc-global.json');
+    const storeName = `${this.rootGeneratorName()}:${this.rootGeneratorVersion()}`;
+    return new Storage(storeName, this.fs, storePath);
+  }
+
+  /**
+   * Change the generator destination root directory.
+   * This path is used to find storage, when using a file system helper method (like
+   * `this.write` and `this.copy`)
+   * @param  {String} rootPath new destination root path
+   * @return {String}          destination root path
+   */
+  destinationRoot(rootPath) {
+    if (typeof rootPath === 'string') {
+      this._destinationRoot = path.resolve(rootPath);
+
+      if (!fs.existsSync(rootPath)) {
+        makeDir.sync(rootPath);
+      }
+
+      process.chdir(rootPath);
+      this.env.cwd = rootPath;
+
+      // Reset the storage
+      this.config = this._getStorage();
+    }
+
+    return this._destinationRoot || this.env.cwd;
+  }
+
+  /**
+   * Change the generator source root directory.
+   * This path is used by multiples file system methods like (`this.read` and `this.copy`)
+   * @param  {String} rootPath new source root path
+   * @return {String}          source root path
+   */
+  sourceRoot(rootPath) {
+    if (typeof rootPath === 'string') {
+      this._sourceRoot = path.resolve(rootPath);
+    }
+
+    return this._sourceRoot;
+  }
+
+  /**
+   * Join a path to the source root.
+   * @param  {...String} path
+   * @return {String}    joined path
+   */
+  templatePath() {
+    let filepath = path.join.apply(path, arguments);
+
+    if (!path.isAbsolute(filepath)) {
+      filepath = path.join(this.sourceRoot(), filepath);
+    }
+
+    return filepath;
+  }
+
+  /**
+   * Join a path to the destination root.
+   * @param  {...String} path
+   * @return {String}    joined path
+   */
+  destinationPath() {
+    let filepath = path.join.apply(path, arguments);
+
+    if (!path.isAbsolute(filepath)) {
+      filepath = path.join(this.destinationRoot(), filepath);
+    }
+
+    return filepath;
+  }
+
+  /**
+   * Determines the name of the application.
+   *
+   * First checks for name in bower.json.
+   * Then checks for name in package.json.
+   * Finally defaults to the name of the current directory.
+   * @return {String} The name of the application
+   */
+  determineAppname() {
+    let appname = this.fs.readJSON(this.destinationPath('bower.json'), {}).name;
+
+    if (!appname) {
+      appname = this.fs.readJSON(this.destinationPath('package.json'), {}).name;
+    }
+
+    if (!appname) {
+      appname = path.basename(this.destinationRoot());
+    }
+
+    return appname.replace(/[^\w\s]+?/g, ' ');
+  }
+
+  /**
+   * Add a transform stream to the commit stream.
+   *
+   * Most usually, these transform stream will be Gulp plugins.
+   *
+   * @param  {stream.Transform|stream.Transform[]} stream An array of Transform stream
+   * or a single one.
+   * @return {this}
+   */
+  registerTransformStream(streams) {
+    assert(streams, 'expected to receive a transform stream as parameter');
+    if (!Array.isArray(streams)) {
+      streams = [streams];
+    }
+    this._transformStreams = this._transformStreams.concat(streams);
+    return this;
+  }
+
+  /**
+   * Write memory fs file to disk and logging results
+   * @param {Function} done - callback once files are written
+   * @private
+   */
+  _writeFiles(done) {
+    const self = this;
+
+    const conflictChecker = through.obj(function (file, enc, cb) {
+      const stream = this;
+
+      // If the file has no state requiring action, move on
+      if (file.state === null) {
+        return cb();
+      }
+
+      // Config file should not be processed by the conflicter. Just pass through
+      const filename = path.basename(file.path);
+
+      if (filename === '.yo-rc.json' || filename === '.yo-rc-global.json') {
+        this.push(file);
+        return cb();
+      }
+
+      self.conflicter.checkForCollision(file.path, file.contents, (err, status) => {
+        if (err) {
+          cb(err);
+          return;
+        }
+
+        if (status === 'skip') {
+          delete file.state;
+        } else {
+          stream.push(file);
+        }
+
+        cb();
+      });
+      self.conflicter.resolve();
+    });
+
+    const transformStreams = this._transformStreams.concat([conflictChecker]);
+    this.fs.commit(transformStreams, () => {
+      done();
+    });
+  }
+}
+
+// Mixin the actions modules
+_.extend(Generator.prototype, require('./actions/install'));
+_.extend(Generator.prototype, require('./actions/help'));
+_.extend(Generator.prototype, require('./actions/spawn-command'));
+Generator.prototype.user = require('./actions/user');
+
+module.exports = Generator;
+ at SyntaxError: Unexpected token (6:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/generator-nc-portal/node_modules/generator-nc-portal/app/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

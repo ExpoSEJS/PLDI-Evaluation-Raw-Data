@@ -1,0 +1,184 @@
+/root/Targets/impromptu-react-animated-header
+├─┬ impromptu-react-animated-header@0.2.1 
+│ └─┬ react-tween-state@0.1.5 
+│   ├─┬ raf@3.3.2 
+│   │ └── performance-now@2.1.0 
+│   └── tween-functions@1.2.0 
+├── UNMET PEER DEPENDENCY react@>=0.13.0
+└── UNMET PEER DEPENDENCY reactify@>=1.1.1
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/impromptu-react-animated-header/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0284 took 3.1307s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (87:20) on program var React      = require('react');
+var tweenState = require('react-tween-state');
+
+var Item = React.createClass({
+    render: function() { return null; }
+});
+
+var Brand = React.createClass({
+    render: function() { return null; }
+});
+
+var TopMenu = React.createClass({
+    mixins: [tweenState.Mixin],
+    getDefaultProps: function() {
+        return {
+            align          : 'left',
+            brandAlign     : 'left',
+            autoClose      : true,
+            threshold      : 769,
+            cssTransitions : false,
+            animate        : true,
+            duration       : 300 
+        };
+    },
+    getInitialState: function() {
+        var innerWidth = window.innerWidth;
+        return {
+            expanded   : false,
+            wide       : innerWidth >= this.props.threshold,
+            scrolled   : window.pageYOffset > 1,
+            maskHeight : 0
+        };
+    },
+    toggleExpanded: function() {
+        var expanded = !this.state.expanded,
+            height = this.refs.anchor.getDOMNode().clientHeight;
+        if (true === this.props.animate) {
+            this.setState({expanded: expanded});
+            this.tweenState('maskHeight', {
+                easing   : tweenState.easingTypes.easeInOutQuad,
+                duration : this.props.duration,
+                endValue : (expanded ? height : 0)
+            });
+        } else {
+            this.setState({
+                expanded   : expanded,
+                maskHeight : (expanded ? height : 0)
+            });
+        }
+    },
+    handleResize: function(e) {
+        var innerWidth = window.innerWidth,
+            oldWide = this.state.wide,
+            newWide = innerWidth >= this.props.threshold;
+        if (true === this.state.expanded && true === oldWide && false === newWide) {
+            this.setState({
+                expanded   : false,
+                maskHeight : 0,
+                wide       : false
+            })
+            return;
+        }
+        if (oldWide != newWide)
+            this.setState({wide: newWide});
+    },
+    handleScroll: function(e) {
+        var scrolled = this.state.scrolled,
+            newScrolled = window.pageYOffset > 1;
+        if (scrolled != newScrolled)
+            this.setState({scrolled: newScrolled});
+    },
+    componentWillUnmount: function() {
+        window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    componentDidMount: function() {
+        window.addEventListener('resize', this.handleResize);
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    render: function() {
+        var brandStyle  = {};
+        var buttonStyle = {};
+        if ('right' === this.props.brandAlign) {
+            brandStyle  = {float: 'right'};
+            buttonStyle = {float: 'left'};
+        }
+        var brand = <span />;
+        var items = 
+            React.Children.map(this.props.children, function(item) {
+                if (item.type === Item) {
+                    var onClick = function() {
+                        if ('function' === typeof item.props.onClick)
+                            item.props.onClick();
+                        if (true === this.props.autoClose)
+                            this.toggleExpanded();
+                    };
+                    return (
+                        <li onClick={onClick.bind(this)}>
+                            {item.props.children}
+                        </li>
+                    );
+                } else if (item.type === Brand) {
+                    brand = (
+                        <span style={brandStyle} className={'nav-logo ' + (true === this.state.wide ? 'nav-logo-full' : 'nav-logo-compact')}>
+                            {item.props.children}
+                        </span>
+                    );
+                } else {
+                    return item;
+                }
+            }.bind(this));
+        var animClass = (true === this.props.cssTransitions) ? 'nav-transitions' : '';
+        if (true === this.state.wide) {
+            var cssClass = this.state.scrolled ? 'sticky' : 'fixed';
+            return (
+                <header className={animClass ? (cssClass + ' ' + animClass) : cssClass}>
+                    {brand}
+                    <nav className={'nav-collapse nav-full' + ('right' === this.props.align ? ' nav-right' : '')}>
+                        <ul ref="anchor">
+                            {items}
+                        </ul>
+                    </nav>
+                </header>
+            );
+        } else {
+            return (
+                <header className={animClass}>
+                    {brand}
+                    <a style={buttonStyle} href="javascript:" onClick={this.toggleExpanded} className={'nav-toggle' + (this.state.expanded ? ' active' : '')}>Menu</a>
+                    <nav className="nav-collapse nav-compact">
+                        <div className="mask" style={{height: this.getTweeningValue('maskHeight')}}>
+                            <ul ref="anchor">
+                                {items}
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+            );
+        }
+    }
+});
+
+module.exports = {
+    TopMenu   : TopMenu,
+    MenuItem  : Item,
+    MenuBrand : Brand
+};
+ at SyntaxError: Unexpected token (87:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1034:28)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

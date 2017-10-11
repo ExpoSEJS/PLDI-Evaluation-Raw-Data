@@ -1,0 +1,84 @@
+/root/Targets/hyperbars
+└─┬ hyperbars@0.1.21 
+  └─┬ virtual-dom@2.1.1  (git+https://github.com/vincentracine/virtual-dom.git#dc295a80512fbec5150355ae75a4f55b4ef0c945)
+    ├── browser-split@0.0.1 
+    ├─┬ error@4.4.0 
+    │ ├── camelize@1.0.0 
+    │ ├── string-template@0.2.1 
+    │ └── xtend@4.0.1 
+    ├─┬ ev-store@7.0.0 
+    │ └── individual@3.0.0 
+    ├─┬ global@4.3.2 
+    │ ├─┬ min-document@2.19.0 
+    │ │ └── dom-walk@0.1.1 
+    │ └── process@0.5.2 
+    ├── is-object@1.0.1 
+    ├── next-tick@0.2.2 
+    ├── x-is-array@0.1.0 
+    └── x-is-string@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hyperbars/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0354 took 12.3957s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'htmlparser2'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hyperbars/node_modules/hyperbars/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/hyperbars/src/hyperbars.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/h.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/virtual-hyperscript/index.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/hyperbars/node_modules/x-is-array/index.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/vnode.js. Coverage (Term): 23% Coverage (LOC): 22%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/version.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/is-vnode.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/is-widget.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/is-thunk.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/is-vhook.js. Coverage (Term): 37% Coverage (LOC): 80%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/vtext.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/is-vtext.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/virtual-hyperscript/parse-tag.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/hyperbars/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/virtual-hyperscript/hooks/soft-set-hook.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/virtual-hyperscript/hooks/ev-hook.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/hyperbars/node_modules/ev-store/index.js. Coverage (Term): 63% Coverage (LOC): 64%
+*- File /root/Targets/hyperbars/node_modules/individual/one-version.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/hyperbars/node_modules/individual/index.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/diff.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vtree/diff.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/vpatch.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vnode/handle-thunk.js. Coverage (Term): 34% Coverage (LOC): 32%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vtree/diff-props.js. Coverage (Term): 16% Coverage (LOC): 15%
+*- File /root/Targets/hyperbars/node_modules/is-object/index.js. Coverage (Term): 53% Coverage (LOC): 83%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/patch.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/patch.js. Coverage (Term): 19% Coverage (LOC): 23%
+*- File /root/Targets/hyperbars/node_modules/global/document.js. Coverage (Term): 82% Coverage (LOC): 92%
+*- File /root/Targets/hyperbars/node_modules/min-document/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperbars/node_modules/min-document/document.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/hyperbars/node_modules/dom-walk/index.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/hyperbars/node_modules/min-document/dom-comment.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/hyperbars/node_modules/min-document/dom-text.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/hyperbars/node_modules/min-document/dom-element.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/hyperbars/node_modules/min-document/event/dispatch-event.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/hyperbars/node_modules/min-document/event/add-event-listener.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/hyperbars/node_modules/min-document/event/remove-event-listener.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/hyperbars/node_modules/min-document/serialize.js. Coverage (Term): 9% Coverage (LOC): 24%
+*- File /root/Targets/hyperbars/node_modules/min-document/dom-fragment.js. Coverage (Term): 55% Coverage (LOC): 59%
+*- File /root/Targets/hyperbars/node_modules/min-document/event.js. Coverage (Term): 48% Coverage (LOC): 73%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/create-element.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/apply-properties.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/dom-index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/patch-op.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/vdom/update-widget.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/hyperbars/node_modules/virtual-dom/create-element.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

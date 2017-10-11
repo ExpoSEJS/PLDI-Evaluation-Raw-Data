@@ -1,0 +1,132 @@
+/root/Targets/funtang.compiler
+└── funtang.compiler@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/funtang.compiler/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0496 took 5.1962s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var __VERSION__ = "0.0.1";
+
+var fs = require('fs');
+var optparse = require('optparse');
+
+var funtang = {};
+
+var libpath = __dirname+'/../lib';
+
+// TODO: use config to replace hard-coded path.
+funtang.parser    = require(libpath+'/funtang/parser/funtang.parser.js');
+funtang.generator = require(libpath+'/funtang/generator/funtang.generator.js');
+
+function main()
+{
+    var env = { 'INPUT' : ""
+              , 'OUTPUT': ""
+              , 'ADT'   : "" };
+
+    // Create a new OptionParser.
+    var optparser = new optparse.OptionParser(optionSwitches());
+
+    optparser.on(0, function(value) {
+    });
+
+    optparser.on('help', function() {
+        console.log(optparser.toString());
+        process.exit(0);
+    });
+
+    optparser.on('version', function(){
+        console.log('FunTang Compiler ver '+__VERSION__+' .');
+        process.exit(0);
+    });
+    
+
+    optparser.on('output', function(name, value) {
+        env['OUTPUT'] = value;
+    });
+
+    optparser.on('input', function(name, value) {
+        env['INPUT'] = value;
+    });
+
+    optparser.on('with-adt', function(name, value) {
+        env['ADT'] = value;
+    });
+
+    optparser.parse(process.argv);
+
+// TODO: .on is async and this function will receive nothing to run after this function be called.
+    doCompile(env);
+}
+
+function doCompile(env){
+    fs.readFile(env['INPUT'],'utf8',function(err,data){
+
+        // Now I miss the Maybe Monad in Haskell. 
+        if(err)
+        {
+            throw err;
+        }
+
+        var adt = funtang.parser.parse(data);
+        if( "" != env['ADT'] )
+        {
+            fs.writeFile( env['ADT']
+                        , JSON.stringify(adt)
+                        , function(err){
+                            if(err)
+                            {
+                                throw err;
+                            }
+                        } );
+        }
+
+        var coffee = funtang.generator.generate(adt);
+        fs.writeFile( env['OUTPUT'], coffee, function(err){
+            if(err)
+            {
+                throw err;
+            }
+        });
+    });
+}
+
+function optionSwitches()
+{
+    return [
+          ['-h', '--help', 'No useful helps yet !']
+         ,['-v', '--version', 'FunTang Compiler ver '+__VERSION__+' .']
+         ,['-o', '--output OUTPUT', 'Output the compiled CoffeeScript to the specific path.']
+         ,['-i', '--input INPUT', 'Specific the source FunTang file.']
+         ,['-a', '--with-adt [ADT]', 'Output the ADT at the specific path for debugging.  ']
+    ];
+}
+
+
+main();
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

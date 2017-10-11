@@ -1,0 +1,43 @@
+
+> dtrace-provider@0.8.5 install /root/Targets/crawler-ninja-redis-queue/node_modules/dtrace-provider
+> node scripts/install.js
+
+/root/Targets/crawler-ninja-redis-queue
+└─┬ crawler-ninja-redis-queue@1.0.0 
+  ├─┬ bee-queue@0.3.0 
+  │ └── redis@1.0.0 
+  ├─┬ crawler-ninja-logger@1.0.7 
+  │ └─┬ bunyan@1.8.12 
+  │   ├─┬ dtrace-provider@0.8.5 
+  │   │ └── nan@2.7.0 
+  │   ├── moment@2.18.1 
+  │   ├─┬ mv@2.1.1 
+  │   │ ├─┬ mkdirp@0.5.1 
+  │   │ │ └── minimist@0.0.8 
+  │   │ ├── ncp@2.0.0 
+  │   │ └─┬ rimraf@2.4.5 
+  │   │   └─┬ glob@6.0.4 
+  │   │     ├─┬ inflight@1.0.6 
+  │   │     │ └── wrappy@1.0.2 
+  │   │     ├── inherits@2.0.3 
+  │   │     ├─┬ minimatch@3.0.4 
+  │   │     │ └─┬ brace-expansion@1.1.8 
+  │   │     │   ├── balanced-match@1.0.0 
+  │   │     │   └── concat-map@0.0.1 
+  │   │     ├── once@1.4.0 
+  │   │     └── path-is-absolute@1.0.1 
+  │   └── safe-json-stringify@1.0.4 
+  └─┬ crawler-ninja-uri@1.0.4 
+    └── urijs@1.19.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/crawler-ninja-redis-queue/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ***
+*-- Stat Module Output --*
+*-- Stat Module Done --*
+*-- Coverage Data
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 0 paths with 0 errors **

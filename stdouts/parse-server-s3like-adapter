@@ -1,0 +1,173 @@
+/root/Targets/parse-server-s3like-adapter
+└─┬ parse-server-s3like-adapter@2.0.1 
+  ├─┬ minio@2.0.3 
+  │ ├── async@1.5.2 
+  │ ├─┬ block-stream2@1.1.0 
+  │ │ ├── defined@1.0.0 
+  │ │ ├── inherits@2.0.3 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── safe-buffer@5.1.1 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├─┬ concat-stream@1.6.0 
+  │ │ └── typedarray@0.0.6 
+  │ ├── es6-error@2.1.1 
+  │ ├── lodash@3.10.1 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── moment@2.18.1 
+  │ ├─┬ source-map-support@0.2.10 
+  │ │ └─┬ source-map@0.1.32 
+  │ │   └── amdefine@1.0.1 
+  │ ├─┬ through2@0.6.5 
+  │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── xtend@4.0.1 
+  │ ├── xml@1.0.1 
+  │ └─┬ xml2js@0.4.19 
+  │   ├── sax@1.2.4 
+  │   └── xmlbuilder@9.0.4 
+  ├─┬ thenify-all@1.6.0 
+  │ └─┬ thenify@3.3.0 
+  │   └── any-promise@1.3.0 
+  └── url-join@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/parse-server-s3like-adapter/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0551 took 2.6848s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:6) on program /* @flow */
+'use strict'
+
+const assert = require('assert')
+const bufferFrom /* : (b: string|Buffer) => Buffer */ = require('./buffer-from')
+const Minio = require('minio')
+const thenifyAll = require('thenify-all')
+const url = require('url')
+const urljoin = require('url-join')
+
+class Adapter {
+  /* :: static default: Class<Adapter>; */
+
+  /* :: accessKey: string; */
+  /* :: bucket: (name: string) => string; */
+  /* :: direct: (name: string) => boolean; */
+  /* :: endPoint: string; */
+  /* :: minio: Minio; */
+  /* :: prefix: (name: string) => string; */
+  /* :: region: string; */
+  /* :: secretKey: string; */
+
+  constructor (options /* : Object */ = {}) {
+    const {
+      accessKey, bucket, direct, endPoint, prefix, region, secretKey
+    } = Object.assign({
+      direct: false, prefix: '', region: 'us-east-1'
+    }, options)
+
+    assert(accessKey, 'Argument required: accessKey')
+    assert(bucket, 'Argument required: bucket')
+    assert(endPoint, 'Argument required: endPoint')
+    assert(secretKey, 'Argument required: secretKey')
+
+    // Needs the required() check for `endPoint` to have run
+    const ep = url.parse(endPoint)
+    const { secure = ep.protocol === 'https:' } = options
+
+    // Needs `secure`, whether it's provided or defaulted
+    const { port = ep.port ? +ep.port : (secure ? 443 : 80) } = options
+
+    Object.assign(this, { endPoint, region: `${region}` })
+    Object.assign(this, { bucket: typeof bucket === 'function'
+      ? bucket : () => `${bucket}` })
+    Object.assign(this, { direct: typeof direct === 'function'
+      ? direct : () => !!direct })
+    Object.assign(this, { prefix: typeof prefix === 'function'
+      ? prefix : (name) => `${prefix}${name}` })
+
+    this.minio = new Minio({
+      endPoint: ep.hostname, accessKey, secretKey, secure, port
+    })
+
+    thenifyAll(this.minio, this.minio, [
+      'bucketExists',
+      'getObject',
+      'makeBucket',
+      'putObject',
+      'removeObject'
+    ])
+  }
+
+  createBucket (filename /* : string */) /* : Promise<any> */ {
+    return this.minio.bucketExists(this.bucket(filename))
+    .catch(() => this.minio.makeBucket(this.bucket(filename), this.region))
+  }
+
+  createFile (
+    name /* : string */,
+    data /* : string|Buffer */,
+    contentType /* : string */
+  ) /* : Promise<any> */ {
+    return this.createBucket(name)
+    .then(() => this.minio.putObject(
+      this.bucket(name),
+      this.prefix(name),
+      data,
+      contentType
+    ))
+  }
+
+  deleteFile (name /* : string */) /* : Promise<any> */ {
+    return this.createBucket(name)
+    .then(() => this.minio.removeObject(this.bucket(name), this.prefix(name)))
+  }
+
+  getFileData (name /* : string */) /* : Promise<Buffer> */ {
+    return this.createBucket(name)
+    .then(() => this.minio.getObject(this.bucket(name), this.prefix(name)))
+    .then((stream) => new Promise((resolve, reject) => {
+      const buflist = []
+      stream.on('error', reject)
+      stream.on('data', (chunk) => buflist.push(bufferFrom(chunk)))
+      stream.on('end', () => resolve(Buffer.concat(buflist)))
+    }))
+  }
+
+  getFileLocation (config /* : Object */, name /* : string */) /* : string */ {
+    const parts = this.direct(name)
+      ? [this.endPoint, this.bucket(name), this.prefix(name)]
+      : [config.mount, 'files', config.applicationId, encodeURIComponent(name)]
+    return urljoin(...parts)
+  }
+}
+
+module.exports = Adapter
+module.exports.default = Adapter
+ at SyntaxError: Unexpected token (4:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

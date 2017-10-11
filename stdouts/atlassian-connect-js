@@ -1,0 +1,30 @@
+/root/Targets/atlassian-connect-js
+└─┬ atlassian-connect-js@5.1.32 
+  ├── base64-js@1.2.0 
+  ├── events@1.1.1 
+  ├── object-assign@4.1.1 
+  ├─┬ query-string@4.2.3 
+  │ └── strict-uri-encode@1.1.0 
+  ├─┬ simple-xdm@1.0.6 
+  │ └── promise-polyfill@6.0.2 
+  └── text-encoder-lite-module@1.0.1  (git+https://github.com/hbenl/TextEncoderLiteModule.git#d6b82fb27f0251b336d61dfb16ec8f9e4eb40b9c)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/atlassian-connect-js/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 7.000000000000001% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","setPrototypeOf","call","isNaN"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0847 took 13.1042s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: AJS is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/atlassian-connect-js/node_modules/atlassian-connect-js/dist/connect-host.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

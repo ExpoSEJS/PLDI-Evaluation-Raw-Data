@@ -1,0 +1,93 @@
+/root/Targets/periodicjs.core.controller
+└─┬ periodicjs.core.controller@10.8.4 
+  ├── capitalize@1.0.0 
+  ├─┬ objectcompare@0.2.0 
+  │ ├─┬ require-namespace@0.3.44 
+  │ │ └─┬ winston@2.3.1 
+  │ │   ├── async@1.0.0 
+  │ │   ├── colors@1.0.3 
+  │ │   ├── cycle@1.0.3 
+  │ │   ├── eyes@0.1.8 
+  │ │   ├── isstream@0.1.2 
+  │ │   └── stack-trace@0.0.10 
+  │ └── underscore@1.8.3 
+  ├─┬ periodicjs.core.data@0.7.6 
+  │ ├─┬ flat@2.0.1 
+  │ │ └── is-buffer@1.1.5 
+  │ ├─┬ jsondiffpatch@0.2.4 
+  │ │ └─┬ chalk@0.5.1 
+  │ │   ├── ansi-styles@1.1.0 
+  │ │   ├── escape-string-regexp@1.0.5 
+  │ │   ├─┬ has-ansi@0.1.0 
+  │ │   │ └── ansi-regex@0.2.1 
+  │ │   ├── strip-ansi@0.3.0 
+  │ │   └── supports-color@0.2.0 
+  │ ├─┬ mysql@2.14.1 
+  │ │ ├── bignumber.js@4.0.2 
+  │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ ├── string_decoder@1.0.3 
+  │ │ │ └── util-deprecate@1.0.2 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ └── sqlstring@2.2.0 
+  │ ├── pluralize@1.1.6 
+  │ └─┬ xss@0.2.18 
+  │   └── cssfilter@0.0.8 
+  ├─┬ periodicjs.core.protocols@0.6.5 
+  │ ├── periodicjs.core.utilities@6.1.1 
+  │ └── pluralize@1.1.6 
+  ├─┬ periodicjs.core.responder@0.3.6 
+  │ ├── ejs@2.5.7 
+  │ └─┬ js2xmlparser@2.0.2 
+  │   └── xmlcreate@0.1.1 
+  ├── pluralize@1.2.1 
+  ├─┬ sequelize@3.30.4 
+  │ ├── bluebird@3.5.0 
+  │ ├── depd@1.1.1 
+  │ ├── dottie@1.1.1 
+  │ ├── generic-pool@2.4.2 
+  │ ├── inflection@1.12.0 
+  │ ├── lodash@4.12.0 
+  │ ├── moment@2.18.1 
+  │ ├── moment-timezone@0.5.13 
+  │ ├─┬ retry-as-promised@2.3.1 
+  │ │ └─┬ debug@2.6.9 
+  │ │   └── ms@2.0.0 
+  │ ├── semver@5.4.1 
+  │ ├── shimmer@1.1.0 
+  │ ├─┬ terraformer-wkt-parser@1.1.2 
+  │ │ └─┬ terraformer@1.0.8 
+  │ │   └── @types/geojson@1.0.4 
+  │ ├── toposort-class@1.0.1 
+  │ ├── uuid@3.1.0 
+  │ ├── validator@5.7.0 
+  │ └── wkx@0.2.0 
+  ├─┬ string-to-json@0.1.0 
+  │ └── underscore-x@0.1.0 
+  ├── valid-objectid@0.0.2 
+  └─┬ xss@0.3.4 
+    ├── commander@2.11.0 
+    └── cssfilter@0.0.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/periodicjs.core.controller/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0657 took 3.8026s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: path is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/periodicjs.core.controller/node_modules/periodicjs.core.controller/index.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

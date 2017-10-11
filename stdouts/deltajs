@@ -1,0 +1,100 @@
+
+> libxmljs@0.18.0 install /root/Targets/deltajs/node_modules/libxmljs
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/deltajs/node_modules/libxmljs/build'
+  CC(target) Release/obj.target/libxml/vendor/libxml/buf.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/catalog.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/chvalid.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/dict.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/encoding.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/entities.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/error.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/globals.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/hash.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/HTMLparser.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/HTMLtree.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/legacy.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/list.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/parser.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/parserInternals.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/pattern.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/relaxng.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/SAX2.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/SAX.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/tree.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/threads.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/uri.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/valid.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xinclude.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xlink.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlIO.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlmemory.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlmodule.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlreader.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlregexp.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlsave.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlschemas.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlschemastypes.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlstring.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlunicode.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xmlwriter.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xpath.o
+  CC(target) Release/obj.target/libxml/vendor/libxml/xpointer.o
+  AR(target) Release/obj.target/vendor/libxml/xml.a
+  COPY Release/xml.a
+  CXX(target) Release/obj.target/xmljs/src/libxmljs.o
+  CXX(target) Release/obj.target/xmljs/src/xml_attribute.o
+  CXX(target) Release/obj.target/xmljs/src/xml_document.o
+  CXX(target) Release/obj.target/xmljs/src/xml_element.o
+  CXX(target) Release/obj.target/xmljs/src/xml_comment.o
+  CXX(target) Release/obj.target/xmljs/src/xml_namespace.o
+  CXX(target) Release/obj.target/xmljs/src/xml_node.o
+  CXX(target) Release/obj.target/xmljs/src/xml_sax_parser.o
+  CXX(target) Release/obj.target/xmljs/src/xml_syntax_error.o
+  CXX(target) Release/obj.target/xmljs/src/xml_text.o
+  CXX(target) Release/obj.target/xmljs/src/xml_textwriter.o
+  CXX(target) Release/obj.target/xmljs/src/xml_xpath_context.o
+  SOLINK(target) Release/obj.target/xmljs.node
+  COPY Release/xmljs.node
+make: Leaving directory '/root/Targets/deltajs/node_modules/libxmljs/build'
+/root/Targets/deltajs
+└─┬ deltajs@0.0.4 
+  └─┬ xmlshim@0.2.1
+    └── libxmljs@0.18.0  (git://github.com/znerol/libxmljs.git#40a7f73a2431c3c0600dc9bb72ee8ca3b15aa79e)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/deltajs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0905 took 14.3549s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: locationInfo is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/main.js. Coverage (Term): 84% Coverage (LOC): 94%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/fnv132.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/lcs.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/tree.js. Coverage (Term): 13% Coverage (LOC): 24%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/xcc.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/skelmatch.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/contextmatcher.js. Coverage (Term): 10% Coverage (LOC): 24%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/resolver.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/domtree.js. Coverage (Term): 19% Coverage (LOC): 32%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/jsobjecttree.js. Coverage (Term): 25% Coverage (LOC): 33%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/domdelta.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/delta.js. Coverage (Term): 13% Coverage (LOC): 24%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/contextdelta.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/jsondelta.js. Coverage (Term): 36% Coverage (LOC): 47%
+*- File /root/Targets/deltajs/node_modules/deltajs/lib/delta/xmlpayload.js. Coverage (Term): 7% Coverage (LOC): 14%
+*- File /root/Targets/deltajs/node_modules/xmlshim/index.js. Coverage (Term): 11% Coverage (LOC): 13%
+*- File /root/Targets/deltajs/node_modules/jsdom/lib/jsdom.js. Coverage (Term): 1% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

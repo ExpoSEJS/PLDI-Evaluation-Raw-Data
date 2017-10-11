@@ -1,0 +1,67 @@
+/root/Targets/think-logger3
+└─┬ think-logger3@1.0.10 
+  └─┬ log4js@1.1.1 
+    ├─┬ debug@2.6.9 
+    │ └── ms@2.0.0 
+    ├── semver@5.4.1 
+    └─┬ streamroller@0.4.1 
+      ├── date-format@0.0.0 
+      ├── debug@0.7.4 
+      ├─┬ mkdirp@0.5.1 
+      │ └── minimist@0.0.8 
+      └─┬ readable-stream@1.1.14 
+        ├── core-util-is@1.0.2 
+        ├── inherits@2.0.3 
+        ├── isarray@0.0.1 
+        └── string_decoder@0.10.31 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/think-logger3/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0233 took 1.2556s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:84) on program const assert = require('assert');
+const ConsoleAdapter = require('./adapter/console');
+const FileAdapter = require('./adapter/file');
+const DateFileAdapter = require('./adapter/datefile');
+
+class Logger {
+  constructor(config, clusterMode) {
+    const Handle = config.handle || ConsoleAdapter;
+    delete config.handle;
+
+    this._logger = new Handle(config, clusterMode);
+    ['debug', 'info', 'warn', 'error'].forEach(level => {
+      assert(this._logger[level], `adapter function ${level} not exist!`);
+      this[level] = this._logger[level].bind(this._logger);
+    });
+  }
+}
+
+Logger.Console = ConsoleAdapter;
+Logger.File = FileAdapter;
+Logger.DateFile = DateFileAdapter;
+module.exports = Logger;
+ at SyntaxError: Unexpected token (1:84)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

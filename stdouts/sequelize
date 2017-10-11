@@ -1,0 +1,46 @@
+/root/Targets/sequelize
+└─┬ sequelize@4.11.2 
+  ├── bluebird@3.5.0 
+  ├─┬ cls-bluebird@2.0.1 
+  │ ├── is-bluebird@1.0.2 
+  │ └── shimmer@1.1.0 
+  ├─┬ debug@3.1.0 
+  │ └── ms@2.0.0 
+  ├── depd@1.1.1 
+  ├── dottie@2.0.0 
+  ├── generic-pool@3.1.8 
+  ├── inflection@1.12.0 
+  ├── lodash@4.17.4 
+  ├── moment@2.18.1 
+  ├── moment-timezone@0.5.13 
+  ├─┬ retry-as-promised@2.3.1 
+  │ └── debug@2.6.9 
+  ├── semver@5.4.1 
+  ├─┬ terraformer-wkt-parser@1.1.2 
+  │ └─┬ terraformer@1.0.8 
+  │   └── @types/geojson@1.0.4 
+  ├── toposort-class@1.0.1 
+  ├── uuid@3.1.0 
+  ├── validator@8.2.0 
+  └─┬ wkx@0.4.2 
+    └── @types/node@8.0.31 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sequelize/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0505 took 5.987s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sequelize/node_modules/sequelize/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

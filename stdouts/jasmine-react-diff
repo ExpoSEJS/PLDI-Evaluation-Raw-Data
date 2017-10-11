@@ -1,0 +1,46 @@
+/root/Targets/jasmine-react-diff
+└─┬ jasmine-react-diff@0.1.5 
+  ├── UNMET PEER DEPENDENCY react@^0.14.8
+  ├── react-addons-test-utils@0.14.8 
+  └─┬ react-decompiler@0.2.1 
+    ├── is-plain-obj@1.1.0 
+    ├── is-regexp@1.0.0 
+    ├─┬ js-beautify@1.7.3 
+    │ ├─┬ config-chain@1.1.11 
+    │ │ ├── ini@1.3.4 
+    │ │ └── proto-list@1.2.4 
+    │ ├─┬ editorconfig@0.13.3 
+    │ │ ├── bluebird@3.5.0 
+    │ │ ├── commander@2.11.0 
+    │ │ ├─┬ lru-cache@3.2.0 
+    │ │ │ └── pseudomap@1.0.2 
+    │ │ ├── semver@5.4.1 
+    │ │ └── sigmund@1.0.1 
+    │ ├─┬ mkdirp@0.5.1 
+    │ │ └── minimist@0.0.8 
+    │ └─┬ nopt@3.0.6 
+    │   └── abbrev@1.1.1 
+    ├── object-assign@4.1.1 
+    └── UNMET PEER DEPENDENCY react@^0.14.8
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jasmine-react-diff/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0345 took 3.9806s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react/lib/ReactTestUtils'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jasmine-react-diff/node_modules/jasmine-react-diff/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/jasmine-react-diff/node_modules/jasmine-react-diff/dist/jasmine_react_diff.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/jasmine-react-diff/node_modules/react-addons-test-utils/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,36 @@
+/root/Targets/angular-dragula
+└─┬ angular-dragula@1.2.8 
+  ├── atoa@1.0.0 
+  └─┬ dragula@3.7.2 
+    ├─┬ contra@1.9.4 
+    │ └── ticky@1.0.1 
+    └─┬ crossvent@1.5.4 
+      └── custom-event@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular-dragula/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 15% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0733 took 9.089s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/angular-dragula/node_modules/angular-dragula/angular-dragula.js. Coverage (Term): 31% Coverage (LOC): 55%
+*- File /root/Targets/angular-dragula/node_modules/angular-dragula/service.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/angular-dragula/node_modules/dragula/dragula.js. Coverage (Term): 2% Coverage (LOC): 4%
+*- File /root/Targets/angular-dragula/node_modules/contra/emitter.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/angular-dragula/node_modules/atoa/atoa.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- File /root/Targets/angular-dragula/node_modules/contra/debounce.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/angular-dragula/node_modules/ticky/ticky.js. Coverage (Term): 46% Coverage (LOC): 58%
+*- File /root/Targets/angular-dragula/node_modules/crossvent/src/crossvent.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/angular-dragula/node_modules/custom-event/index.js. Coverage (Term): 24% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

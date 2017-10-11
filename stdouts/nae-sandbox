@@ -1,0 +1,298 @@
+/root/Targets/nae-sandbox
+└─┬ nae-sandbox@0.0.2-alpha 
+  └─┬ debug@3.1.0 
+    └── ms@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nae-sandbox/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0374 took 5.5515s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (23:4) on program /*!
+ * nae-sandbox - module.js
+ *
+ * Copyright(c) nae team and other contributors.
+ * MIT Licensed
+ *
+ * Authors:
+ *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
+ */
+
+"use strict";
+
+/**
+ * Module dependencies.
+ */
+
+var debug = require('debug')('nae:sandbox_module');
+var util = require('util');
+var Module = require('module').Module;
+var path = require('path');
+var runInThisContext = require('vm').runInThisContext;
+var runInNewContext = require('vm').runInNewContext;
+var assert = require('assert').ok;
+
+var _disableModules = {};
+var _nativeModules = {};
+var _enableAddons = false;
+var _limitRootDir = '/';
+var _cacheModules = {};
+
+var _nativeNames = [
+  'fs', 'path', 'os', 'tty',
+  'readline', 'stream', 'events',
+  'net', 'http', 'https', 'domain', 'dns', 'dgram',
+  'zlib', 'tls', 'crypto', 'buffer',
+  'util', 'assert', 'querystring',
+  'string_decoder',
+  'url',
+];
+
+var _extendGlobals = {};
+
+// See: https://github.com/joyent/node/issues/1707#issuecomment-2106309
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+function initConfig() {
+  _cacheModules = {};
+  _disableModules = {};
+  _nativeModules = {};
+  for (var i = 0; i < _nativeNames.length; i++) {
+    var name = _nativeNames[i];
+    _nativeModules[name] = require(name);
+  }
+  _enableAddons = false;
+  _limitRootDir = '/';
+}
+
+/**
+ * Config Sandbox modules
+ *
+ * @param {Object} [options]
+ *  - {Array} [disableModules] disable module names, e.g.: `['child_process', 'repl']`
+ *  - {Object} modules configurable modules, e.g.: `{fs: fs2, net: net2}`
+ *  - {String} limitRoot limit app root dir, e.g.: `/home/apps/foo`
+ *  - {Boolean} enableAddons enable C/C++ addons or not, default is `false`
+ */
+exports.config = function (options) {
+  initConfig();
+
+  options = options || {};
+  if (options.disableModules && options.disableModules.length) {
+    for (var i = 0; i < options.disableModules.length; i++) {
+      _disableModules[options.disableModules[i]] = true;
+    }
+  }
+  if (options.modules) {
+    for (var k in options.modules) {
+      _nativeModules[k] = options.modules[k];
+    }
+  }
+  if (options.globals) {
+    for (var j in options.globals) {
+      _extendGlobals[j] = options.globals[j];
+    }
+  }
+  _enableAddons = options.enableAddons === true;
+  _limitRootDir = options.limitRoot || '/';
+  // make sure limit root dir end withs '/'
+  _limitRootDir = _limitRootDir.replace(/\/+$/g, '') + '/';
+};
+
+exports._resolveLookupPaths = Module._resolveLookupPaths;
+exports._findPath = Module._findPath;
+
+exports._resolveFilename = function (request, parent) {
+  debug('SandboxModule._resolveFilename %s parent: %s', request, parent && parent.id);
+  if (hasOwnProperty(_disableModules, request)) {
+    var err = new Error("Disable module '" + request + "'");
+    err.code = 'MODULE_DISABLE';
+    throw err;
+  }
+
+  if (hasOwnProperty(_nativeModules, request)) {
+    return request;
+  }
+
+  var resolvedModule = exports._resolveLookupPaths(request, parent);
+  var id = resolvedModule[0];
+  var paths = resolvedModule[1];
+
+  var limitPaths = [];
+  for (var i = 0; i < paths.length; i++) {
+    var basePath = path.resolve(paths[i], request);
+    if (basePath.indexOf(_limitRootDir) === 0) {
+      limitPaths.push(paths[i]);
+    }
+  }
+
+  // look up the filename first, since that's the cache key.
+  debug('SandboxModule._resolveFilename looking for %j in %j, orgin paths: %j',
+    request, limitPaths, paths);
+
+  var filename = exports._findPath(request, limitPaths);
+  if (!filename) {
+    var err = new Error("Cannot find module '" + request + "'");
+    err.code = 'MODULE_NOT_FOUND';
+    throw err;
+  }
+
+  if (!_enableAddons) {
+    var extname = path.extname(filename).toLowerCase();
+    if (extname === '.node') {
+      var err = new Error("Disable addons module '" + request + "'");
+      err.code = 'MODULE_DISABLE';
+      throw err;
+    }
+  }
+  return filename;
+};
+
+exports._load = function (request, parent, isMain) {
+  debug('SandboxModule._load %s parent: %s', request, parent && parent.id);
+
+  var filename = exports._resolveFilename(request, parent);
+
+  // check native modules first
+  if (hasOwnProperty(_nativeModules, filename)) {
+    debug('SandboxModule._load native module %s', request);
+    return _nativeModules[filename];
+  }
+
+  var cachedModule = _cacheModules[filename];
+  if (cachedModule) {
+    debug('SandboxModule._load cache module %s', request);
+    return cachedModule.exports;
+  }
+
+  var module = new SandboxModule(filename, parent);
+
+  if (isMain) {
+    process.mainModule = module;
+    module.id = '.';
+  }
+
+  _cacheModules[filename] = module;
+
+  var hadException = true;
+
+  try {
+    module.load(filename);
+    hadException = false;
+  } finally {
+    if (hadException) {
+      delete _cacheModules[filename];
+    }
+  }
+
+  return module.exports;
+};
+
+function SandboxModule(id, parent) {
+  Module.call(this, id, parent);
+  // should not let sandbox inside module access super_
+  this.constructor.super_ = null;
+}
+
+util.inherits(SandboxModule, Module);
+
+exports.SandboxModule = SandboxModule;
+
+SandboxModule.prototype.require = function (path) {
+  assert(typeof path === 'string', 'path must be a string');
+  assert(path, 'missing path');
+  return exports._load(path, this);
+};
+
+SandboxModule.prototype._compile = function (content, filename) {
+  var self = this;
+  // remove shebang
+  content = content.replace(/^\#\!.*/, '');
+
+  var _require = self.require;
+  function require(path) {
+    return _require.call(self, path);
+  }
+
+  require.resolve = function(request) {
+    return exports._resolveFilename(request, self);
+  };
+
+  Object.defineProperty(require, 'paths', { get: function() {
+    throw new Error('require.paths is removed. Use ' +
+                    'node_modules folders, or the NODE_PATH ' +
+                    'environment variable instead.');
+  }});
+
+  require.main = process.mainModule;
+
+  // Enable support to add extra extension types
+  require.extensions = Module._extensions;
+  require.registerExtension = function() {
+    throw new Error('require.registerExtension() removed. Use ' +
+                    'require.extensions instead.');
+  };
+
+  require.cache = _cacheModules;
+
+  debug('self._compile() %s', self.id);
+  var sandbox = {
+    'require' : require,
+    'exports' : self.exports,
+    '__filename' : filename,
+    '__dirname' : path.dirname(filename),
+    'module' : self,
+    'root' : root,
+  };
+
+  for (var k in global) {
+    sandbox[k] = global[k];
+  }
+
+  // Global variables in current process are polluted
+  for (var j in _extendGlobals) {
+    debug('extend global variable %s', j);
+    sandbox[j] = _extendGlobals[j];
+  }
+
+  sandbox.global = sandbox;
+
+  return runInNewContext(content, sandbox, { filename: filename });
+};
+
+// bootstrap main module.
+exports.runMain = function (main) {
+  exports._load(main, null, true);
+  // process._tickCallback();
+};
+ at SyntaxError: Unexpected token (23:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nae-sandbox/node_modules/nae-sandbox/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/nae-sandbox/node_modules/nae-sandbox/lib/sandbox.js. Coverage (Term): 33% Coverage (LOC): 41%
+*- File /root/Targets/nae-sandbox/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/nae-sandbox/node_modules/debug/src/node.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/nae-sandbox/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/nae-sandbox/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

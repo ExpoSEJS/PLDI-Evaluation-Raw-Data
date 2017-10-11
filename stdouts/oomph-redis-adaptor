@@ -1,0 +1,49 @@
+/root/Targets/oomph-redis-adaptor
+└─┬ oomph-redis-adaptor@0.0.0 
+  ├── lodash@3.5.0 
+  ├─┬ oomph@0.0.0  (git://github.com/Kenspeckled/oomph.git#914d6bc21144309673ddbc69d23a3205774ac398)
+  │ └── lodash@3.10.1 
+  ├─┬ promise@7.3.1 
+  │ └── asap@2.0.6 
+  └── redis@0.12.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/oomph-redis-adaptor/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","toUpperCase","RegExp","ArrayBuffer","Float64Array","pow","WeakMap","parseInt","Array"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0664 took 39.2728s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'pluralize'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/oomph-redis-adaptor/lib/oomphRedisAdaptor.js. Coverage (Term): 23% Coverage (LOC): 18%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/index.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/util.js. Coverage (Term): 77% Coverage (LOC): 67%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/queue.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/to_array.js. Coverage (Term): 32% Coverage (LOC): 44%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/parser/hiredis.js. Coverage (Term): 19% Coverage (LOC): 17%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/parser/javascript.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/redis/lib/commands.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/oomph-redis-adaptor/lib/adaptorMethods/all.js. Coverage (Term): 39% Coverage (LOC): 36%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/lodash/index.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/oomph-redis-adaptor/lib/adaptorMethods/where.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/core.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/asap/raw.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/done.js. Coverage (Term): 41% Coverage (LOC): 54%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/finally.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/es6-extensions.js. Coverage (Term): 22% Coverage (LOC): 27%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/node-extensions.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/asap/asap.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/promise/lib/synchronous.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/oomph-redis-adaptor/node_modules/oomph-redis-adaptor/lib/adaptorMethods/utilities.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

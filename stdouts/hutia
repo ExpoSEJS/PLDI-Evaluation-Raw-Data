@@ -1,0 +1,205 @@
+
+> ws@0.4.31 install /root/Targets/hutia/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/hutia/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/hutia/node_modules/ws/build'
+
+> sqlite3@2.2.3 install /root/Targets/hutia/node_modules/sqlite3
+> node-pre-gyp install --fallback-to-build
+
+/root/Targets/hutia
+├─┬ connect@2.19.6 
+│ ├── basic-auth-connect@1.0.0 
+│ ├─┬ body-parser@1.3.1 
+│ │ └── raw-body@1.1.6 
+│ ├── bytes@1.0.0 
+│ ├─┬ compression@1.0.7 
+│ │ └── compressible@1.1.0 
+│ ├─┬ connect-timeout@1.1.0 
+│ │ └── debug@0.8.1 
+│ ├── cookie-parser@1.1.0 
+│ ├─┬ csurf@1.2.1 
+│ │ └─┬ csrf-tokens@1.0.4 
+│ │   ├── rndm@1.2.0 
+│ │   └── scmp@0.0.3 
+│ ├── errorhandler@1.0.2 
+│ ├─┬ express-session@1.2.1 
+│ │ ├── debug@0.8.1 
+│ │ └── uid2@0.0.3 
+│ ├── method-override@2.0.2 
+│ ├── morgan@1.1.1 
+│ ├─┬ multiparty@3.2.8 
+│ │ ├─┬ readable-stream@1.1.14 
+│ │ │ ├── core-util-is@1.0.2 
+│ │ │ ├── inherits@2.0.3 
+│ │ │ └── string_decoder@0.10.31 
+│ │ └── stream-counter@0.2.0 
+│ ├── on-headers@0.0.0 
+│ ├── pause@0.0.1 
+│ ├── response-time@2.0.0 
+│ ├── serve-favicon@2.0.1 
+│ ├─┬ serve-index@1.1.1 
+│ │ └── batch@0.5.0 
+│ └── vhost@1.0.0 
+├─┬ express@4.4.3 
+│ ├─┬ accepts@1.0.3 
+│ │ ├── mime@1.2.11 
+│ │ └── negotiator@0.4.6 
+│ ├── buffer-crc32@0.2.1 
+│ ├── cookie@0.1.2 
+│ ├── cookie-signature@1.0.3 
+│ ├─┬ debug@1.0.2 
+│ │ └── ms@0.6.2 
+│ ├── escape-html@1.0.1 
+│ ├── fresh@0.2.2 
+│ ├── merge-descriptors@0.0.2 
+│ ├── methods@1.0.1 
+│ ├── parseurl@1.0.1 
+│ ├── path-to-regexp@0.1.2 
+│ ├─┬ proxy-addr@1.0.1 
+│ │ └── ipaddr.js@0.1.2 
+│ ├── qs@0.6.6 
+│ ├── range-parser@1.0.0 
+│ ├─┬ send@0.4.3 
+│ │ ├─┬ finished@1.2.2 
+│ │ │ └── ee-first@1.0.3 
+│ │ └── range-parser@1.0.3 
+│ ├── serve-static@1.2.3 
+│ ├─┬ type-is@1.2.1 
+│ │ └── mime-types@1.0.0 
+│ ├── utils-merge@1.0.0 
+│ └── vary@0.1.0 
+├── formidable@1.0.15 
+├─┬ npm@1.4.14 
+│ ├── abbrev@1.0.5 
+│ ├── ansi@0.2.1 
+│ ├── ansicolors@0.3.2 
+│ ├── ansistyles@0.1.3 
+│ ├── archy@0.0.2 
+│ ├── block-stream@0.0.7 
+│ ├── char-spinner@1.0.1 
+│ ├── child-process-close@0.1.1 
+│ ├── chmodr@0.1.0 
+│ ├── chownr@0.0.1 
+│ ├── cmd-shim@1.1.1 
+│ ├── columnify@0.1.2 
+│ ├── editor@0.0.5 
+│ ├── fstream@0.1.25 
+│ ├─┬ fstream-npm@0.1.7 
+│ │ └── fstream-ignore@0.0.8 
+│ ├── github-url-from-git@1.1.1 
+│ ├── github-url-from-username-repo@0.1.0 
+│ ├── glob@3.2.10 
+│ ├── graceful-fs@2.0.2 
+│ ├── inflight@1.0.1 
+│ ├── inherits@2.0.1 
+│ ├── ini@1.2.0 
+│ ├─┬ init-package-json@0.0.17 
+│ │ └── promzard@0.2.2 
+│ ├── lockfile@0.4.2 
+│ ├── lru-cache@2.5.0 
+│ ├─┬ minimatch@0.3.0 
+│ │ └── sigmund@1.0.0 
+│ ├── mkdirp@0.3.5 
+│ ├── node-gyp@0.13.1 
+│ ├── nopt@2.2.1 
+│ ├── npm-cache-filename@1.0.1 
+│ ├── npm-install-checks@1.0.1 
+│ ├── npm-registry-client@1.0.0 
+│ ├── npm-user-validate@0.1.0 
+│ ├─┬ npmconf@1.0.1 
+│ │ └─┬ config-chain@1.1.8 
+│ │   └── proto-list@1.2.2 
+│ ├── npmlog@0.0.6 
+│ ├── once@1.3.0 
+│ ├── opener@1.3.0 
+│ ├── osenv@0.0.3 
+│ ├── path-is-inside@1.0.1 
+│ ├─┬ read@1.0.5 
+│ │ └── mute-stream@0.0.4 
+│ ├─┬ read-installed@2.0.4 
+│ │ └── util-extend@1.0.1 
+│ ├─┬ read-package-json@1.1.9 
+│ │ └── normalize-package-data@0.2.13 
+│ ├─┬ request@2.30.0 
+│ │ ├── aws-sign2@0.5.0 
+│ │ ├── forever-agent@0.5.0 
+│ │ ├─┬ form-data@0.1.2 
+│ │ │ ├── async@0.2.9 
+│ │ │ └─┬ combined-stream@0.0.4 
+│ │ │   └── delayed-stream@0.0.5 
+│ │ ├─┬ hawk@1.0.0 
+│ │ │ ├── boom@0.4.2 
+│ │ │ ├── cryptiles@0.2.2 
+│ │ │ ├── hoek@0.9.1 
+│ │ │ └── sntp@0.2.4 
+│ │ ├─┬ http-signature@0.10.0 
+│ │ │ ├── asn1@0.1.11 
+│ │ │ ├── assert-plus@0.1.2 
+│ │ │ └── ctype@0.5.2 
+│ │ ├── json-stringify-safe@5.0.0 
+│ │ ├── mime@1.2.11 
+│ │ ├── node-uuid@1.4.1 
+│ │ ├── oauth-sign@0.3.0 
+│ │ ├── qs@0.6.6 
+│ │ ├─┬ tough-cookie@0.9.15 
+│ │ │ └── punycode@1.2.3 
+│ │ └── tunnel-agent@0.3.0 
+│ ├── retry@0.6.0 
+│ ├── rimraf@2.2.6 
+│ ├── semver@2.3.0 
+│ ├─┬ sha@1.2.3 
+│ │ └── readable-stream@1.0.24 
+│ ├── slide@1.1.5 
+│ ├── sorted-object@1.0.0 
+│ ├── tar@0.1.19 
+│ ├── text-table@0.2.0 
+│ ├── uid-number@0.0.5 
+│ └── which@1.0.5 
+└─┬ socket.io@1.0.5 
+  ├── debug@0.7.4 
+  ├─┬ engine.io@1.3.0 
+  │ ├── base64id@0.1.0 
+  │ ├── debug@0.6.0 
+  │ ├─┬ engine.io-parser@1.0.6 
+  │ │ ├── after@0.8.1 
+  │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ ├── base64-arraybuffer@0.1.2 
+  │ │ ├── blob@0.0.2 
+  │ │ └── utf8@2.0.0 
+  │ └─┬ ws@0.4.31 
+  │   ├── commander@0.6.1 
+  │   ├── nan@0.3.2 
+  │   ├── options@0.0.6 
+  │   └── tinycolor@0.0.1 
+  ├─┬ has-binary-data@0.1.1 
+  │ └── isarray@0.0.1 
+  ├─┬ socket.io-adapter@0.2.0 
+  │ ├── debug@0.7.4 
+  │ └── socket.io-parser@2.1.2 
+  ├─┬ socket.io-client@1.0.5 
+  │ ├── component-bind@1.0.0 
+  │ ├── component-emitter@1.1.2 
+  │ ├── debug@0.7.4 
+  │ ├─┬ engine.io-client@1.3.0 
+  │ │ ├── component-inherit@0.0.3 
+  │ │ ├── debug@0.7.4 
+  │ │ ├─┬ has-cors@1.0.3 
+  │ │ │ └── global@2.0.1 
+  │ │ ├── parsejson@0.0.1 
+  │ │ ├── parseqs@0.0.2 
+  │ │ └── xmlhttprequest@1.5.0 
+  │ ├── indexof@0.0.1 
+  │ ├── object-component@0.0.3 
+  │ ├─┬ parseuri@0.0.2 
+  │ │ └─┬ better-assert@1.0.2 
+  │ │   └── callsite@1.0.0 
+  │ └── to-array@0.1.3 
+  └─┬ socket.io-parser@2.2.0 
+    ├── debug@0.7.4 
+    ├── emitter@1.0.1 
+    └── json3@3.2.6 
+

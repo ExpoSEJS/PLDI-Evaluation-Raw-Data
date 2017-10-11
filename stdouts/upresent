@@ -1,0 +1,171 @@
+/root/Targets/upresent
+└─┬ upresent@1.0.5 
+  ├─┬ html-minifier@0.7.2 
+  │ ├─┬ change-case@2.3.1 
+  │ │ ├── camel-case@1.2.2 
+  │ │ ├── constant-case@1.1.2 
+  │ │ ├── dot-case@1.1.2 
+  │ │ ├── is-lower-case@1.1.3 
+  │ │ ├── is-upper-case@1.1.2 
+  │ │ ├── lower-case@1.1.4 
+  │ │ ├── lower-case-first@1.0.2 
+  │ │ ├── param-case@1.1.2 
+  │ │ ├── pascal-case@1.1.2 
+  │ │ ├── path-case@1.1.2 
+  │ │ ├── sentence-case@1.1.3 
+  │ │ ├── snake-case@1.1.2 
+  │ │ ├── swap-case@1.1.2 
+  │ │ ├── title-case@1.1.2 
+  │ │ ├── upper-case@1.1.3 
+  │ │ └── upper-case-first@1.1.2 
+  │ ├─┬ clean-css@3.1.9 
+  │ │ ├── commander@2.6.0 
+  │ │ └─┬ source-map@0.1.43 
+  │ │   └── amdefine@1.0.1 
+  │ ├─┬ cli@0.6.6 
+  │ │ ├── exit@0.1.2 
+  │ │ └─┬ glob@3.2.11 
+  │ │   └─┬ minimatch@0.3.0 
+  │ │     └── lru-cache@2.7.3 
+  │ ├─┬ concat-stream@1.4.10 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── typedarray@0.0.6 
+  │ ├── relateurl@0.2.7 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── async@0.2.10 
+  │   ├── source-map@0.1.34 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.5.4 
+  │     ├── camelcase@1.2.1 
+  │     ├── decamelize@1.2.0 
+  │     ├── window-size@0.1.0 
+  │     └── wordwrap@0.0.2 
+  ├─┬ js-beautify@1.7.3 
+  │ ├─┬ config-chain@1.1.11 
+  │ │ ├── ini@1.3.4 
+  │ │ └── proto-list@1.2.4 
+  │ ├─┬ editorconfig@0.13.3 
+  │ │ ├── bluebird@3.5.0 
+  │ │ ├── commander@2.11.0 
+  │ │ ├─┬ lru-cache@3.2.0 
+  │ │ │ └── pseudomap@1.0.2 
+  │ │ ├── semver@5.4.1 
+  │ │ └── sigmund@1.0.1 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ └─┬ nopt@3.0.6 
+  │   └── abbrev@1.1.0 
+  ├─┬ nearley@1.4.0 
+  │ ├─┬ cli-color@1.2.0 
+  │ │ ├── ansi-regex@2.1.1 
+  │ │ ├── d@1.0.0 
+  │ │ ├─┬ es5-ext@0.10.30 
+  │ │ │ └── es6-symbol@3.1.1 
+  │ │ ├── es6-iterator@2.0.1 
+  │ │ ├─┬ memoizee@0.4.11 
+  │ │ │ ├── es6-weak-map@2.0.2 
+  │ │ │ ├── event-emitter@0.3.5 
+  │ │ │ ├── is-promise@2.1.0 
+  │ │ │ ├── lru-queue@0.1.0 
+  │ │ │ └── next-tick@1.0.0 
+  │ │ └── timers-ext@0.1.2 
+  │ └─┬ nomnom@1.6.2 
+  │   ├── colors@0.5.1 
+  │   └── underscore@1.4.4 
+  └─┬ nomnom@1.8.1 
+    ├─┬ chalk@0.4.0 
+    │ ├── ansi-styles@1.0.0 
+    │ ├── has-color@0.1.7 
+    │ └── strip-ansi@0.1.1 
+    └── underscore@1.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/upresent/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0616 took 4.807s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+/*
+ * frontend to the nearley grammar powering uPresent
+ * depends on nearley from npm, obviously
+ */
+
+var fs = require("fs");
+var backend = require("../publish_core.js");
+var path = require("path");
+var beautify_html = require("js-beautify").html;
+var minify = require("html-minifier").minify;
+
+var opts = require("nomnom")
+    .script("up")
+    .option("input", {
+        "position": 0,
+        "required": true,
+        "help": "An input Markdown file"
+        })
+    .option("output", {
+        "abbr": "o",
+        "help": "An output html file (if not provided, write to stdout)"
+        })
+    .option("minify", {
+        "abbr": "m",
+        "help": "Embeds CSS and JS into the output file and minifies the output for optimal performace",
+        "flag": true 
+        })
+    .option('version', {
+       abbr: 'v',
+        flag: true,
+        help: "Print version and exit",
+        callback: function() {
+           return require(path.join(__dirname, '..', 'package.json')).version;
+        }
+    })
+    .parse();
+
+var input = fs.readFileSync(opts.input).toString();
+var output = backend(input, true, "", opts.minify); // heavy lifting is performed by publish_core
+
+// write it out to a file / stdout
+if(opts.minify) {
+    output = minify(output, {
+        minifyJS: true,
+        minifyCSS: true
+    });
+} else {
+   output = beautify_html(output, {});
+}
+
+
+if (opts.output) {
+    fs.createWriteStream(opts.output).write(output);
+} else {
+    process.stdout.write(output);
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,31 @@
+/root/Targets/amd-module
+└─┬ amd-module@0.0.20151203 
+  ├── zero-encoding@0.0.20151202 
+  ├── zero-events@0.0.20151202 
+  ├── zero-fmt@0.0.20151202 
+  └── zero-lang@0.0.20151202 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/amd-module/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 50% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 50% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 51% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","isFinite","call","apply","toString","bound define"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0411 took 7.7905s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0} start 7.9092 took 6.499s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 69% Coverage (LOC): 76%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/amd-module/node_modules/amd-module/define.js. Coverage (Term): 94% Coverage (LOC): 97%
+*- File /root/Targets/amd-module/node_modules/zero-lang/array.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/amd-module/node_modules/zero-lang/type.js. Coverage (Term): 33% Coverage (LOC): 66%
+*- File /root/Targets/amd-module/node_modules/zero-lang/number.js. Coverage (Term): 26% Coverage (LOC): 60%
+*- File /root/Targets/amd-module/node_modules/amd-module/Module.js. Coverage (Term): 79% Coverage (LOC): 83%
+*- File /root/Targets/amd-module/node_modules/zero-lang/global.js. Coverage (Term): 74% Coverage (LOC): 100%
+*- File /root/Targets/amd-module/node_modules/zero-lang/object.js. Coverage (Term): 36% Coverage (LOC): 48%
+*- File /root/Targets/amd-module/node_modules/zero-events/event.js. Coverage (Term): 64% Coverage (LOC): 63%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

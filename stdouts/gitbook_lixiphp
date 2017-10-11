@@ -1,0 +1,483 @@
+/root/Targets/gitbook_lixiphp
+└─┬ gitbook_lixiphp@0.4.5 
+  ├── commander@2.2.0 
+  ├─┬ fs-extra@0.8.1 
+  │ ├── jsonfile@1.1.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── ncp@0.4.2 
+  │ └── rimraf@2.2.8 
+  ├─┬ fstream-ignore@0.0.7 
+  │ ├─┬ fstream@0.1.31 
+  │ │ ├─┬ graceful-fs@3.0.11 
+  │ │ │ └── natives@1.1.0 
+  │ │ └── mkdirp@0.5.1 
+  │ ├── inherits@2.0.3 
+  │ └─┬ minimatch@0.2.14 
+  │   ├── lru-cache@2.7.3 
+  │   └── sigmund@1.0.1 
+  ├─┬ gaze@0.5.2 
+  │ └─┬ globule@0.1.0 
+  │   ├─┬ glob@3.1.21 
+  │   │ ├── graceful-fs@1.2.3 
+  │   │ └── inherits@1.0.2 
+  │   └── lodash@1.0.2 
+  ├── gitbook-plugin@0.0.2 
+  ├── gitbook-plugin-mathjax@0.0.3 
+  ├── gitbook-plugin-mixpanel@0.0.2 
+  ├── highlight.js@8.0.0 
+  ├── lodash@2.4.1 
+  ├── lunr@0.5.2 
+  ├── marked@0.3.2 
+  ├── marked-text-renderer@0.0.1 
+  ├── q@1.0.1 
+  ├── resolve@0.6.3 
+  ├── semver@2.2.1 
+  ├─┬ send@0.2.0 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.2.4 
+  │ ├── mime@1.2.11 
+  │ └── range-parser@1.0.3 
+  ├─┬ swig@1.3.2 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.8 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── async@0.2.10 
+  │   ├─┬ source-map@0.1.34 
+  │   │ └── amdefine@1.0.1 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.5.4 
+  │     ├── camelcase@1.2.1 
+  │     ├── decamelize@1.2.0 
+  │     ├── window-size@0.1.0 
+  │     └── wordwrap@0.0.2 
+  └── tmp@0.0.23 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gitbook_lixiphp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 54% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Date","RegExp","join","parseInt","sort","splice","Error","Number"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1112 took 70.5231s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (167:67) on program /*!
+ * Tmp
+ *
+ * Copyright (c) 2011-2013 KARASZI Istvan <github@spam.raszi.hu>
+ *
+ * MIT Licensed
+ */
+
+/**
+ * Module dependencies.
+ */
+var
+  fs     = require('fs'),
+  path   = require('path'),
+  os     = require('os'),
+  exists = fs.exists || path.exists,
+  tmpDir = os.tmpDir || _getTMPDir,
+  _c     = require('constants');
+
+/**
+ * The working inner variables.
+ */
+var
+  // store the actual TMP directory
+  _TMP = tmpDir(),
+
+  // the random characters to choose from
+  randomChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz",
+  randomCharsLength = randomChars.length,
+
+  // this will hold the objects need to be removed on exit
+  _removeObjects = [],
+
+  _gracefulCleanup = false,
+  _uncaughtException = false;
+
+/**
+ * Gets the temp directory.
+ *
+ * @return {String}
+ * @api private
+ */
+function _getTMPDir() {
+  var tmpNames = [ 'TMPDIR', 'TMP', 'TEMP' ];
+
+  for (var i = 0, length = tmpNames.length; i < length; i++) {
+    if (_isUndefined(process.env[tmpNames[i]])) continue;
+
+    return process.env[tmpNames[i]];
+  }
+
+  // fallback to the default
+  return '/tmp';
+}
+
+/**
+ * Checks whether the `obj` parameter is defined or not.
+ *
+ * @param {Object} obj
+ * @return {Boolean}
+ * @api private
+ */
+function _isUndefined(obj) {
+  return typeof obj === 'undefined';
+}
+
+/**
+ * Parses the function arguments.
+ *
+ * This function helps to have optional arguments.
+ *
+ * @param {Object} options
+ * @param {Function} callback
+ * @api private
+ */
+function _parseArguments(options, callback) {
+  if (!callback || typeof callback != "function") {
+    callback = options;
+    options = {};
+  }
+
+  return [ options, callback ];
+}
+
+/**
+ * Gets a temporary file name.
+ *
+ * @param {Object} opts
+ * @param {Function} cb
+ * @api private
+ */
+function _getTmpName(options, callback) {
+  var
+    args = _parseArguments(options, callback),
+    opts = args[0],
+    cb = args[1],
+    template = opts.template,
+    templateDefined = !_isUndefined(template),
+    tries = opts.tries || 3;
+
+  if (isNaN(tries) || tries < 0)
+    return cb(new Error('Invalid tries'));
+
+  if (templateDefined && !template.match(/XXXXXX/))
+    return cb(new Error('Invalid template provided'));
+
+  function _getName() {
+
+    // prefix and postfix
+    if (!templateDefined) {
+      var name = [
+        (_isUndefined(opts.prefix)) ? 'tmp-' : opts.prefix,
+        process.pid,
+        (Math.random() * 0x1000000000).toString(36),
+        opts.postfix
+      ].join('');
+
+      return path.join(opts.dir || _TMP, name);
+    }
+
+    // mkstemps like template
+    var chars = [];
+
+    for (var i = 0; i < 6; i++) {
+      chars.push(randomChars.substr(Math.floor(Math.random() * randomCharsLength), 1));
+    }
+
+    return template.replace(/XXXXXX/, chars.join(''));
+  }
+
+  (function _getUniqueName() {
+    var name = _getName();
+
+    // check whether the path exists then retry if needed
+    exists(name, function _pathExists(pathExists) {
+      if (pathExists) {
+        if (tries-- > 0) return _getUniqueName();
+
+        return cb(new Error('Could not get a unique tmp filename, max tries reached'));
+      }
+
+      cb(null, name);
+    });
+  }());
+}
+
+/**
+ * Creates and opens a temporary file.
+ *
+ * @param {Object} options
+ * @param {Function} callback
+ * @api public
+ */
+function _createTmpFile(options, callback) {
+  var
+    args = _parseArguments(options, callback),
+    opts = args[0],
+    cb = args[1];
+
+    opts.postfix = (_isUndefined(opts.postfix)) ? '.tmp' : opts.postfix;
+
+  // gets a temporary filename
+  _getTmpName(opts, function _tmpNameCreated(err, name) {
+    if (err) return cb(err);
+
+    // create and open the file
+    fs.open(name, _c.O_CREAT | _c.O_EXCL | _c.O_RDWR, opts.mode || 0600, function _fileCreated(err, fd) {
+      if (err) return cb(err);
+
+      if (!opts.keep) _removeObjects.unshift([ fs.unlinkSync, name ]);
+
+      cb(null, name, fd);
+    });
+  });
+}
+
+/**
+ * Removes files and folders in a directory recursively.
+ *
+ * @param {String} path
+ */
+function _rmdirRecursiveSync(dir) {
+  var files = fs.readdirSync(dir);
+
+  for (var i = 0, length = files.length; i < length; i++) {
+    var file = path.join(dir, files[i]);
+    // lstat so we don't recurse into symlinked directories.
+    var stat = fs.lstatSync(file);
+
+    if (stat.isDirectory()) {
+      _rmdirRecursiveSync(file);
+    } else {
+      fs.unlinkSync(file);
+    }
+  }
+
+  fs.rmdirSync(dir);
+}
+
+/**
+ * Creates a temporary directory.
+ *
+ * @param {Object} options
+ * @param {Function} callback
+ * @api public
+ */
+function _createTmpDir(options, callback) {
+  var
+    args = _parseArguments(options, callback),
+    opts = args[0],
+    cb = args[1];
+
+  // gets a temporary filename
+  _getTmpName(opts, function _tmpNameCreated(err, name) {
+    if (err) return cb(err);
+
+    // create the directory
+    fs.mkdir(name, opts.mode || 0700, function _dirCreated(err) {
+      if (err) return cb(err);
+
+      if (!opts.keep) {
+        if (opts.unsafeCleanup) {
+          _removeObjects.unshift([ _rmdirRecursiveSync, name ]);
+        } else {
+          _removeObjects.unshift([ fs.rmdirSync, name ]);
+        }
+      }
+
+      cb(null, name);
+    });
+  });
+}
+
+/**
+ * The garbage collector.
+ *
+ * @api private
+ */
+function _garbageCollector() {
+  if (_uncaughtException && !_gracefulCleanup) {
+    return;
+  }
+
+  for (var i = 0, length = _removeObjects.length; i < length; i++) {
+    try {
+      _removeObjects[i][0].call(null, _removeObjects[i][1]);
+    } catch (e) {
+      // already removed?
+    }
+  }
+}
+
+function _setGracefulCleanup() {
+  _gracefulCleanup = true;
+}
+
+var version = process.versions.node.split('.').map(function (value) {
+  return parseInt(value, 10);
+});
+
+if (version[0] === 0 && (version[1] < 9 || version[1] === 9 && version[2] < 5)) {
+  process.addListener('uncaughtException', function _uncaughtExceptionThrown( err ) {
+    _uncaughtException = true;
+    _garbageCollector();
+
+    throw err;
+  });
+}
+
+process.addListener('exit', function _exit(code) {
+  if (code) _uncaughtException = true;
+  _garbageCollector();
+});
+
+// exporting all the needed methods
+module.exports.tmpdir = _TMP;
+module.exports.dir = _createTmpDir;
+module.exports.file = _createTmpFile;
+module.exports.tmpName = _getTmpName;
+module.exports.setGracefulCleanup = _setGracefulCleanup;
+ at SyntaxError: Invalid number (167:67)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1654:14)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1639:17)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/index.js. Coverage (Term): 79% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/summary.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/gitbook_lixiphp/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/gitbook_lixiphp/node_modules/marked/lib/marked.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/langs.js. Coverage (Term): 37% Coverage (LOC): 38%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/page.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/index.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/highlight.js. Coverage (Term): 13% Coverage (LOC): 26%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/bash.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/fix.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/erlang.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/cs.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/brainfuck.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/ruby.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/rust.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/ruleslanguage.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/rib.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/diff.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/haml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/javascript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/glsl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/rsl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/lua.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/xml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/markdown.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/css.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/lisp.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/profile.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/http.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/java.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/fsharp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/mathematica.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/php.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/haskell.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/1c.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/python.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/smalltalk.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/tex.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/actionscript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/sql.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/handlebars.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/vala.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/ini.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/livecodeserver.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/d.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/vbnet.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/axapta.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/perl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/scala.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/cmake.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/ocaml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/autohotkey.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/objectivec.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/avrasm.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/vhdl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/coffeescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/mizar.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/nginx.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/erlang-repl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/r.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/json.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/django.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/delphi.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/vbscript.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/oxygene.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/mel.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/dos.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/apache.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/scss.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/applescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/lasso.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/cpp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/matlab.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/scilab.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/makefile.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/asciidoc.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/parser3.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/clojure.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/highlight.js/lib/languages/go.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/lex.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/renderer.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/utils/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/utils/lang.js. Coverage (Term): 52% Coverage (LOC): 69%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/utils/links.js. Coverage (Term): 43% Coverage (LOC): 67%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/progress.js. Coverage (Term): 18% Coverage (LOC): 17%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/navigation.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/readme.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/gitbook_lixiphp/node_modules/marked-text-renderer/index.js. Coverage (Term): 33% Coverage (LOC): 61%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/parse/git.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/gitbook_lixiphp/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/gitbook_lixiphp/node_modules/gitbook_lixiphp/lib/generate/index.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/swig.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/utils.js. Coverage (Term): 26% Coverage (LOC): 33%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/index.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/autoescape.js. Coverage (Term): 28% Coverage (LOC): 52%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/block.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/else.js. Coverage (Term): 27% Coverage (LOC): 55%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/elseif.js. Coverage (Term): 35% Coverage (LOC): 70%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/if.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/extends.js. Coverage (Term): 68% Coverage (LOC): 88%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/filter.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/filters.js. Coverage (Term): 11% Coverage (LOC): 24%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/dateformatter.js. Coverage (Term): 19% Coverage (LOC): 55%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/for.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/import.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/include.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/macro.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/parent.js. Coverage (Term): 12% Coverage (LOC): 23%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/raw.js. Coverage (Term): 32% Coverage (LOC): 58%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/set.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/tags/spaceless.js. Coverage (Term): 22% Coverage (LOC): 38%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/parser.js. Coverage (Term): 3% Coverage (LOC): 11%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/lexer.js. Coverage (Term): 58% Coverage (LOC): 82%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/loaders/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/loaders/filesystem.js. Coverage (Term): 40% Coverage (LOC): 48%
+*- File /root/Targets/gitbook_lixiphp/node_modules/swig/lib/loaders/memory.js. Coverage (Term): 20% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

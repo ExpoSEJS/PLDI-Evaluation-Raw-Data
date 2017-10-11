@@ -1,0 +1,44 @@
+/root/Targets/nuke-util
+└─┬ nuke-util@0.2.10 
+  ├─┬ nuke-env@0.3.3 
+  │ └── universal-env@0.3.7 
+  ├─┬ nuke-text@0.0.4 
+  │ ├── UNMET PEER DEPENDENCY rax@0.x
+  │ └─┬ rax-text@0.3.8 
+  │   └── universal-env@0.3.8 
+  └─┬ nuke-view@0.0.3 
+    ├─┬ nuke-core@0.3.5 
+    │ └─┬ nuke-var-loader@0.1.5 
+    │   └── nuke-vars@0.0.3 
+    ├── UNMET PEER DEPENDENCY rax@0.x
+    └─┬ rax-view@0.4.16 
+      └── universal-env@0.4.16 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nuke-util/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","toString","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0446 took 5.895s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: location is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/index.js. Coverage (Term): 79% Coverage (LOC): 91%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/tools.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/number.js. Coverage (Term): 41% Coverage (LOC): 56%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/is.js. Coverage (Term): 27% Coverage (LOC): 56%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/urlhelper.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/mods/uri.js. Coverage (Term): 13% Coverage (LOC): 23%
+*- File /root/Targets/nuke-util/node_modules/nuke-util/lib/location.js. Coverage (Term): 47% Coverage (LOC): 53%
+*- File /root/Targets/nuke-util/node_modules/nuke-env/lib/index.js. Coverage (Term): 44% Coverage (LOC): 53%
+*- File /root/Targets/nuke-util/node_modules/universal-env/lib/index.js. Coverage (Term): 64% Coverage (LOC): 85%
+*- File /root/Targets/nuke-util/node_modules/nuke-env/lib/ua.js. Coverage (Term): 76% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,60 @@
+
+> wui-admin@0.0.7 postinstall /root/Targets/wui-admin/node_modules/wui-admin
+> node lib/post_install.js
+
+/root/Targets/wui-admin
+├── UNMET PEER DEPENDENCY react@>= 0.11.2 < 16.0.0
+└─┬ wui-admin@0.0.7 
+  ├── UNMET PEER DEPENDENCY react@>=0.14.0
+  ├─┬ react-bootstrap@0.29.5 
+  │ ├─┬ babel-runtime@5.8.38 
+  │ │ └── core-js@1.2.7 
+  │ ├── classnames@2.2.5 
+  │ ├── dom-helpers@2.4.0 
+  │ ├─┬ invariant@2.2.2 
+  │ │ └─┬ loose-envify@1.3.1 
+  │ │   └── js-tokens@3.0.2 
+  │ ├── keycode@2.1.9 
+  │ ├── lodash-compat@3.10.2 
+  │ ├── UNMET PEER DEPENDENCY react@>=0.14.0
+  │ ├── UNMET PEER DEPENDENCY react-dom@>=0.14.0
+  │ ├─┬ react-overlays@0.6.12 
+  │ │ ├── dom-helpers@3.2.1 
+  │ │ ├── UNMET PEER DEPENDENCY react@>=0.14.0
+  │ │ ├── react-prop-types@0.4.0 
+  │ │ └── warning@3.0.0 
+  │ ├── react-prop-types@0.3.2 
+  │ ├── uncontrollable@3.3.1 
+  │ └── warning@2.1.0 
+  └── UNMET PEER DEPENDENCY react-dom@>=0.14.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wui-admin/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0499 took 7.1828s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/wui-admin/node_modules/wui-admin/dist-modules/index.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File /root/Targets/wui-admin/node_modules/react-bootstrap/lib/index.js. Coverage (Term): 14% Coverage (LOC): 4%
+*- File /root/Targets/wui-admin/node_modules/babel-runtime/helpers/interop-require-default.js. Coverage (Term): 59% Coverage (LOC): 86%
+*- File /root/Targets/wui-admin/node_modules/babel-runtime/helpers/interop-require-wildcard.js. Coverage (Term): 31% Coverage (LOC): 33%
+*- File /root/Targets/wui-admin/node_modules/react-bootstrap/lib/Accordion.js. Coverage (Term): 22% Coverage (LOC): 29%
+*- File /root/Targets/wui-admin/node_modules/babel-runtime/helpers/extends.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/wui-admin/node_modules/babel-runtime/core-js/object/assign.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/wui-admin/node_modules/core-js/library/fn/object/assign.js. Coverage (Term): 58% Coverage (LOC): 100%
+*- File /root/Targets/wui-admin/node_modules/core-js/library/modules/es6.object.assign.js. Coverage (Term): 48% Coverage (LOC): 100%
+*- File /root/Targets/wui-admin/node_modules/core-js/library/modules/$.export.js. Coverage (Term): 7% Coverage (LOC): 14%
+*- File /root/Targets/wui-admin/node_modules/core-js/library/modules/$.global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,54 @@
+/root/Targets/aws-sdk-multi-user
+└─┬ aws-sdk-multi-user@2.1.15 
+  ├─┬ xml2js@0.2.6 
+  │ └── sax@0.4.2 
+  └── xmlbuilder@0.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/aws-sdk-multi-user/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0696 took 17.4091s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/aws.js. Coverage (Term): 11% Coverage (LOC): 9%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/core.js. Coverage (Term): 70% Coverage (LOC): 81%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/util.js. Coverage (Term): 16% Coverage (LOC): 48%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/protocol/json.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/json/builder.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/json/parser.js. Coverage (Term): 15% Coverage (LOC): 25%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/protocol/query.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/query/query_param_serializer.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/shape.js. Coverage (Term): 7% Coverage (LOC): 19%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/collection.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/protocol/rest.js. Coverage (Term): 6% Coverage (LOC): 14%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/protocol/rest_json.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/protocol/rest_xml.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/xml/builder.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/xmlbuilder/lib/index.js. Coverage (Term): 54% Coverage (LOC): 60%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/xmlbuilder/lib/XMLBuilder.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/xmlbuilder/lib/XMLFragment.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/api.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/operation.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/paginator.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/model/resource_waiter.js. Coverage (Term): 17% Coverage (LOC): 14%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/service.js. Coverage (Term): 6% Coverage (LOC): 16%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/region_config.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials/credential_provider_chain.js. Coverage (Term): 20% Coverage (LOC): 22%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials/temporary_credentials.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials/web_identity_credentials.js. Coverage (Term): 23% Coverage (LOC): 27%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials/cognito_identity_credentials.js. Coverage (Term): 9% Coverage (LOC): 18%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/credentials/saml_credentials.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /root/Targets/aws-sdk-multi-user/node_modules/aws-sdk-multi-user/lib/config.js. Coverage (Term): 15% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

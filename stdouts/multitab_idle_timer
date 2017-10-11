@@ -1,0 +1,27 @@
+/root/Targets/multitab_idle_timer
+└── multitab_idle_timer@1.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/multitab_idle_timer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 37% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 37% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","setPrototypeOf","toString","bound IdleTimer","getPrototypeOf"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0874 took 53.913s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 54.7904 took 54.4905s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/multitab_idle_timer/node_modules/multitab_idle_timer/lib/index.js. Coverage (Term): 39% Coverage (LOC): 55%
+*- File /root/Targets/multitab_idle_timer/node_modules/simple_localstorage_api/lib/index.js. Coverage (Term): 35% Coverage (LOC): 58%
+*- File /root/Targets/multitab_idle_timer/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/multitab_idle_timer/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- File /root/Targets/multitab_idle_timer/node_modules/multitab_idle_timer/lib/event_emitter.js. Coverage (Term): 38% Coverage (LOC): 57%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

@@ -1,0 +1,48 @@
+
+> @uirouter/core@5.0.3 install /root/Targets/angular-manager-utilities/node_modules/@uirouter/core
+> node ./migrate/migratewarn.js
+
+
+> angular-ui-router@1.0.3 install /root/Targets/angular-manager-utilities/node_modules/angular-ui-router
+> node migrate/migratewarn.js
+
+[1m[37m[41mWARNING! this npm package "angular-ui-router" has been renamed to "@uirouter/angularjs".  Please update your package.json[0m
+[1m[37m[41mSee https://ui-router.github.io/blog/uirouter-scoped-packages/ for details.[0m
+/root/Targets/angular-manager-utilities
+└─┬ angular-manager-utilities@1.0.21 
+  ├── angular@1.6.6 
+  ├── angular-animate@1.6.6 
+  ├── angular-drag-and-drop-lists@1.4.0 
+  ├── angular-ui-bootstrap@2.5.0 
+  ├─┬ angular-ui-router@1.0.3 
+  │ └── @uirouter/core@5.0.3 
+  ├── angular-ui-sortable@0.15.1 
+  ├── bootstrap@4.0.0-beta 
+  ├── checklist-model@0.10.0 
+  ├── jquery@3.2.1 
+  ├── jquery-ui@1.12.1 
+  ├── lodash@4.17.4 
+  ├── ng-file-upload@12.2.13 
+  ├── UNMET PEER DEPENDENCY popper.js@^1.11.0
+  ├── restangular@1.6.1 
+  └── tether@1.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular-manager-utilities/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 5% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0723 took 10.5941s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: webpackJsonpangularManagerUtilities is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/angular-manager-utilities/node_modules/angular-manager-utilities/dist/angular-manager-utilities.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

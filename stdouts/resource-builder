@@ -1,0 +1,45 @@
+/root/Targets/resource-builder
+└─┬ resource-builder@0.0.0 
+  ├── colors@1.1.2 
+  ├─┬ http-server@0.10.0 
+  │ ├── colors@1.0.3 
+  │ ├── corser@2.0.1 
+  │ ├─┬ ecstatic@2.2.1 
+  │ │ ├── he@1.1.1 
+  │ │ ├── mime@1.4.1 
+  │ │ ├── minimist@1.2.0 
+  │ │ └── url-join@2.0.2 
+  │ ├─┬ http-proxy@1.16.2 
+  │ │ ├── eventemitter3@1.2.0 
+  │ │ └── requires-port@1.0.0 
+  │ ├── opener@1.4.3 
+  │ ├─┬ portfinder@1.0.13 
+  │ │ ├── async@1.5.2 
+  │ │ ├─┬ debug@2.6.9 
+  │ │ │ └── ms@2.0.0 
+  │ │ └─┬ mkdirp@0.5.1 
+  │ │   └── minimist@0.0.8 
+  │ └─┬ union@0.4.6 
+  │   └── qs@2.3.3 
+  └─┬ optimist@0.6.1 
+    ├── minimist@0.0.10 
+    └── wordwrap@0.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/resource-builder/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.025 took 2.5189s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'resource-builder'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

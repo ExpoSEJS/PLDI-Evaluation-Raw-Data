@@ -1,0 +1,37 @@
+/root/Targets/kurento-client
+└─┬ kurento-client@6.6.0 
+  └─┬ reconnect-ws@0.0.0  (git://github.com/kurentoforks/reconnect-ws.git#7fb7020e3ca1ffeaaa8bb4ddd690cf28c8d02a2b)
+    └── reconnect-core@1.0.0  (git://github.com/kurentoforks/reconnect-core.git#921d43e91578abb2fb2613f585c010c1939cf734)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/kurento-client/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Array","random","toString","resolve","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0665 took 11.1081s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: MEDIA_OBJECT_TYPE_NOT_FOUND is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/index.js. Coverage (Term): 61% Coverage (LOC): 63%
+*- File /root/Targets/kurento-client/node_modules/error-tojson/index.js. Coverage (Term): 41% Coverage (LOC): 55%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/checkType.js. Coverage (Term): 17% Coverage (LOC): 32%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/disguise.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/MediaObjectCreator.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/kurento-client/node_modules/async/lib/async.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/kurento-client/node_modules/extend/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/createPromise.js. Coverage (Term): 38% Coverage (LOC): 41%
+*- File /root/Targets/kurento-client/node_modules/es6-promise/dist/es6-promise.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/kurento-client/node_modules/promisecallback/index.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/register.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/TransactionsManager.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/kurento-client/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/kurento-client/node_modules/kurento-client/lib/KurentoClient.js. Coverage (Term): 1% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

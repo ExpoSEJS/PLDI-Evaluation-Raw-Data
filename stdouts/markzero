@@ -1,0 +1,91 @@
+/root/Targets/markzero
+└─┬ markzero@0.1.31 
+  ├─┬ cli-util@1.1.27 
+  │ └── cli-regexp@0.1.2 
+  └── manual@0.0.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/markzero/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","RegExp","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0345 took 5.5927s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require('assert')
+  , shared = require('./shared')
+  , complex = shared.complex
+  , taint = shared.taint
+  , untaint = shared.untaint;
+
+module.exports = function walk(root, visit, transform, visited) {
+  assert(typeof root === 'object', 'root must be an object');
+  assert(typeof visit === 'function', 'visit must be a function');
+  assert(typeof transform === 'function', 'transform must be a function');
+  visited = visited || [];
+  var k, v, props;
+  for(k in root) {
+    v = root[k];
+    props = {parent: root, name: k, value: v};
+    if(complex(v) && v.__visited) {
+      throw new Error('walk: cyclical reference detected');
+    }
+    if(visit(props)) {
+      taint(v);
+      try {
+        transform(props);
+      }catch(e) {
+        untaint(v);
+        throw e;
+      }
+    }
+    if(complex(v)) {
+      walk(v, visit, transform, visited);
+      untaint(v);
+    }
+  }
+}
+
+ at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/markzero/node_modules/markzero/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/markzero/node_modules/markzero/lib/index.js. Coverage (Term): 46% Coverage (LOC): 39%
+*- File /root/Targets/markzero/node_modules/manual/index.js. Coverage (Term): 44% Coverage (LOC): 67%
+*- File /root/Targets/markzero/node_modules/markzero/lib/parser.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/markzero/node_modules/markzero/lib/defaults.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/markzero/node_modules/markzero/lib/renderer.js. Coverage (Term): 21% Coverage (LOC): 49%
+*- File /root/Targets/markzero/node_modules/markzero/lib/inline.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/markzero/node_modules/markzero/lib/utils.js. Coverage (Term): 90% Coverage (LOC): 97%
+*- File /root/Targets/markzero/node_modules/markzero/lib/render/markdown.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/markzero/node_modules/cli-util/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/index.js. Coverage (Term): 83% Coverage (LOC): 89%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/define.js. Coverage (Term): 41% Coverage (LOC): 38%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/ltrim.js. Coverage (Term): 40% Coverage (LOC): 57%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/rtrim.js. Coverage (Term): 40% Coverage (LOC): 57%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/uniq.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/funcname.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/wrap.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/repeat.js. Coverage (Term): 32% Coverage (LOC): 57%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/pad.js. Coverage (Term): 40% Coverage (LOC): 71%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/ucfirst.js. Coverage (Term): 34% Coverage (LOC): 57%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/camelcase.js. Coverage (Term): 22% Coverage (LOC): 40%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/delimited.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /root/Targets/markzero/node_modules/cli-util/lib/pedantic.js. Coverage (Term): 25% Coverage (LOC): 36%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

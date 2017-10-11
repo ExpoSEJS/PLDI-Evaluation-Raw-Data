@@ -1,0 +1,105 @@
+/root/Targets/freemind
+└─┬ freemind@1.0.1 
+  ├── crypto@0.0.3 
+  ├── formidable@1.1.1 
+  ├─┬ log4js@0.6.38 
+  │ ├─┬ readable-stream@1.0.34 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── semver@4.3.6 
+  ├── merge-descriptors@1.0.1 
+  ├── mime@1.4.0 
+  ├─┬ orm@2.1.30 
+  │ ├── enforce@0.1.6 
+  │ ├── hat@0.0.3 
+  │ ├── lodash@2.4.1 
+  │ ├── path-is-absolute@1.0.0 
+  │ ├── sql-ddl-sync@0.3.11 
+  │ └── sql-query@0.1.26 
+  ├── q@1.5.0 
+  └─┬ xml2js@0.4.19 
+    ├── sax@1.2.4 
+    └── xmlbuilder@9.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/freemind/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","toUpperCase","bind","bound configure","call","isArray","join","parseInt","Error","Number","toString","Date","sort","create","pop","captureStackTrace","bound warn"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0284 took 18.6324s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'settings' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/freemind/node_modules/freemind/freemind.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /root/Targets/freemind/node_modules/merge-descriptors/index.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/freemind/node_modules/freemind/logger.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/freemind/node_modules/log4js/lib/log4js.js. Coverage (Term): 45% Coverage (LOC): 49%
+*- File /root/Targets/freemind/node_modules/log4js/lib/layouts.js. Coverage (Term): 14% Coverage (LOC): 35%
+*- File /root/Targets/freemind/node_modules/log4js/lib/date_format.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/freemind/node_modules/semver/semver.js. Coverage (Term): 49% Coverage (LOC): 53%
+*- File /root/Targets/freemind/node_modules/log4js/lib/levels.js. Coverage (Term): 58% Coverage (LOC): 69%
+*- File /root/Targets/freemind/node_modules/log4js/lib/logger.js. Coverage (Term): 48% Coverage (LOC): 61%
+*- File /root/Targets/freemind/node_modules/log4js/lib/appenders/console.js. Coverage (Term): 74% Coverage (LOC): 87%
+*- File /root/Targets/freemind/node_modules/log4js/lib/connect-logger.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/freemind/node_modules/log4js/lib/appenders/file.js. Coverage (Term): 58% Coverage (LOC): 60%
+*- File /root/Targets/freemind/node_modules/log4js/lib/streams/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/freemind/node_modules/log4js/lib/streams/RollingFileStream.js. Coverage (Term): 16% Coverage (LOC): 14%
+*- File /root/Targets/freemind/node_modules/log4js/lib/streams/BaseRollingFileStream.js. Coverage (Term): 27% Coverage (LOC): 31%
+*- File /root/Targets/freemind/node_modules/log4js/lib/debug.js. Coverage (Term): 57% Coverage (LOC): 82%
+*- File /root/Targets/freemind/node_modules/log4js/lib/streams/DateRollingFileStream.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/freemind/node_modules/freemind/response.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/freemind/node_modules/freemind/controllers/handlers.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/freemind/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/freemind/node_modules/freemind/models.js. Coverage (Term): 19% Coverage (LOC): 9%
+*- File /root/Targets/freemind/node_modules/freemind/config/dbConfig.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/freemind/node_modules/orm/lib/ORM.js. Coverage (Term): 26% Coverage (LOC): 32%
+*- File /root/Targets/freemind/node_modules/hat/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Query.js. Coverage (Term): 42% Coverage (LOC): 41%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Create.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Select.js. Coverage (Term): 3% Coverage (LOC): 9%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Helpers.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Where.js. Coverage (Term): 3% Coverage (LOC): 6%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Insert.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Set.js. Coverage (Term): 22% Coverage (LOC): 31%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Update.js. Coverage (Term): 20% Coverage (LOC): 21%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Remove.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/freemind/node_modules/sql-query/lib/Comparators.js. Coverage (Term): 27% Coverage (LOC): 51%
+*- File /root/Targets/freemind/node_modules/enforce/index.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforcements/common.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/freemind/node_modules/enforce/lib/validator.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforcements/ranges.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforce.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforcements/lists.js. Coverage (Term): 26% Coverage (LOC): 30%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforcements/patterns.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/freemind/node_modules/enforce/lib/enforcements/security.js. Coverage (Term): 11% Coverage (LOC): 24%
+*- File /root/Targets/freemind/node_modules/lodash/dist/lodash.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/freemind/node_modules/orm/lib/Model.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/freemind/node_modules/orm/lib/ChainFind.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/freemind/node_modules/orm/lib/Utilities.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/freemind/node_modules/orm/lib/ChainInstance.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/freemind/node_modules/orm/lib/Promise.js. Coverage (Term): 17% Coverage (LOC): 17%
+*- File /root/Targets/freemind/node_modules/orm/lib/Instance.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/freemind/node_modules/orm/lib/Property.js. Coverage (Term): 16% Coverage (LOC): 28%
+*- File /root/Targets/freemind/node_modules/orm/lib/Error.js. Coverage (Term): 73% Coverage (LOC): 86%
+*- File /root/Targets/freemind/node_modules/orm/lib/Hook.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/freemind/node_modules/orm/lib/LazyLoad.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/freemind/node_modules/orm/lib/Associations/Many.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/freemind/node_modules/orm/lib/Settings.js. Coverage (Term): 22% Coverage (LOC): 45%
+*- File /root/Targets/freemind/node_modules/orm/lib/Associations/One.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/freemind/node_modules/orm/lib/Associations/Extend.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/freemind/node_modules/orm/lib/Singleton.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/freemind/node_modules/orm/lib/Validators.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/freemind/node_modules/orm/lib/Drivers/aliases.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/freemind/node_modules/orm/lib/Adapters.js. Coverage (Term): 67% Coverage (LOC): 80%
+*- File /root/Targets/freemind/node_modules/orm/lib/Drivers/DML/mysql.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

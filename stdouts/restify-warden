@@ -1,0 +1,295 @@
+/root/Targets/restify-warden
+├── UNMET PEER DEPENDENCY restify@^4.0.0
+└─┬ restify-warden@0.2.0 
+  ├── assert-plus@0.1.5 
+  ├─┬ ip6addr@0.2.2 
+  │ └── assert-plus@1.0.0 
+  ├─┬ vasync@1.6.4 
+  │ └─┬ verror@1.6.0 
+  │   └── extsprintf@1.2.0 
+  └─┬ verror@1.3.7 
+    └── extsprintf@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/restify-warden/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0703 took 4.181s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (20:4) on program /*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/*
+ * Copyright 2016 Joyent, Inc.
+ */
+
+'use strict';
+
+/*
+ * Basic parameter validation engine.
+ */
+
+var errors = require('./errors');
+var constants = require('./constants');
+var validators = require('./validators');
+var assert = require('assert-plus');
+var fmt = require('util').format;
+var restify = require('restify');
+var verror = require('verror');
+var vasync = require('vasync');
+
+/*
+ * Calls callback with the appropriate error depending on the contents of errs
+ */
+function errResult(errs, validated, callback) {
+    var invalid = false;
+
+    if (errs.length !== 0) {
+        var realErrs = [];
+        var sortedErrs = errs.filter(function (e) {
+            if (!e.hasOwnProperty('field')) {
+                realErrs.push(e);
+                return false;
+            }
+            if (!invalid && e.hasOwnProperty('code') &&
+                e.code !== 'MissingParameter') {
+                invalid = true;
+            }
+
+            return true;
+        }).sort(function (a, b) { return (a.field > b.field) ? 1 : -1; });
+
+        if (realErrs.length !== 0) {
+            callback(new restify.InternalError(
+                realErrs.length === 1 ? realErrs[0] :
+                    new verror.MultiError(realErrs),
+                'Internal error'));
+            return;
+        }
+
+        callback(new errors.InvalidParamsError(
+            invalid ? constants.msg.INVALID_PARAMS : 'Missing parameters',
+            sortedErrs));
+        return;
+    }
+
+    callback(null, validated);
+}
+
+
+
+/*
+ * Exports
+ * =======
+ */
+
+
+/*
+ * Check for any uknown parameters if strict mode is engaged.
+ */
+function validateUnknowns(params, req, opt) {
+    var field;
+    var unknowns = [];
+
+    for (field in params) {
+        if (!params.hasOwnProperty(field)) {
+            continue;
+        }
+        if ((req && req.hasOwnProperty(field)) ||
+           (opt && opt.hasOwnProperty(field))) {
+            continue;
+        }
+
+        unknowns.push(field);
+    }
+
+    if (unknowns.length === 0) {
+        return null;
+    }
+
+    return new errors.unknownParams(unknowns);
+}
+
+
+/*
+ * Validate parameters on an object.
+ *
+ * @param opts {Object}: Options for validating the input object
+ * - `strict` {Boolean}: Fail if there are extra, unknown fields on the object
+ * - `required` {Object}: A map of validation functions for each required field
+ * - `optional` {Object}: A map of validation functions for each optional field
+ * @param arg {Any}: A value to pass as the first argument to each validation
+ *     function. Usually an object containing configuration information or a
+ *     database handle.
+ * @param params {Object}: Object to validate
+ * @param callback {Function}: Callback with (err, validated) where validated
+ *     is an object with only validated fields or fields added by the
+ *     validation functions.
+ */
+
+function validateParams(opts, arg, params, callback) {
+    var errs = [];
+    var field;
+    var validatedParams = {};
+
+    assert.object(opts, 'opts');
+    assert.optionalBool(opts.strict, 'opts.strict');
+    assert.optionalObject(opts.required, 'opts.required');
+    assert.optionalObject(opts.optional, 'opts.optional');
+    assert.func(callback);
+
+    if (!params || typeof (params) !== 'object' || Array.isArray(params)) {
+        errs.push(errors.invalidParam('parameters',
+            constants.msg.PARAMETERS_ARE_OBJECTS));
+        errResult(errs, validatedParams, callback);
+        return;
+    }
+
+    var toValidate = [];
+
+    if (opts.required) {
+        for (field in opts.required) {
+            assert.func(opts.required[field],
+                fmt('opts.required[%s]', field));
+
+            if (params.hasOwnProperty(field)) {
+                toValidate.push({
+                    field: field,
+                    fn: opts.required[field],
+                    val: params[field]
+                });
+            } else {
+                errs.push(errors.missingParam(field));
+            }
+        }
+    }
+
+    for (field in opts.optional) {
+        assert.func(opts.optional[field],
+            fmt('opts.optional[%s]', field));
+
+        if (params.hasOwnProperty(field)) {
+            toValidate.push({
+                field: field,
+                fn: opts.optional[field],
+                val: params[field]
+            });
+        }
+    }
+
+    vasync.forEachParallel({
+        inputs: toValidate,
+        func: function _callValidateFn(val, cb) {
+            /*
+             * TODO: allow specifying an array of validation functions, and
+             * bail after the first failure
+             */
+
+            val.fn(arg, val.field, val.val, function (e, validated, multi) {
+                if (e) {
+                    errs.push(e);
+                }
+
+                if (typeof (validated) !== 'undefined') {
+                    validatedParams[val.field] = validated;
+                }
+                if (typeof (multi) !== 'undefined' &&
+                    typeof (multi) === 'object') {
+
+                    for (var v in multi) {
+                        validatedParams[v] = multi[v];
+                    }
+                }
+
+                return cb();
+            });
+        }
+    }, function after() {
+        if (opts.strict) {
+            var err = validateUnknowns(params, opts.required,
+                opts.optional);
+            if (err !== null) {
+                errs.push(err);
+            }
+        }
+
+        if (opts.hasOwnProperty('after') && errs.length === 0) {
+            if (!Array.isArray(opts.after)) {
+                opts.after = [opts.after];
+            }
+            return crossValidate(errs, arg, params, validatedParams,
+                opts.after, callback);
+        }
+        return errResult(errs, validatedParams, callback);
+    });
+}
+
+/*
+ * Used by validate.params to call an array of 'after' functions, which have
+ * access to all the raw and validated parameters. This is typically used to
+ * validate conditions between parameters, e.g., nicTag/network MTUs.
+ */
+function crossValidate(errs, arg, raw, validated, afterFuncs, callback) {
+    vasync.forEachPipeline({
+        inputs: afterFuncs,
+        func: function _validate(func, cb) {
+            func(arg, raw, validated, function (err) {
+                if (err) {
+                    if (Array.isArray(err)) {
+                        errs = errs.concat(err);
+                    } else {
+                        errs.push(err);
+                    }
+                }
+                return cb();
+            });
+        }
+    }, function (_err, _results) {
+        return errResult(errs, validated, callback);
+    });
+}
+
+module.exports = {
+    params: validateParams,
+    fieldsArray: validators.fieldsArray,
+    IParray: validators.IParray,
+    IP: validators.IP,
+    string: validators.string,
+    stringArray: validators.stringArray,
+    stringOrArray: validators.stringOrArray,
+    subnet: validators.subnet,
+    subnetArray: validators.subnetArray,
+    UUID: validators.UUID,
+    uuidPrefix: validators.uuidPrefix,
+    isUUID: validators.isUUID,
+    UUIDarray: validators.UUIDarray,
+    isNotInteger: validators.isNotInteger,
+    offset: validators.offset,
+    limit: validators.limit,
+    boolean: validators.boolean
+};
+ at SyntaxError: Unexpected token (20:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

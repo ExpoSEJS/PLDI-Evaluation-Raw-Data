@@ -1,0 +1,35 @@
+/root/Targets/brick-view
+└─┬ brick-view@0.1.1 
+  ├── bredele-each@0.1.2 
+  ├─┬ data-binding@0.1.1 
+  │ ├── indexof@0.0.1 
+  │ ├── supplant@0.1.2 
+  │ └── trim@0.0.1 
+  └─┬ datastore@1.8.2 
+    ├── bluff@0.9.4 
+    └── emitter-component@1.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/brick-view/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.048 took 4.7159s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'binding'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/brick-view/node_modules/brick-view/index.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/brick-view/node_modules/datastore/index.js. Coverage (Term): 14% Coverage (LOC): 17%
+*- File /root/Targets/brick-view/node_modules/bluff/index.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/brick-view/node_modules/datastore/lib/adapter.js. Coverage (Term): 24% Coverage (LOC): 38%
+*- File /root/Targets/brick-view/node_modules/datastore/lib/memory.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/brick-view/node_modules/emitter-component/index.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

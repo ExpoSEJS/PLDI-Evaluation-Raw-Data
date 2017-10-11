@@ -1,0 +1,54 @@
+/root/Targets/milojs
+└─┬ milojs@1.6.1 
+  ├─┬ milo-core@1.1.1 
+  │ ├── dot@1.1.2 
+  │ ├── ml-check@0.1.2 
+  │ ├── ml-mixin@0.1.0 
+  │ └── protojs@1.0.6 
+  └── querystringparser@0.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/milojs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","defineProperties","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.074 took 18.3082s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/milojs/node_modules/milojs/lib/milo.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/milo-core.js. Coverage (Term): 33% Coverage (LOC): 32%
+*- File /root/Targets/milojs/node_modules/protojs/lib/proto.js. Coverage (Term): 72% Coverage (LOC): 77%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/array.js. Coverage (Term): 19% Coverage (LOC): 41%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/function.js. Coverage (Term): 7% Coverage (LOC): 21%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/number.js. Coverage (Term): 52% Coverage (LOC): 71%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/object.js. Coverage (Term): 5% Coverage (LOC): 14%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/prototype.js. Coverage (Term): 54% Coverage (LOC): 58%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/string.js. Coverage (Term): 13% Coverage (LOC): 34%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/functions/utils.js. Coverage (Term): 20% Coverage (LOC): 51%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/array.js. Coverage (Term): 17% Coverage (LOC): 37%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/function.js. Coverage (Term): 6% Coverage (LOC): 18%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/number.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/object.js. Coverage (Term): 5% Coverage (LOC): 13%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/prototype.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/string.js. Coverage (Term): 11% Coverage (LOC): 27%
+*- File /root/Targets/milojs/node_modules/protojs/lib/dotjs/methods/utils.js. Coverage (Term): 16% Coverage (LOC): 39%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/minder.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/model/connector.js. Coverage (Term): 3% Coverage (LOC): 6%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/messenger/index.js. Coverage (Term): 7% Coverage (LOC): 14%
+*- File /root/Targets/milojs/node_modules/ml-mixin/lib/mixin.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/milojs/node_modules/ml-check/lib/check.js. Coverage (Term): 14% Coverage (LOC): 37%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/messenger/m_source.js. Coverage (Term): 24% Coverage (LOC): 27%
+*- File /root/Targets/milojs/node_modules/milo-core/lib/messenger/m_api.js. Coverage (Term): 20% Coverage (LOC): 41%
+*- File evalIndirect. Coverage (Term): 11% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

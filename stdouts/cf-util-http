@@ -1,0 +1,34 @@
+/root/Targets/cf-util-http
+└─┬ cf-util-http@4.0.7 
+  ├─┬ cf-util-logger@2.2.1 
+  │ └─┬ debug@2.6.9 
+  │   └── ms@2.0.0 
+  ├── es6-promise@4.1.1 
+  └─┬ isomorphic-fetch@2.2.1 
+    ├─┬ node-fetch@1.7.3 
+    │ ├─┬ encoding@0.1.12 
+    │ │ └── iconv-lite@0.4.19 
+    │ └── is-stream@1.1.0 
+    └── whatwg-fetch@2.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cf-util-http/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0451 took 8.2166s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: navigator is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cf-util-http/node_modules/cf-util-http/lib/index.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/cf-util-http/node_modules/cf-util-http/lib/http.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/cf-util-http/node_modules/cf-util-http/lib/polyfillFetchInEdge.js. Coverage (Term): 54% Coverage (LOC): 67%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

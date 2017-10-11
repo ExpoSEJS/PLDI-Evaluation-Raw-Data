@@ -1,0 +1,3680 @@
+/root/Targets/straints
+└─┬ straints@0.5.2 
+  └── alyze@0.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/straints/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0592 took 3.3203s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'interface' is reserved (641:8) on program /*! straints v0.5.2 @Mon, 27 Feb 2017 21:28:59 GMT */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["straints"] = factory();
+	else
+		root["straints"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+module.exports.async = __webpack_require__(12);
+module.exports.bit = __webpack_require__(13);
+module.exports.class = __webpack_require__(14);
+module.exports.cycle = __webpack_require__(15);
+module.exports.ensure = __webpack_require__(16);
+module.exports.extend = __webpack_require__(17);
+module.exports.find = __webpack_require__(18);
+module.exports.inform = __webpack_require__(19);
+module.exports.interpolate = __webpack_require__(20);
+module.exports.isObject = __webpack_require__(21);
+module.exports.jsonParse = __webpack_require__(22);
+module.exports.loop = __webpack_require__(23);
+module.exports.merge = __webpack_require__(24);
+module.exports.push = __webpack_require__(25);
+module.exports.quote = __webpack_require__(26);
+module.exports.settle = __webpack_require__(27);
+module.exports.toArray = __webpack_require__(28);
+module.exports.toString = __webpack_require__(29);
+// module.exports.void = function() {};
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+    Constants - fixed values for the Straints application.
+
+ */
+var Constants = {};
+
+var q = __webpack_require__(0).quote;
+
+// validation configuration keywords
+Constants.VSD =
+{
+    ALL: '____',
+    ELSE: 'else',
+    ID: 'path',
+    IF: 'if',
+    INCLUDE: 'include',
+    NAME: 'name',
+    NEST: 'nested',
+    NOT: 'flip',
+    PARAM: 'param',
+    PARAMS: 'params',
+    PAYLOAD: 'payload',
+    POLL: 'poll',
+    PROPERTY: 'property',
+    REQUIRE: 'constrain',
+    RESULTS: 'results',
+    STARGET: '(s)',
+    TEST: 'test',
+    THEN: 'then',
+    TARGET: '(t)'
+};
+
+// Regular Expression Strings
+var SRE = Constants.SRE = {};
+SRE.QTARGET = q(Constants.VSD.TARGET);
+SRE.QSTARGET = q(Constants.VSD.STARGET);
+// SRE.BOOLEAN = 'true|false';
+SRE.PROP_CHARS = '[A-Za-z0-9_$]';
+SRE.RULE_CHARS = '[A-Za-z0-9_$]';
+SRE.ARGS_CHARS = '[^\\s]';
+SRE.LOGIC = 'or|and|nor|nand|xnor|xor|not';
+SRE.PROP_PRE = '(' + SRE.QTARGET + '|' + SRE.QSTARGET + '|' + SRE.PROP_CHARS + '+):';
+SRE.RULE_SUF = '[#@]?' + SRE.RULE_CHARS + '+([.#@]' + SRE.RULE_CHARS + '+)*';
+SRE.ARGS = '[!?]' + SRE.ARGS_CHARS + '+?(:' + SRE.ARGS_CHARS + '+?)*';
+// SRE.RULE = '(' + SRE.PROP_PRE + ')?' + SRE.RULE_SUF;
+SRE.RULE_PROP_REQUIRE = SRE.PROP_PRE + SRE.RULE_SUF;
+
+// Regular Expression Constants
+Constants.RE =
+{
+    CP_TARGET_REF: /^(s|t)(\.[a-z0-9_]+)+$/i,
+    CP_REPLACE: /^[_%]\{(?!.*%\{).*?}$/,
+    CP_INTERPOLATE: /[_%]\{(.*?)}/g,
+    GROUP: /\(\s*((not\s+)?(true|false)(\s+(or|and|nor|nand|xnor|xor)\s+(not\s+)?(true|false))*)\s*\)/ig,
+    HAS_LOGIC: new RegExp('^not\\s+|\\s+(' + SRE.LOGIC + ')\\s+', 'i'),
+    HAS_ARGS: new RegExp('[^\\s]+' + SRE.ARGS + '$', 'i'),
+    LOGIC: new RegExp('^(' + SRE.LOGIC + '|[()])$', 'i'),
+    PATH_SEP_START: /^\..+$/,
+    // RULE: new RegExp('^' + SRE.RULE + '$', 'i'),
+    RULE_PROP_REQUIRE: new RegExp('^' + SRE.RULE_PROP_REQUIRE + '$', 'i'),
+    // RULE_EXP: new RegExp('^' + Constants.SRE.RULE_EXP + '$', 'i'),
+    SEP_ITEMS: /\s*,\s*/,
+    SEP_PARTS: /#/,
+    SEP_PATHS: /[.]/,
+    SEP_REFS: /:/,
+    SEP_ARGS: /[!?]/,
+};
+
+// Single Character Separators
+Constants.SEP =
+{
+    CTX: '@',
+    ITEM: ',',
+    MARG: '?',
+    MTH: '#',
+    PART: '#',
+    PATH: '.',
+    REF: ':',
+    SARG: '!',
+    SPC: '~'
+}
+
+Constants.VSD.TYPES =
+{
+    CONTEXT:
+    [
+        Constants.VSD.NAME,
+        Constants.VSD.INCLUDE,
+        Constants.VSD.NEST,
+        Constants.VSD.REQUIRE,
+    ],
+
+    CONSTRAINT:
+    [
+        Constants.VSD.ID,
+        Constants.VSD.NAME,
+        Constants.VSD.TEST,
+        Constants.VSD.IF,
+        Constants.VSD.POLL,
+        Constants.VSD.RESULTS,
+        Constants.VSD.PARAM,
+        Constants.VSD.PARAMS,
+        Constants.VSD.PAYLOAD,
+        Constants.VSD.PROPERTY,
+        Constants.VSD.NOT
+    ],
+
+    INCLUDE:
+    [
+        Constants.VSD.ID,
+        Constants.VSD.NAME,
+        Constants.VSD.IF,
+        Constants.VSD.THEN,
+        Constants.VSD.ELSE
+    ]
+}
+
+Constants.VSD.IS_CONTEXT =
+[
+    Constants.VSD.INCLUDE,
+    Constants.VSD.NEST,
+    Constants.VSD.REQUIRE
+];
+
+Constants.VSD.LEVELS =
+[
+    Constants.VSD.REQUIRE,
+    Constants.VSD.ADVISE
+];
+
+Constants.MSG =
+{
+    BAD_INCLUDE_PROPERTY: '"${property}" is not a valid include condition property and will be ignored.',
+    BAD_CONSTRAINT_PROPERTY: '"${property}" is not a valid constraint property and will be ignored. ' +
+      'It is recommended that you use "payload" to attach arbitrary data to a constraint.',
+    CANNOT_RESOLVE: 'Cannot resolve ${name} item at "${path}".',
+    CONTEXT_NOT_DEFINED: 'Context ${name} has not been defined.',
+    EXECUTING_VALIDATIONS: 'Executing validations...',
+    REQUESTING_VSD_DATA: 'Calling out for schema definition data...',
+    TEST_NOT_FOUND: 'Test "${name}" was not found or its return value is not boolean.',
+    WAITING_FOR_VSD_DATA: 'Waiting for schema definition data...'
+}
+
+
+module.exports = Constants;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var inter = __webpack_require__(0).interpolate;
+
+module.exports =
+{
+    info: function() { this.log('[ INFO ]', arguments); },
+
+    warn: function() { this.log('[ WARN ]', arguments); },
+
+    fail: function() { this.log('[FAILED]', arguments); },
+
+    inter: function(lname, value, reps) { this[lname](inter(value, reps)); },
+
+    log: function(level, args)
+    {
+        this.out.apply(null, [level].concat(Array.prototype.slice.call(args)));
+    },
+
+    set: function(out)
+    {
+        this.out = typeof out === 'function' ? out : (this.out || function() {});
+    }
+};
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+    Session - The Straints object validation session.
+
+    Each instance of this class represents validation against a single JS
+    object.
+
+    @class
+ */
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+var results = __webpack_require__(7);
+
+
+var Session = module.exports = Utils.class();
+Session.prototype =
+{
+    /**
+        Initializes a new Validation Session instance.
+
+        @param {object} target
+            Target object for this validation session.
+        @param {(string|array)} rawtexts
+            Comma-separated string or array of initial contexts for this
+            session.
+        @param {object} [parent]
+            The parent validation session instance.
+        @param {string} [name]
+            A name for the validation session.
+     */
+    init: function(target, rawtexts, parent, name)
+    {
+        // the session target object
+        this.target = Utils.ensure(target, {});
+        // all property names for the target object
+        this.fields = Object.keys(this.target);
+        // initial contexts for this session
+        this.rawtexts = rawtexts;
+        // the parent session of this instance.
+        this.parent = parent || {};
+        // the namespace for this instance
+        this.name = name;
+        // validation session results
+        this.results = this.parent.results || results(this.target);
+        // constraint tests, session level contexts, nested property contexts
+        this.tested = {}, this.contexts = [], this.nesteds = {};
+        // copy the validate callback from the parent (if there is one)
+        this.validateCB = this.parent.validateCB;
+    },
+
+    /**
+        Returns [part] prefixed with the name of this session object.
+
+        @private
+
+        @param {string} part
+            The name to prefix.
+        @param {string} [separator=C.SEP.PATH]
+            The separator to use between this session name and [part].
+        @return {string}
+            The namespaced value for [part].
+     */
+    namespace: function(part, separator)
+    {
+        return (this.name ? this.name + (separator || C.SEP.PATH) : '') + part;
+    },
+
+    nsRef: function(prop, rule)
+    {
+        return rule.split(C.SEP.REF).length > 1 ? rule : [this.namespace(prop), rule].join(C.SEP.REF);
+    },
+
+    inform: Utils.inform,
+
+    /**
+        Returns the validation result for a given test.
+
+        @param {string} property
+            The property of the target object.
+        @param {string} path
+            The constraint identifier.
+        @return {boolean}
+            True or false if the test has been executed; null otherwise.
+     */
+    resultFor: function(property, path)
+    {
+        return this.results.tests[this.nsRef(property, path)];
+    },
+
+    /**
+        Returns true if [context] is a recorded context for this session.
+
+        @param {string} context
+            The context to check for.
+        @return {boolean}
+            True if [context] is a recorded context for this session.
+     */
+    hasContext: function(context, directive)
+    {
+        return (this.contexts.indexOf(context) >= 0) ||
+            (directive && this.contexts.indexOf(context + C.SEP.PART + directive) >= 0);
+    },
+
+    /**
+        Adds [contexts] to this session and the internal results object.
+
+        @param {(string|array)} context
+            The context to add.
+        @return {boolean}
+            True if the context was successfully added.
+     */
+    addContext: function(context, directive)
+    {
+        if (!this.hasContext(context, directive))
+        {
+            // if no directive was given then remove all context references
+            if (!directive)
+            {
+                var undup = function(c) { if (c.indexOf(context) !== 0) return c; }
+                this.contexts = Utils.loop.call(this, this.contexts, undup);
+            }
+            // session: add the context if not already added
+            Utils.push(context + (directive ? C.SEP.PART + directive : ''), this.contexts);
+
+            return true;
+        }
+
+        return false;
+    },
+
+    /**
+        Creates a child object validation session for [property].
+
+        @param {string} property
+            The name of the property to create a child session for.
+        @return {object}
+            A new session instance if [property] is a child object.
+     */
+    nestedSession: function(property)
+    {
+        if (this.nesteds[property])
+            return new Session(this.target[property], this.nesteds[property], this, this.namespace(property));
+    },
+
+    /**
+        Adds nested contexts for [properties] if they are objects or arrays in
+        [this.target].
+
+        @param {array} properties
+            The list of properties to be nested.
+        @param {string} prefix
+            The path prefix for the nested properties.
+        @return {object}
+            Self.
+     */
+    addNestedContexts: function(properties, prefix)
+    {
+        prefix = Utils.toString(prefix, C.SEP.PATH);
+
+        var add = function(suffix, property)
+        {
+            if (Array.isArray(this.target[property]) || Utils.isObject(this.target[property]))
+                (this.nesteds[property] = this.nesteds[property] || []).push(prefix + C.SEP.PATH + suffix);
+        }
+
+        var loop = function(property)
+        {
+            // 'C.VSD.ALL' means the context should apply for every nested object
+            if (property === C.VSD.ALL && !this.target.hasOwnProperty(C.VSD.ALL))
+                Utils.loop(this.fields, add.bind(this, C.VSD.ALL));
+            else
+                add.call(this, property, property);
+        }
+
+        Utils.loop(properties, loop.bind(this));
+
+        return this;
+    },
+
+    /**
+        Indexes [constraint] and records its attempt to validate [property].
+
+        @param {string} property
+            The name of the property being validated.
+        @param {object} constraint
+            The constraint representing the validation test.
+        @param {string} level
+            The validation level.
+        @return {object}
+            Self.
+     */
+    addTest: function(property, constraint, level)
+    {
+        var add = function(prop)
+        {
+            // get the extended name for [property].
+            var name = this.namespace(prop);
+            var path = constraint[C.VSD.ID];
+
+            this.results.tested[level] = this.results.tested[level] || {};
+            this.results.tested[level][name] = this.results.tested[level][name] || {};
+            // results: add the constraint id for the property if not already added
+            if (typeof this.results.tested[level][name][path] !== 'boolean')
+                this.results.tested[level][name][path] = null;
+            // results: capture the constraint object if not already captured
+            if (!this.results.constraints[path])
+                this.results.constraints[path] = constraint;
+
+            this.tested[level] = this.tested[level] || {};
+            // session: add the constraint id for the property if not already added
+            this.tested[level][prop] = Utils.push(path, this.tested[level][prop]);
+        }
+        // 'C.VSD.ALL' means the constraint validation will apply to all properties
+        if (property === C.VSD.ALL && !this.target.hasOwnProperty(C.VSD.ALL))
+            Utils.loop.call(this, this.fields, add);
+        else
+            add.call(this, property);
+
+        return this;
+    },
+
+    /**
+        Commences the session.
+
+        This method should be called only on the root session instance.
+     */
+    commence: function()
+    {
+        this.commenceAt = new Date();
+        return this;
+    },
+
+    /*
+        Completes some last-minute tasks for the session including recording
+        validation execution time.
+     */
+    finishUp: function()
+    {
+        // add all contexts from this session to [this.results];
+        Utils.loop.call(this, this.contexts, function(c)
+        {
+            this.results.contexts.push(this.namespace(c, C.SEP.REF));
+        });
+
+        this.completeAt = new Date();
+        // record execution time
+        this.results.timeMillis = this.completeAt.getTime() - this.commenceAt.getTime();
+    },
+
+    /**
+        Completes the session successfully and executes the completeCB callback
+        if it exists.
+
+        This method should be called only on the root session instance.
+     */
+    complete: function()
+    {
+        this.finishUp();
+
+        this.results.isComplete = true;
+        // send complete callback if given
+        if (typeof this.completeCB === 'function') this.completeCB(this.results);
+
+        return this;
+    },
+
+    /**
+        Fails the session miserably and executes the miscarryCB callback if it
+        exists.
+
+        This method should be called only on the root session instance.
+
+        @param {string} error
+            The validation error that occurred.
+     */
+    miscarry: function(error)
+    {
+        this.finishUp();
+
+        this.results.isComplete = false;
+
+        this.results.error = error;
+        // send complete callback if given
+        if (typeof this.miscarryCB === 'function') this.miscarryCB(this.results);
+
+        return this;
+    },
+
+    /**
+        Invokes the validate callback (if available) with the namespaced
+        property being validated, the full target object, [constraint], and
+        [result].
+
+        @param {string} property
+            Name of the property being validated.
+        @param {object} path
+            The identifier of the validating constraint.
+        @param {boolean} result
+            The result of [constraint] validating [property].
+        @param {string} type
+            The validation level.
+        @return {boolean}
+            [result] or the return value of the callback.
+     */
+    validate: function(property, path, result, level)
+    {
+        // get the extended name for [property]
+        var name = this.namespace(property);
+        // track result before making the validate callback
+        this.results.tests[this.nsRef(property, path)] = result;
+        // possible we get no validation result on failed condition
+        if (result !== null)
+        {
+            // send validate callback if available
+            if (typeof this.validateCB === 'function')
+            {
+                var validationInfo =
+                {
+                    // the local name of the property validated
+                    name: property,
+                    // the session name of the property validated
+                    sname: name,
+                    // the object whose property is being validated
+                    target: this.target,
+                    // the original validation target
+                    starget: this.results.target,
+                    // the validation rule executed
+                    rule: this.results.constraints[path],
+                    // the validation type
+                    level: level,
+                    /** @deprecated (v0.3.1) */
+                    type: level
+                };
+                // validate callback updates result;
+                result = this.validateCB(result, validationInfo);
+            }
+        }
+        // track this result in results object and return
+        return this.results.tested[level][name][path] = result;
+    }
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var factory = __webpack_require__(6);
+
+
+module.exports = function(validator)
+{
+    // create straints library public interface
+    var interface =
+    {
+        // Configuration for the Straints factory.
+        configure: function(o) { factory.configure(o); return this; },
+        // Pass this export to app.use(). This exposes the straints instance on the request object.
+        usage: function(req, res, next) { req.straints = factory.getInstance(); next(); },
+        // To create new Straints instances.
+        newInstance: factory.newInstance.bind(factory),
+        // To get the factory singleton Straints instance
+        getInstance: factory.getInstance.bind(factory),
+        // To get the configured validator implementation
+        getValidator: factory.getValidator.bind(factory)
+    }
+    // add default validator and parsers to singleton factory
+    return interface.configure({ validator: validator });
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+    Engine - Parses the validation configuration and executes validations.
+
+    @class
+ */
+var log = __webpack_require__(2);
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+var vsdTypes = __webpack_require__(31);
+var rules = __webpack_require__(11);
+var Session = __webpack_require__(3);
+
+
+var Engine = Utils.class();
+Engine.prototype =
+{
+    /**
+        Initializes a new Straints instance.
+
+        @constructor
+
+        @param {object} opts
+            Parameters for this Instance.
+        @param {object} opts.validator
+            The validator implementation to use.
+        @param {boolean} opts.useStrings
+            Convert values to string before testing?
+        @param {(object|function)} opts.data
+            The validation configuration data or a provider of it.
+     */
+    init: function(opts)
+    {
+        this.config = opts;
+        // validation engine
+        this.config.engine = this;
+        // validation levels
+        this.config.levels = [].concat(C.VSD.LEVELS, Utils.toArray(opts.levels || [], C.RE.SEP_ITEMS));
+        // queue of validation sessions waiting for data (as necessary)
+        this.sessionQueue = [];
+        // set the constraint configuration data
+        this.setData(opts.data);
+    },
+
+    /**
+        Sets the validation configuration data and clears all caches.
+
+        The [data] parameter is either the validation configuration data
+        or a function that will provide it.  The function will not be called
+        until the configuration data is needed (i.e., a validation is
+        requested), and, when called, it will be passed this method as a
+        callback.
+
+        @param {(object|function)} data
+            The validation config data or a provider of it.
+     */
+    setData: function(data)
+    {
+        this.data = data;
+
+        if (Utils.isObject(this.data))
+        {
+            var config = Utils.merge({}, this.config, { data: this.data });
+            // create the types manager.
+            var types = vsdTypes(config);
+            // context manager
+            this.contexts = types.contexts;
+            // named includes from VSD
+            this.includes = types.includes;
+            // named constraints from VSD
+            this.constraints = types.constraints;
+            // named constraint rules
+            this.rules = rules(config, types);
+        }
+        // try to execute any queued validations
+        this.kickoff();
+    },
+
+    /**
+        Validates the [target] object against the specified [contexts]. Once
+        validation has completed, [complete] will be invoked with the
+        validation results.
+
+        The [validate] callback should return [result] or the boolean result of
+        any additional processing needed.
+
+        @param {object} target
+            The object whose properties are to be validated.
+        @param {(string|array)} contexts
+            The comma-delimited string or array of contexts to validate with.
+        @param {function} complete
+            The method to be called once validation has completed.
+        @param {function} validate
+            The method to be called after each validation test.
+     */
+    validate: function(target, contexts, validate)
+    {
+        var handle = function(success, failure)
+        {
+            var session = new Session(target, contexts);
+            // configure the validaton session callbacks
+            session.inform('completeCB', success);
+            session.inform('miscarryCB', failure);
+            session.inform('validateCB', validate);
+            // push the session onto the session queue
+            this.sessionQueue.push(session);
+            // attempt to begin validation
+            this.kickoff();
+        }
+
+        var handler = handle.bind(this);
+        var promise = this.config.promise;
+
+        return promise ? new promise(handler) : handler;
+    },
+
+    /**
+        In concert with the .setData() method, this method manages any latency
+        in obtaining the validation configuration data. Once obtained it fires
+        off any requests currently awaiting validation.
+
+        @private
+     */
+    kickoff: function()
+    {
+        switch (true)
+        {
+            case this.sessionQueue.length === 0:
+                break;
+            // call the function and wait for data
+            case typeof this.data === 'function':
+                log.info(C.MSG.REQUESTING_VSD_DATA);
+                this.data(this.setData.bind(this));
+                this.data = null;
+                break;
+            // should have data now so empty validation queue
+            case Utils.isObject(this.data):
+                log.info(C.MSG.EXECUTING_VALIDATIONS);
+                while (this.sessionQueue.length > 0)
+                    this.commence(this.sessionQueue.shift())();
+                break;
+            // nothing we can do yet
+            default:
+                log.info(C.MSG.WAITING_FOR_VSD_DATA);
+        }
+    },
+
+    /**
+        Extension of .kickoff() to call .perform() to begin validation.
+
+        @param {object} session
+            The validation session object.
+        @return {function}
+            Async success/failure callback router.
+     */
+    commence: function(session)
+    {
+        var handle = function(success, failure)
+        {
+            // get callback to start validation
+            var perform = this.perform(session.commence());
+            // success/failure callbacks
+            var toSuccess = function() { session.complete(); if (success) success(); }
+            var toFailure = function(e) { log.fail(e); session.miscarry(e); if (failure) failure(e); }
+            // start validating!
+            Utils.async(perform, toSuccess, toFailure);
+        }
+
+        return handle.bind(this);
+    },
+
+    /**
+        Starting point for validation. Validation configuration data should
+        already have been loaded.
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @return {function}
+            Async success/failure callback router.
+     */
+    perform: function(session)
+    {
+        var handle = function(success, failure)
+        {
+            var work = function()
+            {
+                // execute constraint validations
+                var cycle = function(next, level)
+                {
+                    Utils.async(this.execute(session, level), next, failure);
+                }
+                // callback for end of [cycle].
+                var finish = function()
+                {
+                    // loop through session nested keys
+                    Utils.cycle.call(this, Object.keys(session.inform('nesteds')), function(next, key)
+                    {
+                        Utils.async(this.commence(session.nestedSession(key)), next, failure);
+
+                    }, success);
+                }
+                // cycle validation rule types then recursively handle nested elements
+                Utils.cycle.call(this, this.config.levels, cycle, finish);
+            }
+            // expand the session contexts prior to validaton
+            Utils.async(this.prepare(session, session.inform('rawtexts')), work.bind(this), failure);
+        }
+
+        return handle.bind(this);
+    },
+
+    /**
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @return {function}
+            Async success/failure callback router.
+     */
+    prepare: function(session, contexts)
+    {
+        var handle = function(success, failure)
+        {
+            Utils.cycle.call(this, Utils.toArray(contexts, C.RE.SEP_ITEMS), function(next, context)
+            {
+                // split [context] into context and directive parts
+                var parts = this.contexts.unmark(context).split(C.SEP.PART, 2);
+
+                var contextObj = this.contexts.get(parts[0]);
+                // make sure the context exists
+                if (!contextObj)
+                {
+                    log.inter('warn', C.MSG.CONTEXT_NOT_DEFINED, { name: context });
+                    return next();
+                }
+                // add the context to the session or next() if not successful
+                if (!session.addContext(parts[0], parts.length > 1 ? parts[1] : null)) return next();
+                // capture whether or not we are including the entire context
+                var doApply = function(n)
+                {
+                    return typeof contextObj[n] !== 'undefined' && (parts.length === 1 || parts[1] === n)
+                }
+
+                Utils.loop.call(this, this.config.levels, function(level)
+                {
+                    if (doApply(level))
+                        this.applyConstrainDirective(session, parts[0] + C.SEP.PATH + level, level);
+                });
+
+                if (doApply(C.VSD.NEST))
+                    this.applyNestedDirective(session, parts[0] + C.SEP.PATH + C.VSD.NEST);
+
+                if (doApply(C.VSD.INCLUDE))
+                    Utils.async(this.applyIncludeDirective(session, parts[0] + C.SEP.PATH + C.VSD.INCLUDE), next, failure);
+                else
+                    next();
+
+            }, success);
+        }
+
+        return handle.bind(this);
+    },
+
+    /**
+        Adds constraints identified by [cnames] to [session] for [property] at
+        the specified validation [level].
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @param {string} property
+            The property to have constraints added.
+        @param {array} cnames
+            The constraint identifiers to add.
+        @return {object}
+            The validation session object.
+     */
+    applyConstraints: function(session, property, cnames, level)
+    {
+        Utils.loop.call(this, cnames, function(name)
+        {
+            session.addTest(property, this.constraints.get(name), level);
+        });
+
+        return session;
+    },
+
+    /**
+        Applies the constrain directive specified by [path] to the session.
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @param {string} path
+            VSD path to a constrain directive.
+        @param {string} level
+            The validation level.
+        @return {object}
+            The validation session object.
+     */
+    applyConstrainDirective: function(session, path, level)
+    {
+        Utils.loop.call(this, Object.keys(this.find(path) || {}), function(property)
+        {
+            var extPath = [].concat(path, property);
+            // properties by rule reference specified
+            if (property.slice(0, 1) === C.SEP.SPC)
+            {
+                var cnames = [], cref = property.slice(1);
+                // split by commas if flag set
+                var crefs = this.config.flgAllowMultiRuleKeys ? Utils.toArray(cref, C.RE.SEP_ITEMS) : [ cref ];
+                // resolve all constraint rule references
+                Utils.loop.call(this, crefs, function(item) { this.constraints.resolve(item, cnames); });
+                // loop through the property names specified for this constraint
+                Utils.loop.call(this, Utils.toArray(this.find(extPath), C.RE.SEP_ITEMS), function(item)
+                {
+                    this.applyConstraints(session, item, cnames, level);
+                });
+            }
+            // constraints by property name specified
+            else
+            {
+                var cnames = this.constraints.resolve(extPath);
+                // split by commas if flag set
+                var props = this.config.flgAllowMultiPropKeys ? Utils.toArray(property, C.RE.SEP_ITEMS) : [ property ];
+                // usually a single property but allow comma-delimited set
+                Utils.loop.call(this, props, function(prop) { this.applyConstraints(session, prop, cnames, level); });
+            }
+        });
+
+        return session;
+    },
+
+
+    /**
+        Applies the include directive specified by [path] to the session.
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @param {string} path
+            VSD path to a include directive.
+        @return {function}
+            Async success/failure callback router.
+     */
+    applyIncludeDirective: function(session, path)
+    {
+        var handle = function(success, failure)
+        {
+            Utils.cycle.call(this, this.includes.resolve(path), function(next, name)
+            {
+                var include = this.includes.get(name);
+
+                var conditions = include[C.VSD.IF];
+                // if this include has an 'if' we must test it
+                if (conditions)
+                {
+                    // assume a list of contexts if conditions is an array
+                    var expression = Array.isArray(conditions) ? conditions.join(' and ') : conditions;
+                    // use a separate validation session to test expression
+                    var result = this.rules.expression(expression)(C.VSD.TARGET, session.target);
+
+                    var doInclude = function(result)
+                    {
+                        var which = include[result ? C.VSD.THEN : C.VSD.ELSE];
+                        Utils.async(this.prepare(session, which), next, failure);
+                    }
+
+                    Utils.async(result, doInclude.bind(this), failure);
+                }
+                else
+                {
+                    Utils.async(this.prepare(session, include[C.VSD.THEN]), next, failure);
+                }
+
+            }, success);
+        }
+
+        return handle.bind(this);
+    },
+
+    /**
+        Applies the nested directive specified by [path] to the session.
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @param {string} path
+            VSD path to a nested directive.
+        @return {object}
+            The validation session object.
+     */
+    applyNestedDirective: function(session, path)
+    {
+        var nested = this.find(path);
+        // add nested items to session
+        if (nested) session.addNestedContexts(Object.keys(nested), path);
+
+        return session;
+    },
+
+    /**
+        Executes validation for the session.
+
+        @private
+
+        @param {object} session
+            The validation session object.
+        @param {string} level
+            The validation level.
+        @return {function}
+            Async success/failure callback router.
+     */
+    execute: function(session, level)
+    {
+        var handle = function(success, failure)
+        {
+            // get details from the session
+            var tested = session.inform('tested')[level] || {};
+            // cycle through all properties and constraints
+            Utils.cycle.call(this, Object.keys(tested), function(next, property)
+            {
+                Utils.cycle.call(this, tested[property], function(next, name)
+                {
+                    // check for a result already in the session, and...
+                    var cached = session.resultFor(property, name);
+                    // do not execute the rule if we have already done so
+                    var result = typeof cached === 'boolean' ? cached :
+                        this.rules.constraint(name)(property, session.results.target, session.target);
+                    // update session validation; move to next constraint
+                    var success = function(res) { session.validate(property, name, res, level); next(); }
+
+                    Utils.async(result, success, failure);
+              // start next property cycle
+              }, next);
+            // execute success when all properties cycled
+            }, success);
+        }
+
+        return handle.bind(this);
+    },
+
+    /**
+        Returns the item found at the given [path] in the VSD data.
+
+        Delegates to the 'find' utility function.
+
+        @private
+
+        @param {Object} [data=this.data]
+            The data in which to search for [path].
+        @return {*}
+            The item found in [data] at [path] or null if not found.
+     */
+    find: function(path)
+    {
+        return Utils.find(path, C.SEP.PATH, this.data);
+    }
+}
+
+
+/**
+    Returns the interface to a new Straints Engine instance.
+
+    @param {object} options
+        Parameters for the engine instance.
+    @return {object}
+        Returns the engine interface.
+ */
+module.exports = function(options)
+{
+    var engine = new Engine(options);
+
+    var instance =
+    {
+        setData: engine.setData.bind(engine),
+        validate: engine.validate.bind(engine),
+        validator: options.validator
+    }
+
+    return instance;
+}
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var log = __webpack_require__(2);
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+var engine = __webpack_require__(5);
+
+
+module.exports =
+{
+    /**
+        All StraintsFactory config options
+     */
+    options:
+    {
+        data: {},
+        levels: null,
+        load: null,
+        log: null,
+        // promise implementation here
+        promise: null,
+        useStrings: false,
+        validator: null,
+        // functionality flags
+        flgAllowMultiPropKeys: true,
+        flgAllowMultiRuleKeys: true
+    },
+
+    /**
+        Updates the factory configuration and forgets the factory instance so
+        it can be recreated again on the next call to .getInstance().
+
+        @param {object} options
+            The configuraton options to use.
+        @return {object}
+            Self.
+     */
+    configure: function(options)
+    {
+        Utils.merge(this.options, options);
+
+        log.set(this.options.log);
+        this.instance = null;
+
+        return this;
+    },
+
+    /**
+        Validates configuration options throwing errors as necessary.
+
+        @param {object} options
+            The configuraton options to validate.
+        @return {object}
+            The vlaidated configuraton options.
+     */
+    checkOptions: function(options)
+    {
+        var toss = function(m) { throw new Error('Config - ' + m); }
+
+        // validate validator
+        if (!Utils.isObject(options.validator))
+            toss('No validator specified');
+
+        // validate validation levels
+        Utils.loop(Utils.toArray(options.levels || [], C.RE.SEP_ITEMS), function(v)
+        {
+            if (C.VSD.IS_CONTEXT.indexOf(v) >= 0)
+                toss('Validation level cannot be any one of \'' + C.VSD.IS_CONTEXT.join('\', \'') + '\'');
+        });
+
+        return options;
+    },
+
+    /**
+        Creates a new Straints instance.
+
+        Note that [options] is merged over the current factory configuration
+        before being used to create a new Straints instance.
+
+        @param {object} options
+            The configuration options.
+        @return {object}
+            A new Straints instance.
+     */
+    newInstance: function(options)
+    {
+        var merged = this.checkOptions(Utils.merge({}, this.options, options));
+
+        switch (typeof merged.load)
+        {
+            case 'function':
+                merged.data = this.createDataCallback(merged.load);
+                break;
+            case 'object':
+                merged.data = merged.load;
+                break;
+            case 'string':
+                merged.data = JSON.parse(merged.load);
+                break;
+        }
+
+        return engine(merged);
+    },
+
+    /**
+        Returns the factory singleton Straints instance, creating it if it does not
+        exist.
+
+        @return {object}
+            The factory Straints instance.
+     */
+    getInstance: function()
+    {
+        return this.instance = this.instance || this.newInstance();
+    },
+
+    /**
+        Returns the configured test method implementation.
+
+        @return {object}
+            The validator object.
+     */
+    getValidator: function()
+    {
+        return this.getInstance().validator;
+    },
+
+    /**
+        Returns a function that accepts a callback(1) that when invoked will call
+        [loader] with a callback(2) that will invoke callback(1) with the
+        VSD data provided by [loader].
+
+        Go ahead, read that again.
+
+        @private
+
+        @param {function} loader
+            The function to load the data (accepts a callback).
+        @param {function} parser
+            The function to parse the loaded data.
+        @return {function}
+            The cluster f**k described above.
+     */
+    createDataCallback: function(loader)
+    {
+        return function(callback) { loader(function(data) { callback(data); }); };
+    }
+}
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+    Results - The Straints validation result object.
+
+ */
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+
+module.exports = function(target)
+{
+    var results =
+    {
+        target: target,
+        contexts: [],
+        tested: {},
+        constraints: {},
+        tests: {},
+        isComplete: false,
+        error: null,
+
+        /**
+            Returns a list of constraint IDs that resulted in [value] for
+            [property] under the given validation [level].
+
+            @param {string} [property]
+                The property name to search. If the property sought is
+                nested, this must be the fully qualified name. If not given,
+                all properties are assumed.
+            @param {string} [level=C.VSD.REQUIRE]
+                The validation level.
+            @param {boolean} [value=false]
+                The result value to search. This can be null if you wish to
+                find constraints that were not executed.
+            @return {array}
+                The list of constraint identifiers found.
+         */
+        findConstraints: function(property, level, value)
+        {
+            var names = [];
+            // type defaults to required constraints
+            level = level || C.VSD.REQUIRE;
+
+            if (this.tested[level])
+            {
+                // value defaults to false for failed constraints
+                value = typeof value === 'undefined' ? false : value;
+
+                Utils.loop.call(this, property ? [property] : Object.keys(this.tested[level]), function(prop)
+                {
+                    var cnames = this.tested[level][prop] || {};
+                    Utils.loop(Object.keys(cnames), function(c) { if (cnames[c] === value) Utils.push(c, names); });
+                });
+            }
+
+            return names;
+        },
+
+        /**
+            Returns a list of properties that resulted in [value] for
+            [constraint] under the given validation [level].
+
+            @param {string} [constraint]
+                The name of the constraint to search. If not given, all
+                constraints are assumed.
+            @param {string} [level=C.VSD.REQUIRE]
+                The validation level.
+            @param {boolean} [value=false]
+                The result value to search. This can be null if you wish to
+                find properties with constraints that were not executed.
+            @return {array}
+                The list of properties found.
+         */
+        findProperties: function(constraint, level, value)
+        {
+            var props = [];
+
+            // type defaults to required constraints
+            level = level || C.VSD.REQUIRE;
+
+            if (this.tested[level])
+            {
+                // value defaults to false for failed constraints
+                value = typeof value === 'undefined' ? false : value;
+
+                Utils.loop.call(this, Object.keys(this.tested[level]), function(property)
+                {
+                    // get constraint results for the current property
+                    var item = this.tested[level][property];
+                    // checks a given contraint test on current property
+                    if (constraint)
+                    {
+                        if (item[constraint] === value) props.push(property);
+                    }
+                    else
+                    {
+                        for (var c in item)
+                        {
+                            if (item[c] === value) { props.push(property); break; }
+                        }
+                    }
+                });
+            }
+
+            return props;
+        },
+
+        /**
+            For the given validation level, returns `true` if all tests passed,
+            `false` if any failed, or `null` if none were run or if the level
+            does not exist.
+
+            @param {string} [level=C.VSD.REQUIRE]
+                The validation level.
+            @return {boolean}
+                True if no errors found.
+         */
+         validFor: function(level)
+         {
+             return this.tested[level] ? this.findProperties(null, level, false).length === 0 : null;
+         },
+
+        /**
+            Returns true if validation completed successfully, and there are
+            no [C.VSD.REQUIRE] validation errors.
+
+            @return {boolean}
+                True if validation succeeded on all fronts.
+         */
+        valid: function()
+        {
+            return this.validFor(C.VSD.REQUIRE) !== false && !this.error;
+        },
+
+        /**
+            Convenience method to return the payload for the specified constraint.
+
+            @param {string} cname
+                The constraint name.
+            @return {*}
+                Payload data for the constraint.
+         */
+        payload: function(cname)
+        {
+            return this.constraints[cname] && this.constraints[cname][C.VSD.PAYLOAD];
+        }
+    }
+
+    return results;
+}
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+
+module.exports = function()
+{
+    var data =
+    {
+        // overall validity
+        valid: true,
+        // number of tests that passed
+        passCount: 0,
+        // number of tests that failed
+        failCount: 0,
+        // total number of tests
+        testCount: 0,
+        // property names that passed tests
+        passed: [],
+        // property names that failed tests
+        failed: [],
+        // all property names tested
+        tested: []
+    }
+
+    var aggregator =
+    {
+        data: data,
+
+        update: function(key, result)
+        {
+            data.tested.push(key); data.testCount += 1;
+
+            if (result === true) { data.passed.push(key); data.passCount += 1; }
+            if (result === false) { data.failed.push(key); data.failCount += 1; }
+            // if (result === null) { data.skipped.push(key); data.skipCount += 1; }
+            data.valid = data.valid && result;
+        }
+    }
+
+    return aggregator;
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+
+/**
+    Compiles parameters list for a constraint allowing for code evaluation
+    (eval) and interpolation.
+
+    The following objects are available to parameters during eval:
+        - t {object} - the session level target object
+        - s {object} - the results level target object
+
+    @param {array} params
+        The parameters to be compiled.
+    @param {object} s
+        The session target object. Allow access in evaled parameters.
+    @param {object} t
+        The current target object. Allow access in evaled parameters.
+    @return {*}
+        Evaluated and interploated parameters.
+ */
+module.exports = function(params, s, t)
+{
+    var compile = function(param)
+    {
+        var resolved = param;
+        // if [param] is a string then interpolate it for replacements
+        if (typeof param === 'string')
+        {
+            // target object reference specified so eval parameter
+            if (C.RE.CP_TARGET_REF.test(param))
+                resolved = eval(param);
+            // interpolation syntax used for entire value so eval parameter
+            else if (C.RE.CP_REPLACE.test(param))
+                resolved = eval(param.slice(2, -1))
+            // replace all interpolated items with the appropriate value.
+            else
+                resolved = param.replace(C.RE.CP_INTERPOLATE, function(m,p) { return eval(p); });
+        }
+        // when [param] is an array use recursive resolution
+        else if (Array.isArray(param))
+        {
+            Utils.loop(param, function(v,i) { resolved[i] = compile(v); });
+        }
+        // resolve the value of every key when ]param] is an object
+        else if (Utils.isObject(param))
+        {
+            Utils.loop(Object.keys(param), function(k) { resolved[k] = compile(param[k]); });
+        }
+
+        return typeof resolved === 'undefined' ? [] : resolved;
+    }
+
+    return compile(params);
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+
+var isolate = function(ruleStr)
+{
+    // protect special parenthesized values
+    ruleStr = ruleStr.replace(/\((\w+)\)/g, '<=[$1]=>');
+    // isolate remaining parenthesis
+    ruleStr = ruleStr.replace(/\s*(\(|\))\s*/g, ' $1 ');
+    // reinstate protected values
+    ruleStr = ruleStr.replace(/<=\[(\w+)\]=>/g, '($1)');
+    // trim any excess whitespace
+    ruleStr = ruleStr.trim();
+    // split on whitespace for processing
+    return ruleStr.split(/\s+/);
+}
+
+var parse = function(ruleStr, resolver)
+{
+    return function(success, failure)
+    {
+        var parts = [];
+        // looping through non-whitespace elements of the rule expression
+        Utils.cycle(isolate(ruleStr), function(next, item)
+        {
+            var results = C.RE.LOGIC.test(item) ? item : resolver(item);
+            Utils.async(results, function(i) { parts.push(i); next(); }, failure);
+        },
+        function() { success(parts.join(' ')); });
+    }
+}
+
+var reduce = function(ruleStr)
+{
+    ruleStr = '(' + ruleStr + ')';
+    // revursively replace each parenthetical expression with its boolean result
+    while (C.RE.GROUP.test(ruleStr))
+    {
+        ruleStr = ruleStr.replace(C.RE.GROUP, function(match, first)
+        {
+            // un-not the match as necessary by manually flipping booleans
+            var unknot = first.replace(/not\s+true/ig, 'false').replace(/not\s+false/ig, 'true');
+            // split it all by whitespace chars
+            var parts = unknot.split(/\s+/);
+            // get the first part is a boolean string
+            var result = parts[0] === 'true' ? true : false;
+            // every other part is a boolean string, so loop by twos
+            for (var i=2,imx=parts.length;i<imx;i=i+2)
+            {
+                result = Utils.bit.evaluate(parts[i-1], result, parts[i] === 'true' ? true : false);
+            }
+            return result;
+        });
+    }
+    // rule string reduced to 'true' or 'false' at this point
+    return ruleStr.trim() === 'true' ? true : false;
+}
+
+var evaluate = function(ruleStr, resolver)
+{
+    return function(success, failure)
+    {
+        if (typeof ruleStr === 'string')
+            Utils.async(parse(ruleStr, resolver), function(rs) { success(reduce(rs)); }, failure);
+        else
+            failure('Rule expression "' + ruleStr + '" is not a string');
+    }
+}
+
+module.exports = evaluate;
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+    Rules - Manages asynchronous execution of validation rules.
+
+*/
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+// support functions
+var compile = __webpack_require__(9);
+var evaluate = __webpack_require__(10);
+var aggregator = __webpack_require__(8);
+
+
+module.exports = function(config, types)
+{
+    var rule = function(constraint)
+    {
+        return function(property, starget, target)
+        {
+            if (!target) target = starget;
+            // reset default property if specified in constraint
+            property = Utils.ensure(constraint[C.VSD.PROPERTY], property);
+
+            var targetValue = function(property)
+            {
+                // special values to check target objects
+                if (property === C.VSD.TARGET) return target;
+                if (property === C.VSD.STARGET) return starget;
+
+                // test value is converted to string if necessary
+                return config.useStrings ? Utils.toString(target[property]) : target[property];
+            }
+
+            var ruleargs = function(argStr)
+            {
+                var param = constraint[C.VSD.PARAM];
+                var params = constraint[C.VSD.PARAMS];
+                // determine single vs. multi arg parameters
+                var args = typeof param !== 'undefined' ? [ param ] : params;
+
+                if (typeof argStr === 'string' && argStr.length > 0)
+                {
+                    var form = argStr.slice(0, 1);
+                    var argArr = argStr.slice(1).split(C.RE.SEP_REFS);
+                    // all params are strings here so try to parse for literals
+                    argArr = Utils.loop(argArr, Utils.jsonParse);
+                    // determine single vs. multi arg parameters
+                    args = form === C.SEP.SARG ? [ argArr ] : argArr
+                }
+
+                return args;
+            }
+
+            var ruledata = function(rule)
+            {
+                // split one separates rule from parameters
+                var sone = rule.split(C.RE.SEP_ARGS, 2);
+                // initial part is 'property:test'
+                var pref = sone.length > 1 ? sone[0] : rule;
+                // get param string for the test if any
+                var args = sone.length > 1 ? rule.slice(pref.length) : '';
+                // split two separates property from test
+                var stwo = pref.split(C.RE.SEP_REFS, 2);
+                // either 'test' or 'property:test' has been specified
+                var test = stwo.length > 1 ? stwo[1] : stwo[0];
+                // use the current property none specified
+                var prop = stwo.length > 1 ? stwo[0] : property;
+
+                return { test: test, args: args, prop: prop, value: targetValue(prop) };
+            }
+
+            var ruleexec = function(vals)
+            {
+                var test = vals.test, args = vals.args, property = vals.prop, value = vals.value;
+                // [test] is resolved as a validator method
+                if (types.methods.ref(test))
+                    return types.methods.exec(test, value, compile(ruleargs(args), starget, target));
+                // [test] is resolved as a context reference
+                if (types.contexts.ref(test)) return types.contexts.exec(test, value);
+                // [test] is resolved as a constraint
+                if (constraint[C.VSD.ID] !== test && types.constraints.get(test))
+                    return entry.constraint(test)(property, starget, target);
+
+                return null;
+            }
+
+            var invoke = function(rule)
+            {
+                return function(success, failure)
+                {
+                    var rdata = ruledata(rule);
+
+                    var checker = function(result)
+                    {
+                        typeof result === 'boolean' ? success(result) :
+                            failure(Utils.interpolate(C.MSG.TEST_NOT_FOUND, { name: rdata.test }));
+                    }
+                    // handle rule results
+                    Utils.async(ruleexec(rdata), checker, failure);
+                }
+            }
+
+            return function(success, failure)
+            {
+                // function to call success with result flipped if necessary.
+                var final = function(res) { success(constraint[C.VSD.NOT] === true ? !res : res); }
+                // runs rule expression
+                var runner = function(e,s) { return Utils.async(evaluate(e, invoke), s, failure); }
+                // handle constraint value aggregation
+                var aggregate = function()
+                {
+                    var subTarget = targetValue(property);
+                    // object to hold aggregate result data
+                    var gator = aggregator();
+                    // to loop through object keys
+                    var cycle = function(next, key)
+                    {
+                        var aggregate = function(result) { gator.update(key, result); next(); }
+                        var rule = entry.expression(constraint[C.VSD.POLL], constraint[C.VSD.PARAMS]);
+                        Utils.async(rule(C.VSD.TARGET, subTarget[key]), aggregate, failure);
+                    }
+                    // executed when object key loop completed
+                    var finish = function()
+                    {
+                        var result = gator.data.valid;
+                        // test aggregate data against expression if present
+                        if (constraint[C.VSD.RESULTS])
+                            result = entry.expression(constraint[C.VSD.RESULTS])(C.VSD.TARGET, gator.data);
+
+                        Utils.async(result, final, failure);
+                    }
+
+                    Utils.cycle.call(this, Object.keys(subTarget || {}), cycle, finish);
+                }
+                // run the proper constraint test based on constraint type
+                var select = function(res)
+                {
+                    if (res)
+                        constraint[C.VSD.TEST] ? runner(constraint[C.VSD.TEST], final) : aggregate();
+                    else
+                        success(null);
+                }
+
+                if (constraint[C.VSD.IF])
+                    runner(constraint[C.VSD.IF], select);
+                else
+                    select(true);
+            }
+        }
+    }
+    // cache for generated rule functions
+    var cache = {};
+    // rule execution entry points
+    var entry =
+    {
+        expression: function(expression, params)
+        {
+            var constraint = {};
+
+            Utils.extend(C.VSD.TEST, expression, constraint);
+            Utils.extend(C.VSD.ID, '_', constraint);
+            Utils.extend(C.VSD.NAME, expression, constraint);
+            Utils.extend(C.VSD.PARAMS, params, constraint);
+
+            return rule(constraint);
+        },
+
+        constraint: function(cname)
+        {
+            return cache[cname] = cache[cname] || rule(types.constraints.get(cname));
+        }
+    }
+
+    return entry;
+}
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+/**
+    Handles async success/failure callback routing as necessary.
+
+    If [value] is
+        - a Promise then its .then() is called with [success] and [failure].
+        - a function then it is called with [success] and [failure].
+        - anything else [success] is called with [value].
+
+    @param {*} value
+        The target value.
+    @param {function} success
+        The callback to use for success.
+    @param {function} failure
+        The callback to use on an error.
+ */
+module.exports = function(value, success, failure)
+{
+    // handle result as a Promise object
+    if (this.isObject(value) && typeof value.then === 'function')
+        value.then(success, failure);
+    // handle result as simple async function
+    else if (typeof value === 'function')
+        value(success, failure);
+    // assume we already have the result value
+    else
+        success(value);
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+/**
+    Evaluates [one] and [two] as bits (0 or 1) and then performs the
+    bitwise [oper] between them
+
+    @param {string} oper
+        String representation of a bitwise operator.
+    @param {any} one
+        The first operand.
+    @param {any} two
+        The second operand.
+    @return {boolean}
+        The result of the bitwise operation.
+ */
+module.exports.evaluate = function(oper, one, two)
+{
+    var res = null;
+
+    one = one ? 1 : 0;
+    two = two ? 1 : 0;
+
+    switch (this.toOper(oper))
+    {
+        case '||':
+            res = one | two; break;
+        case '&&':
+            res = one & two; break;
+        case '==':
+            res = one === two; break;
+        case '!|':
+            res = !one & !two; break;
+        case '!&':
+            res = !one | !two; break;
+        case '!=':
+            res = one !== two; break;
+    }
+
+    return res ? true : false;
+}
+
+/**
+    Returns true if the bitwise operation [oper] need not continue due to
+    current states of the operands [one] and, possibly [two].
+
+    @param {string} oper
+        String representation of a bitwise operator ('&', '|', '^').
+    @param {any} one
+        The first operand.
+    @param {any} two
+        The second operand.
+    @return {boolean}
+        True if the bitwise operations can terminate.
+ */
+// module.exports.shortCircuit = function(oper, one, two)
+// {
+//     oper = this.toOper(oper);
+//
+//     if (one !== null) one = one ? 1 : 0;
+//     if (two !== null) two = two ? 1 : 0;
+//
+//     switch (true)
+//     {
+//         // or: short true if [one] or [two] is true
+//         case oper === '||' && (one === 1 || two === 1):
+//             return true;
+//         // nor: short false if [one] or [two] is true
+//         case oper === '!|' && (one === 1 || two === 1):
+//             return false;
+//         // and: short false if [one] or [two] is false
+//         case oper === '&&' && (one === 0 || two === 0):
+//             return false;
+//         // nand: short true if [one] or [two] is false
+//         case oper === '!&' && (one === 0 || two === 0):
+//             return true;
+//         // xnor: short false if [one] not equal to [two]
+//         case oper === '==' && (one !== two && one !== null && two !== null):
+//             return false;
+//         // xor: short true if [one] not equal to [two]
+//         case oper === '!=' && (one !== two && one !== null && two !== null):
+//             return true;
+//     }
+//
+//     return null;
+// }
+
+// module.exports.strRule = '([a-z0-9._]+)(?::([a-z0-9._]+))?';
+
+/**
+    Returns the bitwise operator represented by [oper] as a string.
+
+    The available operators are:
+        - 'and' (&&)
+        - 'or' (||)
+        - 'nor' (!|)
+        - 'nand' (!&)
+        - 'xnor' (==)
+        - 'xor' (!=)
+
+    @param {string} oper
+        The operator to convert.
+    @param {string} def
+        The default value to return if [oper] is not valid.
+    @return {string}
+        A representation of a bitwise operation.
+ */
+module.exports.toOper = function(oper)
+{
+    switch (oper)
+    {
+        case '||': case 'or':
+            return '||';
+        case '&&': case 'and':
+            return '&&';
+        case '==': case 'xnor':
+            return '==';
+        case '!|': case 'nor':
+            return '!|';
+        case '!&': case 'nand':
+            return '!&';
+        case '!=': case 'xor':
+            return '!=';
+    }
+}
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+/**
+    Returns a function that calls .init() on itself, passing along any provided
+    arguments.
+
+    @return {function}
+      The class constructor function.
+ */
+module.exports = function()
+{
+    return function() { this.init.apply(this, arguments); };
+}
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+/**
+    Loops through the items in [array].
+
+    For each element in [array], [iterator] is called with the function to
+    indicate completion, the item itself, and the index of the item.
+
+    [callback] is called once all iterations have called next().
+
+    @param {array} array
+        The elements to loop through.
+    @param {function} iterator
+        Callback for each item of the array.
+    @param {function} callback
+        Called when the loop has completed.
+ */
+module.exports = function(array, iterator, callback)
+{
+    var x = array.length + 1;
+    var me = this;
+
+    var cycle = function()
+    {
+        x --;
+        if (x === 0 && typeof callback === 'function')
+            callback.call(me);
+    }
+
+    for (var i=0,next=null,imx=array.length;i<imx;i++)
+    {
+        if (next !== false)
+            next = iterator.call(me, cycle, array[i], i);
+        else
+            cycle();
+    }
+
+    cycle();
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+/**
+    Returns [value] only if it is not undefined nor null.
+
+    @param {*} value
+        Value to check.
+    @param {*} defaultValue
+        Default value to return when [value] is not valid.
+    @return {*}
+        [value] or [defaultValue].
+ */
+module.exports = function(value, defaultValue)
+{
+    return typeof value === 'undefined' || value === null ? defaultValue : value;
+}
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+/**
+    Adds the [key]/[value] value pair to [object].  If object is not provided
+    a new one is created and returned.
+
+    @param {string} key
+        Index name for the value.
+    @param {*} value
+        The value for the key.
+    @param {object} [object]
+        The object to have data added to.
+    @param {boolean} [keep]
+        Preserve existing data?
+    @return {object}
+        The target object.
+ */
+module.exports = function(key, value, object, keep)
+{
+    object = object || {};
+
+    if (!keep || typeof object[key] === 'undefined') object[key] = value;
+
+    return object;
+}
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+/**
+    Returns the item found at the given [path] in the given [data].
+
+    If [path] is a dot-delimited string or an array, this method is
+    called recursively for each element of the string or array.
+
+    @param {(string|array)} path
+        The path to find in [data].
+    @param {string} sep
+        The path separator to use.
+    @param {Object} data
+        The data in which to search for [path].
+    @return {*}
+        The item found in [data] at [path] or null if not found.
+ */
+module.exports = function(path, sep, data)
+{
+    var find = function(path, data)
+    {
+        // ensure we ar working with an array
+        if (typeof path === 'string') return find(path.split(sep), data);
+        // if there are no more path elements left, return [data].
+        else if (path.length === 0) return data;
+        // if [path] element at 0 is valid in data, keep diving.
+        else if (typeof data[path[0]] !== 'undefined') return find(path.slice(1), data[path.slice(0, 1)]);
+        // if path[0] is an array then flatten it back into [path]
+        else if (Array.isArray(path[0])) return find([].concat(path[0], path.slice(1)), data);
+        // if path[0] string implies multiple path elements then flatten it back into [path]
+        else if (path[0].indexOf(sep) >= 0) return find(path[0].split(sep).concat(path.slice(1)), data);
+        // we've lost our way - a [path] segment in [data] is not valid.
+        else return null;
+    }
+
+    return find(path, data);
+}
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+/**
+    Get or set arbitrary data in the current object.  If [value] is not
+    provided, then this method behaves like a getter.
+
+    @param {string} name
+        The name of the information to set or get.
+    @param {*} [value]
+        The information to set.
+    @return
+        The information requested (getter) or nothing (setter).
+ */
+module.exports = function(name, value)
+{
+    if (typeof value !== 'undefined')
+        this[name] = value;
+    else
+        return this[name];
+}
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+var ire = /\$\{(.*?)}/g;
+/**
+    Performs value replacement in a string (regular expression above).
+
+    @param {string} value
+        Value to be interpolated.
+    @param {object} value
+        Object containing replacement values.
+    @return {string}
+        The interpolated value.
+ */
+module.exports = function(value, reps)
+{
+    while (ire.test(value))
+        value = value.replace(ire, function(m,p) { return reps[p]; })
+
+    return value;
+}
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+/**
+    Returns true if [item] is an object and is not null.
+ */
+module.exports = function(item)
+{
+    return typeof item === 'object' && item !== null;
+}
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+/**
+    Returns a JSON parsed [value] or just [value] if parsing fails.
+
+    @param {string} value
+        Value to parse.
+    @return {*}
+        The parsed value or [value] if parsing fails.
+ */
+module.exports = function(value)
+{
+    try
+    {
+        return JSON.parse(value);
+    }
+    catch(e)
+    {
+        return value;
+    }
+}
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+/**
+    Returns the array of return values resulting from calls to [func]
+    being passed each item and its index in turn.
+
+    Normally, this method is invoked as follows:
+      Utils.loop.call(this, array, func);
+
+    @param {array} array
+        The array to loop through.
+    @param {function} func
+        The function that will handle each item in [array].
+    @return {array}
+        A new array containing all values returned from [func].
+ */
+module.exports = function(array, func)
+{
+    var retArray = [];
+
+    for (var i=0,imx=array.length;i<imx;i++)
+    {
+        var result = func.call(this, array[i], i);
+        // push value into return array
+        if (typeof result !== 'undefined') retArray.push(result);
+    }
+
+    return retArray;
+}
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+/**
+    Merges objects into [object].  Null arguments are ignored.
+
+    @param {...object} object
+        The object that all others will be merged in to.
+    @return {object}
+        The merged object
+ */
+module.exports = function(object)
+{
+    object = object || {};
+
+    this.loop(Array.prototype.slice.call(arguments).slice(1), function(arg)
+    {
+        this.loop(Object.keys(arg || {}), function(key)
+        {
+            if (typeof arg[key] !== 'undefined') object[key] = arg[key];
+        });
+    });
+
+    return object;
+}
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+/**
+    Adds [data] to [container] if not already added. If array is not provided a
+    new one will be created and returned.
+
+    @param {*} data
+        The data to be added to [container].
+    @param {array} [array=[]]
+        The data container.
+    @return {array}
+        The data container.
+ */
+module.exports = function(data, array)
+{
+    array = array || [];
+
+    if (array.indexOf(data) < 0)
+        array.push(data);
+
+    return array;
+}
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+/**
+    Escapes [string] to be used as literal value in a regular expression.
+
+    http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+
+
+    @param {string} string
+        Value to be escaped.
+    @return {string}
+        Escaped value.
+ */
+module.exports = function(string)
+{
+    return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+}
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+/**
+    If item is a string and matches [split] then [split] is used to split
+    [item] into an array.  Otherwise [item] is returned as-is.
+
+    @param {string} item
+        The item to be settled.
+    @param {RegExp} split
+        Regular Expression pattern used to split [item].
+    @return {*}
+        [item] or array.
+ */
+module.exports = function(item, split)
+{
+    if (typeof item === 'string' && split.test(item))
+        return this.toArray(item, split);
+
+    return item;
+}
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+/**
+    Converts [item] into an array. An array is always returned.
+
+    If [item] is:
+      - an array: return [item]
+      - a string and [split] is a RegExp: return split [item]
+      - not null: return a single element array of [item]
+
+    Return an empty array if none of the above work out.
+
+    @param {any} item
+        The item to be converted.
+    @param {object} [split]
+        Regular expression used to split [item] if it is a string.
+    @return {array}
+        The resulting array.
+ */
+module.exports = function(item, split)
+{
+    if (Array.isArray(item))
+        return item;
+    else if (typeof item === 'string' && split instanceof RegExp)
+        return item.split(split)
+    else if (typeof item !== 'undefined' && item !== null)
+        return [item];
+
+    return [];
+}
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+/**
+    Converts [item] into a strig. A string is always returned.
+
+    If [item] is:
+      - a string: return [item]
+      - undefined or null: return an empty string
+
+    Return String(item) if none of the above work out.
+
+    @param {any} item
+        The item to be converted.
+    @param {string} join
+        String used to join [item] if it is an array.
+    @return {string}
+        The resulting string.
+ */
+module.exports = function(item, join)
+{
+    if (typeof item === 'string')
+        return item;
+    else if (Array.isArray(item))
+        return item.join(join || '');
+    else if (typeof item === 'undefined' || item === null)
+        return '';
+
+    return String(item);
+}
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+/**
+    Returns an identifier for [item]. If [path] ends with a number
+    (array index) and [item] has a [VSD.NAME] property, then the last path
+    segment will be dropped and the name appended. This makes referencing
+    items from within the VC a little easier.
+
+    For example, a constraint named 'required' could change path like so:
+        'path.to.constraint.10'  =>  'path.to.constraint.required'
+
+    @param {(string|array)} path
+        The dot-delimited string or array base path for [item].
+    @param {object} item
+        The validation config item object to resolve the path for.
+    @return {string}
+        The resolved path for [item].
+ */
+module.exports = function(path, item)
+{
+    path = Utils.toArray(path, C.RE.SEP_PATHS);
+    // pop if [item] has a name and last path item is a number
+    if (item[C.VSD.NAME] && /^[0-9]+$/.test(path[path.length-1]))
+    {
+        path.pop();
+        path.push(item[C.VSD.NAME]);
+    }
+    // set the item ID to the full path
+    item[C.VSD.ID] = Utils.toString(path, C.SEP.PATH);
+
+    return item[C.VSD.ID];
+}
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+    VC Items -
+
+ */
+var Utils = __webpack_require__(0);
+var log = __webpack_require__(2);
+var C = __webpack_require__(1);
+var Session = __webpack_require__(3);
+
+// support functions
+var resolve = __webpack_require__(32);
+var identify = __webpack_require__(30);
+
+
+// private members for VSD types
+var baseType = function(data, mark)
+{
+    var cache = {};
+
+    var face =
+    {
+        data: data,
+        // default add to cache method
+        cacheSet: function(name, item) { cache[this.markup(name)] = item; return name; },
+        // default get from cache method
+        cacheGet: function(name) { return cache[this.markup(name)]; },
+        // default get method
+        get: function(name) { return this.ref(name) ? this.cacheGet(name) : null; },
+        // default finder method
+        find: function(name) { return Utils.find(this.unmark(name), C.SEP.PATH, data); },
+        // item is marked?
+        // marked: function(n) { return mark ? n.slice(0, 1) === mark : false },
+        // mark item for caching (reference)
+        markup: function(n) { return mark ? this.nomark(n.slice(0, 1) === mark ? n : mark + n) : n; },
+        // unmark item for search (definition)
+        unmark: function(n) { return mark ? this.nomark(n.slice(0, 1) === mark ? n.slice(1) : n) : n; },
+        // NOTE: for backward compatibility
+        nomark: function(n) { return mark ? n.charAt(0) + n.slice(1).replace(mark, C.SEP.PATH) : n; }
+    }
+
+    return face;
+}
+
+var resolvedType = function(data, mark)
+{
+    var face = Utils.merge(baseType(data, mark),
+    {
+        resolve: function(path, list)
+        {
+            return resolve(path, this, list);
+        },
+
+        ref: function(value)
+        {
+            // return if constraint item is cached
+            if (this.cacheGet(value)) return true;
+            // try to find the constraint
+            var item = this.find(value);
+            // cache the constraint if valid
+            return (this.is(item) && this.cacheSet(value, item)) ? true : false;
+        },
+
+        get: function(name)
+        {
+            return (this.ref(name) || this.resolve(name).indexOf(name) >= 0) ? this.cacheGet(name) : null;
+        },
+
+        check: function(item, retval)
+        {
+            var tn = this.name.toUpperCase();
+            // limit this check's interference with processing
+            setTimeout(function()
+            {
+                Utils.cycle(Object.keys(item), function(next, key)
+                {
+                    var keyIsGood = C.VSD.TYPES[tn].indexOf(key) >= 0;
+
+                    if (!keyIsGood) log.inter('warn', C.MSG['BAD_' + tn + '_PROPERTY'], { property: key });
+
+                    return keyIsGood;
+                });
+            });
+
+            return retval;
+        }
+    });
+
+    return face;
+}
+
+module.exports = function(config)
+{
+    var types = {};
+    // all valid directives for a context
+    var directives = [].concat(C.VSD.IS_CONTEXT, config.levels);
+
+    types.contexts = Utils.merge(baseType(config.data, C.SEP.CTX),
+    {
+        name: 'context',
+
+        is: function(value)
+        {
+            if (Utils.isObject(value))
+            {
+                for (var key in value)
+                {
+                    if (value.hasOwnProperty(key) && this.directive(key)) return true;
+                }
+            }
+
+            return false;
+        },
+
+        ref: function(value)
+        {
+            var idx = value.indexOf(C.SEP.PART);
+            // determine context name
+            var context = idx < 0 ? value : value.slice(0, idx);
+            // determine context directive name if given
+            var directive = idx < 0 ? null : value.slice(idx + 1);
+            // get the context item
+            var item = this.cacheGet(context);
+            // find context if necessary
+            var valid = item || this.is(item = this.find(context));
+            // cache the context if valid
+            if (valid) this.cacheSet(context, item);
+            // context must exist and directive must be absent or valid
+            return valid && (!directive || this.directive(directive));
+        },
+
+        directive: function(value)
+        {
+            return directives.indexOf(value) >= 0;
+        },
+
+        exec: function(name, value)
+        {
+            var handler = function(success, failure)
+            {
+                var session = new Session(value, this.unmark(name));
+                // completed validation sends success callback with results
+                var results = function() { success(session.results.valid()); }
+                // use a separate validation session to test condition
+                Utils.async(config.engine.commence(session), results, failure);
+            }
+
+            return handler.bind(this);
+        }
+    });
+
+    types.methods = Utils.merge(baseType(config.validator, C.SEP.MTH),
+    {
+        name: 'method',
+
+        is: function(value)
+        {
+            return typeof value === 'function';
+        },
+
+        ref: function(value)
+        {
+            // return if method item is cached
+            if (this.cacheGet(value)) return true;
+            // try to find the method
+            var item = this.find(value);
+            // cache the method if valid
+            return (this.is(item) && this.cacheSet(value, this.pack(value, item))) ? true : false;
+        },
+
+        pack: function(path, item)
+        {
+            var name = this.unmark(path);
+            var idx = name.lastIndexOf(C.SEP.PATH);
+            var owner = idx < 0 ? this.data : this.find(name.slice(0, idx));
+
+            return { func: item, owner: owner };
+        },
+
+        exec: function(name, value, params)
+        {
+            var test = this.get(name);
+            return test ? test.func.apply(test.owner, [value].concat(params)) : null;
+        }
+    });
+
+    types.constraints = Utils.merge(resolvedType(config.data),
+    {
+        name: 'constraint',
+
+        is: function(value)
+        {
+            if (!Utils.isObject(value)) return false;
+            // regular constraint
+            if (value[C.VSD.TEST]) return this.check(value, true);
+            // aggregate constraint
+            if (value[C.VSD.POLL]) return this.check(value, true);
+
+            return false;
+        },
+
+        translate: function(name, item)
+        {
+            var marker = this.markup(name);
+            // already cached so good to go
+            if (this.cacheGet(marker)) return marker;
+            // item is a constraint
+            if (this.is(item)) return this.cacheSet(identify(marker, item), item);
+            // assume rule expression if logic gates in string
+            if (typeof item === 'string' && C.RE.HAS_LOGIC.test(item) || C.RE.HAS_ARGS.test(item))
+            {
+                var newItem = Utils.extend(C.VSD.TEST, item);
+                return this.cacheSet(identify(name, newItem), newItem);
+            }
+            // item is a rule reference
+            if (typeof item === 'string') return this.translateString(item);
+            // item is null but name is a rule reference
+            if (typeof name === 'string' && item === null) return this.translateString(name);
+        },
+
+        translateString: function(string)
+        {
+            var idx = string.indexOf(C.SEP.REF) + 1;
+            var test = string.slice(idx);
+            var pre = string.slice(0, idx);
+
+            var set = function(type)
+            {
+                var rule = pre + type.markup(test);
+                var newItem = Utils.extend(C.VSD.TEST, rule);
+                return this.cacheSet(identify(rule, newItem), newItem);
+            }
+            // string is a constraint reference
+            if (this.ref(test)) return this.markup(test);
+            // string is a method reference
+            if (types.methods.ref(test)) return set.call(this, types.methods);
+            // string is a context reference
+            if (types.contexts.ref(test)) return set.call(this, types.contexts);
+            // string is a property rule
+            if (C.RE.RULE_PROP_REQUIRE.test(string))
+            {
+                var newItem = Utils.extend(C.VSD.TEST, string);
+                return this.cacheSet(identify(string, newItem), newItem);
+            }
+        }
+    });
+
+    types.includes = Utils.merge(resolvedType(config.data),
+    {
+        name: 'include',
+
+        is: function(value)
+        {
+            if (!Utils.isObject(value)) return false;
+
+            if (value[C.VSD.THEN] || value[C.VSD.ELSE]) return this.check(value, true);
+
+            return false;
+        },
+
+        translate: function(name, item)
+        {
+            var marker = this.markup(name);
+            // already cached so good to go
+            if (this.cacheGet(marker)) return marker;
+            // item is a condition
+            if (this.is(item)) return this.cacheSet(identify(marker, item), item);
+
+            if (typeof item === 'string')
+            {
+                var set = function(type)
+                {
+                    var rule = type.markup(item);
+                    var newItem = Utils.extend(C.VSD.THEN, rule);
+
+                    return this.cacheSet(identify(rule, newItem), newItem);
+                }
+                // item is a condition reference
+                if (this.ref(item)) return this.markup(item);
+                // item is a context reference
+                if (types.contexts.ref(item)) return set.call(this, types.contexts);
+            }
+        }
+    });
+
+    return types;
+}
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var log = __webpack_require__(2);
+var Utils = __webpack_require__(0);
+var C = __webpack_require__(1);
+
+
+/**
+    Resolves the [type] path names for the item(s) found at [path].
+
+    @param {(array|string)} path
+        Array or string path to a single [type] definition or array of
+        [type] definitions in the configuration data.
+    @param {object} type
+        The type of validation config item being searched for.
+    @return {array}
+        The list of items by name resolved from [path].
+ */
+var resolve = function(path, type, list)
+{
+    list = list || [];
+
+    var parentOwned = function(path)
+    {
+        var idx = path.lastIndexOf(C.SEP.PATH);
+        return idx > 0 && resolve(path.slice(0, idx), type).indexOf(path) >= 0;
+    }
+
+    var solve = function(path, item)
+    {
+        var temp = null;
+        // settle single item or array
+        item = Utils.settle(item || type.find(path), C.RE.SEP_ITEMS);
+        // check if item can be resolved from parent item
+        if (item === null && parentOwned(path))
+            Utils.push(path, list);
+        // when item is an array loop it
+        else if (Array.isArray(item))
+            Utils.loop(item, function(t,i) { solve([path, i].join(C.SEP.PATH), t); });
+        // capture item if it can be translated
+        else if (temp = type.translate(path, item))
+            Utils.push(temp, list);
+        //
+        else if (typeof item === 'string')
+            solve(item);
+        // at a loss here so log a warning
+        else
+            log.inter('warn', C.MSG.CANNOT_RESOLVE, { name: type.name, path: path });
+    }
+
+    solve(Utils.toString(path, C.SEP.PATH));
+
+    return list;
+}
+
+module.exports = resolve;
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! alyze v0.0.6 @Mon, 27 Feb 2017 15:22:37 GMT */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["alyze"] = factory();
+	else
+		root["alyze"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+    Converts the first character of `value` to upper case.
+
+    @param {string} value
+        The value to convert to upper case.
+    @return {string}
+        The capitalized string.
+ */
+function capitalize(value) {
+    return value.slice(0, 1).toUpperCase() + value.slice(1);
+}
+exports.capitalize = capitalize;
+function descriptor(object, property) {
+    return Object.getOwnPropertyDescriptor(object, property) || {};
+}
+exports.descriptor = descriptor;
+function ensure(value, def) {
+    return typeof value === 'undefined' || value === null ? def : value;
+}
+exports.ensure = ensure;
+// from http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+var mustEscapeChars = ['-', '[', ']', '/', '{', '}', '(', ')', '*', '+', '?', '.', '\\', '^', '$', '|'];
+var escapedCharsRE = new RegExp('[' + mustEscapeChars.join('\\') + ']', 'g');
+function escapeRE(value) {
+    return value.replace(escapedCharsRE, "\\$&");
+}
+exports.escapeRE = escapeRE;
+function find(item, path) {
+    if (path === void 0) { path = ''; }
+    if (path.length > 0 && typeof item === 'object') {
+        var index = path.indexOf('.');
+        return index >= 0 ? find(item[path.slice(0, index)], path.slice(index + 1)) : find(item[path]);
+    }
+    else if (path.length === 0) {
+        return item;
+    }
+}
+exports.find = find;
+/**
+    Loops through the owned properties of `object` calling `func` with the
+    value and key for each entry.
+
+    @param {object} object
+        The object to be iterated.
+    @param {function} func
+        The callback for each iteration.
+    @return {array}
+        Keys of `object`.
+ */
+function loop(object, func) {
+    var array = [];
+    for (var key in object || {}) {
+        if (object.hasOwnProperty(key)) {
+            array.push(key);
+            if (func)
+                func(object[key], key);
+        }
+    }
+    return array;
+}
+exports.loop = loop;
+/**
+    Checks `value` against the regular expression in the following way:
+        - if count is undefined, is entire `value` a repetitive match
+          against `re`? (i.e. /^(re)+$/)
+        - if count is more than 0, does `value` have at least `count`
+          matches for 're'? (i.e. /re/g)
+        - if count is less than 0, does `value` have at most `count`
+          matches for 're'? (i.e. /re/g)
+        - otherwise, does `value` have zero matches for 're'? (i.e. /re/g)
+
+    @param {*} value
+        Test value.
+    @param {string} re
+        Regular expression to test against.
+    @param {number} [count]
+        Minimal number of times the regular expression must match.
+    @return {boolean}
+        True if the match check passes.
+ */
+function matchRepeats(value, re, count) {
+    if (typeof count === 'undefined' || count === null)
+        return new RegExp('^(' + re + ')+$').test(value);
+    else if (count < 0)
+        return matchCount(value, new RegExp(re, 'g')) >= Math.abs(count);
+    else
+        return matchCount(value, new RegExp(re, 'g')) === count;
+}
+exports.matchRepeats = matchRepeats;
+/**
+    Returns the number of times `regex` matches `value`.
+
+    @return {number}
+        The match count.
+ */
+function matchCount(value, regex) {
+    return (String(value).match(regex) || []).length;
+}
+exports.matchCount = matchCount;
+/**
+    Copies all properties from `objects` into `target` object in the order
+    given. If a value for a property is undefined then it is skipped.
+
+    @param {object} target
+        The merging target. A new object is created if not specified.
+    @param {...object} objects
+        The object(s) to be merged. Null items are skipped.
+    @return {array}
+        The target object.
+ */
+function merge(target) {
+    var objects = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        objects[_i - 1] = arguments[_i];
+    }
+    target = target || {};
+    for (var _a = 0, objects_1 = objects; _a < objects_1.length; _a++) {
+        var object = objects_1[_a];
+        loop(object, function (v, k) { if (typeof v !== 'undefined')
+            target[k] = v; });
+    }
+    return target;
+}
+exports.merge = merge;
+/**
+    Returns a set of values derived from `path` in the `objects` array.
+
+    @param {array} objects
+        The array of objects having the values to obtain.
+    @param {string} path
+        The path in `objects` to obtain values from.
+    @return {array}
+        Set of unique values from the `path` in `objects`.
+ */
+function toSet(objects, path) {
+    var array = [];
+    for (var _i = 0, objects_2 = objects; _i < objects_2.length; _i++) {
+        var object = objects_2[_i];
+        var value = find(object, path);
+        if (typeof value !== 'undefined' && array.indexOf(value) < 0)
+            array.push(value);
+    }
+    return array;
+}
+exports.toSet = toSet;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Log = (function () {
+    function Log() {
+        this.testMsg = '[%e] was caught for test method %m - "false" was returned.';
+        this.out = function () { };
+    }
+    // info(...args: any[]): void { this.log('[ INFO ]', args); }
+    Log.prototype.warn = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        this.log('[ WARN ]', args);
+    };
+    // fail(...args: any[]): void { this.log('[FAILED]', args); }
+    Log.prototype.test = function (test, error) {
+        this.warn(this.testMsg.replace('%m', test.prototype._name_).replace('%e', error + ''));
+    };
+    Log.prototype.log = function (level, args) { this.out.apply(null, [level, 'alyze:'].concat(args)); };
+    Log.prototype.set = function (out) { if (typeof out === 'function')
+        this.out = out; };
+    return Log;
+}());
+exports.log = new Log();
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var log_1 = __webpack_require__(1);
+var Utils = __webpack_require__(0);
+var functions_1 = __webpack_require__(3);
+function create(key) {
+    var klass = function (config) {
+        this._c = config;
+    };
+    klass.prototype._x = key;
+    common(klass.prototype);
+    return klass;
+}
+function common(proto) {
+    // missing: returns true if value is 'missing'
+    proto._m = function (v) { return functions_1.fn.conf_missing(v, this._c); };
+    // exists: returns true if value is not null nor undefined
+    proto._e = function (v) { return functions_1.fn.base_exists(v); };
+    // option: returns [onMissingValue] if value does not exist
+    proto._o = function (v, t) { return this._m(v) ? this._c.onMissing : this._n(t); };
+    // negate: inverses the result of the function argument if configured
+    proto._n = function (t) { return this._c.negate ? !this._t(t) : this._t(t); };
+    // try: returns a method that executes [t] in a try block
+    proto._t = function (t) { try {
+        return t();
+    }
+    catch (e) {
+        log_1.log.test(t, e);
+        return false;
+    } };
+    // key: prepend subType key to [n]
+    proto._k = function (n) { return this._e(this._x) ? this._x + '.' + n : n; };
+    // update: add method name to its prototype
+    proto._u = function (n, t) { t.prototype._name_ = this._k(n); return t; };
+    return proto;
+}
+function prototypeAll(sc, func) {
+    return function (v) {
+        var a = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            a[_i - 1] = arguments[_i];
+        }
+        for (var _a = 0, _b = [].concat(v); _a < _b.length; _a++) {
+            var i = _b[_a];
+            // missing values cannot pass SC method tests so return false
+            if (sc && this._m(i))
+                return false;
+            // return false when test fails
+            if (!func.apply(this, [i].concat(a)))
+                return false;
+        }
+        // return true since all values passed the test
+        return true;
+    };
+}
+function prototypeAny(sc, func) {
+    return function (v) {
+        var a = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            a[_i - 1] = arguments[_i];
+        }
+        for (var _a = 0, _b = [].concat(v); _a < _b.length; _a++) {
+            var i = _b[_a];
+            // missing values do not affect outcome for SC method tests
+            if (sc && this._m(i))
+                continue;
+            // return true when test passes
+            if (func.apply(this, [i].concat(a)))
+                return true;
+        }
+        // return false since no values passed the test
+        return false;
+    };
+}
+var c = { all: create('all'), any: create('any') };
+function prototypeMethod(name, item, group, flags) {
+    // create class for the group if one does not exist already
+    var protoGrp = (c[group] = c[group] || create(group)).prototype;
+    // create any/all classes for the group if not already existing
+    var protoAll = (c.all[group] = c.all[group] || create('all.' + group)).prototype;
+    var protoAny = (c.any[group] = c.any[group] || create('any.' + group)).prototype;
+    // determine the proper method wrap
+    var wrap = flags.cf ? wrapConfigurable : flags.sc ? wrapShortCircuit : wrapNegate;
+    if (name === '$flags')
+        return;
+    // wrap method and add to group prototype
+    protoGrp[name] = wrap(name, item);
+    // wrap any/all methods and apply to respective prototypes
+    protoAll[name] = wrap(name, prototypeAll(flags.sc, item));
+    protoAny[name] = wrap(name, prototypeAny(flags.sc, item));
+}
+exports.prototypeMethod = prototypeMethod;
+function generate() {
+    Utils.loop(functions_1.fn, function (item, key) {
+        var idx = key.indexOf('_');
+        // method group name
+        var group = key.slice(0, idx);
+        // method name
+        var name = key.slice(idx + 1);
+        // method is in short-circuited group?
+        var flags = functions_1.fn[group + '_$flags'];
+        prototypeMethod(name, item, group, flags);
+    });
+    return c;
+}
+exports.generate = generate;
+function wrapConfigurable(name, func) {
+    return function (v) {
+        var _this = this;
+        return this._n(this._u(name, function () { return func.apply(_this, [v].concat(_this._c)); }));
+    };
+}
+/**
+    Returns a wrapper function that can negate the results of 'func'.
+ */
+function wrapNegate(name, func) {
+    return function () {
+        var _this = this;
+        var a = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            a[_i] = arguments[_i];
+        }
+        return this._n(this._u(name, function () { return func.apply(_this, a); }));
+    };
+}
+/**
+    Returns a wrapper function that can short circuit 'func'.
+ */
+function wrapShortCircuit(name, func) {
+    return function () {
+        var _this = this;
+        var a = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            a[_i] = arguments[_i];
+        }
+        return this._o(a[0], this._u(name, function () { return func.apply(_this, a); }));
+    };
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Utils = __webpack_require__(0);
+var datatypes = __webpack_require__(6);
+exports.fn = {};
+/******************************************************************************
+    Type (typeof) Methods
+******************************************************************************/
+exports.fn.type_$flags = {};
+exports.fn.type_boolean = function (v) { return typeof v === datatypes.type.boolean; };
+exports.fn.type_function = function (v) { return typeof v === datatypes.type.function; };
+exports.fn.type_func = exports.fn.type_function; // backward compatibility
+exports.fn.type_object = function (v) { return typeof v === datatypes.type.object; };
+exports.fn.type_of = function (v, n) { return typeof v === n; };
+exports.fn.type_number = function (v) { return typeof v === datatypes.type.number; };
+exports.fn.type_same = function (v, o) { return typeof v === typeof o; };
+exports.fn.type_string = function (v) { return typeof v === datatypes.type.string; };
+// type.symbol = (v: any): boolean => typeof v === datatypes.type.symbol
+exports.fn.type_undefined = function (v) { return typeof v === datatypes.type.undefined; };
+/******************************************************************************
+    Instance (instanceof) Methods
+******************************************************************************/
+exports.fn.instance_$flags = {};
+exports.fn.instance_array = function (v) { return v instanceof Array; };
+exports.fn.instance_boolean = function (v) { return v instanceof Boolean; };
+exports.fn.instance_date = function (v) { return v instanceof Date; };
+exports.fn.instance_error = function (v) { return v instanceof Error; };
+exports.fn.instance_function = function (v) { return v instanceof Function; };
+exports.fn.instance_func = exports.fn.instance_function; // backward compatibility
+exports.fn.instance_number = function (v) { return v instanceof Number; };
+exports.fn.instance_object = function (v) { return v instanceof Object; };
+exports.fn.instance_of = function (v, f) { return v instanceof f; };
+exports.fn.instance_string = function (v) { return v instanceof String; };
+/******************************************************************************
+    String Type (typeof) Methods
+******************************************************************************/
+exports.fn.stype_$flags = {};
+exports.fn.stype_array = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.array; };
+exports.fn.stype_boolean = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.boolean; };
+exports.fn.stype_date = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.date; };
+exports.fn.stype_error = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.error; };
+exports.fn.stype_function = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.function; };
+exports.fn.stype_func = exports.fn.stype_function; // backward compatibility
+exports.fn.stype_null = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.null; };
+exports.fn.stype_number = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.number; };
+exports.fn.stype_object = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.object; };
+exports.fn.stype_of = function (v, n) { return Object.prototype.toString.call(v) === n; };
+exports.fn.stype_regexp = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.regexp; };
+exports.fn.stype_same = function (v, o) { return Object.prototype.toString.call(v) === Object.prototype.toString.call(o); };
+exports.fn.stype_string = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.string; };
+// stype.symbol = (v: any): boolean => Object.prototype.toString.call(v) === datatypes.stype.symbol
+exports.fn.stype_undefined = function (v) { return Object.prototype.toString.call(v) === datatypes.stype.undefined; };
+/******************************************************************************
+    Configurable (Based on Configuration) Methods
+******************************************************************************/
+exports.fn.conf_$flags = { cf: true };
+exports.fn.conf_missing = function (v, c) { return !exports.fn.base_exists(v) || (c.asMissing.indexOf(v) >= 0); };
+/******************************************************************************
+    Base (Non Short Circuiting) Methods
+******************************************************************************/
+exports.fn.base_$flags = {};
+// Is [v] not undefined and not null?
+exports.fn.base_exists = function (v) { return typeof v !== 'undefined' && v !== null; };
+// Does [v] evaluate to false?
+exports.fn.base_falsey = function (v) { return v ? false : true; };
+// Is [v] null?
+exports.fn.base_null = function (v) { return v === null; };
+// Is [v] equal to itself?
+exports.fn.base_self = function (v) { return v === v; };
+// Does [v] evaluate to true?
+exports.fn.base_truthy = function (v) { return v ? true : false; };
+// Is [v] undefined?
+exports.fn.base_undefined = function (v) { return v === undefined; };
+/******************************************************************************
+    Core (Short Circuiting) Methods
+******************************************************************************/
+exports.fn.core_$flags = { sc: true };
+exports.fn.core_after = function (v, d) { return new Date(v).getTime() > new Date(d).getTime(); };
+exports.fn.core_array = function (v) { return exports.fn.stype_array(v); };
+exports.fn.core_before = function (v, d) { return new Date(v).getTime() < new Date(d).getTime(); };
+exports.fn.core_between = function (v, a, b) { return (a < b && v >= a && v <= b) || (a >= b && v <= a && v >= b); };
+exports.fn.core_boolean = function (v) { return exports.fn.stype_boolean(v); };
+exports.fn.core_cube = function (v) { return Math.cbrt(v) % 1 === 0; };
+exports.fn.core_date = function (v) { return !isNaN(new Date(v).getTime()); };
+exports.fn.core_discrete = function (v) { return v + 1 !== v; };
+exports.fn.core_divisibleBy = function (v, d) { return v % d === 0; };
+exports.fn.core_email = function (v) { return /^[^ ]+?@[^ @]+(\.[^ @]+)+$/i.test(v); };
+exports.fn.core_empty = function (v) { return v.length === 0; };
+exports.fn.core_endsWith = function (v, c) { return new RegExp(Utils.escapeRE(c) + '$').test(v); };
+exports.fn.core_equal = function (v, c) { return v === c; };
+exports.fn.core_even = function (v) { return Number(String(v).slice(-1)) % 2 === 0; };
+exports.fn.core_false = function (v) { return v === false; };
+exports.fn.core_finite = function (v) { return isFinite(v); };
+exports.fn.core_float = function (v) { return v % 1 !== 0; };
+exports.fn.core_function = function (v) { return exports.fn.stype_function(v); };
+exports.fn.core_func = exports.fn.core_function; // backward compatibility
+exports.fn.core_infinity = function (v) { return v === Infinity; };
+exports.fn.core_integer = function (v) { return v % 1 === 0; };
+exports.fn.core_itemIn = function (v, a) { return a.indexOf(v) >= 0; };
+exports.fn.core_json = function (v) { return !exports.fn.stype_undefined(JSON.parse(v)); };
+exports.fn.core_length = function (v, c) { return v.length === c; };
+exports.fn.core_less = function (v, c) { return v < c; };
+exports.fn.core_like = function (v, o) { return v == o; };
+exports.fn.core_longer = function (v, c) { return v.length > c; };
+exports.fn.core_match = function (v, r, f) { return new RegExp(r, f).test(v); };
+exports.fn.core_more = function (v, c) { return v > c; };
+exports.fn.core_nan = function (v) { return isNaN(v); };
+exports.fn.core_negative = function (v) { return v < 0; };
+exports.fn.core_number = function (v) { return exports.fn.stype_number(v) && !isNaN(v); };
+exports.fn.core_object = function (v) { return exports.fn.stype_object(v); };
+exports.fn.core_odd = function (v) { return Number(String(v).slice(-1)) % 2 === 1; };
+exports.fn.core_positive = function (v) { return v > 0; };
+exports.fn.core_quad = function (v) { return Math.sqrt(Math.sqrt(v)) % 1 === 0; };
+exports.fn.core_regexp = function (v) { return new RegExp(v) ? true : false; };
+exports.fn.core_reversible = function (v) { return v === String(v).split('').reverse().join(''); };
+exports.fn.core_shorter = function (v, c) { return v.length < c; };
+exports.fn.core_square = function (v) { return Math.sqrt(v) % 1 === 0; };
+exports.fn.core_startsWith = function (v, c) { return new RegExp('^' + Utils.escapeRE(c)).test(v); };
+exports.fn.core_string = function (v) { return exports.fn.stype_string(v); };
+exports.fn.core_thenable = function (v) { return exports.fn.stype_function(v.then); };
+exports.fn.core_trimable = function (v) { return /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/.test(v); };
+exports.fn.core_true = function (v) { return v === true; };
+exports.fn.core_url = function (v) { return /^([a-z]+:\/\/)?[^ @]+?(\.[^ @]+?)+?(:\d+)?(\/[^ ]*)?$/i.test(v); };
+exports.fn.core_zero = function (v) { return v === 0; };
+/*
+    String character composition/inclusion test methods
+ */
+exports.fn.core_alpha = function (v, c) { return Utils.matchRepeats(v, '[A-Za-z]', c); };
+exports.fn.core_alphanumeric = function (v, c) { return Utils.matchRepeats(v, '[0-9A-Za-z]', c); };
+exports.fn.core_binary = function (v, c) { return Utils.matchRepeats(v, '[01]', c); };
+exports.fn.core_decimal = function (v, c) { return Utils.matchRepeats(v, '[0-9]', c); };
+exports.fn.core_hexadecimal = function (v, c) { return Utils.matchRepeats(v, '[0-9A-Fa-f]', c); };
+exports.fn.core_lowercase = function (v, c) { return Utils.matchRepeats(v, '[a-z]', c); };
+exports.fn.core_nonary = function (v, c) { return Utils.matchRepeats(v, '[0-8]', c); };
+exports.fn.core_numeric = function (v, c) { return Utils.matchRepeats(v, '[0-9]', c); };
+exports.fn.core_octal = function (v, c) { return Utils.matchRepeats(v, '[0-7]', c); };
+exports.fn.core_printable = function (v, c) { return Utils.matchRepeats(v, '[ -~]', c); };
+exports.fn.core_punctuation = function (v, c) { return Utils.matchRepeats(v, '[!-\\/:-@\\[-`\\{-~]', c); };
+exports.fn.core_quarternary = function (v, c) { return Utils.matchRepeats(v, '[0-3]', c); };
+exports.fn.core_quinary = function (v, c) { return Utils.matchRepeats(v, '[0-4]', c); };
+exports.fn.core_senary = function (v, c) { return Utils.matchRepeats(v, '[0-5]', c); };
+exports.fn.core_septenary = function (v, c) { return Utils.matchRepeats(v, '[0-6]', c); };
+exports.fn.core_ternary = function (v, c) { return Utils.matchRepeats(v, '[0-2]', c); };
+exports.fn.core_unary = function (v, c) { return Utils.matchRepeats(v, '0', c); };
+exports.fn.core_uppercase = function (v, c) { return Utils.matchRepeats(v, '[A-Z]', c); };
+exports.fn.core_word = function (v, c) { return Utils.matchRepeats(v, '\\w', c); };
+exports.fn.core_whitespace = function (v, c) { return Utils.matchRepeats(v, '\\s', c); };
+/*
+    Object information methods.
+ */
+exports.fn.core_configurable = function (v, p) { return Utils.descriptor(v, p).configurable ? true : false; };
+exports.fn.core_enumerable = function (v, p) { return Utils.descriptor(v, p).enumerable ? true : false; };
+exports.fn.core_extensible = function (v) { return Object.isExtensible(v); };
+exports.fn.core_frozen = function (v) { return Object.isFrozen(v); };
+exports.fn.core_hasKey = function (v, k) { return k in v; };
+exports.fn.core_hasOwn = function (v, k) { return v.hasOwnProperty(k); };
+exports.fn.core_sealed = function (v) { return Object.isSealed(v); };
+exports.fn.core_writable = function (v, p) { return Utils.descriptor(v, p).writable ? true : false; };
+/*
+    Date and time identification methods.
+ */
+// Does [v] date fall on the dawn hour?
+exports.fn.core_dawn = function (v) { return new Date(v).getUTCHours() === 6; };
+// Does [v] date fall on the dusk hour?
+exports.fn.core_dusk = function (v) { return new Date(v).getUTCHours() === 18; };
+// Does [v] date fall on [p] hour of the day?
+exports.fn.core_hour = function (v, p) { return new Date(v).getUTCHours() === p; };
+// Does [v] date fall on the midnight hour?
+exports.fn.core_midnight = function (v) { return new Date(v).getUTCHours() === 0; };
+// Does [v] date fall on [p] minute of the hour?
+exports.fn.core_minute = function (v, p) { return new Date(v).getUTCMinutes() === p; };
+// Does [v] date fall on [p] month of the year?
+exports.fn.core_month = function (v, p) { return new Date(v).getUTCMonth() === p; };
+// Does [v] date fall on [p] day of the month?
+exports.fn.core_monthDay = function (v, p) { return new Date(v).getUTCDate() === p; };
+// Does [v] date fall on the noon hour?
+exports.fn.core_noon = function (v) { return new Date(v).getUTCHours() === 12; };
+// Does [v] date fall on [p] second of the minute?
+exports.fn.core_second = function (v, p) { return new Date(v).getUTCSeconds() === p; };
+// Does [v] date fall on [p] day of the week?
+exports.fn.core_weekDay = function (v, p) { return new Date(v).getUTCDay() === p; };
+// Does [v] date fall in the year of [p]?
+exports.fn.core_year = function (v, p) { return new Date(v).getUTCFullYear() === p; };
+/*
+    Days of the week.
+ */
+exports.fn.core_sunday = function (v) { return new Date(v).getUTCDay() === 0; };
+exports.fn.core_monday = function (v) { return new Date(v).getUTCDay() === 1; };
+exports.fn.core_tuesday = function (v) { return new Date(v).getUTCDay() === 2; };
+exports.fn.core_wednesday = function (v) { return new Date(v).getUTCDay() === 3; };
+exports.fn.core_thursday = function (v) { return new Date(v).getUTCDay() === 4; };
+exports.fn.core_friday = function (v) { return new Date(v).getUTCDay() === 5; };
+exports.fn.core_saturday = function (v) { return new Date(v).getUTCDay() === 6; };
+/*
+    Months of the year.
+ */
+exports.fn.core_january = function (v) { return new Date(v).getUTCMonth() === 0; };
+exports.fn.core_february = function (v) { return new Date(v).getUTCMonth() === 1; };
+exports.fn.core_march = function (v) { return new Date(v).getUTCMonth() === 2; };
+exports.fn.core_april = function (v) { return new Date(v).getUTCMonth() === 3; };
+exports.fn.core_may = function (v) { return new Date(v).getUTCMonth() === 4; };
+exports.fn.core_june = function (v) { return new Date(v).getUTCMonth() === 5; };
+exports.fn.core_july = function (v) { return new Date(v).getUTCMonth() === 6; };
+exports.fn.core_august = function (v) { return new Date(v).getUTCMonth() === 7; };
+exports.fn.core_september = function (v) { return new Date(v).getUTCMonth() === 8; };
+exports.fn.core_october = function (v) { return new Date(v).getUTCMonth() === 9; };
+exports.fn.core_november = function (v) { return new Date(v).getUTCMonth() === 10; };
+exports.fn.core_december = function (v) { return new Date(v).getUTCMonth() === 11; };
+/******************************************************************************
+    Extension Includer Methods
+******************************************************************************/
+exports.fn.in_$flags = { sc: true };
+/******************************************************************************
+    Extension Matcher Methods
+******************************************************************************/
+exports.fn.matches_$flags = { sc: true };
+/******************************************************************************
+    Extension Custom Methods
+******************************************************************************/
+exports.fn.m_$flags = { sc: true };
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Utils = __webpack_require__(0);
+var classes = __webpack_require__(2);
+var extensions_1 = __webpack_require__(5);
+exports.extend = extensions_1.extend;
+var Core = (function () {
+    function Core(config) {
+        config = this._c =
+            {
+                onMissing: Utils.ensure(config.onMissingValue, false),
+                asMissing: Utils.ensure(config.asMissing, []),
+                negate: config.negate
+            };
+        var instantiate = function (target, classes) {
+            Utils.loop(classes, function (item, key) {
+                target[key] = new item(config);
+                if (Core.listGroups.indexOf(key) >= 0)
+                    instantiate(target[key], item);
+            });
+        };
+        instantiate(this, Core.classes);
+    }
+    Core.prepClasses = function (target, classes) {
+        Utils.loop(classes, function (item, key) {
+            if (Core.listGroups.indexOf(key) >= 0)
+                Core.prepClasses(item, item);
+            else if (Core.mergeGroups.indexOf(key) >= 0)
+                Utils.merge(target.prototype, item.prototype);
+        });
+        // remove merged items
+        Utils.loop(Core.mergeGroups, function (g) { if (classes[g])
+            delete classes[g]; });
+        return classes;
+    };
+    return Core;
+}());
+Core.listGroups = ['any', 'all'];
+Core.mergeGroups = ['conf', 'base', 'core'];
+Core.classes = Core.prepClasses(Core, classes.generate());
+/*
+    The Alyze validator class
+ */
+var Validator = (function (_super) {
+    __extends(Validator, _super);
+    function Validator(config) {
+        var _this = _super.call(this, Utils.merge({}, config, { negate: false })) || this;
+        // create negated method configuration on [this.not] member
+        _this.not = new Core(Utils.merge({}, config, { negate: true }));
+        return _this;
+    }
+    return Validator;
+}(Core));
+exports.Validator = Validator;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Utils = __webpack_require__(0);
+var functions_1 = __webpack_require__(3);
+var classes = __webpack_require__(2);
+function extend(extensions, prefix) {
+    Utils.loop(extensions, function (value, name) {
+        var extName = prefix ? prefix + Utils.capitalize(name) : name;
+        // try to add extension method for all extendables
+        Utils.loop(Extenders, function (e, k) { return e(extName, value); });
+        // recursively lood for more stuff to extend
+        if (functions_1.fn.stype_object(value))
+            extend(value, extName);
+    });
+}
+exports.extend = extend;
+var Extenders;
+(function (Extenders) {
+    function matcher(name, value) {
+        if (functions_1.fn.stype_regexp(value)) {
+            var method = function (v) { return value.test(v); };
+            classes.prototypeMethod(name, method, 'matches', { sc: true });
+        }
+    }
+    Extenders.matcher = matcher;
+    function custom(name, value) {
+        if (functions_1.fn.stype_function(value)) {
+            var method = function (v) {
+                var a = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    a[_i - 1] = arguments[_i];
+                }
+                return value.apply(null, [v].concat(a));
+            };
+            classes.prototypeMethod(name, method, 'm', { sc: true });
+        }
+    }
+    Extenders.custom = custom;
+    function includer(name, value) {
+        if (functions_1.fn.type_function(value.indexOf) && functions_1.fn.type_number(value.length) && value.length > 0) {
+            if (functions_1.fn.type_object(value[0])) {
+                Utils.loop(value[0], function (v, k) { includer(name + Utils.capitalize(k), Utils.toSet(value, k)); });
+            }
+            else {
+                var method = function (v) { return value.indexOf(v) >= 0; };
+                classes.prototypeMethod(name, method, 'in', { sc: true });
+            }
+        }
+    }
+    Extenders.includer = includer;
+})(Extenders || (Extenders = {}));
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.type = {
+    boolean: typeof false,
+    function: typeof Function,
+    object: typeof {},
+    number: typeof 0,
+    string: typeof '',
+    // symbol: typeof Symbol(''),
+    undefined: typeof undefined
+};
+exports.stype = {
+    array: Object.prototype.toString.call(new Array()),
+    boolean: Object.prototype.toString.call(new Boolean()),
+    date: Object.prototype.toString.call(new Date()),
+    error: Object.prototype.toString.call(new Error()),
+    function: Object.prototype.toString.call(new Function()),
+    null: Object.prototype.toString.call(null),
+    number: Object.prototype.toString.call(new Number()),
+    object: Object.prototype.toString.call(new Object()),
+    regexp: Object.prototype.toString.call(new RegExp('.')),
+    string: Object.prototype.toString.call(new String()),
+    // symbol: Object.prototype.toString.call(Symbol()),
+    undefined: Object.prototype.toString.call(undefined)
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var log_1 = __webpack_require__(1);
+var Main = __webpack_require__(4);
+var Utils = __webpack_require__(0);
+// default configuration
+var defaultConfig = {};
+// global configuration
+function config(config) {
+    if (config === void 0) { config = {}; }
+    log_1.log.set(config.log);
+    // add any specified extensions
+    if (config.extend)
+        Main.extend(config.extend);
+    // set default onMissingValue
+    if (typeof config.onMissingValue === 'boolean')
+        defaultConfig.onMissingValue = config.onMissingValue;
+    // set default asMissing
+    if (config.asMissing)
+        defaultConfig.asMissing = config.asMissing;
+    return this;
+}
+exports.config = config;
+// create new validator instance and return
+function create(config) {
+    if (config === void 0) { config = {}; }
+    return new Main.Validator(Utils.merge({}, defaultConfig, config));
+}
+exports.create = create;
+
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+module.exports = __webpack_require__(4)(__webpack_require__(33).create());
+
+
+/***/ })
+/******/ ]);
+}); at SyntaxError: The keyword 'interface' is reserved (641:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

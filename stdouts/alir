@@ -1,0 +1,862 @@
+/root/Targets/alir
+└── alir@0.0.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/alir/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.039 took 2.9863s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>À Lire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/build.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/dynamic.css"   rel="stylesheet" type="text/css" id="dynamicCss">
+    <link href="css/user.css"   rel="stylesheet" type="text/css" id="userCss">
+    <link rel="icon" type="image/png" href="/img/icon-32.png" />
+    <link rel="prefetch" type="application/l10n" href="locales/locales.ini" />
+  </head>
+  <body class="online menu-left hosted">
+    <!-- templates {{ -->
+    <div id="templates">
+      <ul id="tmpl-article">
+        <li data-key="{{=key}}" data-context="{{=context}}" class="{{=context}} {{=hasNotes}} {{=read}}" data-tags=",{{=tags|join|tolowercase}}," data-flags=",{{=flags}}," data-date="{{=date}}" data-title="{{=title|toLowerCase}}" data-url="{{=url}}">
+          <h2>
+            <label class="delitem">
+              <input type="checkbox" name="delitem" />
+            </label>
+            <a data-object="articles.ui" data-method="select" data-params="{{=key}}" href="javascript:">
+              <span class="icon-comment hasNotes"></span>
+              <span class="icon-inbox isArchive"></span>
+              <span class="icon-rss isFeed"></span>
+              <span class="icon-star isStar"></span>
+              <span class="title">{{=title}}</span>
+            </a>
+            <p class="tags">
+              {{#tmpl-tag-list cleanTags}}
+            </p>
+          </h2>
+        </li>
+      </ul>
+      <div id="tmpl-article-detail">
+        <div id="{{=key}}" data-key="{{=key}}" data-context="{{=context}}" class="{{=context}} {{=hasNotes}}" data-tags=",{{=tags|join|tolowercase}}," data-flags=",{{=flags}}," data-date="{{=date}}" data-title="{{=title|toLowerCase}}" data-url="{{=url}}">
+          <header>
+            <h2>
+              <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+              <span class="center">{{=title}}</span>
+              <a class="icon-reorder right" data-object="articles.ui" data-method="menu" data-help="helpArticleMenu" href="javascript:"></a>
+            </h2>
+          </header>
+            <div class="articleMenu folded">
+              <div class="articleActions">
+                <p><a class="icon-trash"             data-object="articles" data-method="delete"    data-params="{{=key}},{{=title}}" data-help-no-scroll="true" data-help="helpArticleTrash" ></a></p>
+                <p><a class="icon-inbox archive"     data-object="articles" data-method="switchTag" data-params="{{=key}},archive"  data-help-no-scroll="true" data-help="helpArticleArchive"  href="javascript:"></a></p>
+                <p><a class="icon-star star"         data-object="articles" data-method="switchTag" data-params="{{=key}},star" data-help-no-scroll="true" data-help="helpArticleStar"  href="javascript:" ></a></p>
+                <p><a class="icon-tags"              data-object="articles" data-method="addTag"    data-params="{{=key}}" data-help-no-scroll="true" data-help="helpArticleTags"  href="javascript:"></a></p>
+                <p><a class="icon-pencil compose"    data-object="articles" data-method="edit"      data-params="{{=key}}" data-help-no-scroll="true" data-help="helpArticleCompose"  href="javascript:"></a></p>
+                <p><a class="icon-refresh"           data-object="articles" data-method="reload"    data-params="{{=key}}" data-help-no-scroll="true" data-help="helpArticleRefresh"  href="javascript:"></a></p>
+                <p><a class="icon-share ifActivity" data-object="articles" data-method="share"     data-params="{{=key}}" data-help-no-scroll="true" data-help="helpArticleShare"  href="javascript:"></a></p>
+                <p><a class="icon-rss alternate"     data-object="articles.ui" data-method="toggleAlternates" data-params="{{=key}}" data-help-no-scroll="true" data-help="helpArticleRss"  href="javascript:"></a></p>
+              </div>
+            </div>
+          <section class="body">
+            <h3>{{=title}}</h3>
+            <div class="toolbar">
+              <a class="icon-trash" data-object="articles" data-method="delete" data-params="{{=key}},{{=title}}" ></a>
+              <a class="icon-pencil compose" data-object="articles" data-method="edit" data-params="{{=key}}" href="javascript:"></a>
+            </div>
+            <ul class="tabs" data-help="helpArticleTabs">
+              <li class="tab-content"><a data-l10n-id="articleTabContent" data-object="articles.ui" data-method="showTab" data-params="content" href="javascript:"></a> | </li>
+              <li class="tab-notes"><a data-l10n-id="articleTabNotes" data-object="articles.ui" data-method="showTab" data-params="notes" href="javascript:"></a> | </li>
+              <li class="tab-meta"><a data-l10n-id="articleTabMeta" data-object="articles.ui" data-method="showTab" data-params="meta" href="javascript:"></a></li>
+            </ul>
+            <div class="content article-content">
+              <p class="url"><a href="{{=url}}" target="_blank">{{=url}}</a></p>
+              <p class="notes">
+              </p>
+              <div class="{{=type}}">{{=content}}</div>
+              <!--
+              <iframe sandbox="allow-same-origin" seamless srcdoc="{{=content}}"></iframe>
+              -->
+            </div>
+            <div class="tabNotes">
+              {{#tmpl-notes notes}}
+            </div>
+            <div class="tabMeta">
+              <p class="date">{{=date|tolocal}}</p>
+              <p class="tags">
+                {{#tmpl-tag tags}}
+              </p>
+            </div>
+            <div class="toolbar">
+              <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" ></a>
+              <a class="icon-trash" data-object="articles" data-method="delete" data-params="{{=key}},{{=title}}" ></a>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="tmpl-tag">
+        <div class="tag">
+          <span class="icon-remove" data-object="articles" data-method="switchTag" data-params="{{=../key}},{{=tags}}"></span>
+          <span>{{=tags}}</span>
+        </div>
+      </div>
+      <div id="tmpl-tag-list">
+        <span>{{=cleanTags}}</span>
+      </div>
+      <div id="tmpl-notes">
+        <div class="">
+          {{=notes.content}}
+          <p class="toolbar">
+            <a href="javascript:" class="note icon-comment" data-object="articles.ui" data-method="scrollToNote" data-params="{{=notes.id}}"></a>
+            <a data-help="helpNoteShare" href="javascript:" data-method="share" data-object="comment" data-params="{{=../key}},{{=notes.id}}" class="icon-share"></a>
+         </p>
+        </div>
+      </div>
+      <ul id="tmpl-feed">
+        <li data-key="{{=key}}" data-context="{{=context}}" class="{{=context}}" id="{{=key}}" data-title="{{=title|toLowerCase}}" data-url="{{=url}}">
+          <h2><a data-object="feeds" data-method="show" data-params="{{=url}}" href="javascript:"><span class=""></span>{{=title}}</a></h2>
+        </li>
+      </ul>
+      <div id="tmpl-feed-detail">
+        <div>
+          <header data-url="{{=url}}">
+            <h2>
+              <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" ></a>
+              <span>{{=title}}</span>
+            </h2>
+          </header>
+          <section>
+            <p>{{=url}}</p>
+            <p>{{=date|tolocal}}</p>
+            <p class="toolbar">
+              <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+              <a class="icon-pencil"  data-object="feeds" data-method="edit"   data-params="{{=url}}" href="javascript:" data-help="helpFeedEdit"></a>
+              <a class="icon-trash"   data-object="feeds" data-method="delete" data-params="{{=url}}" data-help="helpFeedDelete"></a>
+              <a class="icon-refresh" data-object="feeds" data-method="fetch" data-params="{{=url}}" href="javascript:" data-help="helpFeedFetch"></a>
+            </p>
+            <p class="col">
+              <button data-l10n-id="feedTest" data-object="feeds" data-method="test" data-params="{{=url}}"></button>
+              <button data-l10n-id="feedReset" data-object="feeds" data-method="reset" data-params="{{=url}}"></button>
+            </p>
+            <ul>
+              {{#tmpl-feed-item items}}
+            </ul>
+          </section>
+        </div>
+      </div>
+      <ul id="tmpl-feed-item">
+        <li data-object="feeds" data-method="showArticle" data-params="{{=items.url}}">
+          <p class="title">{{=items.title}}</p>
+          <p class="updated">{{=items.updated|tolocal}}</p>
+        </li>
+      </ul>
+    </div>
+    <!-- }} -->
+    <div id="rsWidget" class="hidden"></div>
+    <div id="statusbar">
+      <span class="icon-refresh syncInProgress"></span>
+      <span class="icon-off onoff"></span>
+      <span class="icon-exclamation error"></span>
+    </div>
+    <div id="messagebar">
+    </div>
+    <!-- Menu {{ -->
+    <div id="menu" class="list">
+      <div class="content" data-help="helpMenuFirst">
+        <p data-object="alir.ui"  data-method="top"><span class="top" ></span><a class="icon-chevron-up" href="javascript:"></a></p>
+        <p data-object="tiles"    data-method="show" data-params="articleList" data-help="helpMenuHome"><span class="home" data-l10n-id="menuHome"></span><a class="icon-home" href="javascript:"></a></p>
+        <p data-object="articles" data-method="create" data-help="helpMenuCreate"><span class="new" data-l10n-id="menuNew"></span><a class="icon-plus" href="javascript:" accesskey="n"></a></p>
+        <p data-object="alir.rs"  data-method="sync" data-help="helpMenuSync"><span class="sync" data-l10n-id="menuSync"></span><a class="icon-refresh" href="javascript:"></a></p>
+        <p data-object="tiles"    data-method="go" data-params="settings" data-help="helpMenuSettings"><span class="settings" data-l10n-id="menuSettings"></span><a class="icon-cog" href="javascript:"></a></p>
+        <p data-object="alir"     data-method="onoff" data-help="helpMenuOnoff">
+          <span class="menuOnline" data-l10n-id="menuOnline"></span>
+          <span class="menuOffline" data-l10n-id="menuOffline"></span>
+          <a class="icon-off onoff"></a>
+        </p>
+        <p data-object="tiles"    data-method="go" data-params="feeds" data-help="helpMenuFeeds"><span class="" data-l10n-id="menuFeeds"></span><a class="icon-rss" href="javascript:"></a></p>
+        <p data-object="alir.ui"  data-method="help" data-params=""><span class="" data-l10n-id="menuHelp"></span><a class="icon-question-sign" href="javascript:"></a></p>
+      </div>
+      <div class="slider" data-object="alir.ui" data-method="toggleMenu">
+        <div class="scrollbar" data-help="helpMenuMenu"></div>
+      </div>
+    </div>
+    <!-- }} -->
+    <!-- articleEdit {{ -->
+    <div id="articleEditTile" class="" data-tile="articleEdit">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span class="center" data-l10n-id="inputHeader">Note</span>
+          <a class="icon-pencil right" data-object="articles" data-method="save" href="javascript:" data-help="helpArticleSave" ></a>
+        </h2>
+      </header>
+      <form>
+        <fieldset class="inline text hidden">
+          <p>
+            <label for="articleId" data-l10n-id="articleIdLabel">Id</label>
+            <input type="text" name="id" id="articleId" placeholder="Identifiant" data-l10n-id="articleId" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <fieldset class="inline text url">
+          <p>
+            <label for="articleUrl" data-l10n-id="articleUrlLabel">Url</label>
+            <input type="text" name="url" id="articleUrl" placeholder="URL" data-l10n-id="articleUrl" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <fieldset class="inline text article">
+          <p>
+            <label for="articleTitle" data-l10n-id="articleTitleLabel">Title</label>
+            <input type="text" name="title" id="articleTitle" placeholder="Titre" data-l10n-id="articleTitle" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <p class="col2">
+          <button data-object="articles" data-method="save" data-l10n-id="articleSave">Save</button>
+          <button data-object="tiles" data-method="back" data-l10n-id="cancel">Cancel</button>
+        </p>
+        <fieldset class="inline text article">
+          <textarea rows="6" cols="40" name="text" placeholder="Content" data-l10n-id="articleContent"></textarea>
+        </fieldset>
+        <p class="col2 article">
+          <button data-object="articles" data-method="save" data-l10n-id="articleSave">Save</button>
+          <button data-object="tiles" data-method="back" data-l10n-id="cancel">Cancel</button>
+        </p>
+      </form>
+    </div>
+    <!-- }} -->
+    <!-- articleList {{ -->
+    <div id="main" class="list shown feeds" data-tile="articleList">
+      <header>
+        <h2>
+          <a class="icon-reorder" data-object="alir.ui" data-method="toggleMenu" data-help="helpListMenu" accesskey="m" href="javascript:"></a>
+          <span class="filters">
+            <a class="icon-inbox archive" data-object="articles.ui" data-method="filterArchive"  data-help="helpListArchive" href="javascript:" ></a>
+            <a class="icon-rss feed"      data-object="articles.ui" data-method="filterFeed"     data-help="helpListFeed" href="javascript:"></a>
+            <a class="icon-star star"     data-object="articles.ui" data-method="filterStar"     data-help="helpListStar" href="javascript:"></a>
+            <a class="icon-tags tags"     data-object="articles.ui" data-method="addFilterTag"   data-help="helpListTags" href="javascript:"></a>
+            <a class="icon-pencil edit"   data-object="articles.ui" data-method="editArticles"   data-help="helpListEdit" href="javascript:"></a>
+            <a class="icon-trash delete"  data-object="articles.ui" data-method="deleteArticles" ></a>
+          </span>
+        </h2>
+      </header>
+      <section>
+        <form class="filters">
+          <fieldset class="inline text compact">
+            <p>
+              <input type="text" name="listFilter" id="listFilter" placeholder="Filter" data-l10n-id="listFilter" data-help="helpListFilter" />
+              <button type="reset"><span class="icon-remove"></span></button>
+            </p>
+          </fieldset>
+        </form>
+        <ul id="list">
+          <p class="loading"><span class="icon-refresh loader"></span></p>
+        </ul>
+      </section>
+    </div>
+    <!-- }} -->
+    <!-- articleShow {{ -->
+    <section data-tile="articleShow" id="articleShowTile" class="tab-content">
+    </section>
+    <!-- }} -->
+    <!-- settings {{ -->
+    <div id="settings" class="settings" data-tile="settings">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="settings">Settings</span>
+        </h2>
+      </header>
+      <form >
+        <section class="container folded">
+          <header class="header"><h2 data-l10n-id="settingsMisc"></h2></header>
+          <div>
+            <fieldset id="settingsLang">
+              <legend data-l10n-id="settingsLang">Language</legend>
+              <fieldset class="inline text">
+                <select data-target="lang">
+                  <option value="bn"    data-l10n-id="settingsLangBn"></option>
+                  <option value="bn-BD" data-l10n-id="settingsLangBnBd"></option>
+                  <option value="de"    data-l10n-id="settingsLangDe"></option>
+                  <option value="en-US" data-l10n-id="settingsLangUs"></option>
+                  <option value="es"    data-l10n-id="settingsLangEs"></option>
+                  <option value="fa-IR" data-l10n-id="settingsLangFaIr"></option>
+                  <option value="fr"    data-l10n-id="settingsLangFr"></option>
+                  <option value="hi"    data-l10n-id="settingsLangHi"></option>
+                  <option value="hi-IN" data-l10n-id="settingsLangHiIn"></option>
+                  <option value="id"    data-l10n-id="settingsLangId"></option>
+                  <option value="it"    data-l10n-id="settingsLangIt"></option>
+                  <option value="ml"    data-l10n-id="settingsLangMl"></option>
+                  <option value="ml-IN" data-l10n-id="settingsLangMlIn"></option>
+                  <option value="mr"    data-l10n-id="settingsLangMr"></option>
+                  <option value="pl"    data-l10n-id="settingsLangPl"></option>
+                  <option value="pt-BR" data-l10n-id="settingsLangPtBr"></option>
+                  <option value="ta-IN" data-l10n-id="settingsLangTaIn"></option>
+                  <option value="zh-CN" data-l10n-id="settingsLangZhCn"></option>
+                  <option value="zh-TW" data-l10n-id="settingsLangZhTw"></option>
+                </select>
+              </fieldset>
+            </fieldset>
+            <fieldset id="settingsLoglevel">
+              <legend data-l10n-id="settingsLoglevel"></legend>
+              <fieldset class="inline text">
+                <select data-target="logLevel">
+                  <option value="debug">Debug</option>
+                  <option value="info">Info</option>
+                  <option value="warning">Warning</option>
+                  <option value="error">Error</option>
+                </select>
+              </fieldset>
+            </fieldset>
+            <fieldset class="inline check compact">
+              <p>
+                <label for="prefImages" data-l10n-id="settingsImages"></label>
+                <input type="checkbox" name="prefImages" id="prefImages" checked data-target="prefImages" >
+              </p>
+              <p>
+                <label for="prefMenuBottom" data-l10n-id="settingsMenuBottom"></label>
+                <input type="checkbox" name="prefMenuBottom" id="prefMenuBottom" checked data-target="prefMenuBottom" >
+              </p>
+              <p>
+                <label for="prefMenuLeft" data-l10n-id="settingsMenu">Left Menu</label>
+                <input type="checkbox" name="prefMenuLeft" id="prefMenuLeft" checked data-target="prefMenuLeft" >
+              </p>
+              <!--
+              <p>
+                <label for="prefGesture" data-l10n-id="settingsGesture">Gestures</label>
+                <input type="checkbox" name="prefGesture" id="prefGesture" data-target="gesture" >
+              </p>
+              -->
+              <p>
+                <label for="prefDeleteNext" data-l10n-id="settingsDeleteNext">Show next on delete</label>
+                <input type="checkbox" name="prefDeleteNext" id="prefDeleteNext" data-target="deleteNext" >
+              </p>
+              <p>
+              <p>
+                <label for="prefVibrate" data-l10n-id="settingsVibrate">Vibrate</label>
+                <input type="checkbox" name="prefVibrate" id="prefVibrate" data-target="vibrate" >
+              </p>
+            </fieldset>
+          </div>
+        </section>
+        <section class="container folded">
+          <header class="header">
+            <h2>
+              <span data-l10n-id="settingsUI"></span>
+            </h2>
+          </header>
+          <div>
+            <fieldset id="settingsTheme">
+              <legend data-l10n-id="settingsTheme"></legend>
+              <fieldset class="inline text">
+                <select data-target="theme">
+                  <option value="" data-l10n-id="themeDefault"></option>
+                  <option value="themeGreen" data-l10n-id="themeGreen"></option>
+                  <option value="themeRed" data-l10n-id="themeRed"></option>
+                  <option value="themeBlue" data-l10n-id="themeBlue"></option>
+                  <option value="themeDark" data-l10n-id="themeDark"></option>
+                </select>
+              </fieldset>
+            </fieldset>
+            <fieldset>
+              <legend data-l10n-id="settingsFont"></legend>
+              <p>
+                <input id="styleFontSize" type="range" min="0.3" max="3" step="0.1" />
+              </p>
+              <fieldset class="inline text">
+                <select id="styleFontFamily" data-target="fontFamily">
+                  <option value="sans-serif">Sans-Serif</option>
+                  <option value="serif">Serif</option>
+                </select>
+              </fieldset>
+              <p id="styleFontSizeSample">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p>
+                <button data-object="alir" data-method="styleReset" data-l10n-id="styleReset"></button>
+              </p>
+            </fieldset>
+          </div>
+        </section>
+        <section class="container">
+          <header class="header">
+            <h2 data-object="tiles" data-method="go" data-params="settingsSync">
+              <span data-l10n-id="settingsSync" class="left"></span>
+              <a class="icon-chevron-right right" href="javascript:"></a>
+            </h2>
+          </header>
+        </section>
+        <section class="container folded">
+          <header class="header"><h2 data-l10n-id="settingsReader"></h2></header>
+          <div>
+            <fieldset class="inline check compact">
+              <p>
+                <label for="feedsDoRefresh" data-l10n-id="feedsDoRefresh"></label>
+                <input type="checkbox" id="feedsDoRefresh" name="feedsDoRefresh" data-target="prefFeedsRefresh">
+              </p>
+            </fieldset>
+            <fieldset id="settingsAlarm">
+              <legend data-l10n-id="alarmInterval"></legend>
+              <input type="range" name="alarmInterval" id="alarmInterval" min="5" max="120" step="5" />
+              <p><span id="alarmIntervalValue" ></span>min</p>
+            </fieldset>
+            <p class="col2">
+              <button data-object="alarms" data-method="display" data-l10n-id="alarmsDisplay"></button>
+              <button data-object="alarms" data-method="plan" data-l10n-id="alarmsPlan"></button>
+              <button data-object="alarms" data-method="reset" data-l10n-id="alarmsReset"></button>
+            </p>
+          </div>
+        </section>
+        <section class="container">
+          <header class="header">
+            <h2 data-object="tiles" data-method="go" data-params="credits">
+              <span data-l10n-id="settingsCredits" class="left"></span>
+              <a class="icon-chevron-right right" href="javascript:"></a>
+            </h2>
+          </header>
+        </section>
+        <section class="container">
+          <header class="header">
+            <h2 data-object="tiles" data-method="go" data-params="advanced">
+              <span data-l10n-id="settingsAdvanced" class="left"></span>
+              <a class="icon-chevron-right right" href="javascript:"></a>
+            </h2>
+          </header>
+        </section>
+        <section>
+          <button name="clearLog" data-l10n-id="settingsClearLog" data-object="alir.ui" data-method="clearLogs">Clear Log</button>
+          <pre id="debugLog"></pre>
+        </section>
+      </form>
+    </div>
+    <!-- }} -->
+    <!-- settingsSync {{ -->
+    <div id="settingsSync" class="settings" data-tile="settingsSync">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="settingsSync"></span>
+        </h2>
+      </header>
+      <section>
+        <div>
+          <section class="container folded">
+            <header class="header"><h3 data-l10n-id="remoteStorage"></h3></header>
+            <fieldset id="prefRS">
+              <legend data-l10n-id="remoteStorage">remoteStorage</legend>
+              <fieldset class="inline text">
+                <p>
+                  <label for="rsLogin" data-l10n-id="rsLoginLabel">Login</label>
+                  <input type="email" name="rsLogin" id="rsLogin" placeholder="user@host" data-l10n-id="rsLogin" />
+                  <button type="reset"><span class="icon-remove"></span></button>
+                </p>
+              </fieldset>
+              <fieldset>
+                <p class="float">
+                  <button data-l10n-id="rsConnect" data-object="alir.rs" data-method="connect"></button>
+                  <button data-l10n-id="rsDisconnect" data-object="alir.rs" data-method="disconnect"></button>
+                  <button data-l10n-id="rsSync"  data-object="alir.rs" data-method="sync"></button>
+                  <button data-l10n-id="rsReset" data-object="alir.rs" data-method="reset"></button>
+                  <button data-l10n-id="rsCache" data-object="alir.rs" data-method="cacheReset"></button>
+                </p>
+              </fieldset>
+              <fieldset>
+                <legend data-l10n-id="rsSyncIntervalOn"></legend>
+                <input type="range" name="rsSyncIntervalOn" id="rsSyncIntervalOn" min="20" max="1200" step="5" />
+                <p><span id="rsSyncIntervalOnValue" ></span>s</p>
+              </fieldset>
+              <fieldset>
+                <legend data-l10n-id="rsSyncIntervalOff"></legend>
+                <input type="range" name="rsSyncIntervalOff" id="rsSyncIntervalOff" min="300" max="3000" step="5" />
+                <p><span id="rsSyncIntervalOffValue" ></span>s</p>
+              </fieldset>
+              <fieldset class="inline text">
+                <p>
+                  <label for="prefToken" data-l10n-id="settingsToken">Token</label>
+                  <input type="text" name="prefToken" id="prefToken" disabled>
+                </p>
+              </fieldset>
+            </fieldset>
+          </section>
+          <section class="container folded">
+            <header class="header"><h3 data-l10n-id="dropbox"></h3></header>
+            <fieldset id="prefDropbox">
+              <legend data-l10n-id="dropbox">Dropbox</legend>
+              <fieldset class="inline text">
+                <p>
+                  <label for="dropboxApiKey" data-l10n-id="dropboxKeyLabel">Key</label>
+                  <input type="text" name="dropboxApiKey" id="dropboxApiKey" placeholder="Key" data-l10n-id="dropboxKey" />
+                  <button type="reset"><span class="icon-remove"></span></button>
+                </p>
+              </fieldset>
+              <fieldset>
+                <p>
+                  <button data-l10n-id="rsConnect" data-object="alir.rs" data-method="connectDropbox"></button>
+                <p>
+              </fieldset>
+            </fieldset>
+          </section>
+          <section class="container folded">
+            <header class="header"><h3 data-l10n-id="drive"></h3></header>
+            <fieldset id="prefDrive">
+              <legend data-l10n-id="drive">Google Drive</legend>
+              <fieldset class="inline text">
+                <p>
+                  <label for="driveClientId" data-l10n-id="driveIdLabel">Client Id</label>
+                  <input type="text" name="driveClientId" id="driveClientId" placeholder="ClientId" data-l10n-id="driveId" />
+                  <button type="reset"><span class="icon-remove"></span></button>
+                </p>
+              </fieldset>
+              <fieldset class="inline text">
+                <p>
+                  <label for="driveApiKey" data-l10n-id="driveKeyLabel">Key</label>
+                  <input type="text" name="driveApiKey" id="driveApiKey" placeholder="Key" data-l10n-id="driveKey" />
+                  <button type="reset"><span class="icon-remove"></span></button>
+                </p>
+              </fieldset>
+              <fieldset>
+                <p>
+                  <button data-l10n-id="rsConnect" data-object="alir.rs" data-method="connectDrive"></button>
+                <p>
+              </fieldset>
+            </fieldset>
+          </section>
+        </div>
+      </section>
+    </div>
+    <!-- }} -->
+    <!-- advanced {{ -->
+    <div data-tile="advanced">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="settingsAdvanced"></span>
+        </h2>
+      </header>
+      <section>
+        <fieldset id="settingsProxy">
+          <legend data-l10n-id="proxyLegend"></legend>
+          <fieldset class="inline text">
+            <p>
+              <label for="proxyUrl" data-l10n-id="proxyUrlLabel"></label>
+              <input type="text" name="proxyUrl" id="proxyUrl" data-l10n-id="proxyUrl" data-target="proxy" data-help="helpSettingsProxy" />
+              <button type="reset"><span class="icon-remove"></span></button>
+            </p>
+          </fieldset>
+        </fieldset>
+        <p>
+          <button data-method="install" data-object="alir" class="ifHosted" data-l10n-id="settingsInstall">Install</button>
+          <button data-method="update" data-object="alir" class="ifInstalled" data-l10n-id="settingsUpdate">Update</button>
+          <button data-object="alir" data-method="getAll" data-l10n-id="settingsReload" data-help="helpSettingsReload">Reload</button>
+          <button data-object="alir" data-method="reset" data-l10n-id="alirReset" data-help="helpSettingsReset"></button>
+        </p>
+        <p>
+          <span data-l10n-id="bookmarkletText"></span>
+          <a id="bookmarklet" data-l10n-id="bookmarkletTitle"></a>
+        <!--
+        <p class="float">
+          <button data-object="alir.ui" data-method="widgetShow" data-l10n-id="settingsWidgetShow">Show widget</button>
+          <button data-object="alir.ui" data-method="inspect" data-l10n-id="settingsDebug">Debug</button>
+        </p>
+        -->
+      </section>
+    </div>
+    <!-- }} -->
+    <!-- noteView {{ -->
+    <section id="noteViewTile" data-tile="noteView" class="" data-note-id="">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="noteViewHeader"></span>
+        </h2>
+      </header>
+      <section>
+        <form>
+          <input type="hidden" name="articleId" />
+          <input type="hidden" name="noteId" />
+          <input type="hidden" name="xpath" />
+          <input type="hidden" name="text" />
+          <input type="hidden" name="url" />
+        </form>
+        <div class="content">
+        </div>
+        <p class="toolbar">
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" data-help="helpNoteBack" ></a>
+          <a class="icon-pencil" data-object="comment" data-method="edit" href="javascript:" data-help="helpNoteEdit" ></a>
+          <a class="icon-trash"  data-object="comment" data-method="delete" data-help="helpNoteDelete" ></a>
+          <a class="icon-share"  data-object="comment" data-method="share" href="javascript:" data-help="helpNoteShare" ></a>
+        </p>
+      </section>
+    </section>
+    <!-- }} -->
+    <!-- noteEdit {{ -->
+    <section id="noteEditTile" data-tile="noteEdit" class="">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span class="center" data-l10n-id="noteEditHeader"></span>
+          <a class="icon-pencil right" data-object="comment" data-method="save" href="javascript:" data-help="helpNoteSave" ></a>
+        </h2>
+      </header>
+      <section>
+        <form>
+          <input type="hidden" name="articleId" />
+          <input type="hidden" name="noteId" />
+          <input type="hidden" name="xpath" />
+          <fieldset class="inline text">
+            <textarea id="noteContent" rows="6" cols="40" name="text" placeholder="Note" data-l10n-id="noteContent"></textarea>
+            <span id="noteContentLength" class="textareaLength"></span>
+          </fieldset>
+          <p class="col2">
+            <button data-object="comment" data-method="save" data-l10n-id="noteSave">Save</button>
+            <button name="cancel" data-l10n-id="noteCancel" data-object="tiles" data-method="back">Cancel</button>
+          </p>
+        </form>
+      </section>
+    </section>
+    <!-- }} -->
+    <!-- tagTile {{ -->
+    <section id="tagTile" data-tile="tagTile" class="">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="tagHeader">Tags</span>
+        </h2>
+      </header>
+      <form>
+        <fieldset class="inline text">
+          <p>
+            <label for="tagInput" data-l10n-id="tagLabel">Tag</label>
+            <input type="text" name="tagInput" id="tagInput" placeholder="Tag" data-l10n-id="tagInput" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <ul id="tagList">
+        </ul>
+        <p class="col2">
+          <button name="save" data-l10n-id="tagSave">Save</button>
+          <button name="cancel" data-l10n-id="tagCancel" data-object="tiles" data-method="back">Cancel</button>
+        </p>
+      </form>
+    </section>
+    <!-- }} -->
+    <!-- credit {{ -->
+    <section id="credits" data-tile="credits" class="">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="creditHeader">Credits</span>
+        </h2>
+      </header>
+      <section>
+        <section class="title">
+          <img src="img/icon-256.png" width="256" height="256" alt="Àlir icon" title="Àlir icon" />
+        </section>
+        <button data-l10n-id="back" data-object="tiles" data-method="back" >Back</button>
+        <section>
+          <h3>Licence</h3>
+          <p>Àlir — Stack stuffs and read them later.</p>
+          <p>Copyright © 2014 Clochix — <a href="http://clochix.net" target="_blank" href="javascript:">Clochix</a></p>
+          <p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+          <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a href="LICENCE" target="_blank" href="javascript:">GNU General Public License for more details.</a></p>
+        </section>
+        <section>
+          <h3>Icons</h3>
+          <p>The Chair icon is a creation of <a href="http://www.robinweatherall.eu/icons/" target="_blank">Robin Weatherall</a> distributed as freeware. I found it on <a href="http://www.iconarchive.com/show/library-icons-by-skuzigraphic/chair-icon.html" target="_blank">IconArchive</a>.</p>
+          <p>Others icons are from Font Awesome by Dave Gandy — <a href="http://fontawesome.io" target="_blank">http://fontawesome.io/</a>.</p>
+
+        </section>
+        <section>
+          <h3>Contributors</h3>
+          <ul>
+            <li>thanks Mozilla for the awesome Firefox OS and the Keon phone you offered to me;</li>
+            <li>thanks <a href="http://paul.cx/" target="_blank">Paul Adenot</a> for the advices and encouragements;</li>
+            <li>thanks <a href="http://hanblog.info/blog/" target="_blank">Antony</a> for the kick ass ;)</li>
+            <li>thanks <a href="http://tomcanac.com/" target="_blank">Tom Canac</a> for all the feedbacks and advices;</li>
+          </ul>
+          <h3>Translators</h3>
+          <dl>
+            <dt>Chinese</dt>
+            <dd><a href="https://twitter.com/775405984" target="_blank">775405984</a></dd>
+            <dt>German</dt>
+            <dd><a href="https://www.transifex.com/accounts/profile/grrd/" target="_blank">Gerard Tyedmers</a></dd>
+            <dt>Polish</dt>
+            <dd><a href="https://www.transifex.com/accounts/profile/pawel10/" target="_blank">Pawel 10</a></dd>
+            <dt>Spanish</dt>
+            <dd><a href="http://www.ravmn.cl/" target="_blank">Richard von Moltke N - ravmn</a></dd>
+          </dl>
+        </section>
+        <button data-l10n-id="back" data-object="tiles" data-method="back" >Back</button>
+      </section>
+    </section>
+    <!-- }} -->
+    <!-- auth {{ -->
+    <section id="auth" data-tile="auth" class="">
+      <iframe id="authFrame" mozbrowser>
+      </iframe>
+    </section>
+    <!-- }} -->
+    <!-- link {{ -->
+    <section id="link" data-tile="link" class="">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" ></a>
+          <span id="linkRef"></span>
+        </h2>
+      </header>
+      <section>
+        <p id="linkRefFull"></p>
+        <button data-object="tiles" data-method="back" data-l10n-id="linkCancel">Return</button>
+        <button data-object="link" data-method="scrap" data-l10n-id="linkScrap">Scrap</button>
+        <button data-object="link" data-method="open" data-l10n-id="linkOpen">Open</button>
+        <button data-object="link" data-method="share" class="ifActivity" data-l10n-id="linkShare">share</button>
+        <button data-object="link" data-method="facebook" data-l10n-id="linkShareFacebook"></button>
+        <button data-object="link" data-method="google"   data-l10n-id="linkShareGoogle"></button>
+        <button data-object="link" data-method="twitter"  data-l10n-id="linkShareTwitter"></button>
+        <fieldset class="inline text">
+          <textarea id="linkText" name="linkText" rows="5" cols="40"></textarea>
+          <span id="linkTextLength" class="textareaLength"></span>
+        </fieldset>
+      </section>
+    </section>
+    <!-- }} -->
+    <!-- prompt {{ -->
+    <section data-tile="prompt">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" ></a>
+          <span class="title"></span>
+        </h2>
+      </header>
+      <div class="content">
+      </div>
+    </section>
+    <!-- }} -->
+    <!-- feeds {{ -->
+    <section data-tile="feeds">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:" ></a>
+          <span data-l10n-id="feeds">Feeds</span>
+        </h2>
+      </header>
+      <section>
+        <p class="toolbar">
+          <input type="file" class="hidden" id="opmlFiles" />
+          <a class="icon-plus" data-object="feeds" data-method="create" data-help="helpFeedCreate" href="javascript:" ></a>
+          <a class="icon-refresh" data-object="feeds" data-method="update" data-help="helpFeedUpdate" href="javascript:"></a>
+          <a class="icon-magic" data-object="feeds" data-method="importOpml" data-help="helpFeedImport" href="javascript:"></a>
+        </p>
+        <ul id="feedsList">
+        </ul>
+      </section>
+    </section>
+    <!-- }} -->
+    <!-- feedEdit {{ -->
+    <section data-tile="feedEdit">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span data-l10n-id="feedEditHeader">Edit Feed</span>
+        </h2>
+      </header>
+      <form>
+        <fieldset class="inline text hidden">
+          <p>
+            <label for="feedId" data-l10n-id="feedIdLabel">Id</label>
+            <input type="text" name="id" id="feedId" placeholder="Identifiant" data-l10n-id="feedId" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <fieldset class="inline text">
+          <p>
+            <label for="feedUrl" data-l10n-id="feedUrlLabel">Url</label>
+            <input type="text" name="url" id="feedUrl" placeholder="URL" data-l10n-id="feedUrl" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <fieldset class="inline text">
+          <p>
+            <label for="feedTitle" data-l10n-id="feedTitleLabel"></label>
+            <input type="text" name="title" id="feedTitle" placeholder="Titre" data-l10n-id="feedTitle" />
+            <button type="reset"><span class="icon-remove"></span></button>
+          </p>
+        </fieldset>
+        <fieldset class="inline check compact">
+          <p>
+            <label for="feedShort" data-l10n-id="feedShort"></label>
+            <input type="checkbox" id="feedShort" name="feedShort">
+          </p>
+        </fieldset>
+        <p class="col2">
+          <button data-object="feeds" data-method="save" data-l10n-id="feedSave">Save</button>
+          <button data-object="tiles" data-method="back" data-l10n-id="cancel">Cancel</button>
+        </p>
+        <p class="col">
+          <button data-object="feeds" data-method="test" data-l10n-id="feedTest">Test</button>
+        </p>
+      </form>
+    </section>
+    <!-- }} -->
+    <!-- feedShow {{ -->
+    <section data-tile="feedShow" id="feedDetail">
+    </section>
+    <div id="tooltip"></div>
+    <div id="pointer"></div>
+    <div id="help">
+      <div class="content"></div>
+      <div class="toolbar">
+        <a class="icon-chevron-left prev" href="javascript:"></a>
+        <a class="icon-remove close" href="javascript:"></a>
+        <a class="icon-chevron-right next" href="javascript:"></a>
+      </div>
+    </div>
+    <!-- }} -->
+    <!-- imgShow {{ -->
+    <section data-tile="imgShow" id="imgShow">
+      <header>
+        <h2>
+          <a class="icon-chevron-left" data-object="tiles" data-method="back" href="javascript:"></a>
+          <span></span>
+        </h2>
+      </header>
+      <div>
+        <div class="img">
+          <img />
+        </div>
+        <p class="title"></p>
+      </div>
+    </section>
+    <!-- }} -->
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" src="lib/build.js"></script>
+    <script type="text/javascript" src="js/alir.js"></script>
+  </body>
+</html>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

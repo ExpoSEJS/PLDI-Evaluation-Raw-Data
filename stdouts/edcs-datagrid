@@ -1,0 +1,102 @@
+/root/Targets/edcs-datagrid
+└─┬ edcs-datagrid@1.0.0 
+  ├─┬ edcs-history@1.0.0 
+  │ └── edcs-has@1.0.0 
+  ├── edcs-pagination@1.0.0 
+  ├── edcs-searchbar@1.0.0 
+  ├── edcs-url@1.0.1 
+  ├─┬ handlebars@3.0.3 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ ├─┬ source-map@0.1.43 
+  │ │ └── amdefine@1.0.1 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └── optimist@0.3.7 
+  └─┬ superagent@1.8.5 
+    ├── component-emitter@1.2.1 
+    ├── cookiejar@2.0.6 
+    ├─┬ debug@2.6.8 
+    │ └── ms@2.0.0 
+    ├── extend@3.0.0 
+    ├─┬ form-data@1.0.0-rc3 
+    │ ├── async@1.5.2 
+    │ ├─┬ combined-stream@1.0.5 
+    │ │ └── delayed-stream@1.0.0 
+    │ └─┬ mime-types@2.1.17 
+    │   └── mime-db@1.30.0 
+    ├── formidable@1.0.17 
+    ├── methods@1.1.2 
+    ├── mime@1.3.4 
+    ├── qs@2.3.3 
+    ├─┬ readable-stream@1.0.27-1 
+    │ ├── core-util-is@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ ├── isarray@0.0.1 
+    │ └── string_decoder@0.10.31 
+    └── reduce-component@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/edcs-datagrid/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0447 took 6.3373s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <div class="pagination">
+    <ul>
+        {{#notFirst}}
+            <li class="page-first">
+                <a href="{{ pages.first.href }}" data-page="{{ pages.first.page }}">&laquo;</a>
+            </li>
+            <li class="page-prev">
+                <a href="{{ pages.prev.href }}" data-page="{{ pages.prev.page }}">&lt;</a>
+            </li>
+        {{/notFirst}}
+        <li>
+            <ul>
+                {{#pages}}
+                    <li>
+                        {{#if current}}
+                            <a href="{{ href }}" class="current" data-page="{{ page }}">{{ page }}</a>
+                        {{else}}
+                            <a href="{{ href }}" data-page="{{ page }}">{{ page }}</a>
+                        {{/if}}
+                    </li>
+                {{/pages}}
+            </ul>
+        </li>
+        {{#notLast}}
+            <li class="page-next">
+                <a href="{{ pages.next.href }}" data-page="{{ pages.next.page }}">&gt;</a>
+            </li>
+            <li class="page-last">
+                <a href="{{ pages.last.href }}" data-page="{{ pages.last.page }}">&raquo;</a>
+            </li>
+        {{/notLast}}
+    </ul>
+</div>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/edcs-datagrid/node_modules/edcs-datagrid/src/datagrid.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/edcs-datagrid/node_modules/edcs-pagination/src/pagination.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

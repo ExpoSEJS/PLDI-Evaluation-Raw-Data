@@ -1,0 +1,133 @@
+/root/Targets/acos-kelmu-editor
+└─┬ acos-kelmu-editor@0.1.0 
+  └── acos-kelmu@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/acos-kelmu-editor/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0318 took 3.3321s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (28:89) on program var fs = require('fs');
+var htmlencode = require('htmlencode').htmlEncode;
+
+var KelmuEditor = function() {};
+
+KelmuEditor.register = function(handlers, app, config) {
+
+  handlers.tools['kelmu-editor'] = KelmuEditor;
+
+  var supportedContentTypes = ['jsvee'];
+
+  app.get('/kelmu-editor', function(req, res) {
+    res.set('Content-Type', 'text/html');
+    fs.readFile(__dirname + '/editor.html', function(err, data) {
+      if (!err) {
+
+        var headContent = '';
+        var bodyContent = '';
+
+        var editorScript = '<link href="/static/kelmu-editor/jquery-ui/jquery-ui.min.css" rel="stylesheet">' +
+          //'<script src="/static/kelmu-editor/jquery.min.js"></script>' +
+          '<script src="/static/kelmu-editor/jquery-ui/jquery-ui.min.js"></script>' +
+          '<script src="/static/kelmu/kelmu.editor.js" type="text/javascript"></script>';
+
+        supportedContentTypes.forEach(function(contentType) {
+          if (handlers.contentTypes[contentType]) {
+            bodyContent += '<div><form method="GET" action="#"><select name="content" onchange="this.form.submit()"><option></option>';
+            handlers.contentTypes[contentType].installedContentPackages.forEach(function(package) {
+              Object.keys(package.meta.contents).forEach(function(contentElement) {
+
+                var path = [htmlencode(contentType), htmlencode(package.namespace), htmlencode(contentElement)];
+                var selected = req.query.content === path.join('|') ? ' selected' : '';
+                bodyContent += '<option value="' + path.join('|') + '"' + selected + '>' + path.join(' - ') + '</option>';
+
+              });
+            });
+            bodyContent += '<select></form></div>';
+          }
+        });
+
+        if (req.query.content) {
+          var selected = req.query.content.split('|');
+          if (selected.length === 3 && handlers.contentTypes[selected[0]] && handlers.contentPackages[selected[1]] && handlers.contentPackages[selected[1]].meta.contents[selected[2]]) {
+
+            var reqParams = {
+              params: {
+                protocol: 'html',
+                contentType: selected[0],
+                contentPackage: selected[1],
+                name: selected[2]
+              },
+              query: {
+                kelmuId: selected[2],
+                useKelmu: 1
+              }
+            };
+
+            var params = {
+              'name': selected[2],
+              'headContent': '',
+              'bodyContent': ''
+            };
+
+            bodyContent += '<p>After the annotations are ready, export the definitions and save it to a file with extension <code>.jsonp</code> and put the file online.</p>';
+            bodyContent += '<p>Use the URL such as <code>' + htmlencode(config.serverAddress + 'html/' + selected.join('/')) + '?kelmuUrl=http://pathtothedefinition/example.jsonp</code> to launch the animation with the annotations.</p><hr>';
+
+            handlers.protocols.html.initialize(reqParams, params, handlers, function() {
+              data = data.toString().replace('<headcontent>', headContent + params.headContent + editorScript).replace('<bodycontent>', bodyContent + params.bodyContent);
+              res.send(data);
+            });
+          } else {
+            data = data.toString().replace('<headcontent>', headContent).replace('<bodycontent>', bodyContent);
+            res.send(data);
+          }
+        } else {
+          data = data.toString().replace('<headcontent>', headContent).replace('<bodycontent>', bodyContent);
+          res.send(data);
+        }
+
+      } else {
+        res.send("Error");
+      }
+    });
+  });
+
+};
+
+KelmuEditor.namespace = 'kelmu-editor';
+KelmuEditor.packageType = 'tool';
+
+KelmuEditor.meta = {
+  'name': 'kelmu-editor',
+  'shortDescription': 'Tool for using Kelmu annotation editor.',
+  'description': '',
+  'author': 'Teemu Sirkiä',
+  'license': 'MIT',
+  'version': '0.1.0',
+  'url': ''
+};
+
+module.exports = KelmuEditor;
+ at SyntaxError: The keyword 'package' is reserved (28:89)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

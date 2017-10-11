@@ -1,0 +1,63 @@
+/root/Targets/mol-milo
+└─┬ mol-milo@0.2.3 
+  ├─┬ base32@0.0.6  (git://github.com/milojs/base32-js.git#22696eca3b657a879450455e7637f069d472d313)
+  │ └─┬ optimist@0.6.1 
+  │   ├── minimist@0.0.10 
+  │   └── wordwrap@0.0.3 
+  └─┬ milo-core@0.1.19 
+    ├── dot@1.1.2 
+    └── mol-proto@0.1.15 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mol-milo/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 39% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Error","call","getOwnPropertyNames","getOwnPropertyDescriptor","defineProperties","create","apply","isArray","join","RegExp","TypeError","stringify","bind","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0687 took 21.6856s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mol-milo/node_modules/mol-milo/lib/milo.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/milo-core.js. Coverage (Term): 51% Coverage (LOC): 58%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto.js. Coverage (Term): 93% Coverage (LOC): 93%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/utils.js. Coverage (Term): 56% Coverage (LOC): 63%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_prototype.js. Coverage (Term): 78% Coverage (LOC): 90%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_object.js. Coverage (Term): 43% Coverage (LOC): 58%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_function.js. Coverage (Term): 10% Coverage (LOC): 26%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_util.js. Coverage (Term): 19% Coverage (LOC): 53%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_array.js. Coverage (Term): 32% Coverage (LOC): 51%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_string.js. Coverage (Term): 15% Coverage (LOC): 38%
+*- File /root/Targets/mol-milo/node_modules/mol-proto/lib/proto_number.js. Coverage (Term): 59% Coverage (LOC): 86%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/minder.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/connector.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/messenger/index.js. Coverage (Term): 16% Coverage (LOC): 35%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/abstract/mixin.js. Coverage (Term): 42% Coverage (LOC): 54%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/util/check.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/config.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/messenger/m_source.js. Coverage (Term): 33% Coverage (LOC): 54%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/messenger/m_api.js. Coverage (Term): 22% Coverage (LOC): 41%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/util/logger.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/util/logger_class.js. Coverage (Term): 41% Coverage (LOC): 64%
+*- File eval. Coverage (Term): 57% Coverage (LOC): 75%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/path_utils.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/util/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/mol-milo/node_modules/dot/index.js. Coverage (Term): 8% Coverage (LOC): 17%
+*- File /root/Targets/mol-milo/node_modules/dot/doT.js. Coverage (Term): 23% Coverage (LOC): 44%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/classes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/messenger/msngr_source.js. Coverage (Term): 50% Coverage (LOC): 59%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/messenger/m_api_rx.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/m_path.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/synthesize/index.js. Coverage (Term): 29% Coverage (LOC): 30%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/model_utils.js. Coverage (Term): 45% Coverage (LOC): 86%
+*- File /root/Targets/mol-milo/node_modules/milo-core/lib/model/change_data.js. Coverage (Term): 12% Coverage (LOC): 23%
+*- File evalIndirect. Coverage (Term): 16% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

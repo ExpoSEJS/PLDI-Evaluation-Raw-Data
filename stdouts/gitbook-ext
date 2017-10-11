@@ -1,0 +1,213 @@
+/root/Targets/gitbook-ext
+└─┬ gitbook-ext@0.2.6 
+  ├── commander@2.11.0 
+  ├── fs@0.0.2 
+  ├─┬ path@0.12.7 
+  │ ├── process@0.11.10 
+  │ └─┬ util@0.10.3 
+  │   └── inherits@2.0.1 
+  └─┬ user-home@2.0.0 
+    └── os-homedir@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gitbook-ext/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0793 took 3.6263s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+
+var path = require("path");
+var userHome = require("user-home");
+var fs = require('fs');
+var program = require('commander');
+
+var CONFIG_ROOT = path.resolve(userHome, ".gitbook");
+var VERSIONS_ROOT = path.resolve(CONFIG_ROOT, "versions");
+var WORKSPACE_ROOT = process.mainModule.filename.split("gitbook-ext")[0] + "gitbook-ext/";
+
+var pak = require("../package.json");
+
+
+function getVersions(path, callback) {
+    fs.readdir(path, function(err, files) {
+        if (err) {
+            console.log('read dir error');
+            return;
+        }
+        files.forEach(function(item) {
+            var tmpPath = path + '/' + item;
+            fs.stat(tmpPath, function(err1, stats) {
+                if (err1) {
+                    console.log('stat error');
+                    return;
+                }
+                if (stats.isDirectory()) {
+                    //rewriteTpl(tmpPath);
+                    //versions.push(tmpPath);
+                    //console.log(tmpPath);
+                    callback(tmpPath);
+                }
+            });
+        });
+
+    });
+}
+
+
+/*
+ * 复制目录中的所有文件包括子目录
+ * @param{ String } 需要复制的目录
+ * @param{ String } 复制到指定的目录
+ */
+function copy(src, dst) {
+    // 读取目录中的所有文件/目录
+    fs.readdir(src, function(err, paths) {
+        if (err) {
+            throw err;
+        }
+        paths.forEach(function(path) {
+            var _src = src + '/' + path,
+                _dst = dst + '/' + path,
+                readable, writable;
+            fs.stat(_src, function(err, st) {
+                if (err) {
+                    throw err;
+                }
+                // 判断是否为文件
+                if (st.isFile()) {
+                    // 创建读取流
+                    readable = fs.createReadStream(_src);
+                    // 创建写入流
+                    writable = fs.createWriteStream(_dst);
+                    // 通过管道来传输流
+                    readable.pipe(writable);
+                }
+                // 如果是目录则递归调用自身
+                else if (st.isDirectory()) {
+                    exists(_src, _dst, copy);
+                }
+            });
+        });
+    });
+}
+
+
+
+// 在复制目录前需要判断该目录是否存在，不存在需要先创建目录
+function exists(src, dst, callback) {
+    fs.exists(dst, function(exists) {
+        // 已存在
+        if (exists) {
+            callback(src, dst);
+        } else {
+            fs.mkdir(dst, function() {
+                callback(src, dst);
+            });
+        }
+    });
+}
+
+//改变模板
+function onChange(theme) {
+    console.log(theme);
+    getVersions(VERSIONS_ROOT, function(path) {
+        console.log(path);
+        // 复制目录
+        exists(WORKSPACE_ROOT + theme, path + "/theme", copy);
+    });
+}
+
+
+function writeFile(path, data, callback) {
+    console.log(path);
+    fs.exists(path, function(exists) {
+
+        if (!exists) {
+            fs.writeFile(path, data, {
+                flag: 'a'
+            }, function(err) {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                if (typeof callback === 'function') {
+                    callback();
+                    console.log("create [" + path + "] success");
+                }
+
+            });
+        }
+    });
+}
+
+function initialize() {
+    var path = process.cwd();
+    writeFile(path + '/README.md', "# Introduction");
+    writeFile(path + '/SUMMARY.md', "# Summary");
+    writeFile(path + '/book.json',
+        '{\n' +
+        '\t"variables": {\n' +
+        '\t\t"title": "前端工程师文档",\n' +
+        '\t\t"theme": "theme-gray",\n' +
+        '\t\t"copyright": "Copyright 2015 f2edocs.com"\n' +
+        '\t},\n' +
+        '\t"collapsible_menu":true,\n' +
+        '\t"level_number":false,\n' +
+        '\t"links": {\n' +
+        '\t\t"gitbook": false,\n' +
+        '\t\t"sharing": {\n' +
+        '\t\t\t"all":false,\n' +
+        '\t\t\t"vk": false,\n' +
+        '\t\t\t"facebook": true,\n' +
+        '\t\t\t"twitter": true,\n' +
+        '\t\t\t"google": true,\n' +
+        '\t\t\t"weibo": true\n' +
+        '\t\t}\n' +
+        '\t}\n' +
+        '}');
+    console.log("initialize finish");
+}
+
+
+program
+    .version(pak.version)
+    .option('-d, --default', 'default template')
+    .option('-p, --pagurian', 'pagurian template')
+    .option('-i, --initialize', 'initialize book')
+    .parse(process.argv);
+
+if (program.default) {
+    onChange("theme-default");
+}
+
+if (program.pagurian) {
+    onChange("theme-pagurian");
+}
+
+if (program.initialize) {
+    initialize();
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

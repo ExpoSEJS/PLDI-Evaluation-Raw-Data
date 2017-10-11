@@ -1,0 +1,847 @@
+/root/Targets/crudlang
+└─┬ crudlang@0.1.1 
+  ├── ejs@2.5.7 
+  ├─┬ express@4.15.5 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.0.6 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.6 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.6 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.2 
+  ├─┬ express-session@1.15.6 
+  │ ├── crc@3.4.4 
+  │ ├── on-headers@1.0.1 
+  │ ├─┬ uid-safe@2.1.5 
+  │ │ └── random-bytes@1.0.0 
+  │ └── utils-merge@1.0.1 
+  ├─┬ mongodb@2.2.31 
+  │ ├── es6-promise@3.2.1 
+  │ ├─┬ mongodb-core@2.1.15 
+  │ │ ├── bson@1.0.4 
+  │ │ └─┬ require_optional@1.0.1 
+  │ │   ├── resolve-from@2.0.0 
+  │ │   └── semver@5.4.1 
+  │ └─┬ readable-stream@2.2.7 
+  │   ├── buffer-shims@1.0.0 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── string_decoder@1.0.3 
+  │   └── util-deprecate@1.0.2 
+  ├─┬ mysql@2.14.1 
+  │ ├── bignumber.js@4.0.2 
+  │ ├── readable-stream@2.3.3 
+  │ ├── safe-buffer@5.1.1 
+  │ └── sqlstring@2.2.0 
+  └─┬ serve-index@1.9.0 
+    ├── batch@0.6.1 
+    ├── debug@2.6.8 
+    ├── http-errors@1.6.2 
+    └─┬ mime-types@2.1.17 
+      └── mime-db@1.30.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/crudlang/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0915 took 2.7307s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/local/bin/node
+
+// required modules
+var express = require('express');
+var session = require('express-session');
+var directory = require('serve-index');
+var ejs = require('ejs');
+var fs = require('fs');
+var querystring = require('querystring');
+var mysql = require('mysql');
+var mongo = require('mongodb').MongoClient;
+var crypto = require('crypto');
+var urlparser = require('url');
+var lib = require("./ui/lib");
+
+// define constants
+var applicationName = "crudlang";
+var configFilename = "config.json";
+var configFolders = [".", userhome()+"/"+applicationName, "/etc/"+applicationName];
+var defaultMimetypeFile = "/etc/mime.types";
+var textType = "text/plain";
+var htmlType = "text/html";
+var jsonType = "application/json";
+var formType = "application/x-www-form-urlencoded";
+var indexFiles = ["index.html", "index.htm", "index.xhtml", "index.txt", "index.ejs"];
+
+// global variables
+var config = null;
+var templateCache = {};
+var app = express();
+var router = express.Router();
+var permissionField = "__"+lib.editable(crypto.randomBytes(10))+"__";
+var permissions = null;
+var mimetypes = null;
+var mimeExtensions = null;
+
+// initialize and start the server
+app.use(session({
+   secret: lib.editable(crypto.randomBytes(10)),
+   resave: false,
+   saveUninitialized: false
+}));
+router.all("/*", initRequest);
+if (loadConfig()) {
+   app.use(router);
+   app.listen(config.listen, function() {
+      console.log(applicationName+' application started on port '+config.listen);
+   });
+}
+
+// log request and read post data if sent
+function initRequest(req, res, next) {
+   //TODO: add to a persistent logger if set in config object
+   console.log(new Date().toISOString()+" "+req.client.remoteAddress+":"+req.client.remotePort+" "+req.url);
+   if (!validatePermissions(req)) {
+      var status = 403;
+      var message = status+" Forbidden\n";
+      res.writeHead(status, {
+         "Content-Length": message.length,
+         "Content-Type": "text/plain"
+      });
+      return res.end(message);
+   }
+   //TODO: we should check if req.path ends with /@context in which case we have to give metadata of this url
+   req.on('data', function(chunk) {
+      //TODO: if data size is larger than a certain amount, save it to a temporary file
+      if (req.data == null)
+         req.data = [];
+      req.data.push(chunk);
+   });
+   req.on('end', function() {
+      if (req.data instanceof Array)
+         req.data = Buffer.concat(req.data);
+      if (req.data != null) {
+         var type = req.headers["content-type"];
+         if (type == null)
+            type = formType;
+         var charset = "utf8";
+         var i = type.indexOf(';');
+         if (i > 0) {
+            charset = type.substring(i+1).split("=")[1].trim();
+            type = type.substring(0, i).trim();
+         }
+         switch (type) {
+            case formType:
+               lib.addFields(req.query, querystring.parse(req.data.toString(charset)));
+               break;
+            case jsonType:
+               lib.addFields(req.query, JSON.parse(req.data.toString(charset)));
+               break;
+            //TODO: we could have a sparql query that would be relayed to a sparql interpreter layer
+            default:
+               lib.addFields(req.query, {data:req.data.toString(charset)});
+         }
+      }
+      next();
+   });
+}
+
+// get the mimetype of the given filename
+function getMimetype(filename) {
+   var original = filename;
+   if (filename != null) {
+      while (filename.charAt(filename.length-1) == '/')
+         filename = filename.substring(0, filename.length-1);
+      var i = filename.lastIndexOf('/');
+      if (i >= 0)
+         filename = filename.substring(i+1);
+      i = filename.lastIndexOf('.');
+      if (i > 0) {
+         var extension = filename.substring(i+1).toLowerCase();
+         if (mimeExtensions == null) {
+            mimeExtensions = {};
+            mimetypes = {};
+            loadMimetypes(config.mimetypes || defaultMimetypeFile);
+         }
+         var type = mimeExtensions[extension];
+         if (type != null)
+            return type.mimetype;
+      }
+      //TODO: check if file is directory or test magic bytes if file exists
+   }
+   return textType;
+}
+
+// load mimetypes configuration from the typedef parameter
+function loadMimetypes(typesdef) {
+   if (typesdef == null)
+      ;
+   else if (typesdef instanceof Array) {
+      for (var t in typesdef)
+         loadMimetypes(typesdef[t]);
+   }
+   else if (typeof(typesdef) == "object") {
+      if (typesdef.mimetype != null) {
+         if (typesdef.extensions == null)
+            typesdef.extensions = [];
+         else if (!(typesdef.extensions instanceof Array))
+            typesdef.extensions = typesdef.extensions.toString().split(",");
+         mimetypes[typesdef.mimetype] = typesdef;
+         for (var e in typesdef.extensions)
+            mimeExtensions[typesdef.extensions[e]] = typesdef;
+      }
+      else {
+         for (var t in typesdef)
+            loadMimetypes({mimetype:t, extensions:typesdef[i]});
+      }
+   }
+   else {
+      var lines = fs.readFileSync(typesdef.toString(), {encoding:'utf8'}).split("\n");
+      for (var i in lines) {
+         var words = lib.parseWords(lines[i].split('#')[0]);
+         if (words.length > 0)
+            loadMimetypes({mimetype:words[0], extensions:words.slice(1)});
+      }
+   }
+}
+
+// function that reads several config files and merges the parameters in the returned object
+function readConfigFiles() {
+   config = {}
+   for (var f in configFolders) {
+      try {
+         var file = configFolders[f] + "/" + configFilename;
+         var obj = lib.object(JSON.parse(fs.readFileSync(file, {encoding:'utf8'})));
+         var props = [];
+         for (var i in obj) {
+            config[i] = obj[i];
+            props.push(i);
+         }
+         var msg = props.length+" properties loaded = "+props;
+      }
+      catch (e) { var msg = e; }
+      console.log("Configuration file "+file+": "+msg);
+   }
+}
+
+// function to load and validate the configuration
+function loadConfig() {
+   readConfigFiles();
+   var errors = initPermissions();
+   config.paths = setupConfigPaths(router, config.paths, errors);
+   if (typeof(config.listen) != "number")
+      errors.push("Invalid listening port: "+config.listen);
+   if (errors.length > 0) {
+      console.log(errors.join("\n"));
+      return false;
+   }
+   else
+      return true;
+}
+
+// function to initialize permissions object by reading users and groups config
+function initPermissions() {
+   var errors = [];
+   if (permissions == null) {
+      permissions = {paths:{}, users:{}, groups:{}};
+      var users = lib.array(config.users, "username");
+      for (var u in users) {
+         var user = users[u];
+         if (user == null || !user.username)
+            errors.push("Empty username from users definition #"+(u+1)+": "+JSON.stringify(user));
+         else if (permissions.users[user.username])
+            errors.push("Duplicate user named "+user.username);
+         else
+            permissions.users[user.username] = user;
+      }
+      
+      var groups = lib.array(config.groups);
+      for (var g in groups) {
+         var group = groups[g];
+         if (!group)
+            errors.push("Empty group from groups definition #"+(g+1)+": "+group);
+         else if (typeof(group) != "object")
+            errors.push("Invalid group from groups definition #"+(g+1)+": "+group);
+         else {
+            var name = null;
+            for (var i in group) {
+               if (name != null)
+                  errors.push("Multiple group properties from groups definition #"+(g+1)+": "+JSON.stringify(group));
+               else
+                  name = i;
+            }
+            if (name == null)
+               errors.push("No properties from groups definition #"+(g+1)+": "+JSON.stringify(group));
+            else if (permissions.groups[name])
+               errors.push("Duplicate group named "+name);
+            else
+               permissions.groups[name] = lib.array(group[name]);
+         }
+      }
+   }
+   return errors;
+}
+
+// add security for a given path                  
+function setPathPermissions(path, cfg) {
+   var u = lib.join(cfg.users, cfg.user);
+   var g = lib.join(cfg.groups, cfg.group);
+   if (u.length == 0 && g.length == 0)
+      return;
+   while (path.charAt(0) == '/')
+      path = path.substring(1); 
+   var parts = path.split('*')[0].split('/');
+   var perms = permissions.paths;
+   for (var p = 0; p < parts.length; p++) {
+      var part = parts[p];
+      var perm = perms[part];
+      if (perm == null)
+         perm = perms[part] = {};
+      perms = perm;
+   }
+   perms[permissionField] = {users:u, groups:g};
+}
+
+// get the security object for a given path
+function getPathPermissions(path) {
+   while (path.charAt(0) == '/')
+      path = path.substring(1); 
+   var parts = path.split('*')[0].split('/');
+   var perms = permissions.paths;
+   for (var p = 0; p < parts.length; p++) {
+      var perm = perms[parts[p]];
+      if (perm == null)
+         break;
+      perms = perm;
+   }
+   return perms[permissionField] || {};
+}
+
+// validate if the current user is allowed to view the requested url
+function validatePermissions(req) {
+   var perms = getPathPermissions(req.path);
+   console.log(req.path+" has permissions "+JSON.stringify(perms));
+   if (perms.users || perms.groups) {
+      var s = req.session;
+      if (s.username == null)
+         return false;
+      else if (perms.users.indexOf(s.username) >= 0)
+         return true;
+      for (var g in perms.groups) {
+         var group = permissions.groups[perms.groups[g]];
+         if (group && group.indexOf(s.username) >= 0)
+            return true;
+      }
+      return false;
+   }
+   else
+      return true;
+}
+
+// configure the paths to the router based on the paths given
+function setupConfigPaths(router, paths, errors) {
+   if (paths == null)
+      paths = [{"/*": __dirname}];
+   else {
+      switch (typeof(paths)) {
+         case 'function':
+            return setConfigPaths(router, paths(router), errors);
+         case 'object':
+            if (!(paths instanceof Array))
+               paths = [paths];
+            break;
+         default:
+            paths = [{"/*": paths.toString()}];            
+      }
+   }
+
+   for (var p in paths) {
+      var obj = paths[p];
+      var path = null;
+      var value = null;
+      for (var i in obj) {
+         if (path != null) {
+            errors.push("Config path has more than one property: "+JSON.stringify(obj));
+            break;
+         }
+         path = i;
+         value = obj[i];
+      }
+      if (path == null) {
+         errors.push("Config path has no properties: "+JSON.stringify(obj));
+         continue;
+      }
+      else if (value == null) {
+         errors.push("Config path has null value: "+path);
+         continue;
+      }
+      else {
+         switch (typeof(value)) {
+            case 'string':
+               value = {"path": value};
+            case 'object':
+               if (value instanceof Array)
+                  value = lib.object(value);
+               if (value.path != null) {
+                  if (path.charAt(0) != '/')
+                     path = '/' + value.path;
+                  setPathPermissions(path, value);
+                  value = value.path;
+                  break;
+               }
+            default:
+               errors.push("Invalid real path for virtual path "+path);
+               continue;
+         }
+      }
+
+      var dp = value.indexOf(':');
+      if (dp > 0) {
+         var proto = value.substring(0, dp);
+         switch (proto) {
+             case 'mongodb':
+             case 'mysql':
+                router.all(path, setupRestService(path, value));
+                continue;
+             case 'javascript':
+             case 'js':
+                router.all(path, setupJavascriptCode(value.substring(dp+1)));
+                continue;
+             case 'file':
+                value = decodeURIComponent(value.substring(5));
+                break;
+             default:
+                errors.push("Unsupported uri scheme for path configuration: "+proto);
+                continue;
+         }
+      }
+
+      var stat = fs.statSync(value.split('*')[0]);
+      if (stat.isDirectory()) {
+         // all ejs files should be rendered with EJS template compiler
+         setupTemplate(router, path, value);
+         // deliver all files as static data
+         router.all(path, express.static(value, {
+            dotfiles: 'allow',
+            index: indexFiles
+         }));
+         // if a directory is requested, list its content
+         router.all(path, directory(value, {
+            icons: true,
+            hidden: true,
+            view: 'details'
+         }));
+      }
+      else if (stat.isFile())
+         router.all(path, setupStaticFile(value));
+      else
+         errors.push("Invalid file path: "+value);
+   }
+   return paths;
+}
+
+// setup function to return specific static file
+function setupStaticFile(filename) {
+   return function(req, res) {
+      res.contentType(getMimetype(filename));
+      res.end(fs.readFileSync(filename));
+   };
+}
+
+// setup function to execute custom javascript code
+function setupJavascriptCode(code) {
+   return function(request, response) {
+      try { 
+         result = eval(code);
+         if (result == null)
+            return result;
+         else if (typeof(result) == "string" && result.trim().charAt(0) == '<')
+            response.contentType(htmlType);
+         else {
+            result = JSON.print(result);
+            response.contentType(jsonType);
+         }
+      }
+      catch (e) { 
+         result = "\n<pre>\n"+e.stack+"\n</pre>\n"; 
+         response.contentType(htmlType);
+      }
+      response.end(result);
+   };
+}
+
+// setup function to render EJS templates
+function setupTemplate(router, path, basefile) {
+   while (path.charAt(path.length-1) == '*')
+      path = path.substring(0, path.length-1);
+   if (path.charAt(path.length-1) != '/')
+      path += '/';
+   router.all(path+"*.ejs", function(req, res) {
+      var filename = basefile + req.path;
+      var tmp = templateCache[filename];
+      if (tmp == null || tmp.timestamp <= fs.lstatSync(filename).mtime.getTime()) {
+         tmp = templateCache[filename] = {
+            filename: filename,
+            func: ejs.compile(fs.readFileSync(filename, {encoding:'utf8'})),
+            timestamp: new Date().getTime()
+         };
+      }
+      var html = tmp.func({request:req, extractFields:lib.extractFields});
+      res.contentType(htmlType);
+      res.end(html);
+   });
+}
+
+// function to deliver database REST data
+function setupRestService(path, dburl) {
+   path = path.replace('*', '');
+   return function(req, res) {
+      var datapath = req.path.substring(path.length);
+      if (datapath.charAt(0) == '/')
+         datapath = datapath.substring(1);
+      if (datapath.charAt(datapath.length-1) == '/')
+         datapath = datapath.substring(0, datapath.length-1);
+      var parts = datapath ? datapath.split('/') : [];
+      return databaseQuery(dburl, parts, req.query, res);
+   };
+}
+
+// generic function to execute database query 
+function databaseQuery(dburl, path, query, res) {
+   if (!dburl) {
+      var json = JSON.print({path:path.join('.'), query:query});
+      res.contentType(jsonType);
+      return res.end(json);
+   }
+
+   var urlparts = urlparser.parse(dburl);
+   var protocol = urlparts.protocol.replace(':','');
+   if (urlparts.pathname == null)
+      dburl += (urlparts.pathname = "/");
+   if (urlparts.pathname == "/" && path.length > 0)
+      dburl += path[0];
+   switch (protocol) {
+      case "mongodb":
+         return mongoQuery(dburl, urlparts, path, query, res);
+      case "mysql":
+         return mysqlQuery(dburl, urlparts, path, query, res);
+      default:
+         throw new Error("Unknown database provider: "+protocol);
+   }
+}
+
+// query MongoDB database
+function mongoQuery(dburl, urlparts, path, query, response) {
+   mongo.connect(dburl, function(err, db) {
+      if (err) throw new Error(err);
+      switch (path.length) {
+         case 0: // return all databases
+            return db.admin().listDatabases(function(err, dbs) {
+               if (err) throw new Error(err);
+               var names = [];
+               for (var d in dbs.databases)
+                  names.push(dbs.databases[d].name);
+               response.contentType(jsonType);
+               response.end(JSON.print(names));
+               db.close();
+            });
+         case 1: // return all collections from this database
+            return db.collections(function(err, colls) {
+               if (err) throw new Error(err);
+               var names = [];
+               for (var c in colls)
+                  names.push(colls[c].collectionName);
+               response.contentType(jsonType);
+               response.end(JSON.print(names));
+               db.close();
+            });
+         case 2: // query the addressed collection
+            return db.collection(path[1]).find(lib.normalize(query||{})).toArray(function(err, docs) {
+               if (err) throw new Error(err);
+               response.contentType(jsonType);
+               response.end(JSON.print(docs));
+               db.close();
+            });
+         case 3: // return addressed document if empty query otherwise update document
+         default: // if more than 3 parts, it must be a sub element of the addressed document
+            if (lib.empty(query)) {
+               db.collection(path[1]).findOne({_id:lib.normalize(path[2])}, function(err, doc) {
+                  if (err) throw new Error(err);
+                  response.contentType(jsonType);
+                  response.end(JSON.print(doc));
+                  db.close();
+               });
+            }
+            else {
+               db.collection(path[1]).findOneAndUpdate({_id:lib.normalize(path[2])}, {$set:lib.normalize(query)}, function(err, res) {
+                  if (err) throw new Error(err);
+                  response.contentType(jsonType);
+                  response.end(JSON.print(res));
+                  db.close();
+               });
+            }
+      }
+   });
+}
+
+// query MySQL database
+function mysqlQuery(dburl, urlparts, path, query, response) {
+   var auth = urlparts.auth ? urlparts.auth.split(':') : [];
+   var infos = {
+     host     : urlparts.hostname || 'localhost',
+     user     : auth[0] || "root",
+     password : auth[1] || "",
+     database : path[0] || (urlparts.pathname+"").split("/")[1] || "mysql"
+   };
+   if (urlparts.port)
+      infos.port = urlparts.port;
+
+   var connection = mysql.createConnection(infos);
+   connection.connect(function(err,callback){
+      if (err) throw new Error(err);
+      var table = path[1];
+      var id = lib.normalize(path[2]);
+      switch (path.length) {
+         case 0:
+            return executeQuery(connection, "show databases", singleFieldResult(response, connection));
+         case 1:
+            return executeQuery(connection, "show tables", singleFieldResult(response, connection));
+         case 2:
+            return executeQuery(connection, json2select(table, query), queryResult(response, connection));
+         case 3:
+         default: // we should query further down the result but it will be ignored for now
+            if (lib.empty(query))
+               return executeQuery(connection, json2select(table, {id:id}), queryResult(response, connection));
+            else if (lib.empty(id))
+               return executeQuery(connection, json2insert(table, query), updateResult(response, connection));
+            else
+               return executeQuery(connection, json2update(table, query, {id:id}), updateResult(response, connection));
+      }
+   });
+}
+
+function executeQuery(connection, sql, callback) {
+   console.log("EXECUTING SQL: "+sql);
+   return connection.query(sql, callback);
+}
+
+function json2where(obj, joinop) {
+   if (lib.empty(obj))
+      return "";
+   else if (obj instanceof Array) {
+      var dst = [];
+      if (joinop) {
+         var op = joinop;
+         var start = "";
+         var open = "(";
+         var close = ")";
+      }
+      else {
+         var op = " and ";
+         var start = " where ";
+         var open = "";
+         var close = "";
+      }
+      var nextop = (op.trim() == "and") ? " or " : " and ";
+      for (var i in obj) {
+         var exp = json2where(obj[i], nextop);
+         if (!lib.empty(exp))
+            dst.push(exp);
+      }
+      return start + open + dst.join(close+op+open) + close;
+   }
+   
+   var sql = "";
+   for (var i in obj) {
+      if (sql != "")
+         sql += " and ";
+      sql += i + sqlvalue(obj[i]);
+   }
+   return (sql == "") ? "" : " where "+sql;
+}
+
+function json2select(table, clauses) {
+   return "select * from "+table+json2where(clauses);
+}
+
+function json2insert(table, values) {
+   var fields = [];
+   var data = [];
+   for (var i in values) {
+      fields.push(i);
+      data.push(sqlvalue(values[i], ""));
+   }
+   return "insert into "+table+"("+fields.join(", ")+") values ("+data.join(", ")+")";
+}
+
+function json2update(table, values, clauses) {
+   var lst = [];
+   for (var i in values)
+      lst.push(i+"="+sqlvalue(values[i], ""));
+   return "update "+table+" set "+lst.join(", ")+json2where(clauses);
+}
+
+function queryResult(response, connection) {
+   return function(err, rows, fields) {
+      if (err) throw new Error(err);
+      connection.end();
+      response.end(JSON.print(rows));
+   }
+}
+
+function singleFieldResult(response, connection) {
+   return function(err, rows, fields) {
+      if (err) throw new Error(err);
+      var field = fields[0].name;
+      var lst = [];
+      for (var r in rows)
+         lst.push(rows[r][field]);
+      connection.end();
+      response.end(JSON.print(lst));
+   }
+}
+
+function updateResult(response, connection) {
+   return function(err, rows, fields) {
+      connection.end();
+      response.end(JSON.print(rows));
+   }
+}
+
+function sqloperator(op, def) {
+   if (op == null)
+      return def||" = ";
+   var opdef = lib.operator(op);
+   return opdef ? opdef.sql : op;
+}
+
+function sqlvalue(value, op) {
+   if (value == null)
+      return sqloperator(op, " is ") + "null";
+   else {
+      switch (typeof(value)) {
+         case 'number':
+         case 'boolean':
+            return sqloperator(op) + value;
+         case 'string':
+            return sqloperator(op) + "'" + value.split("'").join("''") + "'";
+         case 'function':
+            return sqlvalue(value(), op);
+         default:
+            if (value instanceof Array) {
+               var lst = [];
+               for (var i in value)
+                  lst.push(sqlvalue(value[i], ""));
+               if (lst.length == 0)
+                  lst.push("null");
+               return sqloperator(op, " in ")+"("+lst.join(", ")+")";
+            }
+            else {
+               for (var i in value)                 
+                  return sqlvalue(value[i], i);
+               return sqloperator(op, " is ") + "null";
+            }
+      }
+   }
+}
+
+function notfound(req, res) {
+   res.contentType(textType);
+   res.end("Cannot "+req.method+" "+req.path+"\n");
+}
+// try to log a user from username and password sent into request
+function login(req) {
+   if (!req.session)
+      return false;
+   var username = req.query.username;
+   if (!username)
+      return false;
+   var user = permissions.users[username];
+   if (!user)
+      return false;
+   if (lib.crypt(req.query.password, user.salt) == user.password) {
+      req.session.username = username;
+      return true;
+   }
+   else
+      return false;
+}
+
+// logout the current user by destroying the session
+function logout(req) {
+   if (req.session) {
+      req.session.destroy();
+      return true;
+   }
+   else
+      return false;
+}
+
+// return requested data from the database of the current user 
+function userdata(dburl, basepath, req, res) {
+   if (!req.session || !req.session.username)
+      return [];
+   var path = req.session.username + req.path.substring(basepath.length);
+   if (path.charAt(path.length-1) == '/')
+      path = path.substring(0, path.length-1);
+   return databaseQuery(dburl, path.split("/"), req.query, res);
+}
+
+// return the server user home folder
+function userhome() {
+   return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

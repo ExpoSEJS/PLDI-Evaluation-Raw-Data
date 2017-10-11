@@ -1,0 +1,173 @@
+
+> dtrace-provider@0.8.5 install /root/Targets/restify/node_modules/dtrace-provider
+> node scripts/install.js
+
+/root/Targets/restify
+└─┬ restify@6.0.1 
+  ├── assert-plus@1.0.0 
+  ├─┬ bunyan@1.8.12 
+  │ ├── moment@2.18.1 
+  │ ├─┬ mv@2.1.1 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ ├── ncp@2.0.0 
+  │ │ └─┬ rimraf@2.4.5 
+  │ │   └─┬ glob@6.0.4 
+  │ │     ├── inflight@1.0.6 
+  │ │     ├─┬ minimatch@3.0.4 
+  │ │     │ └─┬ brace-expansion@1.1.8 
+  │ │     │   ├── balanced-match@1.0.0 
+  │ │     │   └── concat-map@0.0.1 
+  │ │     └── path-is-absolute@1.0.1 
+  │ └── safe-json-stringify@1.0.4 
+  ├─┬ clone-regexp@1.0.0 
+  │ ├── is-regexp@1.0.0 
+  │ └── is-supported-regexp-flag@1.0.0 
+  ├─┬ csv@1.1.1 
+  │ ├── csv-generate@1.0.0 
+  │ ├── csv-parse@1.2.3 
+  │ ├─┬ csv-stringify@1.0.4 
+  │ │ └── lodash.get@4.4.2 
+  │ └── stream-transform@0.1.2 
+  ├─┬ dtrace-provider@0.8.5 
+  │ └── nan@2.7.0 
+  ├── escape-regexp-component@1.0.2 
+  ├── ewma@2.0.1 
+  ├── formidable@1.1.1 
+  ├─┬ http-signature@1.2.0 
+  │ ├─┬ jsprim@1.4.1 
+  │ │ └── json-schema@0.2.3 
+  │ └─┬ sshpk@1.13.1 
+  │   ├── asn1@0.2.3 
+  │   ├── bcrypt-pbkdf@1.0.1 
+  │   ├── dashdash@1.14.1 
+  │   ├── ecc-jsbn@0.1.1 
+  │   ├── getpass@0.1.7 
+  │   ├── jsbn@0.1.1 
+  │   └── tweetnacl@0.14.5 
+  ├── lodash@4.17.4 
+  ├─┬ lru-cache@4.1.1 
+  │ ├── pseudomap@1.0.2 
+  │ └── yallist@2.1.2 
+  ├── mime@1.4.1 
+  ├── negotiator@0.6.1 
+  ├─┬ once@1.4.0 
+  │ └── wrappy@1.0.2 
+  ├── pidusage@1.1.6 
+  ├── qs@6.5.1 
+  ├── restify-errors@5.0.0 
+  ├── semver@5.4.1 
+  ├─┬ spdy@3.4.7 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── handle-thing@1.2.5 
+  │ ├── http-deceiver@1.2.7 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── select-hose@2.0.0 
+  │ └─┬ spdy-transport@2.0.20 
+  │   ├── detect-node@2.0.3 
+  │   ├─┬ hpack.js@2.1.6 
+  │   │ └── inherits@2.0.3 
+  │   ├── obuf@1.1.1 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └─┬ wbuf@1.7.2 
+  │     └── minimalistic-assert@1.0.0 
+  ├── uuid@3.1.0 
+  ├─┬ vasync@1.6.4 
+  │ └─┬ verror@1.6.0 
+  │   └── extsprintf@1.2.0 
+  └─┬ verror@1.10.0 
+    ├── core-util-is@1.0.2 
+    └── extsprintf@1.3.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/restify/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0557 took 6.2698s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (5:4) on program // Copyright 2012 Mark Cavage, Inc.  All rights reserved.
+
+'use strict';
+
+var assert = require('assert-plus');
+var errors = require('restify-errors');
+
+var bunyan = require('./bunyan_helper');
+var Router = require('./router');
+var Server = require('./server');
+var shallowCopy = require('./utils').shallowCopy;
+
+var InternalError = errors.InternalError;
+require('./errorTypes');
+
+/**
+ * creates a server.
+ * @public
+ * @function createServer
+ * @param    {Object} options an options object
+ * @returns  {Server}
+ */
+function createServer(options) {
+
+    assert.optionalObject(options, 'options');
+
+    var opts = shallowCopy(options || {});
+    var server;
+
+    // empty string should override default value.
+    opts.name = (opts.hasOwnProperty('name')) ? opts.name : 'restify';
+    opts.log = opts.log || bunyan.createLogger(opts.name || 'restify');
+    opts.router = opts.router || new Router(opts);
+
+    server = new Server(opts);
+
+    if (opts.handleUncaughtExceptions) {
+        server.on('uncaughtException', function (req, res, route, e) {
+            if (this.listeners('uncaughtException').length > 1 ||
+                res.headersSent) {
+                return (false);
+            }
+
+            res.send(new InternalError(e, e.message || 'unexpected error'));
+            return (true);
+        });
+    }
+
+    return (server);
+}
+
+
+///--- Exports
+
+module.exports.bunyan = bunyan;
+module.exports.createServer = createServer;
+module.exports.formatters = require('./formatters');
+module.exports.plugins = require('./plugins');
+module.exports.pre = require('./plugins').pre;
+ at SyntaxError: Unexpected token (5:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

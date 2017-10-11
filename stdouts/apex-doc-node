@@ -1,0 +1,41 @@
+/root/Targets/apex-doc-node
+└─┬ apex-doc-node@0.1.3 
+  ├── app-root-path@1.4.0 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── mustache@2.3.0 
+  └── ncp@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/apex-doc-node/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 26% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 26% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parse","startsWith","parseInt","toString","apply","bound ","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0505 took 6.6493s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: Error: ENOENT: no such file or directory, scandir 'test/data/'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 6.8033 took 7.4721s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/apex-doc-node.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/util/config.js. Coverage (Term): 60% Coverage (LOC): 61%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/util/polyfill.js. Coverage (Term): 27% Coverage (LOC): 43%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/main.js. Coverage (Term): 29% Coverage (LOC): 25%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/parser.js. Coverage (Term): 11% Coverage (LOC): 8%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/util/helper.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/models/ApexClass.js. Coverage (Term): 19% Coverage (LOC): 36%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/models/ApexEnum.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/models/ApexMethod.js. Coverage (Term): 30% Coverage (LOC): 52%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/models/ApexProperty.js. Coverage (Term): 25% Coverage (LOC): 33%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/output.js. Coverage (Term): 21% Coverage (LOC): 22%
+*- File /root/Targets/apex-doc-node/node_modules/mustache/mustache.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/apex-doc-node/node_modules/apex-doc-node/lib/report.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/apex-doc-node/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

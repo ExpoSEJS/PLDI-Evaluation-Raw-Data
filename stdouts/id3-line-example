@@ -1,0 +1,180 @@
+/root/Targets/id3-line-example
+├── UNMET PEER DEPENDENCY d3@^3.5.5
+├── id3-line-example@0.5.2 
+└── UNMET PEER DEPENDENCY react@^0.13.2
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/id3-line-example/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0722 took 8.7226s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (146:14) on program 
+
+var React  = require("react");
+var d3 = require("d3");
+require('./block.less');
+
+
+module.exports = React.createClass({displayName: "ExtendingArcs",
+  getDefaultProps: function() {
+    return {
+      width:750,
+      height:270,
+      colors:["#458de0","#5b9ae4","#71a8e7","#87b5eb","#9dc2ef","#b3d0f2","#c9ddf6"],
+      config:{
+        "xAxis":"column1",
+        "yAxis":"column2"
+      }
+      //add additional configurations here
+    };
+  },
+
+  componentDidMount: function(){
+  	var that = this;
+    
+    that.m = {top: 30, right: 20, bottom: 30, left: 50};
+    that.w = that.props.width - that.m.right - that.m.left;
+    that.h = that.props.height - that.m.top - that.m.bottom;
+
+    that.parseDate = d3.time.format("%d-%b-%y").parse;
+
+    that.x = d3.time.scale()
+        .range([0, that.w]);
+
+    that.y = d3.scale.linear()
+        .range([that.h, 0]);
+
+    that.xAxisConfig = this.props.config.xAxis;
+
+    that.yAxisConfig = this.props.config.yAxis;
+
+
+    that.xAxis = d3.svg.axis()
+        .scale(that.x)
+        .orient("bottom");
+
+    that.yAxis = d3.svg.axis()
+        .scale(that.y)
+        .orient("left");
+
+    that.xValue = function(d){return that.x(d[that.xAxisConfig]); };
+    that.yValue = function(d){return that.y(d[that.yAxisConfig]); };
+
+    that.line = d3.svg.line()
+        .interpolate("basis")
+        .x(that.xValue)
+        .y(that.yValue);
+
+    that.area = d3.svg.area()
+        .interpolate("basis")
+        .x(that.xValue)
+        .y(that.yValue);
+
+    that.svg = d3.select(this.getDOMNode()).append('svg')
+        .attr("width", that.props.width)
+        .attr("height", that.props.height)
+        .append("g")
+          .attr("transform", "translate(" + that.m.left + "," + that.m.top + ")");
+
+    that.brush = d3.svg.brush().x(that.x);
+
+    that.brush.on("brushend", this.onBrushSelect);
+
+    this.componentDidUpdate();
+
+  },
+
+  componentDidUpdate: function(){
+  	var that = this;
+
+    that.xAxisConfig = this.props.config.xAxis;
+    that.yAxisConfig = this.props.config.yAxis;
+
+
+    this.props.data.forEach(function(d){
+      d[that.xAxisConfig] = that.parseDate(d[that.xAxisConfig]);
+      d[that.yAxisConfig] = d[that.yAxisConfig];
+    });
+
+    that.x.domain(d3.extent(this.props.data, function(d){ return d[that.xAxisConfig];}));
+    that.y.domain(d3.extent(this.props.data, function(d){ return d[that.yAxisConfig];}));
+    
+
+    that.svg.selectAll('.axis').remove();
+    that.svg.selectAll('.line').remove();
+    that.svg.selectAll('.area').remove();
+
+    that.svg.append('g')
+      .attr('class', 'x axis')
+      .attr('transform', "translate(0," + that.h + ")")
+      .call(that.xAxis)
+      .append("text")
+        .attr("class", "label")
+        .attr("x", that.w)
+        .attr("y", -6)
+        .style("text-anchor", "end")
+        .text(that.xAxisConfig);
+
+    that.svg.append('g')
+      .attr('class', 'y axis')
+      .call(that.yAxis)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", "6")
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text(that.yAxisConfig);
+
+    that.svg.append("path")
+      .attr("class", "area")
+      .style({"fill": "#ccc"})
+      .datum(this.props.data)
+      .attr("d", that.area);
+
+    that.svg.append("path")
+      .attr("class", "line")
+        .datum(this.props.data)
+        .attr("d", that.line);
+
+    that.svg.append("g")
+      .attr("class","x brush")
+        .call(that.brush)
+        .selectAll("rect")
+        .attr("height", that.h)
+        .style({
+            "fill": "#69f",
+            "fill-opacity": "0.3"
+        });
+
+  },
+
+  onBrushSelect: function(){
+    this.props.onBrushSelect(this.brush.extent());
+  },
+
+  render: function() {
+     return ( <div className="ExtendingArcs"></div> ) ;
+  }
+ }); at SyntaxError: Unexpected token (146:14)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,131 @@
+/root/Targets/ibmiotf
+└─┬ ibmiotf@0.2.39 
+  ├─┬ axios@0.5.4 
+  │ └── es6-promise@2.3.0 
+  ├── bluebird@2.11.0 
+  ├── btoa@1.1.2 
+  ├─┬ concat-stream@1.6.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └── typedarray@0.0.6 
+  ├── events@1.1.1 
+  ├─┬ form-data@2.3.1 
+  │ ├── asynckit@0.4.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ └─┬ mime-types@2.1.17 
+  │   └── mime-db@1.30.0 
+  ├── format@0.2.2 
+  ├── loglevel@1.5.0 
+  └─┬ mqtt@2.13.0 
+    ├─┬ commist@1.0.0 
+    │ └── leven@1.0.2 
+    ├─┬ end-of-stream@1.4.0 
+    │ └─┬ once@1.4.0 
+    │   └── wrappy@1.0.2 
+    ├─┬ help-me@1.1.0 
+    │ ├── callback-stream@1.1.0 
+    │ ├─┬ glob-stream@6.1.0 
+    │ │ ├── extend@3.0.1 
+    │ │ ├─┬ glob@7.1.2 
+    │ │ │ ├── fs.realpath@1.0.0 
+    │ │ │ ├── inflight@1.0.6 
+    │ │ │ ├─┬ minimatch@3.0.4 
+    │ │ │ │ └─┬ brace-expansion@1.1.8 
+    │ │ │ │   ├── balanced-match@1.0.0 
+    │ │ │ │   └── concat-map@0.0.1 
+    │ │ │ └── path-is-absolute@1.0.1 
+    │ │ ├─┬ glob-parent@3.1.0 
+    │ │ │ ├─┬ is-glob@3.1.0 
+    │ │ │ │ └── is-extglob@2.1.1 
+    │ │ │ └── path-dirname@1.0.2 
+    │ │ ├── is-negated-glob@1.0.0 
+    │ │ ├── ordered-read-streams@1.0.1 
+    │ │ ├── pumpify@1.3.5 
+    │ │ ├── remove-trailing-separator@1.1.0 
+    │ │ ├─┬ to-absolute-glob@2.0.1 
+    │ │ │ ├─┬ extend-shallow@2.0.1 
+    │ │ │ │ └── is-extendable@0.1.1 
+    │ │ │ └─┬ is-absolute@0.2.6 
+    │ │ │   ├─┬ is-relative@0.2.1 
+    │ │ │   │ └─┬ is-unc-path@0.1.2 
+    │ │ │   │   └── unc-path-regex@0.1.2 
+    │ │ │   └── is-windows@0.2.0 
+    │ │ └─┬ unique-stream@2.2.1 
+    │ │   ├─┬ json-stable-stringify@1.0.1 
+    │ │   │ └── jsonify@0.0.0 
+    │ │   └── through2-filter@2.0.0 
+    │ └── through2@2.0.3 
+    ├── minimist@1.2.0 
+    ├─┬ mqtt-packet@5.4.0 
+    │ └── bl@1.2.1 
+    ├── pump@1.0.2 
+    ├── reinterval@1.1.0 
+    ├── split2@2.1.1 
+    ├─┬ websocket-stream@5.0.1 
+    │ ├─┬ duplexify@3.5.1 
+    │ │ └── stream-shift@1.0.0 
+    │ └─┬ ws@3.2.0 
+    │   ├── async-limiter@1.0.0 
+    │   └── ultron@1.1.0 
+    └── xtend@4.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ibmiotf/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","isNaN","Array","isArray","resolve","Error","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0514 took 31.6954s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ibmiotf/node_modules/ibmiotf/dist/iotf-client.js. Coverage (Term): 25% Coverage (LOC): 23%
+*- File /root/Targets/ibmiotf/node_modules/ibmiotf/dist/clients/DeviceClient.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/ibmiotf/node_modules/format/format.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/ibmiotf/node_modules/axios/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/axios.js. Coverage (Term): 40% Coverage (LOC): 44%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/defaults.js. Coverage (Term): 34% Coverage (LOC): 44%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/utils.js. Coverage (Term): 49% Coverage (LOC): 75%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/helpers/deprecatedMethod.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/core/dispatchRequest.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/core/InterceptorManager.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/ibmiotf/node_modules/es6-promise/dist/es6-promise.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File /root/Targets/ibmiotf/node_modules/axios/lib/helpers/spread.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/bluebird.js. Coverage (Term): 53% Coverage (LOC): 62%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/promise.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/util.js. Coverage (Term): 35% Coverage (LOC): 48%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/es5.js. Coverage (Term): 45% Coverage (LOC): 52%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/async.js. Coverage (Term): 28% Coverage (LOC): 37%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/schedule.js. Coverage (Term): 29% Coverage (LOC): 42%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/queue.js. Coverage (Term): 19% Coverage (LOC): 36%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/errors.js. Coverage (Term): 46% Coverage (LOC): 60%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/thenables.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/promise_array.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/captured_trace.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/debuggability.js. Coverage (Term): 29% Coverage (LOC): 46%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/context.js. Coverage (Term): 42% Coverage (LOC): 49%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/catch_filter.js. Coverage (Term): 23% Coverage (LOC): 28%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/promise_resolver.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/progress.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/method.js. Coverage (Term): 26% Coverage (LOC): 34%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/bind.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/finally.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/direct_resolve.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/synchronous_inspection.js. Coverage (Term): 32% Coverage (LOC): 49%
+*- File /root/Targets/ibmiotf/node_modules/bluebird/js/main/join.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File evalIndirect. Coverage (Term): 12% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

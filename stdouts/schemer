@@ -1,0 +1,45 @@
+/root/Targets/schemer
+└─┬ schemer@0.0.3 
+  ├── async@0.1.15 
+  ├── coffee-script@1.2.0 
+  ├─┬ connect@1.8.5 
+  │ ├── formidable@1.0.17 
+  │ ├── mime@2.0.2 
+  │ └── qs@6.5.1 
+  ├─┬ express@2.5.5 
+  │ └── mkdirp@0.0.7 
+  ├─┬ jade@0.20.0 
+  │ └── commander@0.2.1 
+  ├─┬ mysql@0.9.5 
+  │ └─┬ hashish@0.0.4 
+  │   └── traverse@0.6.6 
+  └─┬ zappa@0.3.3 
+    ├── coffeekup@0.3.1 
+    ├── node-uuid@1.2.0 
+    ├─┬ socket.io@0.8.7 
+    │ ├── policyfile@0.0.4 
+    │ ├── redis@0.6.7 
+    │ └─┬ socket.io-client@0.8.7 
+    │   ├── uglify-js@1.0.6 
+    │   ├── websocket-client@1.0.0 
+    │   └── xmlhttprequest@1.2.2 
+    └── uglify-js@1.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/schemer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0769 took 3.6674s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'schemer'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

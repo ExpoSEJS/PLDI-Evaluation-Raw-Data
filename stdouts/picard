@@ -1,0 +1,159 @@
+/root/Targets/picard
+└── picard@0.3.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/picard/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0837 took 5.642s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'yield' is reserved (39:10) on program var merge = require('./merge'),
+    mime = require('./mime'),
+    fs = require('fs')
+
+var Template = {
+  cache: {},
+  ext: 'haml',
+  compile: require('./haml'),
+  
+  buildAndSend: function(req, scope){
+    scope = Template.extendScope(req, scope)
+    
+    Template.renderTemplate(scope, function(){
+      Template.renderLayout(scope, function(){
+        req.sendData(scope)
+      })
+    })
+  },
+  filename: function(meat){
+    return this.root + this.views + '/' + meat + '.' + this.ext
+  },
+  renderTemplate: function(scope, callback){
+    if ( typeof scope.template != 'string' ) {
+      callback()
+      return
+    }
+    Template.getCached(this.filename(scope.template), function(template){
+      scope.body = Template.safeRender(template, scope)
+      callback()
+    })
+  },
+  renderLayout: function(scope, callback){
+    if ( typeof scope.layout != 'string' ){
+      callback()
+      return
+    }
+    Template.getCached(this.filename(scope.layout), function(template){
+      var layoutContent = Template.safeRender(template, scope)
+      var yield = layoutContent.match(/\=\=yield\(\)/)
+      if ( yield ) scope.body = layoutContent.replace(yield, scope.body)
+      callback()
+    })
+  },
+  getCached: function(filename, callback){
+    if ( this.cache[filename] && this.mode != 'development' )
+      callback(this.cache[filename])
+    else
+      fs.readFile(filename, function(err, body){
+        if ( err && err.message ){
+          callback(function(){ return err.message })
+          return // something went wrong when reading file
+        }
+        Template.cache[filename] = Template.compile(body.toString())
+        callback(Template.cache[filename])
+      })
+  },
+  renderPartial: function(name, scope, partialScope){
+    var body, 
+        filename = this.filename(name)
+    
+    if ( typeof Template.cache[filename] == 'undefined' || this.mode == 'development' ) {
+      body = fs.readFileSync(filename) // the only blocking call in the framework, only blocks once until cached
+      Template.cache[filename] = Template.compile(body.toString())
+    }
+    var renderScope = scope
+    if( partialScope ) renderScope = merge({}, scope, partialScope)
+    body = Template.safeRender(Template.cache[filename], renderScope)
+    return body
+  },
+  safeRender: function(template, scope){
+    scope.yield = function(name){ return "==yield()" }
+    scope.partial = function(name, partialScope){ 
+      return Template.renderPartial(name, scope, partialScope) 
+    }
+    return template(scope)
+  },
+  extendScope: function(req, scope){
+    var globalHelpers = {}, routeSetHelpers = {}
+    
+    if ( req.route ){  
+      
+      if ( req.route.helpers ) // helpers defined outside a route-set?
+        globalHelpers = req.route.helpers() || {}
+      
+      if ( req.route.routeSet ){ // route set helpers defined?
+        routeSetHelpers = req.route.routeSet.helpers() || {}
+        
+        // use routeSet layout if none defined on this scope
+        if ( typeof scope.layout == 'undefined' && req.route.routeSet.layout )
+          scope.layout = req.route.routeSet.layout
+      }
+      
+      var externals = merge(globalHelpers, routeSetHelpers)
+      
+      if ( Object.keys(externals).length != 0 )
+        scope = merge(externals, scope)
+    }
+    
+    return scope
+  },
+  serveStatic: function(req, file){
+    var name = req.parsedUrl().pathname,
+        filename = file || this.root + this.public + name
+    
+    if ( typeof Template.cache[filename] == 'undefined' || this.mode == 'development' ) {
+      fs.readFile(filename, 'binary', function(err, content){
+        if ( err ) req.onScreen(null)
+        Template.cache[filename] = content
+        
+        req.onScreen({
+          body: content || null,
+          type: mime.lookupExtension(filename.match(/.[^.]*$/)[0]),
+          encoding: 'binary'
+        })
+      }) 
+    } else {
+      req.onScreen({
+        body: Template.cache[filename] || null,
+        type: mime.lookupExtension(filename.match(/.[^.]*$/)[0]),
+        encoding: 'binary'
+      })
+    }    
+  }
+}
+
+exports.template = Template at SyntaxError: The keyword 'yield' is reserved (39:10)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/picard/node_modules/picard/lib/picard/index.js. Coverage (Term): 52% Coverage (LOC): 50%
+*- File /root/Targets/picard/node_modules/picard/lib/picard/config.js. Coverage (Term): 22% Coverage (LOC): 27%
+*- File /root/Targets/picard/node_modules/picard/lib/picard/server.js. Coverage (Term): 25% Coverage (LOC): 39%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

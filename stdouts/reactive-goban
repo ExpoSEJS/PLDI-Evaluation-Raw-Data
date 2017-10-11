@@ -1,0 +1,278 @@
+/root/Targets/reactive-goban
+└─┬ reactive-goban@0.2.0 
+  ├─┬ @cycle/dom@9.4.0 
+  │ ├── hyperscript-helpers@2.0.3 
+  │ ├── matches-selector@1.0.0 
+  │ ├── vdom-parser@1.2.1 
+  │ ├─┬ vdom-to-html@2.2.0 
+  │ │ ├── escape-html@1.0.3 
+  │ │ ├─┬ param-case@1.1.2 
+  │ │ │ └─┬ sentence-case@1.1.3 
+  │ │ │   └── lower-case@1.1.4 
+  │ │ └── xtend@4.0.1 
+  │ ├─┬ virtual-dom@2.1.1 
+  │ │ ├── browser-split@0.0.1 
+  │ │ ├─┬ error@4.4.0 
+  │ │ │ ├── camelize@1.0.0 
+  │ │ │ └── string-template@0.2.1 
+  │ │ ├─┬ ev-store@7.0.0 
+  │ │ │ └── individual@3.0.0 
+  │ │ ├─┬ global@4.3.2 
+  │ │ │ ├─┬ min-document@2.19.0 
+  │ │ │ │ └── dom-walk@0.1.1 
+  │ │ │ └── process@0.5.2 
+  │ │ ├── is-object@1.0.1 
+  │ │ ├── next-tick@0.2.2 
+  │ │ └── x-is-string@0.1.0 
+  │ └── x-is-array@0.1.0 
+  ├── deep-freeze@0.0.1 
+  ├── diacritics@1.3.0 
+  ├── in-publish@2.0.0 
+  ├── lodash@4.17.4 
+  ├─┬ react@15.6.2 
+  │ ├── create-react-class@15.6.2 
+  │ ├─┬ fbjs@0.8.16 
+  │ │ ├── core-js@1.2.7 
+  │ │ ├─┬ isomorphic-fetch@2.2.1 
+  │ │ │ ├─┬ node-fetch@1.7.3 
+  │ │ │ │ ├─┬ encoding@0.1.12 
+  │ │ │ │ │ └── iconv-lite@0.4.19 
+  │ │ │ │ └── is-stream@1.1.0 
+  │ │ │ └── whatwg-fetch@2.0.3 
+  │ │ ├─┬ promise@7.3.1 
+  │ │ │ └── asap@2.0.6 
+  │ │ ├── setimmediate@1.0.5 
+  │ │ └── ua-parser-js@0.7.14 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ ├── object-assign@4.1.1 
+  │ └── prop-types@15.6.0 
+  ├── react-dom@15.6.2 
+  └── rx@4.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/reactive-goban/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 41% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Object","call","binding","RegExp","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","create","Array","isArray","getOwnPropertyNames","fromCharCode","join","assign","freeze","for","bind","apply","bound warn","Error","Number","pow"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0636 took 69.6063s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Identifier 'handleError' has already been declared
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/index.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/GoGame.js. Coverage (Term): 59% Coverage (LOC): 74%
+*- File /root/Targets/reactive-goban/node_modules/lodash/forOwn.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseForOwn.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseFor.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_createBaseFor.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/keys.js. Coverage (Term): 91% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayLikeKeys.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseTimes.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isArguments.js. Coverage (Term): 70% Coverage (LOC): 92%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsArguments.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseGetTag.js. Coverage (Term): 87% Coverage (LOC): 91%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Symbol.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_root.js. Coverage (Term): 76% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_freeGlobal.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getRawTag.js. Coverage (Term): 91% Coverage (LOC): 90%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_objectToString.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isObjectLike.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isBuffer.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/stubFalse.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isIndex.js. Coverage (Term): 37% Coverage (LOC): 75%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isTypedArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsTypedArray.js. Coverage (Term): 90% Coverage (LOC): 91%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isLength.js. Coverage (Term): 72% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseUnary.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_nodeUtil.js. Coverage (Term): 97% Coverage (LOC): 91%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseKeys.js. Coverage (Term): 66% Coverage (LOC): 59%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isPrototype.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_nativeKeys.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_overArg.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isArrayLike.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isFunction.js. Coverage (Term): 84% Coverage (LOC): 91%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isObject.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_castFunction.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/identity.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/reducer/index.js. Coverage (Term): 47% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/lodash/map.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayMap.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIteratee.js. Coverage (Term): 61% Coverage (LOC): 53%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseMatches.js. Coverage (Term): 39% Coverage (LOC): 45%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsMatch.js. Coverage (Term): 19% Coverage (LOC): 18%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Stack.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_ListCache.js. Coverage (Term): 60% Coverage (LOC): 63%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_listCacheClear.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_listCacheDelete.js. Coverage (Term): 38% Coverage (LOC): 39%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_assocIndexOf.js. Coverage (Term): 42% Coverage (LOC): 42%
+*- File /root/Targets/reactive-goban/node_modules/lodash/eq.js. Coverage (Term): 49% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_listCacheGet.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_listCacheHas.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_listCacheSet.js. Coverage (Term): 36% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stackClear.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stackDelete.js. Coverage (Term): 41% Coverage (LOC): 57%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stackGet.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stackHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stackSet.js. Coverage (Term): 37% Coverage (LOC): 27%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getNative.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsNative.js. Coverage (Term): 95% Coverage (LOC): 94%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isMasked.js. Coverage (Term): 81% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_coreJsData.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_toSource.js. Coverage (Term): 79% Coverage (LOC): 69%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getValue.js. Coverage (Term): 92% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_MapCache.js. Coverage (Term): 85% Coverage (LOC): 88%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapCacheClear.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Hash.js. Coverage (Term): 85% Coverage (LOC): 88%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hashClear.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_nativeCreate.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hashDelete.js. Coverage (Term): 39% Coverage (LOC): 57%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hashGet.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hashHas.js. Coverage (Term): 57% Coverage (LOC): 78%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hashSet.js. Coverage (Term): 42% Coverage (LOC): 60%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapCacheDelete.js. Coverage (Term): 46% Coverage (LOC): 63%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getMapData.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isKeyable.js. Coverage (Term): 35% Coverage (LOC): 67%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapCacheGet.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapCacheHas.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapCacheSet.js. Coverage (Term): 38% Coverage (LOC): 56%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsEqual.js. Coverage (Term): 36% Coverage (LOC): 42%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsEqualDeep.js. Coverage (Term): 29% Coverage (LOC): 24%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_equalArrays.js. Coverage (Term): 17% Coverage (LOC): 14%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_SetCache.js. Coverage (Term): 55% Coverage (LOC): 58%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_setCacheAdd.js. Coverage (Term): 59% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_setCacheHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arraySome.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_cacheHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_equalByTag.js. Coverage (Term): 36% Coverage (LOC): 17%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Uint8Array.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_mapToArray.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_setToArray.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_equalObjects.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getAllKeys.js. Coverage (Term): 74% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseGetAllKeys.js. Coverage (Term): 53% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayPush.js. Coverage (Term): 32% Coverage (LOC): 44%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getSymbols.js. Coverage (Term): 57% Coverage (LOC): 56%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayFilter.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/lodash/stubArray.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getTag.js. Coverage (Term): 69% Coverage (LOC): 38%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_DataView.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Promise.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_Set.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_WeakMap.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_getMatchData.js. Coverage (Term): 39% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isStrictComparable.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_matchesStrictComparable.js. Coverage (Term): 32% Coverage (LOC): 44%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseMatchesProperty.js. Coverage (Term): 53% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/lodash/get.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseGet.js. Coverage (Term): 36% Coverage (LOC): 45%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_castPath.js. Coverage (Term): 59% Coverage (LOC): 56%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_isKey.js. Coverage (Term): 37% Coverage (LOC): 43%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isSymbol.js. Coverage (Term): 61% Coverage (LOC): 86%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_stringToPath.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_memoizeCapped.js. Coverage (Term): 71% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/memoize.js. Coverage (Term): 50% Coverage (LOC): 60%
+*- File /root/Targets/reactive-goban/node_modules/lodash/toString.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseToString.js. Coverage (Term): 49% Coverage (LOC): 39%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_toKey.js. Coverage (Term): 43% Coverage (LOC): 55%
+*- File /root/Targets/reactive-goban/node_modules/lodash/hasIn.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseHasIn.js. Coverage (Term): 51% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_hasPath.js. Coverage (Term): 35% Coverage (LOC): 28%
+*- File /root/Targets/reactive-goban/node_modules/lodash/property.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseProperty.js. Coverage (Term): 43% Coverage (LOC): 67%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_basePropertyDeep.js. Coverage (Term): 56% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseMap.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseEach.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_createBaseEach.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/deep-freeze/index.js. Coverage (Term): 20% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/reducer/playMoveReducer.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/gobanUtils.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/reactive-goban/node_modules/lodash/uniqWith.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseUniq.js. Coverage (Term): 25% Coverage (LOC): 15%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayIncludes.js. Coverage (Term): 44% Coverage (LOC): 71%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIndexOf.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseFindIndex.js. Coverage (Term): 26% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_baseIsNaN.js. Coverage (Term): 63% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_strictIndexOf.js. Coverage (Term): 32% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_arrayIncludesWith.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/lodash/_createSet.js. Coverage (Term): 84% Coverage (LOC): 90%
+*- File /root/Targets/reactive-goban/node_modules/lodash/noop.js. Coverage (Term): 79% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/lodash/isEqual.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/reducer/setMarkReducer.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/reactive-goban/node_modules/diacritics/index.js. Coverage (Term): 94% Coverage (LOC): 99%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/GoGame/actions/index.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/ReactGoban/ReactGoban.js. Coverage (Term): 24% Coverage (LOC): 35%
+*- File /root/Targets/reactive-goban/node_modules/react/react.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/React.js. Coverage (Term): 69% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactBaseClasses.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactNoopUpdateQueue.js. Coverage (Term): 28% Coverage (LOC): 60%
+*- File /root/Targets/reactive-goban/node_modules/fbjs/lib/warning.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/reactive-goban/node_modules/fbjs/lib/emptyFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/canDefineProperty.js. Coverage (Term): 87% Coverage (LOC): 92%
+*- File /root/Targets/reactive-goban/node_modules/fbjs/lib/emptyObject.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/fbjs/lib/invariant.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/lowPriorityWarning.js. Coverage (Term): 71% Coverage (LOC): 87%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactChildren.js. Coverage (Term): 22% Coverage (LOC): 39%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/PooledClass.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactElement.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactCurrentOwner.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactDOMFactories.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactElementValidator.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactComponentTreeHook.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactPropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/prop-types/factory.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/prop-types/factoryWithTypeCheckers.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/reactive-goban/node_modules/prop-types/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/prop-types/checkPropTypes.js. Coverage (Term): 27% Coverage (LOC): 41%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/createClass.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/create-react-class/factory.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/reactive-goban/node_modules/react/lib/onlyChild.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/reactive-goban/lib/CycleGoban/CycleGoban.js. Coverage (Term): 14% Coverage (LOC): 26%
+*- File /root/Targets/reactive-goban/node_modules/@cycle/dom/lib/cycle-dom.js. Coverage (Term): 21% Coverage (LOC): 25%
+*- File /root/Targets/reactive-goban/node_modules/@cycle/dom/lib/virtual-hyperscript-svg.js. Coverage (Term): 35% Coverage (LOC): 58%
+*- File /root/Targets/reactive-goban/node_modules/x-is-array/index.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/reactive-goban/node_modules/@cycle/dom/lib/virtual-hyperscript.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/vnode.js. Coverage (Term): 23% Coverage (LOC): 22%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/version.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/is-vnode.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/is-widget.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/is-thunk.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/is-vhook.js. Coverage (Term): 37% Coverage (LOC): 80%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/vtext.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/vnode/is-vtext.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/virtual-hyperscript/parse-tag.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/reactive-goban/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/virtual-hyperscript/hooks/soft-set-hook.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/virtual-hyperscript/hooks/ev-hook.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/reactive-goban/node_modules/ev-store/index.js. Coverage (Term): 63% Coverage (LOC): 64%
+*- File /root/Targets/reactive-goban/node_modules/individual/one-version.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/reactive-goban/node_modules/individual/index.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/virtual-hyperscript/svg-attribute-namespace.js. Coverage (Term): 95% Coverage (LOC): 99%
+*- File /root/Targets/reactive-goban/node_modules/virtual-dom/virtual-hyperscript/hooks/attribute-hook.js. Coverage (Term): 23% Coverage (LOC): 40%
+*- File /root/Targets/reactive-goban/node_modules/@cycle/dom/lib/render-dom.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/reactive-goban/node_modules/rx/index.js. Coverage (Term): 54% Coverage (LOC): 60%
+*- File /root/Targets/reactive-goban/node_modules/rx/dist/rx.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/reactive-goban/node_modules/rx/dist/rx.aggregates.js. Coverage (Term): 27% Coverage (LOC): 37%
+*- File /root/Targets/reactive-goban/node_modules/rx/dist/rx.async.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/reactive-goban/node_modules/rx/dist/rx.backpressure.js. Coverage (Term): 28% Coverage (LOC): 33%
+*- File /root/Targets/reactive-goban/node_modules/rx/dist/rx.binding.js. Coverage (Term): 25% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

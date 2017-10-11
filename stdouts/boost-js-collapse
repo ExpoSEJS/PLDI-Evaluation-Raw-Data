@@ -1,0 +1,25 @@
+/root/Targets/boost-js-collapse
+└─┬ boost-js-collapse@0.0.1 
+  ├── boost-js@0.3.3 
+  └── jquery@3.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/boost-js-collapse/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 39% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 39% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 39% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.082 took 4.7589s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Cannot read property 'handle' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 4.913 took 6.8297s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/boost-js-collapse/node_modules/boost-js-collapse/src/collapse.js. Coverage (Term): 13% Coverage (LOC): 27%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

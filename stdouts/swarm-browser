@@ -1,0 +1,231 @@
+
+> bufferutil@1.2.1 install /root/Targets/swarm-browser/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/swarm-browser/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+make: Leaving directory '/root/Targets/swarm-browser/node_modules/bufferutil/build'
+
+> utf-8-validate@1.2.2 install /root/Targets/swarm-browser/node_modules/utf-8-validate
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/swarm-browser/node_modules/utf-8-validate/build'
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/swarm-browser/node_modules/utf-8-validate/build'
+/root/Targets/swarm-browser
+└─┬ swarm-browser@1.0.15 
+  ├─┬ level-js@2.2.4 
+  │ ├─┬ abstract-leveldown@0.12.4 
+  │ │ └── xtend@3.0.0 
+  │ ├── idb-wrapper@1.7.1 
+  │ ├── isbuffer@0.0.0 
+  │ ├── ltgt@2.2.0 
+  │ ├── typedarray-to-buffer@1.0.4 
+  │ └─┬ xtend@2.1.2 
+  │   └── object-keys@0.4.0 
+  ├─┬ levelup@1.3.9 
+  │ ├─┬ deferred-leveldown@1.2.2 
+  │ │ └─┬ abstract-leveldown@2.6.3 
+  │ │   └── xtend@4.0.1 
+  │ ├── level-codec@7.0.1 
+  │ ├─┬ level-errors@1.0.5 
+  │ │ └─┬ errno@0.1.4 
+  │ │   └── prr@0.0.0 
+  │ ├─┬ level-iterator-stream@1.3.1 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── xtend@4.0.1 
+  │ ├── prr@1.0.1 
+  │ ├── semver@5.4.1 
+  │ └── xtend@4.0.1 
+  ├─┬ stream-url-ws@0.1.5 
+  │ ├── eventemitter3@1.2.0 
+  │ ├── stream-url@0.1.0 
+  │ └─┬ websocket-stream@2.3.0 
+  │   ├─┬ duplexify@3.5.1 
+  │   │ ├─┬ end-of-stream@1.4.0 
+  │   │ │ └─┬ once@1.4.0 
+  │   │ │   └── wrappy@1.0.2 
+  │   │ ├─┬ readable-stream@2.3.3 
+  │   │ │ ├── isarray@1.0.0 
+  │   │ │ ├── process-nextick-args@1.0.7 
+  │   │ │ ├── safe-buffer@5.1.1 
+  │   │ │ ├── string_decoder@1.0.3 
+  │   │ │ └── util-deprecate@1.0.2 
+  │   │ └── stream-shift@1.0.0 
+  │   ├─┬ through2@2.0.3 
+  │   │ ├─┬ readable-stream@2.3.3 
+  │   │ │ ├── isarray@1.0.0 
+  │   │ │ └── string_decoder@1.0.3 
+  │   │ └── xtend@4.0.1 
+  │   ├─┬ ws@0.8.1 
+  │   │ ├─┬ bufferutil@1.2.1 
+  │   │ │ ├── bindings@1.2.1 
+  │   │ │ └── nan@2.7.0 
+  │   │ ├── options@0.0.6 
+  │   │ ├── ultron@1.0.2 
+  │   │ └─┬ utf-8-validate@1.2.2 
+  │   │   └── nan@2.4.0 
+  │   └── xtend@4.0.1 
+  └─┬ swarm-client@1.0.16 
+    ├── minimist@1.2.0 
+    └─┬ swarm-replica@1.0.24 
+      ├── eventemitter3@1.1.1 
+      └─┬ swarm-syncable@1.0.22 
+        └── swarm-stamp@1.0.14 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/swarm-browser/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","Date","getTime","toString","create","getOwnPropertyNames","Error","call","captureStackTrace","getFileName","apply","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0293 took 47.168s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/swarm-browser/node_modules/swarm-browser/index.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /root/Targets/swarm-browser/node_modules/swarm-client/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/swarm-replica/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/index.js. Coverage (Term): 83% Coverage (LOC): 95%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/base64.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/VVector.js. Coverage (Term): 16% Coverage (LOC): 30%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/LamportTimestamp.js. Coverage (Term): 28% Coverage (LOC): 39%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/VV.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/AnchoredVV.js. Coverage (Term): 35% Coverage (LOC): 55%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/LamportClock.js. Coverage (Term): 22% Coverage (LOC): 34%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/SecondPreciseClock.js. Coverage (Term): 22% Coverage (LOC): 27%
+*- File /root/Targets/swarm-browser/node_modules/swarm-stamp/src/MinutePreciseClock.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Spec.js. Coverage (Term): 28% Coverage (LOC): 37%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Op.js. Coverage (Term): 23% Coverage (LOC): 37%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Host.js. Coverage (Term): 11% Coverage (LOC): 17%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/OpSource.js. Coverage (Term): 23% Coverage (LOC): 39%
+*- File /root/Targets/swarm-browser/node_modules/eventemitter3/index.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Syncable.js. Coverage (Term): 36% Coverage (LOC): 53%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/CRDT.js. Coverage (Term): 31% Coverage (LOC): 48%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/StreamOpSource.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/OpQueue.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Model.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/swarm-browser/node_modules/swarm-syncable/src/Set.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/swarm-replica/src/Replica.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/swarm-browser/node_modules/stream-url/src/su.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/swarm-browser/node_modules/stream-url/src/ZeroServer.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/swarm-browser/node_modules/stream-url/src/ZeroStream.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/swarm-browser/node_modules/swarm-replica/node_modules/eventemitter3/index.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/swarm-browser/node_modules/swarm-replica/src/Entry.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/swarm-browser/node_modules/swarm-client/src/Client.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File /root/Targets/swarm-browser/node_modules/level-js/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/swarm-browser/node_modules/idb-wrapper/idbstore.js. Coverage (Term): 4% Coverage (LOC): 11%
+*- File /root/Targets/swarm-browser/node_modules/abstract-leveldown/abstract-leveldown.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/swarm-browser/node_modules/abstract-leveldown/node_modules/xtend/index.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/swarm-browser/node_modules/abstract-leveldown/abstract-iterator.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/abstract-leveldown/abstract-chained-batch.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/swarm-browser/node_modules/level-js/iterator.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/ltgt/index.js. Coverage (Term): 13% Coverage (LOC): 34%
+*- File /root/Targets/swarm-browser/node_modules/isbuffer/index.js. Coverage (Term): 54% Coverage (LOC): 83%
+*- File /root/Targets/swarm-browser/node_modules/xtend/index.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/object-keys/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/xtend/has-keys.js. Coverage (Term): 48% Coverage (LOC): 80%
+*- File /root/Targets/swarm-browser/node_modules/typedarray-to-buffer/index.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/swarm-browser/node_modules/levelup/lib/levelup.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/levelup/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/prr/prr.js. Coverage (Term): 28% Coverage (LOC): 36%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/deferred-leveldown.js. Coverage (Term): 35% Coverage (LOC): 46%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/abstract-leveldown/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/abstract-leveldown/abstract-leveldown.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/abstract-leveldown/abstract-iterator.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/abstract-leveldown/abstract-chained-batch.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/node_modules/abstract-leveldown/is-leveldown.js. Coverage (Term): 29% Coverage (LOC): 42%
+*- File /root/Targets/swarm-browser/node_modules/deferred-leveldown/deferred-iterator.js. Coverage (Term): 40% Coverage (LOC): 48%
+*- File /root/Targets/swarm-browser/node_modules/level-iterator-stream/index.js. Coverage (Term): 24% Coverage (LOC): 24%
+*- File /root/Targets/swarm-browser/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/readable.js. Coverage (Term): 90% Coverage (LOC): 92%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/swarm-browser/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/swarm-browser/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/swarm-browser/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/swarm-browser/node_modules/level-iterator-stream/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/level-errors/errors.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/errno/errno.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/errno/custom.js. Coverage (Term): 73% Coverage (LOC): 89%
+*- File /root/Targets/swarm-browser/node_modules/errno/node_modules/prr/prr.js. Coverage (Term): 78% Coverage (LOC): 92%
+*- File /root/Targets/swarm-browser/node_modules/levelup/lib/batch.js. Coverage (Term): 22% Coverage (LOC): 25%
+*- File /root/Targets/swarm-browser/node_modules/levelup/lib/util.js. Coverage (Term): 37% Coverage (LOC): 65%
+*- File /root/Targets/swarm-browser/node_modules/level-codec/index.js. Coverage (Term): 19% Coverage (LOC): 41%
+*- File /root/Targets/swarm-browser/node_modules/level-codec/lib/encodings.js. Coverage (Term): 45% Coverage (LOC): 87%
+*- File /root/Targets/swarm-browser/node_modules/levelup/lib/leveldown.js. Coverage (Term): 29% Coverage (LOC): 30%
+*- File /root/Targets/swarm-browser/node_modules/stream-url-ws/index.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/swarm-browser/node_modules/websocket-stream/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/websocket-stream/server.js. Coverage (Term): 35% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/swarm-browser/node_modules/ultron/index.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/swarm-browser/node_modules/options/lib/options.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Sender.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 72% Coverage (LOC): 83%
+*- File /root/Targets/swarm-browser/node_modules/bufferutil/index.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/bindings/bindings.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/swarm-browser/node_modules/bufferutil/fallback.js. Coverage (Term): 7% Coverage (LOC): 20%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 10%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Validation.js. Coverage (Term): 72% Coverage (LOC): 83%
+*- File /root/Targets/swarm-browser/node_modules/utf-8-validate/index.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/utf-8-validate/fallback.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/swarm-browser/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 6% Coverage (LOC): 4%
+*- File /root/Targets/swarm-browser/node_modules/websocket-stream/stream.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/swarm-browser/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/readable.js. Coverage (Term): 61% Coverage (LOC): 60%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/swarm-browser/node_modules/process-nextick-args/index.js. Coverage (Term): 22% Coverage (LOC): 19%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/internal/streams/stream.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/internal/streams/BufferList.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/internal/streams/destroy.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/swarm-browser/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/swarm-browser/node_modules/through2/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/index.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/readable.js. Coverage (Term): 61% Coverage (LOC): 60%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/internal/streams/stream.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/internal/streams/BufferList.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/internal/streams/destroy.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/swarm-browser/node_modules/duplexify/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/swarm-browser/node_modules/end-of-stream/index.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/swarm-browser/node_modules/once/once.js. Coverage (Term): 31% Coverage (LOC): 34%
+*- File /root/Targets/swarm-browser/node_modules/wrappy/wrappy.js. Coverage (Term): 31% Coverage (LOC): 48%
+*- File /root/Targets/swarm-browser/node_modules/stream-shift/index.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

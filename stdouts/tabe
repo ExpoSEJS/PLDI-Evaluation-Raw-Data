@@ -1,0 +1,224 @@
+/root/Targets/tabe
+└─┬ tabe@1.0.4 
+  ├── duplexer@0.1.1 
+  └─┬ tape@4.8.0 
+    ├── deep-equal@1.0.1 
+    ├── defined@1.0.0 
+    ├─┬ for-each@0.3.2 
+    │ └── is-function@1.0.1 
+    ├── function-bind@1.1.1 
+    ├─┬ glob@7.1.2 
+    │ ├── fs.realpath@1.0.0 
+    │ ├─┬ inflight@1.0.6 
+    │ │ └── wrappy@1.0.2 
+    │ ├─┬ minimatch@3.0.4 
+    │ │ └─┬ brace-expansion@1.1.8 
+    │ │   ├── balanced-match@1.0.0 
+    │ │   └── concat-map@0.0.1 
+    │ ├── once@1.4.0 
+    │ └── path-is-absolute@1.0.1 
+    ├── has@1.0.1 
+    ├── inherits@2.0.3 
+    ├── minimist@1.2.0 
+    ├── object-inspect@1.3.0 
+    ├─┬ resolve@1.4.0 
+    │ └── path-parse@1.0.5 
+    ├── resumer@0.0.0 
+    ├─┬ string.prototype.trim@1.1.2 
+    │ ├─┬ define-properties@1.1.2 
+    │ │ ├── foreach@2.0.5 
+    │ │ └── object-keys@1.0.11 
+    │ └─┬ es-abstract@1.9.0 
+    │   ├─┬ es-to-primitive@1.1.1 
+    │   │ ├── is-date-object@1.0.1 
+    │   │ └── is-symbol@1.0.1 
+    │   ├── is-callable@1.1.3 
+    │   └── is-regex@1.0.4 
+    └── through@2.3.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tabe/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0488 took 2.2114s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (50:45) on program 
+
+var tabe = {};
+
+(function(){
+
+    var isBrowser = typeof window != 'undefined';
+    var test_id = 0;
+    var assert_id = 0;
+    var pass = 0;
+    var fail = 0;
+    var fail_ids = [];
+    var parents = {};
+    var tabcli = ' ';
+    var tabassert = '   ';
+    var ms;
+
+    tabe.createStream = function ( tape ) {
+
+        console.log('');
+        test_id = assert_id = pass = fail = 0;
+        var stream = tape.createStream({ objectMode: true });
+        stream.on('data', tabe.onData);
+        stream.on('end', tabe.onEnd);
+        return stream;
+
+    };
+
+
+    tabe.onData = function( data ){
+
+        // Message
+        if ( typeof data == 'string' )
+            return console.log( data );
+
+        // New test
+        if ( data.type == 'test') {
+
+            if (data.id === 0) ms = new Date().getTime();
+
+            parents[data.id] = (typeof data.parent == 'number') ? parents[data.parent]+1 : 0;
+
+            test_id += 1;
+            var strIdTest = (test_id)+') ';
+            var spaceinnertest = (parents[data.id]>0) ? '' : '\n';
+            var tabnivel = repeatTab(tabassert, parents[data.id]);
+            (isBrowser) ? 
+                console.log(tabnivel+'%c'+ strIdTest + data.name, 'font-weight:bold; color:#555')
+            :
+                console.log(tabcli+tabnivel+'\033[1m'+strIdTest+data.name+'\033[0m');
+        }
+
+
+        // End test
+        else if ( data.type == 'end' ) {
+            if (parents[data.test] === 0)
+                console.log('');
+        }
+
+
+        // Pass
+        else if ( data.ok ) {
+            assert_id += 1;
+            pass += 1;
+            var strIdAssert = assert_id+' ';
+            var tabnivel = repeatTab(tabassert, parents[data.test]);
+            (isBrowser) ? 
+                console.log(tabnivel+tabassert+'%c✔ %c'+ strIdAssert + data.name, 'color:green', 'color:#666')
+            :
+                console.log(tabcli+tabnivel+tabassert+'\033[32m✔\033[0m \033[90m'+strIdAssert+data.name+'\033[0m');
+        }
+
+        // Fail
+        else if ( !data.ok ) {
+            // console.log(2,data);
+            assert_id += 1;
+            fail += 1;
+            fail_ids.push(assert_id);
+            var tabnivel = repeatTab(tabassert, parents[data.test]);
+
+            if (isBrowser) {
+                console.warn(tabnivel+tabassert+'  '+assert_id, data.error);
+                console.warn(tabnivel+tabassert+'   '+calcSpacesForIdTest(assert_id)+'operator: '+data.operator);
+                console.warn(tabnivel+tabassert+'   '+calcSpacesForIdTest(assert_id)+'expected: '+data.expected);
+                console.warn(tabnivel+tabassert+'   '+calcSpacesForIdTest(assert_id)+'actual: '+data.actual);
+            } else {
+                console.log(tabcli+tabnivel+tabassert+'\033[31m✘ '+ assert_id+' '+ data.name+'\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'  \033[31m----\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'   \033[31m'+calcSpacesForIdTest(assert_id)+'operator: '+data.operator+'\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'   \033[31m'+calcSpacesForIdTest(assert_id)+'expected: '+data.expected+'\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'   \033[31m'+calcSpacesForIdTest(assert_id)+'actual: '+data.actual+'\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'   \033[31m'+calcSpacesForIdTest(assert_id)+'at: '+data.at+'\033[0m');
+                console.log(tabcli+tabnivel+tabassert+'  \033[31m....\033[0m');
+            }
+        }
+
+        // console.log(data);
+
+
+    };
+
+
+    tabe.onEnd = function() {
+        var totalms = new Date().getTime()-ms;
+        var fail_idsstr = (fail_ids.length>0) ? ' ('+fail_ids.join(',')+')' : '';
+        if (isBrowser) {
+            console.log('\n');
+            console.log('%cTotal: '+(pass+fail)+' %c('+totalms+'ms)', 'font-weight:bold; font-size:11px; color:#555', '');
+            console.log('%cPass:  '+(pass), 'font-weight:bold; font-size:11px; color:green');
+            console.warn('%cFail:  '+(fail)+'%c'+fail_idsstr, 'font-weight:bold; font-size:11px', 'font-weight:normal');
+            console.log('');
+        } else {
+            // console.log(tabcli+totalms+'ms');
+            console.log('\n');
+            console.log(tabcli+'\033[1mTotal: '+(pass+fail)+'\033[0m \033[90m('+totalms+'ms)\033[0m');
+            console.log(tabcli+'\033[1m\033[32mPass:  '+pass+'\033[0m');
+            console.log(tabcli+'\033[1m\033[31mFail:  '+fail+'\033[0m'+'\033[90m'+fail_idsstr+'\033[0m');
+            console.log('');
+        }
+
+        test_id = assert_id = pass = fail = 0;
+    };
+
+
+    function calcSpacesForIdTest( str ) {
+        var newstr = '';
+        for (var i=0, t=str.toString().length; i<t; ++i)
+            newstr += ' ';
+
+        return newstr;
+    }
+
+
+    function repeatTab( tabstr, repeats ) {
+        var newstr = '';
+        for (var i=0; i<repeats; ++i)
+            newstr += tabstr;
+
+        return newstr;
+    }
+
+        // line = line.replace(/\-\-\-/, '\n  \033[31m---');
+        // line = line.replace(/\n/, '');
+        // line = line.replace(/^# tests (.+)/, '\033[1mFINISH: $1 tests');
+        // line = line.replace(/^# pass (.+)/, '\033[0m\033[1;32m✔$1 pass\033[0m');
+        // line = line.replace(/^# fail (.+)/, '\033[0m\033[1;31m✘$1 fail\033[0m');
+        // line = line.replace(/^# (.+)/,      '\033[0m\n\n\033[1m$1\033[0m'); // »
+        // line = line.replace(/^ok (.+)/,     '\033[0m  \033[32m✔\033[0m \033[90m$1\033[0m'); // ✓
+        // line = line.replace(/^not ok (.+)/, '\033[0m  \033[31m✘ $1\033[0m'); // ✗ ✘ ✖
+        // line = line.replace(/\.\.\./, '...\033[0m');
+
+
+})()
+
+
+module.exports = tabe;
+
+ at SyntaxError: Octal literal in strict mode (50:45)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1654:14)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1658:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/tabe/node_modules/tabe/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

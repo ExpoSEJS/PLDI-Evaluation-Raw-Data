@@ -1,0 +1,121 @@
+
+> uws@8.14.1 install /root/Targets/colyseus/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+
+> colyseus@0.5.5 postinstall /root/Targets/colyseus/node_modules/colyseus
+> npm run -s donate
+
+[35m[1mLove Colyseus? Support its development by becoming a backer:[22m[39m
+ > [34mhttps://opencollective.com/colyseus/donate[39m
+/root/Targets/colyseus
+└─┬ colyseus@0.5.5 
+  ├─┬ @gamestdio/timeline@0.3.5 
+  │ └── harmony-proxy@1.0.1 
+  ├─┬ @gamestdio/timer@1.1.9 
+  │ └── @gamestdio/clock@1.1.9 
+  ├── @types/debug@0.0.29 
+  ├── @types/fossil-delta@0.2.3 
+  ├── @types/ip@0.0.29 
+  ├── @types/mocha@2.2.43 
+  ├── @types/msgpack-lite@0.1.5 
+  ├── @types/node@7.0.43 
+  ├── @types/shortid@0.0.29 
+  ├── @types/uws@0.13.0 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├── fossil-delta@0.2.5 
+  ├── ip@1.1.5 
+  ├── memshared@0.9.15 
+  ├─┬ msgpack-lite@0.1.26 
+  │ ├── event-lite@0.1.1 
+  │ ├── ieee754@1.1.8 
+  │ ├── int64-buffer@0.1.9 
+  │ └── isarray@1.0.0 
+  ├── nonenumerable@1.0.1 
+  ├── shortid@2.2.8 
+  ├─┬ url-parse@1.1.9 
+  │ ├── querystringify@1.0.0 
+  │ └── requires-port@1.0.0 
+  └── uws@8.14.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/colyseus/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 41% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","random","Array","Uint8Array","call","isArray"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0521 took 6.9851s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/index.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/colyseus/node_modules/shortid/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/index.js. Coverage (Term): 63% Coverage (LOC): 69%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/alphabet.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/random/random-from-seed.js. Coverage (Term): 52% Coverage (LOC): 77%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/encode.js. Coverage (Term): 33% Coverage (LOC): 43%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/random/random-byte.js. Coverage (Term): 70% Coverage (LOC): 88%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/decode.js. Coverage (Term): 44% Coverage (LOC): 60%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/build.js. Coverage (Term): 34% Coverage (LOC): 39%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/is-valid.js. Coverage (Term): 29% Coverage (LOC): 35%
+*- File /root/Targets/colyseus/node_modules/shortid/lib/util/cluster-worker-id.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/Server.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/ClusterServer.js. Coverage (Term): 14% Coverage (LOC): 12%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/index.js. Coverage (Term): 47% Coverage (LOC): 61%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/key.js. Coverage (Term): 35% Coverage (LOC): 57%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/string.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/hash.js. Coverage (Term): 21% Coverage (LOC): 36%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/list.js. Coverage (Term): 22% Coverage (LOC): 36%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/commands/set.js. Coverage (Term): 21% Coverage (LOC): 35%
+*- File /root/Targets/colyseus/node_modules/memshared/lib/Store.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/colyseus/node_modules/url-parse/index.js. Coverage (Term): 9% Coverage (LOC): 24%
+*- File /root/Targets/colyseus/node_modules/requires-port/index.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/colyseus/node_modules/querystringify/index.js. Coverage (Term): 23% Coverage (LOC): 39%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/cluster/Master.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/colyseus/node_modules/ip/lib/ip.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/Utils.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/colyseus/node_modules/colyseus/lib/cluster/Worker.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/index.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/encode.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/encode-buffer.js. Coverage (Term): 60% Coverage (LOC): 67%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/write-core.js. Coverage (Term): 49% Coverage (LOC): 57%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/ext-buffer.js. Coverage (Term): 45% Coverage (LOC): 56%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/bufferish.js. Coverage (Term): 38% Coverage (LOC): 48%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/buffer-global.js. Coverage (Term): 71% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/bufferish-array.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/bufferish-buffer.js. Coverage (Term): 44% Coverage (LOC): 46%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/bufferish-uint8array.js. Coverage (Term): 36% Coverage (LOC): 34%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/bufferish-proto.js. Coverage (Term): 28% Coverage (LOC): 46%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/buffer-lite.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/ext-packer.js. Coverage (Term): 74% Coverage (LOC): 86%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/write-type.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/colyseus/node_modules/int64-buffer/int64-buffer.js. Coverage (Term): 23% Coverage (LOC): 30%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/write-token.js. Coverage (Term): 39% Coverage (LOC): 52%
+*- File /root/Targets/colyseus/node_modules/ieee754/index.js. Coverage (Term): 4% Coverage (LOC): 8%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/write-uint8.js. Coverage (Term): 72% Coverage (LOC): 80%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/codec-base.js. Coverage (Term): 75% Coverage (LOC): 87%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/flex-buffer.js. Coverage (Term): 26% Coverage (LOC): 45%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/decode.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/decode-buffer.js. Coverage (Term): 61% Coverage (LOC): 67%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/read-core.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/ext-unpacker.js. Coverage (Term): 79% Coverage (LOC): 91%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/read-format.js. Coverage (Term): 21% Coverage (LOC): 42%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/read-token.js. Coverage (Term): 81% Coverage (LOC): 84%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/encoder.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/colyseus/node_modules/event-lite/event-lite.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/decoder.js. Coverage (Term): 46% Coverage (LOC): 61%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/encode-stream.js. Coverage (Term): 39% Coverage (LOC): 42%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/decode-stream.js. Coverage (Term): 40% Coverage (LOC): 41%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/ext.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/colyseus/node_modules/msgpack-lite/lib/codec.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

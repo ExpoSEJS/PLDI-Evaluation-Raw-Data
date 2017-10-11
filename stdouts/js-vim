@@ -1,0 +1,42 @@
+/root/Targets/js-vim
+└─┬ js-vim@0.4.2 
+  ├── diff_match_patch@0.1.1 
+  ├── get-set@0.1.0 
+  ├── js-vim-command@0.6.0 
+  ├─┬ mauve@1.1.2 
+  │ ├── rgb@0.0.1 
+  │ └── x256@0.0.1 
+  └── underscore@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/js-vim/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","parseInt","apply","parseFloat","round","splice","isArray","pow","sqrt"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0316 took 13.4082s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/js-vim/node_modules/js-vim/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/Vim.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/js-vim/node_modules/get-set/index.js. Coverage (Term): 43% Coverage (LOC): 53%
+*- File /root/Targets/js-vim/node_modules/get-set/lib/Event.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/js-vim/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/mark.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/Doc.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/Cursor.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/Event.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/Undo.js. Coverage (Term): 23% Coverage (LOC): 43%
+*- File /root/Targets/js-vim/node_modules/js-vim/lib/View.js. Coverage (Term): 3% Coverage (LOC): 6%
+*- File /root/Targets/js-vim/node_modules/mauve/index.js. Coverage (Term): 36% Coverage (LOC): 35%
+*- File /root/Targets/js-vim/node_modules/rgb/index.js. Coverage (Term): 51% Coverage (LOC): 66%
+*- File /root/Targets/js-vim/node_modules/x256/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

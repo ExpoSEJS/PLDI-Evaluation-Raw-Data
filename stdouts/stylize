@@ -1,0 +1,197 @@
+/root/Targets/stylize
+└─┬ stylize@0.0.2 
+  ├── generator-stylize@0.0.0  (git+https://github.com/Josh-Miller/generator-stylize.git#b554abab8a6a31b72899d5aabf57fca7f729aa5b)
+  └─┬ stylize-front-end@0.0.2  (git+https://github.com/AtenDesignGroup/stylize-front-end.git#52c3b0d5ab15432c77ed2469168fb25276595c9e)
+    ├── UNMET PEER DEPENDENCY react-router@^0.12.4
+    └── static-react-router@1.0.2  (git+https://github.com/pixelwhip/static-react-router.git#d5144db2a01ee935880a2441214370f53fdb41b3)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/stylize/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","WeakMap","max","Array"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0624 took 21.7169s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (5:4) on program // Monkey-patching the fs module.
+// It's ugly, but there is simply no other way to do this.
+var fs = module.exports = require('./fs.js')
+
+var assert = require('assert')
+
+// fix up some busted stuff, mostly on windows and old nodes
+require('./polyfills.js')
+
+var util = require('util')
+
+function noop () {}
+
+var debug = noop
+if (util.debuglog)
+  debug = util.debuglog('gfs')
+else if (/\bgfs\b/i.test(process.env.NODE_DEBUG || ''))
+  debug = function() {
+    var m = util.format.apply(util, arguments)
+    m = 'GFS: ' + m.split(/\n/).join('\nGFS: ')
+    console.error(m)
+  }
+
+if (/\bgfs\b/i.test(process.env.NODE_DEBUG || '')) {
+  process.on('exit', function() {
+    debug('fds', fds)
+    debug(queue)
+    assert.equal(queue.length, 0)
+  })
+}
+
+
+var originalOpen = fs.open
+fs.open = open
+
+function open(path, flags, mode, cb) {
+  if (typeof mode === "function") cb = mode, mode = null
+  if (typeof cb !== "function") cb = noop
+  new OpenReq(path, flags, mode, cb)
+}
+
+function OpenReq(path, flags, mode, cb) {
+  this.path = path
+  this.flags = flags
+  this.mode = mode
+  this.cb = cb
+  Req.call(this)
+}
+
+util.inherits(OpenReq, Req)
+
+OpenReq.prototype.process = function() {
+  originalOpen.call(fs, this.path, this.flags, this.mode, this.done)
+}
+
+var fds = {}
+OpenReq.prototype.done = function(er, fd) {
+  debug('open done', er, fd)
+  if (fd)
+    fds['fd' + fd] = this.path
+  Req.prototype.done.call(this, er, fd)
+}
+
+
+var originalReaddir = fs.readdir
+fs.readdir = readdir
+
+function readdir(path, cb) {
+  if (typeof cb !== "function") cb = noop
+  new ReaddirReq(path, cb)
+}
+
+function ReaddirReq(path, cb) {
+  this.path = path
+  this.cb = cb
+  Req.call(this)
+}
+
+util.inherits(ReaddirReq, Req)
+
+ReaddirReq.prototype.process = function() {
+  originalReaddir.call(fs, this.path, this.done)
+}
+
+ReaddirReq.prototype.done = function(er, files) {
+  if (files && files.sort)
+    files = files.sort()
+  Req.prototype.done.call(this, er, files)
+  onclose()
+}
+
+
+var originalClose = fs.close
+fs.close = close
+
+function close (fd, cb) {
+  debug('close', fd)
+  if (typeof cb !== "function") cb = noop
+  delete fds['fd' + fd]
+  originalClose.call(fs, fd, function(er) {
+    onclose()
+    cb(er)
+  })
+}
+
+
+var originalCloseSync = fs.closeSync
+fs.closeSync = closeSync
+
+function closeSync (fd) {
+  try {
+    return originalCloseSync(fd)
+  } finally {
+    onclose()
+  }
+}
+
+
+// Req class
+function Req () {
+  // start processing
+  this.done = this.done.bind(this)
+  this.failures = 0
+  this.process()
+}
+
+Req.prototype.done = function (er, result) {
+  var tryAgain = false
+  if (er) {
+    var code = er.code
+    var tryAgain = code === "EMFILE" || code === "ENFILE"
+    if (process.platform === "win32")
+      tryAgain = tryAgain || code === "OK"
+  }
+
+  if (tryAgain) {
+    this.failures ++
+    enqueue(this)
+  } else {
+    var cb = this.cb
+    cb(er, result)
+  }
+}
+
+var queue = []
+
+function enqueue(req) {
+  queue.push(req)
+  debug('enqueue %d %s', queue.length, req.constructor.name, req)
+}
+
+function onclose() {
+  var req = queue.shift()
+  if (req) {
+    debug('process', req.constructor.name, req)
+    req.process()
+  }
+}
+ at SyntaxError: Unexpected token (5:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/stylize/node_modules/stylize/index.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/stylize/node_modules/lodash/index.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/stylize/node_modules/stylize-regression/index.js. Coverage (Term): 5% Coverage (LOC): 7%
+*- File /root/Targets/stylize/node_modules/webshot/lib/webshot.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,43 @@
+/root/Targets/tonal
+└─┬ tonal@1.0.0-0 
+  ├── tonal-chord@1.0.0-0 
+  ├─┬ tonal-dictionary@1.0.0-0 
+  │ └── tonal-array@1.0.0-0 
+  ├── tonal-distance@1.0.0-0 
+  ├── tonal-interval@1.0.0-0 
+  ├── tonal-key@1.0.0-0 
+  ├── tonal-note@1.0.0-0 
+  ├── tonal-pcset@1.0.0-0 
+  ├─┬ tonal-range@0.69.9 
+  │ ├─┬ tonal-array@0.69.7 
+  │ │ ├── tonal-distance@0.69.7 
+  │ │ └─┬ tonal-pitch@0.69.7 
+  │ │   ├── interval-notation@1.0.1 
+  │ │   └── tonal-encoding@0.69.7 
+  │ ├─┬ tonal-midi@0.69.7 
+  │ │ └── note-parser@2.0.1 
+  │ ├─┬ tonal-note@0.69.9 
+  │ │ └── tonal-freq@0.69.9 
+  │ ├── tonal-pcset@0.69.9 
+  │ └── tonal-transpose@0.69.7 
+  └── tonal-scale@1.0.0-0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tonal/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0571 took 4.1752s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (4:0)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/tonal/node_modules/tonal/build/index.js. Coverage (Term): 34% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,349 @@
+/root/Targets/sass-nitty
+└── sass-nitty@0.7.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sass-nitty/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0413 took 4.759s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (15:18) on program /// Defines whether to render the preview css or not.
+/// The preview shows an overlay of the default columns on the page.
+///
+/// @example
+///   <!-- To see the preview, copy this into your html -->
+///   <div class="grid-preview">
+///     <div class="grid-preview__row">
+///       <div class="grid-preview__col"></div>
+///       <div class="grid-preview__col"></div>
+///       <div class="grid-preview__col"></div>
+///       <!-- ...however many columns you've defined -->
+///     </div>
+///   </div>
+/// @type Bool
+$grid-show-preview: false !default;
+
+/// Defines the default layout technique to be used.
+/// Currently two techniques are suppoerted:
+/// - **inline** layouts using `display: inline-block`
+/// - **float** layouts using `float: left`
+/// @type String
+$grid-tech: inline !default;
+
+/// Defines the default number of columns.
+/// @type Number
+$grid-columns: 12 !default;
+
+/// Defines the default gutter between columns. At the moment only `px` values are supported.
+///
+/// **For best results choose an even number because of the maths involved.**
+/// @type Number
+$grid-gutter: 20px !default;
+
+/// Defines the max-width of the grid. This is used on grid-container elements.
+/// Set to false to disable max-width
+/// @type Number | Bool
+$grid-max-width: 1400px !default;
+
+/// Defines the (optionally responsive) margins of the grid.
+/// - `df` defines the default margins.
+/// - Further keys define margins for specific breakpoints.
+///
+/// **Responsive margins require the [sass-mq mixin](https://github.com/sass-mq/sass-mq)**
+/// @example
+///   // sass-mq breakpoints
+///   $mq-breakpoints: (
+///     mobile:  320px,
+///     tablet:  740px,
+///     desktop: 980px
+///   );
+///
+///   // sass-nitty responsive margins
+///   $grid-margins: (
+///     df:      12px,
+///     mobile:  16px,
+///     tablet:  20px,
+///     desktop: 22px
+///   );
+/// @type Map
+$grid-margins: ( df: 16px ) !default;
+
+/// Defines the `font-size` to be set on column items. This is needed as part of the layout technique involves resetting the font size on rows.
+///
+/// **Just leave it alone** In 99% of cases you don't need to touch this.
+/// @type Number
+$grid-font-size: 1rem !default;
+
+$grid-gutter-half: $grid-gutter / 2;
+
+///  Define a container element.
+/// This may be a single wrapper overarching all content or several sections on the same page.
+///
+/// Centers the content, sets a `max-width` and defines the site margins.
+/// @example
+///   // Set site-wide max-width
+///   $grid-max-width: 1400px;
+/// @example
+///   // Set site-wide margin
+///   $grid-margins: ( df: 20px );
+/// @example
+///   // Set site-wide responsive margins (requires sass-mq)
+///   $grid-margins: (
+///     df:      12px,
+///     mobile:  16px,
+///     tablet:  20px,
+///     desktop: 22px
+///   );
+/// @example
+///   // Usually this will do
+///   .wrapper {
+///     @include grid-container;
+///   }
+/// @example
+///   // Custom max-width
+///   .header {
+///     @include grid-container( $max-width: 45rem );
+///   }
+/// @example
+///   // Set row to true to use container as a grid row
+///   .page-content {
+///     @include grid-container( $row: true );
+///
+///     &__sidebar {
+///       @include grid-col( 4 );
+///     }
+///
+///     &__main {
+///       @include grid-col( 8 );
+///     }
+///   }
+///
+/// @param {Bool} $center [true] - Whether to center the container
+/// @param {Bool} $row [false] - Treat container as a row element. You won't need to define a row element.
+/// @param {Number} $max-width [$grid-max-width] - Defines the max-width of the container.
+@mixin grid-container( $center: true, $row: false, $max-width: $grid-max-width ) {
+
+	$default: map-get( $grid-margins, df );
+	$breakpoints: map-remove( $grid-margins, df );
+	$row-compensation: 0;
+
+	@if ( $row ) {
+		$row-compensation: $grid-gutter-half;
+
+		font-size: 0;
+	}
+
+	@if ( $center ) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	width: calc( 100% - #{ 2 * $default - $row-compensation * 2 } );
+
+	@if ( $max-width != false ) {
+		max-width: $max-width;
+	}
+
+	@if mixin-exists( mq ) {
+		@each $mq, $margin in $breakpoints {
+			@include mq( $mq ) {
+				width: calc( 100% - #{ 2 * $margin - $row-compensation * 2 } );
+			}
+		}
+	}
+
+}
+
+/// Defines a grid row
+/// @param {Number | Bool} $gutter [$grid-gutter] - Defines the gutter between columns
+/// @param {String} $tech [$grid-tech] - Defines the layout technique. One of `inline` or `float`
+/// @param {String} $align [left] - Alignment for the grid; `left`, `right` or `center`. Only applicable when `$grid-tech: inline`
+@mixin grid-row ( $gutter: $grid-gutter, $tech: $grid-tech, $align: left ) {
+	padding-left: 0 !important; // Calculations are wrong if padding is present
+	padding-right: 0 !important; // Calculations are wrong if padding is present
+
+	@if ( $tech == inline ) {
+		font-size: 0 !important; // Reset font-size to prevent unwanted spacing
+		letter-spacing: 0 !important; // Letter-spacing can throw inline-blocks off
+		text-align: $align;
+
+		// Reset alignment on children
+		@if ( $align != left ) {
+			> * {
+				text-align: left;
+			}
+		}
+	} @else if ( $tech == float ) {
+		&:before,
+		&:after {
+			content: ' ';
+			display: table;
+		}
+
+		&:after {
+			clear: both;
+		}
+	}
+
+	@if ( $gutter != false ) {
+		margin-left: -$gutter / 2;
+		margin-right: -$gutter / 2;
+	}
+
+}
+
+@mixin grid-row-full( $tech: $grid-tech ) {
+	@include grid-row( $tech: $tech, $align-sides: false );
+
+	width: 100vw;
+	margin-left: 50%;
+	transform: translate( -50%, 0 );
+}
+
+/// Defines a grid column
+/// @param {Number} $width [1] - Number of columns to span
+/// @param {Number} $of [$grid-columns] - Total number of columns
+/// @param {Number} $gutter [$grid-gutter] - Gutter between columns
+/// @param {String} $align [$top] - How to align the columns to each other. One of `top`, `bottom` and `center`.
+/// @param {Number | Bool} $push [false] - Number of columns to push or pull the column. Use for custom source order.
+/// @param {Number | Bool} $prefix [false] - Number of empty columns before this column.
+/// @param {Number | Bool} $suffix [false] - Number of empty columns after this column.
+@mixin grid-col( $width: 1, $of: $grid-columns, $gutter: $grid-gutter, $align: top, $tech: $grid-tech, $push: false, $prefix: false, $suffix: false ) {
+	width: percentage( $width / $of );
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+
+	@if ( $tech == inline ) {
+		display: inline-block;
+		font-size: $grid-font-size;
+		vertical-align: $align;
+	} @else if ( $tech == float ) {
+		float: left;
+	}
+
+	@if ( $push != false ) {
+		left: percentage( 1 / $of ) * $push;
+		position: relative;
+	}
+
+	@if ( $prefix != false ) {
+		margin-left: percentage( 1 / $of ) * $prefix;
+	}
+
+	@if ( $suffix != false ) {
+		margin-right: percentage( 1 / $of ) * $suffix;
+	}
+
+}
+
+/// Calculate a width based on the grid.
+///
+/// Use for custom positioning and widths that align to the grid.
+/// Calculations are based on the parent element width.
+/// Use the `$of` parameter to define the parent base.
+///
+/// @example
+///   // Define a container
+///   .header {
+///     @include grid-container;
+///
+///     position: relative; // For absolute positioning child elements
+///   }
+///
+///   // Align an element inside .header
+///   .header__logo {
+///     position: absolute;
+///     left: grid-width( 4, $add-gutters: 1 );
+///     width: grid-width( 5 );
+///   }
+/// @param {Number} $width [1] - Number of columns to span
+/// @param {Number} $of [$grid-columns] - Total number of columns
+/// @param {Number} $add-gutters [0] - Number of gutters to add to the width.
+@function grid-width( $width: 1, $of: $grid-columns, $add-gutters: 0 ) {
+	$gutters: -$grid-gutter + $add-gutters * $grid-gutter;
+
+	@return calc( ( 100% + #{ $grid-gutter } ) / #{$of/$width} + #{ $gutters } );
+}
+
+
+@if ( $grid-show-preview ) {
+
+	.grid-preview-tester {
+		content: '#{ $grid-columns }';
+	}
+
+	.grid-preview {
+		@include grid-container;
+
+		bottom: 0;
+		left: 50%;
+		overflow: hidden;
+		pointer-events: none;
+		position: fixed;
+		top: 0;
+		transform: translate( -50%, 0 );
+		transition: opacity 300ms ease-out, bottom 300ms ease-out;
+		z-index: 9000;
+
+		&__row {
+			@include grid-row;
+		}
+
+		&__col {
+			@include grid-col;
+
+			&:before {
+				background-color: rgba( 128, 128, 128, 0.3 );
+				content: '';
+				display: block;
+				height: 100vh;
+			}
+		}
+	}
+
+	.grid-preview.is-hidden {
+		bottom: 100%;
+		opacity: 0;
+	}
+
+	.grid-preview-toggle {
+		background-color: rgba( 0, 0, 0, 0.2 );
+		color: #000;
+		cursor: pointer;
+		font-family: Arial, sans-serif;
+		font-size: 10px;
+		opacity: 0;
+		padding: 6px 10px;
+		position: fixed;
+		right: 0;
+		top: 0;
+		transition: opacity 300ms ease-out;
+	}
+
+	.grid-preview-toggle:hover {
+	 	opacity: 1;
+	}
+
+}
+ at SyntaxError: Unexpected token (15:18)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

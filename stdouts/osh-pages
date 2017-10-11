@@ -1,0 +1,149 @@
+/root/Targets/osh-pages
+└── osh-pages@0.0.14 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/osh-pages/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","RegExp","create","freeze","parseInt","call","Object","join","sort","isArray","apply","Date"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0582 took 83.4534s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (2:4) on program 
+var assert = require('assert')
+
+var base62 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+var base36 = 'abcdefghijklmnopqrstuvwxyz0123456789'
+var base10 = '0123456789'
+
+exports = module.exports = create(base62)
+exports.base62 = exports
+exports.base36 = create(base36)
+exports.base10 = create(base10)
+
+exports.create = create
+
+function create(chars) {
+  assert(typeof chars === 'string', 'the list of characters must be a string!')
+  var length = Buffer.byteLength(chars)
+  return function rndm(len) {
+    assert(typeof len === 'number' && len >= 0, 'the length of the random string must be a number!')
+    var salt = ''
+    for (var i = 0; i < len; i++) salt += chars[Math.floor(length * Math.random())]
+    return salt
+  }
+}
+ at SyntaxError: Unexpected token (2:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/index.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/server-pages.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/osh-pages/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/osh-pages/node_modules/xtend/mutable.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/osh-pages/node_modules/dynapack/index.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/osh-pages/node_modules/module-deps/index.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/index.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/index.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/lib/core.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/lib/async.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/lib/caller.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/lib/node-modules-paths.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/osh-pages/node_modules/browser-resolve/node_modules/resolve/lib/sync.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/index.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/lib/core.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/lib/async.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/lib/caller.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/lib/node-modules-paths.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/resolve/lib/sync.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/osh-pages/node_modules/detective/index.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/osh-pages/node_modules/detective/node_modules/esprima-fb/esprima.js. Coverage (Term): 6% Coverage (LOC): 17%
+*- File /root/Targets/osh-pages/node_modules/escodegen/escodegen.js. Coverage (Term): 5% Coverage (LOC): 12%
+*- File /root/Targets/osh-pages/node_modules/estraverse/estraverse.js. Coverage (Term): 20% Coverage (LOC): 44%
+*- File /root/Targets/osh-pages/node_modules/esutils/lib/utils.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/esutils/lib/code.js. Coverage (Term): 19% Coverage (LOC): 48%
+*- File /root/Targets/osh-pages/node_modules/esutils/lib/keyword.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/osh-pages/node_modules/through2/through2.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/osh-pages/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/osh-pages/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/osh-pages/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/xtend/index.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/osh-pages/node_modules/object-keys/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/through2/node_modules/xtend/has-keys.js. Coverage (Term): 48% Coverage (LOC): 80%
+*- File /root/Targets/osh-pages/node_modules/concat-stream/index.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/readable.js. Coverage (Term): 90% Coverage (LOC): 92%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/parents/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/osh-pages/node_modules/module-deps/node_modules/stream-combiner/index.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/osh-pages/node_modules/duplexer/index.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/osh-pages/node_modules/through/index.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/osh-pages/node_modules/duplexer2/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/osh-pages/node_modules/browserify/lib/builtins.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File /root/Targets/osh-pages/node_modules/dynapack/node_modules/xtend/index.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/osh-pages/node_modules/async/lib/async.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/osh-pages/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/osh-pages/node_modules/dynapack/lib/encode-bits.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/index.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/lexical-scope/index.js. Coverage (Term): 4% Coverage (LOC): 8%
+*- File /root/Targets/osh-pages/node_modules/astw/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/osh-pages/node_modules/acorn/dist/acorn.js. Coverage (Term): 13% Coverage (LOC): 35%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/osh-pages/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/combine-source-map/index.js. Coverage (Term): 22% Coverage (LOC): 42%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/convert-source-map/index.js. Coverage (Term): 20% Coverage (LOC): 42%
+*- File /root/Targets/osh-pages/node_modules/lodash.memoize/index.js. Coverage (Term): 44% Coverage (LOC): 61%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/inline-source-map/index.js. Coverage (Term): 19% Coverage (LOC): 34%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/source-map-generator.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/osh-pages/node_modules/amdefine/amdefine.js. Coverage (Term): 49% Coverage (LOC): 54%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/base64-vlq.js. Coverage (Term): 27% Coverage (LOC): 37%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/base64.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/util.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/array-set.js. Coverage (Term): 29% Coverage (LOC): 48%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/mapping-list.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/source-map-consumer.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/binary-search.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/quick-sort.js. Coverage (Term): 22% Coverage (LOC): 36%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/source-map/lib/source-map/source-node.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/combine-source-map/lib/path-is-absolute.js. Coverage (Term): 39% Coverage (LOC): 57%
+*- File /root/Targets/osh-pages/node_modules/insert-module-globals/node_modules/combine-source-map/lib/mappings-from-map.js. Coverage (Term): 28% Coverage (LOC): 24%
+*- File /root/Targets/osh-pages/node_modules/commondir/index.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/server-page.js. Coverage (Term): 41% Coverage (LOC): 55%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/page.js. Coverage (Term): 68% Coverage (LOC): 86%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/pages.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/router.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/osh-pages/node_modules/osh-route/index.js. Coverage (Term): 10% Coverage (LOC): 22%
+*- File /root/Targets/osh-pages/node_modules/parseUri/parseuri.js. Coverage (Term): 32% Coverage (LOC): 76%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/server-cookies.js. Coverage (Term): 28% Coverage (LOC): 45%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/cookies.js. Coverage (Term): 8% Coverage (LOC): 21%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/server-session.js. Coverage (Term): 39% Coverage (LOC): 48%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/session.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/osh-pages/node_modules/osh-pages/lib/csrf.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/osh-pages/node_modules/csrf/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

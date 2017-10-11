@@ -1,0 +1,713 @@
+/root/Targets/force-dev-tool
+└─┬ force-dev-tool@1.0.0 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── docopt@0.6.2 
+  ├─┬ find-up@1.1.2 
+  │ ├── path-exists@2.1.0 
+  │ └─┬ pinkie-promise@2.0.1 
+  │   └── pinkie@2.0.4 
+  ├─┬ fs-extra@0.30.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ ├── klaw@1.3.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ └── rimraf@2.6.2 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ └── once@1.4.0 
+  ├─┬ jsforce@1.8.0 
+  │ ├─┬ co-prompt@1.0.0 
+  │ │ └── keypress@0.2.1 
+  │ ├── coffee-script@1.12.7 
+  │ ├── commander@2.11.0 
+  │ ├── csv-parse@1.2.3 
+  │ ├─┬ csv-stringify@1.0.4 
+  │ │ └── lodash.get@4.4.2 
+  │ ├─┬ faye@1.2.4 
+  │ │ ├── asap@2.0.6 
+  │ │ ├─┬ csprng@0.1.2 
+  │ │ │ └── sequin@0.1.1 
+  │ │ ├─┬ faye-websocket@0.11.1 
+  │ │ │ └─┬ websocket-driver@0.7.0 
+  │ │ │   ├── http-parser-js@0.4.8 
+  │ │ │   └── websocket-extensions@0.1.2 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ └── tunnel-agent@0.6.0 
+  │ ├── multistream@2.1.0 
+  │ ├── open@0.0.5 
+  │ ├── promise@7.3.1 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └─┬ request@2.83.0 
+  │   ├── aws-sign2@0.7.0 
+  │   ├── aws4@1.6.0 
+  │   ├── caseless@0.12.0 
+  │   ├─┬ combined-stream@1.0.5 
+  │   │ └── delayed-stream@1.0.0 
+  │   ├── extend@3.0.1 
+  │   ├── forever-agent@0.6.1 
+  │   ├─┬ form-data@2.3.1 
+  │   │ └── asynckit@0.4.0 
+  │   ├─┬ har-validator@5.0.3 
+  │   │ ├─┬ ajv@5.2.3 
+  │   │ │ ├── co@4.6.0 
+  │   │ │ ├── fast-deep-equal@1.0.0 
+  │   │ │ └── json-schema-traverse@0.3.1 
+  │   │ └── har-schema@2.0.0 
+  │   ├─┬ hawk@6.0.2 
+  │   │ ├── boom@4.3.1 
+  │   │ ├─┬ cryptiles@3.1.2 
+  │   │ │ └── boom@5.2.0 
+  │   │ ├── hoek@4.2.0 
+  │   │ └── sntp@2.0.2 
+  │   ├─┬ http-signature@1.2.0 
+  │   │ ├── assert-plus@1.0.0 
+  │   │ ├─┬ jsprim@1.4.1 
+  │   │ │ ├── extsprintf@1.3.0 
+  │   │ │ ├── json-schema@0.2.3 
+  │   │ │ └── verror@1.10.0 
+  │   │ └─┬ sshpk@1.13.1 
+  │   │   ├── asn1@0.2.3 
+  │   │   ├── bcrypt-pbkdf@1.0.1 
+  │   │   ├── dashdash@1.14.1 
+  │   │   ├── ecc-jsbn@0.1.1 
+  │   │   ├── getpass@0.1.7 
+  │   │   ├── jsbn@0.1.1 
+  │   │   └── tweetnacl@0.14.5 
+  │   ├── is-typedarray@1.0.0 
+  │   ├── isstream@0.1.2 
+  │   ├── json-stringify-safe@5.0.1 
+  │   ├─┬ mime-types@2.1.17 
+  │   │ └── mime-db@1.30.0 
+  │   ├── oauth-sign@0.8.2 
+  │   ├── performance-now@2.1.0 
+  │   ├── qs@6.5.1 
+  │   ├── stringstream@0.0.5 
+  │   └── uuid@3.1.0 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├─┬ multimatch@2.1.0 
+  │ ├── array-differ@1.0.0 
+  │ ├─┬ array-union@1.0.2 
+  │ │ └── array-uniq@1.0.3 
+  │ └── arrify@1.0.1 
+  ├── parse-diff@0.3.2 
+  ├── tabtab@0.0.4 
+  ├─┬ tmp@0.0.28 
+  │ └── os-tmpdir@1.0.2 
+  ├── underscore@1.8.3 
+  ├─┬ vinyl@1.2.0 
+  │ ├── clone@1.0.2 
+  │ ├── clone-stats@0.0.1 
+  │ └── replace-ext@0.0.1 
+  ├─┬ vinyl-fs@2.4.4 
+  │ ├─┬ duplexify@3.5.1 
+  │ │ ├── end-of-stream@1.4.0 
+  │ │ └── stream-shift@1.0.0 
+  │ ├─┬ glob-stream@5.3.5 
+  │ │ ├── glob@5.0.15 
+  │ │ ├─┬ glob-parent@3.1.0 
+  │ │ │ ├─┬ is-glob@3.1.0 
+  │ │ │ │ └── is-extglob@2.1.1 
+  │ │ │ └── path-dirname@1.0.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├─┬ extglob@0.3.2 
+  │ │ │ │ └── is-extglob@1.0.0 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ ├── is-glob@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ │ │ └─┬ is-glob@2.0.1 
+  │ │ │ │ │   └── is-extglob@1.0.0 
+  │ │ │ │ ├── is-dotfile@1.0.3 
+  │ │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ │ └── is-glob@2.0.1 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ ├─┬ ordered-read-streams@0.3.0 
+  │ │ │ └── is-stream@1.1.0 
+  │ │ ├─┬ through2@0.6.5 
+  │ │ │ └─┬ readable-stream@1.0.34 
+  │ │ │   ├── isarray@0.0.1 
+  │ │ │   └── string_decoder@0.10.31 
+  │ │ ├─┬ to-absolute-glob@0.1.1 
+  │ │ │ └── extend-shallow@2.0.1 
+  │ │ └─┬ unique-stream@2.2.1 
+  │ │   └─┬ json-stable-stringify@1.0.1 
+  │ │     └── jsonify@0.0.0 
+  │ ├─┬ gulp-sourcemaps@1.6.0 
+  │ │ └── convert-source-map@1.5.0 
+  │ ├── is-valid-glob@0.3.0 
+  │ ├── lazystream@1.0.0 
+  │ ├── lodash.isequal@4.5.0 
+  │ ├── merge-stream@1.0.1 
+  │ ├── object-assign@4.1.1 
+  │ ├─┬ strip-bom@2.0.0 
+  │ │ └── is-utf8@0.2.1 
+  │ ├─┬ strip-bom-stream@1.0.0 
+  │ │ └── first-chunk-stream@1.0.0 
+  │ ├─┬ through2@2.0.3 
+  │ │ └── xtend@4.0.1 
+  │ ├── through2-filter@2.0.0 
+  │ └── vali-date@1.0.0 
+  ├─┬ xml2js@0.4.19 
+  │ ├── sax@1.2.4 
+  │ └── xmlbuilder@9.0.4 
+  ├── xmldoc@1.1.0 
+  ├─┬ yauzl@2.8.0 
+  │ ├── buffer-crc32@0.2.13 
+  │ └─┬ fd-slicer@1.0.1 
+  │   └── pend@1.2.0 
+  └── yazl@2.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/force-dev-tool/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /3 queued / 1 running / 1 errors / 36% coverage ] ****** [1 done /2 queued / 2 running / 1 errors / 36% coverage ] ****** [1 done /1 queued / 3 running / 1 errors / 36% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 36% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 36% coverage ] ****** [2 done /0 queued / 4 running / 1 errors / 36% coverage ] ****** [2 done /0 queued / 4 running / 1 errors / 36% coverage ] ****** [3 done /2 queued / 4 running / 2 errors / 36% coverage ] ****** [3 done /1 queued / 5 running / 2 errors / 36% coverage ] ****** [3 done /0 queued / 6 running / 2 errors / 36% coverage ] ****** [3 done /0 queued / 6 running / 2 errors / 36% coverage ] ****** [4 done /4 queued / 6 running / 2 errors / 36% coverage ] ****** [4 done /3 queued / 7 running / 2 errors / 36% coverage ] ****** [4 done /2 queued / 8 running / 2 errors / 36% coverage ] ****** [4 done /1 queued / 9 running / 2 errors / 36% coverage ] ****** [4 done /0 queued / 10 running / 2 errors / 36% coverage ] ****** [4 done /0 queued / 10 running / 2 errors / 36% coverage ] ****** [5 done /0 queued / 10 running / 3 errors / 36% coverage ] ****** [5 done /0 queued / 10 running / 3 errors / 36% coverage ] ****** [6 done /3 queued / 10 running / 4 errors / 36% coverage ] ****** [6 done /2 queued / 11 running / 4 errors / 36% coverage ] ****** [6 done /1 queued / 12 running / 4 errors / 36% coverage ] ****** [6 done /0 queued / 13 running / 4 errors / 36% coverage ] ****** [6 done /0 queued / 13 running / 4 errors / 36% coverage ] ****** [7 done /2 queued / 13 running / 5 errors / 36% coverage ] ****** [7 done /1 queued / 14 running / 5 errors / 36% coverage ] ****** [7 done /0 queued / 15 running / 5 errors / 36% coverage ] ****** [7 done /0 queued / 15 running / 5 errors / 36% coverage ] ****** [8 done /2 queued / 15 running / 6 errors / 37% coverage ] ****** [8 done /1 queued / 16 running / 6 errors / 37% coverage ] ****** [8 done /1 queued / 16 running / 6 errors / 37% coverage ] ****** [9 done /4 queued / 16 running / 6 errors / 37% coverage ] ****** [9 done /4 queued / 16 running / 6 errors / 37% coverage ] ****** [10 done /5 queued / 16 running / 7 errors / 37% coverage ] ****** [10 done /5 queued / 16 running / 7 errors / 37% coverage ] ****** [11 done /6 queued / 16 running / 8 errors / 37% coverage ] ****** [11 done /6 queued / 16 running / 8 errors / 37% coverage ] ****** [12 done /7 queued / 16 running / 9 errors / 37% coverage ] ****** [12 done /7 queued / 16 running / 9 errors / 37% coverage ] ****** [13 done /10 queued / 16 running / 10 errors / 37% coverage ] ****** [13 done /10 queued / 16 running / 10 errors / 37% coverage ] ****** [14 done /12 queued / 16 running / 11 errors / 37% coverage ] ****** [14 done /12 queued / 16 running / 11 errors / 37% coverage ] ****** [15 done /11 queued / 16 running / 12 errors / 37% coverage ] ****** [15 done /11 queued / 16 running / 12 errors / 37% coverage ] ****** [16 done /10 queued / 16 running / 12 errors / 37% coverage ] ****** [16 done /10 queued / 16 running / 12 errors / 37% coverage ] ****** [17 done /15 queued / 16 running / 12 errors / 37% coverage ] ****** [17 done /15 queued / 16 running / 12 errors / 37% coverage ] ****** [18 done /16 queued / 16 running / 12 errors / 37% coverage ] ****** [18 done /16 queued / 16 running / 12 errors / 37% coverage ] ****** [19 done /15 queued / 16 running / 13 errors / 37% coverage ] ****** [19 done /15 queued / 16 running / 13 errors / 37% coverage ] ****** [20 done /18 queued / 16 running / 14 errors / 37% coverage ] ****** [20 done /18 queued / 16 running / 14 errors / 37% coverage ] ****** [21 done /21 queued / 16 running / 15 errors / 37% coverage ] ****** [21 done /21 queued / 16 running / 15 errors / 37% coverage ] ****** [22 done /22 queued / 16 running / 16 errors / 37% coverage ] ****** [22 done /22 queued / 16 running / 16 errors / 37% coverage ] ****** [23 done /23 queued / 16 running / 17 errors / 37% coverage ] ****** [23 done /23 queued / 16 running / 17 errors / 37% coverage ] ****** [24 done /22 queued / 16 running / 18 errors / 37% coverage ] ****** [24 done /22 queued / 16 running / 18 errors / 37% coverage ] ****** [25 done /24 queued / 16 running / 19 errors / 37% coverage ] ****** [25 done /24 queued / 16 running / 19 errors / 37% coverage ] ****** [26 done /25 queued / 16 running / 20 errors / 37% coverage ] ****** [26 done /25 queued / 16 running / 20 errors / 37% coverage ] ****** [27 done /25 queued / 16 running / 21 errors / 37% coverage ] ****** [27 done /25 queued / 16 running / 21 errors / 37% coverage ] ****** [28 done /24 queued / 16 running / 22 errors / 37% coverage ] ****** [28 done /24 queued / 16 running / 22 errors / 37% coverage ] ****** [29 done /24 queued / 16 running / 22 errors / 37% coverage ] ****** [29 done /24 queued / 16 running / 22 errors / 37% coverage ] ****** [30 done /25 queued / 16 running / 23 errors / 37% coverage ] ****** [30 done /25 queued / 16 running / 23 errors / 37% coverage ] ****** [31 done /26 queued / 16 running / 24 errors / 37% coverage ] ****** [31 done /26 queued / 16 running / 24 errors / 37% coverage ] ****** [32 done /29 queued / 16 running / 25 errors / 37% coverage ] ****** [32 done /29 queued / 16 running / 25 errors / 37% coverage ] ****** [33 done /31 queued / 16 running / 25 errors / 37% coverage ] ****** [33 done /31 queued / 16 running / 25 errors / 37% coverage ] ****** [34 done /32 queued / 16 running / 26 errors / 37% coverage ] ****** [34 done /32 queued / 16 running / 26 errors / 37% coverage ] ****** [35 done /36 queued / 16 running / 26 errors / 37% coverage ] ****** [35 done /36 queued / 16 running / 26 errors / 37% coverage ] ****** [36 done /38 queued / 16 running / 26 errors / 37% coverage ] ****** [36 done /38 queued / 16 running / 26 errors / 37% coverage ] ****** [37 done /39 queued / 16 running / 27 errors / 37% coverage ] ****** [37 done /39 queued / 16 running / 27 errors / 37% coverage ] ****** [38 done /38 queued / 16 running / 28 errors / 37% coverage ] ****** [38 done /38 queued / 16 running / 28 errors / 37% coverage ] ****** [39 done /37 queued / 16 running / 28 errors / 37% coverage ] ****** [39 done /37 queued / 16 running / 28 errors / 37% coverage ] ****** [40 done /36 queued / 16 running / 28 errors / 37% coverage ] ****** [40 done /36 queued / 16 running / 28 errors / 37% coverage ] ****** [41 done /35 queued / 16 running / 29 errors / 37% coverage ] ****** [41 done /35 queued / 16 running / 29 errors / 37% coverage ] ****** [42 done /34 queued / 16 running / 30 errors / 37% coverage ] ****** [42 done /34 queued / 16 running / 30 errors / 37% coverage ] ****** [43 done /35 queued / 16 running / 31 errors / 37% coverage ] ****** [43 done /35 queued / 16 running / 31 errors / 37% coverage ] ****** [44 done /36 queued / 16 running / 32 errors / 37% coverage ] ****** [44 done /36 queued / 16 running / 32 errors / 37% coverage ] ****** [45 done /37 queued / 16 running / 33 errors / 37% coverage ] ****** [45 done /37 queued / 16 running / 33 errors / 37% coverage ] ****** [46 done /39 queued / 16 running / 34 errors / 37% coverage ] ****** [46 done /39 queued / 16 running / 34 errors / 37% coverage ] ****** [47 done /41 queued / 16 running / 35 errors / 37% coverage ] ****** [47 done /41 queued / 16 running / 35 errors / 37% coverage ] ****** [48 done /44 queued / 16 running / 36 errors / 37% coverage ] ****** [48 done /44 queued / 16 running / 36 errors / 37% coverage ] ****** [49 done /44 queued / 16 running / 37 errors / 37% coverage ] ****** [49 done /44 queued / 16 running / 37 errors / 37% coverage ] ****** [50 done /44 queued / 16 running / 38 errors / 37% coverage ] ****** [50 done /44 queued / 16 running / 38 errors / 37% coverage ] ****** [51 done /45 queued / 16 running / 39 errors / 37% coverage ] ****** [51 done /45 queued / 16 running / 39 errors / 37% coverage ] ****** [52 done /49 queued / 16 running / 39 errors / 37% coverage ] ****** [52 done /49 queued / 16 running / 39 errors / 37% coverage ] ****** [53 done /49 queued / 16 running / 39 errors / 37% coverage ] ****** [53 done /49 queued / 16 running / 39 errors / 37% coverage ] ****** [54 done /50 queued / 16 running / 40 errors / 37% coverage ] ****** [54 done /50 queued / 16 running / 40 errors / 37% coverage ] ****** [55 done /52 queued / 16 running / 40 errors / 37% coverage ] ****** [55 done /52 queued / 16 running / 40 errors / 37% coverage ] ****** [56 done /55 queued / 16 running / 40 errors / 37% coverage ] ****** [56 done /55 queued / 16 running / 40 errors / 37% coverage ] ****** [57 done /57 queued / 16 running / 40 errors / 37% coverage ] ****** [57 done /57 queued / 16 running / 40 errors / 37% coverage ] ****** [58 done /60 queued / 16 running / 41 errors / 37% coverage ] ****** [58 done /60 queued / 16 running / 41 errors / 37% coverage ] ****** [59 done /61 queued / 16 running / 42 errors / 37% coverage ] ****** [59 done /61 queued / 16 running / 42 errors / 37% coverage ] ****** [60 done /61 queued / 16 running / 43 errors / 37% coverage ] ****** [60 done /61 queued / 16 running / 43 errors / 37% coverage ] ****** [61 done /62 queued / 16 running / 44 errors / 37% coverage ] ****** [61 done /62 queued / 16 running / 44 errors / 37% coverage ] ****** [62 done /63 queued / 16 running / 45 errors / 37% coverage ] ****** [62 done /63 queued / 16 running / 45 errors / 37% coverage ] ****** [63 done /66 queued / 16 running / 45 errors / 37% coverage ] ****** [63 done /66 queued / 16 running / 45 errors / 37% coverage ] ****** [64 done /67 queued / 16 running / 46 errors / 37% coverage ] ****** [64 done /67 queued / 16 running / 46 errors / 37% coverage ] ****** [65 done /69 queued / 16 running / 47 errors / 37% coverage ] ****** [65 done /69 queued / 16 running / 47 errors / 37% coverage ] ****** [66 done /70 queued / 16 running / 48 errors / 37% coverage ] ****** [66 done /70 queued / 16 running / 48 errors / 37% coverage ] ****** [67 done /71 queued / 16 running / 48 errors / 37% coverage ] ****** [67 done /71 queued / 16 running / 48 errors / 37% coverage ] ****** [68 done /72 queued / 16 running / 48 errors / 37% coverage ] ****** [68 done /72 queued / 16 running / 48 errors / 37% coverage ] ****** [69 done /73 queued / 16 running / 48 errors / 37% coverage ] ****** [69 done /73 queued / 16 running / 48 errors / 37% coverage ] ****** [70 done /74 queued / 16 running / 49 errors / 37% coverage ] ****** [70 done /74 queued / 16 running / 49 errors / 37% coverage ] ****** [71 done /73 queued / 16 running / 50 errors / 37% coverage ] ****** [71 done /73 queued / 16 running / 50 errors / 37% coverage ] ****** [72 done /75 queued / 16 running / 50 errors / 37% coverage ] ****** [72 done /75 queued / 16 running / 50 errors / 37% coverage ] ****** [73 done /74 queued / 16 running / 50 errors / 37% coverage ] ****** [73 done /74 queued / 16 running / 50 errors / 37% coverage ] ****** [74 done /78 queued / 16 running / 50 errors / 37% coverage ] ****** [74 done /78 queued / 16 running / 50 errors / 37% coverage ] ****** [75 done /80 queued / 16 running / 50 errors / 37% coverage ] ****** [75 done /80 queued / 16 running / 50 errors / 37% coverage ] ****** [76 done /82 queued / 16 running / 51 errors / 37% coverage ] ****** [76 done /82 queued / 16 running / 51 errors / 37% coverage ] ****** [77 done /86 queued / 16 running / 52 errors / 37% coverage ] ****** [77 done /86 queued / 16 running / 52 errors / 37% coverage ] ****** [78 done /85 queued / 16 running / 52 errors / 37% coverage ] ****** [78 done /85 queued / 16 running / 52 errors / 37% coverage ] ****** [79 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [79 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [80 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [80 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [81 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [81 done /86 queued / 16 running / 53 errors / 37% coverage ] ****** [82 done /85 queued / 16 running / 53 errors / 37% coverage ] ****** [82 done /85 queued / 16 running / 53 errors / 37% coverage ] ****** [83 done /88 queued / 16 running / 54 errors / 37% coverage ] ****** [83 done /88 queued / 16 running / 54 errors / 37% coverage ] ****** [84 done /88 queued / 16 running / 54 errors / 37% coverage ] ****** [84 done /88 queued / 16 running / 54 errors / 37% coverage ] ****** [85 done /87 queued / 16 running / 54 errors / 37% coverage ] ****** [85 done /87 queued / 16 running / 54 errors / 37% coverage ] ****** [86 done /88 queued / 16 running / 55 errors / 37% coverage ] ****** [86 done /88 queued / 16 running / 55 errors / 37% coverage ] ****** [87 done /87 queued / 16 running / 56 errors / 37% coverage ] ****** [87 done /87 queued / 16 running / 56 errors / 37% coverage ] ****** [88 done /91 queued / 16 running / 57 errors / 37% coverage ] ****** [88 done /91 queued / 16 running / 57 errors / 37% coverage ] ****** [89 done /90 queued / 16 running / 58 errors / 37% coverage ] ****** [89 done /90 queued / 16 running / 58 errors / 37% coverage ] ****** [90 done /91 queued / 16 running / 59 errors / 37% coverage ] ****** [90 done /91 queued / 16 running / 59 errors / 37% coverage ] ****** [91 done /90 queued / 16 running / 60 errors / 37% coverage ] ****** [91 done /90 queued / 16 running / 60 errors / 37% coverage ] ****** [92 done /90 queued / 16 running / 60 errors / 37% coverage ] ****** [92 done /90 queued / 16 running / 60 errors / 37% coverage ] ****** [93 done /91 queued / 16 running / 61 errors / 37% coverage ] ****** [93 done /91 queued / 16 running / 61 errors / 37% coverage ] ****** [94 done /90 queued / 16 running / 62 errors / 37% coverage ] ****** [94 done /90 queued / 16 running / 62 errors / 37% coverage ] ****** [95 done /89 queued / 16 running / 63 errors / 37% coverage ] ****** [95 done /89 queued / 16 running / 63 errors / 37% coverage ] ****** [96 done /88 queued / 16 running / 63 errors / 37% coverage ] ****** [96 done /88 queued / 16 running / 63 errors / 37% coverage ] ****** [97 done /87 queued / 16 running / 64 errors / 37% coverage ] ****** [97 done /87 queued / 16 running / 64 errors / 37% coverage ] ****** [98 done /86 queued / 16 running / 65 errors / 37% coverage ] ****** [98 done /86 queued / 16 running / 65 errors / 37% coverage ] ****** [99 done /85 queued / 16 running / 66 errors / 37% coverage ] ****** [99 done /85 queued / 16 running / 66 errors / 37% coverage ] ****** [100 done /84 queued / 16 running / 67 errors / 37% coverage ] ****** [100 done /84 queued / 16 running / 67 errors / 37% coverage ] ****** [101 done /87 queued / 16 running / 67 errors / 37% coverage ] ****** [101 done /87 queued / 16 running / 67 errors / 37% coverage ] ****** [102 done /88 queued / 16 running / 67 errors / 37% coverage ] ****** [102 done /88 queued / 16 running / 67 errors / 37% coverage ] ****** [103 done /87 queued / 16 running / 68 errors / 37% coverage ] ****** [103 done /87 queued / 16 running / 68 errors / 37% coverage ] ****** [104 done /90 queued / 16 running / 69 errors / 37% coverage ] ****** [104 done /90 queued / 16 running / 69 errors / 37% coverage ] ****** [105 done /89 queued / 16 running / 70 errors / 37% coverage ] ****** [105 done /89 queued / 16 running / 70 errors / 37% coverage ] ****** [106 done /88 queued / 16 running / 71 errors / 37% coverage ] ****** [106 done /88 queued / 16 running / 71 errors / 37% coverage ] ****** [107 done /90 queued / 16 running / 72 errors / 37% coverage ] ****** [107 done /90 queued / 16 running / 72 errors / 37% coverage ] ****** [108 done /91 queued / 16 running / 73 errors / 37% coverage ] ****** [108 done /91 queued / 16 running / 73 errors / 37% coverage ] ****** [109 done /95 queued / 16 running / 74 errors / 37% coverage ] ****** [109 done /95 queued / 16 running / 74 errors / 37% coverage ] ****** [110 done /94 queued / 16 running / 75 errors / 37% coverage ] ****** [110 done /94 queued / 16 running / 75 errors / 37% coverage ] ****** [111 done /95 queued / 16 running / 75 errors / 37% coverage ] ****** [111 done /95 queued / 16 running / 75 errors / 37% coverage ] ****** [112 done /99 queued / 16 running / 76 errors / 37% coverage ] ****** [112 done /99 queued / 16 running / 76 errors / 37% coverage ] ****** [113 done /98 queued / 16 running / 77 errors / 37% coverage ] ****** [113 done /98 queued / 16 running / 77 errors / 37% coverage ] ****** [114 done /98 queued / 16 running / 78 errors / 37% coverage ] ****** [114 done /98 queued / 16 running / 78 errors / 37% coverage ] ****** [115 done /97 queued / 16 running / 79 errors / 37% coverage ] ****** [115 done /97 queued / 16 running / 79 errors / 37% coverage ] ****** [116 done /99 queued / 16 running / 80 errors / 37% coverage ] ****** [116 done /99 queued / 16 running / 80 errors / 37% coverage ] ****** [117 done /98 queued / 16 running / 81 errors / 37% coverage ] ****** [117 done /98 queued / 16 running / 81 errors / 37% coverage ] ****** [118 done /101 queued / 16 running / 82 errors / 37% coverage ] ****** [118 done /101 queued / 16 running / 82 errors / 37% coverage ] ****** [119 done /106 queued / 16 running / 82 errors / 37% coverage ] ****** [119 done /106 queued / 16 running / 82 errors / 37% coverage ] ****** [120 done /105 queued / 16 running / 82 errors / 37% coverage ] ****** [120 done /105 queued / 16 running / 82 errors / 37% coverage ] ****** [121 done /106 queued / 16 running / 83 errors / 37% coverage ] ****** [121 done /106 queued / 16 running / 83 errors / 37% coverage ] ****** [122 done /107 queued / 16 running / 83 errors / 37% coverage ] ****** [122 done /107 queued / 16 running / 83 errors / 37% coverage ] ****** [123 done /107 queued / 16 running / 84 errors / 37% coverage ] ****** [123 done /107 queued / 16 running / 84 errors / 37% coverage ] ****** [124 done /107 queued / 16 running / 85 errors / 37% coverage ] ****** [124 done /107 queued / 16 running / 85 errors / 37% coverage ] ****** [125 done /107 queued / 16 running / 86 errors / 37% coverage ] ****** [125 done /107 queued / 16 running / 86 errors / 37% coverage ] ****** [126 done /107 queued / 16 running / 87 errors / 37% coverage ] ****** [126 done /107 queued / 16 running / 87 errors / 37% coverage ] ****** [127 done /108 queued / 16 running / 87 errors / 37% coverage ] ****** [127 done /108 queued / 16 running / 87 errors / 37% coverage ] ****** [128 done /108 queued / 16 running / 88 errors / 37% coverage ] ****** [128 done /108 queued / 16 running / 88 errors / 37% coverage ] ****** [129 done /108 queued / 16 running / 89 errors / 37% coverage ] ****** [129 done /108 queued / 16 running / 89 errors / 37% coverage ] ****** [130 done /107 queued / 16 running / 90 errors / 37% coverage ] ****** [130 done /107 queued / 16 running / 90 errors / 37% coverage ] ****** [131 done /106 queued / 16 running / 91 errors / 37% coverage ] ****** [131 done /106 queued / 16 running / 91 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","random","reduce","Set","create","fromCharCode","Object","Array","bind","defineProperties","parseInt","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0} start 0.0422 took 60.1676s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"_bound":3,"ExpandedSwitcher_2":0} start 60.532 took 64.7352s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":2} start 60.719 took 65.7358s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":2}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":1,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0} start 60.6304 took 78.2245s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"_bound":4} start 60.8082 took 115.4647s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"_bound":4}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0} start 127.0501 took 74.0134s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0} start 126.7991 took 77.0682s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4} start 126.9132 took 77.9689s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4}
+* Error: TypeError: Cannot read property 'type' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_int":0} start 139.3 took 86.5891s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":4} start 139.5474 took 87.5342s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":4}
+* Error: TypeError: Cannot read property 'forEach' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_type_2":0} start 125.6519 took 126.4949s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_type_2":0}
+* Error: TypeError: Cannot read property 'type' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0} start 176.9219 took 76.6464s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"} start 201.8264 took 70.0972s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"} start 205.2475 took 71.9648s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6} start 204.3879 took 73.3509s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"_bound":5,"ExpandedSwitcher_2":0} start 205.4281 took 72.731s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":3,"ExpansionArg_int":0} start 139.1638 took 142.4487s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_int":0} start 139.784 took 145.5922s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":9} start 227.4561 took 85.1203s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":9}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6} start 201.7356 took 114.452s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":4,"ExpansionArg_string":"PureString"} start 201.5074 took 116.4568s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5} start 201.6192 took 120.5935s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 204.1617 took 119.5788s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":8} start 204.4859 took 121.8513s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":8}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7,"ExpansionArg_string":"PureString"} start 252.4899 took 79.0544s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0} start 277.4971 took 65.414s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0} start 278.5124 took 65.6839s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8} start 277.9479 took 66.6185s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":6} start 226.134 took 123.0352s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 254.0372 took 107.6846s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0} start 272.2161 took 97.5298s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_array_length":0} start 318.1484 took 66.5837s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":6} start 281.8796 took 103.2988s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6} start 322.5794 took 65.7415s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_string":"PureString"} start 312.8093 took 76.1521s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":4} start 285.6769 took 103.2846s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 323.8983 took 67.4581s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int":0} start 316.4553 took 84.8491s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":10,"ExpandedSwitcher_2":0} start 331.736 took 76.9745s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"ExpandedSwitcher_2":0,"_bound":7} start 326.6127 took 83.3214s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8} start 349.5455 took 69.9809s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}
+* Error: TypeError: Cannot read property 'type' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 343.1799 took 86.4482s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0} start 344.3722 took 87.3309s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 362.042 took 70.535s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0} start 370.1013 took 69.5264s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0} start 344.8418 took 97.5012s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_bool":false} start 385.3311 took 60.8934s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 385.0177 took 63.0159s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 388.6561 took 60.9382s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 401.5679 took 52.6986s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":6,"ExpansionArg_type_2":0} start 410.1641 took 62.3123s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":6,"ExpansionArg_type_2":0}
+* Error: TypeError: Cannot read property 'vinyls' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_array_length":0} start 408.8839 took 65.4501s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_string":"PureString"} start 419.8934 took 64.8512s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0} start 391.7619 took 95.0376s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpandedSwitcher_2":0,"_bound":9,"ExpansionArg_string":"PureString"} start 429.8812 took 60.4872s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_string":"PureString"} start 390.1049 took 104.8235s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7} start 389.3475 took 108.5551s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":9,"ExpansionArg_array_element_1_type":0} start 448.2269 took 52.3066s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":9,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0} start 431.988 took 94.1166s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 432.8954 took 95.0693s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0} start 439.9654 took 95.4679s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0} start 446.4281 took 95.4079s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7,"ExpansionArg_bool":false} start 474.6689 took 68.0972s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_bool":true,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7} start 449.8693 took 94.7954s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_bool":true,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_bool":true,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0} start 442.707 took 102.7068s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 487.1103 took 58.9998s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":9,"ExpansionArg_array_length":0} start 485.0773 took 65.3728s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_bool":false,"ExpandedSwitcher_2":0} start 454.5002 took 98.1005s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":12,"ExpansionArg_array_length":0} start 498.1221 took 65.2848s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6} start 472.7232 took 91.0763s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":4,"ExpansionArg_type_3":3,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":12} start 495.2064 took 70.2662s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":4,"ExpansionArg_type_3":3,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":12}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":4,"ExpansionArg_type_3":3,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":11,"ExpansionArg_array_length":0} start 500.8584 took 69.7541s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":10} start 490.5772 took 100.7751s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_array_element_0_type":0} start 535.6957 took 68.1583s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":5,"ExpansionArg_bool":true,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":8} start 543.0392 took 63.6787s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"} start 545.7613 took 64.6909s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_string":"PureString"} start 546.3974 took 66.2231s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":10,"ExpansionArg_bool":false} start 550.6516 took 67.2816s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16,"ExpansionArg_array_element_2_type":0} start 564.1207 took 59.4426s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":9} start 526.3889 took 100.7266s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":10,"ExpansionArg_int_2":0} start 528.2291 took 104.7843s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":13,"ExpansionArg_bool":false} start 563.5686 took 71.3639s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_2_type":0} start 542.1006 took 93.3985s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":12,"ExpansionArg_bool":false} start 570.7669 took 67.0532s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":11,"ExpansionArg_int_2":0} start 545.1455 took 104.4103s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":5} start 565.7034 took 91.917s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":5}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_bool":true,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":11} start 552.7925 took 106.676s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_bool":true,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":11}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_bool":true,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"_bound":10,"ExpansionArg_array_length":0} start 604.0974 took 59.2348s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"_bound":10,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int":0} start 610.7509 took 57.9164s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16,"ExpansionArg_array_element_2_type":0} start 607.0092 took 63.9958s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":16}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7} start 623.7714 took 58.5353s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7}
+* Error: TypeError: Cannot read property 'type' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":9,"ExpandedSwitcher_2":0} start 618.3602 took 70.2913s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 635.27 took 60.3342s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":5,"ExpansionArg_type_3":4,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":14} start 591.5861 took 106.7267s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":5,"ExpansionArg_type_3":4,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":14}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":5,"ExpansionArg_type_3":4,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0,"_bound":14}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":6,"ExpansionArg_type_3":5,"ExpansionArg_bool":false,"ExpandedSwitcher_2":0,"_bound":13} start 638.1857 took 69.7063s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":6,"ExpansionArg_type_3":5,"ExpansionArg_bool":false,"ExpandedSwitcher_2":0,"_bound":13}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":6,"ExpansionArg_type_3":5,"ExpansionArg_bool":false,"ExpandedSwitcher_2":0,"_bound":13}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":13,"ExpandedSwitcher_2":0} start 612.8047 took 98.8841s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":7} start 657.8285 took 59.1147s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":7}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":1,"ExpandedSwitcher_2":0,"_bound":10} start 627.2933 took 106.604s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":1,"ExpandedSwitcher_2":0,"_bound":10}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":1,"ExpandedSwitcher_2":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_string":"PureString"} start 682.5056 took 57.8848s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":13}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":2,"ExpansionArg_int_2":0,"ExpandedSwitcher_2":0,"_bound":11} start 633.1115 took 109.0066s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":2,"ExpansionArg_int_2":0,"ExpandedSwitcher_2":0,"_bound":11}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int":3,"ExpansionArg_type_3":2,"ExpansionArg_int_2":0,"ExpandedSwitcher_2":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":1,"_bound":5,"ExpansionArg_type_2":0,"ExpandedSwitcher_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"ExpandedSwitcher_3":0} start 635.7545 took 122.8305s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_int_2":0,"ExpandedSwitcher_2":0} start 649.7966 took 110.9025s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":14,"ExpansionArg_bool":false} start 668.9588 took 94.5335s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":14,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":14}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"} start 698.522 took 66.7222s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":1,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_int_2":0} start 671.1215 took 95.1598s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_int_2":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":11} start 663.4978 took 103.412s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":11}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_length":0} start 659.6289 took 114.8315s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 712.0249 took 67.6705s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":4,"_bound":8,"ExpansionArg_array_length":0} start 689.0219 took 101.2065s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":4,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":4,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 696.1899 took 95.6145s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpandedSwitcher_2":0,"_bound":7,"ExpansionArg_int":0} start 708.1679 took 109.4904s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false} start 763.7123 took 58.957s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8} start 766.6558 took 56.6095s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0} start 767.2693 took 58.5453s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":12} start 761.0752 took 65.2383s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":12}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_int_2":3,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 717.1941 took 114.3393s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'push' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","_bound":11} start 742.4638 took 95.0274s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","_bound":11}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7} start 734.1775 took 114.7827s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7}
+* Error: TypeError: Cannot read property 'vinyls' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpandedSwitcher_2":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":9,"ExpansionArg_array_length":0,"ExpandedSwitcher_2":0} start 740.7306 took 108.8742s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"_bound":7,"ExpandedSwitcher_2":0} start 759.0198 took 96.0517s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":4,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":10,"ExpansionArg_bool":false} start 765.4554 took 92.1632s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":4,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":10,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":4,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_bool":false,"ExpandedSwitcher_2":0} start 774.7722 took 98.5241s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":12,"ExpansionArg_string":"PureString"} start 822.9641 took 52.045s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":12,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false} start 790.4448 took 87.7727s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string_2":"PureString"} start 792.0267 took 86.7737s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string_2":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":13,"ExpansionArg_array_length_2":0} start 823.6239 took 55.1766s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":13,"ExpansionArg_array_length_2":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":13}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"ExpandedSwitcher_2":0,"_bound":14,"ExpansionArg_array_element_0_type":0} start 780.0397 took 99.4492s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":11,"ExpansionArg_int":0} start 826.5687 took 53.5922s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":11,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0} start 831.99 took 53.0665s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":10} start 837.7123 took 52.584s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":10}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":9} start 817.926 took 79.0996s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":9}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"!0!","ExpandedSwitcher":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":9}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/index.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/manifest.js. Coverage (Term): 28% Coverage (LOC): 37%
+*- File /root/Targets/force-dev-tool/node_modules/underscore/underscore.js. Coverage (Term): 30% Coverage (LOC): 42%
+*- File /root/Targets/force-dev-tool/node_modules/multimatch/index.js. Coverage (Term): 35% Coverage (LOC): 39%
+*- File /root/Targets/force-dev-tool/node_modules/minimatch/minimatch.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/force-dev-tool/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/force-dev-tool/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/force-dev-tool/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/force-dev-tool/node_modules/array-union/index.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/force-dev-tool/node_modules/array-uniq/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/force-dev-tool/node_modules/array-differ/index.js. Coverage (Term): 32% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/arrify/index.js. Coverage (Term): 40% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/config.js. Coverage (Term): 89% Coverage (LOC): 99%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/package-xml-parser.js. Coverage (Term): 29% Coverage (LOC): 34%
+*- File /root/Targets/force-dev-tool/node_modules/xmldoc/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/xmldoc/lib/xmldoc.js. Coverage (Term): 17% Coverage (LOC): 37%
+*- File /root/Targets/force-dev-tool/node_modules/sax/lib/sax.js. Coverage (Term): 15% Coverage (LOC): 33%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-component.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/describe-metadata-service.js. Coverage (Term): 71% Coverage (LOC): 92%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/package-xml-writer.js. Coverage (Term): 56% Coverage (LOC): 62%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-writer.js. Coverage (Term): 32% Coverage (LOC): 32%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/xml2js.js. Coverage (Term): 92% Coverage (LOC): 97%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/defaults.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/builder.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/index.js. Coverage (Term): 37% Coverage (LOC): 39%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/Utility.js. Coverage (Term): 26% Coverage (LOC): 34%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDocument.js. Coverage (Term): 51% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLNode.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLStringifier.js. Coverage (Term): 26% Coverage (LOC): 46%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLStringWriter.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDeclaration.js. Coverage (Term): 48% Coverage (LOC): 53%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDocType.js. Coverage (Term): 36% Coverage (LOC): 53%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDTDAttList.js. Coverage (Term): 37% Coverage (LOC): 38%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDTDEntity.js. Coverage (Term): 36% Coverage (LOC): 37%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDTDElement.js. Coverage (Term): 49% Coverage (LOC): 54%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDTDNotation.js. Coverage (Term): 46% Coverage (LOC): 51%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLCData.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLComment.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLElement.js. Coverage (Term): 29% Coverage (LOC): 31%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLAttribute.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLRaw.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLText.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLProcessingInstruction.js. Coverage (Term): 53% Coverage (LOC): 62%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLWriterBase.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLDocumentCB.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/force-dev-tool/node_modules/xmlbuilder/lib/XMLStreamWriter.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/parser.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/bom.js. Coverage (Term): 54% Coverage (LOC): 60%
+*- File /root/Targets/force-dev-tool/node_modules/xml2js/lib/processors.js. Coverage (Term): 35% Coverage (LOC): 58%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/fetch-result-parser.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-container.js. Coverage (Term): 24% Coverage (LOC): 28%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-file.js. Coverage (Term): 20% Coverage (LOC): 36%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/index.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/force-dev-tool/node_modules/clone/clone.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/force-dev-tool/node_modules/clone-stats/index.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/lib/cloneBuffer.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/lib/isBuffer.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/lib/isStream.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/lib/isNull.js. Coverage (Term): 61% Coverage (LOC): 80%
+*- File /root/Targets/force-dev-tool/node_modules/vinyl/lib/inspectStream.js. Coverage (Term): 40% Coverage (LOC): 38%
+*- File /root/Targets/force-dev-tool/node_modules/replace-ext/index.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-file-container.js. Coverage (Term): 16% Coverage (LOC): 24%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/metadata-file-factory.js. Coverage (Term): 49% Coverage (LOC): 54%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/project.js. Coverage (Term): 37% Coverage (LOC): 61%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/cli/utils.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/force-dev-tool/node_modules/chalk/index.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/escape-string-regexp/index.js. Coverage (Term): 85% Coverage (LOC): 90%
+*- File /root/Targets/force-dev-tool/node_modules/ansi-styles/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/strip-ansi/index.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/force-dev-tool/node_modules/ansi-regex/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/has-ansi/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/supports-color/index.js. Coverage (Term): 63% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/storage.js. Coverage (Term): 36% Coverage (LOC): 56%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/provider.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/provider/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/provider/multi.js. Coverage (Term): 26% Coverage (LOC): 34%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/provider/config.js. Coverage (Term): 26% Coverage (LOC): 35%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/remote.js. Coverage (Term): 22% Coverage (LOC): 29%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/remotes/provider/env.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/git.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/force-dev-tool/node_modules/force-dev-tool/lib/diff.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/force-dev-tool/node_modules/parse-diff/index.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 131 paths with 91 errors **

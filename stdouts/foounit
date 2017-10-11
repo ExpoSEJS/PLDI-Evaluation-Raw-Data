@@ -1,0 +1,171 @@
+/root/Targets/foounit
+└─┬ foounit@0.1.2 
+  ├─┬ connect@1.8.5 
+  │ ├── formidable@1.0.17 
+  │ ├── mime@2.0.3 
+  │ └── qs@6.5.1 
+  ├── fsh@0.0.2 
+  ├─┬ nomnom@1.5.1 
+  │ ├── colors@0.5.1 
+  │ └── underscore@1.1.7 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/foounit/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0608 took 4.4306s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program var fsh     = require('fsh')
+  , foounit = require('../base')
+  , colors  = require('./node/colors')
+  , assert  = require('./node/assert_patch');
+
+// Include all node dependencies... not great, but it's better than doing a build.
+foounit.mixin(foounit, require('../block'));
+foounit.mixin(foounit, require('../work_queue'));
+foounit.mixin(foounit, require('../block_queue'));
+foounit.mixin(foounit, require('../build_context'));
+foounit.mixin(foounit, require('../example'));
+foounit.mixin(foounit, require('../example_group'));
+foounit.mixin(foounit, require('../expectation'));
+foounit.mixin(foounit, require('../keywords'));
+foounit.mixin(foounit, require('../matchers'));
+foounit.mixin(foounit, require('../mock/screw_compat'));
+foounit.mixin(foounit, require('../polling_block'));
+foounit.mixin(foounit, require('../suite'));
+foounit.mixin(foounit, require('../timeout_block'));
+
+// foounit command line interface
+foounit.cli = require('./node/cli').cli;
+// FIXME: This is only exposed for testing purproses
+foounit.generateSuite = require('./node/cli').generateSuite;
+
+var adapter = (function (){
+  var puts
+    , fs  = require('fs')
+    , runInThisContext = (
+        process.binding('evals').Script || // older node versions
+        process.binding('evals').NodeScript || // Handle node v0.6
+        require('vm') // newer node versions
+      ).runInThisContext;
+
+  try {
+    puts = require('util').puts;
+  } catch (e) {
+    puts = require('sys').puts;
+  }
+
+  // Private variables
+  var self = {},  _specdir;
+
+  // Private functions
+  var _translate = function(str, tvars){
+    return str.replace(/:(\w+)/g, function(match, ref){
+        return tvars[ref];
+      });
+  };
+
+  /**
+   * Override foounit.require
+   */
+  self.require = function (path){
+    path = foounit.translatePath(path);
+    return require(path);
+  }
+
+  /**
+   * Override foouint.load
+   */
+  self.load = function (path){
+    path = foounit.translatePath(path) + '.js';
+    var code = fs.readFileSync(path);
+    runInThisContext(code, path, true);
+  }
+
+  /**
+   * Runs all registered tests. Convenience method for build/execute steps.
+   * Optionally accepts a test directory and a pattern for finding files with tests to run.
+   */
+  self.run = function (specdir, pattern) {
+    _specdir = specdir;
+
+    if (_specdir){
+      var specs = fsh.findSync(_specdir, pattern);
+
+      for (var i = 0, ii = specs.length; i < ii; ++i){
+        var specFile = specs[i].replace(/\.js$/, '');
+        console.log('running spec: ', specFile);
+        var spec = require(specFile);
+      }
+    }
+
+    foounit.execute(foounit.build());
+  }
+
+  /*
+   * Reporting
+   */
+  self.reportExample = function (example){
+    if (example.isFailure()){
+      colors.putsRed('F');
+      colors.putsRed(example.getFullDescription());
+      puts(new Array(example.getFullDescription().length+1).join('='));
+      colors.highlightSpecs(example.getException().stack);
+    } else if (example.isSuccess()){
+      colors.printGreen('.');
+    } else if (example.isPending()){
+      colors.printYellow('P');
+    }
+  }
+
+  self.report = function (info){
+    if (info.pending.length){
+      var pending = info.pending;
+      console.log("\n");
+      for (var i = 0, ii = pending.length; i < ii; ++i){
+        colors.putsYellow('PENDING: ' + pending[i]);
+      }
+    }
+
+    if (info.failCount){
+      colors.putsRed("\n" + info.failCount + ' test(s) FAILED');
+    } else {
+      colors.putsGreen("\nAll tests passed.");
+    }
+
+    var endMessage = info.totalCount + ' total.';
+    if (info.pending.length){
+      endMessage += ' ' + info.pending.length + ' pending.';
+    }
+    endMessage += ' runtime ' + info.runMillis + 'ms';
+    console.log(endMessage);
+  }
+
+  return self;
+})();
+
+foounit.mixin(foounit, adapter);
+module.exports = foounit;
+ at SyntaxError: Unexpected token (4:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

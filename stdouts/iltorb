@@ -1,0 +1,67 @@
+
+> iltorb@1.3.6 install /root/Targets/iltorb/node_modules/iltorb
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/iltorb/node_modules/iltorb/build'
+  CC(target) Release/obj.target/iltorb/brotli/common/dictionary.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/backward_references.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/backward_references_hq.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/bit_cost.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/block_splitter.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/brotli_bit_stream.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/cluster.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/compress_fragment.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/compress_fragment_two_pass.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/dictionary_hash.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/encode.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/entropy_encode.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/histogram.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/literal_cost.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/memory.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/metablock.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/static_dict.o
+  CC(target) Release/obj.target/iltorb/brotli/enc/utf8_util.o
+  CXX(target) Release/obj.target/iltorb/src/common/allocator.o
+  CXX(target) Release/obj.target/iltorb/src/common/stream_coder.o
+  CXX(target) Release/obj.target/iltorb/src/enc/encode_index.o
+  CXX(target) Release/obj.target/iltorb/src/enc/stream_encode.o
+  CXX(target) Release/obj.target/iltorb/src/enc/stream_encode_worker.o
+  SOLINK_MODULE(target) Release/obj.target/iltorb.node
+  COPY Release/iltorb.node
+  CC(target) Release/obj.target/decode/brotli/common/dictionary.o
+  CC(target) Release/obj.target/decode/brotli/dec/bit_reader.o
+  CC(target) Release/obj.target/decode/brotli/dec/decode.o
+  CC(target) Release/obj.target/decode/brotli/dec/huffman.o
+  CC(target) Release/obj.target/decode/brotli/dec/state.o
+  CXX(target) Release/obj.target/decode/src/common/allocator.o
+  CXX(target) Release/obj.target/decode/src/common/stream_coder.o
+  CXX(target) Release/obj.target/decode/src/dec/decode_index.o
+  CXX(target) Release/obj.target/decode/src/dec/stream_decode.o
+  CXX(target) Release/obj.target/decode/src/dec/stream_decode_worker.o
+  SOLINK_MODULE(target) Release/obj.target/decode.node
+  COPY Release/decode.node
+  COPY /root/Targets/iltorb/node_modules/iltorb/build/bindings/iltorb.node
+  COPY /root/Targets/iltorb/node_modules/iltorb/build/bindings/decode.node
+  TOUCH Release/obj.target/action_after_build.stamp
+make: Leaving directory '/root/Targets/iltorb/node_modules/iltorb/build'
+/root/Targets/iltorb
+└── iltorb@1.3.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/iltorb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.08 took 4.5064s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

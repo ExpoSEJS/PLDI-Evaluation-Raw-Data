@@ -1,0 +1,32 @@
+/root/Targets/stextile
+└── stextile@0.0.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/stextile/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 23% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 23% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 32% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 32% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 32% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 32% coverage ] ****** [4 done /1 queued / 1 running / 0 errors / 33% coverage ] ****** [4 done /0 queued / 2 running / 0 errors / 33% coverage ] ****** [4 done /0 queued / 2 running / 0 errors / 33% coverage ] ****** [5 done /0 queued / 1 running / 1 errors / 33% coverage ] ****** [6 done /0 queued / 0 running / 2 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.041 took 4.8259s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"Target_Switcher":0} start 4.9426 took 5.271s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2} start 10.2363 took 4.0254s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0} start 14.3027 took 5.4828s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5} start 19.8141 took 5.5067s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4} start 19.8264 took 854.9885s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 70% Coverage (LOC): 70%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
+*- File /root/Targets/stextile/node_modules/stextile/lib/stextile.js. Coverage (Term): 8% Coverage (LOC): 22%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 6 paths with 2 errors **

@@ -1,0 +1,28 @@
+/root/Targets/spore-kit-jquery
+└─┬ spore-kit-jquery@0.1.0 
+  ├── es5-shim@4.5.9 
+  ├── jquery@1.12.4 
+  └── json3@3.3.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/spore-kit-jquery/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 9% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","bind","Object","lastIndexOf","splice","isArray","Array","join","bound call","sort","Date","getUTCMonth","toUTCString","getTimezoneOffset","toDateString","toString","toISOString","toJSON","parse","isNaN","pow","getTime","RegExp","toPrecision","parseInt","parseFloat","RangeError","getUTCFullYear","getUTCDate","getUTCHours","getUTCMinutes","getUTCSeconds","getUTCMilliseconds","stringify","Number"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0475 took 28.9015s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/spore-kit-jquery/node_modules/spore-kit-jquery/jquery-lib.js. Coverage (Term): 40% Coverage (LOC): 33%
+*- File /root/Targets/spore-kit-jquery/node_modules/es5-shim/es5-shim.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/spore-kit-jquery/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/spore-kit-jquery/node_modules/json3/lib/json3.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

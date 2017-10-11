@@ -1,0 +1,36 @@
+/root/Targets/fondue-es6
+└─┬ fondue-es6@0.7.0 
+  ├── esprima-selector@0.0.5 
+  ├─┬ falafel@1.2.0 
+  │ ├── acorn@1.2.2 
+  │ ├── foreach@2.0.5 
+  │ ├── isarray@0.0.1 
+  │ └── object-keys@1.0.11 
+  ├── falafel-helpers@0.0.3 
+  └─┬ falafel-map@0.3.2 
+    ├── esprima@1.1.0-dev  (git://github.com/substack/esprima#0a7f8489a11b44b019ce168506f535f22d0be290)
+    └─┬ source-map@0.1.43 
+      └── amdefine@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fondue-es6/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 7.000000000000001% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","sort","stringify","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0349 took 16.2566s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/fondue-es6/node_modules/fondue-es6/index.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/fondue-es6/node_modules/falafel/index.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/fondue-es6/node_modules/acorn/dist/acorn.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File evalIndirect. Coverage (Term): 2% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

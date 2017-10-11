@@ -1,0 +1,113 @@
+/root/Targets/breakneck
+└─┬ breakneck@0.5.0 
+  └── minimist@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/breakneck/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0309 took 2.6551s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+var path = require('path')
+var fs = require('fs');
+var child_process = require('child_process')
+var breaknecktools = require('./lib/breaknecktools');
+var multirun = require('./lib/multirun');
+var argv = require('minimist')(process.argv.slice(2),opts={string:true})
+var package = require('./package.json')
+
+if (argv.l) {
+	var lengthFilename = argv.l.toString()
+}
+if (argv.c) {
+	var configFilename = argv.c.toString()
+}
+if (argv.o) {
+	var outputDirectory = argv.o.toString()
+} else {
+	var outputDirectory = ''
+}
+
+if (argv.v || argv.version) {
+	console.log(package.version)
+	return;
+}
+
+if (argv.h || argv.help || !lengthFilename || !configFilename) {
+	console.log('')
+	console.log('********************************************************************************')
+	console.log('Usage: breakneck [options]\n')
+	console.log('Options:')
+	console.log('  -l                       specify the length file')
+	console.log('  -c                       specify the config file')
+	console.log('  -o                       output directory')
+	console.log(' --multirun                automate breakneck')
+	console.log(' --run                     run fortran programs afer compile (only multirun)')
+//	console.log('  -z, --zip                zip the directories to reduce file numbers')
+	console.log('  -v, --version            check version number')
+	console.log('********************************************************************************\n')
+	return;
+}
+
+if (argv.multirun) {
+	var multirunResults = multirun.multirunConfig(lengthFilename, configFilename, argv.o)
+	if(argv.run) {
+		for (var i = 0; i < multirunResults.length; i++) {
+			console.log('Running '+multirunResults[i])
+			process.chdir(path.join(process.cwd(),multirunResults[i]))
+			child_process.execSync('breakneck -c config.csv -l '+lengthFilename)
+			child_process.execSync('sh ./breakneck.sh')
+			process.chdir('../')
+		}
+	}
+	return;
+}
+
+breaknecktools.configFileCheck(lengthFilename, configFilename, function (output) {
+	if (output.fileCheck == true) {
+		fs.readFile(lengthFilename, function(err,data) {
+			fs.writeFile(path.join('.',outputDirectory,'celdat'), data);
+		})
+		breaknecktools.bbrsdi(configFilename, function(data) {
+			fs.writeFile(path.join('.',outputDirectory,'KNRST'), data);
+		});
+		breaknecktools.bbstdi(lengthFilename,configFilename, function(data) {
+			fs.writeFile(path.join('.',outputDirectory,'bbstdi'), data);
+		});
+		breaknecktools.bbrsco(lengthFilename,configFilename, function(data) {
+			fs.writeFile(path.join('.',outputDirectory,'bbrsco'), data);
+		});
+		breaknecktools.tee(lengthFilename,configFilename, function(data) {
+			data = '#!/usr/bin/sh\n#Generated with Breakneck version '+package.version+'\n'+data
+			fs.writeFile(path.join('.',outputDirectory,'breakneck.sh'), data);
+		});
+		breaknecktools.bbstat(lengthFilename,configFilename, function(data) {
+			fs.writeFile(path.join('.',outputDirectory,'bbstat'), data)
+		})
+	} else {
+		console.log(output.comment);
+	}
+})
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

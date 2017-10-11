@@ -1,0 +1,328 @@
+/root/Targets/syncml-js
+└─┬ syncml-js@0.0.18 
+  ├── amdefine@1.0.1 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ difflib@0.2.4 
+  │ └── heap@0.2.6 
+  ├─┬ elementtree@0.1.7 
+  │ └── sax@1.1.4 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── core-util-is@1.0.2 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  ├── sprintf@0.1.5 
+  ├── stablematch@0.0.4 
+  ├─┬ stacktrace-js@2.0.0 
+  │ ├─┬ error-stack-parser@2.0.1 
+  │ │ └── stackframe@1.0.4 
+  │ ├── stack-generator@2.0.2 
+  │ └─┬ stacktrace-gps@3.0.2 
+  │   └── source-map@0.5.6 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/syncml-js/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","isArray","apply","call","pow","join","RegExp","sort","ceil","max","Array","bind","create","reduce","fromCharCode"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0862 took 16.2941s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (99:39) on program // -*- coding: utf-8 -*-
+//-----------------------------------------------------------------------------
+// file: $Id$
+// lib:  syncml-js.logging
+// auth: griffin <griffin@uberdev.org>
+// date: 2012/11/10
+// copy: (C) CopyLoose 2012 UberDev <hardcore@uberdev.org>, No Rights Reserved.
+//-----------------------------------------------------------------------------
+
+// for node compatibility...
+if ( typeof(define) !== 'function')
+  var define = require('amdefine')(module);
+
+define([
+  'fs',
+  'underscore',
+  'sprintf',
+  './common',
+], function(
+  fs,
+  _,
+  sprintf,
+  common
+) {
+
+  var exports = {
+    level:    0,
+    CRITICAL: 50,
+    ERROR:    40,
+    WARNING:  30,
+    INFO:     20,
+    DEBUG:    10,
+    NOTSET:   0
+  };
+
+  //---------------------------------------------------------------------------
+  exports.Handler = common.Base.extend({
+    constructor: function() {
+      this.level = exports.NOTSET;
+    },
+    handle: function(record) {
+      if ( this.level != exports.NOTSET && this.level > record.level )
+        return;
+      // todo: filter/format
+      return this._handle(record);
+    },
+    _handle: function(record) {
+      throw common.NotImplementedError(
+        'abstract class logging.Handler does not provide any functionality');
+    }
+  });
+
+  //---------------------------------------------------------------------------
+  exports.MultiHandler = exports.Handler.extend({
+    constructor: function() {
+      this._handlers = [];
+    },
+    addHandler: function(handler) {
+      this._handlers.push(handler);
+      return this;
+    },
+    removeHandler: function(handler) {
+      this._handlers = _.filter(this._handlers, function(h) {
+        return h != handler;
+      });
+      return this;
+    },
+    handle: function(record) {
+      for ( var idx=0 ; idx<this._handlers.length ; idx++ )
+      {
+        try {
+          this._handlers[idx].handle(record);
+        }catch(e){}
+      }
+      return this;
+    }
+  });
+
+  //---------------------------------------------------------------------------
+  exports.NullHandler = exports.Handler.extend({
+    handle: function(record) {
+      return;
+    }
+  });
+
+  //---------------------------------------------------------------------------
+  exports.ConsoleHandler = exports.Handler.extend({
+    _handle: function(record) {
+      console.log('[' + (new Date()).toISOString() + '] ' + record.msg);
+    }
+  });
+
+  //---------------------------------------------------------------------------
+  exports.FileHandler = exports.Handler.extend({
+    constructor: function(options) {
+      options = _.defaults({}, options);
+      this._filename = options.filename;
+      this._append   = !! options.append;
+      this._mode     = options.mode || 0644;
+      this._stream   = fs.createWriteStream(this._filename, {
+        flags:  this._append ? 'a' : 'w',
+        mode:   this._mode
+      });
+    },
+    _handle: function(record) {
+      try{
+        this._stream.write(record.msg + '\n');
+      }catch(e){
+        // console.log('FileHandler ERROR: ' + e);
+      }
+    }
+  });
+
+  var global_handler = new exports.MultiHandler();
+
+  //---------------------------------------------------------------------------
+  var Logger = common.Base.extend({
+    constructor: function(options) {
+      this.level = exports.NOTSET;
+      this._name = options.name || '';
+    },
+    exception: function() {
+      this.critical.apply(this, arguments);
+    },
+    critical: function() {
+      var args = _.initial(arguments, 0);
+      args.unshift(exports.CRITICAL);
+      this.log.apply(this, args);
+    },
+    error: function() {
+      var args = _.initial(arguments, 0);
+      args.unshift(exports.ERROR);
+      this.log.apply(this, args);
+    },
+    warning: function() {
+      var args = _.initial(arguments, 0);
+      args.unshift(exports.WARNING);
+      this.log.apply(this, args);
+    },
+    info: function() {
+      var args = _.initial(arguments, 0);
+      args.unshift(exports.INFO);
+      this.log.apply(this, args);
+    },
+    debug: function() {
+      var args = _.initial(arguments, 0);
+      args.unshift(exports.DEBUG);
+      this.log.apply(this, args);
+    },
+    log: function() {
+      this._log.apply(this, arguments);
+    },
+    _log: function(lvl) {
+      var args = _.initial(arguments, 0);
+      args.shift();
+      if ( this.level != exports.NOTSET && this.level > lvl )
+        return;
+      // todo: ugh. i really should implement a cascading of loggers...
+      if ( exports.level != exports.NOTSET && exports.level > lvl )
+        return;
+      var lvlstr = '';
+      if ( lvl >= exports.CRITICAL )
+        lvlstr = 'CRITICAL';
+      else if ( lvl >= exports.ERROR )
+        lvlstr = 'ERROR';
+      else if ( lvl >= exports.WARNING )
+        lvlstr = 'WARNING';
+      else if ( lvl >= exports.INFO )
+        lvlstr = 'INFO';
+      else
+        lvlstr = 'DEBUG';
+      var msg = '[' + this._name + '] ' + lvlstr + ': '
+        + ( args.length > 1 ? sprintf.sprintf.apply(null, args) : args[0] );
+      this._logmsg(lvl, msg);
+    },
+    _logmsg: function(lvl, msg) {
+      // TODO: implement this to have a per-logger handling facility...
+      global_handler.handle({
+        name     : this._name,
+        level    : lvl,
+        pathname : null,
+        lineno   : null,
+        msg      : msg,
+        args     : null,
+        exc_info : null,
+        func     : null
+      });
+    },
+    addHandler: function(handler) {
+      // TODO: implement this to have a per-logger handling facility...
+      global_handler.addHandler(handler);
+    },
+    removeHandler: function(handler) {
+      // TODO: implement this to have a per-logger handling facility...
+      global_handler.removeHandler(handler);
+    }
+  });
+
+  //---------------------------------------------------------------------------
+  exports.getLogger = function(name) {
+    return new Logger({name: name});
+  };
+
+  return exports;
+
+});
+
+//-----------------------------------------------------------------------------
+// end of $Id$
+//-----------------------------------------------------------------------------
+ at SyntaxError: Invalid number (99:39)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1654:14)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1639:17)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/syncml-js/node_modules/syncml-js/src/syncml-js.js. Coverage (Term): 51% Coverage (LOC): 73%
+*- File /root/Targets/syncml-js/node_modules/amdefine/amdefine.js. Coverage (Term): 49% Coverage (LOC): 52%
+*- File /root/Targets/syncml-js/node_modules/underscore/underscore.js. Coverage (Term): 27% Coverage (LOC): 40%
+*- File /root/Targets/syncml-js/node_modules/syncml-js/src/syncml-js/constant.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/syncml-js/node_modules/syncml-js/src/syncml-js/common.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/syncml-js/node_modules/syncml-js/src/syncml-js/codec.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/elementtree.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/sprintf.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/elementpath.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/errors.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/treebuilder.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/parser.js. Coverage (Term): 58% Coverage (LOC): 60%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/parsers/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/parsers/sax.js. Coverage (Term): 32% Coverage (LOC): 60%
+*- File /root/Targets/syncml-js/node_modules/sax/lib/sax.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/syncml-js/node_modules/elementtree/lib/constants.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

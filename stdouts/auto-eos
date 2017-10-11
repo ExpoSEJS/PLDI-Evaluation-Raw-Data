@@ -1,0 +1,517 @@
+
+> spawn-sync@1.0.15 postinstall /root/Targets/auto-eos/node_modules/spawn-sync
+> node postinstall
+
+/root/Targets/auto-eos
+└─┬ auto-eos@1.4.0 
+  ├── colors@1.1.2 
+  ├── commander@2.11.0 
+  ├── find-package-json@1.0.0 
+  ├─┬ inquirer@1.2.3 
+  │ ├── ansi-escapes@1.4.0 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├── has-ansi@2.0.0 
+  │ │ └── supports-color@2.0.0 
+  │ ├─┬ cli-cursor@1.0.2 
+  │ │ └─┬ restore-cursor@1.0.1 
+  │ │   ├── exit-hook@1.1.1 
+  │ │   └── onetime@1.1.0 
+  │ ├── cli-width@2.2.0 
+  │ ├─┬ external-editor@1.1.1 
+  │ │ ├─┬ spawn-sync@1.0.15 
+  │ │ │ ├─┬ concat-stream@1.6.0 
+  │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ └── os-shim@0.1.3 
+  │ │ └─┬ tmp@0.0.29 
+  │ │   └── os-tmpdir@1.0.2 
+  │ ├─┬ figures@1.7.0 
+  │ │ └── object-assign@4.1.1 
+  │ ├── lodash@4.17.4 
+  │ ├── mute-stream@0.0.6 
+  │ ├─┬ pinkie-promise@2.0.1 
+  │ │ └── pinkie@2.0.4 
+  │ ├─┬ run-async@2.3.0 
+  │ │ └── is-promise@2.1.0 
+  │ ├── rx@4.1.0 
+  │ ├─┬ string-width@1.0.2 
+  │ │ ├── code-point-at@1.1.0 
+  │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │   └── number-is-nan@1.0.1 
+  │ ├─┬ strip-ansi@3.0.1 
+  │ │ └── ansi-regex@2.1.1 
+  │ └── through@2.3.8 
+  ├── log@1.4.0 
+  └─┬ superagent@2.3.0 
+    ├── component-emitter@1.2.1 
+    ├── cookiejar@2.1.1 
+    ├─┬ debug@2.6.8 
+    │ └── ms@2.0.0 
+    ├── extend@3.0.1 
+    ├─┬ form-data@1.0.0-rc4 
+    │ ├── async@1.5.2 
+    │ ├─┬ combined-stream@1.0.5 
+    │ │ └── delayed-stream@1.0.0 
+    │ └─┬ mime-types@2.1.17 
+    │   └── mime-db@1.30.0 
+    ├── formidable@1.1.1 
+    ├── methods@1.1.2 
+    ├── mime@1.4.0 
+    ├── qs@6.5.1 
+    └─┬ readable-stream@2.3.3 
+      ├── core-util-is@1.0.2 
+      ├── inherits@2.0.3 
+      ├── isarray@1.0.0 
+      ├── process-nextick-args@1.0.7 
+      ├── safe-buffer@5.1.1 
+      ├── string_decoder@1.0.3 
+      └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/auto-eos/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0616 took 3.7589s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+/**
+ * Created by chenjiawei1 on 2016/11/10.
+ */
+var request = require('superagent');
+var inquirer = require('inquirer');
+var fs = require('fs');
+var program = require('commander');
+var colors = require('colors');
+var finder = require('find-package-json');
+var f = finder(process.cwd());
+var Log = require('log');
+var log = new Log('debug', fs.createWriteStream('eos.log'));
+
+program
+    .version('0.0.1')
+    .option('-t, --title <title>', 'EOS mission title', '自动创建任务')
+    .option('-e, --executer <executer>', 'EOS mission executer', /([a-z0-9]+;?)+/, '')
+    .option('-d, --destination <destination>', 'destination of the mission', /^(gamma|idc)$/, 'gamma')
+    .option('-a, --all <all>', 'create all file', true)
+    .option('-f, --filelist <filelist>', 'manual input a file list', '')
+    .parse(process.argv);
+
+var eosEnv = {
+    dev: 15,
+    beta: 16,
+    gamma: 17,
+    idc: 18
+};
+var eosModules = {
+    page: 341,
+    static: 342,
+    xsi: 353,
+    boss: 343
+};
+var eosAddMissionParams = {
+    EEnv: eosEnv[program.destination],
+    Files: '',
+    BEnv: program.destination === 'gamma' ? eosEnv.dev : eosEnv.gamma,
+    Modules: '',
+    Executer: program.executer.replace(/(.);?$/, '$1;'),
+    Subject: program.title.replace(/^('|")?(.+)('|")?$/, '$2')
+};
+var eosModuleDir = {
+    static: '/data/eos/dev/dist/adsz/html/newforward/static/',
+    jsi: '/data/eos/dev/dist/adsz/html/newforward/xsi/sinclude/jsi/',
+    cssi: '/data/eos/dev/dist/adsz/html/newforward/xsi/sinclude/cssi/',
+    page: '/data/eos/dev/dist/adsz/html/newforward/',
+    boss: '/data/eos/dev/dist/adsz/boss/'
+};
+var erpLoginRequestHeader = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Encoding': 'gzip, deflate',
+    'Accept-Language': 'en,zh-CN;q=0.8,zh;q=0.6',
+    'Cache-Control': 'no-cache',
+    'DNT': '1',
+    'Host': 'ssa.jd.com',
+    'Origin': 'http://ssa.jd.com',
+    'Pragma': 'no-cache',
+    'Proxy-Connection': 'keep-alive',
+    'Referer': 'http://ssa.jd.com/sso/login?ReturnUrl=http%3A%2F%2Ft.pp.jd.com%2F',
+    'Upgrade-Insecure-Requests': '1',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
+};
+var eosRequestHeader = {
+    'Accept': '*/*',
+    'Accept-Encoding': 'gzip, deflate',
+    'Accept-Language': 'en,zh-CN;q=0.8,zh;q=0.6',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'DNT': '1',
+    'Host': 't.pp.jd.com',
+    'Origin': 'http://t.pp.jd.com',
+    'Pragma': 'no-cache',
+    'Referer': 'http://t.pp.jd.com/eos/script/FileBuilder.swf?_t=20131211_3',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+    'X-Requested-With': 'ShockwaveFlash/23.0.0.207'
+};
+
+var urls = {
+    erpLoginUrl: "http://ssa.jd.com/sso/login",
+    eosAddMissionUrl: "http://t.pp.jd.com/eos/api.ajax.php?act=addMissionTask",
+};
+var appdataDir = process.env.APPDATA + '\\eos\\';
+var appdataFile = 'erp.auth.txt';
+var assetDir = f.next().value.__path.replace('package.json', 'dist');
+
+function getAuthFile() {
+    var buf;
+    try {
+        buf = fs.readFileSync(appdataDir + appdataFile, 'utf-8');
+        buf = JSON.parse(buf.toString());
+    }
+    catch (e) {
+        try {
+            fs.mkdirSync(appdataDir);
+            fs.writeFileSync(appdataDir + appdataFile, '');
+        }
+        catch (e) {
+            return;
+        }
+    }
+    return buf;
+}
+function checkLogin(authInfo) {
+    return new Promise((resolve, reject) => {
+        if (!authInfo || !authInfo.username || !authInfo.password) {
+            log.info('authInfo is empty')
+            var username;
+            var password;
+            inquirer.prompt({ name: 'username', message: '请输入erp账号：' })
+                .then(answers => {
+                    username = answers.username;
+                    return inquirer.prompt({ name: 'password', message: '请输入密码：' })
+                })
+                .then(answers=> {
+                    password = answers.password;
+                    authInfo = { username, password };
+                    return login(authInfo)
+                })
+                .then(data => {
+                    authInfo.cookie = data.map(v => {
+                        return v.replace(/;.+/g, ';');
+                    }).join(' ');
+                    resolve(authInfo);
+                    fs.writeFile(appdataDir + appdataFile, JSON.stringify(authInfo), err => {
+                        reject(err);
+                    });
+                })
+                .catch(e => {
+                    reject('账号或密码错误，请重试'.red);
+                    setTimeout(init, 500);
+                })
+        }
+        else if (!authInfo.cookie) {
+            log.info('authInfo.cookie is empty')
+            login(authInfo)
+                .then(data => {
+                    log.info('login succ')
+                    authInfo.cookie = data.map(v => {
+                        return v.replace(/;.+/g, ';');
+                    }).join(' ');
+                    resolve(authInfo);
+                    fs.writeFile(appdataDir + appdataFile, JSON.stringify(authInfo), err => {
+                        reject(err);
+                    });
+                })
+                .catch(e => {
+                    log.info('login fail')
+                    reject(e);
+                    fs.writeFile(appdataDir + appdataFile, '', err => {
+                        reject(err);
+                    });
+                    setTimeout(init, 500);
+                })
+        }
+        //校验cookie是否过期
+        else {
+            log.info('authInfo exist, check cookie expired')
+            request
+                .post(urls.eosAddMissionUrl)
+                .set('Cookie', authInfo.cookie)
+                .redirects(0) // 防止页面重定向
+                .end((err, res) => {
+                    if (+res.statusCode === 302) {
+                        authInfo.cookie = '';
+                        checkLogin(authInfo)
+                            .then((authInfo)=> {
+                                resolve(authInfo);
+                            })
+                    }
+                    else {
+                        resolve(authInfo);
+                    }
+                });
+        }
+    })
+
+}
+
+function login(authInfo) {
+    return new Promise((resolve, reject) => {
+        request
+            .post(urls.erpLoginUrl)
+            .set(erpLoginRequestHeader)
+            .type('form')
+            .send({
+                username: authInfo.username,
+                password: authInfo.password
+            })
+            .redirects(0) // 防止页面重定向
+            .end((err, res) => {
+                log.info('login response info', res);
+                if (+res.status !== 302 || !res.header || !res.header['set-cookie']) {
+                    reject('login fail');
+                }
+                else {
+                    var cookie = res.header['set-cookie'];
+                    resolve(cookie);
+                }
+            });
+    });
+}
+
+function walk(p) {
+    var fileList = [];
+    return (function traverse(path) {
+        var dirList = fs.readdirSync(path);
+        dirList.forEach(function(item) {
+            if (fs.statSync(path + '/' + item).isFile()) {
+                fileList.push(path + '/' + item);
+            }
+            if (fs.statSync(path + '/' + item).isDirectory()) {
+                traverse(path + '/' + item);
+            }
+        });
+        return fileList;
+    })(p);
+}
+
+function formatTime(time) {
+    var t = new Date(time);
+    return t.toLocaleDateString().split('/').join('-') + ' ' + t.toTimeString().split(' ')[0]
+}
+function makeAddMissionParams(files) {
+    var modules = [];
+    var fileMap = {};
+    var prefix = 'xsi';
+    var dir = assetDir;
+    files.forEach(item => {
+        //文件修改时间，跟ftp上的时间会存在些许误差，导致执行eos单时会提示文件变更，忽略即可。
+        var mtime = formatTime(fs.statSync(item).mtime);
+        try {
+            prefix = item.match(/\/([^/.]+?)\.[^/]+$/)[1] + '_xsi';
+        } catch (e) {
+            console.log(`file dir err, can\'t read prefix, file:[${item}]`);
+        }
+        if (program.filelist){
+            dir = item.replace(/(.+\/ads_sz_dev.express_newfoward_proj|ads_sz_dev.express_proj\/).+/, '$1');
+        }
+        //static，无需区分业务，一个单即可
+        if (/\/css\/|\/js\/|\/fonts\/|\/images\//.test(item)) {
+            fileMap.static || (fileMap.static = { modules: [], fileList: [] });
+            fileMap.static.modules.indexOf(eosModules.static) == -1 && fileMap.static.modules.push(eosModules.static);
+            fileMap.static.fileList.push(`${eosModules.static};${eosModuleDir.static}${item.replace(dir +
+                                                                                                    '/', '')};文件;${mtime}`);
+        }
+        //cssi
+        else if (/\/xsi\/.+?\.css\.shtml/.test(item)) {
+            fileMap[prefix] || (fileMap[prefix] = { modules: [], fileList: [] });
+            fileMap[prefix]['modules'].indexOf(eosModules.xsi) == -1 && fileMap[prefix]['modules'].push(eosModules.xsi);
+            fileMap[prefix]['fileList'].push(`${eosModules.xsi};${eosModuleDir.cssi}${item.replace(dir +
+                                                                                                   '/xsi/', '')};文件;${mtime}`);
+        }
+        //jsi
+        else if (/\/xsi\/((?!\.css\.).)*shtml/.test(item)) {
+            fileMap[prefix] || (fileMap[prefix] = { modules: [], fileList: [] });
+            fileMap[prefix]['modules'].indexOf(eosModules.xsi) == -1 && fileMap[prefix]['modules'].push(eosModules.xsi);
+            fileMap[prefix]['fileList'].push(`${eosModules.xsi};${eosModuleDir.jsi}${item.replace(dir +
+                                                                                                  '/xsi/', '')};文件;${mtime}`);
+        }
+        //boss
+        else if (/\/htdocs\/|\/php\//.test(item)) {
+            fileMap.boss || (fileMap.boss = { modules: [], fileList: [] });
+            fileMap.boss.modules.indexOf(eosModules.boss) == -1 && fileMap.boss.modules.push(eosModules.boss);
+            fileMap.boss.fileList.push(`${eosModules.boss};${eosModuleDir.boss}${item.replace(dir +
+                                                                                              '/', '')};文件;${mtime}`);
+        }
+        //page
+        else {
+            fileMap.page || (fileMap.page = { modules: [], fileList: [] });
+            fileMap.page.modules.indexOf(eosModules.page) == -1 && fileMap.page.modules.push(eosModules.page);
+            fileMap.page.fileList.push(`${eosModules.page};${eosModuleDir.page}${item.replace(dir +
+                                                                                              '/', '')};文件;${mtime}`);
+        }
+    });
+    return fileMap;
+}
+function makeAddMissionParamsOfFilelist(files) {
+    var modules = [];
+    var fileMap = {};
+    var prefix = 'xsi';
+    var mtime;
+    files.forEach(item => {
+        //文件修改时间，跟ftp上的时间会存在些许误差，导致执行eos单时会提示文件变更，忽略即可。
+        try {
+            mtime = formatTime(fs.statSync(item).mtime);
+        }
+        catch(e){
+            mtime = formatTime(new Date());
+        }
+        try {
+            prefix = item.match(/\/([^/.]+?)\.[^/]+$/)[1] + '_xsi';
+        } catch (e) {
+            console.log(`file dir err, can\'t read prefix, file:[${item}]`);
+        }
+        //static，无需区分业务，一个单即可
+        if (/\/css\/|\/js\/|\/fonts\/|\/images\//.test(item)) {
+            fileMap.static || (fileMap.static = { modules: [], fileList: [] });
+            fileMap.static.modules.indexOf(eosModules.static) == -1 && fileMap.static.modules.push(eosModules.static);
+            fileMap.static.fileList.push(`${eosModules.static};${eosModuleDir.static}${item.replace(/.+\/(js|css|fonts|images\/.+)/, '$1')};文件;${mtime}`);
+        }
+        //cssi
+        else if (/\/xsi\/sinclude\/cssi\//.test(item)) {
+            fileMap[prefix] || (fileMap[prefix] = { modules: [], fileList: [] });
+            fileMap[prefix]['modules'].indexOf(eosModules.xsi) == -1 && fileMap[prefix]['modules'].push(eosModules.xsi);
+            fileMap[prefix]['fileList'].push(`${eosModules.xsi};${eosModuleDir.cssi}${item.replace(/.+\/cssi\/(.+)/, '$1')};文件;${mtime}`);
+        }
+        //jsi
+        else if (/\/xsi\/sinclude\/jsi\//.test(item)) {
+            fileMap[prefix] || (fileMap[prefix] = { modules: [], fileList: [] });
+            fileMap[prefix]['modules'].indexOf(eosModules.xsi) == -1 && fileMap[prefix]['modules'].push(eosModules.xsi);
+            fileMap[prefix]['fileList'].push(`${eosModules.xsi};${eosModuleDir.jsi}${item.replace(/.+\/jsi\/(.+)/, '$1')};文件;${mtime}`);
+        }
+        //boss
+        else if (/\/htdocs\/|\/php\//.test(item)) {
+            fileMap.boss || (fileMap.boss = { modules: [], fileList: [] });
+            fileMap.boss.modules.indexOf(eosModules.boss) == -1 && fileMap.boss.modules.push(eosModules.boss);
+            fileMap.boss.fileList.push(`${eosModules.boss};${eosModuleDir.boss}${item.replace(/.*\/(htdocs|php\/.+)/, '$1')};文件;${mtime}`);
+        }
+        //page
+        else {
+            fileMap.page || (fileMap.page = { modules: [], fileList: [] });
+            fileMap.page.modules.indexOf(eosModules.page) == -1 && fileMap.page.modules.push(eosModules.page);
+            fileMap.page.fileList.push(`${eosModules.page};${eosModuleDir.page}${item.replace(/.+\/ads_sz_dev.express_newfoward_proj\/(.+)/, '$1')};文件;${mtime}`);
+        }
+    });
+    return fileMap;
+}
+//检查线上是否已经存在该文件
+function checkFileExist(f) {
+    if (!f) {
+        return Promise.resolve();
+    }
+    if (/\/fonts\/|\/images\/|\/css\/|\/js\//.test(f)) {
+        var url = 'http://xs.jd.com/' + /\/static\/(.+?);.+$/.exec(f)[1];
+        return new Promise((resolve, reject)=> {
+            request
+                .get(url)
+                .redirects(0) // 防止页面重定向
+                .end((err, res) => {
+                    if (+res.status === 200) {
+                        resolve(f);
+                    }
+                    else {
+                        resolve();
+                    }
+                });
+        });
+    }
+    return Promise.resolve();
+}
+function init() {
+    var authInfo = getAuthFile();
+    checkLogin(authInfo)
+        .then(authInfo => {
+            log.info(`authInfo: ${JSON.stringify(authInfo)}`)
+            g_authInfo = authInfo;
+            // -a 则不进行文件过滤
+            if (program.all || !fileMap.static) {
+                return Promise.resolve();
+            }
+            var promiseArr = fileMap.static.fileList.map((file)=> {
+                return checkFileExist(file)
+                    .then((f)=> {
+                        f && log.info(`exist file: ${f}`)
+                        f && fileMap.static.fileList.splice(fileMap.static.fileList.indexOf(f), 1);
+                    });
+            });
+            return Promise.all(promiseArr)
+        })
+        .then(() => {
+            Object.keys(fileMap).forEach(k => {
+                if (!fileMap[k]['fileList'].length) {
+                    return true;
+                }
+                var params = Object.assign({}, eosAddMissionParams, {
+                    Files: fileMap[k]['fileList'].join(','),
+                    Modules: fileMap[k]['modules'].join(',')
+                });
+                //创建默认加上创建者
+                if (`;${params.Executer}`.indexOf(`;${g_authInfo.username};`) === -1) {
+                    params.Executer += `${g_authInfo.username};`;
+                }
+                params.Subject = `(${k})` + params.Subject;
+                log.info(`eos params: ${JSON.stringify(params)}`)
+                request
+                    .post(urls.eosAddMissionUrl)
+                    .set(Object.assign(eosRequestHeader, { Cookie: g_authInfo.cookie }))
+                    .type('form')
+                    .send(params)
+                    .redirects(0) // 防止页面重定向
+                    .end((err, res) => {
+                        log.info('eos res header: ', res.header)
+                        log.info('eos req header: ', res.request.header)
+                        if (res.text !== 'ok') {
+                            console.log('fail'.red, res.text);
+                            return;
+                        }
+                        console.log(`EOS单: ${params.Subject} 已建立`.green);
+                    });
+            });
+        })
+        .catch(e => {
+            console.log(e);
+        });
+}
+var g_authInfo;
+var files = program.filelist && program.filelist.replace(/\\/g, '/').split(',') || walk(assetDir);
+var fileMap = program.filelist && makeAddMissionParamsOfFilelist(files) || makeAddMissionParams(files);
+if (!Object.keys(fileMap).length) {
+    console.log('没有需要建单的文件，请先执行 jddmc build 打包文件'.yellow);
+}
+else {
+    log.info('fileMap: ', fileMap)
+    log.info('cli params: ', program)
+    init();
+}
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

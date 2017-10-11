@@ -1,0 +1,107 @@
+/root/Targets/into-cartodb
+└─┬ into-cartodb@2.2.0 
+  ├── bluebird@2.11.0 
+  ├─┬ cartodb-tools@2.6.0 
+  │ └── querystringparser@0.1.1 
+  ├─┬ cartodb-uploader@2.0.3 
+  │ ├─┬ csv@0.4.6 
+  │ │ ├── csv-generate@0.0.6 
+  │ │ ├── csv-parse@1.2.3 
+  │ │ ├── csv-stringify@0.0.8 
+  │ │ └── stream-transform@0.1.2 
+  │ ├─┬ form-data@0.2.0 
+  │ │ ├── async@0.9.2 
+  │ │ ├─┬ combined-stream@0.0.7 
+  │ │ │ └── delayed-stream@0.0.5 
+  │ │ └─┬ mime-types@2.0.14 
+  │ │   └── mime-db@1.12.0 
+  │ ├─┬ geojson-stream@0.0.0 
+  │ │ ├─┬ JSONStream@0.7.4 
+  │ │ │ └── jsonparse@0.0.5 
+  │ │ └── through@2.3.8 
+  │ └─┬ yargs@3.32.0 
+  │   ├── camelcase@2.1.1 
+  │   ├─┬ cliui@3.2.0 
+  │   │ ├─┬ strip-ansi@3.0.1 
+  │   │ │ └── ansi-regex@2.1.1 
+  │   │ └── wrap-ansi@2.1.0 
+  │   ├── decamelize@1.2.0 
+  │   ├─┬ os-locale@1.4.0 
+  │   │ └─┬ lcid@1.0.0 
+  │   │   └── invert-kv@1.0.0 
+  │   ├─┬ string-width@1.0.2 
+  │   │ ├── code-point-at@1.1.0 
+  │   │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │   └── number-is-nan@1.0.1 
+  │   ├── window-size@0.1.4 
+  │   └── y18n@3.2.1 
+  ├── colors@1.1.2 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├─┬ duplexify@3.5.1 
+  │ ├── end-of-stream@1.4.0 
+  │ └── stream-shift@1.0.0 
+  ├── first-n-stream@2.0.0 
+  ├── inherits@2.0.3 
+  ├─┬ jsonstream3@3.0.0 
+  │ └── jsonparse@1.0.0 
+  ├─┬ once@1.4.0 
+  │ └── wrappy@1.0.2 
+  ├── pg-escape@0.1.0 
+  ├─┬ readable-stream@2.3.3 
+  │ ├── core-util-is@1.0.2 
+  │ ├── isarray@1.0.0 
+  │ ├── process-nextick-args@1.0.7 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── string_decoder@1.0.3 
+  │ └── util-deprecate@1.0.2 
+  ├─┬ to-geojson-stream@1.0.1 
+  │ ├─┬ csv-parser@1.11.0 
+  │ │ ├── generate-function@1.1.0 
+  │ │ ├─┬ generate-object-property@1.2.0 
+  │ │ │ └── is-property@1.0.2 
+  │ │ ├── minimist@1.2.0 
+  │ │ └─┬ ndjson@1.5.0 
+  │ │   ├── json-stringify-safe@5.0.1 
+  │ │   ├── split2@2.2.0 
+  │ │   └─┬ through2@2.0.3 
+  │ │     └── xtend@4.0.1 
+  │ ├─┬ kml-stream@1.1.1 
+  │ │ └── sax@1.2.4 
+  │ ├─┬ proj4geojson@1.1.0 
+  │ │ └─┬ proj4@2.0.3 
+  │ │   └── mgrs@0.0.0 
+  │ ├─┬ shp-stream@1.0.0 
+  │ │ ├── iconv-lite@0.2.11 
+  │ │ ├─┬ noms@0.0.0 
+  │ │ │ └─┬ readable-stream@1.0.34 
+  │ │ │   ├── isarray@0.0.1 
+  │ │ │   └── string_decoder@0.10.31 
+  │ │ ├─┬ optimist@0.3.7 
+  │ │ │ └── wordwrap@0.0.3 
+  │ │ └── queue-async@1.2.1 
+  │ └─┬ yauzl@2.8.0 
+  │   ├── buffer-crc32@0.2.13 
+  │   └─┬ fd-slicer@1.0.1 
+  │     └── pend@1.2.0 
+  └── uuid@3.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/into-cartodb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 15% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0362 took 3.9304s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: falses is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/into-cartodb/node_modules/into-cartodb/index.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

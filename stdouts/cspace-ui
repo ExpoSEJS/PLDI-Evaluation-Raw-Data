@@ -1,0 +1,122 @@
+/root/Targets/cspace-ui
+└── cspace-ui@0.11.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cspace-ui/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0582 took 4.3506s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (89:11) on program /* global document, window */
+
+import React from 'react';
+import { render } from 'react-dom';
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { IntlProvider } from 'react-intl';
+import warning from 'warning';
+import { Modal } from 'cspace-layout';
+
+import { configureCSpace } from './actions/cspace';
+import { addIDGenerators } from './actions/idGenerator';
+import { addOptionLists } from './actions/optionList';
+import { savePrefs } from './actions/prefs';
+import defaultPlugins from './plugins';
+import reducer from './reducers';
+import AppContainer from './containers/AppContainer';
+import createPluginContext from './helpers/createPluginContext';
+
+import { mergeConfig, normalizeConfig } from './helpers/configHelpers';
+
+const pluginContext = createPluginContext();
+
+const defaultConfig = mergeConfig({
+  basename: '',
+  className: '',
+  container: 'main',
+  index: '/create',
+  locale: 'en',
+  messages: undefined,
+  prettyUrls: false,
+  serverUrl: '',
+  serverTimeZone: 'UTC',
+}, {
+  plugins: defaultPlugins.map(plugin => plugin()),
+}, pluginContext);
+
+module.exports = (uiConfig) => {
+  const config = normalizeConfig(mergeConfig(defaultConfig, uiConfig, pluginContext));
+
+  const {
+    container,
+    idGenerators,
+    optionLists,
+    serverUrl,
+  } = config;
+
+  const mountNode = document.querySelector(container);
+
+  warning(mountNode,
+    `No container element was found using the selector '${container}'. The CollectionSpace UI will not be rendered.`);
+
+  if (mountNode) {
+    warning(mountNode !== document.body,
+      `The container element for the CollectionSpace UI found using the selector '${container}' is the document body. This may cause problems, and is not supported.`);
+
+    const intlProvider = new IntlProvider({
+      locale: config.locale,
+      messages: config.messages,
+    });
+
+    const { intl } = intlProvider.getChildContext();
+
+    // eslint-disable-next-line no-underscore-dangle
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+    const store = createStore(reducer, composeEnhancers(
+      applyMiddleware(thunk.withExtraArgument(intl))
+    ));
+
+    window.addEventListener('beforeunload', () => {
+      store.dispatch(savePrefs());
+    });
+
+    store.dispatch(configureCSpace({
+      url: serverUrl,
+    }));
+
+    store.dispatch(addOptionLists(optionLists));
+    store.dispatch(addIDGenerators(idGenerators));
+
+    const props = {
+      config,
+      store,
+    };
+
+    Modal.setAppElement(mountNode);
+
+    render(<AppContainer {...props} />, mountNode);
+  }
+};
+ at SyntaxError: Unexpected token (89:11)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2165:22)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

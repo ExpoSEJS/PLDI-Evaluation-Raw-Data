@@ -1,0 +1,29 @@
+/root/Targets/jqueryui-detached-1.11
+└─┬ jqueryui-detached-1.11@1.11.4-v9 
+  ├── jquery-detached-2.1.4@2.1.4-v2 
+  └── window-handle@0.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jqueryui-detached-1.11/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 1% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 1% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 1% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 1% coverage ] ****** [3 done /0 queued / 0 running / 1 errors / 1% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0567 took 63.7752s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test environment.
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1,"ExpandedSwitcher":0} start 64.4131 took 3.5508s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":2} start 68.2692 took 3.474s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/jqueryui-detached-1.11/node_modules/jqueryui-detached-1.11/index.js. Coverage (Term): 78% Coverage (LOC): 86%
+*- File /root/Targets/jqueryui-detached-1.11/node_modules/jquery-detached-2.1.4/js/index.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/jqueryui-detached-1.11/node_modules/jqueryui-detached-1.11/decorator.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/jqueryui-detached-1.11/node_modules/window-handle/index.js. Coverage (Term): 27% Coverage (LOC): 40%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 1 errors **

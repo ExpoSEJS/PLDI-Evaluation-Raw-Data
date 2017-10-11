@@ -1,0 +1,69 @@
+/root/Targets/pgpmailer
+└─┬ pgpmailer@0.9.1 
+  ├─┬ pgpbuilder@0.6.0 
+  │ ├─┬ mailbuild@0.3.7 
+  │ │ ├── mimefuncs@0.3.9 
+  │ │ ├── mimetypes@0.1.1 
+  │ │ ├── punycode@1.2.4 
+  │ │ └── wo-addressparser@0.1.3 
+  │ └─┬ openpgp@0.8.2 
+  │   ├── es6-promise@1.0.0 
+  │   └── node-localstorage@0.3.6 
+  └─┬ wo-smtpclient@0.6.1 
+    ├── axe-logger@0.0.2 
+    ├─┬ tcp-socket@0.5.8 
+    │ └── node-forge@0.6.49 
+    └── wo-stringencoding@0.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pgpmailer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 44% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","charCodeAt","Uint8Array","Uint32Array","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0373 took 34.2913s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Identifier 'BigInteger' has already been declared
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/pgpmailer/node_modules/pgpmailer/src/pgpmailer.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/pgpmailer/node_modules/pgpbuilder/src/pgpbuilder.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/index.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/openpgp.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/encoding/armor.js. Coverage (Term): 20% Coverage (LOC): 63%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/encoding/base64.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/enums.js. Coverage (Term): 70% Coverage (LOC): 93%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/config/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/config/config.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/message.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/index.js. Coverage (Term): 52% Coverage (LOC): 71%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/packetlist.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/packet.js. Coverage (Term): 4% Coverage (LOC): 8%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/util.js. Coverage (Term): 5% Coverage (LOC): 17%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/all_packets.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/compressed.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/compression/jxg.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/packet/sym_encrypted_integrity_protected.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/index.js. Coverage (Term): 47% Coverage (LOC): 57%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/index.js. Coverage (Term): 85% Coverage (LOC): 94%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/des.js. Coverage (Term): 2% Coverage (LOC): 7%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/cast5.js. Coverage (Term): 1% Coverage (LOC): 3%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/twofish.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/blowfish.js. Coverage (Term): 62% Coverage (LOC): 92%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cipher/aes.js. Coverage (Term): 55% Coverage (LOC): 92%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/index.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/sha.js. Coverage (Term): 5% Coverage (LOC): 7%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/forge_sha256.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/forge_util.js. Coverage (Term): 21% Coverage (LOC): 49%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/md5.js. Coverage (Term): 89% Coverage (LOC): 91%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/hash/ripe-md.js. Coverage (Term): 25% Coverage (LOC): 73%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/cfb.js. Coverage (Term): 3% Coverage (LOC): 8%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/public_key/index.js. Coverage (Term): 59% Coverage (LOC): 71%
+*- File /root/Targets/pgpmailer/node_modules/openpgp/src/crypto/public_key/rsa.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

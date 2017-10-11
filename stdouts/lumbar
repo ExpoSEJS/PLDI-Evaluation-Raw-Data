@@ -1,0 +1,316 @@
+/root/Targets/lumbar
+├── UNMET PEER DEPENDENCY handlebars@>=2.x
+├─┬ lumbar@5.0.0 
+│ ├─┬ alce@1.2.0 
+│ │ ├── esprima@1.2.5 
+│ │ └── estraverse@1.9.3 
+│ ├── async@0.9.2 
+│ ├── bower@1.8.2 
+│ ├─┬ cheerio@0.15.0 
+│ │ ├─┬ CSSselect@0.4.1 
+│ │ │ ├── CSSwhat@0.4.7 
+│ │ │ └── domutils@1.4.3 
+│ │ ├── entities@1.0.0 
+│ │ ├─┬ htmlparser2@3.7.3 
+│ │ │ ├── domelementtype@1.3.0 
+│ │ │ ├── domhandler@2.2.1 
+│ │ │ ├─┬ domutils@1.5.1 
+│ │ │ │ └─┬ dom-serializer@0.1.0 
+│ │ │ │   ├── domelementtype@1.1.3 
+│ │ │ │   └── entities@1.1.1 
+│ │ │ └─┬ readable-stream@1.1.14 
+│ │ │   ├── core-util-is@1.0.2 
+│ │ │   ├── inherits@2.0.3 
+│ │ │   ├── isarray@0.0.1 
+│ │ │   └── string_decoder@0.10.31 
+│ │ └── lodash@2.4.2 
+│ ├─┬ child-pool@1.2.1 
+│ │ └── underscore@1.4.4 
+│ ├─┬ growl@1.10.2 
+│ │ ├── UNMET PEER DEPENDENCY eslint@>=3.1.0
+│ │ └─┬ eslint-plugin-node@5.1.1 
+│ │   ├── ignore@3.3.5 
+│ │   ├─┬ minimatch@3.0.4 
+│ │   │ └─┬ brace-expansion@1.1.8 
+│ │   │   ├── balanced-match@1.0.0 
+│ │   │   └── concat-map@0.0.1 
+│ │   ├─┬ resolve@1.4.0 
+│ │   │ └── path-parse@1.0.5 
+│ │   └── semver@5.3.0 
+│ ├─┬ source-map@0.1.43 
+│ │ └── amdefine@1.0.1 
+│ ├─┬ uglify-js@2.3.6 
+│ │ ├── async@0.2.10 
+│ │ └─┬ optimist@0.3.7 
+│ │   └── wordwrap@0.0.3 
+│ └── underscore@1.8.3 
+├── UNMET PEER DEPENDENCY nib@>=1.0.2
+├── UNMET PEER DEPENDENCY stylus@>=0.41.2
+└── UNMET PEER DEPENDENCY stylus-images@>=1.0.3
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/lumbar/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0588 took 5.275s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (106:20) on program var _ = require('underscore'),
+    async = require('async'),
+    ChildPool = require('child-pool'),
+    Context = require('./context'),
+    EventEmitter = require('events').EventEmitter,
+    fs = require('fs'),
+    stateMachine = require('./state-machine'),
+    WatchManager = require('./watch-manager');
+
+exports.build = require('./build');
+exports.fileUtil = require('./fileUtil');
+exports.plugin = require('./plugin').plugin;
+exports.combine = require('./jsCombine').combine;
+exports.config = require('./config');
+
+/**
+ *
+ * @name init
+ * @function This function initializes a Lumbar instance
+ * @param {string} lumbarFile The lumbarFile is the main
+ *  file. Its responsible to define all the platforms,
+ *  packages, modules, and templates for Lumbar to use.
+ * @param {Object} options supports the following options:
+ *   packageConfigFile (string): name of the package config file.
+ *   outdir (string): path to directory of where to output the files.
+ *   minimize (boolean): Should we minimize the files?
+ * @return {Object.<Function>}
+ */
+exports.init = function(lumbarFile, options) {
+    // Clone so we can mutate in the use API
+    options = _.clone(options || {});
+    options.plugins = _.clone(options.plugins || []);
+
+    function logError(err) {
+      if (err) {
+        event.emit('error', err);
+      }
+    }
+
+    var event = new EventEmitter(),
+        watch,
+        watchContext;
+
+    function watchOutputHandler(status) {
+      if (!watch) {
+        // We've been cleaned up but residuals may still exist, do nothing on this exec
+        return;
+      }
+
+      if (status.fileConfig.isPrimary) {
+        delete status.fileConfig;
+      } else if (status.fileConfig.isPrimary === false) {
+        // This config is directly linked to another meaning we don't want to watch on it as
+        // it will be rebuilt.
+        return;
+      }
+
+      var originalContext = watchContext;
+      watch.moduleOutput(status, function() {
+        if (watchContext !== originalContext) {
+          // Ignore builds that may have occured at the same time as a config file change (i.e. a branch switch)
+          return;
+        }
+
+        stateMachine.loadPlatform(watchContext.clone(status), function(err, contexts) {
+          if (err) {
+            return logError(err);
+          }
+
+          stateMachine.buildContexts(contexts, logError);
+        });
+      });
+    }
+
+    return _.extend(event, {
+      use: function(plugin) {
+        // Only has impact before exec
+        options.plugins.push(plugin);
+      },
+
+      moduleMap: function(packageName, mapOptions, callback) {
+        if (!callback) {
+          callback = mapOptions;
+          mapOptions = {};
+        }
+        if (!callback) {
+          callback = packageName;
+          packageName = undefined;
+        }
+
+        stateMachine.loadConfig(lumbarFile, event, options, function(err, rootContext) {
+          if (err) {
+            return callback(err);
+          }
+
+          rootContext.mode = 'scripts';
+          stateMachine.loadPackages(rootContext, packageName, function(err, contexts) {
+            if (err) {
+              return callback(err);
+            }
+
+            var ModuleMap = rootContext.plugins.get('module-map'),
+                packages = _.keys(contexts),
+                platforms = [];
+            async.forEach(packages, function(packageName, callback) {
+                var package = contexts[packageName],
+                    packagePlatforms = _.keys(package);
+                platforms = platforms.concat(packagePlatforms);
+
+                async.forEach(packagePlatforms, function(platformName, callback) {
+                    var platform = package[platformName],
+                        context = platform[0];
+
+                    ModuleMap.buildMap(context, mapOptions, function(err, map, loadPrefix) {
+                      if (!err) {
+                        // Provide some sort of waypoint
+                        map.isMap = true;
+                        map.loadPrefix = context.config.loadPrefix() + context.platformPath + loadPrefix;
+
+                        ModuleMap.stripPrefix(map, loadPrefix)
+
+                        function mapModule(module) {
+                          module.js = platformMap(module.js);
+                          if (module.css) {
+                            module.css.href = platformMap(module.css.href);
+                          }
+                        }
+                        function platformMap(path) {
+                          if (path) {
+                            return context.platformPath + loadPrefix + path;
+                          }
+                        }
+
+                        // The user requested the file system paths, construct
+                        if (mapOptions.localPath) {
+                          if (map.base) {
+                            mapModule(map.base);
+                          }
+                          _.each(map.modules, mapModule);
+                        }
+
+                        if (!platformName || platformName === 'undefined') {
+                          contexts[packageName] = map;
+                        } else {
+                          package[platformName] = map;
+                        }
+                      }
+                      callback(err);
+                    });
+                  },
+                  callback);
+              },
+              function(err) {
+                callback(err, contexts);
+              });
+          });
+        });
+      },
+
+      /**
+       *
+       * @name build
+       * @function This function builds out the package(s).
+       * @param {string} packageName the name of the package listed under
+       *  'packages' from the lumbarFile passed in during the call to init().
+       * @param {Function} callback the node process Function
+       */
+      build: function(packageName, modules, callback) {
+        stateMachine.loadAndInitDir(lumbarFile, event, options, function(err, rootContext) {
+          if (err) {
+            if (!callback) {
+              throw err;
+            }
+            return callback(err);
+          }
+
+          stateMachine.buildPackages(rootContext, packageName, modules, callback);
+        });
+      },
+      watch: function(packageName, modules, callback) {
+        if (!fs.watch) {
+          throw new Error('Watch requires fs.watch, introduced in Node v0.6.0');
+        }
+
+        ChildPool.isBackground(true);
+
+        watch = new WatchManager();
+        watch.on('watch-change', function(info) {
+          event.emit('watch-change', info);
+        });
+
+        var self = this;
+        stateMachine.loadAndInitDir(lumbarFile, event, options, function(err, rootContext) {
+          if (err) {
+            logError(err);
+          }
+
+          if (!callback) {
+            callback = modules;
+            modules = undefined;
+          }
+
+          watchContext = rootContext;
+
+          // Watch for changes in the config file
+          var mixinPaths = _.filter(_.pluck(rootContext.libraries.configs, 'path'), function(path) { return path; });
+          watch.configFile(lumbarFile, mixinPaths, function() {
+            watchContext = undefined;
+            self.watch(packageName, callback);
+          });
+
+          // If we have errored do not exec everything as it could be in an indeterminate state
+          if (err) {
+            return;
+          }
+
+          // Watch the individual components
+          event.removeListener('output', watchOutputHandler);
+          event.on('output', watchOutputHandler);
+
+          // Actual build everything
+          var packages = packageName ? [packageName] : rootContext.config.packageList();
+          packages.forEach(function(name) {
+            stateMachine.buildPackages(rootContext, name, modules, logError);
+          });
+        });
+      },
+      unwatch: function() {
+        event.removeListener('output', watchOutputHandler);
+        if (watch) {
+          watch.removeAllListeners();
+          watch.reset();
+          watch = undefined;
+          watchContext = undefined;
+        }
+      }
+    });
+};
+ at SyntaxError: The keyword 'package' is reserved (106:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

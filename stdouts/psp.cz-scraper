@@ -1,0 +1,86 @@
+
+> ws@0.4.32 install /root/Targets/psp.cz-scraper/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/psp.cz-scraper/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/psp.cz-scraper/node_modules/ws/build'
+/root/Targets/psp.cz-scraper
+└─┬ psp.cz-scraper@0.0.4 
+  ├── moment@2.18.1 
+  ├─┬ phantom-proxy@0.1.792 
+  │ ├── colors@0.6.2 
+  │ ├─┬ event-stream@3.0.20 
+  │ │ ├── duplexer@0.1.1 
+  │ │ ├── from@0.1.7 
+  │ │ ├── map-stream@0.0.7 
+  │ │ ├── pause-stream@0.0.11 
+  │ │ ├── split@0.2.10 
+  │ │ ├── stream-combiner@0.0.4 
+  │ │ └── through@2.3.8 
+  │ ├─┬ express@3.0.6 
+  │ │ ├── buffer-crc32@0.1.1 
+  │ │ ├── commander@0.6.1 
+  │ │ ├─┬ connect@2.7.2 
+  │ │ │ ├── bytes@0.1.0 
+  │ │ │ ├── formidable@1.0.11 
+  │ │ │ ├── pause@0.0.1 
+  │ │ │ └── qs@0.5.1 
+  │ │ ├── cookie@0.0.5 
+  │ │ ├── cookie-signature@0.0.1 
+  │ │ ├─┬ debug@3.1.0 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├── fresh@0.1.0 
+  │ │ ├── methods@0.0.1 
+  │ │ ├── mkdirp@0.3.3 
+  │ │ ├── range-parser@0.0.4 
+  │ │ └─┬ send@0.1.0 
+  │ │   └── mime@1.2.6 
+  │ ├─┬ form-data@0.0.10 
+  │ │ ├── async@0.2.10 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├── mime@1.2.11 
+  │ ├── q@0.8.12 
+  │ ├─┬ socket.io@0.9.19 
+  │ │ ├── base64id@0.1.0 
+  │ │ ├── policyfile@0.0.4 
+  │ │ ├── redis@0.7.3 
+  │ │ └─┬ socket.io-client@0.9.16 
+  │ │   ├─┬ active-x-obfuscator@0.0.1 
+  │ │   │ └── zeparser@0.0.5 
+  │ │   ├── uglify-js@1.2.5 
+  │ │   ├─┬ ws@0.4.32 
+  │ │   │ ├── commander@2.1.0 
+  │ │   │ ├── nan@1.0.0 
+  │ │   │ ├── options@0.0.6 
+  │ │   │ └── tinycolor@0.0.1 
+  │ │   └── xmlhttprequest@1.4.2 
+  │ └── underscore@1.4.4 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/psp.cz-scraper/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0565 took 6.8594s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/psp.cz-scraper/node_modules/psp.cz-scraper/main.js. Coverage (Term): 10% Coverage (LOC): 8%
+*- File /root/Targets/psp.cz-scraper/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/psp.cz-scraper/node_modules/psp.cz-scraper/utilFns.js. Coverage (Term): 36% Coverage (LOC): 63%
+*- File /root/Targets/psp.cz-scraper/node_modules/phantom-proxy/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/psp.cz-scraper/node_modules/phantom-proxy/lib/proxy.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/psp.cz-scraper/node_modules/colors/colors.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

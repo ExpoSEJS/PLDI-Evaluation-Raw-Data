@@ -1,0 +1,21 @@
+/root/Targets/strukt
+└── strukt@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/strukt/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 0 errors / 44% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 44% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 44% coverage ] ****** [3 done /0 queued / 0 running / 0 errors / 46% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0841 took 8.0734s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":2} start 8.2231 took 7.7756s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"ExpandedSwitcher":0,"_bound":1,"Target_Switcher":0} start 8.2428 took 8.0073s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 90% Coverage (LOC): 95%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/strukt/node_modules/strukt/lib/strukt.js. Coverage (Term): 41% Coverage (LOC): 53%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 0 errors **

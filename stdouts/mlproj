@@ -1,0 +1,364 @@
+/root/Targets/mlproj
+└── mlproj@0.46.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mlproj/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0665 took 3.8435s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+"use strict";
+
+const chalk   = require('chalk');
+const fs      = require('fs');
+const read    = require('readline-sync');
+const core    = require('mlproj-core');
+const node    = require('./node');
+const program = require('./program');
+const pkg     = require('../package.json');
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * The command action implementations.
+ */
+
+// start of plain commands, validate forbidden options
+function plainCmdStart(args, extra)
+{
+    // check forbidden options
+    let options = [ 'environ', 'file', 'code', 'host', 'user', 'password' ];
+    if ( extra ) {
+        options = options.concat(extra);
+    }
+    options.forEach(name => {
+        if ( args.global[name] ) {
+            throw new Error('Option `--' + name + '` not supported for command `' + cmd + '`');
+        }
+    });
+}
+
+// implementation of the action for command `new`
+function execHelp(ctxt, args, prg)
+{
+    // validate options
+    plainCmdStart(args, 'dry');
+
+    // the command
+    let name = args.local.cmd;
+    if ( ! name ) {
+
+        ctxt.platform.log(`
+   This is mlproj, version ` + pkg.version + `
+
+   Usage:
+
+       mlproj [options] <command> [options]
+
+   Commands:
+
+       help         display help about another command
+       new          create a new project in the current directory
+       show         display the environment
+       setup        setup the environment on MarkLogic
+       load         load documents to a database
+       deploy       deploy modules to a database
+       watch        deploy modules as soon as modified
+
+   Global options:
+
+       -c, --code <code>          set/override the @code
+       -d, --dry, --dry-run       dry run
+       -e, --environ <name>       set the environment name
+       -f, --file <path>          set the environment file
+       -h, --host <host>          set/override the @host
+       -p, --param <name:value>   set/override a parameter value <name:value>
+       -u, --user <user>          set/override the @user
+       -v, --verbose              verbose mode
+       -z, --password             ask for password interactively
+
+   Command options:
+
+       See the help of individual commands, e.g. "mlproj help load".
+
+   Visit http://mlproj.org/ for all details.
+`);
+    }
+    else {
+        var cmd = prg.commands[name];
+        if ( ! cmd ) {
+            ctxt.platform.log('Unknwon command: ' + name);
+        }
+        else {
+            ctxt.platform.log('');
+            ctxt.platform.log('   ' + cmd.desc());
+            ctxt.platform.log('');
+            ctxt.platform.log('   Usage:');
+            ctxt.platform.log('');
+            ctxt.platform.log('       mlproj ' + chalk.bold(name) + ' ' + cmd.usage());
+            ctxt.platform.log('');
+            ctxt.platform.log('   ' + cmd.help);
+            ctxt.platform.log('');
+            ctxt.platform.log('   Reference:');
+            ctxt.platform.log('');
+            ctxt.platform.log('       http://mlproj.org/commands#' + name);
+            ctxt.platform.log('');
+        }
+    }
+}
+
+// implementation of the action for command `new`
+function execNew(ctxt, args, cmd)
+{
+    // validate options
+    plainCmdStart(args, 'dry');
+    var dir = ctxt.platform.cwd;
+
+    // Check the directory is empty...!
+    if ( ! args.local.force && fs.readdirSync(dir).length ) {
+        const prompt = 'Directory is not empty, do you want to force creation and continue?';
+        if ( read.keyInYNStrict(prompt) ) {
+            args.local.force = true;
+        }
+        else {
+            return;
+        }
+    }
+
+    // gather info by asking the user...
+    ctxt.platform.log('--- ' + chalk.bold('Questions') + ' ---');
+    var loc      = args.local;
+    var abbrev   = loc.abbrev || read.question('Project code     : ');
+    var dfltName = 'http://mlproj.org/example/' + abbrev;
+    if ( ! loc.dir )
+        loc.dir = dir;
+    if ( ! loc.abbrev )
+        loc.abbrev = abbrev;
+    if ( ! loc.title )
+        loc.title = read.question('Title            : ');
+    if ( ! loc.name )
+        loc.name = read.question('Name URI (' + dfltName + '): ', { defaultInput: dfltName });
+    if ( ! loc.version )
+        loc.version = read.question('Version  (0.1.0) : ', { defaultInput: '0.1.0' });
+    if ( ! loc.port )
+        loc.port = read.question('Port     (8080)  : ', { defaultInput: '8080' });
+
+    // execute the command
+    var command = new (cmd.clazz())(args.cmd, args.global, args.local, ctxt);
+    var actions = command.prepare();
+    ctxt.platform.log('\n--- ' + chalk.bold('Progress') + ' ---'
+           + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+    actions.execute();
+    ctxt.platform.log('\n--- ' + chalk.bold('Summary') + ' ---'
+           + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+    if ( actions.done.length ) {
+        ctxt.platform.log(chalk.green('Done') + ':');
+        ctxt.platform.log(chalk.green('✓') + ' Project created: \t' + loc.abbrev);
+        ctxt.platform.log(chalk.green('→') + ' Check/edit files in:\t' + actions.done[0].cmd.xpdir);
+    }
+    if ( actions.error ) {
+        ctxt.platform.log(chalk.red('Error') + ':');
+        ctxt.platform.log(chalk.red('✗') + ' Project creation: \t' + loc.abbrev);
+        ctxt.platform.log(actions.error.message);
+        if ( ctxt.verbose && actions.error.error && actions.error.error.stack ) {
+            ctxt.platform.log(actions.error.error.stack);
+        }
+    }
+    if ( actions.todo.length ) {
+        ctxt.platform.log(chalk.yellow('Not done') + ':');
+        ctxt.platform.log(chalk.yellow('✗') + ' Project creation: \t' + loc.abbrev);
+        ctxt.platform.log(actions.error.message);
+        if ( ctxt.verbose && actions.error.error && actions.error.error.stack ) {
+            ctxt.platform.log(actions.error.error.stack);
+        }
+    }
+}
+
+// implementation of the action for any command NOT accepting a project/environment
+// (except of help and new, which are special)
+function execPlain(ctxt, args, cmd, clazz)
+{
+    // validate options
+    plainCmdStart(args);
+
+    // the command
+    var command = new (clazz || cmd.clazz())(args.cmd, args.global, args.local, ctxt);
+    // prepare the command
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('--- ' + chalk.bold('Prepare') + ' ---');
+    }
+    var actions = command.prepare();
+    // execute the actions
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('\n--- ' + chalk.bold('Progress') + ' ---'
+               + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+    }
+    actions.execute();
+    // display summary and/or error
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('\n--- ' + chalk.bold('Summary') + ' ---'
+               + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+        if ( actions.done.length ) {
+            ctxt.platform.log(chalk.green('Done') + ':');
+            actions.done.forEach(a => a.display(ctxt.platform, 'done'));
+        }
+    }
+    if ( actions.error ) {
+        ctxt.platform.log(chalk.red('Error') + ':');
+        actions.error.action.display(ctxt.platform, 'error');
+        ctxt.platform.log(actions.error.message);
+        if ( ctxt.verbose && actions.error.error && actions.error.error.stack ) {
+            ctxt.platform.log(actions.error.error.stack);
+        }
+    }
+    if ( args.cmd !== 'show' ) {
+        if ( actions.todo.length ) {
+            ctxt.platform.log(chalk.yellow('Not done') + ':');
+            actions.todo.forEach(a => a.display(ctxt.platform, 'todo'));
+        }
+        if ( ! actions.done.length && ! actions.error && ! actions.todo.length ) {
+            ctxt.platform.log('Nothing to do.');
+        }
+    }
+}
+
+function makeEnviron(ctxt, env, path, params, force)
+{
+    // invalid and default values
+    if ( env && path ) {
+        throw new Error('Both `environ` and `path` set: ' + env + ', ' + path);
+    }
+    if ( ! env && ! path ) {
+        env = 'default';
+    }
+    // do it (either env or file)
+    if ( env ) {
+        let proj = new core.Project(ctxt, ctxt.platform.cwd);
+        return proj.environ(env, params, force);
+    }
+    else {
+        let res = new core.Environ(ctxt, path);
+        res.compile(params, force);
+        return res;
+    }
+}
+
+// implementation of the action for any command accepting a project/environment
+function execWithProject(ctxt, args, cmd)
+{
+    // the options
+    var env      = args.global.environ;
+    var path     = args.global.file;
+    var params   = args.global.param || {};
+    var force    = {};
+    [ 'code', 'host', 'user' ].forEach(name => force[name] = args.global[name]);
+    if ( args.global.password ) {
+        force.password = read.question('Password: ', { hideEchoBack: true });
+    }
+    // the project & command
+    var environ = makeEnviron(ctxt, env, path, params, force);
+    var command = new (cmd.clazz())(args.cmd, args.global, args.local, ctxt, environ);
+    // prepare the command
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('--- ' + chalk.bold('Prepare') + ' ---');
+    }
+    var actions = command.prepare();
+    // execute the actions
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('\n--- ' + chalk.bold('Progress') + ' ---'
+               + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+    }
+    actions.execute();
+    // display summary and/or error
+    if ( args.cmd !== 'show' ) {
+        ctxt.platform.log('\n--- ' + chalk.bold('Summary') + ' ---'
+               + (ctxt.dry ? ' (' + chalk.red('dry run, not for real') + ')' : ''));
+        if ( actions.done.length ) {
+            ctxt.platform.log(chalk.green('Done') + ':');
+            actions.done.forEach(a => a.display(ctxt.platform, 'done'));
+        }
+    }
+    if ( actions.error ) {
+        ctxt.platform.log(chalk.red('Error') + ':');
+        actions.error.action.display(ctxt.platform, 'error');
+        ctxt.platform.log(actions.error.message);
+        if ( ctxt.verbose && actions.error.error && actions.error.error.stack ) {
+            ctxt.platform.log(actions.error.error.stack);
+        }
+    }
+    if ( args.cmd !== 'show' ) {
+        if ( actions.todo.length ) {
+            ctxt.platform.log(chalk.yellow('Not done') + ':');
+            actions.todo.forEach(a => a.display(ctxt.platform, 'todo'));
+        }
+        if ( ! actions.done.length && ! actions.error && ! actions.todo.length ) {
+            ctxt.platform.log('Nothing to do.');
+        }
+    }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * The program itself
+ */
+
+function main(argv, display)
+{
+    let prg     = program.makeProgram();
+    let args    = prg.parse(argv);
+    let dry     = args.global.dry     ? true : false;
+    let verbose = args.global.verbose ? true : false;
+    let ctxt    = new node.Context(dry, verbose);
+    ctxt.platform.log('');
+    try {
+        if ( ! args.cmd || args.cmd === 'help' ) {
+            execHelp(ctxt, args, prg);
+        }
+        else {
+            let cmd = prg.commands[args.cmd];
+            if ( args.cmd === 'new' && args.local.gradle ) {
+                execPlain(ctxt, args, cmd, core.MigrateGradleCommand);
+            }
+            else if ( args.cmd === 'new' ) {
+                execNew(ctxt, args, cmd);
+            }
+            else {
+                execWithProject(ctxt, args, cmd);
+            }
+        }
+    }
+    catch (err) {
+        ctxt.display.error(err, args.global.verbose);
+    }
+}
+
+try {
+    main(process.argv.slice(2));
+}
+catch (err) {
+    // here, I think we should always be verbose... (unexpected error)
+    // TODO: ...
+    throw err;
+    //display.error(err, true);
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

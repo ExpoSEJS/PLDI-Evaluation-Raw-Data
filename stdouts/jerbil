@@ -1,0 +1,80 @@
+
+> msgpack@1.0.2 install /root/Targets/jerbil/node_modules/msgpack
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/jerbil/node_modules/msgpack/build'
+  CC(target) Release/obj.target/libmsgpack/deps/msgpack/objectc.o
+  CC(target) Release/obj.target/libmsgpack/deps/msgpack/unpack.o
+  CC(target) Release/obj.target/libmsgpack/deps/msgpack/vrefbuffer.o
+  CC(target) Release/obj.target/libmsgpack/deps/msgpack/zone.o
+  CC(target) Release/obj.target/libmsgpack/deps/msgpack/version.o
+  AR(target) Release/obj.target/deps/msgpack/msgpack.a
+  COPY Release/msgpack.a
+  CXX(target) Release/obj.target/msgpackBinding/src/msgpack.o
+  SOLINK_MODULE(target) Release/obj.target/msgpackBinding.node
+  COPY Release/msgpackBinding.node
+make: Leaving directory '/root/Targets/jerbil/node_modules/msgpack/build'
+/root/Targets/jerbil
+└─┬ jerbil@1.2.0 
+  ├── double-ended-queue@2.1.0-0 
+  ├─┬ js-yaml@3.10.0 
+  │ ├─┬ argparse@1.0.9 
+  │ │ └── sprintf-js@1.0.3 
+  │ └── esprima@4.0.0 
+  └─┬ msgpack@1.0.2 
+    └── nan@2.7.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jerbil/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","RegExp","call","setPrototypeOf","Array","TypeError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1191 took 40.7605s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Super expression must either be null or a function, not undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jerbil/node_modules/jerbil/es5/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/jerbil/es5/jerbil.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/jerbil/node_modules/msgpack/lib/msgpack.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/jerbil/node_modules/js-yaml/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml.js. Coverage (Term): 92% Coverage (LOC): 97%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/loader.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/common.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/exception.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/mark.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema.js. Coverage (Term): 66% Coverage (LOC): 65%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type.js. Coverage (Term): 80% Coverage (LOC): 92%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema/core.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema/json.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/str.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/seq.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/map.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/null.js. Coverage (Term): 33% Coverage (LOC): 66%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/bool.js. Coverage (Term): 26% Coverage (LOC): 67%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/int.js. Coverage (Term): 10% Coverage (LOC): 25%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/float.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/timestamp.js. Coverage (Term): 23% Coverage (LOC): 28%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/merge.js. Coverage (Term): 68% Coverage (LOC): 90%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/binary.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/omap.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/pairs.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/set.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/schema/default_full.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js. Coverage (Term): 55% Coverage (LOC): 79%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js. Coverage (Term): 17% Coverage (LOC): 33%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/type/js/function.js. Coverage (Term): 19% Coverage (LOC): 43%
+*- File /root/Targets/jerbil/node_modules/esprima/dist/esprima.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/jerbil/node_modules/js-yaml/lib/js-yaml/dumper.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/jerbil/node_modules/double-ended-queue/js/deque.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/jerbil/node_modules/jerbil/es5/response-spec.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

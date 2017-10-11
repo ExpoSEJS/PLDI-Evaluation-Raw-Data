@@ -1,0 +1,171 @@
+/root/Targets/videojs-mux
+└─┬ videojs-mux@2.1.4 
+  ├── lodash.assign@4.2.0 
+  ├─┬ mux-embed@2.2.1 
+  │ ├── base-64@0.1.0 
+  │ ├─┬ global@4.3.2 
+  │ │ ├─┬ min-document@2.19.0 
+  │ │ │ └── dom-walk@0.1.1 
+  │ │ └── process@0.5.2 
+  │ ├── js-cookie@2.1.4 
+  │ ├── lodash.isequal@4.5.0 
+  │ ├── loglevel@1.5.0 
+  │ ├── platform@1.3.4 
+  │ └── qs@6.5.1 
+  └─┬ video.js@5.20.3 
+    ├─┬ babel-runtime@6.26.0 
+    │ ├── core-js@2.5.1 
+    │ └── regenerator-runtime@0.11.0 
+    ├── global@4.3.0 
+    ├─┬ safe-json-parse@4.0.0 
+    │ └─┬ rust-result@1.0.0 
+    │   └── individual@2.0.0 
+    ├── tsml@1.0.1 
+    ├── videojs-font@2.0.0 
+    ├─┬ videojs-ie8@1.1.2 
+    │ └── es5-shim@4.5.9 
+    ├── videojs-swf@5.4.1 
+    ├── videojs-vtt.js@0.12.4 
+    └─┬ xhr@2.2.2 
+      ├── is-function@1.0.1 
+      ├─┬ parse-headers@2.0.1 
+      │ ├── for-each@0.3.2 
+      │ └── trim@0.0.1 
+      └── xtend@4.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/videojs-mux/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 44% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","Date","getTime","isArray","create","setPrototypeOf","splice","Array","call","bind","max","Error","toString","pow","RegExp","join","Object","now"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0238 took 33.9952s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'doNotTrack' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/videojs-mux/node_modules/videojs-mux/dist/videojs-mux-dist.js. Coverage (Term): 11% Coverage (LOC): 9%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/video.js. Coverage (Term): 55% Coverage (LOC): 60%
+*- File /root/Targets/videojs-mux/node_modules/video.js/node_modules/global/window.js. Coverage (Term): 60% Coverage (LOC): 60%
+*- File /root/Targets/videojs-mux/node_modules/video.js/node_modules/global/document.js. Coverage (Term): 81% Coverage (LOC): 92%
+*- File /root/Targets/videojs-mux/node_modules/min-document/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/videojs-mux/node_modules/min-document/document.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/videojs-mux/node_modules/dom-walk/index.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/videojs-mux/node_modules/min-document/dom-comment.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/videojs-mux/node_modules/min-document/dom-text.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/videojs-mux/node_modules/min-document/dom-element.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/videojs-mux/node_modules/min-document/event/dispatch-event.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/videojs-mux/node_modules/min-document/event/add-event-listener.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/videojs-mux/node_modules/min-document/event/remove-event-listener.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/videojs-mux/node_modules/min-document/serialize.js. Coverage (Term): 9% Coverage (LOC): 24%
+*- File /root/Targets/videojs-mux/node_modules/min-document/dom-fragment.js. Coverage (Term): 55% Coverage (LOC): 59%
+*- File /root/Targets/videojs-mux/node_modules/min-document/event.js. Coverage (Term): 48% Coverage (LOC): 73%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/browser.js. Coverage (Term): 68% Coverage (LOC): 74%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/dom.js. Coverage (Term): 24% Coverage (LOC): 35%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/guid.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/log.js. Coverage (Term): 25% Coverage (LOC): 37%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/obj.js. Coverage (Term): 44% Coverage (LOC): 57%
+*- File /root/Targets/videojs-mux/node_modules/tsml/tsml.js. Coverage (Term): 25% Coverage (LOC): 50%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/setup.js. Coverage (Term): 47% Coverage (LOC): 48%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/events.js. Coverage (Term): 24% Coverage (LOC): 29%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/stylesheet.js. Coverage (Term): 59% Coverage (LOC): 65%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/component.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/fn.js. Coverage (Term): 30% Coverage (LOC): 40%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/to-title-case.js. Coverage (Term): 91% Coverage (LOC): 90%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/merge-options.js. Coverage (Term): 78% Coverage (LOC): 81%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/event-target.js. Coverage (Term): 38% Coverage (LOC): 45%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/player.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/time-ranges.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/buffer.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/fullscreen-api.js. Coverage (Term): 81% Coverage (LOC): 93%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/media-error.js. Coverage (Term): 56% Coverage (LOC): 64%
+*- File /root/Targets/videojs-mux/node_modules/safe-json-parse/tuple.js. Coverage (Term): 40% Coverage (LOC): 36%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track-list-converter.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/modal-dialog.js. Coverage (Term): 25% Coverage (LOC): 34%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tech/tech.js. Coverage (Term): 25% Coverage (LOC): 34%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/html-track-element.js. Coverage (Term): 43% Coverage (LOC): 45%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track-cue-list.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/track-enums.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/track.js. Coverage (Term): 41% Coverage (LOC): 46%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/url.js. Coverage (Term): 25% Coverage (LOC): 27%
+*- File /root/Targets/videojs-mux/node_modules/xhr/index.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/videojs-mux/node_modules/global/window.js. Coverage (Term): 67% Coverage (LOC): 64%
+*- File /root/Targets/videojs-mux/node_modules/is-function/index.js. Coverage (Term): 32% Coverage (LOC): 75%
+*- File /root/Targets/videojs-mux/node_modules/parse-headers/parse-headers.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/videojs-mux/node_modules/trim/index.js. Coverage (Term): 43% Coverage (LOC): 73%
+*- File /root/Targets/videojs-mux/node_modules/for-each/index.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/videojs-mux/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/html-track-element-list.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track-list.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/track-list.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/video-track-list.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/audio-track-list.js. Coverage (Term): 32% Coverage (LOC): 39%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tech/loader.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tech/flash.js. Coverage (Term): 28% Coverage (LOC): 39%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tech/flash-rtmp.js. Coverage (Term): 30% Coverage (LOC): 44%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/poster-image.js. Coverage (Term): 42% Coverage (LOC): 48%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/clickable-component.js. Coverage (Term): 30% Coverage (LOC): 40%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track-display.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/loading-spinner.js. Coverage (Term): 56% Coverage (LOC): 68%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/big-play-button.js. Coverage (Term): 41% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/button.js. Coverage (Term): 34% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/close-button.js. Coverage (Term): 52% Coverage (LOC): 67%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/control-bar.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/play-toggle.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/time-controls/current-time-display.js. Coverage (Term): 42% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/format-time.js. Coverage (Term): 15% Coverage (LOC): 30%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/time-controls/duration-display.js. Coverage (Term): 41% Coverage (LOC): 52%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/time-controls/time-divider.js. Coverage (Term): 56% Coverage (LOC): 68%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/time-controls/remaining-time-display.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/live-display.js. Coverage (Term): 43% Coverage (LOC): 54%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/progress-control.js. Coverage (Term): 59% Coverage (LOC): 75%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/seek-bar.js. Coverage (Term): 33% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/slider/slider.js. Coverage (Term): 25% Coverage (LOC): 36%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/utils/computed-style.js. Coverage (Term): 50% Coverage (LOC): 56%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/load-progress-bar.js. Coverage (Term): 33% Coverage (LOC): 44%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/play-progress-bar.js. Coverage (Term): 41% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/tooltip-progress-bar.js. Coverage (Term): 43% Coverage (LOC): 55%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/progress-control/mouse-time-display.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/fullscreen-toggle.js. Coverage (Term): 50% Coverage (LOC): 64%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/volume-control/volume-control.js. Coverage (Term): 48% Coverage (LOC): 60%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/volume-control/volume-bar.js. Coverage (Term): 43% Coverage (LOC): 59%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/volume-control/volume-level.js. Coverage (Term): 56% Coverage (LOC): 68%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/volume-menu-button.js. Coverage (Term): 33% Coverage (LOC): 38%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/popup/popup.js. Coverage (Term): 47% Coverage (LOC): 55%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/popup/popup-button.js. Coverage (Term): 40% Coverage (LOC): 55%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/mute-toggle.js. Coverage (Term): 37% Coverage (LOC): 46%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/chapters-button.js. Coverage (Term): 33% Coverage (LOC): 42%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/text-track-button.js. Coverage (Term): 44% Coverage (LOC): 55%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/track-button.js. Coverage (Term): 46% Coverage (LOC): 51%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/menu/menu-button.js. Coverage (Term): 29% Coverage (LOC): 37%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/menu/menu.js. Coverage (Term): 32% Coverage (LOC): 41%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/text-track-menu-item.js. Coverage (Term): 35% Coverage (LOC): 39%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/menu/menu-item.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/off-text-track-menu-item.js. Coverage (Term): 44% Coverage (LOC): 52%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/chapters-track-menu-item.js. Coverage (Term): 42% Coverage (LOC): 53%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/descriptions-button.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/subtitles-button.js. Coverage (Term): 57% Coverage (LOC): 72%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/captions-button.js. Coverage (Term): 51% Coverage (LOC): 67%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/text-track-controls/caption-settings-menu-item.js. Coverage (Term): 49% Coverage (LOC): 57%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/audio-track-controls/audio-track-button.js. Coverage (Term): 42% Coverage (LOC): 56%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/audio-track-controls/audio-track-menu-item.js. Coverage (Term): 40% Coverage (LOC): 49%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/playback-rate-menu/playback-rate-menu-button.js. Coverage (Term): 36% Coverage (LOC): 50%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/playback-rate-menu/playback-rate-menu-item.js. Coverage (Term): 47% Coverage (LOC): 61%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/spacer-controls/custom-control-spacer.js. Coverage (Term): 54% Coverage (LOC): 71%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/control-bar/spacer-controls/spacer.js. Coverage (Term): 53% Coverage (LOC): 73%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/error-display.js. Coverage (Term): 56% Coverage (LOC): 74%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/text-track-settings.js. Coverage (Term): 31% Coverage (LOC): 58%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tech/html5.js. Coverage (Term): 23% Coverage (LOC): 35%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/plugins.js. Coverage (Term): 74% Coverage (LOC): 91%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/audio-track.js. Coverage (Term): 39% Coverage (LOC): 45%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/tracks/video-track.js. Coverage (Term): 39% Coverage (LOC): 46%
+*- File /root/Targets/videojs-mux/node_modules/video.js/es5/extend.js. Coverage (Term): 27% Coverage (LOC): 28%
+*- File /root/Targets/videojs-mux/node_modules/mux-embed/dist/mux.js. Coverage (Term): 34% Coverage (LOC): 59%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

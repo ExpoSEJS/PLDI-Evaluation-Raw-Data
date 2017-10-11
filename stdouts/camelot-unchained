@@ -1,0 +1,47 @@
+
+> camelot-unchained@0.4.15 postinstall /root/Targets/camelot-unchained/node_modules/camelot-unchained
+> rimraf typings && typings install
+
+[?25h
+├── es6-promise
+├─┬ react-redux
+│ └── redux
+├── redux
+├─┬ redux-thunk
+│ └── redux
+├── eventemitter3 (global)
+├── isomorphic-fetch (global)
+├── jquery (global)
+├── react (global)
+├── react-addons-css-transition-group (global)
+├── react-addons-transition-group (global)
+├── react-dom (global)
+├── reflux (global)
+└── reflux-core (global)
+
+/root/Targets/camelot-unchained
+└─┬ camelot-unchained@0.4.15 
+  └── apisauce@0.3.1  (git://github.com/codecorsair/apisauce.git#573701f6da7f27133d3e43d29daf68466da34e7e)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/camelot-unchained/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1105 took 7.676s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/camelot-unchained/node_modules/camelot-unchained/lib/index.js. Coverage (Term): 13% Coverage (LOC): 7%
+*- File /root/Targets/camelot-unchained/node_modules/camelot-unchained/lib/core/CoreSettings.js. Coverage (Term): 37% Coverage (LOC): 54%
+*- File /root/Targets/camelot-unchained/node_modules/camelot-unchained/lib/core/constants/channelId.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/camelot-unchained/node_modules/camelot-unchained/lib/core/client.js. Coverage (Term): 20% Coverage (LOC): 23%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

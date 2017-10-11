@@ -1,0 +1,52 @@
+/root/Targets/eurostar-booking-magnet
+└─┬ eurostar-booking-magnet@2.1.3 
+  └─┬ localforage@1.5.0 
+    └─┬ lie@3.0.2 
+      ├─┬ es3ify@0.1.4 
+      │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+      │ ├─┬ jstransform@3.0.0 
+      │ │ ├── base62@0.1.1 
+      │ │ └─┬ source-map@0.1.31 
+      │ │   └── amdefine@1.0.1 
+      │ └── through@2.3.8 
+      ├── immediate@3.0.6 
+      ├─┬ inline-process-browser@1.0.0 
+      │ ├─┬ falafel@1.2.0 
+      │ │ ├── acorn@1.2.2 
+      │ │ ├── foreach@2.0.5 
+      │ │ ├── isarray@0.0.1 
+      │ │ └── object-keys@1.0.11 
+      │ └─┬ through2@0.6.5 
+      │   ├─┬ readable-stream@1.0.34 
+      │   │ ├── core-util-is@1.0.2 
+      │   │ ├── inherits@2.0.3 
+      │   │ └── string_decoder@0.10.31 
+      │   └── xtend@4.0.1 
+      └─┬ unreachable-branch-transform@0.3.0 
+        ├── esmangle-evaluator@1.0.1 
+        └─┬ recast@0.10.43 
+          ├── ast-types@0.8.15 
+          ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+          ├── private@0.1.7 
+          └── source-map@0.5.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/eurostar-booking-magnet/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 26% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 26% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","isArray","resolve","then","catch","toString","apply","bound BookingMagnet","assign","Error","reject"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0901 took 15.5828s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 15.8999 took 14.0526s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/eurostar-booking-magnet/node_modules/eurostar-booking-magnet/dist/booking-magnet.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

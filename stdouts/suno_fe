@@ -1,0 +1,865 @@
+/root/Targets/suno_fe
+└─┬ suno_fe@0.0.1 
+  ├─┬ body-parser@1.8.4 
+  │ ├── bytes@1.0.0 
+  │ ├── depd@0.4.5 
+  │ ├── iconv-lite@0.4.4 
+  │ ├── media-typer@0.3.0 
+  │ ├─┬ on-finished@2.1.0 
+  │ │ └── ee-first@1.0.5 
+  │ ├── qs@2.2.4 
+  │ ├── raw-body@1.3.0 
+  │ └─┬ type-is@1.5.7 
+  │   └─┬ mime-types@2.0.14 
+  │     └── mime-db@1.12.0 
+  ├─┬ cookie-parser@1.3.5 
+  │ ├── cookie@0.1.3 
+  │ └── cookie-signature@1.0.6 
+  ├─┬ debug@2.0.0 
+  │ └── ms@0.6.2 
+  ├── ejs@1.0.0 
+  ├─┬ express@4.9.8 
+  │ ├─┬ accepts@1.1.4 
+  │ │ └── negotiator@0.4.9 
+  │ ├── cookie@0.1.2 
+  │ ├── cookie-signature@1.0.5 
+  │ ├── escape-html@1.0.1 
+  │ ├─┬ etag@1.4.0 
+  │ │ └── crc@3.0.0 
+  │ ├── finalhandler@0.2.0 
+  │ ├── fresh@0.2.4 
+  │ ├── merge-descriptors@0.0.2 
+  │ ├── methods@1.1.0 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.3 
+  │ ├─┬ proxy-addr@1.0.10 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.0.5 
+  │ ├── range-parser@1.0.3 
+  │ ├─┬ send@0.9.3 
+  │ │ ├── destroy@1.0.3 
+  │ │ └── mime@1.2.11 
+  │ ├── serve-static@1.6.5 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.0.1 
+  ├─┬ jade@1.6.0 
+  │ ├── character-parser@1.2.0 
+  │ ├── commander@2.1.0 
+  │ ├─┬ constantinople@2.0.1 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├── async@0.2.10 
+  │ │   ├─┬ source-map@0.1.34 
+  │ │   │ └── amdefine@1.0.1 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     ├── window-size@0.1.0 
+  │ │     └── wordwrap@0.0.2 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ monocle@1.1.51 
+  │ │ └─┬ readdirp@0.2.5 
+  │ │   └─┬ minimatch@3.0.4 
+  │ │     └─┬ brace-expansion@1.1.8 
+  │ │       ├── balanced-match@1.0.0 
+  │ │       └── concat-map@0.0.1 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   └── optimist@0.3.7 
+  │ ├── void-elements@1.0.0 
+  │ └── with@3.0.1 
+  ├─┬ morgan@1.3.2 
+  │ └── basic-auth@1.0.0 
+  ├─┬ serve-favicon@2.1.7 
+  │ └─┬ etag@1.5.1 
+  │   └── crc@3.2.1 
+  └─┬ socket.io@1.7.4 
+    ├─┬ debug@2.3.3 
+    │ └── ms@0.7.2 
+    ├─┬ engine.io@1.8.4 
+    │ ├─┬ accepts@1.3.3 
+    │ │ ├─┬ mime-types@2.1.17 
+    │ │ │ └── mime-db@1.30.0 
+    │ │ └── negotiator@0.6.1 
+    │ ├── base64id@1.0.0 
+    │ ├── cookie@0.3.1 
+    │ ├─┬ debug@2.3.3 
+    │ │ └── ms@0.7.2 
+    │ ├─┬ engine.io-parser@1.3.2 
+    │ │ ├── after@0.8.2 
+    │ │ ├── arraybuffer.slice@0.0.6 
+    │ │ ├── base64-arraybuffer@0.1.5 
+    │ │ ├── blob@0.0.4 
+    │ │ └── wtf-8@1.0.0 
+    │ └─┬ ws@1.1.4 
+    │   ├── options@0.0.6 
+    │   └── ultron@1.0.2 
+    ├─┬ has-binary@0.1.7 
+    │ └── isarray@0.0.1 
+    ├── object-assign@4.1.0 
+    ├─┬ socket.io-adapter@0.5.0 
+    │ └─┬ debug@2.3.3 
+    │   └── ms@0.7.2 
+    ├─┬ socket.io-client@1.7.4 
+    │ ├── backo2@1.0.2 
+    │ ├── component-bind@1.0.0 
+    │ ├── component-emitter@1.2.1 
+    │ ├─┬ debug@2.3.3 
+    │ │ └── ms@0.7.2 
+    │ ├─┬ engine.io-client@1.8.4 
+    │ │ ├── component-emitter@1.2.1 
+    │ │ ├── component-inherit@0.0.3 
+    │ │ ├─┬ debug@2.3.3 
+    │ │ │ └── ms@0.7.2 
+    │ │ ├── has-cors@1.1.0 
+    │ │ ├── parsejson@0.0.3 
+    │ │ ├── parseqs@0.0.5 
+    │ │ ├── ws@1.1.2 
+    │ │ ├── xmlhttprequest-ssl@1.5.3 
+    │ │ └── yeast@0.1.2 
+    │ ├── indexof@0.0.1 
+    │ ├── object-component@0.0.3 
+    │ ├─┬ parseuri@0.0.5 
+    │ │ └─┬ better-assert@1.0.2 
+    │ │   └── callsite@1.0.0 
+    │ └── to-array@0.1.4 
+    └─┬ socket.io-parser@2.3.1 
+      ├── component-emitter@1.1.2 
+      ├─┬ debug@2.2.0 
+      │ └── ms@0.7.1 
+      └── json3@3.3.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/suno_fe/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 38% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 38% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 38% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 38% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 38% coverage ] ****** [3 done /2 queued / 2 running / 3 errors / 38% coverage ] ****** [3 done /1 queued / 3 running / 3 errors / 38% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 38% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 38% coverage ] ****** [4 done /2 queued / 4 running / 4 errors / 38% coverage ] ****** [4 done /1 queued / 5 running / 4 errors / 38% coverage ] ****** [4 done /0 queued / 6 running / 4 errors / 38% coverage ] ****** [4 done /0 queued / 6 running / 4 errors / 38% coverage ] ****** [5 done /0 queued / 6 running / 5 errors / 38% coverage ] ****** [5 done /0 queued / 6 running / 5 errors / 38% coverage ] ****** [6 done /0 queued / 6 running / 6 errors / 38% coverage ] ****** [6 done /0 queued / 6 running / 6 errors / 38% coverage ] ****** [7 done /1 queued / 6 running / 7 errors / 38% coverage ] ****** [7 done /0 queued / 7 running / 7 errors / 38% coverage ] ****** [7 done /0 queued / 7 running / 7 errors / 38% coverage ] ****** [8 done /2 queued / 7 running / 8 errors / 38% coverage ] ****** [8 done /1 queued / 8 running / 8 errors / 38% coverage ] ****** [8 done /0 queued / 9 running / 8 errors / 38% coverage ] ****** [8 done /0 queued / 9 running / 8 errors / 38% coverage ] ****** [9 done /3 queued / 9 running / 9 errors / 38% coverage ] ****** [9 done /2 queued / 10 running / 9 errors / 38% coverage ] ****** [9 done /1 queued / 11 running / 9 errors / 38% coverage ] ****** [9 done /0 queued / 12 running / 9 errors / 38% coverage ] ****** [9 done /0 queued / 12 running / 9 errors / 38% coverage ] ****** [10 done /1 queued / 12 running / 10 errors / 38% coverage ] ****** [10 done /0 queued / 13 running / 10 errors / 38% coverage ] ****** [10 done /0 queued / 13 running / 10 errors / 38% coverage ] ****** [11 done /2 queued / 13 running / 11 errors / 38% coverage ] ****** [11 done /1 queued / 14 running / 11 errors / 38% coverage ] ****** [11 done /0 queued / 15 running / 11 errors / 38% coverage ] ****** [11 done /0 queued / 15 running / 11 errors / 38% coverage ] ****** [12 done /1 queued / 15 running / 12 errors / 38% coverage ] ****** [12 done /0 queued / 16 running / 12 errors / 38% coverage ] ****** [12 done /0 queued / 16 running / 12 errors / 38% coverage ] ****** [13 done /2 queued / 16 running / 13 errors / 38% coverage ] ****** [13 done /2 queued / 16 running / 13 errors / 38% coverage ] ****** [14 done /4 queued / 16 running / 14 errors / 38% coverage ] ****** [14 done /4 queued / 16 running / 14 errors / 38% coverage ] ****** [15 done /5 queued / 16 running / 15 errors / 38% coverage ] ****** [15 done /5 queued / 16 running / 15 errors / 38% coverage ] ****** [16 done /8 queued / 16 running / 16 errors / 38% coverage ] ****** [16 done /8 queued / 16 running / 16 errors / 38% coverage ] ****** [17 done /13 queued / 16 running / 17 errors / 38% coverage ] ****** [17 done /13 queued / 16 running / 17 errors / 38% coverage ] ****** [18 done /14 queued / 16 running / 18 errors / 38% coverage ] ****** [18 done /14 queued / 16 running / 18 errors / 38% coverage ] ****** [19 done /17 queued / 16 running / 19 errors / 38% coverage ] ****** [19 done /17 queued / 16 running / 19 errors / 38% coverage ] ****** [20 done /18 queued / 16 running / 20 errors / 38% coverage ] ****** [20 done /18 queued / 16 running / 20 errors / 38% coverage ] ****** [21 done /17 queued / 16 running / 21 errors / 38% coverage ] ****** [21 done /17 queued / 16 running / 21 errors / 38% coverage ] ****** [22 done /19 queued / 16 running / 22 errors / 38% coverage ] ****** [22 done /19 queued / 16 running / 22 errors / 38% coverage ] ****** [23 done /19 queued / 16 running / 23 errors / 38% coverage ] ****** [23 done /19 queued / 16 running / 23 errors / 38% coverage ] ****** [24 done /25 queued / 16 running / 24 errors / 38% coverage ] ****** [24 done /25 queued / 16 running / 24 errors / 38% coverage ] ****** [25 done /26 queued / 16 running / 25 errors / 38% coverage ] ****** [25 done /26 queued / 16 running / 25 errors / 38% coverage ] ****** [26 done /29 queued / 16 running / 26 errors / 38% coverage ] ****** [26 done /29 queued / 16 running / 26 errors / 38% coverage ] ****** [27 done /28 queued / 16 running / 27 errors / 38% coverage ] ****** [27 done /28 queued / 16 running / 27 errors / 38% coverage ] ****** [28 done /32 queued / 16 running / 28 errors / 38% coverage ] ****** [28 done /32 queued / 16 running / 28 errors / 38% coverage ] ****** [29 done /33 queued / 16 running / 29 errors / 38% coverage ] ****** [29 done /33 queued / 16 running / 29 errors / 38% coverage ] ****** [30 done /36 queued / 16 running / 30 errors / 38% coverage ] ****** [30 done /36 queued / 16 running / 30 errors / 38% coverage ] ****** [31 done /38 queued / 16 running / 31 errors / 38% coverage ] ****** [31 done /38 queued / 16 running / 31 errors / 38% coverage ] ****** [32 done /38 queued / 16 running / 32 errors / 38% coverage ] ****** [32 done /38 queued / 16 running / 32 errors / 38% coverage ] ****** [33 done /40 queued / 16 running / 33 errors / 38% coverage ] ****** [33 done /40 queued / 16 running / 33 errors / 38% coverage ] ****** [34 done /39 queued / 16 running / 34 errors / 38% coverage ] ****** [34 done /39 queued / 16 running / 34 errors / 38% coverage ] ****** [35 done /40 queued / 16 running / 35 errors / 38% coverage ] ****** [35 done /40 queued / 16 running / 35 errors / 38% coverage ] ****** [36 done /41 queued / 16 running / 36 errors / 38% coverage ] ****** [36 done /41 queued / 16 running / 36 errors / 38% coverage ] ****** [37 done /42 queued / 16 running / 37 errors / 38% coverage ] ****** [37 done /42 queued / 16 running / 37 errors / 38% coverage ] ****** [38 done /42 queued / 16 running / 38 errors / 38% coverage ] ****** [38 done /42 queued / 16 running / 38 errors / 38% coverage ] ****** [39 done /43 queued / 16 running / 39 errors / 38% coverage ] ****** [39 done /43 queued / 16 running / 39 errors / 38% coverage ] ****** [40 done /45 queued / 16 running / 40 errors / 38% coverage ] ****** [40 done /45 queued / 16 running / 40 errors / 38% coverage ] ****** [41 done /47 queued / 16 running / 41 errors / 38% coverage ] ****** [41 done /47 queued / 16 running / 41 errors / 38% coverage ] ****** [42 done /48 queued / 16 running / 42 errors / 38% coverage ] ****** [42 done /48 queued / 16 running / 42 errors / 38% coverage ] ****** [43 done /48 queued / 16 running / 43 errors / 38% coverage ] ****** [43 done /48 queued / 16 running / 43 errors / 38% coverage ] ****** [44 done /48 queued / 16 running / 44 errors / 38% coverage ] ****** [44 done /48 queued / 16 running / 44 errors / 38% coverage ] ****** [45 done /47 queued / 16 running / 45 errors / 38% coverage ] ****** [45 done /47 queued / 16 running / 45 errors / 38% coverage ] ****** [46 done /50 queued / 16 running / 46 errors / 38% coverage ] ****** [46 done /50 queued / 16 running / 46 errors / 38% coverage ] ****** [47 done /51 queued / 16 running / 47 errors / 38% coverage ] ****** [47 done /51 queued / 16 running / 47 errors / 38% coverage ] ****** [48 done /53 queued / 16 running / 48 errors / 38% coverage ] ****** [48 done /53 queued / 16 running / 48 errors / 38% coverage ] ****** [49 done /54 queued / 16 running / 49 errors / 38% coverage ] ****** [49 done /54 queued / 16 running / 49 errors / 38% coverage ] ****** [50 done /54 queued / 16 running / 50 errors / 38% coverage ] ****** [50 done /54 queued / 16 running / 50 errors / 38% coverage ] ****** [51 done /54 queued / 16 running / 51 errors / 38% coverage ] ****** [51 done /54 queued / 16 running / 51 errors / 38% coverage ] ****** [52 done /56 queued / 16 running / 52 errors / 38% coverage ] ****** [52 done /56 queued / 16 running / 52 errors / 38% coverage ] ****** [53 done /56 queued / 16 running / 53 errors / 38% coverage ] ****** [53 done /56 queued / 16 running / 53 errors / 38% coverage ] ****** [54 done /59 queued / 16 running / 54 errors / 38% coverage ] ****** [54 done /59 queued / 16 running / 54 errors / 38% coverage ] ****** [55 done /58 queued / 16 running / 55 errors / 38% coverage ] ****** [55 done /58 queued / 16 running / 55 errors / 38% coverage ] ****** [56 done /59 queued / 16 running / 56 errors / 38% coverage ] ****** [56 done /59 queued / 16 running / 56 errors / 38% coverage ] ****** [57 done /60 queued / 16 running / 57 errors / 38% coverage ] ****** [57 done /60 queued / 16 running / 57 errors / 38% coverage ] ****** [58 done /61 queued / 16 running / 58 errors / 38% coverage ] ****** [58 done /61 queued / 16 running / 58 errors / 38% coverage ] ****** [59 done /61 queued / 16 running / 59 errors / 38% coverage ] ****** [59 done /61 queued / 16 running / 59 errors / 38% coverage ] ****** [60 done /61 queued / 16 running / 60 errors / 38% coverage ] ****** [60 done /61 queued / 16 running / 60 errors / 38% coverage ] ****** [61 done /63 queued / 16 running / 61 errors / 38% coverage ] ****** [61 done /63 queued / 16 running / 61 errors / 38% coverage ] ****** [62 done /62 queued / 16 running / 62 errors / 38% coverage ] ****** [62 done /62 queued / 16 running / 62 errors / 38% coverage ] ****** [63 done /63 queued / 16 running / 63 errors / 38% coverage ] ****** [63 done /63 queued / 16 running / 63 errors / 38% coverage ] ****** [64 done /64 queued / 16 running / 64 errors / 38% coverage ] ****** [64 done /64 queued / 16 running / 64 errors / 38% coverage ] ****** [65 done /64 queued / 16 running / 65 errors / 38% coverage ] ****** [65 done /64 queued / 16 running / 65 errors / 38% coverage ] ****** [66 done /64 queued / 16 running / 66 errors / 38% coverage ] ****** [66 done /64 queued / 16 running / 66 errors / 38% coverage ] ****** [67 done /63 queued / 16 running / 67 errors / 38% coverage ] ****** [67 done /63 queued / 16 running / 67 errors / 38% coverage ] ****** [68 done /62 queued / 16 running / 68 errors / 38% coverage ] ****** [68 done /62 queued / 16 running / 68 errors / 38% coverage ] ****** [69 done /61 queued / 16 running / 69 errors / 38% coverage ] ****** [69 done /61 queued / 16 running / 69 errors / 38% coverage ] ****** [70 done /62 queued / 16 running / 70 errors / 38% coverage ] ****** [70 done /62 queued / 16 running / 70 errors / 38% coverage ] ****** [71 done /63 queued / 16 running / 71 errors / 38% coverage ] ****** [71 done /63 queued / 16 running / 71 errors / 38% coverage ] ****** [72 done /63 queued / 16 running / 72 errors / 38% coverage ] ****** [72 done /63 queued / 16 running / 72 errors / 38% coverage ] ****** [73 done /65 queued / 16 running / 73 errors / 38% coverage ] ****** [73 done /65 queued / 16 running / 73 errors / 38% coverage ] ****** [74 done /65 queued / 16 running / 74 errors / 38% coverage ] ****** [74 done /65 queued / 16 running / 74 errors / 38% coverage ] ****** [75 done /67 queued / 16 running / 75 errors / 38% coverage ] ****** [75 done /67 queued / 16 running / 75 errors / 38% coverage ] ****** [76 done /66 queued / 16 running / 76 errors / 38% coverage ] ****** [76 done /66 queued / 16 running / 76 errors / 38% coverage ] ****** [77 done /66 queued / 16 running / 77 errors / 38% coverage ] ****** [77 done /66 queued / 16 running / 77 errors / 38% coverage ] ****** [78 done /65 queued / 16 running / 78 errors / 38% coverage ] ****** [78 done /65 queued / 16 running / 78 errors / 38% coverage ] ****** [79 done /66 queued / 16 running / 79 errors / 38% coverage ] ****** [79 done /66 queued / 16 running / 79 errors / 38% coverage ] ****** [80 done /65 queued / 16 running / 80 errors / 38% coverage ] ****** [80 done /65 queued / 16 running / 80 errors / 38% coverage ] ****** [81 done /65 queued / 16 running / 81 errors / 38% coverage ] ****** [81 done /65 queued / 16 running / 81 errors / 38% coverage ] ****** [82 done /66 queued / 16 running / 82 errors / 38% coverage ] ****** [82 done /66 queued / 16 running / 82 errors / 38% coverage ] ****** [83 done /66 queued / 16 running / 83 errors / 38% coverage ] ****** [83 done /66 queued / 16 running / 83 errors / 38% coverage ] ****** [84 done /67 queued / 16 running / 84 errors / 38% coverage ] ****** [84 done /67 queued / 16 running / 84 errors / 38% coverage ] ****** [85 done /69 queued / 16 running / 85 errors / 38% coverage ] ****** [85 done /69 queued / 16 running / 85 errors / 38% coverage ] ****** [86 done /69 queued / 16 running / 86 errors / 38% coverage ] ****** [86 done /69 queued / 16 running / 86 errors / 38% coverage ] ****** [87 done /68 queued / 16 running / 87 errors / 38% coverage ] ****** [87 done /68 queued / 16 running / 87 errors / 38% coverage ] ****** [88 done /68 queued / 16 running / 88 errors / 38% coverage ] ****** [88 done /68 queued / 16 running / 88 errors / 38% coverage ] ****** [89 done /69 queued / 16 running / 89 errors / 38% coverage ] ****** [89 done /69 queued / 16 running / 89 errors / 38% coverage ] ****** [90 done /68 queued / 16 running / 90 errors / 38% coverage ] ****** [90 done /68 queued / 16 running / 90 errors / 38% coverage ] ****** [91 done /71 queued / 16 running / 91 errors / 38% coverage ] ****** [91 done /71 queued / 16 running / 91 errors / 38% coverage ] ****** [92 done /74 queued / 16 running / 92 errors / 38% coverage ] ****** [92 done /74 queued / 16 running / 92 errors / 38% coverage ] ****** [93 done /74 queued / 16 running / 93 errors / 38% coverage ] ****** [93 done /74 queued / 16 running / 93 errors / 38% coverage ] ****** [94 done /73 queued / 16 running / 94 errors / 38% coverage ] ****** [94 done /73 queued / 16 running / 94 errors / 38% coverage ] ****** [95 done /76 queued / 16 running / 95 errors / 38% coverage ] ****** [95 done /76 queued / 16 running / 95 errors / 38% coverage ] ****** [96 done /75 queued / 16 running / 96 errors / 38% coverage ] ****** [96 done /75 queued / 16 running / 96 errors / 38% coverage ] ****** [97 done /75 queued / 16 running / 97 errors / 38% coverage ] ****** [97 done /75 queued / 16 running / 97 errors / 38% coverage ] ****** [98 done /74 queued / 16 running / 98 errors / 38% coverage ] ****** [98 done /74 queued / 16 running / 98 errors / 38% coverage ] ****** [99 done /78 queued / 16 running / 99 errors / 38% coverage ] ****** [99 done /78 queued / 16 running / 99 errors / 38% coverage ] ****** [100 done /82 queued / 16 running / 100 errors / 38% coverage ] ****** [100 done /82 queued / 16 running / 100 errors / 38% coverage ] ****** [101 done /81 queued / 16 running / 101 errors / 38% coverage ] ****** [101 done /81 queued / 16 running / 101 errors / 38% coverage ] ****** [102 done /82 queued / 16 running / 102 errors / 38% coverage ] ****** [102 done /82 queued / 16 running / 102 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Int32Array","call","RegExp","toUpperCase","getOwnPropertyDescriptor","bind","isArray","apply","Array","parseInt","Date","getUTCFullYear","getUTCMonth","getUTCDate","getUTCHours","getUTCMinutes","getUTCSeconds","getUTCMilliseconds","stringify","Number","parse","getOwnPropertyNames","fromCharCode","join","assign","freeze","parseFloat","isNaN","isFinite","toString","bound ","bound use","TypeError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0695 took 115.3003s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":2} start 116.1687 took 66.0343s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":2}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":2}'
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 116.0352 took 66.9897s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2} start 183.5399 took 114.115s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":3} start 182.8216 took 114.8335s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"_bound":3}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4} start 183.8656 took 113.7906s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3} start 183.7609 took 113.8994s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 302.6325 took 77.786s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"_bound":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 304.389 took 77.3223s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"_bound":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 305.1752 took 76.5629s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0} start 301.0769 took 80.6613s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 306.0444 took 81.1241s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 303.06 took 84.1087s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 306.295 took 83.434s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5} start 382.7578 took 62.7178s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5}
+* Error: TypeError: app.use() requires middleware functions
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"} start 381.2893 took 65.5666s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0} start 383.4028 took 63.4692s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"} start 380.8525 took 66.0196s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 386.4886 took 63.6861s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 385.1735 took 65.0086s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7} start 384.827 took 65.3552s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"} start 386.1469 took 64.0354s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5} start 381.0932 took 92.2593s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0} start 383.1015 took 92.6201s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 387.8369 took 88.955s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"} start 386.8038 took 91.1131s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6} start 389.2102 took 89.739s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0} start 383.7063 took 96.4288s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Function.prototype.apply was called on [object Array], which is a object and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 390.4502 took 90.8007s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"} start 388.1318 took 93.1252s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_0_type":0} start 448.715 took 72.2879s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_string":"PureString"} start 449.7864 took 72.4655s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0} start 452.0288 took 71.8891s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6} start 454.5393 took 72.4077s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 446.3073 took 102.8741s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0} start 447.5429 took 103.1382s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_bool":false} start 476.3817 took 76.3798s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_bool":false} start 450.7898 took 103.3937s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13,"ExpansionArg_array_element_0_type":0} start 480.8353 took 74.8947s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on [object Array], which is a object and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0} start 479.6046 took 77.5452s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0} start 478.5739 took 80.0091s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 453.1412 took 105.4419s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false} start 483.0919 took 75.4912s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_int":0} start 482.0214 took 80.6958s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 474.0399 took 106.1954s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_0_type":0} start 477.4416 took 109.6327s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 523.1239 took 78.6913s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_0_type":0} start 527.7975 took 79.5483s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0} start 553.4894 took 76.1456s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":12,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":12}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 551.5243 took 79.7473s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_bool":false} start 524.6572 took 108.2562s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_1_type":0} start 521.8047 took 115.9895s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 562.1728 took 77.8151s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0} start 563.6383 took 78.5994s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11} start 555.0449 took 104.5153s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":3,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_string":"PureString"} start 550.0537 took 110.8735s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":3,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":3,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0} start 556.4363 took 107.6734s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on [object Array], which is a object and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":6} start 587.8675 took 79.9781s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":6}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_bool":false} start 559.317 took 110.7386s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_bool":false} start 557.9836 took 113.3638s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0} start 560.8489 took 112.6641s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 602.7122 took 80.8484s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0} start 608.4685 took 78.053s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":2,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_int":0} start 581.0543 took 106.9615s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":2,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":2,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8} start 632.1744 took 75.7452s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0} start 643.0131 took 71.2289s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9} start 638.6518 took 76.9068s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9} start 661.9083 took 66.1848s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8} start 633.6165 took 100.7445s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0} start 630.5723 took 107.1148s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 665.0293 took 73.7254s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6} start 672.0902 took 66.6647s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_element_0_type":0} start 668.5903 took 73.2705s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0} start 640.8006 took 101.0739s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 674.5933 took 70.2444s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7} start 660.3516 took 99.1771s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0} start 670.745 took 98.7826s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7} start 684.2713 took 93.7492s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0} start 687.1346 took 93.4693s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":14}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9} start 714.9352 took 66.9266s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 688.7826 took 94.6605s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 716.3039 took 67.1391s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0} start 728.9106 took 67.5975s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7} start 708.6547 took 95.3624s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":16,"ExpansionArg_array_element_2_type":0} start 738.2677 took 66.6721s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":16,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":16}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 739.434 took 67.1978s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10} start 744.028 took 64.8026s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string":"PureString"} start 742.5661 took 67.633s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on true, which is a boolean and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_bool":false} start 741.2364 took 70.4879s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8} start 735.0196 took 97.8083s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":5,"_bound":7,"ExpansionArg_bool":false} start 745.5518 took 93.9016s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":5,"_bound":7,"ExpansionArg_bool":false}
+* Error: TypeError: app.use() requires middleware functions
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":5,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 778.5725 took 70.1466s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0} start 781.1431 took 68.7958s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10} start 760.174 took 95.5833s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_array_element_1_type":0} start 770.0605 took 101.761s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":13}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9} start 807.1815 took 66.1007s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9}
+* Error: TypeError: Cannot read property 'method' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 785.3946 took 93.5813s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":13} start 782.6731 took 100.0064s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":13}
+* Error: TypeError: Function.prototype.apply was called on true, which is a boolean and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":13}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0} start 784.2162 took 99.7334s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'method' of null
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13,"ExpansionArg_bool":false} start 809.5779 took 75.9359s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13,"ExpansionArg_bool":false}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9} start 810.998 took 75.8771s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9}
+* Error: TypeError: Cannot read property 'indexOf' of undefined
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":17,"ExpansionArg_array_element_2_type":0} start 797.1161 took 98.0654s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":17,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Function.prototype.apply was called on [object Array], which is a object and not a function
+* Error: Error: listen EADDRINUSE :::3000
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":17}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
+*- File /root/Targets/suno_fe/node_modules/suno_fe/app.js. Coverage (Term): 31% Coverage (LOC): 31%
+*- File /root/Targets/suno_fe/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/express/lib/express.js. Coverage (Term): 90% Coverage (LOC): 98%
+*- File /root/Targets/suno_fe/node_modules/utils-merge/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/express/lib/application.js. Coverage (Term): 55% Coverage (LOC): 63%
+*- File /root/Targets/suno_fe/node_modules/finalhandler/index.js. Coverage (Term): 21% Coverage (LOC): 23%
+*- File /root/Targets/suno_fe/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/suno_fe/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/ms/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/suno_fe/node_modules/escape-html/index.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/suno_fe/node_modules/express/lib/utils.js. Coverage (Term): 38% Coverage (LOC): 52%
+*- File /root/Targets/suno_fe/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/suno_fe/node_modules/depd/index.js. Coverage (Term): 44% Coverage (LOC): 49%
+*- File /root/Targets/suno_fe/node_modules/depd/lib/compat/index.js. Coverage (Term): 81% Coverage (LOC): 94%
+*- File /root/Targets/suno_fe/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/suno_fe/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/suno_fe/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/suno_fe/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/suno_fe/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc1.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/create.js. Coverage (Term): 69% Coverage (LOC): 89%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc8.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc8_1wire.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc16.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc16_ccitt.js. Coverage (Term): 81% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc16_modbus.js. Coverage (Term): 81% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc24.js. Coverage (Term): 81% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/crc/lib/crc32.js. Coverage (Term): 81% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/on-finished/index.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/suno_fe/node_modules/ee-first/index.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/suno_fe/node_modules/proxy-addr/index.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/suno_fe/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
+*- File /root/Targets/suno_fe/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/qs/lib/stringify.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/suno_fe/node_modules/qs/lib/utils.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/suno_fe/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/suno_fe/node_modules/express/lib/router/index.js. Coverage (Term): 24% Coverage (LOC): 29%
+*- File /root/Targets/suno_fe/node_modules/express/lib/router/route.js. Coverage (Term): 37% Coverage (LOC): 40%
+*- File /root/Targets/suno_fe/node_modules/express/lib/router/layer.js. Coverage (Term): 34% Coverage (LOC): 36%
+*- File /root/Targets/suno_fe/node_modules/path-to-regexp/index.js. Coverage (Term): 51% Coverage (LOC): 56%
+*- File /root/Targets/suno_fe/node_modules/methods/index.js. Coverage (Term): 56% Coverage (LOC): 22%
+*- File /root/Targets/suno_fe/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/express/lib/middleware/init.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/suno_fe/node_modules/express/lib/middleware/query.js. Coverage (Term): 63% Coverage (LOC): 71%
+*- File /root/Targets/suno_fe/node_modules/express/lib/view.js. Coverage (Term): 30% Coverage (LOC): 43%
+*- File /root/Targets/suno_fe/node_modules/express/lib/request.js. Coverage (Term): 29% Coverage (LOC): 45%
+*- File /root/Targets/suno_fe/node_modules/accepts/index.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/suno_fe/node_modules/negotiator/lib/negotiator.js. Coverage (Term): 68% Coverage (LOC): 75%
+*- File /root/Targets/suno_fe/node_modules/negotiator/lib/charset.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/suno_fe/node_modules/negotiator/lib/encoding.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/suno_fe/node_modules/negotiator/lib/language.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/suno_fe/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/suno_fe/node_modules/mime-types/index.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/type-is/index.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/express/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/suno_fe/node_modules/express/node_modules/cookie/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/suno_fe/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/suno_fe/node_modules/serve-static/index.js. Coverage (Term): 33% Coverage (LOC): 39%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc1.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/create.js. Coverage (Term): 72% Coverage (LOC): 90%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc8.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc8_1wire.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc16.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc16_ccitt.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc16_modbus.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc24.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/serve-favicon/node_modules/crc/lib/crc32.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/suno_fe/node_modules/morgan/index.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/suno_fe/node_modules/basic-auth/index.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/suno_fe/node_modules/cookie-parser/index.js. Coverage (Term): 40% Coverage (LOC): 41%
+*- File /root/Targets/suno_fe/node_modules/cookie/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/cookie-parser/lib/parse.js. Coverage (Term): 16% Coverage (LOC): 30%
+*- File /root/Targets/suno_fe/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/suno_fe/node_modules/body-parser/index.js. Coverage (Term): 59% Coverage (LOC): 62%
+*- File /root/Targets/suno_fe/node_modules/suno_fe/routes/index.js. Coverage (Term): 71% Coverage (LOC): 88%
+*- File /root/Targets/suno_fe/node_modules/suno_fe/routes/users.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/suno_fe/node_modules/socket.io/lib/index.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/engine.io.js. Coverage (Term): 49% Coverage (LOC): 53%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/server.js. Coverage (Term): 32% Coverage (LOC): 37%
+*- File /root/Targets/suno_fe/node_modules/base64id/lib/base64id.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transports/index.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transports/polling-xhr.js. Coverage (Term): 32% Coverage (LOC): 41%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transports/polling.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transport.js. Coverage (Term): 38% Coverage (LOC): 55%
+*- File /root/Targets/suno_fe/node_modules/engine.io-parser/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io-parser/lib/index.js. Coverage (Term): 7% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/wtf-8/wtf-8.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/suno_fe/node_modules/after/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/suno_fe/node_modules/engine.io-parser/lib/keys.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transports/polling-jsonp.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/transports/websocket.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/suno_fe/node_modules/engine.io/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/suno_fe/node_modules/engine.io/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/lib/index.js. Coverage (Term): 28% Coverage (LOC): 30%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/lib/url.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/parseuri/index.js. Coverage (Term): 21% Coverage (LOC): 57%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/index.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/suno_fe/node_modules/json3/lib/json3.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/suno_fe/node_modules/component-emitter/index.js. Coverage (Term): 26% Coverage (LOC): 35%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/binary.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/suno_fe/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/suno_fe/node_modules/socket.io-parser/is-buffer.js. Coverage (Term): 45% Coverage (LOC): 80%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/lib/manager.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transports/index.js. Coverage (Term): 30% Coverage (LOC): 30%
+*- File /root/Targets/suno_fe/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js. Coverage (Term): 15% Coverage (LOC): 25%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transports/polling-xhr.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transports/polling.js. Coverage (Term): 21% Coverage (LOC): 25%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transport.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/component-emitter/index.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/suno_fe/node_modules/parseqs/index.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/suno_fe/node_modules/component-inherit/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/yeast/index.js. Coverage (Term): 40% Coverage (LOC): 46%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transports/polling-jsonp.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/lib/transports/websocket.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/suno_fe/node_modules/ultron/index.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/suno_fe/node_modules/options/lib/options.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Validation.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/engine.io-client/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/suno_fe/node_modules/indexof/index.js. Coverage (Term): 33% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/parsejson/index.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/lib/socket.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/node_modules/component-emitter/index.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/suno_fe/node_modules/to-array/index.js. Coverage (Term): 30% Coverage (LOC): 40%
+*- File /root/Targets/suno_fe/node_modules/socket.io-client/lib/on.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- File /root/Targets/suno_fe/node_modules/component-bind/index.js. Coverage (Term): 28% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/has-binary/index.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/suno_fe/node_modules/backo2/index.js. Coverage (Term): 22% Coverage (LOC): 45%
+*- File /root/Targets/suno_fe/node_modules/socket.io/lib/client.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/suno_fe/node_modules/socket.io/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/socket.io/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/suno_fe/node_modules/socket.io/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/socket.io/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/socket.io/lib/namespace.js. Coverage (Term): 32% Coverage (LOC): 42%
+*- File /root/Targets/suno_fe/node_modules/socket.io/lib/socket.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/suno_fe/node_modules/object-assign/index.js. Coverage (Term): 52% Coverage (LOC): 53%
+*- File /root/Targets/suno_fe/node_modules/socket.io-adapter/index.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/suno_fe/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Validation.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/suno_fe/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/suno_fe/node_modules/body-parser/lib/types/json.js. Coverage (Term): 42% Coverage (LOC): 40%
+*- File /root/Targets/suno_fe/node_modules/bytes/index.js. Coverage (Term): 37% Coverage (LOC): 58%
+*- File /root/Targets/suno_fe/node_modules/body-parser/lib/read.js. Coverage (Term): 15% Coverage (LOC): 14%
+*- File /root/Targets/suno_fe/node_modules/raw-body/index.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/suno_fe/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/suno_fe/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/suno_fe/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/suno_fe/node_modules/body-parser/lib/types/urlencoded.js. Coverage (Term): 41% Coverage (LOC): 40%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 102 paths with 102 errors **

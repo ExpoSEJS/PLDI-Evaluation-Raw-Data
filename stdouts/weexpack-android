@@ -1,0 +1,55 @@
+/root/Targets/weexpack-android
+└─┬ weexpack-android@6.3.2 
+  ├─┬ cordova-common@1.5.1 
+  │ ├── ansi@0.3.1 
+  │ ├─┬ bplist-parser@0.1.1 
+  │ │ └── big-integer@1.6.25 
+  │ ├── cordova-registry-mapper@1.1.15 
+  │ ├─┬ glob@5.0.15 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── once@1.4.0 
+  │ │ └── path-is-absolute@1.0.1 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├─┬ osenv@0.1.4 
+  │ │ ├── os-homedir@1.0.2 
+  │ │ └── os-tmpdir@1.0.2 
+  │ ├─┬ plist@1.2.0 
+  │ │ ├── base64-js@0.0.8 
+  │ │ ├── util-deprecate@1.0.2 
+  │ │ ├─┬ xmlbuilder@4.0.0 
+  │ │ │ └── lodash@3.10.1 
+  │ │ └── xmldom@0.1.27 
+  │ ├── semver@5.4.1 
+  │ ├── underscore@1.8.3 
+  │ └── unorm@1.4.1 
+  ├─┬ elementtree@0.1.7 
+  │ └── sax@1.1.4 
+  ├─┬ nopt@3.0.6 
+  │ └── abbrev@1.1.0 
+  ├── properties-parser@0.2.3 
+  ├── q@1.5.0 
+  └── shelljs@0.5.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/weexpack-android/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.072 took 4.0767s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'weexpack-android'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

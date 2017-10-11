@@ -1,0 +1,175 @@
+
+> gifsicle@0.1.7 postinstall /root/Targets/paper-press/node_modules/gifsicle
+> node index.js
+
+
+> jpegtran-bin@0.2.8 postinstall /root/Targets/paper-press/node_modules/jpegtran-bin
+> node index.js
+
+
+> optipng-bin@0.3.11 postinstall /root/Targets/paper-press/node_modules/optipng-bin
+> node index.js
+
+/root/Targets/paper-press
+└── paper-press@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/paper-press/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0261 took 4.8451s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+const async = require('async');
+const exec = require('child_process').exec;
+const errorCodes = require('./utils/errorCodes');
+const colors = require('colors');
+
+const paths = require('./utils/paths');
+const checkFolders = require('./utils/checkFolders');
+const checkSurgeLogin = require('./utils/checkSurgeLogin');
+
+var startServer = require('./server/startServer');
+var makeBlogJSON = require('./server/makeBlogJSON');
+
+var option = process.argv.slice(2)[0];
+
+switch(option) {
+    case 'img':
+        openImageFolder();
+        break;
+
+    case 'papers':
+        openPapers();
+        break;
+
+    default:
+        app();
+        break;
+}
+
+function openImageFolder() {
+    var command = (process.platform === 'win32') ? 'start' : 'open';
+    command += (' ' + paths.IMGS);
+
+    exec(command, function(err,stdout,stderr) {
+        if (err){
+            console.log("[ERROR] ".red + err);
+            console.log("  * Read more guide on ".gray +
+                "https://github.com/seokju-na/paper-press.git".underline.gray);
+        }
+        process.exit(1);
+    });
+}
+
+function openPapers() {
+    var command = (process.platform === 'win32') ? 'start' : 'open';
+    command += (' ' + paths.PAPER_FOLDER);
+
+    checkFolders.checkPapersFolder(function(err) {
+        if (err) {
+            console.log("[ERROR] ".red + err);
+            console.log("  * Read more guide on ".gray +
+                "https://github.com/seokju-na/paper-press.git".underline.gray);
+        }
+        else exec(command, function(err,stdout,stderr) {
+            if (err){
+                console.log("[ERROR] ".red + err);
+                console.log("  * Read more guide on ".gray +
+                    "https://github.com/seokju-na/paper-press.git".underline.gray);
+            }
+            process.exit(1);
+        });
+    });
+}
+
+function app() {
+    async.waterfall([
+        function(callback) {
+            console.log("[paper-press] ".green + "Checking papers.");
+            checkFolders.checkPapersFolder(function(err) {
+                if (err) callback(err);
+                else callback(null);
+            });
+        },
+
+        function(callback) {
+            console.log("[paper-press] ".green + "Checking dist files.");
+            checkFolders.checkDistFolder(function(err) {
+                if (err) callback(err);
+                else callback(null);
+            });
+        },
+
+        function(callback) {
+            console.log("[paper-press] ".green + "Check surge login.");
+            checkSurgeLogin(function(isLogin) {
+                if (!isLogin) callback(errorCodes.SURGE_LOGIN);
+                else callback(null);
+            });
+        },
+
+        function(callback) {
+            console.log("[paper-press]".green + " Check blog configure info.");
+            makeBlogJSON(function(err) {
+                if (err) callback(err);
+                else callback(null);
+            });
+        },
+
+        function(callback) {
+            console.log("[paper-press]".green + " Starting server.");
+            startServer(callback);
+        }
+    ], function(err, res) {
+        if (err) {
+            switch (err) {
+                case errorCodes.SURGE_LOGIN:
+                    console.log("[ERROR] ".red +
+                        "Not currently authenticated on surge.".red);
+                    console.log("  * Login on surge. Please login surge - ".gray +
+                        "surge login".bold);
+                    console.log("  * Did you install surge by global? ".gray +
+                        "npm install -g surge".bold);
+                    console.log("  * Read more guide on ".gray +
+                        "https://github.com/seokju-na/paper-press.git".underline.gray);
+                    break;
+
+                case errorCodes.ABORTED:
+                    console.log("Aborted.");
+                    break;
+
+                default:
+                    console.log("[ERROR] ".red + err);
+                    console.log("  * Read more guide on ".gray +
+                        "https://github.com/seokju-na/paper-press.git".underline.gray);
+                    break;
+            }
+
+            console.log(" ");
+            process.exit(1);
+        }
+    });
+} at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

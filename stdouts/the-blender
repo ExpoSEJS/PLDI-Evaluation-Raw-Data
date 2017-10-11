@@ -1,0 +1,465 @@
+
+> bson@0.2.22 install /root/Targets/the-blender/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/the-blender/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:92: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/the-blender/node_modules/bson/build'
+
+> kerberos@0.0.11 install /root/Targets/the-blender/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/the-blender/node_modules/kerberos/build'
+  CXX(target) Release/obj.target/kerberos/lib/kerberos.o
+kerberos.target.mk:98: recipe for target 'Release/obj.target/kerberos/lib/kerberos.o' failed
+make: Leaving directory '/root/Targets/the-blender/node_modules/kerberos/build'
+
+> mraa@1.8.0 install /root/Targets/the-blender/node_modules/mraa
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/the-blender/node_modules/mraa/build'
+  CC(target) Release/obj.target/mraa/src/x86/intel_joule_expansion.o
+  CC(target) Release/obj.target/mraa/src/x86/up2.o
+  CC(target) Release/obj.target/mraa/src/x86/up.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_cherryhills.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_sofia_3gr.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_minnow_byt_compatible.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_nuc5.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_de3815.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_edison_fab_c.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_galileo_rev_g.o
+  CC(target) Release/obj.target/mraa/src/x86/intel_galileo_rev_d.o
+  CC(target) Release/obj.target/mraa/src/x86/x86.o
+  CC(target) Release/obj.target/mraa/src/arm/de_nano_soc.o
+  CC(target) Release/obj.target/mraa/src/arm/banana.o
+  CC(target) Release/obj.target/mraa/src/arm/phyboard.o
+  CC(target) Release/obj.target/mraa/src/arm/beaglebone.o
+  CC(target) Release/obj.target/mraa/src/arm/raspberry_pi.o
+  CC(target) Release/obj.target/mraa/src/arm/96boards.o
+  CC(target) Release/obj.target/mraa/src/arm/arm.o
+  CC(target) Release/obj.target/mraa/src/iio/iio.o
+  CC(target) Release/obj.target/mraa/src/uart_ow/uart_ow.o
+  CC(target) Release/obj.target/mraa/src/firmata/firmata_mraa.o
+  CC(target) Release/obj.target/mraa/src/firmata/firmata.o
+  CC(target) Release/obj.target/mraa/src/grovepi/grovepi.o
+  CC(target) Release/obj.target/mraa/src/uart/uart.o
+  CC(target) Release/obj.target/mraa/src/aio/aio.o
+  CC(target) Release/obj.target/mraa/src/spi/spi.o
+  CC(target) Release/obj.target/mraa/src/pwm/pwm.o
+  CC(target) Release/obj.target/mraa/src/i2c/i2c.o
+  CC(target) Release/obj.target/mraa/src/gpio/gpio.o
+  CC(target) Release/obj.target/mraa/src/mraa.o
+  CC(target) Release/obj.target/mraa/src/version.o
+  CXX(target) Release/obj.target/mraa/src/mraajsJAVASCRIPT_wrap.o
+mraa.target.mk:145: recipe for target 'Release/obj.target/mraa/src/mraajsJAVASCRIPT_wrap.o' failed
+make: Leaving directory '/root/Targets/the-blender/node_modules/mraa/build'
+
+> serialport@4.0.7 install /root/Targets/the-blender/node_modules/firmata/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+[serialport] Success: "/root/Targets/the-blender/node_modules/firmata/node_modules/serialport/build/Release/serialport.node" is installed via remote
+
+> serialport@5.0.0 install /root/Targets/the-blender/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/the-blender/node_modules/serialport/build'
+  CXX(target) Release/obj.target/serialport/src/serialport.o
+  CXX(target) Release/obj.target/serialport/src/serialport_unix.o
+  CXX(target) Release/obj.target/serialport/src/poller.o
+  SOLINK_MODULE(target) Release/obj.target/serialport.node
+  COPY Release/serialport.node
+make: Leaving directory '/root/Targets/the-blender/node_modules/serialport/build'
+
+> ws@0.4.32 install /root/Targets/the-blender/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/the-blender/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/the-blender/node_modules/ws/build'
+/root/Targets/the-blender
+└─┬ the-blender@0.2.0 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── setprototypeof@1.0.3 
+  │ │ └── statuses@1.3.1 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ deferred@0.7.8 
+  │ ├── d@1.0.0 
+  │ ├─┬ es5-ext@0.10.30 
+  │ │ ├── es6-iterator@2.0.1 
+  │ │ └── es6-symbol@3.1.1 
+  │ ├── event-emitter@0.3.5 
+  │ ├── next-tick@1.0.0 
+  │ └── timers-ext@0.1.2 
+  ├─┬ express@4.2.0 
+  │ ├─┬ accepts@1.0.1 
+  │ │ ├── mime@1.2.11 
+  │ │ └── negotiator@0.4.9 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├── cookie@0.1.2 
+  │ ├── cookie-signature@1.0.3 
+  │ ├── debug@0.8.1 
+  │ ├── escape-html@1.0.1 
+  │ ├── fresh@0.2.2 
+  │ ├── merge-descriptors@0.0.2 
+  │ ├── methods@1.0.0 
+  │ ├── parseurl@1.0.1 
+  │ ├── path-to-regexp@0.1.2 
+  │ ├── qs@0.6.6 
+  │ ├── range-parser@1.0.0 
+  │ ├─┬ send@0.3.0 
+  │ │ └── debug@0.8.0 
+  │ ├── serve-static@1.1.0 
+  │ ├── type-is@1.1.0 
+  │ └── utils-merge@1.0.0 
+  ├─┬ johnny-five@0.7.56 
+  │ ├── colors@1.1.2 
+  │ ├── descriptor@0.1.0 
+  │ ├── es6-shim@0.35.3 
+  │ ├─┬ firmata@0.17.0 
+  │ │ ├── browser-serialport@2.1.0 
+  │ │ └─┬ serialport@4.0.7 
+  │ │   ├── bindings@1.2.1 
+  │ │   ├─┬ lie@3.1.1 
+  │ │   │ └── immediate@3.0.6 
+  │ │   ├─┬ node-pre-gyp@0.6.32 
+  │ │   │ ├─┬ mkdirp@0.5.1 
+  │ │   │ │ └── minimist@0.0.8 
+  │ │   │ ├─┬ nopt@3.0.6 
+  │ │   │ │ └── abbrev@1.0.9 
+  │ │   │ ├─┬ npmlog@4.0.1 
+  │ │   │ │ ├─┬ are-we-there-yet@1.1.2 
+  │ │   │ │ │ ├── delegates@1.0.0 
+  │ │   │ │ │ └─┬ readable-stream@2.2.2 
+  │ │   │ │ │   ├── buffer-shims@1.0.0 
+  │ │   │ │ │   ├── core-util-is@1.0.2 
+  │ │   │ │ │   ├── inherits@2.0.3 
+  │ │   │ │ │   ├── isarray@1.0.0 
+  │ │   │ │ │   ├── process-nextick-args@1.0.7 
+  │ │   │ │ │   ├── string_decoder@0.10.31 
+  │ │   │ │ │   └── util-deprecate@1.0.2 
+  │ │   │ │ ├── console-control-strings@1.1.0 
+  │ │   │ │ ├─┬ gauge@2.7.2 
+  │ │   │ │ │ ├── aproba@1.0.4 
+  │ │   │ │ │ ├── has-unicode@2.0.1 
+  │ │   │ │ │ ├── object-assign@4.1.0 
+  │ │   │ │ │ ├── signal-exit@3.0.2 
+  │ │   │ │ │ ├─┬ string-width@1.0.2 
+  │ │   │ │ │ │ ├── code-point-at@1.1.0 
+  │ │   │ │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │   │ │ │ │   └── number-is-nan@1.0.1 
+  │ │   │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │   │ │ │ │ └── ansi-regex@2.0.0 
+  │ │   │ │ │ ├── supports-color@0.2.0 
+  │ │   │ │ │ └── wide-align@1.1.0 
+  │ │   │ │ └── set-blocking@2.0.0 
+  │ │   │ ├─┬ rc@1.1.6 
+  │ │   │ │ ├── deep-extend@0.4.1 
+  │ │   │ │ ├── ini@1.3.4 
+  │ │   │ │ ├── minimist@1.2.0 
+  │ │   │ │ └── strip-json-comments@1.0.4 
+  │ │   │ ├─┬ request@2.79.0 
+  │ │   │ │ ├── aws-sign2@0.6.0 
+  │ │   │ │ ├── aws4@1.5.0 
+  │ │   │ │ ├── caseless@0.11.0 
+  │ │   │ │ ├─┬ combined-stream@1.0.5 
+  │ │   │ │ │ └── delayed-stream@1.0.0 
+  │ │   │ │ ├── extend@3.0.0 
+  │ │   │ │ ├── forever-agent@0.6.1 
+  │ │   │ │ ├─┬ form-data@2.1.2 
+  │ │   │ │ │ └── asynckit@0.4.0 
+  │ │   │ │ ├─┬ har-validator@2.0.6 
+  │ │   │ │ │ ├─┬ chalk@1.1.3 
+  │ │   │ │ │ │ ├── ansi-styles@2.2.1 
+  │ │   │ │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │   │ │ │ │ ├─┬ has-ansi@2.0.0 
+  │ │   │ │ │ │ │ └── ansi-regex@2.0.0 
+  │ │   │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │   │ │ │ │ │ └── ansi-regex@2.0.0 
+  │ │   │ │ │ │ └── supports-color@2.0.0 
+  │ │   │ │ │ ├─┬ is-my-json-valid@2.15.0 
+  │ │   │ │ │ │ ├── generate-function@2.0.0 
+  │ │   │ │ │ │ ├─┬ generate-object-property@1.2.0 
+  │ │   │ │ │ │ │ └── is-property@1.0.2 
+  │ │   │ │ │ │ ├── jsonpointer@4.0.0 
+  │ │   │ │ │ │ └── xtend@4.0.1 
+  │ │   │ │ │ └─┬ pinkie-promise@2.0.1 
+  │ │   │ │ │   └── pinkie@2.0.4 
+  │ │   │ │ ├─┬ hawk@3.1.3 
+  │ │   │ │ │ ├── boom@2.10.1 
+  │ │   │ │ │ ├── cryptiles@2.0.5 
+  │ │   │ │ │ ├── hoek@2.16.3 
+  │ │   │ │ │ └── sntp@1.0.9 
+  │ │   │ │ ├─┬ http-signature@1.1.1 
+  │ │   │ │ │ ├── assert-plus@0.2.0 
+  │ │   │ │ │ ├─┬ jsprim@1.3.1 
+  │ │   │ │ │ │ ├── extsprintf@1.0.2 
+  │ │   │ │ │ │ ├── json-schema@0.2.3 
+  │ │   │ │ │ │ └── verror@1.3.6 
+  │ │   │ │ │ └─┬ sshpk@1.10.1 
+  │ │   │ │ │   ├── asn1@0.2.3 
+  │ │   │ │ │   ├── assert-plus@1.0.0 
+  │ │   │ │ │   ├── bcrypt-pbkdf@1.0.0 
+  │ │   │ │ │   ├── dashdash@1.14.1 
+  │ │   │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │   │ │ │   ├── getpass@0.1.6 
+  │ │   │ │ │   ├── jodid25519@1.0.2 
+  │ │   │ │ │   ├── jsbn@0.1.0 
+  │ │   │ │ │   └── tweetnacl@0.14.4 
+  │ │   │ │ ├── is-typedarray@1.0.0 
+  │ │   │ │ ├── isstream@0.1.2 
+  │ │   │ │ ├── json-stringify-safe@5.0.1 
+  │ │   │ │ ├─┬ mime-types@2.1.13 
+  │ │   │ │ │ └── mime-db@1.25.0 
+  │ │   │ │ ├── oauth-sign@0.8.2 
+  │ │   │ │ ├── qs@6.3.0 
+  │ │   │ │ ├── stringstream@0.0.5 
+  │ │   │ │ ├─┬ tough-cookie@2.3.2 
+  │ │   │ │ │ └── punycode@1.4.1 
+  │ │   │ │ ├── tunnel-agent@0.4.3 
+  │ │   │ │ └── uuid@3.0.1 
+  │ │   │ ├─┬ rimraf@2.5.4 
+  │ │   │ │ └─┬ glob@7.1.1 
+  │ │   │ │   ├── fs.realpath@1.0.0 
+  │ │   │ │   ├─┬ inflight@1.0.6 
+  │ │   │ │   │ └── wrappy@1.0.2 
+  │ │   │ │   ├── inherits@2.0.3 
+  │ │   │ │   ├─┬ minimatch@3.0.3 
+  │ │   │ │   │ └─┬ brace-expansion@1.1.6 
+  │ │   │ │   │   ├── balanced-match@0.4.2 
+  │ │   │ │   │   └── concat-map@0.0.1 
+  │ │   │ │   ├─┬ once@1.4.0 
+  │ │   │ │   │ └── wrappy@1.0.2 
+  │ │   │ │   └── path-is-absolute@1.0.1 
+  │ │   │ ├── semver@5.3.0 
+  │ │   │ ├─┬ tar@2.2.1 
+  │ │   │ │ ├── block-stream@0.0.9 
+  │ │   │ │ ├─┬ fstream@1.0.10 
+  │ │   │ │ │ └── graceful-fs@4.1.11 
+  │ │   │ │ └── inherits@2.0.3 
+  │ │   │ └─┬ tar-pack@3.3.0 
+  │ │   │   ├─┬ debug@2.2.0 
+  │ │   │   │ └── ms@0.7.1 
+  │ │   │   ├─┬ fstream@1.0.10 
+  │ │   │   │ ├── graceful-fs@4.1.11 
+  │ │   │   │ └── inherits@2.0.3 
+  │ │   │   ├─┬ fstream-ignore@1.0.5 
+  │ │   │   │ ├── inherits@2.0.3 
+  │ │   │   │ └─┬ minimatch@3.0.3 
+  │ │   │   │   └─┬ brace-expansion@1.1.6 
+  │ │   │   │     ├── balanced-match@0.4.2 
+  │ │   │   │     └── concat-map@0.0.1 
+  │ │   │   ├─┬ once@1.3.3 
+  │ │   │   │ └── wrappy@1.0.2 
+  │ │   │   ├─┬ readable-stream@2.1.5 
+  │ │   │   │ ├── buffer-shims@1.0.0 
+  │ │   │   │ ├── core-util-is@1.0.2 
+  │ │   │   │ ├── inherits@2.0.3 
+  │ │   │   │ ├── isarray@1.0.0 
+  │ │   │   │ ├── process-nextick-args@1.0.7 
+  │ │   │   │ ├── string_decoder@0.10.31 
+  │ │   │   │ └── util-deprecate@1.0.2 
+  │ │   │   └── uid-number@0.0.6 
+  │ │   └─┬ object.assign@4.0.4 
+  │ │     ├─┬ define-properties@1.1.2 
+  │ │     │ └── foreach@2.0.5 
+  │ │     ├── function-bind@1.1.1 
+  │ │     └── object-keys@1.0.11 
+  │ ├─┬ galileo-io@0.10.0 
+  │ │ └─┬ remapped@0.2.1 
+  │ │   ├── getobject@0.1.0 
+  │ │   └── traverse@0.6.6 
+  │ ├── lodash@4.17.4 
+  │ ├── nanotimer@0.3.1 
+  │ ├─┬ serialport@5.0.0 
+  │ │ ├── bindings@1.3.0 
+  │ │ ├── commander@2.11.0 
+  │ │ ├─┬ debug@2.6.8 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├── nan@2.7.0 
+  │ │ ├─┬ node-pre-gyp@0.6.36 
+  │ │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ │ └── minimist@0.0.8 
+  │ │ │ ├─┬ nopt@4.0.1 
+  │ │ │ │ ├── abbrev@1.1.0 
+  │ │ │ │ └─┬ osenv@0.1.4 
+  │ │ │ │   ├── os-homedir@1.0.2 
+  │ │ │ │   └── os-tmpdir@1.0.2 
+  │ │ │ ├─┬ npmlog@4.1.2 
+  │ │ │ │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ │ │ │ └── delegates@1.0.0 
+  │ │ │ │ ├── console-control-strings@1.1.0 
+  │ │ │ │ ├─┬ gauge@2.7.4 
+  │ │ │ │ │ ├── aproba@1.1.2 
+  │ │ │ │ │ ├── has-unicode@2.0.1 
+  │ │ │ │ │ ├── object-assign@4.1.1 
+  │ │ │ │ │ ├── signal-exit@3.0.2 
+  │ │ │ │ │ ├─┬ string-width@1.0.2 
+  │ │ │ │ │ │ ├── code-point-at@1.1.0 
+  │ │ │ │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │ │ │ │ │   └── number-is-nan@1.0.1 
+  │ │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ │ │ └── wide-align@1.1.2 
+  │ │ │ │ └── set-blocking@2.0.0 
+  │ │ │ ├─┬ rc@1.2.1 
+  │ │ │ │ ├── deep-extend@0.4.2 
+  │ │ │ │ ├── ini@1.3.4 
+  │ │ │ │ ├── minimist@1.2.0 
+  │ │ │ │ └── strip-json-comments@2.0.1 
+  │ │ │ ├─┬ request@2.81.0 
+  │ │ │ │ ├── aws-sign2@0.6.0 
+  │ │ │ │ ├── aws4@1.6.0 
+  │ │ │ │ ├── caseless@0.12.0 
+  │ │ │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ │ │ └── delayed-stream@1.0.0 
+  │ │ │ │ ├── extend@3.0.1 
+  │ │ │ │ ├── forever-agent@0.6.1 
+  │ │ │ │ ├─┬ form-data@2.1.4 
+  │ │ │ │ │ └── asynckit@0.4.0 
+  │ │ │ │ ├─┬ har-validator@4.2.1 
+  │ │ │ │ │ ├─┬ ajv@4.11.8 
+  │ │ │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ │ │ └── har-schema@1.0.5 
+  │ │ │ │ ├─┬ hawk@3.1.3 
+  │ │ │ │ │ ├── boom@2.10.1 
+  │ │ │ │ │ ├── cryptiles@2.0.5 
+  │ │ │ │ │ ├── hoek@2.16.3 
+  │ │ │ │ │ └── sntp@1.0.9 
+  │ │ │ │ ├─┬ http-signature@1.1.1 
+  │ │ │ │ │ ├── assert-plus@0.2.0 
+  │ │ │ │ │ ├─┬ jsprim@1.4.0 
+  │ │ │ │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ │ │ │ ├── extsprintf@1.0.2 
+  │ │ │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ │ │ └── verror@1.3.6 
+  │ │ │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │ │ │   ├── asn1@0.2.3 
+  │ │ │ │ │   ├── assert-plus@1.0.0 
+  │ │ │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │ │ │   ├─┬ dashdash@1.14.1 
+  │ │ │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │ │ │   ├─┬ getpass@0.1.7 
+  │ │ │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │ │ │   ├── jsbn@0.1.1 
+  │ │ │ │ │   └── tweetnacl@0.14.5 
+  │ │ │ │ ├── is-typedarray@1.0.0 
+  │ │ │ │ ├── isstream@0.1.2 
+  │ │ │ │ ├── json-stringify-safe@5.0.1 
+  │ │ │ │ ├─┬ mime-types@2.1.16 
+  │ │ │ │ │ └── mime-db@1.29.0 
+  │ │ │ │ ├── oauth-sign@0.8.2 
+  │ │ │ │ ├── performance-now@0.2.0 
+  │ │ │ │ ├── qs@6.4.0 
+  │ │ │ │ ├── stringstream@0.0.5 
+  │ │ │ │ ├─┬ tough-cookie@2.3.2 
+  │ │ │ │ │ └── punycode@1.4.1 
+  │ │ │ │ ├── tunnel-agent@0.6.0 
+  │ │ │ │ └── uuid@3.1.0 
+  │ │ │ ├─┬ rimraf@2.6.1 
+  │ │ │ │ └─┬ glob@7.1.2 
+  │ │ │ │   ├── fs.realpath@1.0.0 
+  │ │ │ │   ├── inflight@1.0.6 
+  │ │ │ │   ├─┬ minimatch@3.0.4 
+  │ │ │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │   │   ├── balanced-match@1.0.0 
+  │ │ │ │   │   └── concat-map@0.0.1 
+  │ │ │ │   └── path-is-absolute@1.0.1 
+  │ │ │ ├── semver@5.4.1 
+  │ │ │ ├─┬ tar@2.2.1 
+  │ │ │ │ ├── block-stream@0.0.9 
+  │ │ │ │ ├─┬ fstream@1.0.11 
+  │ │ │ │ │ └── graceful-fs@4.1.11 
+  │ │ │ │ └── inherits@2.0.3 
+  │ │ │ └─┬ tar-pack@3.4.0 
+  │ │ │   ├── fstream-ignore@1.0.5 
+  │ │ │   ├─┬ once@1.4.0 
+  │ │ │   │ └── wrappy@1.0.2 
+  │ │ │   ├─┬ readable-stream@2.3.3 
+  │ │ │   │ ├── core-util-is@1.0.2 
+  │ │ │   │ ├── isarray@1.0.0 
+  │ │ │   │ ├── process-nextick-args@1.0.7 
+  │ │ │   │ ├── string_decoder@1.0.3 
+  │ │ │   │ └── util-deprecate@1.0.2 
+  │ │ │   └── uid-number@0.0.6 
+  │ │ ├── promirepl@1.0.1 
+  │ │ └── safe-buffer@5.1.1 
+  │ └── temporal@0.6.0 
+  ├─┬ mongoose@3.8.40 
+  │ ├── hooks@0.2.1 
+  │ ├─┬ mongodb@1.4.38 
+  │ │ ├─┬ bson@0.2.22 
+  │ │ │ └── nan@1.8.4 
+  │ │ ├─┬ kerberos@0.0.11 
+  │ │ │ └── nan@1.8.4 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── safe-buffer@5.1.1 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├── mpath@0.1.1 
+  │ ├── mpromise@0.4.3 
+  │ ├─┬ mquery@1.10.0 
+  │ │ ├── bluebird@2.10.2 
+  │ │ └─┬ debug@2.2.0 
+  │ │   └── ms@0.7.1 
+  │ ├── ms@0.1.0 
+  │ ├── muri@1.1.0 
+  │ ├── regexp-clone@0.0.1 
+  │ └── sliced@0.0.5 
+  └─┬ socket.io@0.9.19 
+    ├── base64id@0.1.0 
+    ├── policyfile@0.0.4 
+    ├── redis@0.7.3 
+    └─┬ socket.io-client@0.9.16 
+      ├─┬ active-x-obfuscator@0.0.1 
+      │ └── zeparser@0.0.5 
+      ├── uglify-js@1.2.5 
+      ├─┬ ws@0.4.32 
+      │ ├── commander@2.1.0 
+      │ ├── nan@1.0.0 
+      │ ├── options@0.0.6 
+      │ └── tinycolor@0.0.1 
+      └── xmlhttprequest@1.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/the-blender/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0243 took 5.6816s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module '../../config/config'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/the-blender/node_modules/the-blender/app/lib/blender.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

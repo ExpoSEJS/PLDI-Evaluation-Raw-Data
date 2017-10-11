@@ -1,0 +1,81 @@
+
+> kerberos@0.0.4 install /root/Targets/hi-blog/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/hi-blog/node_modules/kerberos/build'
+  SOLINK_MODULE(target) Release/obj.target/kerberos.node
+  COPY Release/kerberos.node
+make: Leaving directory '/root/Targets/hi-blog/node_modules/kerberos/build'
+
+> bson@0.2.22 install /root/Targets/hi-blog/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/hi-blog/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:92: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/hi-blog/node_modules/bson/build'
+/root/Targets/hi-blog
+└─┬ hi-blog@0.0.5-1 
+  ├── ejs@2.5.7 
+  ├─┬ express@3.2.2 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.8 
+  │ │ ├── bytes@0.2.0 
+  │ │ ├── formidable@1.0.13 
+  │ │ └── pause@0.0.1 
+  │ ├── cookie@0.0.5 
+  │ ├── cookie-signature@1.0.1 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.4 
+  │ ├── qs@0.6.3 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├─┬ mongoose@3.9.7 
+  │ ├── async@0.9.0 
+  │ ├── hooks@0.3.2 
+  │ ├── kareem@0.0.4 
+  │ ├─┬ mongodb@1.4.12 
+  │ │ ├─┬ bson@0.2.22 
+  │ │ │ └── nan@1.8.4 
+  │ │ ├── kerberos@0.0.4 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── safe-buffer@5.1.1 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├── mpath@0.1.1 
+  │ ├── mpromise@0.5.4 
+  │ ├─┬ mquery@1.0.0 
+  │ │ └── debug@0.7.4 
+  │ ├── ms@0.1.0 
+  │ ├── muri@0.3.1 
+  │ ├── regexp-clone@0.0.1 
+  │ └── sliced@0.0.5 
+  └── session-mongoose@0.5.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hi-blog/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0445 took 2.9584s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'hi-blog'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

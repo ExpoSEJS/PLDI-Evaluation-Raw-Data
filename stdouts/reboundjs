@@ -1,0 +1,85 @@
+/root/Targets/reboundjs
+└── reboundjs@0.3.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/reboundjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 0 errors / 64% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 64% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 64% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 64% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 64% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 64% coverage ] ****** [4 done /1 queued / 1 running / 0 errors / 64% coverage ] ****** [4 done /0 queued / 2 running / 0 errors / 64% coverage ] ****** [4 done /0 queued / 2 running / 0 errors / 64% coverage ] ****** [5 done /0 queued / 1 running / 1 errors / 64% coverage ] ****** [6 done /0 queued / 0 running / 2 errors / 64% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Error","call","create","toString","apply","bound precompile","bound warn"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0} start 0.0632 took 25.3706s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":1} start 26.0653 took 26.9646s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"_bound":2} start 25.9798 took 38.4138s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"_bound":3,"ExpansionArg_int":0} start 64.7769 took 35.6775s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"_bound":5} start 100.9967 took 34.054s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"_bound":5}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":4} start 100.8523 took 335.7911s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":4}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":4}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
+*- File /root/Targets/reboundjs/node_modules/reboundjs/dist/cjs/rebound-compiler/precompile.js. Coverage (Term): 42% Coverage (LOC): 45%
+*- File /root/Targets/reboundjs/node_modules/reboundjs/dist/cjs/rebound-compiler/parser.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/reboundjs/node_modules/reboundjs/dist/cjs/rebound-htmlbars/compile.js. Coverage (Term): 56% Coverage (LOC): 82%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/builders.js. Coverage (Term): 27% Coverage (LOC): 37%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/parser.js. Coverage (Term): 37% Coverage (LOC): 43%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/base.js. Coverage (Term): 57% Coverage (LOC): 56%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/parser.js. Coverage (Term): 53% Coverage (LOC): 87%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/ast.js. Coverage (Term): 9% Coverage (LOC): 26%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/whitespace-control.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/visitor.js. Coverage (Term): 21% Coverage (LOC): 42%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/exception.js. Coverage (Term): 30% Coverage (LOC): 47%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/compiler/helpers.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/handlebars/utils.js. Coverage (Term): 43% Coverage (LOC): 55%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/simple-html-tokenizer/evented-tokenizer.js. Coverage (Term): 5% Coverage (LOC): 13%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/simple-html-tokenizer/utils.js. Coverage (Term): 57% Coverage (LOC): 80%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/simple-html-tokenizer/entity-parser.js. Coverage (Term): 43% Coverage (LOC): 44%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/simple-html-tokenizer/html5-named-char-refs.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/parser/handlebars-node-visitors.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/utils.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/array-utils.js. Coverage (Term): 35% Coverage (LOC): 48%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/parser/tokenizer-event-handlers.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/void-tag-names.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/generation/print.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/traversal/traverse.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/types/visitor-keys.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/traversal/errors.js. Coverage (Term): 43% Coverage (LOC): 62%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-syntax/traversal/walker.js. Coverage (Term): 20% Coverage (LOC): 37%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/compiler.js. Coverage (Term): 58% Coverage (LOC): 74%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/template-compiler.js. Coverage (Term): 21% Coverage (LOC): 40%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/fragment-opcode-compiler.js. Coverage (Term): 39% Coverage (LOC): 55%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/template-visitor.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/utils.js. Coverage (Term): 28% Coverage (LOC): 38%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/safe-string.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/handlebars/safe-string.js. Coverage (Term): 64% Coverage (LOC): 80%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/handlebars/utils.js. Coverage (Term): 30% Coverage (LOC): 45%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/namespaces.js. Coverage (Term): 42% Coverage (LOC): 55%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/morph-utils.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/fragment-javascript-compiler.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/quoting.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/hydration-opcode-compiler.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-compiler/hydration-javascript-compiler.js. Coverage (Term): 13% Coverage (LOC): 26%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-runtime/hooks.js. Coverage (Term): 14% Coverage (LOC): 29%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-runtime/render.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-runtime/node-visitor.js. Coverage (Term): 7% Coverage (LOC): 21%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-runtime/expression-visitor.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-runtime/morph.js. Coverage (Term): 36% Coverage (LOC): 43%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/morph-range.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/morph-range/utils.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/template-utils.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/morph-range/morph-list.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/reboundjs/node_modules/htmlbars/dist/cjs/htmlbars-util/object-utils.js. Coverage (Term): 30% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 6 paths with 2 errors **

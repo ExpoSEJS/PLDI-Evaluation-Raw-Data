@@ -1,0 +1,35 @@
+/root/Targets/funkierjs
+└── funkierjs@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/funkierjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 45% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","bind","bound ","create","isNaN","isFinite","round","call","apply","freeze","TypeError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0835 took 18.3891s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Value is not a positive integer
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/funkier.js. Coverage (Term): 30% Coverage (LOC): 35%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/array.js. Coverage (Term): 27% Coverage (LOC): 47%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/curry.js. Coverage (Term): 66% Coverage (LOC): 79%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/internalUtilities.js. Coverage (Term): 31% Coverage (LOC): 43%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/base.js. Coverage (Term): 43% Coverage (LOC): 57%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/funcUtils.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/types.js. Coverage (Term): 22% Coverage (LOC): 43%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/object.js. Coverage (Term): 25% Coverage (LOC): 46%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/maybe.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/pair.js. Coverage (Term): 33% Coverage (LOC): 44%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/logical.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/categories.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/result.js. Coverage (Term): 37% Coverage (LOC): 49%
+*- File /root/Targets/funkierjs/node_modules/funkierjs/lib/components/date.js. Coverage (Term): 12% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

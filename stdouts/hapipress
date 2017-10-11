@@ -1,0 +1,27 @@
+
+> bcrypt@0.8.7 install /root/Targets/hapipress/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/hapipress/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/bcrypt_lib.node
+  COPY Release/bcrypt_lib.node
+make: Leaving directory '/root/Targets/hapipress/node_modules/bcrypt/build'
+
+> history@1.17.0 postinstall /root/Targets/hapipress/node_modules/history
+> node ./npm-scripts/postinstall.js
+
+
+> react-router@1.0.3 postinstall /root/Targets/hapipress/node_modules/react-router
+> node ./npm-scripts/postinstall.js
+
+
+> hapipress@0.0.1 postinstall /root/Targets/hapipress/node_modules/hapipress
+> npm run build
+
+
+> hapipress@0.0.1 build /root/Targets/hapipress/node_modules/hapipress
+> rimraf ./static/assets && webpack -p --progress --stats --config ./webpack/prod.config.js
+

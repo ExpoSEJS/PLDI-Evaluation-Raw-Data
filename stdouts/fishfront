@@ -1,0 +1,47 @@
+/root/Targets/fishfront
+├── UNMET PEER DEPENDENCY adler-32@^0.2.1
+├── UNMET PEER DEPENDENCY babel-cli@^6.2.0
+├── UNMET PEER DEPENDENCY babel-core@^6.2.1
+├── UNMET PEER DEPENDENCY babel-loader@^6.2.0
+├── UNMET PEER DEPENDENCY babel-polyfill@^6.2.0
+├── UNMET PEER DEPENDENCY babel-preset-es2015@^6.1.18
+├── UNMET PEER DEPENDENCY babel-preset-react@^6.1.18
+├── UNMET PEER DEPENDENCY babel-preset-stage-0@^6.1.18
+├── UNMET PEER DEPENDENCY blueimp-md5@^1.1.1
+├── UNMET PEER DEPENDENCY compression@^1.6.0
+├── UNMET PEER DEPENDENCY express@^4.13.3
+├─┬ fishfront@0.7.1 
+│ └─┬ isomorphic-fetch@2.2.1 
+│   ├─┬ node-fetch@1.7.3 
+│   │ ├─┬ encoding@0.1.12 
+│   │ │ └── iconv-lite@0.4.19 
+│   │ └── is-stream@1.1.0 
+│   └── whatwg-fetch@2.0.3 
+├── UNMET PEER DEPENDENCY history@^1.13.1
+├── UNMET PEER DEPENDENCY immutable@^3.7.5
+├── UNMET PEER DEPENDENCY memory-fs@^0.3.0
+├── UNMET PEER DEPENDENCY mime@^1.3.4
+├── UNMET PEER DEPENDENCY react@^0.14.3
+├── UNMET PEER DEPENDENCY react-dom@^0.14.3
+├── UNMET PEER DEPENDENCY react-router@^1.0.0
+└── UNMET PEER DEPENDENCY webpack@^1.12.9
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fishfront/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0271 took 3.9345s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/fishfront/node_modules/fishfront/react/react-mvc.js. Coverage (Term): 15% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,82 @@
+/root/Targets/semtest-e2e
+└─┬ semtest-e2e@2.0.1 
+  ├─┬ blue-tape@1.0.0 
+  │ └─┬ tape@4.8.0 
+  │   ├── deep-equal@1.0.1 
+  │   ├── defined@1.0.0 
+  │   ├─┬ for-each@0.3.2 
+  │   │ └── is-function@1.0.1 
+  │   ├── function-bind@1.1.1 
+  │   ├─┬ glob@7.1.2 
+  │   │ ├── fs.realpath@1.0.0 
+  │   │ ├─┬ inflight@1.0.6 
+  │   │ │ └── wrappy@1.0.2 
+  │   │ ├─┬ minimatch@3.0.4 
+  │   │ │ └─┬ brace-expansion@1.1.8 
+  │   │ │   ├── balanced-match@1.0.0 
+  │   │ │   └── concat-map@0.0.1 
+  │   │ ├── once@1.4.0 
+  │   │ └── path-is-absolute@1.0.1 
+  │   ├── has@1.0.1 
+  │   ├── inherits@2.0.3 
+  │   ├── minimist@1.2.0 
+  │   ├── object-inspect@1.3.0 
+  │   ├─┬ resolve@1.4.0 
+  │   │ └── path-parse@1.0.5 
+  │   ├── resumer@0.0.0 
+  │   ├─┬ string.prototype.trim@1.1.2 
+  │   │ ├─┬ define-properties@1.1.2 
+  │   │ │ ├── foreach@2.0.5 
+  │   │ │ └── object-keys@1.0.11 
+  │   │ └─┬ es-abstract@1.8.2 
+  │   │   ├─┬ es-to-primitive@1.1.1 
+  │   │   │ ├── is-date-object@1.0.1 
+  │   │   │ └── is-symbol@1.0.1 
+  │   │   ├── is-callable@1.1.3 
+  │   │   └── is-regex@1.0.4 
+  │   └── through@2.3.8 
+  ├── bluebird@3.4.7 
+  ├── lodash@4.16.6 
+  └─┬ supertest@2.0.1 
+    ├── methods@1.1.2 
+    └─┬ superagent@2.3.0 
+      ├── component-emitter@1.2.1 
+      ├── cookiejar@2.1.1 
+      ├─┬ debug@2.6.9 
+      │ └── ms@2.0.0 
+      ├── extend@3.0.1 
+      ├─┬ form-data@1.0.0-rc4 
+      │ ├── async@1.5.2 
+      │ ├─┬ combined-stream@1.0.5 
+      │ │ └── delayed-stream@1.0.0 
+      │ └─┬ mime-types@2.1.17 
+      │   └── mime-db@1.30.0 
+      ├── formidable@1.1.1 
+      ├── mime@1.4.1 
+      ├── qs@6.5.1 
+      └─┬ readable-stream@2.3.3 
+        ├── core-util-is@1.0.2 
+        ├── isarray@1.0.0 
+        ├── process-nextick-args@1.0.7 
+        ├── safe-buffer@5.1.1 
+        ├── string_decoder@1.0.3 
+        └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/semtest-e2e/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0764 took 5.8558s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'toString' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

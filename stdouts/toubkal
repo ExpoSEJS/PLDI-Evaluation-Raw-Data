@@ -1,0 +1,452 @@
+
+> uws@0.14.5 install /root/Targets/toubkal/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+
+> undefine@0.2.8 postinstall /root/Targets/toubkal/node_modules/undefine
+> mkdir -p node_modules && ln -s ../. node_modules/undefine || true
+
+
+> toubkal@0.3.10 postinstall /root/Targets/toubkal/node_modules/toubkal
+> ln -s ../. node_modules/toubkal || true
+
+/root/Targets/toubkal
+└─┬ toubkal@0.3.10 
+  ├── acorn@5.0.3 
+  ├─┬ compressible@2.0.10 
+  │ └── mime-db@1.30.0 
+  ├─┬ css-select@1.3.0-rc0 
+  │ ├── boolbase@1.0.0 
+  │ ├── css-what@2.1.0 
+  │ ├── domutils@1.5.1 
+  │ └── nth-check@1.0.1 
+  ├─┬ domutils@1.6.2 
+  │ ├─┬ dom-serializer@0.1.0 
+  │ │ └── domelementtype@1.1.3 
+  │ └── domelementtype@1.3.0 
+  ├─┬ easyimage@2.1.0 
+  │ ├── colors@1.1.2 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ └── q@1.5.0 
+  ├── es5-shim@4.5.9 
+  ├─┬ express-session@1.15.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── crc@3.4.4 
+  │ ├─┬ debug@2.6.3 
+  │ │ └── ms@0.7.2 
+  │ ├── depd@1.1.1 
+  │ ├── on-headers@1.0.1 
+  │ ├── parseurl@1.3.2 
+  │ ├─┬ uid-safe@2.1.5 
+  │ │ └── random-bytes@1.0.0 
+  │ └── utils-merge@1.0.0 
+  ├── highlight.js@9.11.0 
+  ├─┬ htmlparser2@3.9.2 
+  │ ├── domhandler@2.4.1 
+  │ ├── entities@1.1.1 
+  │ ├── inherits@2.0.3 
+  │ └─┬ readable-stream@2.3.3 
+  │   ├── core-util-is@1.0.2 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── safe-buffer@5.1.1 
+  │   ├── string_decoder@1.0.3 
+  │   └── util-deprecate@1.0.2 
+  ├── mime@1.3.6 
+  ├── node-uuid@1.4.8 
+  ├── nodemailer-sendmail-transport@1.0.2 
+  ├─┬ nodemailer2@2.7.1 
+  │ ├─┬ libmime@3.0.0 
+  │ │ ├── iconv-lite@0.4.15 
+  │ │ ├── libbase64@0.1.0 
+  │ │ └── libqp@1.1.0 
+  │ ├─┬ mailcomposer@4.0.0 
+  │ │ └─┬ buildmail@4.0.0 
+  │ │   ├── addressparser@1.0.1 
+  │ │   └── punycode@2.1.0 
+  │ ├─┬ nodemailer-direct-transport@3.3.2 
+  │ │ └─┬ smtp-connection@2.12.0 
+  │ │   └─┬ httpntlm@1.6.1 
+  │ │     └── httpreq@0.4.24 
+  │ ├─┬ nodemailer-shared@1.1.0 
+  │ │ └── nodemailer-fetch@1.6.0 
+  │ ├─┬ nodemailer-smtp-pool@2.8.2 
+  │ │ └── nodemailer-wellknown@0.1.10 
+  │ ├── nodemailer-smtp-transport@2.7.2 
+  │ └─┬ socks@1.1.9 
+  │   ├── ip@1.1.5 
+  │   └── smart-buffer@1.1.15 
+  ├─┬ passport@0.3.2 
+  │ ├── passport-strategy@1.0.0 
+  │ └── pause@0.0.1 
+  ├── piexifjs@1.0.3 
+  ├─┬ remarkable@1.7.1 
+  │ ├─┬ argparse@0.1.16 
+  │ │ ├── underscore@1.7.0 
+  │ │ └── underscore.string@2.4.0 
+  │ └── autolinker@0.15.3 
+  ├─┬ socket.io@2.0.1 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├─┬ engine.io@3.1.1 
+  │ │ ├─┬ accepts@1.3.3 
+  │ │ │ ├── mime-types@2.1.17 
+  │ │ │ └── negotiator@0.6.1 
+  │ │ ├── base64id@1.0.0 
+  │ │ ├─┬ debug@2.6.8 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├─┬ engine.io-parser@2.1.1 
+  │ │ │ ├── after@0.8.2 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ └── blob@0.0.4 
+  │ │ ├── uws@0.14.5 
+  │ │ └─┬ ws@2.3.1 
+  │ │   ├── safe-buffer@5.0.1 
+  │ │   └── ultron@1.1.0 
+  │ ├── object-assign@4.1.1 
+  │ ├── socket.io-adapter@1.1.1 
+  │ └─┬ socket.io-parser@3.1.2 
+  │   ├─┬ debug@2.6.8 
+  │   │ └── ms@2.0.0 
+  │   ├─┬ has-binary2@1.0.2 
+  │   │ └── isarray@2.0.1 
+  │   └── isarray@2.0.1 
+  ├─┬ socket.io-client@2.0.1 
+  │ ├── backo2@1.0.2 
+  │ ├── base64-arraybuffer@0.1.5 
+  │ ├── component-bind@1.0.0 
+  │ ├── component-emitter@1.2.1 
+  │ ├─┬ debug@2.6.4 
+  │ │ └── ms@0.7.3 
+  │ ├─┬ engine.io-client@3.1.1 
+  │ │ ├── component-inherit@0.0.3 
+  │ │ ├─┬ debug@2.6.8 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├── parsejson@0.0.3 
+  │ │ ├── parseqs@0.0.5 
+  │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │ └── yeast@0.1.2 
+  │ ├── has-cors@1.1.0 
+  │ ├── indexof@0.0.1 
+  │ ├── object-component@0.0.3 
+  │ ├─┬ parseuri@0.0.5 
+  │ │ └─┬ better-assert@1.0.2 
+  │ │   └── callsite@1.0.0 
+  │ └── to-array@0.1.4 
+  ├── source-map@0.5.6 
+  ├─┬ uglify-js@3.0.4 
+  │ ├─┬ commander@2.9.0 
+  │ │ └── graceful-readlink@1.0.1 
+  │ └── uglify-to-browserify@1.0.2 
+  ├── undefine@0.2.8 
+  └── url-pattern@1.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/toubkal/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 59% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","bind","apply","Date","RegExp","create","randomBytes","toString","call","join","pop","toUpperCase","charCodeAt","splice","reverse","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0592 took 115.2638s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected eval or arguments in strict mode
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server.js. Coverage (Term): 63% Coverage (LOC): 73%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/pipelet.js. Coverage (Term): 14% Coverage (LOC): 27%
+*- File /root/Targets/toubkal/node_modules/undefine/undefine.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/RS.js. Coverage (Term): 79% Coverage (LOC): 92%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/console_logger.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/lap_timer.js. Coverage (Term): 67% Coverage (LOC): 73%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/timestamp_string.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/lazy_logger.js. Coverage (Term): 41% Coverage (LOC): 45%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/extend.js. Coverage (Term): 52% Coverage (LOC): 63%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/subclass.js. Coverage (Term): 71% Coverage (LOC): 91%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/loggable.js. Coverage (Term): 77% Coverage (LOC): 95%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/code.js. Coverage (Term): 36% Coverage (LOC): 58%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/event_emitter.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/value_equals.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/object_diff.js. Coverage (Term): 33% Coverage (LOC): 54%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/util/picker.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /root/Targets/toubkal/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/query.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File eval. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/transactions.js. Coverage (Term): 8% Coverage (LOC): 19%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/filter.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/trace.js. Coverage (Term): 18% Coverage (LOC): 12%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/dispatch.js. Coverage (Term): 15% Coverage (LOC): 16%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/stateful.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/group_by.js. Coverage (Term): 16% Coverage (LOC): 15%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/transforms.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/operations.js. Coverage (Term): 26% Coverage (LOC): 45%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/order.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/aggregate.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/join.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/input_set.js. Coverage (Term): 40% Coverage (LOC): 56%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/json.js. Coverage (Term): 24% Coverage (LOC): 20%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/events.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/transactional.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/next.js. Coverage (Term): 20% Coverage (LOC): 18%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/validate.js. Coverage (Term): 21% Coverage (LOC): 23%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/last.js. Coverage (Term): 31% Coverage (LOC): 30%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/optimize.js. Coverage (Term): 20% Coverage (LOC): 20%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/application_loop.js. Coverage (Term): 14% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/core/uri.js. Coverage (Term): 37% Coverage (LOC): 31%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/client/form.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/file.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/exif.js. Coverage (Term): 30% Coverage (LOC): 35%
+*- File /root/Targets/toubkal/node_modules/piexifjs/piexif.js. Coverage (Term): 24% Coverage (LOC): 64%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/require.js. Coverage (Term): 30% Coverage (LOC): 25%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/toubkal_acorn.js. Coverage (Term): 52% Coverage (LOC): 55%
+*- File /root/Targets/toubkal/node_modules/acorn/dist/acorn.js. Coverage (Term): 13% Coverage (LOC): 35%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/parse_documentation.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/markdown.js. Coverage (Term): 43% Coverage (LOC): 56%
+*- File /root/Targets/toubkal/node_modules/remarkable/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/index.js. Coverage (Term): 28% Coverage (LOC): 39%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/common/utils.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/common/entities.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/renderer.js. Coverage (Term): 23% Coverage (LOC): 37%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules.js. Coverage (Term): 20% Coverage (LOC): 54%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/parser_core.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/ruler.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/block.js. Coverage (Term): 30% Coverage (LOC): 29%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/abbr.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/state_inline.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/helpers/parse_link_label.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/references.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/helpers/parse_link_destination.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/helpers/normalize_link.js. Coverage (Term): 52% Coverage (LOC): 60%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/helpers/parse_link_title.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/helpers/normalize_reference.js. Coverage (Term): 51% Coverage (LOC): 83%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/inline.js. Coverage (Term): 25% Coverage (LOC): 42%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/footnote_tail.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/abbr2.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/replacements.js. Coverage (Term): 18% Coverage (LOC): 34%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/smartquotes.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_core/linkify.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/autolinker/dist/Autolinker.js. Coverage (Term): 21% Coverage (LOC): 42%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/parser_block.js. Coverage (Term): 32% Coverage (LOC): 59%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/state_block.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/code.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/fences.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/blockquote.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/hr.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/list.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/footnote.js. Coverage (Term): 5% Coverage (LOC): 7%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/heading.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/lheading.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/htmlblock.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/common/html_blocks.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/table.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/deflist.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_block/paragraph.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/parser_inline.js. Coverage (Term): 33% Coverage (LOC): 56%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/text.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/newline.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/escape.js. Coverage (Term): 30% Coverage (LOC): 26%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/backticks.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/del.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/ins.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/mark.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/emphasis.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/sub.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/sup.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/links.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/footnote_inline.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/footnote_ref.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/autolink.js. Coverage (Term): 15% Coverage (LOC): 12%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/common/url_schemas.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/htmltag.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/common/html_re.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/rules_inline/entity.js. Coverage (Term): 22% Coverage (LOC): 25%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/configs/default.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/configs/full.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/remarkable/lib/configs/commonmark.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/index.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/highlight.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/1c.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/abnf.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/accesslog.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/actionscript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ada.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/apache.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/applescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/cpp.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/arduino.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/armasm.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/xml.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/asciidoc.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/aspectj.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/autohotkey.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/autoit.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/avrasm.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/awk.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/axapta.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/bash.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/basic.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/bnf.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/brainfuck.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/cal.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/capnproto.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ceylon.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/clean.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/clojure.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/clojure-repl.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/cmake.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/coffeescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/coq.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/cos.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/crmsh.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/crystal.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/cs.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/csp.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/css.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/d.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/markdown.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dart.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/delphi.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/diff.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/django.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dns.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dockerfile.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dos.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dsconfig.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dts.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/dust.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ebnf.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/elixir.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/elm.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ruby.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/erb.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/erlang-repl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/erlang.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/excel.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/fix.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/flix.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/fortran.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/fsharp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/gams.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/gauss.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/gcode.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/gherkin.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/glsl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/go.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/golo.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/gradle.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/groovy.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/haml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/handlebars.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/haskell.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/haxe.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/hsp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/htmlbars.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/http.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/hy.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/inform7.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ini.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/irpf90.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/java.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/javascript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/jboss-cli.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/json.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/julia.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/kotlin.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/lasso.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ldif.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/leaf.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/less.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/lisp.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/livecodeserver.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/livescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/llvm.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/lsl.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/lua.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/makefile.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mathematica.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/matlab.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/maxima.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mel.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mercury.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mipsasm.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mizar.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/perl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/mojolicious.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/monkey.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/moonscript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/n1ql.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/nginx.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/nimrod.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/nix.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/nsis.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/objectivec.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ocaml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/openscad.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/oxygene.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/parser3.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/pf.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/php.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/pony.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/powershell.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/processing.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/profile.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/prolog.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/protobuf.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/puppet.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/purebasic.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/python.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/q.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/qml.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/r.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/rib.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/roboconf.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/rsl.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/ruleslanguage.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/rust.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/scala.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/scheme.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/scilab.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/scss.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/shell.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/smali.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/smalltalk.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/sml.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/sqf.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/sql.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/stan.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/stata.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/step21.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/stylus.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/subunit.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/swift.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/taggerscript.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/yaml.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/tap.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/tcl.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/tex.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/thrift.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/tp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/twig.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/typescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vala.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vbnet.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vbscript.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vbscript-html.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/verilog.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vhdl.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/vim.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/x86asm.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/xl.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/xquery.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/highlight.js/lib/languages/zephir.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/toubkal/node_modules/toubkal/lib/server/uglify.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/toubkal/node_modules/uglify-js/tools/node.js. Coverage (Term): 37% Coverage (LOC): 47%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,257 @@
+/root/Targets/ff-fes
+└─┬ ff-fes@1.0.6 
+  ├─┬ escodegen@1.9.0 
+  │ ├── esprima@3.1.3 
+  │ ├── estraverse@4.2.0 
+  │ ├── esutils@2.0.2 
+  │ ├─┬ optionator@0.8.2 
+  │ │ ├── deep-is@0.1.3 
+  │ │ ├── fast-levenshtein@2.0.6 
+  │ │ ├── levn@0.3.0 
+  │ │ ├── prelude-ls@1.1.2 
+  │ │ ├── type-check@0.3.2 
+  │ │ └── wordwrap@1.0.0 
+  │ └── source-map@0.5.7 
+  ├── esprima@2.7.3 
+  ├── ff-log@1.0.18 
+  └── stack-adt@0.2.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ff-fes/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0659 took 2.6304s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (8:4) on program /**
+ * Bridge between Formulas and UiModel
+ * all functions should be moved to either formula-bootstrap.js or uitmodel.js
+ */
+var logger = require('ff-log');
+var AST = require('./AST');
+var esprima = require('esprima')
+var assert = require('assert')
+//for now now just years.. keep it simple
+var GenericModelFile = {}
+
+var UIService = require('./UIService');
+var bootstrap = require('./formula-bootstrap');
+var FunctionMap = require('./FunctionMap');
+var FormulaService = require('./FormulaService')
+var ParserService = require('./ParserService')
+
+/**
+ * For small arrays, lets say until 1000, elements. There is no need to map by name.
+ * Just iterate the shabang and test the property
+ */
+Array.prototype.lookup = function (property, name) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i][property] === name) {
+            return this[i];
+        }
+    }
+    return undefined;
+}
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function (searchString, position) {
+        position = position || 0;
+        return this.substr(position, searchString.length) === searchString;
+    };
+}
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function (suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+}
+
+function findFormula(uiModel) {
+    if (uiModel === undefined) {
+        return undefined;
+    }
+    return FormulaService.findFormulaByIndex(uiModel.ref);
+}
+function getUI(groupName, row, col) {
+    return UIService.getUI(groupName, row, col || 'value');
+}
+function getFormula(row, col) {
+    return findFormula(getUI(row, col));
+};
+//copy paste of the one below, its time to integrate Solution
+function gatherFormulas(solution) {
+    var solutionFormulas = [];
+    solution.nodes.forEach(function (uiModel) {
+        var formula = findFormula(uiModel);
+        if (formula !== undefined && formula !== null) {
+            var id = formula.id === undefined ? formula.index : formula.id;
+            solutionFormulas[id] = formula;
+        }
+    })
+    solution.formulas = solutionFormulas;
+}
+//public
+//when new formula's arrive, we have to update the user-entered map so we don't get NPE
+//just a quick-fix..
+function updateValueMap(values) {
+    FormulaService.visitFormulas(function (formula) {
+        //later will add values['_'+key] for the cache
+        //for unlocked add values[key] here will user entered values stay
+        if (formula.type === 'noCacheUnlocked') {
+            var id = formula.id === undefined ? formula.index : formula.id;
+            if (!values[id]) {
+                values[id] = {};
+            }
+        }
+    });
+}
+function addLink(groupName, row, col, locked, body) {
+    var ui = UIService.getUI(groupName, row, col);
+    return FormulaService.addFormulaLink(ui, groupName, row, col, locked, body);
+};
+
+function produceSolution(nodeId) {
+    var solution = UIService.findAll(nodeId);
+    gatherFormulas(solution);
+    return solution;
+}
+function mergeFormulas(formulasArg) {
+    //so for all refs in the formula, we will switch the formulaIndex
+    var changed = [];
+    formulasArg.forEach(function (formula) {
+        //not sure where to put this logic
+        //get local formula
+        //var id = formula.id === undefined ? formula.index : formula.id;
+        var localFormula = FormulaService.findFormulaByIndex(formula.index);
+        if (localFormula !== undefined && localFormula !== null) {
+            changed.push(localFormula);
+            //of course this should not live here, its just a bug fix.
+            if (localFormula.index !== formula.id) {
+                //move formula
+                moveFormula(localFormula, formula);
+            }
+        }
+    });
+    //rebuild the formulas
+    FunctionMap.init(bootstrap.parseAsFormula, changed, true);
+}
+function moveFormula(old, newFormula) {
+    FormulaService.moveFormula(old, newFormula);
+    FunctionMap.moveFormula(old, newFormula);
+    //update references
+    for (var ref in old.refs) {
+        var uiModel = UIService.fetch(ref);
+        uiModel.ref = newFormula.id;
+        uiModel.formulaId = newFormula.id;
+    }
+}
+var propertyDefaults = {
+    'visible': true,
+    'value': 1e-10,
+    'required': false,
+    'locked': false,
+    'choices': undefined,
+    'valid': true,
+    'validation': false
+}
+
+function getStatelessVariable(row, col) {
+    return UIService.fetch(row + '_' + col);
+}
+
+GenericModelFile.getParsers = ParserService.getParsers;
+GenericModelFile.findParser = ParserService.findParser;
+GenericModelFile.addParser = ParserService.addParser;
+GenericModelFile.statelessSetValue = function (context, row, value, col, xas) {
+    var rowId = row + '_' + ( col || 'value');
+    var localFormula = findFormula(UIService.fetch(rowId));
+    if (localFormula === undefined) {
+        //don't give away variable name here.
+        throw Error('Cannot find variable')
+    }
+    logger.debug('Set value row:[%s] x:[%s] value:[%s]', row, xas.hash, value);
+    FunctionMap.apiSet(localFormula, xas, 0, 0, value, context.values);
+};
+GenericModelFile.statelessGetValue = function (context, row, col, xas) {
+    var colType = col || 'value';
+    var localFormula = findFormula(getStatelessVariable(row, colType));
+    var returnValue;
+    if (localFormula === undefined) {
+        returnValue = propertyDefaults[colType];
+    }
+    else {
+        returnValue = FunctionMap.apiGet(localFormula, xas, 0, 0, context.values);
+    }
+    return returnValue;
+}
+GenericModelFile.getStatelessVariable = getStatelessVariable;
+GenericModelFile.findFormulaByIndex = FormulaService.findFormulaByIndex;
+GenericModelFile.bulkInsertFormula = FormulaService.bulkInsertFormula;
+GenericModelFile.findFormula = findFormula;
+GenericModelFile.mergeFormulas = mergeFormulas;
+GenericModelFile.getFormula = getFormula;
+GenericModelFile.gatherFormulas = gatherFormulas;
+GenericModelFile.createFormula = function (groupName, formulaAsString, rowId, colId) {
+    var col = colId || 'value';
+    //create a formula for the element
+    var ast = esprima.parse(formulaAsString);
+    var newFormulaId = addLink(groupName, rowId, col, col === 'value' ? false : true, ast.body[0].expression);
+    //integrate formula (parse it)
+    FunctionMap.initFormulaBootstrap(bootstrap.parseAsFormula, [FormulaService.findFormulaByIndex(newFormulaId)], true);
+};
+//SolutionService
+GenericModelFile.produceSolution = produceSolution;
+//UiModelService?
+GenericModelFile.updateValueMap = updateValueMap;
+//encapsulate isLocked flag
+GenericModelFile.addSimpleLink = function (solution, rowId, colId, body, displayAs) {
+    //by default only value properties can be user entered
+    //in simple (LOCKED = (colId !== 'value'))
+    var formulaId = addLink(solution.name, rowId, colId, colId === 'value' ? false : true, body);
+    //most ugly part here, the Parsers themselves add Links, which should be done just before parsing Formula's
+    //afterwards the Formula's are parsed,
+    return solution.createNode(rowId, colId, formulaId, displayAs);
+};
+GenericModelFile.findLink = UIService.getUI;
+//supported properties
+GenericModelFile.properties = {
+    value: 0,
+    visible: 1,
+    required: 2,
+    locked: 3,
+    entered: 4,
+    validation: 5,
+    title: 6,
+    validateInput: 7,
+    choices: 8,
+    _testg: 9,
+    _testh: 10
+};
+//for now we accept NON-Dynamic Fes7, nor Dynamic variable properties.
+//properties once bound ONCE, math Functions also ONCE
+bootstrap.initStateBootstrap({
+    state: GenericModelFile,
+    uicontains: UIService.contains
+});
+module.exports = GenericModelFile; at SyntaxError: Unexpected token (8:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ff-fes/node_modules/ff-fes/ff-fes.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/ff-fes/node_modules/ff-fes/exchange_modules/ffl/fflparser.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/ff-fes/node_modules/ff-fes/fesjs/JSVisitor.js. Coverage (Term): 6% Coverage (LOC): 13%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

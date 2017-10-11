@@ -1,0 +1,166 @@
+/root/Targets/data-grid
+└─┬ data-grid@3.0.0 
+  ├─┬ data-fields@5.0.0 
+  │ ├── addhttp@1.0.0 
+  │ ├── data-field-classname@1.0.0 
+  │ ├── leaflet@0.7.7 
+  │ ├── leaflet-draw@0.2.4 
+  │ ├─┬ list-editor@2.0.0 
+  │ │ ├── get-form-data@1.2.5 
+  │ │ ├── is-object@1.0.1 
+  │ │ └── isarray@0.0.1 
+  │ ├── object-array-converter@1.0.1 
+  │ └── xtend@4.0.1 
+  ├── deep-diff@0.3.8 
+  ├── extend@3.0.1 
+  ├── vdom-thunk@3.0.0 
+  └─┬ view-list@2.1.0 
+    ├─┬ attach-css@1.1.0 
+    │ └─┬ css@2.2.1 
+    │   ├─┬ source-map@0.1.43 
+    │   │ └── amdefine@1.0.1 
+    │   ├─┬ source-map-resolve@0.3.1 
+    │   │ ├── atob@1.1.3 
+    │   │ ├── resolve-url@0.2.1 
+    │   │ └── source-map-url@0.3.0 
+    │   └── urix@0.1.0 
+    ├─┬ base-element@3.0.1 
+    │ ├─┬ vdom-to-html@2.3.1 
+    │ │ ├── escape-html@1.0.3 
+    │ │ └─┬ param-case@1.1.2 
+    │ │   └─┬ sentence-case@1.1.3 
+    │ │     └── lower-case@1.1.4 
+    │ └─┬ virtual-dom@2.1.1 
+    │   ├── browser-split@0.0.1 
+    │   ├─┬ error@4.4.0 
+    │   │ ├── camelize@1.0.0 
+    │   │ └── string-template@0.2.1 
+    │   ├─┬ ev-store@7.0.0 
+    │   │ └── individual@3.0.0 
+    │   ├─┬ global@4.3.2 
+    │   │ ├─┬ min-document@2.19.0 
+    │   │ │ └── dom-walk@0.1.1 
+    │   │ └── process@0.5.2 
+    │   ├── next-tick@0.2.2 
+    │   ├── x-is-array@0.1.0 
+    │   └── x-is-string@0.1.0 
+    └── inherits@2.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/data-grid/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","create","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.041 took 9.2747s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require('assert')
+
+module.exports = function createClassName (options) {
+  options = options || {}
+  assert.ok(options.dataType, 'options.dataType property required')
+  assert.ok(options.fieldType, 'options.fieldType property required')
+  assert.ok(options.size, 'options.size property required')
+  return 'data-field data-field-' + options.dataType + ' data-field-' + options.fieldType + ' data-field-' + options.fieldType + '-' + options.size
+}
+ at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/data-grid/node_modules/data-grid/index.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/create-element.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/create-element.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/data-grid/node_modules/global/document.js. Coverage (Term): 82% Coverage (LOC): 92%
+*- File /root/Targets/data-grid/node_modules/min-document/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/min-document/document.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/data-grid/node_modules/dom-walk/index.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/data-grid/node_modules/min-document/dom-comment.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/data-grid/node_modules/min-document/dom-text.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/data-grid/node_modules/min-document/dom-element.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/data-grid/node_modules/min-document/event/dispatch-event.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/data-grid/node_modules/min-document/event/add-event-listener.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/data-grid/node_modules/min-document/event/remove-event-listener.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/data-grid/node_modules/min-document/serialize.js. Coverage (Term): 9% Coverage (LOC): 24%
+*- File /root/Targets/data-grid/node_modules/min-document/dom-fragment.js. Coverage (Term): 55% Coverage (LOC): 59%
+*- File /root/Targets/data-grid/node_modules/min-document/event.js. Coverage (Term): 48% Coverage (LOC): 73%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/apply-properties.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/data-grid/node_modules/is-object/index.js. Coverage (Term): 53% Coverage (LOC): 83%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/is-vhook.js. Coverage (Term): 37% Coverage (LOC): 80%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/is-vnode.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/version.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/is-vtext.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/is-widget.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/handle-thunk.js. Coverage (Term): 34% Coverage (LOC): 32%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/is-thunk.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/h.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/virtual-hyperscript/index.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/data-grid/node_modules/x-is-array/index.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/vnode.js. Coverage (Term): 23% Coverage (LOC): 22%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/vtext.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/virtual-hyperscript/parse-tag.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/data-grid/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/virtual-hyperscript/hooks/soft-set-hook.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/virtual-hyperscript/hooks/ev-hook.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/data-grid/node_modules/ev-store/index.js. Coverage (Term): 63% Coverage (LOC): 64%
+*- File /root/Targets/data-grid/node_modules/individual/one-version.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/data-grid/node_modules/individual/index.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/data-grid/node_modules/deep-diff/index.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/data-grid/node_modules/view-list/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/data-grid/node_modules/base-element/index.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/diff.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vtree/diff.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vnode/vpatch.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vtree/diff-props.js. Coverage (Term): 16% Coverage (LOC): 15%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/patch.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/patch.js. Coverage (Term): 19% Coverage (LOC): 23%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/dom-index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/patch-op.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/vdom/update-widget.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/data-grid/node_modules/vdom-to-html/index.js. Coverage (Term): 20% Coverage (LOC): 22%
+*- File /root/Targets/data-grid/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/data-grid/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/data-grid/node_modules/virtual-dom/virtual-hyperscript/hooks/attribute-hook.js. Coverage (Term): 23% Coverage (LOC): 40%
+*- File /root/Targets/data-grid/node_modules/param-case/param-case.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/data-grid/node_modules/sentence-case/sentence-case.js. Coverage (Term): 36% Coverage (LOC): 42%
+*- File /root/Targets/data-grid/node_modules/lower-case/lower-case.js. Coverage (Term): 45% Coverage (LOC): 76%
+*- File /root/Targets/data-grid/node_modules/sentence-case/vendor/non-word-regexp.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/sentence-case/vendor/camel-case-regexp.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/sentence-case/vendor/trailing-digit-regexp.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/vdom-to-html/create-attribute.js. Coverage (Term): 29% Coverage (LOC): 41%
+*- File /root/Targets/data-grid/node_modules/vdom-to-html/property-config.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/vdom-to-html/void-elements.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/xtend/mutable.js. Coverage (Term): 34% Coverage (LOC): 36%
+*- File /root/Targets/data-grid/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/data-grid/node_modules/attach-css/index.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/data-grid/node_modules/css/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/css/lib/parse/index.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/data-grid/node_modules/css/lib/stringify/index.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /root/Targets/data-grid/node_modules/css/lib/stringify/compress.js. Coverage (Term): 20% Coverage (LOC): 63%
+*- File /root/Targets/data-grid/node_modules/css/lib/stringify/compiler.js. Coverage (Term): 26% Coverage (LOC): 48%
+*- File /root/Targets/data-grid/node_modules/css/lib/stringify/identity.js. Coverage (Term): 15% Coverage (LOC): 55%
+*- File /root/Targets/data-grid/node_modules/data-grid/rows.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/data-grid/node_modules/data-fields/index.js. Coverage (Term): 85% Coverage (LOC): 100%
+*- File /root/Targets/data-grid/node_modules/data-fields/string.js. Coverage (Term): 37% Coverage (LOC): 55%
+*- File /root/Targets/data-grid/node_modules/data-fields/utils/classname.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/data-grid/node_modules/data-fields/number.js. Coverage (Term): 39% Coverage (LOC): 55%
+*- File /root/Targets/data-grid/node_modules/data-fields/url.js. Coverage (Term): 37% Coverage (LOC): 55%
+*- File /root/Targets/data-grid/node_modules/addhttp/index.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/data-grid/node_modules/data-fields/image.js. Coverage (Term): 43% Coverage (LOC): 60%
+*- File /root/Targets/data-grid/node_modules/data-fields/list.js. Coverage (Term): 16% Coverage (LOC): 16%
+*- File /root/Targets/data-grid/node_modules/object-array-converter/index.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

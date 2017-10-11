@@ -1,0 +1,38 @@
+/root/Targets/ormojo-fti
+├── UNMET PEER DEPENDENCY ormojo@^0.1.0
+└── ormojo-fti@0.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ormojo-fti/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0527 took 6.0063s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'ormojo'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/index.js. Coverage (Term): 80% Coverage (LOC): 90%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/EnglishStemmer.js. Coverage (Term): 40% Coverage (LOC): 42%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/TokenPipelineStage.js. Coverage (Term): 79% Coverage (LOC): 100%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/EnglishStopWordFilter.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/StopWordFilter.js. Coverage (Term): 78% Coverage (LOC): 81%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/Field.js. Coverage (Term): 39% Coverage (LOC): 47%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/ForwardIndex.js. Coverage (Term): 41% Coverage (LOC): 55%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/InvertedIndex.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/PrefixNgram.js. Coverage (Term): 49% Coverage (LOC): 63%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/TextIndex.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/SortedSet.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/SparseVector.js. Coverage (Term): 22% Coverage (LOC): 28%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/Tokenizer.js. Coverage (Term): 43% Coverage (LOC): 53%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/TokenPipeline.js. Coverage (Term): 28% Coverage (LOC): 38%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/Trimmer.js. Coverage (Term): 75% Coverage (LOC): 84%
+*- File /root/Targets/ormojo-fti/node_modules/ormojo-fti/lib/ReducibleIndexer.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

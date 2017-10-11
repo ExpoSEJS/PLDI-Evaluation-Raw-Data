@@ -1,0 +1,53 @@
+/root/Targets/narloader
+└─┬ narloader@1.0.0 
+  ├─┬ babel-runtime@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.11.0 
+  ├── fso@2.5.12 
+  ├─┬ jszip@3.1.4 
+  │ ├── core-js@2.3.0 
+  │ ├── es6-promise@3.0.2 
+  │ ├─┬ lie@3.1.1 
+  │ │ └── immediate@3.0.6 
+  │ ├── pako@1.0.6 
+  │ └─┬ readable-stream@2.0.6 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── string_decoder@0.10.31 
+  │   └── util-deprecate@1.0.2 
+  └─┬ nanika-storage@2.6.0 
+    └─┬ ukagaka-install-descript-info@1.0.2 
+      └── encoding-japanese@1.0.26 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/narloader/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","getPrototypeOf","create","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0313 took 7.1612s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/narloader/node_modules/narloader/dist/lib/NarLoader.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/narloader/node_modules/babel-runtime/regenerator/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/narloader/node_modules/regenerator-runtime/runtime-module.js. Coverage (Term): 67% Coverage (LOC): 79%
+*- File /root/Targets/narloader/node_modules/regenerator-runtime/runtime.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/narloader/node_modules/babel-runtime/helpers/classCallCheck.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/narloader/node_modules/babel-runtime/helpers/createClass.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/narloader/node_modules/babel-runtime/core-js/object/define-property.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/narloader/node_modules/core-js/library/fn/object/define-property.js. Coverage (Term): 36% Coverage (LOC): 57%
+*- File /root/Targets/narloader/node_modules/core-js/library/modules/es6.object.define-property.js. Coverage (Term): 41% Coverage (LOC): 100%
+*- File /root/Targets/narloader/node_modules/core-js/library/modules/_export.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/narloader/node_modules/core-js/library/modules/_global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

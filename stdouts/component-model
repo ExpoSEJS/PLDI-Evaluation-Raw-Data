@@ -1,0 +1,70 @@
+/root/Targets/component-model
+└─┬ component-model@0.3.2 
+  ├─┬ component-collection@0.0.4 
+  │ └─┬ enumerable-component@0.3.2  (git://github.com/component/enumerable.git#8eb6a3039fdcb492f092d1d1af310a2f67964e8d)
+  │   └── isarray@0.0.1 
+  ├─┬ component-each@0.2.6 
+  │ ├── component-type@1.0.0 
+  │ └─┬ to-function@2.0.6 
+  │   └── component-props@1.1.1 
+  ├── component-emitter@1.2.1 
+  └─┬ superagent@1.1.0 
+    ├── component-emitter@1.1.2 
+    ├── cookiejar@2.0.1 
+    ├─┬ debug@2.6.9 
+    │ └── ms@2.0.0 
+    ├── extend@1.2.1 
+    ├─┬ form-data@0.1.3 
+    │ ├── async@0.9.2 
+    │ └─┬ combined-stream@0.0.7 
+    │   └── delayed-stream@0.0.5 
+    ├── formidable@1.0.14 
+    ├── methods@1.0.1 
+    ├── mime@1.2.11 
+    ├── qs@2.3.3 
+    ├─┬ readable-stream@1.0.27-1 
+    │ ├── core-util-is@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ └── string_decoder@0.10.31 
+    └── reduce-component@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/component-model/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","parseInt","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0618 took 12.4483s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/component-model/node_modules/component-model/lib/index.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/component-model/node_modules/component-emitter/index.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/component-model/node_modules/component-model/lib/proto.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/component-model/node_modules/component-each/index.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/component-model/node_modules/component-type/index.js. Coverage (Term): 21% Coverage (LOC): 19%
+*- File /root/Targets/component-model/node_modules/to-function/index.js. Coverage (Term): 12% Coverage (LOC): 23%
+*- File /root/Targets/component-model/node_modules/component-props/index.js. Coverage (Term): 14% Coverage (LOC): 27%
+*- File /root/Targets/component-model/node_modules/superagent/lib/node/index.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/component-model/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/component-model/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/component-model/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/component-model/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/component-model/node_modules/formidable/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/component-model/node_modules/formidable/lib/incoming_form.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/component-model/node_modules/formidable/lib/file.js. Coverage (Term): 27% Coverage (LOC): 27%
+*- File /root/Targets/component-model/node_modules/formidable/lib/multipart_parser.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/component-model/node_modules/formidable/lib/querystring_parser.js. Coverage (Term): 34% Coverage (LOC): 52%
+*- File /root/Targets/component-model/node_modules/formidable/lib/octet_parser.js. Coverage (Term): 51% Coverage (LOC): 63%
+*- File /root/Targets/component-model/node_modules/formidable/lib/json_parser.js. Coverage (Term): 28% Coverage (LOC): 41%
+*- File /root/Targets/component-model/node_modules/form-data/lib/form_data.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/component-model/node_modules/combined-stream/lib/combined_stream.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/component-model/node_modules/delayed-stream/lib/delayed_stream.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,370 @@
+/root/Targets/xcompress
+└─┬ xcompress@1.1.44 
+  ├─┬ clean-css@4.1.9 
+  │ └── source-map@0.5.7 
+  ├─┬ commander@2.8.1 
+  │ └── graceful-readlink@1.0.1 
+  └─┬ html-minifier@3.5.5 
+    ├─┬ camel-case@3.0.0 
+    │ ├─┬ no-case@2.3.2 
+    │ │ └── lower-case@1.1.4 
+    │ └── upper-case@1.1.3 
+    ├── commander@2.11.0 
+    ├── he@1.1.1 
+    ├─┬ ncname@1.0.0 
+    │ └── xml-char-classes@1.0.0 
+    ├── param-case@2.1.1 
+    ├── relateurl@0.2.7 
+    └─┬ uglify-js@3.1.2 
+      └── commander@2.11.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/xcompress/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0495 took 4.8554s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var fs = require('fs'),
+    stat = fs.stat,
+    path = require('path');
+require('./lib/Uglifyjs.js');
+var rocker = require('./lib/JsPacker.js');
+var url = path.normalize("./");
+var dest = path.normalize("./dest");
+var CleanCSS = require('clean-css');
+var minify = require('html-minifier').minify;
+var pkg = require('./package.json');
+var util = require('util');
+
+
+// console.log(rocker.pack);
+// <script src="Scripts/Uglifyjs.js"></script>
+// <script src="Scripts/JsPacker.js"></script>
+var program = require('commander');
+program
+    .allowUnknownOption()
+    .version(pkg.version)
+    .option('-c, --comment', 'Keep source comments') // 开启输出注释，默认 true
+    .parse(process.argv);
+var xcompress = module.exports = function xcompress(options) {
+
+    function _pack_(content) {
+
+
+        // if_pack = if_pack || false;
+        var js = content;
+        // var mangle = $('#mangle').prop('checked');
+        var mangle = true;
+        var lengths = [js.length];
+
+        var ast = UglifyJS.parse(js);
+        ast.figure_out_scope();
+        var comp = new UglifyJS.Compressor({
+            sequences: true,
+            properties: true,
+            dead_code: true,
+            drop_debugger: true,
+            unsafe: true,
+            unsafe_comps: false,
+            conditionals: true,
+            comparisons: true,
+            evaluate: true,
+            booleans: false,
+            loops: true,
+            unused: true,
+            hoist_funs: true,
+            hoist_vars: false,
+            if_return: true,
+            join_vars: true,
+            cascade: true,
+            side_effects: true,
+            warnings: true,
+        });
+        ast = ast.transform(comp);
+        ast.figure_out_scope();
+        ast.compute_char_frequency();
+        if (mangle) {
+            ast.mangle_names();
+        }
+        js = ast.print_to_string();
+        lengths.push(js.length);
+
+        // js = rocker.pack(js, 62, true, false);
+
+
+        // js = "(" + js[0] + ")(" + js[1] + "," + js[2] + ")";
+        return js;
+    }
+
+    function bytesToSize(bytes) {
+        if (bytes === 0) return '0 B';
+        var k = 1000, // or 1024
+            sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+            i = Math.floor(Math.log(bytes) / Math.log(k));
+        return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+    };
+
+    function getFirstComment(argument) {
+        // body...
+        if (!program.comment) {
+            return '';
+        }
+        var a = argument.match(/^((\s*(\/\/[^\r\n]*?)?)[\r\n]|[\s\r\n]*\/\*(.|\n|\r)+?\*\/)+/g);
+        if (a) {
+            return a[0].replace(/[\r\n]+/g, '\n').replace(/[\r\n]+$/g, '') + '\n'
+        } else {
+            return '';
+        }
+        // return argument.match(/\/\*(.|\n|\r)+?\*\//g)[0] || '';
+    }
+    var cleanOpts = {
+        compatibility: 'ie7',
+    };
+    // console.log(_pack_('alert(1)'));
+    var copy = function(src, dst) {
+        // 读取目录中的所有文件/目录
+        fs.readdir(src, function(err, files) {
+            if (err) {
+                throw err;
+            }
+            // console.log('总计' + files.length + '文件');
+            // console.log('执行中');
+            files.forEach(function(path) {
+                var _src = src + '/' + path,
+                    _dst = dst + '/' + path,
+                    readable,
+                    writable;
+
+                var srcLength = 0;
+                var dstLength = 0;
+                var dstContent = '';
+
+                if (_src != '.\\/xcompress.js' && _src != '.\\/package.json' && _src != '.\\/README.md' && _src != '.\\/lib' && _src != '.\\/node_modules' && _src != '.\\/dest') {
+                    console.log(_src);
+                    stat(_src, function(err, stats) {
+                        if (err) {
+                            throw err;
+                        }
+                        // console.log(stats)
+                        if (stats.isFile()) {
+                            // console.log(stats);
+                            // 处理源文件
+                            // console.log(_src);
+                            // 判断文件类型
+                            var fileType = _src.split('.')[_src.split('.').length - 1];
+                            switch (fileType) {
+                                case 'js':
+                                case 'json':
+                                    fs.readFile(_src, {
+                                        encoding: 'utf-8'
+                                    }, function(err, data) {
+                                        if (err) throw err;
+                                        var srcLength = data.length; // 源大小
+                                        var comment = getFirstComment(data); // 获得注释
+                                        var dstContent = _pack_(data);
+
+                                        var dstContentPack = rocker.pack(dstContent, 62, true, false); // 混淆加密的内容
+                                        if (dstContent.length > dstContentPack.length) {
+                                            // 混淆后更小的情况
+                                            fs.writeFile(_dst, comment + dstContentPack.replace(/[\r\n]+$/g, ''), {
+                                                encoding: 'utf-8'
+                                            }, function(err) {
+                                                if (err) throw err;
+                                                console.log('处理' + path + '完毕,压缩前' + bytesToSize(srcLength) + ',压缩后' + bytesToSize(dstContentPack.length) + ',压缩率' + parseInt((dstContentPack.length / srcLength * 10000)) / 100 + '%');
+                                            });
+                                        } else {
+                                            // 混淆后变大的情况
+                                            fs.writeFile(_dst, comment + dstContent.replace(/[\r\n]+$/g, ''), {
+                                                encoding: 'utf-8'
+                                            }, function(err) {
+                                                if (err) throw err;
+                                                console.log('处理' + path + '完毕,压缩前' + bytesToSize(srcLength) + ',压缩后' + bytesToSize(dstContent.length) + ',压缩率' + parseInt((dstContent.length / srcLength * 10000)) / 100 + '%');
+                                            });
+                                        }
+                                        // else {
+                                        //     // 复制流
+                                        //     readable = fs.createReadStream(_src);
+                                        //     writable = fs.createWriteStream(_dst);
+                                        //     readable.pipe(writable);
+                                        //     console.log('处理' + path + '完毕，未压缩');
+                                        // }
+                                    });
+                                    break;
+                                case 'css':
+                                    fs.readFile(_src, {
+                                        encoding: 'utf-8'
+                                    }, function(err, data) {
+                                        if (err) throw err;
+                                        var srcLength = data.length;
+                                        var comment = getFirstComment(data);
+                                        // console.log(comment)
+                                        var minified = new CleanCSS(cleanOpts).minify(data);
+                                        fs.writeFile(_dst, comment + minified.styles.replace(/\/\*(.|\n|\r)+?\*\//g, ''), {
+                                            encoding: 'utf-8'
+                                        }, function(err) {
+                                            if (err) throw err;
+                                            console.log('处理' + path + '完毕,压缩前' + bytesToSize(srcLength) + ',压缩后' + bytesToSize(minified.styles.length) + ',压缩率' + parseInt((minified.styles.length / srcLength * 10000)) / 100 + '%,' /*+ '' + minified.stats */ + '错误' + (minified.errors == '' ? '0' : minified.errors) + ',警告' + (minified.warnings == '' ? '0' : minified.warnings));
+                                            // console.log('处理' + path + '完毕,压缩前' + srcLength + ',压缩后' + dstContent.length);
+                                        });
+                                        // console.log(minified);
+                                        // dstContent = _pack_(data);
+                                        // if (srcLength > dstContent.length) {
+                                        //     // 创建文件
+                                        //     fs.writeFile(_dst, dstContent, {
+                                        //         encoding: 'utf-8'
+                                        //     }, function(err) {
+                                        //         if (err) throw err;
+                                        //         console.log('处理' + path + '完毕,压缩前' + srcLength + ',压缩后' + dstContent.length);
+                                        //     });
+                                        // } else {
+                                        //     // 复制流
+                                        //     readable = fs.createReadStream(_src);
+                                        //     writable = fs.createWriteStream(_dst);
+                                        //     readable.pipe(writable);
+                                        //     console.log('处理' + path + '完毕，未压缩');
+                                        // }
+                                    });
+
+
+
+                                    break;
+                                case 'html':
+                                case 'htm':
+
+                                    fs.readFile(_src, {
+                                        encoding: 'utf-8'
+                                    }, function(err, data) {
+                                        if (err) throw err;
+                                        var srcLength = data.length;
+                                        // console.log(comment)
+                                        var result = minify(data, {
+
+                                            removeComments: true,
+                                            removeCommentsFromCDATA: true,
+                                            removeCDATASectionsFromCDATA: true,
+
+
+                                            collapseWhitespace: true,
+                                            // conservativeCollapse: true,
+                                            // preserveLineBreaks:true,
+
+                                            collapseBooleanAttributes: true,
+
+
+                                            removeAttributeQuotes: false,
+                                            removeRedundantAttributes: true,
+                                            useShortDoctype: true, // HTML5,
+                                            removeEmptyAttributes: true,
+                                            removeScriptTypeAttributes: true,
+                                            removeStyleLinkTypeAttributes: true,
+                                            removeOptionalTags: false,
+                                            removeIgnored: true,
+                                            removeEmptyElements: false,
+                                            minifyURLs: true,
+
+
+                                        });
+
+
+                                        result = result.replace(/(<style[^>]*?>)((?:.|\r|\n)*?)(<\/style>)/g, function(a, b, c, d) {
+                                            var minified = new CleanCSS(cleanOpts).minify(c);
+                                            // console.log(minified.styles);
+                                            return b + minified.styles + d;
+                                        })
+                                        result = result.replace(/(<script[^>]*?>)((?:.|\r|\n)*?)(<\/script>)/g, function(a, b, c, d) {
+                                            // console.log(minified.styles);
+
+                                            // var dstContent;
+                                            try {
+                                                return b + _pack_(c) + d;
+                                            } catch (e) {
+                                                // console.log('========================'+a);
+                                                return a;
+                                            }
+
+
+                                        })
+                                        result = result.replace(/\r|\n|\t/g, '');
+                                        fs.writeFile(_dst, result, {
+                                            encoding: 'utf-8'
+                                        }, function(err) {
+                                            if (err) throw err;
+                                            console.log('处理' + path + '完毕,压缩前' + bytesToSize(srcLength) + ',压缩后' + bytesToSize(result.length) + ',压缩率' + parseInt((result.length / srcLength * 10000)) / 100 + '%');
+                                            // console.log('处理' + path + '完毕,压缩前' + srcLength + ',压缩后' + dstContent.length);
+                                        });
+                                    });
+
+                                    break;
+                                default:
+                                    readable = fs.createReadStream(_src);
+                                    writable = fs.createWriteStream(_dst);
+                                    readable.pipe(writable);
+                                    break;
+                            }
+
+
+                            // readable = fs.createReadStream(_src);
+                            // writable = fs.createWriteStream(_dst);
+                            // readable.pipe(writable);
+
+                            //创建文件
+                            // var data = 1;
+                            // fs.writeFile(_dst, data, 'ascii', function(err) {
+                            //     if (err) {
+                            //         console.log('写入文件失败');
+                            //     } else {
+                            //         console.log('保存成功, 赶紧去看看乱码吧');
+                            //     }
+                            // })
+                        } else if (stats.isDirectory()) {
+                            exists(_src, _dst, copy);
+                        }
+
+                    });
+                }
+
+            });
+        });
+    };
+    var exists = function(src, dst, cb) {
+        fs.exists(dst, function(exists) {
+            // 已存在
+            if (exists) {
+                cb(src, dst);
+            }
+            // 不存在
+            else {
+                fs.mkdir(dst, function() {
+                    cb(src, dst);
+                });
+            }
+        });
+    };
+    // 复制目录
+    exists(url, dest, copy);
+}
+
+xcompress(); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

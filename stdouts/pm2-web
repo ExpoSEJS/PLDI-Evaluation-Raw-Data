@@ -1,0 +1,38 @@
+
+> mdns2@2.1.4 install /root/Targets/pm2-web/node_modules/mdns2
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/pm2-web/node_modules/mdns2/build'
+  CXX(target) Release/obj.target/dns_sd_bindings/src/dns_sd.o
+dns_sd_bindings.target.mk:148: recipe for target 'Release/obj.target/dns_sd_bindings/src/dns_sd.o' failed
+make: Leaving directory '/root/Targets/pm2-web/node_modules/mdns2/build'
+/root/Targets/pm2-web
+└── pm2-web@2.1.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pm2-web/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","isArray","parse"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0464 took 7.4852s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/pm2-web/node_modules/pm2-web/pm2-web.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/pm2-web/node_modules/pm2-web/server/app.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/pm2-web/node_modules/winston/lib/winston.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/pm2-web/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
+*- File /root/Targets/pm2-web/node_modules/winston/lib/winston/transports.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/pm2-web/node_modules/winston/lib/winston/common.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/pm2-web/node_modules/cycle/cycle.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/pm2-web/node_modules/winston/lib/winston/config.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/pm2-web/node_modules/colors/colors.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

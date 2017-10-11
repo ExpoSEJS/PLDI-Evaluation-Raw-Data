@@ -1,0 +1,31 @@
+/root/Targets/minimal-lisp
+└── minimal-lisp@1.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/minimal-lisp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0592 took 5.4481s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (1:1038) on program for(_='rekkturn z;z|]=$in#,iL))K.slice(__1K^,rI(nHt(G[1]RI)QnRPGPQ7"==6[0]5if4letE{E e=Dn5C6C)BBDZZiH_1Y),Xe5WIXt=WVJSON.Un=T[e)=>t.A[2]ne){zG # for(,e,"utf8"Object.P,"throw(...:n"C:en.length-1#stanceof 4("}else 	typeof  Array!HKziHQ;Uparse(functionckate(kquik("fs").kadFileSync(Y)VR]|module.exports=H){ eH){;n&&C# e&&e[C].M;)Te[C]n^|n} GnQ{;;){4(4(TeHIXdefBzr[P$GQ;~Z7|e.M=1}`BzP;.-2e?WR$e:t}.t.apply(W_2K}tryBtry{z7}catch(L([R]I,]K	fnZL(PIK}|e.A=[I,P]}EB{r=r);E eP)e%2&&(r[P-1]$GP]Q);T	doY,Xr);Tn[]	4BT7?:n[3];elseDiHV;4(!)zte^;T5I=i(,R^}}}E i=(eLQ{zr?(i=i).some(H,t"&6n?i[t+1]$r_t):(i[n$r[t],0)Xi):e?e.map(nGCLK:"6e?ei?i]:n.(e+" not found"):e}|Tassign(nX{js:evalvalGW,nX"====<<++--**//PLsaCP,typeC,newnew(C.b#dn)XdeldeEe C[P],{ C}IeadCXslurpCXloadGW)XnXkpUstr#g4y(GWXnK})}';G=/[-T-ZB-E4-7P-RG-I^_KL#$|zk]/.exec(_);)with(_.split(G))_=join(shift());eval(_) at SyntaxError: 'with' in strict mode (1:1038)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseFor (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1004:22)
+    at Parser.pp$1.parseForStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:813:17)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:691:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

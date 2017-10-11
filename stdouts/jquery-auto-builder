@@ -1,0 +1,120 @@
+/root/Targets/jquery-auto-builder
+└─┬ jquery-auto-builder@0.1.4 
+  ├── async@0.2.10 
+  ├── minimist@0.1.0 
+  ├── mkpath@0.1.0 
+  └── requirejs@2.3.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jquery-auto-builder/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0367 took 4.6391s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+// -*- js -*-
+
+"use strict";
+
+var argv = require('minimist')(process.argv.slice(2),{ boolean: "d" , string: "v" }),
+	jqParser = require("../lib/jqParser"),
+	jqBuilder = require("../lib/jqBuilder"),
+	sys = require("util");
+
+if (argv._.length < 1) {
+
+	sys.log("No files given.");
+
+	process.exit(1);
+
+}
+
+if (argv.v === "1") {
+
+	sys.log("Building latest 1.* jQuery stable version (1.11.1)");
+
+	argv.v = "1.11.1";//jQuery v1.* latest stable
+
+} else if (argv.v === "2") {
+	
+	sys.log("Building latest 2.* jQuery stable version (2.1.1)");
+	
+	argv.v = "2.1.1"; //jQuery v2.* latest stable
+
+} else if (argv.v === undefined) {
+	
+	sys.log("Building latest jQuery stable version (2.1.1)");
+
+} else if (argv.v !== "1.11.1" && argv.v !== "2.1.1") {
+
+	sys.log("Invalid version given. Falling back to latest (2.1.1)");
+
+	argv.v = "2.1.1";
+
+}
+
+
+function build(ver, mods){
+
+	sys.log("Ignoring modules: \n");
+
+	jqBuilder({
+		ver: ver,
+		exclude: mods,
+		dev: argv.d || false,
+		output: argv.o
+	}, function(err){
+
+		if (err) {
+			
+			sys.error(err);
+			
+			process.exit(1);
+
+		} else {
+
+			sys.log("JQuery custom version built successfully!");
+
+		}
+	
+	});
+
+}
+
+jqParser.getModules(argv._, function(err, excludeMods){
+
+	if(err){
+	
+		sys.error(err);
+
+		process.exit(1);
+
+	}else{
+		
+		build(argv.v, excludeMods);
+
+	}
+});
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

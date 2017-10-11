@@ -1,0 +1,98 @@
+/root/Targets/recora
+└─┬ recora@0.0.2 
+  ├─┬ color-forge@1.0.18 
+  │ └─┬ color-space@1.14.7 
+  │   ├── husl@5.0.3 
+  │   └─┬ mumath@3.3.4 
+  │     └── almost-equal@1.1.0 
+  ├── gamma@1.0.0 
+  ├── mathp@1.5.0 
+  ├─┬ moment-timezone@0.5.13 
+  │ └── moment@2.18.1 
+  └── ramda@0.18.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/recora/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0624 took 7.425s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (46:6) on program import { __, has, all, propOr, pickBy } from 'ramda';
+import parse from './parse';
+import baseContext from './baseContext';
+import utcTime from './baseContext/utcTime';
+import { notNil } from './util';
+
+// TODO: mapObj -> map, createMapEntry -> objOf
+
+export default class Recora {
+  constructor(locale, config = {}) {
+    this.locale = locale || 'en';
+
+    let { currentTime } = config || {};
+
+    const importantTimeValuesSatisfied = all(has(__, currentTime), [
+      'year',
+      'month',
+      'date',
+    ]);
+
+    if (importantTimeValuesSatisfied) {
+      currentTime = {
+        years: propOr(utcTime.years, 'year', currentTime),
+        months: propOr(utcTime.months, 'month', currentTime),
+        date: propOr(utcTime.date, 'date', currentTime),
+        hours: propOr(utcTime.hours, 'hours', currentTime),
+        minutes: propOr(utcTime.minutes, 'minutes', currentTime),
+        timezone: propOr(utcTime.timezone, 'timezone', currentTime),
+        utcOffset: propOr(utcTime.utcOffset, 'utcOffset', currentTime),
+      };
+    } else {
+      currentTime = {};
+    }
+
+    this.config = pickBy(notNil, {
+      si: propOr(null, 'si', config),
+      units: propOr(null, 'units', config),
+      constants: propOr(null, 'constants', config),
+      currentTime,
+    });
+  }
+
+  getContext(text) {
+    const { locale, config } = this;
+    return {
+      ...baseContext,
+      ...config,
+      locale,
+      text,
+    };
+  }
+
+  parse(text) {
+    const context = this.getContext(text);
+    return parse(context) || context;
+  }
+}
+ at SyntaxError: Unexpected token (46:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2189:12)
+    at Parser.pp$3.parsePropertyName (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2052:101)
+    at Parser.pp$3.parseObj (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1988:14)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1805:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

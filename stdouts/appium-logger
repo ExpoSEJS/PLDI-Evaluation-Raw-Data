@@ -1,0 +1,61 @@
+/root/Targets/appium-logger
+└─┬ appium-logger@2.1.0 
+  ├─┬ babel-runtime@5.8.24 
+  │ └── core-js@1.2.7 
+  ├─┬ npmlog@2.0.4 
+  │ ├── ansi@0.3.1 
+  │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ ├── delegates@1.0.0 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── safe-buffer@5.1.1 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ └─┬ gauge@1.2.7 
+  │   ├── has-unicode@2.0.1 
+  │   ├── lodash.pad@4.5.1 
+  │   ├── lodash.padend@4.6.1 
+  │   └── lodash.padstart@4.6.1 
+  └─┬ source-map-support@0.3.3 
+    └─┬ source-map@0.1.32 
+      └── amdefine@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/appium-logger/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Object","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0639 took 4.9196s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/appium-logger/node_modules/appium-logger/build/lib/logger.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/appium-logger/node_modules/babel-runtime/helpers/sliced-to-array.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/appium-logger/node_modules/babel-runtime/core-js/get-iterator.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/fn/get-iterator.js. Coverage (Term): 54% Coverage (LOC): 80%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/web.dom.iterable.js. Coverage (Term): 52% Coverage (LOC): 80%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/es6.array.iterator.js. Coverage (Term): 26% Coverage (LOC): 22%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.add-to-unscopables.js. Coverage (Term): 77% Coverage (LOC): 100%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.iter-step.js. Coverage (Term): 55% Coverage (LOC): 57%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.iterators.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.to-iobject.js. Coverage (Term): 69% Coverage (LOC): 83%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.iobject.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.cof.js. Coverage (Term): 56% Coverage (LOC): 83%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.defined.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.iter-define.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.library.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.export.js. Coverage (Term): 7% Coverage (LOC): 14%
+*- File /root/Targets/appium-logger/node_modules/core-js/library/modules/$.global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

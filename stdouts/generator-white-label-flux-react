@@ -1,0 +1,87 @@
+/root/Targets/generator-white-label-flux-react
+└─┬ generator-white-label-flux-react@2.0.11 
+  ├─┬ gulp-accessibility@3.0.1
+  │ └─┬ access-sniff@3.0.1
+  │   └── HTML_CodeSniffer@2.0.7  (git://github.com/squizlabs/HTML_CodeSniffer.git#d209ce54876657858a8a01528ad812cd234f37f0)
+  ├─┬ gulp-imagemin@3.3.0
+  │ └─┬ imagemin-svgo@5.2.2
+  │   └─┬ svgo@0.7.2
+  │     └─┬ csso@2.3.2
+  │       └── clap@1.2.3 
+  └── UNMET PEER DEPENDENCY karma@1.7.1
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/generator-white-label-flux-react/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0677 took 3.1438s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<html id="index" lang="en-us" dir="ltr">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="description here">
+        <meta name="keywords" content="keywords, here">
+        <meta name="apple-mobile-web-app-title" content="app title here">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="url here">
+        <meta name="twitter:title" content="title here">
+        <meta name="twitter:description" content="description here">
+        <meta name="twitter:image" content="//cdn.example.com/release/1459374564/assets/image/apple-touch-icon.png">
+        <meta property="og:title" content="title here">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="url here">
+        <meta property="og:image" content="//cdn.example.com/release/1459374564/assets/image/apple-touch-icon.png">
+        <meta property="og:site_name" content="site here">
+        <meta property="og:description" content="site here">
+        <meta property="og:locale" content="en_US">
+        <meta property="fb:admins" content="admins here">
+        <meta property="fb:app_id" content="app id here">
+        <link rel="icon" type="image/x-icon" href="//cdn.example.com/release/1459374564/assets/image/favicon.png">
+        <link rel="apple-touch-icon-precomposed" href="//cdn.example.com/release/1459374564/assets/image/apple-touch-icon.png">
+        <link rel="author" href="https://plus.google.com/">
+        <link rel="stylesheet" type="text/css" media="all" href="//cdn.example.com/release/1459374564/assets/style/global.css">
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <p>Build your site here.</p>
+        <script>
+            (function() {
+                'use strict';
+                window.env = {
+                    www: '//www.example.com/',
+                    cdn: '//cdn.example.com/release/1459374564/',
+                    service: '//service.example.com/',
+                    version: '1459374564',
+                    googleAnalyticsId: 'UA-XXXXXX-X',
+                    fbAppId: 'app id here'
+                };
+            })();
+        </script>
+        <script async src="//cdn.example.com/release/1459374564/assets/script/global.compiled.js"></script>
+    </body>
+</html>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

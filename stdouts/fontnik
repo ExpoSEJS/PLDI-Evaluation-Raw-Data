@@ -1,0 +1,42 @@
+
+> fontnik@0.5.0 install /root/Targets/fontnik/node_modules/fontnik
+> node-pre-gyp install --fallback-to-build=true
+
+make: Entering directory '/root/Targets/fontnik/node_modules/fontnik/build'
+  ACTION binding_gyp_action_before_build1_target_install_mason mason_packages
+  TOUCH Release/obj.target/action_before_build1.stamp
+  ACTION binding_gyp_action_before_build2_target_run_protoc_glyphs Release/obj/gen/glyphs.pb.cc
+  TOUCH Release/obj.target/action_before_build2.stamp
+  CXX(target) Release/obj.target/fontnik/src/node_fontnik.o
+  CXX(target) Release/obj.target/fontnik/src/glyphs.o
+  CXX(target) Release/obj.target/fontnik/gen/glyphs.pb.o
+  SOLINK_MODULE(target) /root/Targets/fontnik/node_modules/fontnik/lib/binding/fontnik.node
+  COPY Release/fontnik.node
+make: Leaving directory '/root/Targets/fontnik/node_modules/fontnik/build'
+/root/Targets/fontnik
+└── fontnik@0.5.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fontnik/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [3 done /0 queued / 0 running / 2 errors / 44% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0509 took 4.1334s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: First argument must be a font buffer
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 4.2346 took 5.7491s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1}
+* Error: TypeError: First argument must be an object of options
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 10.0645 took 6.0777s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/fontnik/node_modules/fontnik/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 2 errors **

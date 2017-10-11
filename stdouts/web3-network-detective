@@ -1,0 +1,118 @@
+/root/Targets/web3-network-detective
+└─┬ web3-network-detective@1.0.0 
+  └─┬ web3@0.17.0-beta 
+    ├── bignumber.js@2.0.7  (git+https://github.com/debris/bignumber.js.git#94d7146671b9719e00a09c29b01a691bc85048c2)
+    ├── crypto-js@3.1.8 
+    ├── utf8@2.1.2 
+    └── xmlhttprequest@1.8.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/web3-network-detective/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0582 took 8.1153s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+const Web3 = require('web3');
+const web3 = new Web3();
+const contracts = require('./contracts/build/environments.json');
+
+// base callback return object
+const baseCallbackResult = {
+  network: null,
+  testnet: false,
+  mainnet: false,
+  custom: false,
+};
+
+// testnet result
+const testnetObjectResult = Object.assign({}, baseCallbackResult, {
+  testnet: true,
+  network: 'testnet',
+});
+
+// testnet result
+const mainnetObjectResult = Object.assign({}, baseCallbackResult, {
+  mainnet: true,
+  network: 'mainnet',
+});
+
+// custom result
+const customObjectResult = Object.assign({}, baseCallbackResult, {
+  custom: true,
+  network: 'custom',
+});
+
+// default module export
+function networkDetective(web3Provider, callback) {
+  // set the current provider
+  web3.setProvider(web3Provider);
+
+  // NetworkSpy factory object
+  const networkSpy = web3.eth.contract(JSON.parse(contracts.testnet.NetworkSpy.interface));
+
+  // check testnet
+  const testnetNetworkSpy = networkSpy.at(contracts.testnet.NetworkSpy.address);
+
+  // check mainnet
+  const mainnetNetworkSpy = networkSpy.at(contracts.mainnet.NetworkSpy.address);
+
+  // testnet spy first
+  testnetNetworkSpy.testnet((testnetError, testnetResult) => {
+    if (testnetError) {
+      return callback(testnetError, null);
+    }
+
+    // check if testnet
+    if (testnetResult === true) {
+      callback(null, testnetObjectResult);
+    } else {
+      // testnet spy first
+      mainnetNetworkSpy.mainnet((mainnetError, mainnetResult) => {
+        if (mainnetError) {
+          return callback(mainnetError, null);
+        }
+
+        // check if mainnet or just custom
+        if (mainnetResult === true) {
+          callback(null, mainnetObjectResult);
+        } else {
+          callback(null, customObjectResult);
+        }
+
+        // consitent return
+        return null;
+      });
+    }
+
+    // consitent return
+    return null;
+  });
+}
+
+
+// export default object
+module.exports = networkDetective;
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

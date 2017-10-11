@@ -1,0 +1,168 @@
+/root/Targets/fundoc
+└─┬ fundoc@0.0.10 
+  ├── commander@2.11.0 
+  ├─┬ fs-extra@0.26.7 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ ├── klaw@1.3.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├─┬ inflight@1.0.6 
+  │     │ └── wrappy@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     └── once@1.4.0 
+  └─┬ recursive-readdir@1.3.0 
+    └─┬ minimatch@0.3.0 
+      ├── lru-cache@2.7.3 
+      └── sigmund@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fundoc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.093 took 2.4567s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+const cmd = require('commander');
+const parser = require('./lib/parsers/file-parser.js');
+const fs = require('fs');
+const pjson = require('./package.json');
+
+cmd
+  .version(pjson.version)
+  .usage('[options] <file> or <directory>')
+  .option('-d, --directory [dir]', 'A directory that contains source code')
+  .option('-f, --file [file]', 'A source code file')
+  .option('-p, --parse-type [text]', 'Parse type from a passed text')
+  .option('-o, --output [file]', 'Save result as a JSON file')
+  .option('--print', 'Print result in a terminal')
+  .parse(process.argv);
+
+const _onResultAction = result => {
+  if (cmd.output) {
+    fs.writeFile(cmd.output, JSON.stringify(result), err => {
+      if (err) {
+        console.log(err.message);
+      }
+    });
+  }
+  if (cmd.print) {
+    console.log(result);
+  }
+}
+
+/**
+ * Takes a directory path and return a promise, which returns an array of objects, which
+ * represent a parsed files of that directory. Also it does some action (depends on passed
+ * command line flags)
+ *     -o or --output -  saves result in a file
+ *     --print - just prints result
+ * @ftype parseDir:: String -> Promise [Object]
+ */
+const parseDir = dirname => {
+  return new Promise((resolve, reject) => {
+    parser.parseDirectory(dirname)
+      .then(result => {
+        resolve(result);
+        _onResultAction(result);
+      })
+      .catch(err => {
+        if (cmd.print) {
+          console.log(err.message);
+          reject(err);
+        }
+      });
+  });
+}
+
+/**
+ * Takes a file path and return a promise, which contains parsed file,
+ * and then does some action (print or save in file, depends on passed command line flag)
+ *     -o or --output -  saves result in a file
+ *     --print - just prints result
+ * @ftype parseFile :: String -> Promise Object
+ */
+const parseFile = filePath => {
+  return new Promise((resolve, reject) => {
+    parser.parseFile(filePath)
+      .then(result => {
+
+        resolve(result);
+        _onResultAction(result);
+      })
+      .catch(err => {
+        if (cmd.print) {
+          console.log(err.message);
+          reject(err);
+        }
+      });
+  });
+}
+
+/**
+ * Takes type annotations as a string and returns object, which contains
+ * parsed information about that type. Also it does some action (print or save in file,
+ * depends on passed command line flag)
+ *     -o or --output -  saves result in a file
+ *     --print - just prints result
+ * @ftype parseType :: String -> Object
+ */
+const parseType = text => {
+  try {
+    const result = parser.parseType(text)
+    if (cmd.print) {
+      console.log(result);
+    }
+    return result;
+  } catch (err) {
+    if (cmd.print) {
+      console.log(err.message);
+    } else {
+      throw err;
+    }
+  }
+}
+
+if (cmd.directory) {
+  parseDir(cmd.directory);
+} else if (cmd.parseType) {
+  parseType(cmd.parseType);
+} else if (cmd.file) {
+  parseFile(cmd.file);
+}
+
+module.exports = {
+  parseDir,
+  parseFile,
+  parseType
+}
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

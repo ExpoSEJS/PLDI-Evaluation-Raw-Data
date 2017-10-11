@@ -1,0 +1,151 @@
+
+> bson@0.1.8 install /root/Targets/webappmonitor/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/webappmonitor/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:90: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/webappmonitor/node_modules/bson/build'
+
+> raw-socket@1.5.1 install /root/Targets/webappmonitor/node_modules/raw-socket
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/webappmonitor/node_modules/raw-socket/build'
+  CXX(target) Release/obj.target/raw/src/raw.o
+  SOLINK_MODULE(target) Release/obj.target/raw.node
+  COPY Release/raw.node
+make: Leaving directory '/root/Targets/webappmonitor/node_modules/raw-socket/build'
+
+> ws@0.4.32 install /root/Targets/webappmonitor/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/webappmonitor/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/webappmonitor/node_modules/ws/build'
+/root/Targets/webappmonitor
+└─┬ webappmonitor@3.2.0 
+  ├── async@0.1.22 
+  ├── config@0.4.32 
+  ├── connect-flash@0.1.0 
+  ├── ejs@0.8.3 
+  ├─┬ express@3.2.0 
+  │ ├── buffer-crc32@0.2.13 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.6 
+  │ │ ├── buffer-crc32@0.1.1 
+  │ │ ├── bytes@0.2.0 
+  │ │ ├── formidable@1.0.11 
+  │ │ ├── pause@0.0.1 
+  │ │ └── qs@0.5.1 
+  │ ├── cookie@0.0.5 
+  │ ├── cookie-signature@1.0.1 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├── express-partials@0.1.1 
+  ├─┬ js-yaml@2.1.0 
+  │ ├─┬ argparse@0.1.16 
+  │ │ ├── underscore@1.7.0 
+  │ │ └── underscore.string@2.4.0 
+  │ └── esprima@1.0.4 
+  ├── moment@2.1.0 
+  ├─┬ mongoose@3.6.7 
+  │ ├── hooks@0.2.1 
+  │ ├─┬ mongodb@1.2.14 
+  │ │ └── bson@0.1.8 
+  │ ├── mpath@0.1.1 
+  │ ├─┬ mpromise@0.2.1 
+  │ │ └── sliced@0.0.4 
+  │ ├── ms@0.1.0 
+  │ ├── muri@0.3.1 
+  │ └── sliced@0.0.3 
+  ├── mongoose-lifecycle@1.0.0 
+  ├─┬ net-ping@1.1.7 
+  │ └─┬ raw-socket@1.5.1 
+  │   └── nan@2.3.5 
+  ├─┬ nodemailer@0.3.35 
+  │ ├─┬ mailcomposer@4.0.2 
+  │ │ ├─┬ buildmail@4.0.1 
+  │ │ │ ├── addressparser@1.0.1 
+  │ │ │ ├── libbase64@0.1.0 
+  │ │ │ ├── libqp@1.1.0 
+  │ │ │ ├── nodemailer-fetch@1.6.0 
+  │ │ │ ├── nodemailer-shared@1.1.0 
+  │ │ │ └── punycode@1.4.1 
+  │ │ └─┬ libmime@3.0.0 
+  │ │   └── iconv-lite@0.4.15 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ simplesmtp@0.3.35 
+  │   ├── rai@0.1.12 
+  │   └── xoauth2@0.1.8 
+  ├── semver@1.1.0 
+  ├─┬ socket.io@0.9.14 
+  │ ├── base64id@0.1.0 
+  │ ├── policyfile@0.0.4 
+  │ ├── redis@0.7.3 
+  │ └─┬ socket.io-client@0.9.11 
+  │   ├─┬ active-x-obfuscator@0.0.1 
+  │   │ └── zeparser@0.0.5 
+  │   ├── uglify-js@1.2.5 
+  │   ├─┬ ws@0.4.32 
+  │   │ ├── commander@2.1.0 
+  │   │ ├── nan@1.0.0 
+  │   │ ├── options@0.0.6 
+  │   │ └── tinycolor@0.0.1 
+  │   └── xmlhttprequest@1.4.2 
+  └─┬ webpagetest@0.2.0 
+    ├── commander@2.0.0 
+    ├─┬ mocha@1.13.0 
+    │ ├── diff@1.0.7 
+    │ ├─┬ glob@3.2.3 
+    │ │ ├── graceful-fs@2.0.3 
+    │ │ ├── inherits@2.0.3 
+    │ │ └─┬ minimatch@0.2.14 
+    │ │   ├── lru-cache@2.7.3 
+    │ │   └── sigmund@1.0.1 
+    │ ├── growl@1.7.0 
+    │ └─┬ jade@0.26.3 
+    │   └── mkdirp@0.3.0 
+    └─┬ xml2js@0.2.8 
+      └── sax@0.5.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/webappmonitor/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 27% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0583 took 9.9935s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/webappmonitor/node_modules/webappmonitor/app.js. Coverage (Term): 7% Coverage (LOC): 4%
+*- File /root/Targets/webappmonitor/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/webappmonitor/node_modules/express/lib/express.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/webappmonitor/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/webappmonitor/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/webappmonitor/node_modules/connect/lib/proto.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/webappmonitor/node_modules/connect/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 40%
+*- File /root/Targets/webappmonitor/node_modules/cookie-signature/index.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/webappmonitor/node_modules/bytes/index.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/webappmonitor/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/webappmonitor/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- File /root/Targets/webappmonitor/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/webappmonitor/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/webappmonitor/node_modules/connect/lib/patch.js. Coverage (Term): 26% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

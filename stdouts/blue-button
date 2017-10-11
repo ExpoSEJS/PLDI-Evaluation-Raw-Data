@@ -1,0 +1,121 @@
+/root/Targets/blue-button
+└── blue-button@1.10.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/blue-button/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","WeakMap","max","Array"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0303 took 16.802s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program "use strict";
+
+var assert = require("assert");
+var common = require("./common");
+
+var deepForEach = common.deepForEach;
+
+var componentInstance = {};
+
+componentInstance.pathToTop = function () {
+    function chainUp(c) {
+        var ret = [c];
+        if (!c.parent) {
+            return ret;
+        }
+        [].push.apply(ret, chainUp(c.parent));
+        return ret;
+    }
+
+    return chainUp(this);
+};
+
+componentInstance.cleanupTree = function (sourceKey) {
+    deepForEach(this, {
+        pre: function (v) {
+            if (componentInstance.isPrototypeOf(v)) {
+                return v.js;
+            }
+            return v;
+        },
+        post: function (v) {
+            if (v && v.cleanup) {
+                v.cleanup(sourceKey);
+            }
+        }
+    });
+};
+
+componentInstance.cleanup = function (sourceKey) {
+    var steps = this.component.overallCleanupSteps(sourceKey);
+    steps.forEach(function (stepObj) {
+        stepObj.value.call(this);
+    }, this);
+    return this;
+};
+
+componentInstance.setJs = function (path, val) {
+    var parts = path.split(/\./);
+    var hook = this.js;
+    var i;
+
+    for (i = 0; i < parts.length - 1; i++) {
+        hook = hook[parts[i]] || (hook[parts[i]] = {});
+    }
+    hook[parts[i]] = val;
+};
+
+componentInstance.run = function (node, sourceKey) {
+    this.node = node;
+    var parsers = this.component.overallParsers(sourceKey);
+    if (0 === parsers.length) {
+        assert(node === null || -1 === ['object'].indexOf(typeof node));
+        this.js = node;
+    } else {
+        parsers.forEach(function (p) {
+            p.run(this, node, sourceKey);
+        }, this);
+        return this;
+    }
+};
+
+componentInstance.toJSON = function () {
+    return deepForEach(this, {
+        pre: function (o) {
+            if (componentInstance.isPrototypeOf(o)) {
+                return o.js;
+            }
+            return o;
+        }
+    });
+};
+
+module.exports = componentInstance;
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/blue-button/node_modules/blue-button/index.js. Coverage (Term): 26% Coverage (LOC): 38%
+*- File /root/Targets/blue-button/node_modules/blue-button/lib/sense.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/blue-button/node_modules/blue-button-xml/index.js. Coverage (Term): 39% Coverage (LOC): 63%
+*- File /root/Targets/blue-button/node_modules/blue-button-xml/lib/component.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/blue-button/node_modules/blue-button-xml/lib/common.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/blue-button/node_modules/blue-button-xml/lib/cleanup.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/blue-button/node_modules/lodash/index.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

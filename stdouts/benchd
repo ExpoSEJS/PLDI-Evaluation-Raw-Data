@@ -1,0 +1,527 @@
+/root/Targets/benchd
+└─┬ benchd@0.0.2 
+  ├─┬ cheerio@0.19.0 
+  │ ├─┬ css-select@1.0.0 
+  │ │ ├── boolbase@1.0.0 
+  │ │ ├── css-what@1.0.0 
+  │ │ ├── domutils@1.4.3 
+  │ │ └── nth-check@1.0.1 
+  │ ├─┬ dom-serializer@0.1.0 
+  │ │ └── domelementtype@1.1.3 
+  │ ├── entities@1.1.1 
+  │ ├─┬ htmlparser2@3.8.3 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.3.0 
+  │ │ ├── domutils@1.5.1 
+  │ │ ├── entities@1.0.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ └── lodash@3.10.1 
+  ├── ejs@2.5.7 
+  ├─┬ faye-websocket@0.10.0 
+  │ └─┬ websocket-driver@0.7.0 
+  │   ├── http-parser-js@0.4.6 
+  │   └── websocket-extensions@0.1.2 
+  ├── semver@5.4.1 
+  ├─┬ serve-static@1.12.4 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── parseurl@1.3.2 
+  │ └─┬ send@0.15.4 
+  │   ├── debug@2.6.8 
+  │   ├── depd@1.1.1 
+  │   ├── destroy@1.0.4 
+  │   ├── etag@1.8.1 
+  │   ├── fresh@0.5.0 
+  │   ├─┬ http-errors@1.6.2 
+  │   │ └── setprototypeof@1.0.3 
+  │   ├── mime@1.3.4 
+  │   ├── ms@2.0.0 
+  │   ├─┬ on-finished@2.3.0 
+  │   │ └── ee-first@1.1.1 
+  │   ├── range-parser@1.2.0 
+  │   └── statuses@1.3.1 
+  └── uuid@1.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/benchd/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Number","toUpperCase","join","reduce","parseInt","charCodeAt","abs","toString","randomBytes","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0427 took 26.0101s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program /*jshint node:true */
+
+var assert = require('assert');
+
+exports.HTTPParser = HTTPParser;
+function HTTPParser(type) {
+  assert.ok(type === HTTPParser.REQUEST || type === HTTPParser.RESPONSE);
+  this.type = type;
+  this.state = type + '_LINE';
+  this.info = {
+    headers: [],
+    upgrade: false
+  };
+  this.trailers = [];
+  this.line = '';
+  this.isChunked = false;
+  this.connection = '';
+  this.headerSize = 0; // for preventing too big headers
+  this.body_bytes = null;
+  this.isUserCall = false;
+  this.hadError = false;
+}
+HTTPParser.maxHeaderSize = 80 * 1024; // maxHeaderSize (in bytes) is configurable, but 80kb by default;
+HTTPParser.REQUEST = 'REQUEST';
+HTTPParser.RESPONSE = 'RESPONSE';
+var kOnHeaders = HTTPParser.kOnHeaders = 0;
+var kOnHeadersComplete = HTTPParser.kOnHeadersComplete = 1;
+var kOnBody = HTTPParser.kOnBody = 2;
+var kOnMessageComplete = HTTPParser.kOnMessageComplete = 3;
+
+// Some handler stubs, needed for compatibility
+HTTPParser.prototype[kOnHeaders] =
+HTTPParser.prototype[kOnHeadersComplete] =
+HTTPParser.prototype[kOnBody] =
+HTTPParser.prototype[kOnMessageComplete] = function () {};
+
+var compatMode0_12 = true;
+Object.defineProperty(HTTPParser, 'kOnExecute', {
+    get: function () {
+      // hack for backward compatibility
+      compatMode0_12 = false;
+      return 4;
+    }
+  });
+
+var methods = exports.methods = HTTPParser.methods = [
+  'DELETE',
+  'GET',
+  'HEAD',
+  'POST',
+  'PUT',
+  'CONNECT',
+  'OPTIONS',
+  'TRACE',
+  'COPY',
+  'LOCK',
+  'MKCOL',
+  'MOVE',
+  'PROPFIND',
+  'PROPPATCH',
+  'SEARCH',
+  'UNLOCK',
+  'BIND',
+  'REBIND',
+  'UNBIND',
+  'ACL',
+  'REPORT',
+  'MKACTIVITY',
+  'CHECKOUT',
+  'MERGE',
+  'M-SEARCH',
+  'NOTIFY',
+  'SUBSCRIBE',
+  'UNSUBSCRIBE',
+  'PATCH',
+  'PURGE',
+  'MKCALENDAR',
+  'LINK',
+  'UNLINK'
+];
+HTTPParser.prototype.reinitialize = HTTPParser;
+HTTPParser.prototype.close =
+HTTPParser.prototype.pause =
+HTTPParser.prototype.resume = function () {};
+HTTPParser.prototype._compatMode0_11 = false;
+HTTPParser.prototype.getAsyncId = function() { return false; };
+
+var headerState = {
+  REQUEST_LINE: true,
+  RESPONSE_LINE: true,
+  HEADER: true
+};
+HTTPParser.prototype.execute = function (chunk, start, length) {
+  if (!(this instanceof HTTPParser)) {
+    throw new TypeError('not a HTTPParser');
+  }
+
+  // backward compat to node < 0.11.4
+  // Note: the start and length params were removed in newer version
+  start = start || 0;
+  length = typeof length === 'number' ? length : chunk.length;
+
+  this.chunk = chunk;
+  this.offset = start;
+  var end = this.end = start + length;
+  try {
+    while (this.offset < end) {
+      if (this[this.state]()) {
+        break;
+      }
+    }
+  } catch (err) {
+    if (this.isUserCall) {
+      throw err;
+    }
+    this.hadError = true;
+    return err;
+  }
+  this.chunk = null;
+  length = this.offset - start;
+  if (headerState[this.state]) {
+    this.headerSize += length;
+    if (this.headerSize > HTTPParser.maxHeaderSize) {
+      return new Error('max header size exceeded');
+    }
+  }
+  return length;
+};
+
+var stateFinishAllowed = {
+  REQUEST_LINE: true,
+  RESPONSE_LINE: true,
+  BODY_RAW: true
+};
+HTTPParser.prototype.finish = function () {
+  if (this.hadError) {
+    return;
+  }
+  if (!stateFinishAllowed[this.state]) {
+    return new Error('invalid state for EOF');
+  }
+  if (this.state === 'BODY_RAW') {
+    this.userCall()(this[kOnMessageComplete]());
+  }
+};
+
+// These three methods are used for an internal speed optimization, and it also
+// works if theses are noops. Basically consume() asks us to read the bytes
+// ourselves, but if we don't do it we get them through execute().
+HTTPParser.prototype.consume =
+HTTPParser.prototype.unconsume =
+HTTPParser.prototype.getCurrentBuffer = function () {};
+
+//For correct error handling - see HTTPParser#execute
+//Usage: this.userCall()(userFunction('arg'));
+HTTPParser.prototype.userCall = function () {
+  this.isUserCall = true;
+  var self = this;
+  return function (ret) {
+    self.isUserCall = false;
+    return ret;
+  };
+};
+
+HTTPParser.prototype.nextRequest = function () {
+  this.userCall()(this[kOnMessageComplete]());
+  this.reinitialize(this.type);
+};
+
+HTTPParser.prototype.consumeLine = function () {
+  var end = this.end,
+      chunk = this.chunk;
+  for (var i = this.offset; i < end; i++) {
+    if (chunk[i] === 0x0a) { // \n
+      var line = this.line + chunk.toString('ascii', this.offset, i);
+      if (line.charAt(line.length - 1) === '\r') {
+        line = line.substr(0, line.length - 1);
+      }
+      this.line = '';
+      this.offset = i + 1;
+      return line;
+    }
+  }
+  //line split over multiple chunks
+  this.line += chunk.toString('ascii', this.offset, this.end);
+  this.offset = this.end;
+};
+
+var headerExp = /^([^: \t]+):[ \t]*((?:.*[^ \t])|)/;
+var headerContinueExp = /^[ \t]+(.*[^ \t])/;
+HTTPParser.prototype.parseHeader = function (line, headers) {
+  if (line.indexOf('\r') !== -1) {
+    throw parseErrorCode('HPE_LF_EXPECTED');
+  }
+
+  var match = headerExp.exec(line);
+  var k = match && match[1];
+  if (k) { // skip empty string (malformed header)
+    headers.push(k);
+    headers.push(match[2]);
+  } else {
+    var matchContinue = headerContinueExp.exec(line);
+    if (matchContinue && headers.length) {
+      if (headers[headers.length - 1]) {
+        headers[headers.length - 1] += ' ';
+      }
+      headers[headers.length - 1] += matchContinue[1];
+    }
+  }
+};
+
+var requestExp = /^([A-Z-]+) ([^ ]+) HTTP\/(\d)\.(\d)$/;
+HTTPParser.prototype.REQUEST_LINE = function () {
+  var line = this.consumeLine();
+  if (!line) {
+    return;
+  }
+  var match = requestExp.exec(line);
+  if (match === null) {
+    throw parseErrorCode('HPE_INVALID_CONSTANT');
+  }
+  this.info.method = this._compatMode0_11 ? match[1] : methods.indexOf(match[1]);
+  if (this.info.method === -1) {
+    throw new Error('invalid request method');
+  }
+  if (match[1] === 'CONNECT') {
+    this.info.upgrade = true;
+  }
+  this.info.url = match[2];
+  this.info.versionMajor = +match[3];
+  this.info.versionMinor = +match[4];
+  this.body_bytes = 0;
+  this.state = 'HEADER';
+};
+
+var responseExp = /^HTTP\/(\d)\.(\d) (\d{3}) ?(.*)$/;
+HTTPParser.prototype.RESPONSE_LINE = function () {
+  var line = this.consumeLine();
+  if (!line) {
+    return;
+  }
+  var match = responseExp.exec(line);
+  if (match === null) {
+    throw parseErrorCode('HPE_INVALID_CONSTANT');
+  }
+  this.info.versionMajor = +match[1];
+  this.info.versionMinor = +match[2];
+  var statusCode = this.info.statusCode = +match[3];
+  this.info.statusMessage = match[4];
+  // Implied zero length.
+  if ((statusCode / 100 | 0) === 1 || statusCode === 204 || statusCode === 304) {
+    this.body_bytes = 0;
+  }
+  this.state = 'HEADER';
+};
+
+HTTPParser.prototype.shouldKeepAlive = function () {
+  if (this.info.versionMajor > 0 && this.info.versionMinor > 0) {
+    if (this.connection.indexOf('close') !== -1) {
+      return false;
+    }
+  } else if (this.connection.indexOf('keep-alive') === -1) {
+    return false;
+  }
+  if (this.body_bytes !== null || this.isChunked) { // || skipBody
+    return true;
+  }
+  return false;
+};
+
+HTTPParser.prototype.HEADER = function () {
+  var line = this.consumeLine();
+  if (line === undefined) {
+    return;
+  }
+  var info = this.info;
+  if (line) {
+    this.parseHeader(line, info.headers);
+  } else {
+    var headers = info.headers;
+    var hasContentLength = false;
+    for (var i = 0; i < headers.length; i += 2) {
+      switch (headers[i].toLowerCase()) {
+        case 'transfer-encoding':
+          this.isChunked = headers[i + 1].toLowerCase() === 'chunked';
+          break;
+        case 'content-length':
+          if (hasContentLength) {
+            throw parseErrorCode('HPE_UNEXPECTED_CONTENT_LENGTH');
+          }
+          hasContentLength = true;
+          this.body_bytes = +headers[i + 1];
+          break;
+        case 'connection':
+          this.connection += headers[i + 1].toLowerCase();
+          break;
+        case 'upgrade':
+          info.upgrade = true;
+          break;
+      }
+    }
+
+    if (this.isChunked && hasContentLength) {
+      throw parseErrorCode('HPE_UNEXPECTED_CONTENT_LENGTH');
+    }
+
+    info.shouldKeepAlive = this.shouldKeepAlive();
+    //problem which also exists in original node: we should know skipBody before calling onHeadersComplete
+    var skipBody;
+    if (compatMode0_12) {
+      skipBody = this.userCall()(this[kOnHeadersComplete](info));
+    } else {
+      skipBody = this.userCall()(this[kOnHeadersComplete](info.versionMajor,
+          info.versionMinor, info.headers, info.method, info.url, info.statusCode,
+          info.statusMessage, info.upgrade, info.shouldKeepAlive));
+    }
+    if (info.upgrade || skipBody === 2) {
+      this.nextRequest();
+      return true;
+    } else if (this.isChunked && !skipBody) {
+      this.state = 'BODY_CHUNKHEAD';
+    } else if (skipBody || this.body_bytes === 0) {
+      this.nextRequest();
+    } else if (this.body_bytes === null) {
+      this.state = 'BODY_RAW';
+    } else {
+      this.state = 'BODY_SIZED';
+    }
+  }
+};
+
+HTTPParser.prototype.BODY_CHUNKHEAD = function () {
+  var line = this.consumeLine();
+  if (line === undefined) {
+    return;
+  }
+  this.body_bytes = parseInt(line, 16);
+  if (!this.body_bytes) {
+    this.state = 'BODY_CHUNKTRAILERS';
+  } else {
+    this.state = 'BODY_CHUNK';
+  }
+};
+
+HTTPParser.prototype.BODY_CHUNK = function () {
+  var length = Math.min(this.end - this.offset, this.body_bytes);
+  this.userCall()(this[kOnBody](this.chunk, this.offset, length));
+  this.offset += length;
+  this.body_bytes -= length;
+  if (!this.body_bytes) {
+    this.state = 'BODY_CHUNKEMPTYLINE';
+  }
+};
+
+HTTPParser.prototype.BODY_CHUNKEMPTYLINE = function () {
+  var line = this.consumeLine();
+  if (line === undefined) {
+    return;
+  }
+  assert.equal(line, '');
+  this.state = 'BODY_CHUNKHEAD';
+};
+
+HTTPParser.prototype.BODY_CHUNKTRAILERS = function () {
+  var line = this.consumeLine();
+  if (line === undefined) {
+    return;
+  }
+  if (line) {
+    this.parseHeader(line, this.trailers);
+  } else {
+    if (this.trailers.length) {
+      this.userCall()(this[kOnHeaders](this.trailers, ''));
+    }
+    this.nextRequest();
+  }
+};
+
+HTTPParser.prototype.BODY_RAW = function () {
+  var length = this.end - this.offset;
+  this.userCall()(this[kOnBody](this.chunk, this.offset, length));
+  this.offset = this.end;
+};
+
+HTTPParser.prototype.BODY_SIZED = function () {
+  var length = Math.min(this.end - this.offset, this.body_bytes);
+  this.userCall()(this[kOnBody](this.chunk, this.offset, length));
+  this.offset += length;
+  this.body_bytes -= length;
+  if (!this.body_bytes) {
+    this.nextRequest();
+  }
+};
+
+// backward compat to node < 0.11.6
+['Headers', 'HeadersComplete', 'Body', 'MessageComplete'].forEach(function (name) {
+  var k = HTTPParser['kOn' + name];
+  Object.defineProperty(HTTPParser.prototype, 'on' + name, {
+    get: function () {
+      return this[k];
+    },
+    set: function (to) {
+      // hack for backward compatibility
+      this._compatMode0_11 = true;
+      return (this[k] = to);
+    }
+  });
+});
+
+function parseErrorCode(code) {
+  var err = new Error('Parse Error');
+  err.code = code;
+  return err;
+}
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/benchd/node_modules/benchd/lib/server.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/benchd/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/benchd/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/benchd/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/benchd/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/benchd/node_modules/send/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/benchd/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/benchd/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/benchd/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/benchd/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/benchd/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/benchd/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/benchd/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/benchd/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/benchd/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/benchd/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/benchd/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/benchd/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/benchd/node_modules/fresh/index.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/benchd/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/benchd/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/benchd/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/benchd/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/benchd/node_modules/uuid/uuid.js. Coverage (Term): 19% Coverage (LOC): 32%
+*- File /root/Targets/benchd/node_modules/uuid/rng.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/benchd/node_modules/ejs/lib/ejs.js. Coverage (Term): 8% Coverage (LOC): 17%
+*- File /root/Targets/benchd/node_modules/ejs/lib/utils.js. Coverage (Term): 33% Coverage (LOC): 57%
+*- File /root/Targets/benchd/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/benchd/node_modules/faye-websocket/lib/faye/websocket.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/driver.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/driver/base.js. Coverage (Term): 20% Coverage (LOC): 34%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/streams.js. Coverage (Term): 30% Coverage (LOC): 43%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/driver/headers.js. Coverage (Term): 31% Coverage (LOC): 58%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/driver/stream_reader.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/driver/client.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/benchd/node_modules/websocket-driver/lib/websocket/http_parser.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

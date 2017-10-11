@@ -1,0 +1,94 @@
+/root/Targets/basethinking
+└── basethinking@0.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/basethinking/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","cwd","Date","getYear","getMonth","getDate"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0426 took 7.0577s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to rvalue (38:33) on program /* part = 私有部分
+--------------------------------------------*/
+
+function session(sid) {
+    var attrs = {}; //属性
+    this.Sessionkey = {
+        lastTime: 'lastTime', //最后访问时间
+        state: 'state' //会话状态
+    };
+    this.Sessionkey.lastTime = Date.now();
+    this.Sessionkey.state = 1;
+    this.sid = sid;
+    
+    //state = 1; //会话状态
+    //bid = bid; //绑定ID
+    //lastTime = new Date(); //最后访问时间
+    this.getAllAttr = function() {
+        return attrs;
+    };
+    this.getAttr = function(key) {
+        return attrs[key];
+    }; //获取属性
+    this.removeAttr = function(key) {
+        delete attrs[key]
+    }; //删除属性
+    this.setAttr = function(key, value) {
+        attrs[key] = value;
+        return this;
+    }; //设置属性
+    this.close = function() {
+        this.setAttr(this.Sessionkey.state, 0);
+    }; //关闭会话
+    this.destory = function() {
+        this.setAttr(this.Sessionkey.state, - 1);
+    }; //销毁会话
+    this.replace = function(session) {
+        var allAttr = session.getAllAttr();
+        for (var key in allAttr) attrs[key] == null && attrs[key] = allAttr[key];
+    }; //替换会话
+    this.refreshLastTime = function() { //刷新最后访问时间
+        this.Sessionkey.lastTime = Date.now();
+        this.Sessionkey.state = 1;
+    }
+}
+
+/* part = 公有部分
+--------------------------------------------*/
+module.exports = session
+ at SyntaxError: Assigning to rvalue (38:33)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.toAssignable (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1344:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1604:46)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseForIn (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1018:22)
+    at Parser.pp$1.parseForStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:800:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:691:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/basethinking/node_modules/basethinking/thinking.js. Coverage (Term): 38% Coverage (LOC): 40%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/server.js. Coverage (Term): 23% Coverage (LOC): 20%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/httpRequest.js. Coverage (Term): 15% Coverage (LOC): 39%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/httpResponse.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/log.js. Coverage (Term): 47% Coverage (LOC): 54%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/md5.js. Coverage (Term): 3% Coverage (LOC): 16%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/interceptor.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/controller.js. Coverage (Term): 13% Coverage (LOC): 10%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/verification.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/print.js. Coverage (Term): 29% Coverage (LOC): 35%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/template.js. Coverage (Term): 20% Coverage (LOC): 34%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/application.js. Coverage (Term): 38% Coverage (LOC): 73%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/setting.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/hutil.js. Coverage (Term): 23% Coverage (LOC): 50%
+*- File /root/Targets/basethinking/node_modules/basethinking/lib/sessionManager.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,241 @@
+/root/Targets/qmlstructure
+└─┬ qmlstructure@0.1.2 
+  ├── lodash@3.10.1 
+  └── pegjs@0.9.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/qmlstructure/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0267 took 5.554s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+"use strict";
+
+// const fs = require("fs");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _fs = require("fs");
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _lodash = require("lodash");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+// const PEG = require("pegjs");
+var qmlStructureParser = require("./qmlStructureParser.js");
+
+// const qmlStructureGrammar = fs.readFileSync(
+//   "./src/qmlStructureGrammar.pegjs",
+//   "utf8"
+// );
+// const qmlStructureParser = PEG.buildParser(qmlStructureGrammar);
+
+var getMetadomain = function getMetadomain(structure) {
+  return structure.map(function (x) {
+    return x.metanominal;
+  });
+};
+
+var getSuccessorPairs = function getSuccessorPairs(pwObj) {
+  return pwObj.successorsList.map(function (x) {
+    return {
+      source: pwObj.metanominal,
+      target: x
+    };
+  });
+};
+
+var getPwObj = function getPwObj(structure, pwString) {
+  return structure.filter(function (x) {
+    return x.metanominal === pwString;
+  })[0];
+};
+
+var getAllSuccessorPairs = function getAllSuccessorPairs(structure) {
+  var metadomain = getMetadomain(structure);
+  var pairsList = metadomain.map(function (x) {
+    return getPwObj(structure, x);
+  }).map(function (x) {
+    return getSuccessorPairs(x);
+  });
+  return (0, _lodash2["default"])(pairsList).flattenDeep().value();
+};
+
+// structure2d3(
+//  "{w1({a,b},{P,Q},{P1{a,b},P2{b}},{R1{(a,b)},R2{(a,a),(b,b)}},{w1,w2}),
+//    w2({c},{P},{P{c}},{R{}},{w2}),w3({d},{Q},{P{d}},{R{(d,d)}},{w1,w2})}"
+// )
+var structure2d3 = function structure2d3(structureString) {
+  var structureParsed = qmlStructureParser.parse(structureString);
+  return {
+    nodes: structureParsed,
+    links: getAllSuccessorPairs(structureParsed)
+  };
+};
+// Structure2d3 = (structure) => {};
+
+module.exports = {
+  parser: qmlStructureParser,
+  getD3: structure2d3,
+  getLatex: "getLatex"
+};
+
+// tip library:
+// http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js
+
+/* tributary code:
+
+var width = 960,
+    height = 500;
+
+var force = d3.layout.force()
+    .charge(-200)
+    .linkDistance(40)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("defs").selectAll("marker")
+    .data(["suit", "licensing", "resolved"])
+  .enter().append("marker")
+    .attr("id", function(d) { return d; })
+    .attr("viewBox", "0 -50 10 10")
+    .attr("refX", 10)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("path")
+    .attr("d", "M0,-5L10,0L0,5 L10,0 L0, -5")
+    .style("stroke", "#4679BD")
+    .style("opacity", "0.6");
+
+//d3.json("graph.json", function(error, graph) {
+//  if (error) throw error;
+
+  var nodeById = d3.map();
+
+  graph = {"nodes":[{"metanominal":"w1","domain":["a","b"],"nularyExtensions":["P","Q"],"unaryExtensions":[{"relation":"P1","arity":1,"extension":["a","b"]},{"relation":"P2","arity":1,"extension":["b"]}],"binaryExtensions":[{"relation":"R1","arity":2,"extension":["(a,b)"]},{"relation":"R2","arity":2,"extension":["(a,a)","(b,b)"]}],"successorsList":["w1","w2"]},{"metanominal":"w2","domain":["c"],"nularyExtensions":["P"],"unaryExtensions":[{"relation":"P","arity":1,"extension":["c"]}],"binaryExtensions":[{"relation":"R","arity":2,"extension":[]}],"successorsList":["w2"]},{"metanominal":"w3","domain":["d"],"nularyExtensions":["Q"],"unaryExtensions":[{"relation":"P","arity":1,"extension":["d"]}],"binaryExtensions":[{"relation":"R","arity":2,"extension":["(d,d)"]}],"successorsList":["w1","w2"]}],"links":[{"source":"w1","target":"w1"},{"source":"w1","target":"w2"},{"source":"w2","target":"w2"},{"source":"w3","target":"w1"},{"source":"w3","target":"w2"}]}
+
+  //Set up tooltip
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .style('line-height', '1')
+      .style('color', 'black')
+      .offset([-50, 0])
+      .html(function (d) {
+        return  d.metanominal + ":</br>"
+            + "domain: " + d.domain + "</br>"
+            + "valuation: " + d.nularyExtensions + "</br>"
+            + "predicates: </br>" + "&nbsp;&nbsp;&nbsp;" + JSON.stringify(d.unaryExtensions) + "</br>"
+            + "relations: </br>"  + "&nbsp;&nbsp;&nbsp;" +  JSON.stringify(d.binaryExtensions) + "</br>"
+            + "successors: " + d.successorsList + "</br>";
+      })
+  svg.call(tip);
+
+  graph.nodes.forEach(function(node) {
+    nodeById.set(node.metanominal, node);
+  });
+
+  graph.links.forEach(function(link) {
+    link.source = nodeById.get(link.source);
+    link.target = nodeById.get(link.target);
+  });
+
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link")
+      .style("stroke","#999")
+      .style("stroke-width","1.5px")
+      .style("marker-end", "url(#licensing)");
+
+  var node = svg.selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .call(force.drag)
+     .on('mouseover', tip.show) //Added
+     .on('mouseout', tip.hide);
+
+  node.append("circle")
+    .attr("r", 8)
+    .style("fill", "steelBlue")
+    .style("stroke","#000")
+    .style("stroke-width",".5px")
+
+   node.append("text")
+      .attr("dx", 10)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.metanominal })
+      .style("font", "9px helvetica");
+
+  //var node = svg.selectAll(".node")
+  //    .data(graph.nodes)
+  //  .enter().append("circle")
+  //    .attr("class", "node")
+  //    .attr("r", 6)
+      // .style("fill", function(d) { return d.id; })
+
+      //.call(force.drag);
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; })
+        .style("stroke","#999")
+        .style("stroke-width","1.5px")
+        .style("marker-end", "url(#licensing)");
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; })
+        //.style("stroke","#000")
+        //.style("stroke-width","1.5px");
+    d3.selectAll("circle")
+      .attr("cx", function (d) { return d.x; })
+      .attr("cy", function (d) { return d.y; })
+      .style("stroke","#000")
+      .style("stroke-width",".5px");
+    d3.selectAll("text")
+      .attr("x", function (d) { return d.x; })
+      .attr("y", function (d) { return d.y; })
+      .style("font", "10px helvetica");
+
+  });
+// });
+
+*/
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

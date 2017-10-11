@@ -1,0 +1,70 @@
+/root/Targets/draft-wysiwyg
+└─┬ draft-wysiwyg@0.2.4 
+  ├─┬ draft-js@0.7.0 
+  │ └─┬ fbjs@0.8.15 
+  │   ├── core-js@1.2.7 
+  │   ├─┬ isomorphic-fetch@2.2.1 
+  │   │ ├─┬ node-fetch@1.7.3 
+  │   │ │ ├─┬ encoding@0.1.12 
+  │   │ │ │ └── iconv-lite@0.4.19 
+  │   │ │ └── is-stream@1.1.0 
+  │   │ └── whatwg-fetch@2.0.3 
+  │   ├─┬ loose-envify@1.3.1 
+  │   │ └── js-tokens@3.0.2 
+  │   ├── object-assign@4.1.1 
+  │   ├─┬ promise@7.3.1 
+  │   │ └── asap@2.0.6 
+  │   ├── setimmediate@1.0.5 
+  │   └── ua-parser-js@0.7.14 
+  ├─┬ draft-js-alignment-plugin@1.0.3 
+  │ ├── decorate-component-with-props@1.0.2 
+  │ ├── find-with-regex@1.0.2 
+  │ ├── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  │ └── union-class-names@1.0.0 
+  ├─┬ draft-js-cleanup-empty-plugin@1.0.2 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-dnd-plugin@1.0.7 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-entity-props-plugin@1.0.2 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-focus-plugin@1.0.12 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-image-plugin@1.0.3 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-plugins-editor-wysiwyg@1.0.3 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-resizeable-plugin@1.0.8 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-table-plugin@1.0.4 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├─┬ draft-js-toolbar-plugin@1.0.5 
+  │ └── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  ├── immutable@3.8.1 
+  ├── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-rc
+  └── UNMET PEER DEPENDENCY react-dom@^0.14.0 || ^15.0.0-rc
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/draft-wysiwyg/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","imul","WeakMap","Symbol","getOwnPropertySymbols","setPrototypeOf"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1018 took 28.3653s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-wysiwyg/lib/index.js. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-js/lib/DraftEditorBlock.react.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-js/lib/ContentBlock.js. Coverage (Term): 43% Coverage (LOC): 65%
+*- File /root/Targets/draft-wysiwyg/node_modules/immutable/dist/immutable.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-js/lib/findRangesImmutable.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-js/lib/DraftEditorLeaf.react.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/draft-wysiwyg/node_modules/draft-js/lib/DraftEditorTextNode.react.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

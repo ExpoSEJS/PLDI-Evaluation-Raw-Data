@@ -1,0 +1,24 @@
+/root/Targets/coloredcoins-sdk
+└─┬ coloredcoins-sdk@0.3.2 
+  └─┬ cc-transaction-builder@0.1.7
+    └─┬ cc-errors@0.1.0
+      └── errors@0.3.0  (git+https://github.com/Colored-Coins/errors-base.git#cef1462656f867659a0f33683db9d2d2277220a1)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/coloredcoins-sdk/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0669 took 8.229s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token .
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

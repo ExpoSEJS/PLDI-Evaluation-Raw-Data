@@ -1,0 +1,42 @@
+/root/Targets/uisu-test
+└─┬ uisu-test@0.6.2 
+  ├── bluebird@2.11.0 
+  ├── commander@2.11.0 
+  ├─┬ fs-extra@0.22.1 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├─┬ inflight@1.0.6 
+  │     │ └── wrappy@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     └── once@1.4.0 
+  ├─┬ fs-extra-promise@0.2.1 
+  │ └─┬ fs-extra@0.24.0 
+  │   └── path-is-absolute@1.0.1 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  └── sorted-object@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/uisu-test/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 45% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 45% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 45% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.077 took 6.0169s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 6.1591 took 4.908s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/uisu-test/node_modules/uisu-test/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

@@ -1,0 +1,375 @@
+/root/Targets/hytron-weapp
+└─┬ hytron-weapp@0.0.2 
+  ├─┬ fs-extra@1.0.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ └── klaw@1.3.1 
+  ├── hytron-tsc@0.0.2 
+  ├─┬ log4js@1.1.1 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── semver@5.4.1 
+  │ └─┬ streamroller@0.4.1 
+  │   ├── date-format@0.0.0 
+  │   ├── debug@0.7.4 
+  │   └─┬ readable-stream@1.1.14 
+  │     ├── core-util-is@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├── isarray@0.0.1 
+  │     └── string_decoder@0.10.31 
+  ├── minimist@1.2.0 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── mustache@2.3.0 
+  ├── ramda@0.22.1 
+  └── rx@4.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hytron-weapp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","apply","isArray","Array","min","max","reverse","getOwnPropertyNames","getOwnPropertyDescriptor","create","parseInt"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0644 took 26.0392s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program module.exports = rimraf
+rimraf.sync = rimrafSync
+
+var assert = require('assert')
+var path = require('path')
+var fs = require('graceful-fs')
+
+var isWindows = (process.platform === 'win32')
+
+function defaults (options) {
+  var methods = [
+    'unlink',
+    'chmod',
+    'stat',
+    'lstat',
+    'rmdir',
+    'readdir'
+  ]
+  methods.forEach(function (m) {
+    options[m] = options[m] || fs[m]
+    m = m + 'Sync'
+    options[m] = options[m] || fs[m]
+  })
+
+  options.maxBusyTries = options.maxBusyTries || 3
+}
+
+function rimraf (p, options, cb) {
+  if (typeof options === 'function') {
+    cb = options
+    options = {}
+  }
+
+  assert(p, 'rimraf: missing path')
+  assert.equal(typeof p, 'string', 'rimraf: path should be a string')
+  assert.equal(typeof cb, 'function', 'rimraf: callback function required')
+  assert(options, 'rimraf: invalid options argument provided')
+  assert.equal(typeof options, 'object', 'rimraf: options should be object')
+
+  defaults(options)
+
+  var busyTries = 0
+
+  rimraf_(p, options, function CB (er) {
+    if (er) {
+      if (isWindows && (er.code === 'EBUSY' || er.code === 'ENOTEMPTY' || er.code === 'EPERM') &&
+          busyTries < options.maxBusyTries) {
+        busyTries++
+        var time = busyTries * 100
+        // try again, with the same exact callback as this one.
+        return setTimeout(function () {
+          rimraf_(p, options, CB)
+        }, time)
+      }
+
+      // already gone
+      if (er.code === 'ENOENT') er = null
+    }
+
+    cb(er)
+  })
+}
+
+// Two possible strategies.
+// 1. Assume it's a file.  unlink it, then do the dir stuff on EPERM or EISDIR
+// 2. Assume it's a directory.  readdir, then do the file stuff on ENOTDIR
+//
+// Both result in an extra syscall when you guess wrong.  However, there
+// are likely far more normal files in the world than directories.  This
+// is based on the assumption that a the average number of files per
+// directory is >= 1.
+//
+// If anyone ever complains about this, then I guess the strategy could
+// be made configurable somehow.  But until then, YAGNI.
+function rimraf_ (p, options, cb) {
+  assert(p)
+  assert(options)
+  assert(typeof cb === 'function')
+
+  // sunos lets the root user unlink directories, which is... weird.
+  // so we have to lstat here and make sure it's not a dir.
+  options.lstat(p, function (er, st) {
+    if (er && er.code === 'ENOENT') {
+      return cb(null)
+    }
+
+    // Windows can EPERM on stat.  Life is suffering.
+    if (er && er.code === 'EPERM' && isWindows) {
+      fixWinEPERM(p, options, er, cb)
+    }
+
+    if (st && st.isDirectory()) {
+      return rmdir(p, options, er, cb)
+    }
+
+    options.unlink(p, function (er) {
+      if (er) {
+        if (er.code === 'ENOENT') {
+          return cb(null)
+        }
+        if (er.code === 'EPERM') {
+          return (isWindows)
+            ? fixWinEPERM(p, options, er, cb)
+            : rmdir(p, options, er, cb)
+        }
+        if (er.code === 'EISDIR') {
+          return rmdir(p, options, er, cb)
+        }
+      }
+      return cb(er)
+    })
+  })
+}
+
+function fixWinEPERM (p, options, er, cb) {
+  assert(p)
+  assert(options)
+  assert(typeof cb === 'function')
+  if (er) {
+    assert(er instanceof Error)
+  }
+
+  options.chmod(p, 666, function (er2) {
+    if (er2) {
+      cb(er2.code === 'ENOENT' ? null : er)
+    } else {
+      options.stat(p, function (er3, stats) {
+        if (er3) {
+          cb(er3.code === 'ENOENT' ? null : er)
+        } else if (stats.isDirectory()) {
+          rmdir(p, options, er, cb)
+        } else {
+          options.unlink(p, cb)
+        }
+      })
+    }
+  })
+}
+
+function fixWinEPERMSync (p, options, er) {
+  assert(p)
+  assert(options)
+  if (er) {
+    assert(er instanceof Error)
+  }
+
+  try {
+    options.chmodSync(p, 666)
+  } catch (er2) {
+    if (er2.code === 'ENOENT') {
+      return
+    } else {
+      throw er
+    }
+  }
+
+  try {
+    var stats = options.statSync(p)
+  } catch (er3) {
+    if (er3.code === 'ENOENT') {
+      return
+    } else {
+      throw er
+    }
+  }
+
+  if (stats.isDirectory()) {
+    rmdirSync(p, options, er)
+  } else {
+    options.unlinkSync(p)
+  }
+}
+
+function rmdir (p, options, originalEr, cb) {
+  assert(p)
+  assert(options)
+  if (originalEr) {
+    assert(originalEr instanceof Error)
+  }
+  assert(typeof cb === 'function')
+
+  // try to rmdir first, and only readdir on ENOTEMPTY or EEXIST (SunOS)
+  // if we guessed wrong, and it's not a directory, then
+  // raise the original error.
+  options.rmdir(p, function (er) {
+    if (er && (er.code === 'ENOTEMPTY' || er.code === 'EEXIST' || er.code === 'EPERM')) {
+      rmkids(p, options, cb)
+    } else if (er && er.code === 'ENOTDIR') {
+      cb(originalEr)
+    } else {
+      cb(er)
+    }
+  })
+}
+
+function rmkids (p, options, cb) {
+  assert(p)
+  assert(options)
+  assert(typeof cb === 'function')
+
+  options.readdir(p, function (er, files) {
+    if (er) {
+      return cb(er)
+    }
+    var n = files.length
+    if (n === 0) {
+      return options.rmdir(p, cb)
+    }
+    var errState
+    files.forEach(function (f) {
+      rimraf(path.join(p, f), options, function (er) {
+        if (errState) {
+          return
+        }
+        if (er) {
+          return cb(errState = er)
+        }
+        if (--n === 0) {
+          options.rmdir(p, cb)
+        }
+      })
+    })
+  })
+}
+
+// this looks simpler, and is strictly *faster*, but will
+// tie up the JavaScript thread and fail on excessively
+// deep directory trees.
+function rimrafSync (p, options) {
+  options = options || {}
+  defaults(options)
+
+  assert(p, 'rimraf: missing path')
+  assert.equal(typeof p, 'string', 'rimraf: path should be a string')
+  assert(options, 'rimraf: missing options')
+  assert.equal(typeof options, 'object', 'rimraf: options should be object')
+
+  try {
+    var st = options.lstatSync(p)
+  } catch (er) {
+    if (er.code === 'ENOENT') {
+      return
+    }
+
+    // Windows can EPERM on stat.  Life is suffering.
+    if (er.code === 'EPERM' && isWindows) {
+      fixWinEPERMSync(p, options, er)
+    }
+  }
+
+  try {
+    // sunos lets the root user unlink directories, which is... weird.
+    if (st && st.isDirectory()) {
+      rmdirSync(p, options, null)
+    } else {
+      options.unlinkSync(p)
+    }
+  } catch (er) {
+    if (er.code === 'ENOENT') {
+      return
+    }
+    if (er.code === 'EPERM') {
+      return isWindows ? fixWinEPERMSync(p, options, er) : rmdirSync(p, options, er)
+    }
+    if (er.code !== 'EISDIR') {
+      throw er
+    }
+    rmdirSync(p, options, er)
+  }
+}
+
+function rmdirSync (p, options, originalEr) {
+  assert(p)
+  assert(options)
+  if (originalEr) {
+    assert(originalEr instanceof Error)
+  }
+
+  try {
+    options.rmdirSync(p)
+  } catch (er) {
+    if (er.code === 'ENOENT') {
+      return
+    }
+    if (er.code === 'ENOTDIR') {
+      throw originalEr
+    }
+    if (er.code === 'ENOTEMPTY' || er.code === 'EEXIST' || er.code === 'EPERM') {
+      rmkidsSync(p, options)
+    }
+  }
+}
+
+function rmkidsSync (p, options) {
+  assert(p)
+  assert(options)
+  options.readdirSync(p).forEach(function (f) {
+    rimrafSync(path.join(p, f), options)
+  })
+  options.rmdirSync(p, options)
+}
+ at SyntaxError: Unexpected token (4:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hytron-weapp/node_modules/hytron-weapp/src/app.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/hytron-weapp/node_modules/ramda/dist/ramda.js. Coverage (Term): 25% Coverage (LOC): 40%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/index.js. Coverage (Term): 46% Coverage (LOC): 48%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/util/assign.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/hytron-weapp/node_modules/graceful-fs/graceful-fs.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/hytron-weapp/node_modules/graceful-fs/polyfills.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/hytron-weapp/node_modules/graceful-fs/fs.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/hytron-weapp/node_modules/graceful-fs/legacy-streams.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy/copy.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy/ncp.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/util/utimes.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/mkdirs/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/mkdirs/mkdirs.js. Coverage (Term): 17% Coverage (LOC): 16%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/mkdirs/win32.js. Coverage (Term): 38% Coverage (LOC): 61%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/mkdirs/mkdirs-sync.js. Coverage (Term): 23% Coverage (LOC): 21%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy-sync/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy-sync/copy-sync.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/copy-sync/copy-file-sync.js. Coverage (Term): 21% Coverage (LOC): 21%
+*- File /root/Targets/hytron-weapp/node_modules/fs-extra/lib/remove/index.js. Coverage (Term): 27% Coverage (LOC): 46%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

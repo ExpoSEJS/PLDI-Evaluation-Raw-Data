@@ -1,0 +1,568 @@
+
+> dtrace-provider@0.8.5 install /root/Targets/allex/node_modules/dtrace-provider
+> node scripts/install.js
+
+
+> bufferutil@3.0.2 install /root/Targets/allex/node_modules/bufferutil
+> prebuild-install || node-gyp rebuild
+
+
+> utf-8-validate@3.0.3 install /root/Targets/allex/node_modules/utf-8-validate
+> prebuild-install || node-gyp rebuild
+
+/root/Targets/allex
+└─┬ allex@1.0.1 
+  ├─┬ allex_nodehelpersserverruntimelib@1.0.3 
+  │ ├─┬ allex_bunyanloggerserverruntimelib@1.0.0 
+  │ │ └─┬ bunyan@1.8.12 
+  │ │   ├─┬ dtrace-provider@0.8.5 
+  │ │   │ └── nan@2.7.0 
+  │ │   ├── moment@2.18.1 
+  │ │   ├─┬ mv@2.1.1 
+  │ │   │ ├── ncp@2.0.0 
+  │ │   │ └─┬ rimraf@2.4.5 
+  │ │   │   └─┬ glob@6.0.4 
+  │ │   │     ├── inflight@1.0.6 
+  │ │   │     ├─┬ minimatch@3.0.4 
+  │ │   │     │ └─┬ brace-expansion@1.1.8 
+  │ │   │     │   ├── balanced-match@1.0.0 
+  │ │   │     │   └── concat-map@0.0.1 
+  │ │   │     └── path-is-absolute@1.0.1 
+  │ │   └── safe-json-stringify@1.0.4 
+  │ ├── colors@1.1.2 
+  │ └─┬ mkdirp@0.5.1 
+  │   └── minimist@0.0.8 
+  ├─┬ allex_npminstallserverruntimelib@1.0.3 
+  │ ├─┬ allex_configrootserverruntimelib@1.0.1 
+  │ │ └── command-exists@1.2.2 
+  │ ├── allex_ispipetakenserverruntimelib@1.0.0 
+  │ ├─┬ ps-node@0.1.6 
+  │ │ └─┬ table-parser@0.1.3 
+  │ │   └── connected-domain@1.0.0 
+  │ └─┬ ps-tree@1.1.0 
+  │   └─┬ event-stream@3.3.4 
+  │     ├── duplexer@0.1.1 
+  │     ├── from@0.1.7 
+  │     ├── map-stream@0.1.0 
+  │     ├── pause-stream@0.0.11 
+  │     ├── split@0.3.3 
+  │     ├── stream-combiner@0.0.4 
+  │     └── through@2.3.8 
+  ├─┬ allex_servercore@1.0.0 
+  │ ├── allex_callableservercorelib@1.0.0 
+  │ ├─┬ allex_clientcore@1.0.0 
+  │ │ ├── allex_clientsclientcorelib@1.0.0 
+  │ │ ├── allex_dependencyloaderclientcorelib@1.0.1 
+  │ │ ├── allex_dependentmethodclientcorelib@1.0.0 
+  │ │ ├── allex_registrybaseclientcorelib@1.0.0 
+  │ │ ├── allex_servicepackclientcorelib@1.0.1 
+  │ │ ├── allex_stateclientcorelib@1.0.1 
+  │ │ ├── allex_streamclientcorelib@1.0.2 
+  │ │ ├── allex_taskclientcorelib@1.0.0 
+  │ │ └── allex_transportclientcorelib@1.0.0 
+  │ ├── allex_portofficeserverruntimelib@1.0.0 
+  │ ├── allex_serverservercorelib@1.0.3 
+  │ ├── allex_servicepackservercorelib@2.0.0 
+  │ ├── allex_sessionintroductorservercorelib@1.0.0 
+  │ └── allex_transportservercorelib@1.0.1 
+  ├─┬ allex_singletonprogramstarttool@2.0.0 
+  │ ├── is-running@2.1.0 
+  │ └── npid@0.4.0 
+  ├── allex_temppipedirserverruntimelib@1.0.0 
+  ├── allex_unixsocketcleanerserverruntimelib@1.0.0 
+  ├─┬ allex_wslib@1.0.0 
+  │ └── ultron@1.0.2 
+  ├─┬ allexlib@2.0.0 
+  │ ├── allex_avltreelowlevellib@1.1.3 
+  │ ├── allex_checkslowlevellib@1.1.4 
+  │ ├── allex_deferfifolowlevellib@1.1.0 
+  │ ├── allex_defermaplowlevellib@1.0.2 
+  │ ├── allex_destroyablemixinslowlevellib@2.0.0 
+  │ ├── allex_destructionlowlevellib@3.0.2 
+  │ ├── allex_dicontainerlowlevellib@2.2.2 
+  │ ├── allex_doublelinkedlistbaselowlevellib@1.1.0 
+  │ ├── allex_doublelinkedlistlowlevellib@1.1.0 
+  │ ├── allex_errorlowlevellib@1.0.0 
+  │ ├── allex_eventemitterlowlevellib@2.1.1 
+  │ ├── allex_fifolowlevellib@1.2.0 
+  │ ├── allex_functionmanipulationlowlevellib@1.0.0 
+  │ ├── allex_httprequestlowlevellib@1.0.9 
+  │ ├── allex_inheritlowlevellib@1.0.0 
+  │ ├── allex_isidenticallowlevellib@1.0.0 
+  │ ├── allex_jsonizingerrorlowlevellib@1.0.0 
+  │ ├── allex_listenablemaplowlevellib@2.0.6 
+  │ ├── allex_macaddresslowlevellib@1.0.0 
+  │ ├── allex_maplowlevellib@1.0.0 
+  │ ├── allex_modulerecognitionlowlevellib@2.0.3 
+  │ ├── allex_notanallexerrorerrorlowlevellib@1.0.0 
+  │ ├── allex_objectmanipulationlowlevellib@3.1.0 
+  │ ├── allex_propertymixinslowlevellib@2.2.5 
+  │ ├── allex_qextlowlevellib@2.2.0 
+  │ ├── allex_qlowlevellib@1.1.2 
+  │ ├── allex_singlelinkedlistlowlevellib@1.0.0 
+  │ ├── allex_stringbufferlowlevellib@1.0.2 
+  │ ├── allex_stringmanipulationlowlevellib@3.4.2 
+  │ ├── allex_timeoutlowlevellib@1.0.4 
+  │ ├── allex_uidlowlevellib@1.0.0 
+  │ └── jsonschema@1.2.0 
+  ├─┬ bufferutil@3.0.2 
+  │ ├── bindings@1.2.1 
+  │ ├── nan@2.6.2 
+  │ └─┬ prebuild-install@2.2.2 
+  │   ├── expand-template@1.1.0 
+  │   ├── github-from-package@0.0.0 
+  │   ├── minimist@1.2.0 
+  │   ├── node-abi@2.1.1 
+  │   ├── noop-logger@0.1.1 
+  │   ├─┬ npmlog@4.1.2 
+  │   │ ├─┬ are-we-there-yet@1.1.4 
+  │   │ │ ├── delegates@1.0.0 
+  │   │ │ └─┬ readable-stream@2.3.3 
+  │   │ │   ├── core-util-is@1.0.2 
+  │   │ │   ├── inherits@2.0.3 
+  │   │ │   ├── isarray@1.0.0 
+  │   │ │   ├── process-nextick-args@1.0.7 
+  │   │ │   ├── string_decoder@1.0.3 
+  │   │ │   └── util-deprecate@1.0.2 
+  │   │ ├── console-control-strings@1.1.0 
+  │   │ ├─┬ gauge@2.7.4 
+  │   │ │ ├── aproba@1.2.0 
+  │   │ │ ├── has-unicode@2.0.1 
+  │   │ │ ├── object-assign@4.1.1 
+  │   │ │ ├── signal-exit@3.0.2 
+  │   │ │ ├─┬ string-width@1.0.2 
+  │   │ │ │ ├── code-point-at@1.1.0 
+  │   │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │ │ │   └── number-is-nan@1.0.1 
+  │   │ │ ├─┬ strip-ansi@3.0.1 
+  │   │ │ │ └── ansi-regex@2.1.1 
+  │   │ │ └── wide-align@1.1.2 
+  │   │ └── set-blocking@2.0.0 
+  │   ├── os-homedir@1.0.2 
+  │   ├─┬ pump@1.0.2 
+  │   │ ├── end-of-stream@1.4.0 
+  │   │ └─┬ once@1.4.0 
+  │   │   └── wrappy@1.0.2 
+  │   ├─┬ rc@1.2.1 
+  │   │ ├── deep-extend@0.4.2 
+  │   │ ├── ini@1.3.4 
+  │   │ ├── minimist@1.2.0 
+  │   │ └── strip-json-comments@2.0.1 
+  │   ├─┬ simple-get@1.4.3 
+  │   │ └── unzip-response@1.0.2 
+  │   ├─┬ tar-fs@1.15.3 
+  │   │ ├── chownr@1.0.1 
+  │   │ └─┬ tar-stream@1.5.4 
+  │   │   └── bl@1.2.1 
+  │   ├─┬ tunnel-agent@0.6.0 
+  │   │ └── safe-buffer@5.1.1 
+  │   └── xtend@4.0.1 
+  └─┬ utf-8-validate@3.0.3 
+    └── nan@2.6.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/allex/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.064 took 11.5626s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:2) on program var Iterator = require('./Iterator'),
+  ItemWithDistance = require('./ItemWithDistance'),
+  assert = require('./assert');
+
+function DListController(myList){
+  this.list = myList;
+  this.traversing = null;
+  this.pushes = null;
+  this.shouldDestroy = null;
+}
+
+DListController.prototype.destroy = function(){
+  var sd = this.shouldDestroy;
+  this.shouldDestroy = null;
+  this.pushes = null;
+  this.traversing = null;
+  if (this.list) {
+    if (sd) {
+      this.list.controller = null;
+      this.list.destroy();
+      this.list = null;
+    }
+  }
+};
+
+DListController.prototype.purge = function(){
+  var t;
+  this.traversing = true;
+  while (this.list.length) {
+    t = this.list.tail;
+    this.remove(this.list.tail);
+    t.destroy();
+  }
+  this.list.head = this.list.tail = null;
+  this.traversing = false;
+  this.finalize();
+};
+
+DListController.prototype.finalize = function () {
+  var p;
+  if (this.traversing) {
+    return;
+  }
+  if (this.pushes) {
+    p = this.pushes;
+    this.pushes = null;
+    this.addToBack(p);
+  }
+  this.destroy();
+};
+
+DListController.prototype.contains = function (item) {
+  var tempitem;
+  if (!item) {
+    return false;
+  }
+  tempitem = this.list.head;
+  if (!tempitem) {
+    return false;
+  }
+  do {
+    if (tempitem == item) { //check if === neccessery?
+      return true;
+    }
+    tempitem = tempitem.next;
+  } while (tempitem);
+  return false;
+};
+
+DListController.prototype.addToBack = function(newItem, ignoretraversal){
+  if (!newItem) {
+    return;
+  }
+  if (this.traversing && !ignoretraversal) {
+    if (!this.pushes) {
+      this.pushes = newItem;
+    } else {
+      ItemWithDistance.nextestItem(this.pushes);
+      ItemWithDistance.item().next = newItem;
+      newItem.prev = ItemWithDistance.item();
+    }
+    return;
+  };
+  //assert(!this.contains(newItem));
+  if (!this.list.head) {
+    ItemWithDistance.nextestItem(newItem);
+    this.list.head = newItem;
+    this.list.tail = ItemWithDistance.item();
+    this.list.length = (ItemWithDistance.distance()+1);
+  } else {
+    this.list.tail.linkAsNext(newItem);
+    this.list.tail = ItemWithDistance.item();
+    this.list.length += (ItemWithDistance.distance()+1);
+  }
+  this.finalize();
+};
+
+DListController.prototype.addToFront = function(newItem){
+  if (newItem.prev) {
+    console.trace();
+    console.log(newItem);
+    throw new Error('Cannot addToFront an item with a prev');
+  }
+  //TODO why?
+  if (newItem.next) {
+    console.trace();
+    console.log(newItem);
+    throw new Error('Cannot addToFront an item with a next');
+  }
+  if (!this.list.head) {
+    this.list.head = this.list.tail = newItem;
+    this.list.length = 1;
+  } else {
+    newItem.next = this.list.head;
+    this.list.head.prev = newItem;
+    this.list.head = newItem;
+    this.list.length++;
+  }
+  this.finalize();
+};
+
+DListController.prototype.addAsPrevTo = function (item, prevtarget) {
+  var tt;
+  if (!item) {
+    return;
+  }
+  if (!prevtarget) {
+    return this.addToBack(item, true);
+  }
+  //assert(this.contains(prevtarget));
+  prevtarget.linkAsPrev(item);
+  if (prevtarget === this.list.head) {
+    this.list.head = ItemWithDistance.item();
+  }
+  this.list.length += (ItemWithDistance.distance()+1);
+  this.finalize();
+};
+
+DListController.prototype.remove = function(item){
+  var next;
+  if(item === null){
+    throw new Error("Cannot remove null item");
+    return;
+  }
+  if(!this.contains(item)) {
+    return;
+  }
+  //assert(this.check());
+  if (this.list.length>1 && !item.prev && !item.next) {
+    console.error('empty', item, 'on length', this.list.length);
+    throw new Error('Severe corruption');
+  }
+  if (item === this.list.tail) {
+    this.list.tail = item.prev;
+    if (!this.list.tail) {
+      this.list.tail = this.list.head;
+    }
+  } else if (item !== this.list.head) {
+    if (!(item.prev && item.next)) {
+      console.error('?!', item);
+      assert(false);
+    }
+  }
+  this.list.length--;
+  next = item.unlinkAndReturnNext();
+  assert (next !== item);
+  if (next) {
+    assert (next.content !== null);
+  }
+  if (item === this.list.head) {
+    this.list.head = next;
+    if (!this.list.head) {
+      this.list.tail = null;
+      this.list.length = 0;
+    }
+  }
+  //assert(this.check());
+  this.finalize();
+  return next;
+};
+
+DListController.prototype.firstItemToSatisfy = function(func){
+  var check=false, item = this.list.head;
+  while(!check&&item){
+    check = item.apply(func);
+    if('boolean' !== typeof check){
+      throw 'func needs to return a boolean value';
+    }
+    if(check){
+      return item;
+    }else{
+      item = item.next;
+    }
+  }
+  return item;
+};
+
+DListController.prototype.lastItemToSatisfy = function(func){
+  var check, item = this.list.head, ret;
+  while(item){
+    check = item.apply(func);
+    if('boolean' !== typeof check){
+      throw 'func needs to return a boolean value';
+    }
+    if(!check){
+      return ret;
+    }else{
+      ret = item;
+      item = item.next;
+    }
+  }
+  return ret;
+};
+
+DListController.prototype.drain = function (item) {
+  var tempitem = this.list.head,
+    nextitem;
+  this.traversing = true;
+  while (tempitem) {
+    if (!this.list) {
+      console.trace();
+      console.log(this);
+      process.exit(0);
+    }
+    nextitem = tempitem.next;
+    this.remove(tempitem);
+    tempitem.apply(item);
+    tempitem.destroy();
+    tempitem = nextitem;
+  }
+  this.traversing = false;
+  this.finalize();
+};
+
+DListController.prototype.drainConditionally = function (item, destroyeditemcb) {
+  var tempitem = this.list.head,
+    calldicb = 'function' === typeof destroyeditemcb,
+    nextitem,
+    crit;
+  this.traversing = true;
+  while (tempitem) {
+    nextitem = this.remove(tempitem);
+    //assert(this.check());
+    crit = tempitem.apply(item);
+    if ('undefined' === typeof crit) {
+      tempitem.destroy();
+      if (calldicb) {
+        destroyeditemcb(tempitem);
+      }
+    } else {
+      this.addAsPrevTo(tempitem, nextitem);
+      //assert(this.check());
+    }
+    tempitem = nextitem;
+  }
+  this.traversing = false;
+  this.finalize();
+};
+
+DListController.prototype.traverse = function(item){
+  var it;
+  this.traversing = true;
+  it = new Iterator(this, item);
+  it.run();
+  it.destroy();
+  this.traversing = false;
+  this.finalize();
+};
+
+DListController.prototype.traverseConditionally = function(func){
+  var ret, it;
+  this.traversing = true;
+  it = new Iterator(this, func);
+  ret = it.run(true);
+  it.destroy();
+  this.traversing = false;
+  this.finalize();
+  return ret;
+};
+
+/*
+DListController.prototype.traverseReverse = function(func){
+  var it = new Iterator(func, true); //reverse
+  it.setTargetItem(this.list.tail);
+  while(it.cb) {
+    it.run();
+    if(it.finished()) {
+      break;
+    }
+    if (it.needsNext()) {
+      it.setTargetItem(it.targetitem.prev);
+    }
+  }
+  it = null;
+}
+
+DListController.prototype.traverseConditionallyReverse = function(func){
+  var it = new Iterator(func, true), result;
+  it.setTargetItem(this.tail);
+  while(it.cb) {
+    result = it.run();
+    if('undefined' !== typeof result){
+      it.destroy();
+      it = null;
+      return result;
+    }
+    if(it.finished()) {
+      break;
+    }
+    if (it.needsNext()) {
+      it.setTargetItem(it.targetitem.prev);
+    }
+  }
+  it = null;
+};
+*/
+
+DListController.prototype.check = function () {
+  return true;
+  /*
+  var cnt = 0, i;
+  if (!this.list) {
+    return true;
+  }
+  i = this.list.head;
+  while (i) {
+    cnt++;
+    i = i.next;
+  }
+  if (cnt !== this.list.length) {
+    console.error('List is', cnt, 'long, but the length is reported as', this.list.length);
+    i = this.list.head;
+    while (i) {
+      console.log(i.content);
+      i = i.next;
+    }
+  }
+  cnt = 0;
+  i = this.list.tail;
+  while (i) {
+    cnt++;
+    i = i.prev;
+  }
+  if (cnt !== this.list.length) {
+    console.error('List is', cnt, 'long, but the length is reported as', this.list.length);
+    i = this.list.tail;
+    while (i) {
+      console.log(i.content);
+      i = i.prev;
+    }
+  }
+  return cnt === this.list.length;
+  */
+};
+
+module.exports = DListController;
+ at SyntaxError: Unexpected token (3:2)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/allex/node_modules/allex/index.js. Coverage (Term): 35% Coverage (LOC): 57%
+*- File /root/Targets/allex/node_modules/allexlib/index.js. Coverage (Term): 28% Coverage (LOC): 6%
+*- File /root/Targets/allex/node_modules/jsonschema/lib/index.js. Coverage (Term): 72% Coverage (LOC): 82%
+*- File /root/Targets/allex/node_modules/jsonschema/lib/validator.js. Coverage (Term): 14% Coverage (LOC): 26%
+*- File /root/Targets/allex/node_modules/jsonschema/lib/attribute.js. Coverage (Term): 7% Coverage (LOC): 14%
+*- File /root/Targets/allex/node_modules/jsonschema/lib/helpers.js. Coverage (Term): 14% Coverage (LOC): 30%
+*- File /root/Targets/allex/node_modules/allex_checkslowlevellib/index.js. Coverage (Term): 10% Coverage (LOC): 29%
+*- File /root/Targets/allex/node_modules/allex_destructionlowlevellib/index.js. Coverage (Term): 13% Coverage (LOC): 22%
+*- File /root/Targets/allex/node_modules/allex_inheritlowlevellib/index.js. Coverage (Term): 42% Coverage (LOC): 67%
+*- File /root/Targets/allex/node_modules/allex_singlelinkedlistlowlevellib/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/allex/node_modules/allex_singlelinkedlistlowlevellib/Iterator.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/allex/node_modules/allex_macaddresslowlevellib/index.js. Coverage (Term): 20% Coverage (LOC): 23%
+*- File /root/Targets/allex/node_modules/allex_stringmanipulationlowlevellib/index.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/allex/node_modules/allex_objectmanipulationlowlevellib/index.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/allex/node_modules/allex_objectmanipulationlowlevellib/extend.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/allex/node_modules/allex_objectmanipulationlowlevellib/extendshallow.js. Coverage (Term): 26% Coverage (LOC): 32%
+*- File /root/Targets/allex/node_modules/allex_functionmanipulationlowlevellib/index.js. Coverage (Term): 35% Coverage (LOC): 48%
+*- File /root/Targets/allex/node_modules/allex_errorlowlevellib/index.js. Coverage (Term): 59% Coverage (LOC): 70%
+*- File /root/Targets/allex/node_modules/allex_jsonizingerrorlowlevellib/index.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/allex/node_modules/allex_notanallexerrorerrorlowlevellib/index.js. Coverage (Term): 65% Coverage (LOC): 78%
+*- File /root/Targets/allex/node_modules/allex_doublelinkedlistbaselowlevellib/index.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/allex/node_modules/allex_doublelinkedlistbaselowlevellib/ListMixin.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

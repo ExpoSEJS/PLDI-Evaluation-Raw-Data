@@ -1,0 +1,621 @@
+/root/Targets/sycle-gateway
+├─┬ copress-component-oauth2@0.1.16  (git://github.com/sycle/sycle-component-oauth2.git#4c895f532ddc53413f976ec1bf82503d4e705a93)
+│ ├── chai-connect-middleware@0.3.1 
+│ ├── chai-oauth2orize-grant@0.2.1 
+│ ├── connect-ensure-login@0.1.1 
+│ ├── crypto@0.0.3 
+│ ├─┬ jws@3.1.4 
+│ │ ├── base64url@2.0.0 
+│ │ └─┬ jwa@1.1.5 
+│ │   ├── buffer-equal-constant-time@1.0.1 
+│ │   └── ecdsa-sig-formatter@1.0.9 
+│ ├─┬ passport@0.2.2 
+│ │ └── pause@0.0.1 
+│ ├─┬ passport-http@0.2.2 
+│ │ ├── passport@0.1.18 
+│ │ └── pkginfo@0.2.3 
+│ ├── passport-http-bearer@1.0.1 
+│ ├── passport-local@1.0.0 
+│ ├── passport-oauth2-client-password@0.1.2 
+│ ├── passport-strategy@1.0.0 
+│ ├─┬ path-to-regexp@1.7.0 
+│ │ └── isarray@0.0.1 
+│ ├── querystring@0.2.0 
+│ ├── uid2@0.0.3 
+│ ├─┬ url@0.10.3 
+│ │ └── punycode@1.3.2 
+│ └── utils-merge@1.0.1 
+└─┬ sycle-gateway@0.1.1 
+  ├── async@1.5.2 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └── mime-types@2.1.17 
+  ├─┬ bootable@0.2.4 
+  │ ├─┬ bootable-di@0.1.0 
+  │ │ └── debug@0.7.4 
+  │ ├── debug@0.7.4 
+  │ └── scripts@0.1.0 
+  ├─┬ bootable-environment@0.2.0 
+  │ └── debug@0.7.4 
+  ├─┬ compression@1.7.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├─┬ compressible@2.0.11 
+  │ │ └── mime-db@1.30.0 
+  │ ├── on-headers@1.0.1 
+  │ ├── safe-buffer@5.1.1 
+  │ └── vary@1.1.2 
+  ├── connect-powered-by@0.1.0 
+  ├─┬ cors@2.8.4 
+  │ └── object-assign@4.1.1 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├── ejs@0.8.8 
+  ├─┬ errorhandler@1.5.0 
+  │ └── escape-html@1.0.3 
+  ├─┬ express@4.16.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.1.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ └── statuses@1.3.1 
+  ├─┬ express-session@1.15.6 
+  │ ├── crc@3.4.4 
+  │ └─┬ uid-safe@2.1.5 
+  │   └── random-bytes@1.0.0 
+  ├─┬ expressx@0.1.10 
+  │ ├─┬ assert@1.4.1 
+  │ │ └─┬ util@0.10.3 
+  │ │   └── inherits@2.0.1 
+  │ ├─┬ endomain@0.1.0 
+  │ │ └─┬ continuation-local-storage@3.2.0 
+  │ │   ├─┬ async-listener@0.6.8 
+  │ │   │ ├── semver@5.4.1 
+  │ │   │ └── shimmer@1.1.0 
+  │ │   └─┬ emitter-listener@1.0.1 
+  │ │     └── shimmer@1.0.0 
+  │ └── stable@0.1.6 
+  ├─┬ http-proxy@1.16.2 
+  │ ├── eventemitter3@1.2.0 
+  │ └── requires-port@1.0.0 
+  ├─┬ jugglingdb@0.3.0 
+  │ └── inflection@1.2.7 
+  ├─┬ jugglingdb-mysql@0.0.10 
+  │ ├── coffee-script@1.6.3 
+  │ ├─┬ mysql@2.14.1 
+  │ │ ├── bignumber.js@4.0.2 
+  │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ ├── string_decoder@1.0.3 
+  │ │ │ └── util-deprecate@1.0.2 
+  │ │ └── sqlstring@2.2.0 
+  │ ├── semicov@0.1.1 
+  │ └── should@3.0.1 
+  ├── limiter@1.1.2 
+  ├── lodash@3.10.1 
+  ├─┬ loopback-policy@1.0.0-beta1 
+  │ ├── async@0.9.2 
+  │ ├── extend@2.0.1 
+  │ └─┬ nools@0.4.4 
+  │   ├── arguments-extended@0.0.3 
+  │   ├── array-extended@0.0.11 
+  │   ├─┬ commander@1.1.1 
+  │   │ └── keypress@0.1.0 
+  │   ├── date-extended@0.0.6 
+  │   ├── declare.js@0.0.8 
+  │   ├─┬ extended@0.0.6 
+  │   │ └── extender@0.0.10 
+  │   ├── function-extended@0.0.9 
+  │   ├── ht@0.0.2 
+  │   ├── is-extended@0.0.10 
+  │   ├── leafy@0.0.3 
+  │   ├── object-extended@0.0.7 
+  │   ├── promise-extended@0.0.9 
+  │   ├── string-extended@0.0.8 
+  │   └─┬ uglify-js@2.4.24 
+  │     ├── async@0.2.10 
+  │     ├─┬ source-map@0.1.34 
+  │     │ └── amdefine@1.0.1 
+  │     ├── uglify-to-browserify@1.0.2 
+  │     └─┬ yargs@3.5.4 
+  │       ├── camelcase@1.2.1 
+  │       ├── decamelize@1.2.0 
+  │       ├── window-size@0.1.0 
+  │       └── wordwrap@0.0.2 
+  ├── method-override@2.3.10 
+  ├── metrics@0.1.14 
+  ├─┬ morgan@1.9.0 
+  │ └── basic-auth@2.0.0 
+  ├── serve-favicon@2.4.5 
+  ├─┬ serve-static@1.9.3 
+  │ ├── escape-html@1.0.1 
+  │ ├─┬ send@0.12.3 
+  │ │ ├── debug@2.2.0 
+  │ │ ├── depd@1.0.1 
+  │ │ ├── destroy@1.0.3 
+  │ │ ├─┬ etag@1.6.0 
+  │ │ │ └── crc@3.2.1 
+  │ │ ├── fresh@0.2.4 
+  │ │ ├── mime@1.3.4 
+  │ │ ├── ms@0.7.1 
+  │ │ ├─┬ on-finished@2.2.1 
+  │ │ │ └── ee-first@1.1.0 
+  │ │ └── range-parser@1.0.3 
+  │ └── utils-merge@1.0.0 
+  ├── strong-express-metrics@2.0.3 
+  ├─┬ sycle-express-explorer@0.1.2 
+  │ ├─┬ lodash.clonedeep@3.0.2 
+  │ │ ├─┬ lodash._baseclone@3.3.0 
+  │ │ │ ├── lodash._arraycopy@3.0.0 
+  │ │ │ ├── lodash._arrayeach@3.0.0 
+  │ │ │ ├─┬ lodash._baseassign@3.2.0 
+  │ │ │ │ └── lodash._basecopy@3.0.1 
+  │ │ │ ├── lodash._basefor@3.0.3 
+  │ │ │ ├── lodash.isarray@3.0.4 
+  │ │ │ └─┬ lodash.keys@3.1.2 
+  │ │ │   ├── lodash._getnative@3.9.1 
+  │ │ │   └── lodash.isarguments@3.1.0 
+  │ │ └── lodash._bindcallback@3.0.1 
+  │ └─┬ loopback-explorer@1.8.0 
+  │   ├── debug@1.0.5 
+  │   ├─┬ express@3.21.2 
+  │   │ ├── basic-auth@1.0.4 
+  │   │ ├── commander@2.6.0 
+  │   │ ├─┬ connect@2.30.2 
+  │   │ │ ├── basic-auth-connect@1.0.0 
+  │   │ │ ├─┬ body-parser@1.13.3 
+  │   │ │ │ ├── iconv-lite@0.4.11 
+  │   │ │ │ └─┬ raw-body@2.1.7 
+  │   │ │ │   ├── bytes@2.4.0 
+  │   │ │ │   └── iconv-lite@0.4.13 
+  │   │ │ ├── bytes@2.1.0 
+  │   │ │ ├─┬ compression@1.5.2 
+  │   │ │ │ ├─┬ accepts@1.2.13 
+  │   │ │ │ │ └── negotiator@0.5.3 
+  │   │ │ │ └── vary@1.0.1 
+  │   │ │ ├─┬ connect-timeout@1.6.2 
+  │   │ │ │ ├── debug@2.2.0 
+  │   │ │ │ ├── http-errors@1.3.1 
+  │   │ │ │ └── ms@0.7.1 
+  │   │ │ ├── cookie@0.1.3 
+  │   │ │ ├─┬ cookie-parser@1.3.5 
+  │   │ │ │ └── cookie@0.1.3 
+  │   │ │ ├─┬ csurf@1.8.3 
+  │   │ │ │ ├── cookie@0.1.3 
+  │   │ │ │ ├─┬ csrf@3.0.6 
+  │   │ │ │ │ ├── rndm@1.2.0 
+  │   │ │ │ │ ├── tsscmp@1.0.5 
+  │   │ │ │ │ └── uid-safe@2.1.4 
+  │   │ │ │ └── http-errors@1.3.1 
+  │   │ │ ├─┬ debug@2.2.0 
+  │   │ │ │ └── ms@0.7.1 
+  │   │ │ ├── depd@1.0.1 
+  │   │ │ ├─┬ errorhandler@1.4.3 
+  │   │ │ │ └─┬ accepts@1.3.4 
+  │   │ │ │   └── negotiator@0.6.1 
+  │   │ │ ├─┬ express-session@1.11.3 
+  │   │ │ │ ├── crc@3.3.0 
+  │   │ │ │ └─┬ uid-safe@2.0.0 
+  │   │ │ │   └── base64-url@1.2.1 
+  │   │ │ ├─┬ finalhandler@0.4.0 
+  │   │ │ │ └── escape-html@1.0.2 
+  │   │ │ ├── fresh@0.3.0 
+  │   │ │ ├── http-errors@1.3.1 
+  │   │ │ ├─┬ morgan@1.6.1 
+  │   │ │ │ └── basic-auth@1.0.4 
+  │   │ │ ├─┬ multiparty@3.3.2 
+  │   │ │ │ ├─┬ readable-stream@1.1.14 
+  │   │ │ │ │ └── string_decoder@0.10.31 
+  │   │ │ │ └─┬ stream-counter@0.2.0 
+  │   │ │ │   └─┬ readable-stream@1.1.14 
+  │   │ │ │     └── string_decoder@0.10.31 
+  │   │ │ ├── pause@0.1.0 
+  │   │ │ ├── qs@4.0.0 
+  │   │ │ ├── response-time@2.3.2 
+  │   │ │ ├─┬ serve-favicon@2.3.2 
+  │   │ │ │ ├── etag@1.7.0 
+  │   │ │ │ └── ms@0.7.2 
+  │   │ │ ├─┬ serve-index@1.7.3 
+  │   │ │ │ ├─┬ accepts@1.2.13 
+  │   │ │ │ │ └── negotiator@0.5.3 
+  │   │ │ │ ├── batch@0.5.3 
+  │   │ │ │ ├─┬ debug@2.2.0 
+  │   │ │ │ │ └── ms@0.7.1 
+  │   │ │ │ └── http-errors@1.3.1 
+  │   │ │ ├─┬ serve-static@1.10.3 
+  │   │ │ │ └─┬ send@0.13.2 
+  │   │ │ │   ├── depd@1.1.1 
+  │   │ │ │   ├── mime@1.3.4 
+  │   │ │ │   ├── range-parser@1.0.3 
+  │   │ │ │   └── statuses@1.2.1 
+  │   │ │ ├── utils-merge@1.0.0 
+  │   │ │ └── vhost@3.0.2 
+  │   │ ├── content-disposition@0.5.0 
+  │   │ ├── cookie@0.1.3 
+  │   │ ├─┬ debug@2.2.0 
+  │   │ │ └── ms@0.7.1 
+  │   │ ├── depd@1.0.1 
+  │   │ ├── escape-html@1.0.2 
+  │   │ ├── etag@1.7.0 
+  │   │ ├── fresh@0.3.0 
+  │   │ ├── merge-descriptors@1.0.0 
+  │   │ ├─┬ mkdirp@0.5.1 
+  │   │ │ └── minimist@0.0.8 
+  │   │ ├─┬ proxy-addr@1.0.10 
+  │   │ │ └── ipaddr.js@1.0.5 
+  │   │ ├── range-parser@1.0.3 
+  │   │ ├─┬ send@0.13.0 
+  │   │ │ ├── debug@2.2.0 
+  │   │ │ ├── destroy@1.0.3 
+  │   │ │ ├── http-errors@1.3.1 
+  │   │ │ ├── mime@1.3.4 
+  │   │ │ ├── ms@0.7.1 
+  │   │ │ └── statuses@1.2.1 
+  │   │ ├── utils-merge@1.0.0 
+  │   │ └── vary@1.0.1 
+  │   ├── lodash@2.4.2 
+  │   └─┬ swagger-ui@2.0.24 
+  │     ├─┬ handlebars@1.0.12 
+  │     │ ├── optimist@0.3.7 
+  │     │ └─┬ uglify-js@2.3.6 
+  │     │   └── async@0.2.10 
+  │     ├─┬ less@1.4.2 
+  │     │ ├── mime@1.2.11 
+  │     │ ├── mkdirp@0.3.5 
+  │     │ └── ycssmin@1.0.1 
+  │     └─┬ swagger-client@2.0.36 
+  │       ├── btoa@1.1.1 
+  │       └─┬ shred@0.8.10 
+  │         ├── ax@0.1.8 
+  │         ├── cookiejar@1.3.1 
+  │         └── sprintf@0.1.1 
+  ├─┬ sycle-express-rest@0.1.4 
+  │ ├── cancelify@0.1.5 
+  │ └─┬ sycle@0.3.2 
+  │   ├── bcryptjs@2.4.3 
+  │   ├── delegates@0.1.0 
+  │   ├── dotty@0.0.2 
+  │   ├── inflection@1.12.0 
+  │   ├── middist@0.1.2 
+  │   ├── pkginfo@0.3.1 
+  │   ├─┬ resolve@1.4.0 
+  │   │ └── path-parse@1.0.5 
+  │   ├── routes@2.1.0 
+  │   ├─┬ strong-remoting@2.33.0 
+  │   │ ├─┬ async@2.5.0 
+  │   │ │ └── lodash@4.17.4 
+  │   │ ├── eventemitter2@2.2.2 
+  │   │ ├── inflection@1.12.0 
+  │   │ ├─┬ jayson@1.2.2 
+  │   │ │ ├── commander@1.3.2 
+  │   │ │ ├── eyes@0.1.8 
+  │   │ │ ├─┬ JSONStream@1.0.3 
+  │   │ │ │ └── jsonparse@1.0.0 
+  │   │ │ └── lodash@3.6.0 
+  │   │ ├── js2xmlparser@1.0.0 
+  │   │ ├─┬ loopback-phase@1.4.1 
+  │   │ │ └── async@0.9.2 
+  │   │ ├─┬ mux-demux@3.7.9 
+  │   │ │ ├── duplex@1.0.0 
+  │   │ │ ├── json-buffer@2.0.11 
+  │   │ │ ├─┬ msgpack-stream@0.0.12 
+  │   │ │ │ ├─┬ bops@0.0.6 
+  │   │ │ │ │ ├── base64-js@0.0.2 
+  │   │ │ │ │ └── to-utf8@0.0.1 
+  │   │ │ │ ├── msgpack-js@0.3.0 
+  │   │ │ │ └── through@2.3.4 
+  │   │ │ ├─┬ stream-combiner@0.0.2 
+  │   │ │ │ └── duplexer@0.0.4 
+  │   │ │ ├── stream-serializer@1.1.2 
+  │   │ │ ├── through@2.3.8 
+  │   │ │ └── xtend@1.0.3 
+  │   │ ├─┬ request@2.83.0 
+  │   │ │ ├── aws-sign2@0.7.0 
+  │   │ │ ├── aws4@1.6.0 
+  │   │ │ ├── caseless@0.12.0 
+  │   │ │ ├─┬ combined-stream@1.0.5 
+  │   │ │ │ └── delayed-stream@1.0.0 
+  │   │ │ ├── extend@3.0.1 
+  │   │ │ ├── forever-agent@0.6.1 
+  │   │ │ ├─┬ form-data@2.3.1 
+  │   │ │ │ └── asynckit@0.4.0 
+  │   │ │ ├─┬ har-validator@5.0.3 
+  │   │ │ │ ├─┬ ajv@5.2.3 
+  │   │ │ │ │ ├── co@4.6.0 
+  │   │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │   │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │   │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │   │ │ │ │   └── jsonify@0.0.0 
+  │   │ │ │ └── har-schema@2.0.0 
+  │   │ │ ├─┬ hawk@6.0.2 
+  │   │ │ │ ├── boom@4.3.1 
+  │   │ │ │ ├─┬ cryptiles@3.1.2 
+  │   │ │ │ │ └── boom@5.2.0 
+  │   │ │ │ ├── hoek@4.2.0 
+  │   │ │ │ └── sntp@2.0.2 
+  │   │ │ ├─┬ http-signature@1.2.0 
+  │   │ │ │ ├── assert-plus@1.0.0 
+  │   │ │ │ ├─┬ jsprim@1.4.1 
+  │   │ │ │ │ ├── extsprintf@1.3.0 
+  │   │ │ │ │ ├── json-schema@0.2.3 
+  │   │ │ │ │ └── verror@1.10.0 
+  │   │ │ │ └─┬ sshpk@1.13.1 
+  │   │ │ │   ├── asn1@0.2.3 
+  │   │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │   │ │ │   ├── dashdash@1.14.1 
+  │   │ │ │   ├── ecc-jsbn@0.1.1 
+  │   │ │ │   ├── getpass@0.1.7 
+  │   │ │ │   ├── jsbn@0.1.1 
+  │   │ │ │   └── tweetnacl@0.14.5 
+  │   │ │ ├── is-typedarray@1.0.0 
+  │   │ │ ├── isstream@0.1.2 
+  │   │ │ ├── json-stringify-safe@5.0.1 
+  │   │ │ ├── oauth-sign@0.8.2 
+  │   │ │ ├── performance-now@2.1.0 
+  │   │ │ ├── stringstream@0.0.5 
+  │   │ │ ├─┬ tough-cookie@2.3.3 
+  │   │ │ │ └── punycode@1.4.1 
+  │   │ │ ├── tunnel-agent@0.6.0 
+  │   │ │ └── uuid@3.1.0 
+  │   │ ├─┬ sse@0.0.6 
+  │   │ │ └── options@0.0.6 
+  │   │ ├─┬ strong-globalize@2.8.5 
+  │   │ │ ├── esprima@3.1.3 
+  │   │ │ ├── estraverse@4.2.0 
+  │   │ │ ├─┬ g11n-pipeline@1.5.1 
+  │   │ │ │ └─┬ swagger-client@2.1.32 
+  │   │ │ │   ├── btoa@1.1.2 
+  │   │ │ │   ├── cookiejar@2.1.1 
+  │   │ │ │   ├─┬ js-yaml@3.10.0 
+  │   │ │ │   │ └── esprima@4.0.0 
+  │   │ │ │   ├── lodash-compat@3.10.2 
+  │   │ │ │   ├── q@1.5.0 
+  │   │ │ │   └─┬ superagent@2.3.0 
+  │   │ │ │     ├── cookiejar@2.1.1 
+  │   │ │ │     ├── extend@3.0.1 
+  │   │ │ │     ├── form-data@1.0.0-rc4 
+  │   │ │ │     └── formidable@1.1.1 
+  │   │ │ ├─┬ htmlparser2@3.9.2 
+  │   │ │ │ ├── domelementtype@1.3.0 
+  │   │ │ │ ├── domhandler@2.4.1 
+  │   │ │ │ ├─┬ domutils@1.6.2 
+  │   │ │ │ │ └─┬ dom-serializer@0.1.0 
+  │   │ │ │ │   └── domelementtype@1.1.3 
+  │   │ │ │ └── entities@1.1.1 
+  │   │ │ ├── lodash@4.17.4 
+  │   │ │ ├─┬ md5@2.2.1 
+  │   │ │ │ ├── charenc@0.0.2 
+  │   │ │ │ ├── crypt@0.0.2 
+  │   │ │ │ └── is-buffer@1.1.5 
+  │   │ │ ├─┬ mktmpdir@0.1.1 
+  │   │ │ │ └── rimraf@2.2.8 
+  │   │ │ ├── optional@0.1.4 
+  │   │ │ ├─┬ os-locale@1.4.0 
+  │   │ │ │ └─┬ lcid@1.0.0 
+  │   │ │ │   └── invert-kv@1.0.0 
+  │   │ │ ├── posix-getopt@1.2.0 
+  │   │ │ ├── word-count@0.2.2 
+  │   │ │ ├── xtend@4.0.1 
+  │   │ │ └─┬ yamljs@0.2.10 
+  │   │ │   ├─┬ argparse@1.0.9 
+  │   │ │   │ └── sprintf-js@1.0.3 
+  │   │ │   └─┬ glob@7.1.2 
+  │   │ │     ├── fs.realpath@1.0.0 
+  │   │ │     ├─┬ inflight@1.0.6 
+  │   │ │     │ └── wrappy@1.0.2 
+  │   │ │     ├── minimatch@3.0.4 
+  │   │ │     ├── once@1.4.0 
+  │   │ │     └── path-is-absolute@1.0.1 
+  │   │ ├── traverse@0.6.6 
+  │   │ └─┬ xml2js@0.4.19 
+  │   │   ├── sax@1.2.4 
+  │   │   └── xmlbuilder@9.0.4 
+  │   └── validator@3.43.0 
+  ├─┬ syclify@0.1.3 
+  │ └─┬ needs@0.1.9 
+  │   └─┬ minimatch@2.0.10 
+  │     └─┬ brace-expansion@1.1.8 
+  │       ├── balanced-match@1.0.0 
+  │       └── concat-map@0.0.1 
+  └─┬ witty@0.6.12 
+    ├─┬ actionrouter@0.1.0 
+    │ ├── i@0.3.6 
+    │ └── methods@0.1.0 
+    ├─┬ chalk@1.1.3 
+    │ ├── ansi-styles@2.2.1 
+    │ ├── escape-string-regexp@1.0.5 
+    │ ├─┬ has-ansi@2.0.0 
+    │ │ └── ansi-regex@2.1.1 
+    │ ├── strip-ansi@3.0.1 
+    │ └── supports-color@2.0.0 
+    ├─┬ co-prompt@1.0.0 
+    │ └── keypress@0.2.1 
+    ├─┬ commander@2.7.1 
+    │ └── graceful-readlink@1.0.1 
+    ├─┬ express@4.12.3 
+    │ ├─┬ accepts@1.2.13 
+    │ │ └── negotiator@0.5.3 
+    │ ├── content-disposition@0.5.0 
+    │ ├── cookie@0.1.2 
+    │ ├─┬ debug@2.1.3 
+    │ │ └── ms@0.7.0 
+    │ ├── depd@1.0.1 
+    │ ├── escape-html@1.0.1 
+    │ ├─┬ etag@1.5.1 
+    │ │ └── crc@3.2.1 
+    │ ├─┬ finalhandler@0.3.4 
+    │ │ └── debug@2.1.3 
+    │ ├── fresh@0.2.4 
+    │ ├── merge-descriptors@1.0.0 
+    │ ├─┬ on-finished@2.2.1 
+    │ │ └── ee-first@1.1.0 
+    │ ├── path-to-regexp@0.1.3 
+    │ ├─┬ proxy-addr@1.0.10 
+    │ │ └── ipaddr.js@1.0.5 
+    │ ├── qs@2.4.1 
+    │ ├── range-parser@1.0.3 
+    │ ├─┬ send@0.12.2 
+    │ │ ├── debug@2.1.3 
+    │ │ ├── destroy@1.0.3 
+    │ │ └── mime@1.3.4 
+    │ ├── utils-merge@1.0.0 
+    │ └── vary@1.0.1 
+    ├─┬ expressx@0.1.10 
+    │ └─┬ express@4.16.1 
+    │   ├─┬ accepts@1.3.4 
+    │   │ └── negotiator@0.6.1 
+    │   ├── content-disposition@0.5.2 
+    │   ├── cookie@0.3.1 
+    │   ├── depd@1.1.1 
+    │   ├── escape-html@1.0.3 
+    │   ├── etag@1.8.1 
+    │   ├── finalhandler@1.1.0 
+    │   ├── fresh@0.5.2 
+    │   ├── merge-descriptors@1.0.1 
+    │   ├─┬ on-finished@2.3.0 
+    │   │ └── ee-first@1.1.1 
+    │   ├── path-to-regexp@0.1.7 
+    │   ├─┬ proxy-addr@2.0.2 
+    │   │ └── ipaddr.js@1.5.2 
+    │   ├── qs@6.5.1 
+    │   ├── range-parser@1.2.0 
+    │   ├─┬ send@0.16.1 
+    │   │ ├── destroy@1.0.4 
+    │   │ ├── mime@1.4.1 
+    │   │ └── ms@2.0.0 
+    │   ├── serve-static@1.13.1 
+    │   ├── setprototypeof@1.1.0 
+    │   ├── utils-merge@1.0.1 
+    │   └── vary@1.1.2 
+    ├── inflection@1.12.0 
+    ├── mkdirp@0.3.5 
+    ├── parent-require@1.0.0 
+    ├── pkginfo@0.3.0 
+    ├─┬ supertest@1.2.0 
+    │ └─┬ superagent@1.8.5 
+    │   ├── component-emitter@1.2.1 
+    │   ├── cookiejar@2.0.6 
+    │   ├── extend@3.0.0 
+    │   ├── form-data@1.0.0-rc3 
+    │   ├── formidable@1.0.17 
+    │   ├── mime@1.3.4 
+    │   ├── qs@2.3.3 
+    │   ├─┬ readable-stream@1.0.27-1 
+    │   │ └── string_decoder@0.10.31 
+    │   └── reduce-component@1.0.1 
+    ├─┬ syntax-error@1.1.2 
+    │ └── acorn@0.9.0 
+    └── utils-flatten@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sycle-gateway/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","some"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0404 took 7.1314s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'return' outside of function (9:2) on program 
+var http = require('http');
+
+if (http.METHODS) {
+  module.exports = http.METHODS.map(function(method){
+    return method.toLowerCase();
+  });
+
+  return;
+}
+
+module.exports = [
+  'get',
+  'post',
+  'put',
+  'head',
+  'delete',
+  'options',
+  'trace',
+  'copy',
+  'lock',
+  'mkcol',
+  'move',
+  'propfind',
+  'proppatch',
+  'unlock',
+  'report',
+  'mkactivity',
+  'checkout',
+  'merge',
+  'm-search',
+  'notify',
+  'subscribe',
+  'unsubscribe',
+  'patch',
+  'search'
+];
+ at SyntaxError: 'return' outside of function (9:2)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:831:12)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:709:33)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseIfStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:824:28)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:698:30)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sycle-gateway/node_modules/sycle-gateway/server/server.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/sycle-gateway/node_modules/witty/lib/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/sycle-gateway/node_modules/witty/lib/application.js. Coverage (Term): 6% Coverage (LOC): 4%
+*- File /root/Targets/sycle-gateway/node_modules/bootable/lib/index.js. Coverage (Term): 36% Coverage (LOC): 41%
+*- File /root/Targets/sycle-gateway/node_modules/bootable/lib/initializer.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/sycle-gateway/node_modules/bootable/node_modules/debug/lib/debug.js. Coverage (Term): 37% Coverage (LOC): 59%
+*- File /root/Targets/sycle-gateway/node_modules/bootable/lib/phases/initializers.js. Coverage (Term): 16% Coverage (LOC): 10%
+*- File /root/Targets/sycle-gateway/node_modules/bootable/lib/phases/routes.js. Coverage (Term): 37% Coverage (LOC): 31%
+*- File /root/Targets/sycle-gateway/node_modules/scripts/index.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/sycle-gateway/node_modules/bootable-di/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/sycle-gateway/node_modules/bootable-di/lib/phases/initializers.js. Coverage (Term): 12% Coverage (LOC): 8%
+*- File /root/Targets/sycle-gateway/node_modules/bootable-di/node_modules/debug/lib/debug.js. Coverage (Term): 37% Coverage (LOC): 59%
+*- File /root/Targets/sycle-gateway/node_modules/bootable-di/lib/phases/routes.js. Coverage (Term): 25% Coverage (LOC): 17%
+*- File /root/Targets/sycle-gateway/node_modules/actionrouter/lib/index.js. Coverage (Term): 62% Coverage (LOC): 100%
+*- File /root/Targets/sycle-gateway/node_modules/actionrouter/lib/router.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

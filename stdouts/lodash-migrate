@@ -1,0 +1,54 @@
+/root/Targets/lodash-migrate
+└── lodash-migrate@0.3.16 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/lodash-migrate/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","Function","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0671 took 35.8834s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Tropigate failed because SyntaxError: 'with' in strict mode (5:0) on program (function(_) { //# sourceURL=lodash.templateSources[0]
+return function(obj) {
+obj || (obj = {});
+var __t, __p = '';
+with (obj) {
+__p += 'lodash-migrate: _.' +
+((__t = ( name )) == null ? '' : __t) +
+'(' +
+((__t = ( args )) == null ? '' : __t) +
+')\n  v' +
+((__t = ( oldData.version )) == null ? '' : __t) +
+' => ' +
+((__t = ( oldData.result )) == null ? '' : __t) +
+'\n  v' +
+((__t = ( newData.version )) == null ? '' : __t) +
+' => ' +
+((__t = ( newData.result )) == null ? '' : __t);
+
+}
+return __p
+} }) at SyntaxError: 'with' in strict mode (5:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/lodash-migrate/node_modules/lodash-migrate/index.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/lodash-migrate/node_modules/lodash-migrate/lodash.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/lodash-migrate/node_modules/lodash-migrate/lib/config.js. Coverage (Term): 50% Coverage (LOC): 59%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,137 @@
+/root/Targets/scmt
+└─┬ scmt@1.0.2 
+  ├── commander@2.0.0 
+  ├─┬ generate-schema@2.5.1 
+  │ ├── commander@2.11.0 
+  │ └── type-of-is@3.5.1 
+  ├─┬ jayschema@0.3.2 
+  │ └── when@3.4.6 
+  ├─┬ js-yaml@2.1.0 
+  │ ├─┬ argparse@0.1.16 
+  │ │ ├── underscore@1.7.0 
+  │ │ └── underscore.string@2.4.0 
+  │ └── esprima@1.0.4 
+  ├─┬ node-plantuml@0.4.4 
+  │ ├── commander@2.11.0 
+  │ ├─┬ node-nailgun-client@0.1.0 
+  │ │ └── commander@2.11.0 
+  │ ├─┬ node-nailgun-server@0.1.3 
+  │ │ └── commander@2.11.0 
+  │ └─┬ plantuml-encoder@1.2.4 
+  │   ├── pako@1.0.3 
+  │   └── utf8-bytes@0.0.1 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/scmt/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0345 took 3.8366s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+/*jshint node: true */
+'use strict';
+
+// var fs = require('fs');
+var verbose = false;
+var path = require('path');
+var file = require('./file.js');
+var GenerateSchema = require('generate-schema')
+var _ = require('underscore');
+
+var decorateProperty = function(schemaProperty, key, obj) {
+	// console.log('decorateProperty:', JSON.stringify(schemaProperty, null, ''));
+	var decoratedSchemaProperty = schemaProperty;
+
+	if (_.has(schemaProperty, 'type')) {
+
+		if (schemaProperty.type ==='object') {
+			decoratedSchemaProperty = decorateObject(schemaProperty);
+		} else if (schemaProperty.type ==='array') {
+			decoratedSchemaProperty = decorateArray(schemaProperty);
+		}
+	}
+	decoratedSchemaProperty.description = "";
+	return decoratedSchemaProperty;
+}
+
+var decorateProperties = function(schemaProperties) {
+	// console.log('decorateProperties:', JSON.stringify(schemaProperties, null, ''));
+	return _.each(schemaProperties, decorateProperty);
+}
+
+var decorateObject = function (schema) {
+	// console.log('decorateObject:', JSON.stringify(schema, null, {}));
+	var decoratedSchema = schema;
+
+	if (_.has(schema, 'properties')) {
+		decoratedSchema.properties = decorateProperties((schema.properties));
+		decoratedSchema.required = _.keys(schema.properties);
+	}
+	decoratedSchema.description = "";
+
+	return decoratedSchema;
+}
+
+var decorateArray = function (schema) {
+	// console.log('decorateArray:', JSON.stringify(schema, null, ''));
+	var decoratedSchema = schema;
+
+	if (_.has(schema, 'items')) {
+		decoratedSchema.items = decorateProperty((schema.items));
+	}
+	decoratedSchema.description = "";
+	return decoratedSchema;
+}
+
+var decorateSchema = function (schema) {
+	// console.log('decorateSchema:', JSON.stringify(schema, null, ''));
+	var decoratedSchema = schema;
+
+	if (_.has(schema, 'type') ) {
+		if (schema.type ==='object') {
+			decoratedSchema = decorateObject(schema);
+		} else if (schema.type ==='array') {
+			decoratedSchema = decorateArray(schema);
+		}
+	}
+	return decoratedSchema;
+}
+
+/**
+ * TBD.
+ * @param  {Object} config   Configuration parameters
+ * @param  {bool} verbose    Work in verbose mode if `true`
+ */
+exports.execute = function(config, mode) {
+    verbose = mode;
+
+    var input = file.read(config.input);
+    var schema = GenerateSchema.json(config.input + ' schema', input);
+
+    // console.log(JSON.stringify(schema, null, '  '));
+    var decoratedSchema = decorateSchema(schema);
+    console.log(JSON.stringify(decoratedSchema, null, '  '));
+}; at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/scmt/node_modules/scmt/index.js. Coverage (Term): 40% Coverage (LOC): 67%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

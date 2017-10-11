@@ -1,0 +1,82 @@
+
+> iconv@2.3.0 install /root/Targets/shizuku/node_modules/iconv
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/shizuku/node_modules/iconv/build'
+  CXX(target) Release/obj.target/iconv/src/binding.o
+  CC(target) Release/obj.target/iconv/deps/libiconv/lib/iconv.o
+  CC(target) Release/obj.target/iconv/support/localcharset.o
+  SOLINK_MODULE(target) Release/obj.target/iconv.node
+  COPY Release/iconv.node
+make: Leaving directory '/root/Targets/shizuku/node_modules/iconv/build'
+/root/Targets/shizuku
+└─┬ shizuku@0.0.6 
+  ├── block-ui@2.70.1 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── setprototypeof@1.0.3 
+  │ │ └── statuses@1.3.1 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├── bootstrap@3.3.7 
+  ├── comma-separated-values@3.6.4 
+  ├── font-awesome@4.7.0 
+  ├─┬ iconv@2.3.0 
+  │ └── nan@2.7.0 
+  ├── jquery@2.2.4 
+  ├── jquery.panzoom@2.0.6 
+  ├── jsplumb@2.5.4 
+  ├── moment@2.18.1 
+  └─┬ pg@4.5.7 
+    ├── buffer-writer@1.0.1 
+    ├── generic-pool@2.4.2 
+    ├── js-string-escape@1.0.1 
+    ├── packet-reader@0.2.0 
+    ├── pg-connection-string@0.1.3 
+    ├─┬ pg-types@1.12.1 
+    │ ├── postgres-array@1.0.2 
+    │ ├── postgres-bytea@1.0.0 
+    │ ├── postgres-date@1.0.3 
+    │ └─┬ postgres-interval@1.1.1 
+    │   └── xtend@4.0.1 
+    ├─┬ pgpass@0.0.3 
+    │ └─┬ split@0.3.3 
+    │   └── through@2.3.8 
+    └── semver@4.3.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/shizuku/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0297 took 30.1797s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'mouseHooks' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/shizuku/node_modules/shizuku/lib/index.js. Coverage (Term): 23% Coverage (LOC): 12%
+*- File /root/Targets/shizuku/node_modules/shizuku/lib/Shizuku.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/shizuku/node_modules/jquery.panzoom/dist/jquery.panzoom.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/shizuku/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

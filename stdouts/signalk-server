@@ -1,0 +1,911 @@
+
+> sqlite3@3.1.13 install /root/Targets/signalk-server/node_modules/sqlite3
+> node-pre-gyp install --fallback-to-build
+
+[sqlite3] Success: "/root/Targets/signalk-server/node_modules/sqlite3/lib/binding/node-v51-linux-x64/node_sqlite3.node" is installed via remote
+
+> serialport@4.0.7 install /root/Targets/signalk-server/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+[serialport] Success: "/root/Targets/signalk-server/node_modules/serialport/build/Release/serialport.node" is installed via remote
+/root/Targets/signalk-server
+├── @signalk/signalk-to-nmea0183@0.0.1 
+└─┬ signalk-server@0.1.31 
+  ├─┬ @mapbox/mbtiles@0.9.0 
+  │ ├── @mapbox/sphericalmercator@1.0.5 
+  │ ├── @mapbox/tiletype@0.3.1 
+  │ ├── d3-queue@2.0.3 
+  │ └─┬ sqlite3@3.1.13 
+  │   └─┬ node-pre-gyp@0.6.38 
+  │     ├─┬ hawk@3.1.3 
+  │     │ ├── boom@2.10.1 
+  │     │ ├── cryptiles@2.0.5 
+  │     │ ├── hoek@2.16.3 
+  │     │ └── sntp@1.0.9 
+  │     ├─┬ mkdirp@0.5.1 
+  │     │ └── minimist@0.0.8 
+  │     ├─┬ nopt@4.0.1 
+  │     │ ├── abbrev@1.1.1 
+  │     │ └─┬ osenv@0.1.4 
+  │     │   ├── os-homedir@1.0.2 
+  │     │   └── os-tmpdir@1.0.2 
+  │     ├─┬ npmlog@4.1.2 
+  │     │ ├─┬ are-we-there-yet@1.1.4 
+  │     │ │ └── delegates@1.0.0 
+  │     │ ├── console-control-strings@1.1.0 
+  │     │ ├─┬ gauge@2.7.4 
+  │     │ │ ├── aproba@1.2.0 
+  │     │ │ ├── has-unicode@2.0.1 
+  │     │ │ ├── object-assign@4.1.1 
+  │     │ │ ├── signal-exit@3.0.2 
+  │     │ │ ├─┬ string-width@1.0.2 
+  │     │ │ │ ├── code-point-at@1.1.0 
+  │     │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │     │ │ │   └── number-is-nan@1.0.1 
+  │     │ │ ├─┬ strip-ansi@3.0.1 
+  │     │ │ │ └── ansi-regex@2.1.1 
+  │     │ │ └── wide-align@1.1.2 
+  │     │ └── set-blocking@2.0.0 
+  │     ├─┬ rc@1.2.1 
+  │     │ ├── deep-extend@0.4.2 
+  │     │ ├── ini@1.3.4 
+  │     │ ├── minimist@1.2.0 
+  │     │ └── strip-json-comments@2.0.1 
+  │     ├─┬ request@2.81.0 
+  │     │ ├── aws-sign2@0.6.0 
+  │     │ ├── aws4@1.6.0 
+  │     │ ├── caseless@0.12.0 
+  │     │ ├─┬ combined-stream@1.0.5 
+  │     │ │ └── delayed-stream@1.0.0 
+  │     │ ├── extend@3.0.1 
+  │     │ ├── forever-agent@0.6.1 
+  │     │ ├─┬ form-data@2.1.4 
+  │     │ │ └── asynckit@0.4.0 
+  │     │ ├─┬ har-validator@4.2.1 
+  │     │ │ ├─┬ ajv@4.11.8 
+  │     │ │ │ ├── co@4.6.0 
+  │     │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │     │ │ │   └── jsonify@0.0.0 
+  │     │ │ └── har-schema@1.0.5 
+  │     │ ├─┬ http-signature@1.1.1 
+  │     │ │ ├── assert-plus@0.2.0 
+  │     │ │ ├─┬ jsprim@1.4.1 
+  │     │ │ │ ├── assert-plus@1.0.0 
+  │     │ │ │ ├── extsprintf@1.3.0 
+  │     │ │ │ ├── json-schema@0.2.3 
+  │     │ │ │ └─┬ verror@1.10.0 
+  │     │ │ │   └── assert-plus@1.0.0 
+  │     │ │ └─┬ sshpk@1.13.1 
+  │     │ │   ├── asn1@0.2.3 
+  │     │ │   ├── assert-plus@1.0.0 
+  │     │ │   ├── bcrypt-pbkdf@1.0.1 
+  │     │ │   ├─┬ dashdash@1.14.1 
+  │     │ │   │ └── assert-plus@1.0.0 
+  │     │ │   ├── ecc-jsbn@0.1.1 
+  │     │ │   ├─┬ getpass@0.1.7 
+  │     │ │   │ └── assert-plus@1.0.0 
+  │     │ │   ├── jsbn@0.1.1 
+  │     │ │   └── tweetnacl@0.14.5 
+  │     │ ├── is-typedarray@1.0.0 
+  │     │ ├── isstream@0.1.2 
+  │     │ ├── json-stringify-safe@5.0.1 
+  │     │ ├─┬ mime-types@2.1.17 
+  │     │ │ └── mime-db@1.30.0 
+  │     │ ├── oauth-sign@0.8.2 
+  │     │ ├── performance-now@0.2.0 
+  │     │ ├── qs@6.4.0 
+  │     │ ├── safe-buffer@5.1.1 
+  │     │ ├── stringstream@0.0.5 
+  │     │ ├─┬ tough-cookie@2.3.3 
+  │     │ │ └── punycode@1.4.1 
+  │     │ ├── tunnel-agent@0.6.0 
+  │     │ └── uuid@3.1.0 
+  │     ├─┬ rimraf@2.6.2 
+  │     │ └─┬ glob@7.1.2 
+  │     │   ├── fs.realpath@1.0.0 
+  │     │   ├── inflight@1.0.6 
+  │     │   ├─┬ minimatch@3.0.4 
+  │     │   │ └─┬ brace-expansion@1.1.8 
+  │     │   │   ├── balanced-match@1.0.0 
+  │     │   │   └── concat-map@0.0.1 
+  │     │   └── path-is-absolute@1.0.1 
+  │     ├── semver@5.4.1 
+  │     ├─┬ tar@2.2.1 
+  │     │ ├── block-stream@0.0.9 
+  │     │ ├─┬ fstream@1.0.11 
+  │     │ │ └── graceful-fs@4.1.11 
+  │     │ └── inherits@2.0.3 
+  │     └─┬ tar-pack@3.4.0 
+  │       ├─┬ debug@2.6.9 
+  │       │ └── ms@2.0.0 
+  │       ├── fstream-ignore@1.0.5 
+  │       ├─┬ once@1.4.0 
+  │       │ └── wrappy@1.0.2 
+  │       ├─┬ readable-stream@2.3.3 
+  │       │ ├── core-util-is@1.0.2 
+  │       │ ├── isarray@1.0.0 
+  │       │ ├── process-nextick-args@1.0.7 
+  │       │ ├── string_decoder@1.0.3 
+  │       │ └── util-deprecate@1.0.2 
+  │       └── uid-number@0.0.6 
+  ├─┬ @signalk/aisreporter@0.0.3 
+  │ ├── debug@2.6.9 
+  │ └─┬ ggencoder@0.1.18 
+  │   ├── async@2.5.0 
+  │   └─┬ jison@0.4.18 
+  │     ├─┬ cjson@0.3.0 
+  │     │ └─┬ jsonlint@1.6.0 
+  │     │   └── JSV@4.0.2 
+  │     ├── ebnf-parser@0.1.10 
+  │     ├─┬ escodegen@1.3.3 
+  │     │ ├── estraverse@1.5.1 
+  │     │ ├── esutils@1.0.0 
+  │     │ └─┬ source-map@0.1.43 
+  │     │   └── amdefine@1.0.1 
+  │     ├── esprima@1.1.1 
+  │     ├── jison-lex@0.3.4 
+  │     ├── JSONSelect@0.4.0 
+  │     ├── lex-parser@0.1.4 
+  │     └─┬ nomnom@1.5.2 
+  │       ├── colors@0.5.1 
+  │       └── underscore@1.1.7 
+  ├─┬ @signalk/client@0.1.1 
+  │ ├── bluebird@3.5.0 
+  │ ├── eventemitter3@2.0.3 
+  │ ├─┬ superagent@3.6.1 
+  │ │ ├── component-emitter@1.2.1 
+  │ │ ├── cookiejar@2.1.1 
+  │ │ ├── extend@3.0.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ ├── asynckit@0.4.0 
+  │ │ │ └─┬ combined-stream@1.0.5 
+  │ │ │   └── delayed-stream@1.0.0 
+  │ │ ├── formidable@1.1.1 
+  │ │ ├── mime@2.0.3 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├── superagent-promise@1.1.0 
+  │ └─┬ url@0.11.0 
+  │   ├── punycode@1.3.2 
+  │   └── querystring@0.2.0 
+  ├── @signalk/freeboard-sk@0.0.1 
+  ├── @signalk/instrumentpanel@0.2.3 
+  ├─┬ @signalk/n2k-signalk@0.0.3 
+  │ ├─┬ JSONStream@1.3.1 
+  │ │ └── jsonparse@1.3.1 
+  │ └─┬ nomnom@1.8.1 
+  │   ├─┬ chalk@0.4.0 
+  │   │ ├── ansi-styles@1.0.0 
+  │   │ ├── has-color@0.1.7 
+  │   │ └── strip-ansi@0.1.1 
+  │   └── underscore@1.6.0 
+  ├── @signalk/sailgauge@1.1.0 
+  ├─┬ @signalk/signalk-schema@0.0.1-4 
+  │ ├── debug@2.6.9 
+  │ ├─┬ json-schema-ref-parser@3.3.1 
+  │ │ ├── call-me-maybe@1.0.1 
+  │ │ ├── es6-promise@4.1.1 
+  │ │ ├─┬ js-yaml@3.10.0 
+  │ │ │ ├─┬ argparse@1.0.9 
+  │ │ │ │ └── sprintf-js@1.0.3 
+  │ │ │ └── esprima@4.0.0 
+  │ │ ├─┬ ono@4.0.2 
+  │ │ │ └── format-util@1.0.3 
+  │ │ └─┬ z-schema@3.18.4 
+  │ │   ├── lodash.get@4.4.2 
+  │ │   ├── lodash.isequal@4.5.0 
+  │ │   └── validator@8.2.0 
+  │ ├─┬ JSONStream@0.7.4 
+  │ │ └── jsonparse@0.0.5 
+  │ ├── lodash@3.10.1 
+  │ ├── tv4@1.3.0 
+  │ └─┬ tv4-formats@2.2.2 
+  │   └── validator@7.2.0 
+  ├─┬ @signalk/signalk-to-nmea0183@0.0.1  (git://github.com/signalk/signalk-to-nmea0183.git#5327b148bdc76defdcd012223a87a6af8a21101a)
+  │ └─┬ mocha@3.5.3 
+  │   ├── browser-stdout@1.3.0 
+  │   ├─┬ commander@2.9.0 
+  │   │ └── graceful-readlink@1.0.1 
+  │   ├── debug@2.6.8 
+  │   ├── diff@3.2.0 
+  │   ├── escape-string-regexp@1.0.5 
+  │   ├─┬ glob@7.1.1 
+  │   │ ├── fs.realpath@1.0.0 
+  │   │ ├─┬ inflight@1.0.6 
+  │   │ │ └── wrappy@1.0.2 
+  │   │ ├─┬ minimatch@3.0.4 
+  │   │ │ └─┬ brace-expansion@1.1.8 
+  │   │ │   ├── balanced-match@1.0.0 
+  │   │ │   └── concat-map@0.0.1 
+  │   │ ├── once@1.4.0 
+  │   │ └── path-is-absolute@1.0.1 
+  │   ├── growl@1.9.2 
+  │   ├── he@1.1.1 
+  │   ├── json3@3.3.2 
+  │   ├─┬ lodash.create@3.1.1 
+  │   │ ├─┬ lodash._baseassign@3.2.0 
+  │   │ │ ├── lodash._basecopy@3.0.1 
+  │   │ │ └─┬ lodash.keys@3.1.2 
+  │   │ │   ├── lodash._getnative@3.9.1 
+  │   │ │   ├── lodash.isarguments@3.1.0 
+  │   │ │   └── lodash.isarray@3.0.4 
+  │   │ ├── lodash._basecreate@3.0.3 
+  │   │ └── lodash._isiterateecall@3.0.9 
+  │   ├─┬ mkdirp@0.5.1 
+  │   │ └── minimist@0.0.8 
+  │   └─┬ supports-color@3.1.2 
+  │     └── has-flag@1.0.0 
+  ├── @signalk/simplegauges@1.0.1 
+  ├── baconjs@0.7.95 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.6.9 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├── colors@1.1.2 
+  ├── compare-versions@3.1.0 
+  ├─┬ cors@2.8.4 
+  │ ├── object-assign@4.1.1 
+  │ └── vary@1.1.2 
+  ├─┬ debug@3.1.0 
+  │ └── ms@2.0.0 
+  ├── deep-get-set@1.1.0 
+  ├── dev-null-stream@0.0.1 
+  ├─┬ ejson@2.1.2 
+  │ └── underscore@1.8.3 
+  ├─┬ errorhandler@1.5.0 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ └── escape-html@1.0.3 
+  ├─┬ express@4.16.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── debug@2.6.9 
+  │ ├── encodeurl@1.0.1 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.1.0 
+  │ │ └── debug@2.6.9 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── debug@2.6.9 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ └── utils-merge@1.0.1 
+  ├─┬ express-namespace@0.1.1 
+  │ └── methods@0.0.1 
+  ├── flatmap@0.0.3 
+  ├── httpolyglot@0.1.2 
+  ├── lodash@4.17.4 
+  ├─┬ maptracker@0.0.1  (git://github.com/signalk/maptracker.git#14f6a32dc4d77257e1381cc9922c1cf4542ee02a)
+  │ ├── d3@3.5.17 
+  │ ├── jquery@2.2.4 
+  │ ├── js-quantities@1.7.0 
+  │ └── leaflet@0.7.7 
+  ├── minimist@1.2.0 
+  ├── moment@2.18.1 
+  ├─┬ morgan@1.9.0 
+  │ ├── basic-auth@2.0.0 
+  │ ├── debug@2.6.9 
+  │ └── on-headers@1.0.1 
+  ├─┬ nmea0183-signalk@0.5.0 
+  │ ├─┬ signalk-multiplexer@0.1.10  (git://github.com/SignalK/signalk-multiplexer-node.git#67ddd0e67c625aec257fc31ea3c65fb5edd15c95)
+  │ │ ├── debug@2.6.9 
+  │ │ ├── lodash@2.4.2 
+  │ │ └── node-uuid@1.4.8 
+  │ └── uuid@3.1.0 
+  ├── node-gpsd@0.3.0 
+  ├─┬ pem@1.12.0 
+  │ ├─┬ md5@2.2.1 
+  │ │ ├── charenc@0.0.2 
+  │ │ ├── crypt@0.0.2 
+  │ │ └── is-buffer@1.1.5 
+  │ ├── os-tmpdir@1.0.2 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ primus@7.1.0 
+  │ ├─┬ access-control@1.0.0 
+  │ │ └── millisecond@0.1.2 
+  │ ├── asyncemit@3.0.1 
+  │ ├─┬ create-server@1.0.1 
+  │ │ └── connected@0.0.2 
+  │ ├─┬ diagnostics@1.1.0 
+  │ │ ├─┬ colorspace@1.0.1 
+  │ │ │ ├─┬ color@0.8.0 
+  │ │ │ │ ├── color-convert@0.5.3 
+  │ │ │ │ └─┬ color-string@0.3.0 
+  │ │ │ │   └── color-name@1.1.3 
+  │ │ │ └── text-hex@0.0.0 
+  │ │ ├─┬ enabled@1.0.2 
+  │ │ │ └── env-variable@0.0.3 
+  │ │ └─┬ kuler@0.0.0 
+  │ │   └── colornames@0.0.2 
+  │ ├── forwarded-for@1.0.1 
+  │ ├─┬ fusing@1.0.0 
+  │ │ ├── emits@3.0.0 
+  │ │ └─┬ predefine@0.1.2 
+  │ │   └── extendible@0.1.1 
+  │ ├─┬ setheader@0.0.4 
+  │ │ └── debug@0.7.4 
+  │ ├── ultron@1.1.0 
+  │ └── yeast@0.1.2 
+  ├── rotating-file-stream@1.3.2 
+  ├─┬ serialport@4.0.7 
+  │ ├── bindings@1.2.1 
+  │ ├── commander@2.11.0 
+  │ ├── debug@2.6.9 
+  │ ├─┬ lie@3.1.1 
+  │ │ └── immediate@3.0.6 
+  │ ├── nan@2.7.0 
+  │ ├─┬ node-pre-gyp@0.6.32 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ ├─┬ nopt@3.0.6 
+  │ │ │ └── abbrev@1.0.9 
+  │ │ ├─┬ npmlog@4.0.1 
+  │ │ │ ├─┬ are-we-there-yet@1.1.2 
+  │ │ │ │ ├── delegates@1.0.0 
+  │ │ │ │ └─┬ readable-stream@2.2.2 
+  │ │ │ │   ├── buffer-shims@1.0.0 
+  │ │ │ │   ├── core-util-is@1.0.2 
+  │ │ │ │   ├── inherits@2.0.3 
+  │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │   ├── process-nextick-args@1.0.7 
+  │ │ │ │   ├── string_decoder@0.10.31 
+  │ │ │ │   └── util-deprecate@1.0.2 
+  │ │ │ ├── console-control-strings@1.1.0 
+  │ │ │ ├─┬ gauge@2.7.2 
+  │ │ │ │ ├── aproba@1.0.4 
+  │ │ │ │ ├── has-unicode@2.0.1 
+  │ │ │ │ ├── object-assign@4.1.0 
+  │ │ │ │ ├── signal-exit@3.0.2 
+  │ │ │ │ ├─┬ string-width@1.0.2 
+  │ │ │ │ │ ├── code-point-at@1.1.0 
+  │ │ │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │ │ │ │   └── number-is-nan@1.0.1 
+  │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │ │ │ └── ansi-regex@2.0.0 
+  │ │ │ │ ├── supports-color@0.2.0 
+  │ │ │ │ └── wide-align@1.1.0 
+  │ │ │ └── set-blocking@2.0.0 
+  │ │ ├─┬ rc@1.1.6 
+  │ │ │ ├── deep-extend@0.4.1 
+  │ │ │ ├── ini@1.3.4 
+  │ │ │ ├── minimist@1.2.0 
+  │ │ │ └── strip-json-comments@1.0.4 
+  │ │ ├─┬ request@2.79.0 
+  │ │ │ ├── aws-sign2@0.6.0 
+  │ │ │ ├── aws4@1.5.0 
+  │ │ │ ├── caseless@0.11.0 
+  │ │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ │ └── delayed-stream@1.0.0 
+  │ │ │ ├── extend@3.0.0 
+  │ │ │ ├── forever-agent@0.6.1 
+  │ │ │ ├─┬ form-data@2.1.2 
+  │ │ │ │ └── asynckit@0.4.0 
+  │ │ │ ├─┬ har-validator@2.0.6 
+  │ │ │ │ ├─┬ chalk@1.1.3 
+  │ │ │ │ │ ├── ansi-styles@2.2.1 
+  │ │ │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │ │ │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ │ │ │ └── ansi-regex@2.0.0 
+  │ │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │ │ │ │ └── ansi-regex@2.0.0 
+  │ │ │ │ │ └── supports-color@2.0.0 
+  │ │ │ │ ├─┬ is-my-json-valid@2.15.0 
+  │ │ │ │ │ ├── generate-function@2.0.0 
+  │ │ │ │ │ ├─┬ generate-object-property@1.2.0 
+  │ │ │ │ │ │ └── is-property@1.0.2 
+  │ │ │ │ │ ├── jsonpointer@4.0.0 
+  │ │ │ │ │ └── xtend@4.0.1 
+  │ │ │ │ └─┬ pinkie-promise@2.0.1 
+  │ │ │ │   └── pinkie@2.0.4 
+  │ │ │ ├─┬ hawk@3.1.3 
+  │ │ │ │ ├── boom@2.10.1 
+  │ │ │ │ ├── cryptiles@2.0.5 
+  │ │ │ │ ├── hoek@2.16.3 
+  │ │ │ │ └── sntp@1.0.9 
+  │ │ │ ├─┬ http-signature@1.1.1 
+  │ │ │ │ ├── assert-plus@0.2.0 
+  │ │ │ │ ├─┬ jsprim@1.3.1 
+  │ │ │ │ │ ├── extsprintf@1.0.2 
+  │ │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ │ └── verror@1.3.6 
+  │ │ │ │ └─┬ sshpk@1.10.1 
+  │ │ │ │   ├── asn1@0.2.3 
+  │ │ │ │   ├── assert-plus@1.0.0 
+  │ │ │ │   ├── bcrypt-pbkdf@1.0.0 
+  │ │ │ │   ├── dashdash@1.14.1 
+  │ │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │ │   ├── getpass@0.1.6 
+  │ │ │ │   ├── jodid25519@1.0.2 
+  │ │ │ │   ├── jsbn@0.1.0 
+  │ │ │ │   └── tweetnacl@0.14.4 
+  │ │ │ ├── is-typedarray@1.0.0 
+  │ │ │ ├── isstream@0.1.2 
+  │ │ │ ├── json-stringify-safe@5.0.1 
+  │ │ │ ├─┬ mime-types@2.1.13 
+  │ │ │ │ └── mime-db@1.25.0 
+  │ │ │ ├── oauth-sign@0.8.2 
+  │ │ │ ├── qs@6.3.0 
+  │ │ │ ├── stringstream@0.0.5 
+  │ │ │ ├─┬ tough-cookie@2.3.2 
+  │ │ │ │ └── punycode@1.4.1 
+  │ │ │ ├── tunnel-agent@0.4.3 
+  │ │ │ └── uuid@3.0.1 
+  │ │ ├─┬ rimraf@2.5.4 
+  │ │ │ └─┬ glob@7.1.1 
+  │ │ │   ├── fs.realpath@1.0.0 
+  │ │ │   ├─┬ inflight@1.0.6 
+  │ │ │   │ └── wrappy@1.0.2 
+  │ │ │   ├── inherits@2.0.3 
+  │ │ │   ├─┬ minimatch@3.0.3 
+  │ │ │   │ └─┬ brace-expansion@1.1.6 
+  │ │ │   │   ├── balanced-match@0.4.2 
+  │ │ │   │   └── concat-map@0.0.1 
+  │ │ │   ├─┬ once@1.4.0 
+  │ │ │   │ └── wrappy@1.0.2 
+  │ │ │   └── path-is-absolute@1.0.1 
+  │ │ ├── semver@5.3.0 
+  │ │ ├─┬ tar@2.2.1 
+  │ │ │ ├── block-stream@0.0.9 
+  │ │ │ ├─┬ fstream@1.0.10 
+  │ │ │ │ └── graceful-fs@4.1.11 
+  │ │ │ └── inherits@2.0.3 
+  │ │ └─┬ tar-pack@3.3.0 
+  │ │   ├─┬ debug@2.2.0 
+  │ │   │ └── ms@0.7.1 
+  │ │   ├─┬ fstream@1.0.10 
+  │ │   │ ├── graceful-fs@4.1.11 
+  │ │   │ └── inherits@2.0.3 
+  │ │   ├─┬ fstream-ignore@1.0.5 
+  │ │   │ ├── inherits@2.0.3 
+  │ │   │ └─┬ minimatch@3.0.3 
+  │ │   │   └─┬ brace-expansion@1.1.6 
+  │ │   │     ├── balanced-match@0.4.2 
+  │ │   │     └── concat-map@0.0.1 
+  │ │   ├─┬ once@1.3.3 
+  │ │   │ └── wrappy@1.0.2 
+  │ │   ├─┬ readable-stream@2.1.5 
+  │ │   │ ├── buffer-shims@1.0.0 
+  │ │   │ ├── core-util-is@1.0.2 
+  │ │   │ ├── inherits@2.0.3 
+  │ │   │ ├── isarray@1.0.0 
+  │ │   │ ├── process-nextick-args@1.0.7 
+  │ │   │ ├── string_decoder@0.10.31 
+  │ │   │ └── util-deprecate@1.0.2 
+  │ │   └── uid-number@0.0.6 
+  │ └─┬ object.assign@4.0.4 
+  │   ├─┬ define-properties@1.1.2 
+  │   │ └── foreach@2.0.5 
+  │   ├── function-bind@1.1.1 
+  │   └── object-keys@1.0.11 
+  ├── set-system-time@1.0.0  (git://github.com/tkurki/set-system-time.git#691d33a6272e768692e7849d258d408b8dcf25c1)
+  ├── signalk-playground@0.0.1  (git://github.com/signalk/playground.git#85a175fe930153d9e2e5f950535e2562cee8bc93)
+  ├─┬ signalk-zones@0.0.1  (git://github.com/signalk/signalk-zones.git#e8a4e738e73f8ed89abfce9214839c7047966f3d)
+  │ └─┬ @signalk/signalk-schema@0.0.1-6 
+  │   ├── debug@2.6.9 
+  │   ├── JSONStream@0.7.4 
+  │   └── lodash@3.10.1 
+  ├── split@1.0.1 
+  ├── stat-mode@0.2.2 
+  ├─┬ stream-throttle@0.1.3 
+  │ └── limiter@1.1.2 
+  ├── through@2.3.8 
+  ├─┬ ws@3.2.0 
+  │ └── async-limiter@1.0.0 
+  └─┬ xml2js@0.4.19 
+    ├── sax@1.2.4 
+    └── xmlbuilder@9.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/signalk-server/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0275 took 3.7635s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'interface' is reserved (269:40) on program /*
+ * Copyright 2014-2015 Fabian Tollenaar <fabian@starting-point.nl>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
+if (typeof [].includes != 'function') {
+  console.log("Minimum required Node.js version is 6, please update.")
+  process.exit(-1)
+}
+
+var express = require('express'),
+  _ = require('lodash'),
+  debug = require('debug')('signalk-server'),
+  path = require('path'),
+  http = require('http'),
+  https = require('https'),
+  httpolyglot = require('httpolyglot'),
+  pem = require('pem'),
+  fs = require('fs'),
+  FullSignalK = require('@signalk/signalk-schema').FullSignalK,
+  StreamBundle = require('./streambundle'),
+  SubscriptionManager = require('./subscriptionmanager'),
+  Mode = require('stat-mode'),
+  page = require("./page")
+
+function Server(opts) {
+  this.params = opts || {};
+  this.app = express();
+  this.app.started = false;
+
+  this.app.overrides = {
+    settings: this.params.settings || null,
+    port: this.params.port || null
+  };
+
+  var app = this.app;
+  require('./config/config')(app);
+  app.selfContext = 'vessels.' + app.selfId;
+  app.version = "0.0.1"
+
+  app.use(require('body-parser').json())
+
+  if ( app.config.settings.security && app.config.settings.security.strategy )
+  {
+    app.securityStrategy = require(app.config.settings.security.strategy)(app)
+  }
+  
+  app.get('/', (req, res) => {
+
+    let { result, footer } = page(__dirname + "/index.html", "</ul>");
+
+    if ( app.securityStrategy ) {
+      result += '<li class="list-group-item"><a href="/restart">Restart</a></li>'
+      if ( req.userLoggedIn ) {
+        result += '<li class="list-group-item"><a href="/logout">Logout</a></li>'
+      }
+    }
+    
+    res.send(result + footer)
+  })
+
+  app.get('/apps', (req, res, next) => {
+    var html = fs.readFileSync(__dirname + '/appindex.html', {encoding: 'utf8'})
+    var insertionIndex = html.indexOf('<div/>');
+    var sliceToInsertion = html.slice(0, insertionIndex);
+    var sliceToEnd = html.slice(insertionIndex);
+
+    var result = sliceToInsertion;
+    result += '<ul class="list-group">';
+    result += app.webapps.reduce(function(result, componentInfo) {
+      result += '<li class="list-group-item">';
+      result += '<b><a href="' + componentInfo.name + '">' + componentInfo.name + '</a></b> ';
+      result += componentInfo.description;
+      result += '</li>\n';
+      return result;
+    }, '');
+    result += '</ul>';
+    result += sliceToEnd;
+    res.send(result);
+  })
+
+  app.get('/restart', (req, res, next) => {
+    //res.redirect('/restart.html')
+    res.send("Restarting...")
+    setTimeout(function() { process.exit(0) }, 2000)
+  })
+
+  if (app.config.settings.vessel) {
+    if (!app.config.defaults) {
+      app.config.defaults = { vessels: { self: {} } };
+    }
+    var vessel = app.config.settings.vessel;
+    if (vessel.name) {
+      app.config.defaults.vessels.self.name = vessel.name;
+    }
+  }
+
+  app.signalk = new FullSignalK(app.selfId, app.selfType, app.config.defaults);
+
+  app.handleMessage = function(providerId, data) {
+    if(data && data.updates) {
+      if(typeof data.context === 'undefined' || data.context === 'vessels.self') {
+        data.context = 'vessels.' + app.selfId;
+      }
+      data.updates.forEach(function(update) {
+        if(typeof update.source != "undefined") {
+          update.source.label = providerId;
+        } else {
+          if (typeof update["$source"] === "undefined") {
+            update["$source"] = providerId;
+          }
+        }
+        if(!update.timestamp) {
+          update.timestamp = (new Date()).toISOString();
+        }
+      })
+      app.signalk.addDelta(data);
+    }
+  }
+
+  app.webapps = []
+
+  app.streambundle = new StreamBundle(app.selfId);
+  app.signalk.on('delta', app.streambundle.pushDelta.bind(app.streambundle))
+  app.subscriptionmanager = new SubscriptionManager(app);
+}
+
+module.exports = Server;
+
+Server.prototype.start = function() {
+  var self = this;
+  var app = this.app;
+
+  this.app.pruneInterval = setInterval(app.signalk.pruneContexts.bind(app.signalk, 60 * 60), 60 * 1000);
+  this.app.providers = [];
+
+  return new Promise((resolve, reject) => {
+    createServer(app, function(err, server) {
+      if (err) {
+        reject(err)
+        return
+      }
+      app.server = server;
+      app.interfaces = {};
+      app.connections = {};
+      app.clients = 0;
+
+      debug("ID type: " + app.selfType);
+      debug("ID: " + app.selfId);
+
+      startInterfaces(app);
+      startMdns(app);
+      app.providers = require('./pipedproviders')(app).start();
+
+      var SD_LISTEN_FDS_START = 3
+      var port = process.env.LISTEN_FDS > 0 ?
+        {
+          fd: SD_LISTEN_FDS_START
+        } :
+        app.config.port;
+
+      server.listen(port, function() {
+        console.log('signalk-server running at 0.0.0.0:' + port + "\n");
+        app.started = true;
+        resolve(self);
+      });
+    })
+  })
+};
+
+function createServer(app, cb) {
+  if(typeof app.config.settings.ssl === "undefined" || app.config.settings.ssl) {
+    getCertificateOptions(function(err, options) {
+      if(err) {
+        cb(err)
+      } else {
+        debug("Starting server to serve both http and https")
+        cb(null, httpolyglot.createServer(options, app));
+      }
+    });
+    return;
+  };
+  var server;
+  try {
+    debug("Starting server to serve only http")
+    server = http.createServer(app);
+  } catch(e) {
+    cb(e);
+    return;
+  }
+  cb(null, server);
+}
+
+function hasStrictPermissions(stat) {
+  return new Mode(stat).toString() === '-r--------'
+}
+
+function getCertificateOptions(cb) {
+  if(fs.existsSync('./settings/ssl-key.pem') && fs.existsSync('./settings/ssl-cert.pem')) {
+    if(!hasStrictPermissions(fs.statSync('./settings/ssl-key.pem'))) {
+      cb(new Error('./settings/ssl-key.pem must be accessible only by the user that is running the server, refusing to start'))
+      return
+    }
+    if(!hasStrictPermissions(fs.statSync('./settings/ssl-cert.pem'))) {
+      cb(new Error('./settings/ssl-cert.pem must be accessible only by the user that is running the server, refusing to start'))
+      return
+    }
+    debug("Using certificate ssl-key.pem and ssl-cert.pem in ./settings/");
+    cb(null, {
+      key: fs.readFileSync('./settings/ssl-key.pem'),
+      cert: fs.readFileSync('./settings/ssl-cert.pem')
+    });
+    return;
+  } else {
+    createCertificateOptions(cb);
+  }
+}
+
+function createCertificateOptions(cb) {
+  debug("Creating certificate files in ./settings/");
+  pem.createCertificate({
+    days: 360,
+    selfSigned: true
+  }, function(err, keys) {
+    if(err) {
+      console.error("Could not create SSL certificate:" + err.message)
+      throw err
+    } else {
+      fs.writeFileSync('./settings/ssl-key.pem', keys.serviceKey);
+      fs.chmodSync('./settings/ssl-key.pem', '400');
+      fs.writeFileSync('./settings/ssl-cert.pem', keys.certificate);
+      fs.chmodSync('./settings/ssl-cert.pem', '400');
+      cb(null, {
+        key: keys.serviceKey,
+        cert: keys.certificate
+      })
+    }
+  });
+}
+
+function startMdns(app) {
+  if(_.isUndefined(app.config.settings.mdns) || app.config.settings.mdns) {
+    debug("Starting interface 'mDNS'");
+    try {
+      app.interfaces['mdns'] = require('./mdns')(app);
+    } catch(ex) {
+      debug("Could not start mDNS:" + ex);
+
+    }
+  } else {
+    debug("Interface 'mDNS' was disabled in configuration");
+  }
+}
+
+function startInterfaces(app) {
+  debug("Interfaces config:" + JSON.stringify(app.config.settings.interfaces));
+  var availableInterfaces = require('./interfaces');
+  _.forIn(availableInterfaces, function(interface, name) {
+    if(_.isUndefined(app.config.settings.interfaces) ||
+      _.isUndefined(app.config.settings.interfaces[name]) ||
+      app.config.settings.interfaces[name]) {
+      debug("Loading interface '" + name + "'");
+      app.interfaces[name] = interface(app);
+      if(app.interfaces[name] && _.isFunction(app.interfaces[name].start)) {
+        if(_.isUndefined(app.interfaces[name].forceInactive) || !app.interfaces[name].forceInactive) {
+          debug("Starting interface '" + name + "'");
+          app.interfaces[name].data = app.interfaces[name].start();
+        } else {
+          debug("Not starting interface '" + name + "' by forceInactive")
+        }
+      }
+    } else {
+      debug("Not loading interface '" + name + "' because of configuration");
+    }
+  });
+}
+
+Server.prototype.reload = function(mixed) {
+  var settings, self = this;
+
+  if(typeof mixed === 'string') {
+    try {
+      settings = require(path.join(process.cwd(), mixed));
+    } catch(e) {
+      debug("Settings file '" + settings + "' doesn't exist.");
+    }
+  }
+
+  if(mixed !== null && typeof mixed === 'object') {
+    settings = mixed;
+  }
+
+  if(settings) {
+    this.app.config.settings = settings;
+  }
+
+  this.stop();
+
+  setTimeout(function() {
+    self.start();
+  }, 1000);
+
+  return this;
+};
+
+Server.prototype.stop = function(cb) {
+  if(this.app.started === true) {
+    _.each(this.app.interfaces, function(intf) {
+      if(intf !== null && typeof intf === 'object' && typeof intf.stop === 'function') {
+        intf.stop();
+      }
+    });
+
+    debug("Closing server...");
+
+    this.app.server.close(function() {
+      debug("Server closed...");
+      this.server = null;
+      cb();
+    });
+
+    for(var id in this.app.connections) {
+      if(this.app.connections.hasOwnProperty(id)) {
+        debug("Closing connection #" + id);
+        this.app.connections[id].destroy();
+        delete this.app.connections[id];
+      }
+    }
+
+    if(this.app.pruneInterval) {
+      clearInterval(this.app.pruneInterval);
+    }
+    this.app.started = false;
+  }
+
+  this.app.providers.forEach(function(providerHolder) {
+    providerHolder.pipeElements[0].end();
+  });
+
+  return this;
+};
+ at SyntaxError: The keyword 'interface' is reserved (269:40)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/signalk-server/node_modules/signalk-server/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

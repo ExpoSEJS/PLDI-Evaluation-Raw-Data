@@ -1,0 +1,77 @@
+/root/Targets/consulate
+└─┬ consulate@0.1.1 
+  ├── connect-ensure-login@0.1.1 
+  ├─┬ envs@0.1.6 
+  │ ├── debug@0.8.1 
+  │ └── require-component@0.1.1 
+  ├─┬ express@3.4.8 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├─┬ commander@1.3.2 
+  │ │ └── keypress@0.1.0 
+  │ ├─┬ connect@2.12.0 
+  │ │ ├── batch@0.5.0 
+  │ │ ├── bytes@0.2.1 
+  │ │ ├─┬ multiparty@2.2.0 
+  │ │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ └── stream-counter@0.2.0 
+  │ │ ├── negotiator@0.3.0 
+  │ │ ├── qs@0.6.6 
+  │ │ └── raw-body@1.1.2 
+  │ ├── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.1 
+  │ ├── fresh@0.2.0 
+  │ ├── merge-descriptors@0.0.1 
+  │ ├── methods@0.1.0 
+  │ ├── mkdirp@0.3.5 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.4 
+  │   └── mime@1.2.11 
+  ├─┬ oauth2orize@1.0.0  (git+https://github.com/consulate/oauth2orize.git#de2bf841460e985e0e662c851c97234286feca11)
+  │ ├── debug@0.7.4 
+  │ ├── uid2@0.0.3 
+  │ └── utils-merge@1.0.1 
+  ├─┬ passport@0.1.17  (git+https://github.com/consulate/passport.git#d859bde450f37361fab99a1030ba67b99d299bd8)
+  │ ├── pause@0.0.1 
+  │ └── pkginfo@0.2.3 
+  ├── passport-http@0.2.2 
+  ├── passport-local@0.1.6 
+  ├─┬ passport-oauth2-client-password@0.1.2 
+  │ └── passport-strategy@1.0.0 
+  ├── passport-oauth2-public-client@0.1.0 
+  └── simple-debug@1.1.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/consulate/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","RegExp","some"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0743 took 5.0139s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/consulate/node_modules/consulate/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/consulate/node_modules/consulate/lib/index.js. Coverage (Term): 24% Coverage (LOC): 36%
+*- File /root/Targets/consulate/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/consulate/node_modules/express/lib/express.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/consulate/node_modules/merge-descriptors/index.js. Coverage (Term): 31% Coverage (LOC): 44%
+*- File /root/Targets/consulate/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/consulate/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/consulate/node_modules/connect/lib/proto.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/consulate/node_modules/connect/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 38%
+*- File /root/Targets/consulate/node_modules/cookie-signature/index.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/consulate/node_modules/bytes/index.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/consulate/node_modules/debug/lib/debug.js. Coverage (Term): 39% Coverage (LOC): 61%
+*- File /root/Targets/consulate/node_modules/connect/lib/patch.js. Coverage (Term): 20% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

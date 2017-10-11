@@ -1,0 +1,645 @@
+/root/Targets/blockify
+└─┬ blockify@1.4.3 
+  ├── abbrev@1.0.9 
+  ├── archy@0.0.2 
+  ├─┬ blockify-config@0.5.3 
+  │ ├── graceful-fs@2.0.3 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ └── osenv@0.0.3 
+  ├─┬ blockify-json@0.4.0 
+  │ ├── deep-extend@0.2.11 
+  │ └── intersect@0.1.0 
+  ├── bower-endpoint-parser@0.2.2 
+  ├── bower-logger@0.2.2 
+  ├─┬ bower-registry-client@0.2.4 
+  │ ├── async@0.2.10 
+  │ ├─┬ bower-config@0.5.3 
+  │ │ ├── graceful-fs@2.0.3 
+  │ │ └── osenv@0.0.3 
+  │ ├── graceful-fs@2.0.3 
+  │ ├── lru-cache@2.3.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├─┬ request@2.51.0 
+  │ │ ├─┬ bl@0.9.5 
+  │ │ │ └── readable-stream@1.0.34 
+  │ │ ├── caseless@0.8.0 
+  │ │ ├─┬ combined-stream@0.0.7 
+  │ │ │ └── delayed-stream@0.0.5 
+  │ │ ├─┬ form-data@0.2.0 
+  │ │ │ ├── async@0.9.2 
+  │ │ │ └─┬ mime-types@2.0.14 
+  │ │ │   └── mime-db@1.12.0 
+  │ │ ├── hawk@1.1.1 
+  │ │ ├── mime-types@1.0.2 
+  │ │ ├── oauth-sign@0.5.0 
+  │ │ ├── qs@2.3.3 
+  │ │ └── stringstream@0.0.5 
+  │ └── request-replay@0.2.0 
+  ├─┬ cardinal@0.4.4 
+  │ ├── ansicolors@0.2.1 
+  │ └─┬ redeyed@0.4.4 
+  │   └── esprima@1.0.4 
+  ├─┬ chalk@0.4.0 
+  │ ├── ansi-styles@1.0.0 
+  │ ├── has-color@0.1.7 
+  │ └── strip-ansi@0.1.1 
+  ├── chmodr@0.1.2 
+  ├─┬ decompress-zip@0.0.8 
+  │ ├─┬ binary@0.3.0 
+  │ │ ├── buffers@0.1.1 
+  │ │ └─┬ chainsaw@0.1.0 
+  │ │   └── traverse@0.3.9 
+  │ ├── mkpath@0.1.0 
+  │ ├── nopt@2.2.1 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └─┬ touch@0.0.2 
+  │   └── nopt@1.0.10 
+  ├─┬ fstream@0.1.31 
+  │ └── inherits@2.0.3 
+  ├─┬ fstream-ignore@0.0.10 
+  │ └─┬ minimatch@0.3.0 
+  │   └── sigmund@1.0.1 
+  ├─┬ glob@4.0.6 
+  │ ├── minimatch@1.0.0 
+  │ └─┬ once@1.4.0 
+  │   └── wrappy@1.0.2 
+  ├─┬ graceful-fs@3.0.11 
+  │ └── natives@1.1.0 
+  ├─┬ handlebars@1.3.0 
+  │ ├── optimist@0.3.7 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── optimist@0.3.7 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├─┬ inquirer@0.5.1 
+  │ ├── async@0.8.0 
+  │ ├─┬ cli-color@0.3.3 
+  │ │ ├── d@0.1.1 
+  │ │ ├─┬ es5-ext@0.10.30 
+  │ │ │ ├─┬ es6-iterator@2.0.1 
+  │ │ │ │ └── d@1.0.0 
+  │ │ │ └─┬ es6-symbol@3.1.1 
+  │ │ │   └── d@1.0.0 
+  │ │ ├─┬ memoizee@0.3.10 
+  │ │ │ ├─┬ es6-weak-map@0.1.4 
+  │ │ │ │ ├── es6-iterator@0.1.3 
+  │ │ │ │ └── es6-symbol@2.0.1 
+  │ │ │ ├─┬ event-emitter@0.3.5 
+  │ │ │ │ └── d@1.0.0 
+  │ │ │ ├── lru-queue@0.1.0 
+  │ │ │ └── next-tick@0.2.2 
+  │ │ └─┬ timers-ext@0.1.2 
+  │ │   └── next-tick@1.0.0 
+  │ ├── lodash@2.4.2 
+  │ ├── mute-stream@0.0.4 
+  │ ├─┬ readline2@0.1.1 
+  │ │ └─┬ strip-ansi@2.0.1 
+  │ │   └── ansi-regex@1.1.1 
+  │ └── through@2.3.8 
+  ├─┬ insight@0.3.1 
+  │ ├─┬ configstore@0.2.3 
+  │ │ ├── graceful-fs@2.0.3 
+  │ │ ├─┬ js-yaml@3.0.2 
+  │ │ │ └─┬ argparse@0.1.16 
+  │ │ │   ├── underscore@1.7.0 
+  │ │ │   └── underscore.string@2.4.0 
+  │ │ ├── mkdirp@0.3.5 
+  │ │ ├── osenv@0.0.3 
+  │ │ └── uuid@1.4.2 
+  │ ├─┬ inquirer@0.4.1 
+  │ │ └─┬ cli-color@0.2.3 
+  │ │   ├── es5-ext@0.9.2 
+  │ │   └─┬ memoizee@0.2.6 
+  │ │     ├── event-emitter@0.2.2 
+  │ │     └── next-tick@0.1.0 
+  │ ├─┬ lodash.debounce@2.4.1 
+  │ │ ├── lodash.isfunction@2.4.1 
+  │ │ ├─┬ lodash.isobject@2.4.1 
+  │ │ │ └── lodash._objecttypes@2.4.1 
+  │ │ └─┬ lodash.now@2.4.1 
+  │ │   └── lodash._isnative@2.4.1 
+  │ ├── object-assign@0.1.2 
+  │ └─┬ request@2.27.0 
+  │   ├── aws-sign@0.3.0 
+  │   ├── cookie-jar@0.3.0 
+  │   ├─┬ form-data@0.1.4 
+  │   │ └── async@0.9.2 
+  │   ├── hawk@1.0.0 
+  │   ├── oauth-sign@0.3.0 
+  │   ├── qs@0.6.6 
+  │   └── tunnel-agent@0.3.0 
+  ├── is-root@0.1.0 
+  ├── junk@0.3.0 
+  ├── lockfile@0.4.3 
+  ├── lru-cache@2.5.2 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── mout@0.9.1 
+  ├── nopt@3.0.6 
+  ├── opn@0.1.2 
+  ├─┬ osenv@0.1.4 
+  │ ├── os-homedir@1.0.2 
+  │ └── os-tmpdir@1.0.2 
+  ├─┬ p-throttler@0.0.1 
+  │ └── q@0.9.7 
+  ├─┬ promptly@0.2.1 
+  │ └── read@1.0.7 
+  ├── q@1.0.1 
+  ├─┬ request@2.36.0 
+  │ ├── aws-sign2@0.5.0 
+  │ ├── forever-agent@0.5.2 
+  │ ├─┬ form-data@0.1.4 
+  │ │ └── async@0.9.2 
+  │ ├─┬ hawk@1.0.0 
+  │ │ ├── boom@0.4.2 
+  │ │ ├── cryptiles@0.2.2 
+  │ │ ├── hoek@0.9.1 
+  │ │ └── sntp@0.2.4 
+  │ ├─┬ http-signature@0.10.1 
+  │ │ ├── asn1@0.1.11 
+  │ │ ├── assert-plus@0.1.5 
+  │ │ └── ctype@0.5.3 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├── mime@1.2.11 
+  │ ├── node-uuid@1.4.8 
+  │ ├── oauth-sign@0.3.0 
+  │ ├── qs@0.6.6 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ └── tunnel-agent@0.4.3 
+  ├─┬ request-progress@0.3.1 
+  │ └── throttleit@0.0.2 
+  ├── retry@0.6.1 
+  ├── rimraf@2.2.8 
+  ├── semver@2.3.2 
+  ├─┬ shell-quote@1.4.3 
+  │ ├── array-filter@0.0.1 
+  │ ├── array-map@0.0.0 
+  │ ├── array-reduce@0.0.0 
+  │ └── jsonify@0.0.0 
+  ├── stringify-object@0.2.1 
+  ├─┬ tar@0.1.20 
+  │ └── block-stream@0.0.9 
+  ├── tmp@0.0.33 
+  ├─┬ update-notifier@0.1.10 
+  │ └─┬ configstore@0.3.2 
+  │   ├─┬ js-yaml@3.10.0 
+  │   │ ├─┬ argparse@1.0.9 
+  │   │ │ └── sprintf-js@1.0.3 
+  │   │ └── esprima@4.0.0 
+  │   ├── object-assign@2.1.1 
+  │   ├── user-home@1.1.1 
+  │   ├── uuid@2.0.3 
+  │   └── xdg-basedir@1.0.1 
+  └── which@1.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/blockify/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 46% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Error","Number","isArray","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0628 took 16.5602s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (5:4) on program // Monkey-patching the fs module.
+// It's ugly, but there is simply no other way to do this.
+var fs = module.exports = require('fs')
+
+var assert = require('assert')
+
+// fix up some busted stuff, mostly on windows and old nodes
+require('./polyfills.js')
+
+// The EMFILE enqueuing stuff
+
+var util = require('util')
+
+function noop () {}
+
+var debug = noop
+if (util.debuglog)
+  debug = util.debuglog('gfs')
+else if (/\bgfs\b/i.test(process.env.NODE_DEBUG || ''))
+  debug = function() {
+    var m = util.format.apply(util, arguments)
+    m = 'GFS: ' + m.split(/\n/).join('\nGFS: ')
+    console.error(m)
+  }
+
+if (/\bgfs\b/i.test(process.env.NODE_DEBUG || '')) {
+  process.on('exit', function() {
+    debug('fds', fds)
+    debug(queue)
+    assert.equal(queue.length, 0)
+  })
+}
+
+
+var originalOpen = fs.open
+fs.open = open
+
+function open(path, flags, mode, cb) {
+  if (typeof mode === "function") cb = mode, mode = null
+  if (typeof cb !== "function") cb = noop
+  new OpenReq(path, flags, mode, cb)
+}
+
+function OpenReq(path, flags, mode, cb) {
+  this.path = path
+  this.flags = flags
+  this.mode = mode
+  this.cb = cb
+  Req.call(this)
+}
+
+util.inherits(OpenReq, Req)
+
+OpenReq.prototype.process = function() {
+  originalOpen.call(fs, this.path, this.flags, this.mode, this.done)
+}
+
+var fds = {}
+OpenReq.prototype.done = function(er, fd) {
+  debug('open done', er, fd)
+  if (fd)
+    fds['fd' + fd] = this.path
+  Req.prototype.done.call(this, er, fd)
+}
+
+
+var originalReaddir = fs.readdir
+fs.readdir = readdir
+
+function readdir(path, cb) {
+  if (typeof cb !== "function") cb = noop
+  new ReaddirReq(path, cb)
+}
+
+function ReaddirReq(path, cb) {
+  this.path = path
+  this.cb = cb
+  Req.call(this)
+}
+
+util.inherits(ReaddirReq, Req)
+
+ReaddirReq.prototype.process = function() {
+  originalReaddir.call(fs, this.path, this.done)
+}
+
+ReaddirReq.prototype.done = function(er, files) {
+  if (files && files.sort)
+    files = files.sort()
+  Req.prototype.done.call(this, er, files)
+  onclose()
+}
+
+
+var originalClose = fs.close
+fs.close = close
+
+function close (fd, cb) {
+  debug('close', fd)
+  if (typeof cb !== "function") cb = noop
+  delete fds['fd' + fd]
+  originalClose.call(fs, fd, function(er) {
+    onclose()
+    cb(er)
+  })
+}
+
+
+var originalCloseSync = fs.closeSync
+fs.closeSync = closeSync
+
+function closeSync (fd) {
+  try {
+    return originalCloseSync(fd)
+  } finally {
+    onclose()
+  }
+}
+
+
+// Req class
+function Req () {
+  // start processing
+  this.done = this.done.bind(this)
+  this.failures = 0
+  this.process()
+}
+
+Req.prototype.done = function (er, result) {
+  var tryAgain = false
+  if (er) {
+    var code = er.code
+    var tryAgain = code === "EMFILE"
+    if (process.platform === "win32")
+      tryAgain = tryAgain || code === "OK"
+  }
+
+  if (tryAgain) {
+    this.failures ++
+    enqueue(this)
+  } else {
+    var cb = this.cb
+    cb(er, result)
+  }
+}
+
+var queue = []
+
+function enqueue(req) {
+  queue.push(req)
+  debug('enqueue %d %s', queue.length, req.constructor.name, req)
+}
+
+function onclose() {
+  var req = queue.shift()
+  if (req) {
+    debug('process', req.constructor.name, req)
+    req.process()
+  }
+}
+ at SyntaxError: Unexpected token (5:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/blockify/node_modules/blockify/lib/index.js. Coverage (Term): 84% Coverage (LOC): 87%
+*- File /root/Targets/blockify/node_modules/abbrev/abbrev.js. Coverage (Term): 80% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/array.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/array/append.js. Coverage (Term): 28% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/array/collect.js. Coverage (Term): 32% Coverage (LOC): 32%
+*- File /root/Targets/blockify/node_modules/mout/function/makeIterator_.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/function/identity.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/function/prop.js. Coverage (Term): 50% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/object/deepMatches.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/blockify/node_modules/mout/object/forOwn.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/hasOwn.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/forIn.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/blockify/node_modules/mout/lang/isArray.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/lang/isKind.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/lang/kindOf.js. Coverage (Term): 87% Coverage (LOC): 82%
+*- File /root/Targets/blockify/node_modules/mout/array/combine.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/array/indexOf.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/blockify/node_modules/mout/array/compact.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/array/filter.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/blockify/node_modules/mout/array/contains.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/array/difference.js. Coverage (Term): 51% Coverage (LOC): 60%
+*- File /root/Targets/blockify/node_modules/mout/array/unique.js. Coverage (Term): 30% Coverage (LOC): 35%
+*- File /root/Targets/blockify/node_modules/mout/array/some.js. Coverage (Term): 30% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/array/slice.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- File /root/Targets/blockify/node_modules/mout/array/every.js. Coverage (Term): 30% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/array/find.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/array/findIndex.js. Coverage (Term): 31% Coverage (LOC): 31%
+*- File /root/Targets/blockify/node_modules/mout/array/findLast.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/array/findLastIndex.js. Coverage (Term): 32% Coverage (LOC): 31%
+*- File /root/Targets/blockify/node_modules/mout/array/flatten.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/array/forEach.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/array/insert.js. Coverage (Term): 48% Coverage (LOC): 55%
+*- File /root/Targets/blockify/node_modules/mout/array/intersection.js. Coverage (Term): 51% Coverage (LOC): 60%
+*- File /root/Targets/blockify/node_modules/mout/array/invoke.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/array/join.js. Coverage (Term): 44% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/array/lastIndexOf.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/blockify/node_modules/mout/array/map.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/array/max.js. Coverage (Term): 21% Coverage (LOC): 23%
+*- File /root/Targets/blockify/node_modules/mout/array/min.js. Coverage (Term): 21% Coverage (LOC): 23%
+*- File /root/Targets/blockify/node_modules/mout/array/pick.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/blockify/node_modules/mout/random/randInt.js. Coverage (Term): 47% Coverage (LOC): 70%
+*- File /root/Targets/blockify/node_modules/mout/number/MIN_INT.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/number/MAX_INT.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/random/rand.js. Coverage (Term): 51% Coverage (LOC): 70%
+*- File /root/Targets/blockify/node_modules/mout/random/random.js. Coverage (Term): 71% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/array/pluck.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/array/range.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/blockify/node_modules/mout/math/countSteps.js. Coverage (Term): 41% Coverage (LOC): 44%
+*- File /root/Targets/blockify/node_modules/mout/array/reduce.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /root/Targets/blockify/node_modules/mout/array/reduceRight.js. Coverage (Term): 20% Coverage (LOC): 19%
+*- File /root/Targets/blockify/node_modules/mout/array/reject.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/blockify/node_modules/mout/array/remove.js. Coverage (Term): 49% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/array/removeAll.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/array/shuffle.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/blockify/node_modules/mout/array/sort.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/blockify/node_modules/mout/array/sortBy.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/array/split.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/blockify/node_modules/mout/array/toLookup.js. Coverage (Term): 25% Coverage (LOC): 24%
+*- File /root/Targets/blockify/node_modules/mout/lang/isFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/array/union.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/array/xor.js. Coverage (Term): 38% Coverage (LOC): 47%
+*- File /root/Targets/blockify/node_modules/mout/array/zip.js. Coverage (Term): 30% Coverage (LOC): 47%
+*- File /root/Targets/blockify/node_modules/mout/collection.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/collection/contains.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/collection/make_.js. Coverage (Term): 44% Coverage (LOC): 55%
+*- File /root/Targets/blockify/node_modules/mout/object/contains.js. Coverage (Term): 52% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/object/some.js. Coverage (Term): 41% Coverage (LOC): 40%
+*- File /root/Targets/blockify/node_modules/mout/collection/every.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/every.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/blockify/node_modules/mout/collection/filter.js. Coverage (Term): 37% Coverage (LOC): 35%
+*- File /root/Targets/blockify/node_modules/mout/collection/forEach.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/collection/find.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/find.js. Coverage (Term): 42% Coverage (LOC): 43%
+*- File /root/Targets/blockify/node_modules/mout/collection/map.js. Coverage (Term): 47% Coverage (LOC): 53%
+*- File /root/Targets/blockify/node_modules/mout/lang/isObject.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/object/values.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/collection/max.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/max.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/collection/min.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/min.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/collection/pluck.js. Coverage (Term): 52% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/collection/reduce.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/reduce.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/object/size.js. Coverage (Term): 48% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/collection/reject.js. Coverage (Term): 46% Coverage (LOC): 60%
+*- File /root/Targets/blockify/node_modules/mout/collection/size.js. Coverage (Term): 53% Coverage (LOC): 46%
+*- File /root/Targets/blockify/node_modules/mout/collection/some.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/date.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/date/dayOfTheYear.js. Coverage (Term): 43% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isDate.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/date/diff.js. Coverage (Term): 12% Coverage (LOC): 21%
+*- File /root/Targets/blockify/node_modules/mout/date/totalDaysInMonth.js. Coverage (Term): 52% Coverage (LOC): 68%
+*- File /root/Targets/blockify/node_modules/mout/date/isLeapYear.js. Coverage (Term): 42% Coverage (LOC): 56%
+*- File /root/Targets/blockify/node_modules/mout/date/totalDaysInYear.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/time/convert.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/blockify/node_modules/mout/date/i18n_.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/blockify/node_modules/mout/object/mixIn.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/date/i18n/en-US.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/date/isSame.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/date/startOf.js. Coverage (Term): 17% Coverage (LOC): 16%
+*- File /root/Targets/blockify/node_modules/mout/lang/clone.js. Coverage (Term): 25% Coverage (LOC): 34%
+*- File /root/Targets/blockify/node_modules/mout/lang/isPlainObject.js. Coverage (Term): 48% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/date/parseIso.js. Coverage (Term): 11% Coverage (LOC): 27%
+*- File /root/Targets/blockify/node_modules/mout/date/quarter.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/date/strftime.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/blockify/node_modules/mout/number/pad.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/string/lpad.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/lang/toString.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/string/repeat.js. Coverage (Term): 34% Coverage (LOC): 30%
+*- File /root/Targets/blockify/node_modules/mout/number/toInt.js. Coverage (Term): 63% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/lang/toNumber.js. Coverage (Term): 35% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/date/timezoneOffset.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/date/timezoneAbbr.js. Coverage (Term): 49% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/date/weekOfTheYear.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/function.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/function/awaitDelay.js. Coverage (Term): 45% Coverage (LOC): 47%
+*- File /root/Targets/blockify/node_modules/mout/time/now.js. Coverage (Term): 61% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/function/timeout.js. Coverage (Term): 45% Coverage (LOC): 56%
+*- File /root/Targets/blockify/node_modules/mout/function/bind.js. Coverage (Term): 42% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/function/compose.js. Coverage (Term): 32% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/function/constant.js. Coverage (Term): 54% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/function/debounce.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /root/Targets/blockify/node_modules/mout/function/func.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/function/partial.js. Coverage (Term): 43% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/function/series.js. Coverage (Term): 31% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/function/throttle.js. Coverage (Term): 21% Coverage (LOC): 20%
+*- File /root/Targets/blockify/node_modules/mout/function/times.js. Coverage (Term): 40% Coverage (LOC): 44%
+*- File /root/Targets/blockify/node_modules/mout/lang.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/lang/createObject.js. Coverage (Term): 51% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/lang/ctorApply.js. Coverage (Term): 41% Coverage (LOC): 56%
+*- File /root/Targets/blockify/node_modules/mout/lang/deepClone.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /root/Targets/blockify/node_modules/mout/lang/defaults.js. Coverage (Term): 58% Coverage (LOC): 78%
+*- File /root/Targets/blockify/node_modules/mout/lang/toArray.js. Coverage (Term): 29% Coverage (LOC): 35%
+*- File /root/Targets/blockify/node_modules/mout/lang/inheritPrototype.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/lang/is.js. Coverage (Term): 36% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/lang/isArguments.js. Coverage (Term): 52% Coverage (LOC): 78%
+*- File /root/Targets/blockify/node_modules/mout/lang/isBoolean.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isEmpty.js. Coverage (Term): 32% Coverage (LOC): 32%
+*- File /root/Targets/blockify/node_modules/mout/lang/isFinite.js. Coverage (Term): 41% Coverage (LOC): 46%
+*- File /root/Targets/blockify/node_modules/mout/lang/isNumber.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isInteger.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isNaN.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/number/isNaN.js. Coverage (Term): 54% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/lang/isNull.js. Coverage (Term): 63% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/lang/isRegExp.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isString.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/lang/isUndefined.js. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/lang/isnt.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/math.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/math/ceil.js. Coverage (Term): 43% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/math/clamp.js. Coverage (Term): 45% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/math/floor.js. Coverage (Term): 43% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/math/inRange.js. Coverage (Term): 41% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/math/isNear.js. Coverage (Term): 51% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/math/lerp.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/math/loop.js. Coverage (Term): 45% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/math/map.js. Coverage (Term): 60% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/math/norm.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/math/round.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/number.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/number/MAX_UINT.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/number/abbreviate.js. Coverage (Term): 24% Coverage (LOC): 43%
+*- File /root/Targets/blockify/node_modules/mout/number/enforcePrecision.js. Coverage (Term): 42% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/number/currencyFormat.js. Coverage (Term): 20% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/number/nth.js. Coverage (Term): 28% Coverage (LOC): 25%
+*- File /root/Targets/blockify/node_modules/mout/number/ordinal.js. Coverage (Term): 63% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/number/rol.js. Coverage (Term): 51% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/number/ror.js. Coverage (Term): 51% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/number/sign.js. Coverage (Term): 40% Coverage (LOC): 45%
+*- File /root/Targets/blockify/node_modules/mout/number/toUInt.js. Coverage (Term): 63% Coverage (LOC): 80%
+*- File /root/Targets/blockify/node_modules/mout/number/toUInt31.js. Coverage (Term): 46% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/object.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/object/bindAll.js. Coverage (Term): 50% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/object/functions.js. Coverage (Term): 40% Coverage (LOC): 42%
+*- File /root/Targets/blockify/node_modules/mout/object/deepEquals.js. Coverage (Term): 34% Coverage (LOC): 47%
+*- File /root/Targets/blockify/node_modules/mout/object/equals.js. Coverage (Term): 31% Coverage (LOC): 53%
+*- File /root/Targets/blockify/node_modules/mout/object/deepFillIn.js. Coverage (Term): 29% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/object/deepMixIn.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/blockify/node_modules/mout/object/fillIn.js. Coverage (Term): 45% Coverage (LOC): 47%
+*- File /root/Targets/blockify/node_modules/mout/object/filter.js. Coverage (Term): 41% Coverage (LOC): 43%
+*- File /root/Targets/blockify/node_modules/mout/object/get.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/object/has.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/object/keys.js. Coverage (Term): 49% Coverage (LOC): 55%
+*- File /root/Targets/blockify/node_modules/mout/object/map.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/object/matches.js. Coverage (Term): 41% Coverage (LOC): 42%
+*- File /root/Targets/blockify/node_modules/mout/object/merge.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/object/namespace.js. Coverage (Term): 35% Coverage (LOC): 36%
+*- File /root/Targets/blockify/node_modules/mout/object/pick.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/object/pluck.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/object/reject.js. Coverage (Term): 46% Coverage (LOC): 60%
+*- File /root/Targets/blockify/node_modules/mout/object/set.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/object/unset.js. Coverage (Term): 36% Coverage (LOC): 38%
+*- File /root/Targets/blockify/node_modules/mout/queryString.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/queryString/contains.js. Coverage (Term): 49% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/queryString/getQuery.js. Coverage (Term): 38% Coverage (LOC): 57%
+*- File /root/Targets/blockify/node_modules/mout/queryString/decode.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/string/typecast.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/blockify/node_modules/mout/queryString/encode.js. Coverage (Term): 27% Coverage (LOC): 35%
+*- File /root/Targets/blockify/node_modules/mout/queryString/getParam.js. Coverage (Term): 37% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/queryString/parse.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/queryString/setParam.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/blockify/node_modules/mout/random.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/random/choice.js. Coverage (Term): 49% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/random/guid.js. Coverage (Term): 42% Coverage (LOC): 86%
+*- File /root/Targets/blockify/node_modules/mout/random/randHex.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/random/randBit.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/random/randBool.js. Coverage (Term): 69% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/random/randSign.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/string.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/string/WHITE_SPACES.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/string/camelCase.js. Coverage (Term): 55% Coverage (LOC): 69%
+*- File /root/Targets/blockify/node_modules/mout/string/replaceAccents.js. Coverage (Term): 19% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/string/removeNonWord.js. Coverage (Term): 62% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/string/upperCase.js. Coverage (Term): 61% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/lowerCase.js. Coverage (Term): 61% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/contains.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/string/crop.js. Coverage (Term): 60% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/string/truncate.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/blockify/node_modules/mout/string/trim.js. Coverage (Term): 62% Coverage (LOC): 73%
+*- File /root/Targets/blockify/node_modules/mout/string/ltrim.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/string/rtrim.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/blockify/node_modules/mout/string/endsWith.js. Coverage (Term): 45% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/string/escapeHtml.js. Coverage (Term): 42% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/escapeRegExp.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/blockify/node_modules/mout/string/escapeUnicode.js. Coverage (Term): 32% Coverage (LOC): 42%
+*- File /root/Targets/blockify/node_modules/mout/string/hyphenate.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/blockify/node_modules/mout/string/slugify.js. Coverage (Term): 49% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/string/unCamelCase.js. Coverage (Term): 36% Coverage (LOC): 40%
+*- File /root/Targets/blockify/node_modules/mout/string/insert.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/string/interpolate.js. Coverage (Term): 47% Coverage (LOC): 64%
+*- File /root/Targets/blockify/node_modules/mout/string/makePath.js. Coverage (Term): 58% Coverage (LOC): 75%
+*- File /root/Targets/blockify/node_modules/mout/string/normalizeLineBreaks.js. Coverage (Term): 44% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/string/pascalCase.js. Coverage (Term): 65% Coverage (LOC): 78%
+*- File /root/Targets/blockify/node_modules/mout/string/properCase.js. Coverage (Term): 65% Coverage (LOC): 78%
+*- File /root/Targets/blockify/node_modules/mout/string/removeNonASCII.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/replace.js. Coverage (Term): 28% Coverage (LOC): 33%
+*- File /root/Targets/blockify/node_modules/mout/string/rpad.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/blockify/node_modules/mout/string/sentenceCase.js. Coverage (Term): 65% Coverage (LOC): 78%
+*- File /root/Targets/blockify/node_modules/mout/string/startsWith.js. Coverage (Term): 50% Coverage (LOC): 63%
+*- File /root/Targets/blockify/node_modules/mout/string/stripHtmlTags.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/underscore.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/blockify/node_modules/mout/string/unescapeHtml.js. Coverage (Term): 42% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/string/unescapeUnicode.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/blockify/node_modules/mout/string/unhyphenate.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/blockify/node_modules/mout/time.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/blockify/node_modules/mout/time/parseMs.js. Coverage (Term): 43% Coverage (LOC): 45%
+*- File /root/Targets/blockify/node_modules/mout/time/toTimeString.js. Coverage (Term): 34% Coverage (LOC): 58%
+*- File /root/Targets/blockify/node_modules/blockify/lib/commands/index.js. Coverage (Term): 45% Coverage (LOC): 64%
+*- File /root/Targets/blockify/node_modules/q/q.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/blockify/node_modules/bower-logger/lib/Logger.js. Coverage (Term): 25% Coverage (LOC): 37%
+*- File /root/Targets/blockify/node_modules/blockify/lib/config.js. Coverage (Term): 26% Coverage (LOC): 16%
+*- File /root/Targets/blockify/node_modules/blockify-config/lib/Config.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/blockify/node_modules/blockify-config/lib/util/rc.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

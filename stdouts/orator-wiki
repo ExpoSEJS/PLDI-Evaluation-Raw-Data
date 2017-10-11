@@ -1,0 +1,29 @@
+/root/Targets/orator-wiki
+└─┬ orator-wiki@1.0.1 
+  └─┬ orator@1.0.22
+    └─┬ nodegrind@0.6.2  (git+https://github.com/stevenvelozo/nodegrind.git#80ed67930d3825a31d5ff3190a8ffd1cd831668b)
+      ├── chrome2calltree@0.0.1  (git+https://github.com/gwicke/chrome2calltree.git#b74681c1b0566c28883a3588c7fc8ede242311e4)
+      └─┬ v8-profiler@5.7.0
+        └─┬ node-pre-gyp@0.6.37
+          └─┬ npmlog@4.1.2
+            └─┬ gauge@2.7.4
+              └── aproba@1.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/orator-wiki/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0399 took 3.632s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'orator-wiki'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

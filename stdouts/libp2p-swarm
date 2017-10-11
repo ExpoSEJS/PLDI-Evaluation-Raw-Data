@@ -1,0 +1,349 @@
+
+> secp256k1@3.3.0 install /root/Targets/libp2p-swarm/node_modules/secp256k1
+> prebuild-install || node-gyp rebuild || echo "Secp256k1 bindings compilation fail. Pure JS implementation will be used."
+
+/root/Targets/libp2p-swarm
+└─┬ libp2p-swarm@0.32.4 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ browserify-zlib-next@1.0.1 
+  │ └── pako@1.0.6 
+  ├─┬ debug@3.0.1 
+  │ └── ms@2.0.0 
+  ├─┬ interface-connection@0.3.2 
+  │ ├── pull-defer@0.2.2 
+  │ └── timed-tape@0.1.1 
+  ├─┬ ip-address@5.8.8 
+  │ ├── jsbn@0.1.0 
+  │ ├── lodash.find@4.6.0 
+  │ ├── lodash.max@4.0.1 
+  │ ├── lodash.merge@4.6.0 
+  │ ├── lodash.padstart@4.6.1 
+  │ ├── lodash.repeat@4.1.0 
+  │ ├── sprintf-js@1.1.1 
+  │ └── util-deprecate@1.0.2 
+  ├─┬ libp2p-identify@0.6.1 
+  │ ├─┬ protons@1.0.0 
+  │ │ ├─┬ brfs@1.4.3 
+  │ │ │ ├─┬ quote-stream@1.0.2 
+  │ │ │ │ ├── buffer-equal@0.0.1 
+  │ │ │ │ └── minimist@1.2.0 
+  │ │ │ ├─┬ resolve@1.4.0 
+  │ │ │ │ └── path-parse@1.0.5 
+  │ │ │ ├─┬ static-module@1.5.0 
+  │ │ │ │ ├─┬ concat-stream@1.6.0 
+  │ │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ │ ├─┬ duplexer2@0.0.2 
+  │ │ │ │ │ └─┬ readable-stream@1.1.14 
+  │ │ │ │ │   ├── isarray@0.0.1 
+  │ │ │ │ │   └── string_decoder@0.10.31 
+  │ │ │ │ ├─┬ escodegen@1.3.3 
+  │ │ │ │ │ ├── esprima@1.1.1 
+  │ │ │ │ │ ├── estraverse@1.5.1 
+  │ │ │ │ │ ├── esutils@1.0.0 
+  │ │ │ │ │ └─┬ source-map@0.1.43 
+  │ │ │ │ │   └── amdefine@1.0.1 
+  │ │ │ │ ├─┬ falafel@2.1.0 
+  │ │ │ │ │ ├── acorn@5.1.2 
+  │ │ │ │ │ ├── foreach@2.0.5 
+  │ │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ │ └── object-keys@1.0.11 
+  │ │ │ │ ├─┬ has@1.0.1 
+  │ │ │ │ │ └── function-bind@1.1.1 
+  │ │ │ │ ├── object-inspect@0.4.0 
+  │ │ │ │ ├─┬ quote-stream@0.0.0 
+  │ │ │ │ │ └── minimist@0.0.8 
+  │ │ │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ │ ├── shallow-copy@0.0.1 
+  │ │ │ │ ├─┬ static-eval@0.2.4 
+  │ │ │ │ │ └─┬ escodegen@0.0.28 
+  │ │ │ │ │   ├── esprima@1.0.4 
+  │ │ │ │ │   └── estraverse@1.3.2 
+  │ │ │ │ └─┬ through2@0.4.2 
+  │ │ │ │   └─┬ xtend@2.1.2 
+  │ │ │ │     └── object-keys@0.4.0 
+  │ │ │ └─┬ through2@2.0.3 
+  │ │ │   └─┬ readable-stream@2.3.3 
+  │ │ │     ├── isarray@1.0.0 
+  │ │ │     ├── process-nextick-args@1.0.7 
+  │ │ │     └── string_decoder@1.0.3 
+  │ │ ├── protocol-buffers-schema@3.3.1 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ └── signed-varint@2.0.1 
+  │ └─┬ pull-length-prefixed@1.3.0 
+  │   ├── pull-pushable@2.1.1 
+  │   └── pull-reader@1.2.9 
+  ├── lodash.includes@4.3.0 
+  ├─┬ multiaddr@3.0.1 
+  │ ├─┬ bs58@4.0.1 
+  │ │ └── base-x@3.0.2 
+  │ ├── ip@1.1.5 
+  │ ├── lodash.filter@4.6.0 
+  │ ├── lodash.map@4.6.0 
+  │ ├── varint@5.0.0 
+  │ └── xtend@4.0.1 
+  ├─┬ multistream-select@0.13.5 
+  │ ├── debug@2.6.8 
+  │ ├── lodash.isfunction@3.0.8 
+  │ ├── lodash.range@3.2.0 
+  │ ├─┬ pull-handshake@1.1.4 
+  │ │ ├── pull-cat@1.1.11 
+  │ │ └── pull-pair@1.1.0 
+  │ └── semver@5.4.1 
+  ├─┬ once@1.4.0 
+  │ └── wrappy@1.0.2 
+  ├─┬ peer-id@0.10.1 
+  │ ├─┬ libp2p-crypto@0.10.3 
+  │ │ ├─┬ asn1.js@4.9.1 
+  │ │ │ ├── bn.js@4.11.8 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ └── minimalistic-assert@1.0.0 
+  │ │ ├─┬ browserify-aes@1.0.8 
+  │ │ │ ├── buffer-xor@1.0.3 
+  │ │ │ ├── cipher-base@1.0.4 
+  │ │ │ ├─┬ create-hash@1.1.3 
+  │ │ │ │ ├─┬ ripemd160@2.0.1 
+  │ │ │ │ │ └── hash-base@2.0.2 
+  │ │ │ │ └── sha.js@2.4.8 
+  │ │ │ └─┬ evp_bytestokey@1.0.3 
+  │ │ │   └─┬ md5.js@1.3.4 
+  │ │ │     └── hash-base@3.0.4 
+  │ │ ├── keypair@1.0.1 
+  │ │ ├─┬ libp2p-crypto-secp256k1@0.2.2 
+  │ │ │ ├─┬ nodeify@1.0.1 
+  │ │ │ │ ├── is-promise@1.0.1 
+  │ │ │ │ └── promise@1.3.0 
+  │ │ │ └─┬ secp256k1@3.3.0 
+  │ │ │   ├── bindings@1.3.0 
+  │ │ │   ├── bip66@1.1.5 
+  │ │ │   ├─┬ drbg.js@1.0.1 
+  │ │ │   │ └── create-hmac@1.1.6 
+  │ │ │   ├─┬ elliptic@6.4.0 
+  │ │ │   │ ├── brorand@1.1.0 
+  │ │ │   │ ├── hash.js@1.1.3 
+  │ │ │   │ ├── hmac-drbg@1.0.1 
+  │ │ │   │ └── minimalistic-crypto-utils@1.0.1 
+  │ │ │   ├── nan@2.7.0 
+  │ │ │   └─┬ prebuild-install@2.2.2 
+  │ │ │     ├── expand-template@1.1.0 
+  │ │ │     ├── github-from-package@0.0.0 
+  │ │ │     ├─┬ mkdirp@0.5.1 
+  │ │ │     │ └── minimist@0.0.8 
+  │ │ │     ├── node-abi@2.1.1 
+  │ │ │     ├── noop-logger@0.1.1 
+  │ │ │     ├─┬ npmlog@4.1.2 
+  │ │ │     │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ │     │ │ └── delegates@1.0.0 
+  │ │ │     │ ├── console-control-strings@1.1.0 
+  │ │ │     │ ├─┬ gauge@2.7.4 
+  │ │ │     │ │ ├── aproba@1.2.0 
+  │ │ │     │ │ ├── has-unicode@2.0.1 
+  │ │ │     │ │ ├── object-assign@4.1.1 
+  │ │ │     │ │ ├── signal-exit@3.0.2 
+  │ │ │     │ │ ├─┬ string-width@1.0.2 
+  │ │ │     │ │ │ ├── code-point-at@1.1.0 
+  │ │ │     │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │ │     │ │ │   └── number-is-nan@1.0.1 
+  │ │ │     │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │     │ │ │ └── ansi-regex@2.1.1 
+  │ │ │     │ │ └── wide-align@1.1.2 
+  │ │ │     │ └── set-blocking@2.0.0 
+  │ │ │     ├── os-homedir@1.0.2 
+  │ │ │     ├─┬ pump@1.0.2 
+  │ │ │     │ └── end-of-stream@1.4.0 
+  │ │ │     ├─┬ rc@1.2.1 
+  │ │ │     │ ├── deep-extend@0.4.2 
+  │ │ │     │ ├── ini@1.3.4 
+  │ │ │     │ └── strip-json-comments@2.0.1 
+  │ │ │     ├─┬ simple-get@1.4.3 
+  │ │ │     │ └── unzip-response@1.0.2 
+  │ │ │     ├─┬ tar-fs@1.15.3 
+  │ │ │     │ ├── chownr@1.0.1 
+  │ │ │     │ └─┬ tar-stream@1.5.4 
+  │ │ │     │   └── bl@1.2.1 
+  │ │ │     └── tunnel-agent@0.6.0 
+  │ │ ├─┬ multihashing-async@0.4.6 
+  │ │ │ ├── blakejs@1.1.0 
+  │ │ │ ├── js-sha3@0.6.1 
+  │ │ │ └── murmurhash3js@3.0.1 
+  │ │ ├─┬ pem-jwk@1.5.1 
+  │ │ │ └─┬ asn1.js@1.0.3 
+  │ │ │   └── bn.js@1.3.0 
+  │ │ ├─┬ rsa-pem-to-jwk@1.1.3 
+  │ │ │ ├── object-assign@2.1.1 
+  │ │ │ └─┬ rsa-unpack@0.0.6 
+  │ │ │   └─┬ optimist@0.3.7 
+  │ │ │     └── wordwrap@0.0.3 
+  │ │ ├── tweetnacl@1.0.0 
+  │ │ └── webcrypto-shim@0.1.1  (git://github.com/dignifiedquire/webcrypto-shim.git#effe03d3401ccbfb4837191bc393bb347e0c0f0a)
+  │ └── multihashes@0.4.9 
+  ├─┬ peer-info@0.11.0 
+  │ └── lodash.uniqby@4.7.0 
+  └── pull-stream@3.6.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/libp2p-swarm/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0729 took 4.7678s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (13:6) on program 'use strict'
+
+const util = require('util')
+const EE = require('events').EventEmitter
+const each = require('async/each')
+const series = require('async/series')
+const transport = require('./transport')
+const connection = require('./connection')
+const getPeerInfo = require('./get-peer-info')
+const dial = require('./dial')
+const protocolMuxer = require('./protocol-muxer')
+const plaintext = require('./plaintext')
+const assert = require('assert')
+
+exports = module.exports = Swarm
+
+util.inherits(Swarm, EE)
+
+function Swarm (peerInfo, peerBook) {
+  if (!(this instanceof Swarm)) {
+    return new Swarm(peerInfo)
+  }
+
+  assert(peerInfo, 'You must provide a `peerInfo`')
+  assert(peerBook, 'You must provide a `peerBook`')
+
+  this._peerInfo = peerInfo
+  this._peerBook = peerBook
+
+  this.setMaxListeners(Infinity)
+  // transports --
+  // { key: transport }; e.g { tcp: <tcp> }
+  this.transports = {}
+
+  // connections --
+  // { peerIdB58: { conn: <conn> }}
+  this.conns = {}
+
+  // {
+  //   peerIdB58: {
+  //     muxer: <muxer>
+  //     conn: <transport socket> // to extract info required for the Identify Protocol
+  //   }
+  // }
+  this.muxedConns = {}
+
+  // { protocol: handler }
+  this.protocols = {}
+
+  // { muxerCodec: <muxer> } e.g { '/spdy/0.3.1': spdy }
+  this.muxers = {}
+
+  // is the Identify protocol enabled?
+  this.identify = false
+
+  // Crypto details
+  this.crypto = plaintext
+
+  this.transport = transport(this)
+  this.connection = connection(this)
+
+  this.availableTransports = (pi) => {
+    const myAddrs = pi.multiaddrs.toArray()
+    const myTransports = Object.keys(this.transports)
+
+    // Only listen on transports we actually have addresses for
+    return myTransports.filter((ts) => this.transports[ts].filter(myAddrs).length > 0)
+  }
+
+  // higher level (public) API
+  this.dial = dial(this)
+
+  // Start listening on all available transports
+  this.listen = (callback) => {
+    each(this.availableTransports(peerInfo), (ts, cb) => {
+      // Listen on the given transport
+      this.transport.listen(ts, {}, null, cb)
+    }, callback)
+  }
+
+  this.handle = (protocol, handlerFunc, matchFunc) => {
+    this.protocols[protocol] = {
+      handlerFunc: handlerFunc,
+      matchFunc: matchFunc
+    }
+  }
+
+  this.handle(this.crypto.tag, (protocol, conn) => {
+    const peerId = this._peerInfo.id
+    const wrapped = this.crypto.encrypt(peerId, peerId.privKey, conn)
+    return protocolMuxer(this.protocols, wrapped)
+  })
+
+  this.unhandle = (protocol) => {
+    if (this.protocols[protocol]) {
+      delete this.protocols[protocol]
+    }
+  }
+
+  this.hangUp = (peer, callback) => {
+    const peerInfo = getPeerInfo(peer, this.peerBook)
+    const key = peerInfo.id.toB58String()
+    if (this.muxedConns[key]) {
+      const muxer = this.muxedConns[key].muxer
+      muxer.once('close', () => {
+        delete this.muxedConns[key]
+        callback()
+      })
+      muxer.end()
+    } else {
+      callback()
+    }
+  }
+
+  this.close = (callback) => {
+    series([
+      (cb) => each(this.muxedConns, (conn, cb) => {
+        conn.muxer.end((err) => {
+          // If OK things are fine, and someone just shut down
+          if (err && err.message !== 'Fatal error: OK') {
+            return cb(err)
+          }
+          cb()
+        })
+      }, cb),
+      (cb) => {
+        each(this.transports, (transport, cb) => {
+          each(transport.listeners, (listener, cb) => {
+            listener.close(cb)
+          }, cb)
+        }, cb)
+      }
+    ], callback)
+  }
+}
+ at SyntaxError: Unexpected token (13:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

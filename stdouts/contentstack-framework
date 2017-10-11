@@ -1,0 +1,398 @@
+
+> ws@0.4.31 install /root/Targets/contentstack-framework/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/contentstack-framework/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/contentstack-framework/node_modules/ws/build'
+/root/Targets/contentstack-framework
+└─┬ contentstack-framework@0.1.21 
+  ├─┬ amqp@0.2.6 
+  │ └── lodash@4.17.4 
+  ├── async@0.9.2 
+  ├─┬ body-parser@1.12.4 
+  │ ├── bytes@1.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.2.0 
+  │ ├── depd@1.0.1 
+  │ ├── iconv-lite@0.4.8 
+  │ ├─┬ on-finished@2.2.1 
+  │ │ └── ee-first@1.1.0 
+  │ ├── qs@2.4.2 
+  │ ├─┬ raw-body@2.0.2 
+  │ │ └── bytes@2.1.0 
+  │ └─┬ type-is@1.6.15 
+  │   └── mime-types@2.1.17 
+  ├── commander@2.6.0 
+  ├─┬ compression@1.4.4 
+  │ ├─┬ accepts@1.2.13 
+  │ │ └── negotiator@0.5.3 
+  │ ├─┬ compressible@2.0.11 
+  │ │ └── mime-db@1.30.0 
+  │ └── vary@1.0.1 
+  ├── consolidate@0.11.0 
+  ├─┬ express@4.11.2 
+  │ ├── content-disposition@0.5.0 
+  │ ├── cookie@0.1.2 
+  │ ├── cookie-signature@1.0.5 
+  │ ├─┬ debug@2.1.3 
+  │ │ └── ms@0.7.0 
+  │ ├── escape-html@1.0.1 
+  │ ├─┬ etag@1.5.1 
+  │ │ └── crc@3.2.1 
+  │ ├─┬ finalhandler@0.3.3 
+  │ │ └─┬ debug@2.1.3 
+  │ │   └── ms@0.7.0 
+  │ ├── fresh@0.2.4 
+  │ ├── media-typer@0.3.0 
+  │ ├── merge-descriptors@0.0.2 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.3 
+  │ ├─┬ proxy-addr@1.0.10 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.0.5 
+  │ ├── qs@2.3.3 
+  │ ├── range-parser@1.0.3 
+  │ ├─┬ send@0.11.1 
+  │ │ ├── debug@2.1.3 
+  │ │ ├── destroy@1.0.3 
+  │ │ ├── mime@1.2.11 
+  │ │ └── ms@0.7.0 
+  │ ├── serve-static@1.8.1 
+  │ ├─┬ type-is@1.5.7 
+  │ │ └─┬ mime-types@2.0.14 
+  │ │   └── mime-db@1.12.0 
+  │ └── utils-merge@1.0.0 
+  ├── htmlclean@2.3.2 
+  ├── lodash@3.2.0 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── ncp@1.0.1 
+  ├─┬ nedb@1.1.4 
+  │ ├── async@0.2.10 
+  │ ├── binary-search-tree@0.2.4 
+  │ └── underscore@1.4.4 
+  ├── on-headers@1.0.0 
+  ├── pagedown@1.1.0 
+  ├─┬ prompt@0.2.14 
+  │ ├── pkginfo@0.4.1 
+  │ ├─┬ read@1.0.7 
+  │ │ └── mute-stream@0.0.7 
+  │ ├── revalidator@0.1.8 
+  │ ├─┬ utile@0.2.1 
+  │ │ ├── async@0.2.10 
+  │ │ ├── deep-equal@1.0.1 
+  │ │ ├── i@0.3.5 
+  │ │ ├── ncp@0.4.2 
+  │ │ └─┬ rimraf@2.6.2 
+  │ │   └─┬ glob@7.1.2 
+  │ │     ├── fs.realpath@1.0.0 
+  │ │     ├─┬ inflight@1.0.6 
+  │ │     │ └── wrappy@1.0.2 
+  │ │     ├─┬ minimatch@3.0.4 
+  │ │     │ └─┬ brace-expansion@1.1.8 
+  │ │     │   ├── balanced-match@1.0.0 
+  │ │     │   └── concat-map@0.0.1 
+  │ │     ├── once@1.4.0 
+  │ │     └── path-is-absolute@1.0.1 
+  │ └─┬ winston@0.8.3 
+  │   ├── async@0.2.10 
+  │   ├── colors@0.6.2 
+  │   └── pkginfo@0.3.1 
+  ├─┬ request@2.53.0 
+  │ ├── aws-sign2@0.5.0 
+  │ ├─┬ bl@0.9.5 
+  │ │ └─┬ readable-stream@1.0.34 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   └── string_decoder@0.10.31 
+  │ ├── caseless@0.9.0 
+  │ ├─┬ combined-stream@0.0.7 
+  │ │ └── delayed-stream@0.0.5 
+  │ ├── forever-agent@0.5.2 
+  │ ├─┬ form-data@0.2.0 
+  │ │ └─┬ mime-types@2.0.14 
+  │ │   └── mime-db@1.12.0 
+  │ ├─┬ hawk@2.3.1 
+  │ │ ├── boom@2.10.1 
+  │ │ ├── cryptiles@2.0.5 
+  │ │ ├── hoek@2.16.3 
+  │ │ └── sntp@1.0.9 
+  │ ├─┬ http-signature@0.10.1 
+  │ │ ├── asn1@0.1.11 
+  │ │ ├── assert-plus@0.1.5 
+  │ │ └── ctype@0.5.3 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.0.14 
+  │ │ └── mime-db@1.12.0 
+  │ ├── node-uuid@1.4.8 
+  │ ├── oauth-sign@0.6.0 
+  │ ├── qs@2.3.3 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ └── tunnel-agent@0.4.3 
+  ├─┬ serve-favicon@2.2.1 
+  │ ├── etag@1.6.0 
+  │ └── ms@0.7.1 
+  ├── sift@0.0.18 
+  ├─┬ socket.io-client@1.2.1 
+  │ ├── component-bind@1.0.0 
+  │ ├── component-emitter@1.1.2 
+  │ ├── debug@0.7.4 
+  │ ├─┬ engine.io-client@1.4.3 
+  │ │ ├── component-inherit@0.0.3 
+  │ │ ├─┬ debug@1.0.4 
+  │ │ │ └── ms@0.6.2 
+  │ │ ├─┬ engine.io-parser@1.1.0 
+  │ │ │ ├── after@0.8.1 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ ├── base64-arraybuffer@0.1.2 
+  │ │ │ ├── blob@0.0.2 
+  │ │ │ └── utf8@2.0.0 
+  │ │ ├─┬ has-cors@1.0.3 
+  │ │ │ └── global@2.0.1 
+  │ │ ├── parsejson@0.0.1 
+  │ │ ├── parseqs@0.0.2 
+  │ │ ├── parseuri@0.0.4 
+  │ │ ├─┬ ws@0.4.31 
+  │ │ │ ├── commander@0.6.1 
+  │ │ │ ├── nan@0.3.2 
+  │ │ │ ├── options@0.0.6 
+  │ │ │ └── tinycolor@0.0.1 
+  │ │ └── xmlhttprequest@1.5.0 
+  │ ├─┬ has-binary@0.1.5 
+  │ │ └── isarray@0.0.1 
+  │ ├── indexof@0.0.1 
+  │ ├── object-component@0.0.3 
+  │ ├─┬ parseuri@0.0.2 
+  │ │ └─┬ better-assert@1.0.2 
+  │ │   └── callsite@1.0.0 
+  │ ├─┬ socket.io-parser@2.2.2 
+  │ │ ├── benchmark@1.0.0 
+  │ │ ├── debug@0.7.4 
+  │ │ └── json3@3.2.6 
+  │ └── to-array@0.1.3 
+  ├─┬ swig@1.4.2 
+  │ ├─┬ optimist@0.6.1 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── async@0.2.10 
+  │   ├─┬ source-map@0.1.34 
+  │   │ └── amdefine@1.0.1 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.5.4 
+  │     ├── camelcase@1.2.1 
+  │     ├── decamelize@1.2.0 
+  │     ├── window-size@0.1.0 
+  │     └── wordwrap@0.0.2 
+  └─┬ winston@1.0.2 
+    ├── async@1.0.0 
+    ├── colors@1.0.3 
+    ├── cycle@1.0.3 
+    ├── eyes@0.1.8 
+    ├── pkginfo@0.3.1 
+    └── stack-trace@0.0.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/contentstack-framework/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 40% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","ArrayBuffer","Float64Array","pow","WeakMap","parseInt","Array","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Int32Array","getPrototypeOf"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0385 took 58.657s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (20:40) on program /**
+ * Module dependencies.
+ */
+var path = require('path'),
+    fs = require('fs'),
+    winston = require('winston'),
+    config = require('./../../config');
+
+var logHandler = function () {
+    try {
+        this.getRelativePath = function (location) {
+            return (location.indexOf('./') != 0) ? location : path.join(config._root, location);
+        };
+
+        this.logsPath = this.getRelativePath((config.logs && config.logs.path) ? config.logs.path : './_logs');
+
+        this.console = (config.logs && typeof config.logs.console == "boolean") ? config.logs.console : true;
+
+        if (!fs.existsSync(this.logsPath)) {
+            fs.mkdirSync(this.logsPath, 0755);
+        }
+    } catch (e) {
+        console.error("Logs Error: ", e.message);
+        process.exit(0);
+    }
+};
+
+logHandler.prototype.type = function (type) {
+    winston.loggers.add(type + '-logger', {
+        console: {
+            level: (this.console) ? 'info' : 'none'
+        },
+        file: {
+            level: 'info',
+            filename: path.join(this.logsPath, type + "-logs.log"),
+            maxsize: 2097152,
+            json: true
+        }
+    });
+    winston.loggers.add(type + '-exception', {
+        console: {
+            level: (!this.console) ? 'error' : 'none'
+        },
+        file: {
+            level: 'error',
+            filename: path.join(this.logsPath, type + "-error-logs.log"),
+            maxsize: 1048576,
+            json: true
+        }
+    });
+
+    var logger = winston.loggers.get(type + '-logger'),
+        exception = winston.loggers.get(type + '-exception');
+
+    // exitOnError enabled except EPIPE error.
+    function ignoreEpipe(err) {
+        return err.code !== 'EPIPE';
+    }
+    logger.exitOnError = ignoreEpipe;
+    exception.exitOnError = ignoreEpipe;
+
+    var log = {
+        "info": function (msg) {
+            logger.info(msg);
+        },
+        "warn": function (msg) {
+            logger.warn(msg);
+        },
+        "error": function (msg) {
+            logger.error(msg);
+            exception.error(msg);
+        }
+    };
+    return log;
+};
+
+module.exports = logHandler;
+ at SyntaxError: Invalid number (20:40)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:10)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2152:16)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/index.js. Coverage (Term): 62% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/index.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/contentstack-framework/node_modules/lodash/index.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/app/index.js. Coverage (Term): 67% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/app/contentstack.js. Coverage (Term): 14% Coverage (LOC): 7%
+*- File /root/Targets/contentstack-framework/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/express.js. Coverage (Term): 66% Coverage (LOC): 74%
+*- File /root/Targets/contentstack-framework/node_modules/merge-descriptors/index.js. Coverage (Term): 31% Coverage (LOC): 44%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/application.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/contentstack-framework/node_modules/finalhandler/index.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/contentstack-framework/node_modules/finalhandler/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/contentstack-framework/node_modules/finalhandler/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/contentstack-framework/node_modules/finalhandler/node_modules/ms/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/escape-html/index.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/contentstack-framework/node_modules/on-finished/index.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/contentstack-framework/node_modules/ee-first/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/contentstack-framework/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/contentstack-framework/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/contentstack-framework/node_modules/depd/lib/compat/index.js. Coverage (Term): 81% Coverage (LOC): 94%
+*- File /root/Targets/contentstack-framework/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/contentstack-framework/node_modules/send/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/contentstack-framework/node_modules/send/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/contentstack-framework/node_modules/send/node_modules/ms/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/contentstack-framework/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/contentstack-framework/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/contentstack-framework/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/contentstack-framework/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc1.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/create.js. Coverage (Term): 72% Coverage (LOC): 90%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc8.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc8_1wire.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc16.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc16_ccitt.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc16_modbus.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc24.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/contentstack-framework/node_modules/crc/lib/crc32.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/contentstack-framework/node_modules/proxy-addr/index.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/contentstack-framework/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/qs/lib/stringify.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/qs/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/router/route.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/ms/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/path-to-regexp/index.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/contentstack-framework/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/contentstack-framework/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/contentstack-framework/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/middleware/init.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/middleware/query.js. Coverage (Term): 34% Coverage (LOC): 35%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/view.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/request.js. Coverage (Term): 28% Coverage (LOC): 45%
+*- File /root/Targets/contentstack-framework/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/contentstack-framework/node_modules/negotiator/index.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/contentstack-framework/node_modules/negotiator/lib/charset.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/contentstack-framework/node_modules/negotiator/lib/encoding.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/contentstack-framework/node_modules/negotiator/lib/language.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/contentstack-framework/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/contentstack-framework/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/contentstack-framework/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/type-is/index.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/mime-types/index.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/contentstack-framework/node_modules/express/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/contentstack-framework/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/contentstack-framework/node_modules/cookie/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/contentstack-framework/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/contentstack-framework/node_modules/serve-static/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/contentstack-framework/node_modules/compression/index.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/contentstack-framework/node_modules/bytes/index.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/contentstack-framework/node_modules/compressible/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/contentstack-framework/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/contentstack-framework/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/contentstack-framework/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/contentstack-framework/node_modules/on-headers/index.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/contentstack-framework/node_modules/body-parser/index.js. Coverage (Term): 50% Coverage (LOC): 51%
+*- File /root/Targets/contentstack-framework/node_modules/serve-favicon/index.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /root/Targets/contentstack-framework/node_modules/serve-favicon/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/contentstack-framework/node_modules/consolidate/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/consolidate/lib/consolidate.js. Coverage (Term): 15% Coverage (LOC): 25%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/utils/config/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/utils/config/lib/config.js. Coverage (Term): 83% Coverage (LOC): 82%
+*- File /root/Targets/contentstack-framework/node_modules/contentstack-framework/lib/utils/logs/index.js. Coverage (Term): 62% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

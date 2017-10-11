@@ -1,0 +1,110 @@
+/root/Targets/cat-mvc
+└─┬ cat-mvc@0.2.5 
+  ├─┬ accepts@1.0.7 
+  │ ├── mime-types@1.0.2 
+  │ └── negotiator@0.4.7 
+  ├─┬ body-parser@1.6.7 
+  │ ├── bytes@1.0.0 
+  │ ├── depd@0.4.4 
+  │ ├── iconv-lite@0.4.4 
+  │ ├─┬ on-finished@2.1.0 
+  │ │ └── ee-first@1.0.5 
+  │ ├── qs@2.2.2 
+  │ ├── raw-body@1.3.0 
+  │ └── type-is@1.3.2 
+  ├── buffer-crc32@0.2.3 
+  ├── cookie@0.1.2 
+  ├─┬ cookie-parser@1.4.3 
+  │ ├── cookie@0.3.1 
+  │ └── cookie-signature@1.0.6 
+  ├── cookie-signature@1.0.4 
+  ├── ejs@1.0.0 
+  ├─┬ express-session@1.7.6 
+  │ ├── debug@1.0.4 
+  │ ├── on-headers@1.0.1 
+  │ ├── parseurl@1.3.2 
+  │ ├─┬ uid-safe@1.0.1 
+  │ │ ├── base64-url@1.3.3 
+  │ │ └─┬ mz@1.3.0 
+  │ │   ├── native-or-bluebird@1.2.0 
+  │ │   ├─┬ thenify@3.3.0 
+  │ │   │ └── any-promise@1.3.0 
+  │ │   └── thenify-all@1.6.0 
+  │ └── utils-merge@1.0.0 
+  ├── fresh@0.2.2 
+  ├── media-typer@0.2.0 
+  ├── mime@1.2.11 
+  ├─┬ path-to-regexp@1.0.3 
+  │ └── isarray@0.0.1 
+  ├─┬ proxy-addr@1.0.1 
+  │ └── ipaddr.js@0.1.2 
+  ├─┬ send@0.8.3 
+  │ ├── destroy@1.0.3 
+  │ ├── escape-html@1.0.1 
+  │ ├── ms@0.6.2 
+  │ └── range-parser@1.0.3 
+  ├── vary@1.0.0 
+  ├─┬ vash@0.7.12-1 
+  │ ├─┬ commander@1.1.1 
+  │ │ └── keypress@0.1.0 
+  │ └── uglify-js@1.0.6 
+  ├─┬ zoo-cache@0.0.8 
+  │ └── zoo-utils@0.0.8 
+  └── zoo-utils@0.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cat-mvc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","cwd","max","captureStackTrace","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Int32Array","RegExp","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0371 took 26.8062s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/mvcApp.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/cat-mvc/node_modules/zoo-utils/lib/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/cat-mvc/node_modules/zoo-utils/lib/utils-non-strict.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/cat-mvc/node_modules/zoo-utils/lib/utils-use-strict.js. Coverage (Term): 8% Coverage (LOC): 19%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/lib/caching.js. Coverage (Term): 33% Coverage (LOC): 43%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/node_modules/zoo-utils/lib/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/node_modules/zoo-utils/lib/utils-non-strict.js. Coverage (Term): 64% Coverage (LOC): 72%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/node_modules/zoo-utils/lib/utils-use-strict.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/lib/cachingItem.js. Coverage (Term): 37% Coverage (LOC): 58%
+*- File /root/Targets/cat-mvc/node_modules/zoo-cache/lib/cachingStore.js. Coverage (Term): 19% Coverage (LOC): 23%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/httpHelper.js. Coverage (Term): 14% Coverage (LOC): 17%
+*- File /root/Targets/cat-mvc/node_modules/send/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/cat-mvc/node_modules/send/lib/send.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/cat-mvc/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/cat-mvc/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/cat-mvc/node_modules/ms/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/cat-mvc/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/cat-mvc/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/cat-mvc/node_modules/escape-html/index.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/cat-mvc/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/cat-mvc/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/cat-mvc/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/cat-mvc/node_modules/send/lib/utils.js. Coverage (Term): 30% Coverage (LOC): 54%
+*- File /root/Targets/cat-mvc/node_modules/on-finished/index.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/cat-mvc/node_modules/ee-first/index.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File eval. Coverage (Term): 43% Coverage (LOC): 60%
+*- File /root/Targets/cat-mvc/node_modules/buffer-crc32/index.js. Coverage (Term): 70% Coverage (LOC): 94%
+*- File /root/Targets/cat-mvc/node_modules/proxy-addr/index.js. Coverage (Term): 9% Coverage (LOC): 19%
+*- File /root/Targets/cat-mvc/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 34% Coverage (LOC): 61%
+*- File /root/Targets/cat-mvc/node_modules/media-typer/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/mvcArea.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/mvcRoutes.js. Coverage (Term): 12% Coverage (LOC): 8%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/mvcRoute.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/cat-mvc/node_modules/cat-mvc/mvc/mvcRouteSeed.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /root/Targets/cat-mvc/node_modules/path-to-regexp/index.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/cat-mvc/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

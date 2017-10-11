@@ -1,0 +1,251 @@
+/root/Targets/circus
+└─┬ circus@4.2.0 
+  ├── async@0.9.2 
+  ├─┬ handlebars@2.0.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   └── async@0.2.10 
+  ├─┬ loader-utils@0.2.17 
+  │ ├── big.js@3.2.0 
+  │ ├── emojis-list@2.1.0 
+  │ ├── json5@0.5.1 
+  │ └── object-assign@4.1.1 
+  ├── lodash@2.4.2 
+  ├─┬ recast@0.9.18 
+  │ ├── ast-types@0.6.16 
+  │ ├── esprima-fb@10001.1.0-dev-harmony-fb 
+  │ ├── private@0.1.7 
+  │ └─┬ source-map@0.1.43 
+  │   └── amdefine@1.0.1 
+  ├─┬ rework@1.0.1 
+  │ ├── convert-source-map@0.3.5 
+  │ └─┬ css@2.2.1 
+  │   └── inherits@2.0.3 
+  ├─┬ rework-plugin-url@1.1.0 
+  │ └─┬ rework-plugin-function@1.0.2 
+  │   └── rework-visit@1.0.0 
+  ├── semver@4.3.6 
+  ├─┬ source-map-resolve@0.3.1 
+  │ ├── atob@1.1.3 
+  │ ├── resolve-url@0.2.1 
+  │ ├── source-map-url@0.3.0 
+  │ └── urix@0.1.0 
+  ├─┬ uglify-js@2.8.29 
+  │ ├── source-map@0.5.7 
+  │ ├── uglify-to-browserify@1.0.2 
+  │ └─┬ yargs@3.10.0 
+  │   ├── camelcase@1.2.1 
+  │   ├─┬ cliui@2.1.0 
+  │   │ ├─┬ center-align@0.1.3 
+  │   │ │ ├─┬ align-text@0.1.4 
+  │   │ │ │ ├─┬ kind-of@3.2.2 
+  │   │ │ │ │ └── is-buffer@1.1.5 
+  │   │ │ │ ├── longest@1.0.1 
+  │   │ │ │ └── repeat-string@1.6.1 
+  │   │ │ └── lazy-cache@1.0.4 
+  │   │ ├── right-align@0.1.3 
+  │   │ └── wordwrap@0.0.2 
+  │   ├── decamelize@1.2.0 
+  │   └── window-size@0.1.0 
+  └─┬ webpack-core@0.6.9 
+    ├── source-list-map@0.1.8 
+    └── source-map@0.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/circus/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0295 took 2.7214s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (16:4) on program var _ = require('lodash'),
+    BowerCopyPlugin = require('./plugins/bower-copy-plugin'),
+    PackPlugin = require('./plugins'),
+    TemplatePlugin = require('./templates'),
+    Publish = require('./publish'),
+    Resolver = require('./resolver'),
+    fs = require('fs'),
+    Path = require('path'),
+    Semver = require('semver'),
+    webpack = require('webpack'),
+
+    LoaderTargetPlugin = require('webpack/lib/LoaderTargetPlugin'),
+    FunctionModulePlugin = require('webpack/lib/FunctionModulePlugin'),
+    RawSource = require('webpack-core/lib/RawSource'),
+
+    package = require('../package.json');
+
+
+module.exports.loadConfigs = function(moduleDir, callback) {
+  return Resolver.loadConfigs(moduleDir, callback);
+};
+
+module.exports.publish = function(buildDir, options) {
+  return Publish.publish(buildDir, options);
+};
+
+module.exports.config = function(additions) {
+  var config;
+
+  if (Array.isArray(additions)) {
+    config = additions.map(applyConfig);
+    if (config.length > 1) {
+      config.unshift(metaConfig(additions));
+    } else {
+      config[0].plugins.push(new BowerCopyPlugin());
+    }
+
+    return config;
+  } else {
+    config = applyConfig(additions);
+    config.plugins.push(new BowerCopyPlugin());
+    return config;
+  }
+};
+
+function applyConfig(additions) {
+  var package = {},
+      output = additions.output || {};
+  if (!additions || !additions.output || !additions.output.component) {
+    package = JSON.parse(fs.readFileSync('package.json').toString());
+  }
+
+  var options = _.extend({
+    target: function(compiler) {
+      compiler.apply(
+        new TemplatePlugin(),
+        new FunctionModulePlugin(options.output),
+        new LoaderTargetPlugin('web'));
+    },
+
+    devtool: 'source-map',
+
+    sourcePrefix: '  ',
+
+    // We need to impose a wait delay here to avoid issues due to early builds.
+    // This can manifest itself via unchanged files and partial builds and other concerns.
+    watchDelay: 100
+  },
+
+  // Allow any of the above values to be overriden
+  additions,
+
+  // And then augment the values that we want to explicitly provide
+  {
+    output: _.defaults({
+      component: package.name,
+
+      path: Path.join(output.path || '', output.pathPrefix || ''),
+      sourceMapFilename: '[file].map'
+    }, additions.output),
+
+    linker: _.extend({
+      local: false
+    }, additions.linker),
+
+    resolve: resolve(additions.resolve),
+
+    resolveLoader: _.defaults({
+      alias: _.extend({
+        'file': require.resolve('./loaders/resource-loader'),
+        'file-loader': require.resolve('./loaders/resource-loader'),
+        'resource': require.resolve('./loaders/resource-loader'),
+        'resource-loader': require.resolve('./loaders/resource-loader')
+      }, additions.resolveLoader && additions.resolveLoader.alias)
+    }, additions.resolveLoader),
+
+    plugins: plugins(additions.plugins)
+  });
+
+  options.components = options.components
+      || Resolver.findComponents(options.checkPermutation || options.configId, options.resolve.modulesDirectories);
+
+  checkComponents(options.components);
+
+  return options;
+}
+
+function resolve(additions) {
+  return _.extend({
+    modulesDirectories: ['web_modules', 'node_modules', 'bower_components']
+  }, additions);
+}
+
+function plugins(additions) {
+  var base = [
+    new PackPlugin(),
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+    )
+  ];
+
+  return additions ? base.concat(additions) : base;
+}
+
+/**
+ * Generates a simple build configuration that only outputs the meta circus file.
+ *
+ * This allows us to generate this file, while continuing to be configuration driven
+ * and not requiring external consumers to be aware of the need to generate this file.
+ */
+function metaConfig(configs) {
+  return {
+    context: configs[0].context,
+    target: function(compiler) {
+      var bowerCopy = new BowerCopyPlugin();
+
+      bowerCopy.apply(compiler);
+      compiler.plugin('compilation', function(compilation) {
+        compilation.plugin('additional-assets', function(callback) {
+          try {
+            var config = JSON.stringify(Resolver.metaConfig(configs));
+            compilation.assets['circus.json'] = new RawSource(config);
+          } catch (err) {
+            compilation.errors.push(err);
+          }
+
+          setImmediate(callback);
+        });
+      });
+    },
+    output: {
+      filename: 'circus.json',
+      path: (configs[0].output || {}).path
+    }
+  };
+}
+
+/**
+ * Checks the given components against our current circus version to prevent unexpected
+ * surprises due to runtime mismatches.
+ */
+function checkComponents(components) {
+  _.each(components, function(component, componentName) {
+    if (!Semver.satisfies(component.circusVersion, package.version.replace(/\d+\.\d+$/, '*'))) {
+      throw new Error('Component ' + componentName + ' compiled with unsupported version of circus: ' + component.circusVersion);
+    }
+  });
+}
+ at SyntaxError: The keyword 'package' is reserved (16:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/circus/node_modules/circus/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,263 @@
+/root/Targets/rest-tool
+└─┬ rest-tool@0.5.2 
+  ├── commander@2.0.0 
+  ├─┬ js-yaml@2.1.0 
+  │ ├─┬ argparse@0.1.16 
+  │ │ ├── underscore@1.7.0 
+  │ │ └── underscore.string@2.4.0 
+  │ └── esprima@1.0.4 
+  ├── marked@0.3.6 
+  ├─┬ mocha@1.17.1 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── diff@1.0.7 
+  │ ├─┬ glob@3.2.3 
+  │ │ ├── graceful-fs@2.0.3 
+  │ │ ├── inherits@2.0.3 
+  │ │ └─┬ minimatch@0.2.14 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ ├── growl@1.7.0 
+  │ ├─┬ jade@0.26.3 
+  │ │ ├── commander@0.6.1 
+  │ │ └── mkdirp@0.3.0 
+  │ └── mkdirp@0.3.5 
+  ├── mu2@0.5.20 
+  ├─┬ proper@0.5.0 
+  │ ├── dot@1.1.2 
+  │ └─┬ xml-mapping@1.7.1 
+  │   ├── sax@0.4.2 
+  │   └── xml-writer@1.7.0 
+  ├─┬ rest-tool-common@0.4.2 
+  │ └─┬ jayschema@0.2.8 
+  │   └── when@3.1.0 
+  ├── should@3.1.2 
+  ├─┬ superagent@0.16.0 
+  │ ├── cookiejar@1.3.0 
+  │ ├── debug@0.7.4 
+  │ ├── emitter-component@1.0.0 
+  │ ├── formidable@1.0.14 
+  │ ├── methods@0.0.1 
+  │ ├── mime@1.2.5 
+  │ ├── qs@0.6.5 
+  │ └── reduce-component@1.0.1 
+  └── wrench@1.5.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/rest-tool/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0532 took 4.5648s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+/*jslint node: true */
+'use strict';
+
+var generator = require('rest-tool-common').generator,
+    extend = require('rest-tool-common').extend,
+    mu = require('mu2'),
+    fs = require('fs'),
+    path = require('path');
+var verbose = false;
+var marked = require('marked');
+
+var initDocsFolder = function(context, mode) {
+     if ( generator.createDirectoryTree('docs', [
+        "/images",
+        "/js",
+        "/sass",
+        "/stylesheets",
+        "services" ], true) ) {
+
+        [
+            "images",
+            "js",
+            "sass",
+            "stylesheets"
+        ].forEach(function(dirName) {
+            generator.copyDir(context, {
+                sourceBaseDir: "templates/docs",
+                targetBaseDir: "docs",
+                dirName: dirName, // The directory to copy
+                forceDelete: true, // Whether to overwrite existing directory or not
+                excludeHiddenUnix: true, // Whether to copy hidden Unix files or not (preceding .)
+                preserveFiles: false, // If we're overwriting something and the file already exists, keep the existing
+                inflateSymlinks: true // Whether to follow symlinks or not when copying files
+                // filter: regexp, // A filter to match files against; if matches, do nothing (exclude).
+                // whitelist: bool, // if true every file or directory which doesn't match filter will be ignored
+            });
+        });
+
+        // Copy the whole services tree (temporary solution)
+        generator.copyDir(context, {
+            sourceBaseDir: "",
+            targetBaseDir: "docs",
+            dirName: "services", // The directory to copy
+            forceDelete: true, // Whether to overwrite existing directory or not
+            excludeHiddenUnix: true, // Whether to copy hidden Unix files or not (preceding .)
+            preserveFiles: false, // If we're overwriting something and the file already exists, keep the existing
+            inflateSymlinks: true // Whether to follow symlinks or not when copying files
+            // filter: regexp, // A filter to match files against; if matches, do nothing (exclude).
+            // whitelist: bool, // if true every file or directory which doesn't match filter will be ignored
+        });
+
+        [
+            "README.md"
+        ].forEach(function(fileName) {
+            generator.copyFile(fileName, "templates/docs", "docs", context);
+        });
+    }
+    return true;
+};
+
+var generateDocFileName = function (serviceDesc) {
+    console.log('generateDocFileName: ', serviceDesc.contentPath + '/service.html');
+    return serviceDesc.contentPath + '/service.html';
+};
+
+/**
+ * Converts each markdown-format fields of the view
+ * @param  {[type]} doc [description]
+ * @return {[type]}     [description]
+ */
+var convertMarkdown = function(doc) {
+    var newDoc = {};
+
+    mapOwnProperties(doc, function(property, propertyName) {
+        if (typeof property === 'object') {
+            if (property instanceof Array ) {
+                newDoc[propertyName] = [];
+                property.forEach(function(item) {
+                    newDoc[propertyName].push(convertMarkdown(item));
+                });
+            } else {
+                newDoc[propertyName] = convertMarkdown(property);
+            }
+        } else {
+            if (propertyName === 'description' ||
+                propertyName === 'summary' ||
+                propertyName === 'details' ) {
+                newDoc[propertyName] = marked(property);
+            } else {
+                newDoc[propertyName] = property;
+            }
+        }
+    });
+
+    return newDoc;
+};
+
+var generateDoc = function(templateFileName, view, outFileName) {
+    var buffer = '';
+
+    if (verbose) console.log('templateFileName: ' + templateFileName);
+    if (verbose) console.log('fileName: ' + outFileName);
+
+    if (verbose) console.log('template context:', JSON.stringify(view, null, '  '));
+    mu.compileAndRender(templateFileName, view)
+        .on('data', function(c) {
+            buffer += c.toString();
+        })
+        .on('end', function() {
+            // console.log('Writing to: ' + fileName + " " + buffer);
+            fs.writeFile(outFileName, buffer, function(err) {
+                if (err) throw err;
+            });
+        });
+};
+
+var generateDocIndex = function(context) {
+    var templateFileName = path.join(process.cwd(), 'templates', 'docs', 'index.html'),
+        outFileName = path.join(process.cwd(), 'docs/index.html');
+
+    console.log('Generate document index');
+    generateDoc(templateFileName, context, outFileName);
+};
+
+var generateServiceDoc = function(serviceDesc, context) {
+
+    var templateFileName = path.join(process.cwd(), 'templates', 'docs', 'restapi.html'),
+        outFileName = path.join(process.cwd(), 'docs', generateDocFileName(serviceDesc)),
+        view = {};
+    var relPath = "";
+    for (var l=0; l<serviceDesc.contentPath.split('/').length; l++ ) {
+        relPath = relPath + ".." + path.sep;
+    }
+    context.relPath = relPath;
+
+    // console.log('Generate service doc: ' + serviceDesc.name, context.relPath);
+
+    extend(view, context, convertMarkdown(serviceDesc));
+    generateDoc(templateFileName, view, outFileName);
+};
+
+var mapOwnProperties = function(obj, func) {
+    for (var property in obj) {
+        if (obj.hasOwnProperty(property)) {
+            func(obj[property], property);
+        }
+    }
+};
+
+/**
+ * Generate the HTML format documentation
+ * @return {bool}           `true` if succesfully executed, `false` otherwise
+ */
+exports.update = function (context, mode) {
+    verbose = mode;
+    console.log('Generate the HTML format documentation', context);
+    initDocsFolder(context, mode);
+
+    mu.root = path.resolve('templates/docs/');
+
+    // Load service descriptors
+    var services = require('rest-tool-common').services;
+    services.load(process.cwd());
+
+    // Prepare the list of all services for generation of documents
+    var allServices = services.getServices();
+    if (verbose) console.log('All Services: ', allServices);
+
+    var serviceDocNames = [];
+    context.serviceDocNames = serviceDocNames;
+    mapOwnProperties( allServices, function( serviceDesc, property ) {
+        serviceDocNames.push({
+            name: serviceDesc.name,
+            docFileName: generateDocFileName(serviceDesc)
+        });
+    });
+
+    // Set the time of generation
+    context.lastUpdate = new Date();
+
+    // Generate the documents for each service
+    mapOwnProperties( allServices, function( serviceDesc, property ) {
+        generateServiceDoc(serviceDesc, context);
+    });
+
+    // Generate the index.html
+    generateDocIndex(context);
+};
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/rest-tool/node_modules/rest-tool/index.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

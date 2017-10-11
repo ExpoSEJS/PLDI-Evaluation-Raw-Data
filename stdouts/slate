@@ -1,0 +1,46 @@
+/root/Targets/slate
+├── UNMET PEER DEPENDENCY immutable@^3.8.1
+├── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0
+└─┬ slate@0.24.5 
+  ├─┬ debug@2.6.8 
+  │ └── ms@2.0.0 
+  ├── direction@0.1.5 
+  ├─┬ es6-map@0.1.5 
+  │ ├── d@1.0.0 
+  │ ├── es5-ext@0.10.30 
+  │ ├── es6-iterator@2.0.1 
+  │ ├── es6-set@0.1.5 
+  │ ├── es6-symbol@3.1.1 
+  │ └── event-emitter@0.3.5 
+  ├── esrever@0.2.0 
+  ├── is-empty@1.2.0 
+  ├─┬ is-plain-object@2.0.4 
+  │ └── isobject@3.0.1 
+  ├── lodash@4.17.4 
+  ├── slate-dev-logger@0.1.6 
+  └── type-of@2.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/slate/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0872 took 8.3121s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'immutable'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/slate/node_modules/slate/lib/index.js. Coverage (Term): 24% Coverage (LOC): 10%
+*- File /root/Targets/slate/node_modules/slate/lib/models/block.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/slate/node_modules/slate/lib/models/document.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/slate/node_modules/slate/lib/models/inline.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/slate/node_modules/is-plain-object/index.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/slate/node_modules/isobject/index.js. Coverage (Term): 44% Coverage (LOC): 83%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

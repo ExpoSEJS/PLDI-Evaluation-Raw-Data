@@ -1,0 +1,28 @@
+/root/Targets/document-query
+└─┬ document-query@0.0.0 
+  ├── amdefine@1.0.1 
+  ├── underscore@1.5.2 
+  ├── underscore.contains@0.0.1 
+  └── underscore.deep@0.0.0  (git://github.com/simonfan/underscore.deep.git#38f86a5bc64af02816d4fcd88914f87addc4e85f)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/document-query/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","isArray","apply","call","join","RegExp","sort","toString","bound DocumentQuery"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.052 took 7.0514s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0} start 7.2568 took 7.3907s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 65% Coverage (LOC): 68%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/document-query/node_modules/document-query/src/document-query.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/document-query/node_modules/amdefine/amdefine.js. Coverage (Term): 42% Coverage (LOC): 47%
+*- File /root/Targets/document-query/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/document-query/node_modules/underscore.contains/src/underscore.contains.js. Coverage (Term): 31% Coverage (LOC): 62%
+*- File /root/Targets/document-query/node_modules/underscore.deep/src/underscore.deep.js. Coverage (Term): 28% Coverage (LOC): 42%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

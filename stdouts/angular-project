@@ -1,0 +1,93 @@
+/root/Targets/angular-project
+└─┬ angular-project@0.0.7 
+  ├── async@0.2.10 
+  ├── colors@0.6.2 
+  ├── commander@2.0.0 
+  ├─┬ fs-extra@0.8.1 
+  │ ├── jsonfile@1.1.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── ncp@0.4.2 
+  │ └── rimraf@2.2.8 
+  └─┬ promptly@0.2.1 
+    └─┬ read@1.0.7 
+      └── mute-stream@0.0.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular-project/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0488 took 4.3893s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env coffee
+
+###
+	Angular JS Project
+
+	Allows you to generate all of the basic parts for a project.
+###
+
+
+# Node Modules
+fs          = require 'fs-extra'
+colors      = require 'colors'
+commander   = require 'commander'
+promptly	= require 'promptly'
+async		= require 'async'
+sys			= require 'sys'
+exec		= require('child_process').exec
+
+
+# Commander Setup
+commander
+	.version('0.0.1')
+	.parse(process.argv)
+
+
+# Functions
+askForName = (cb)->
+	promptly.prompt 'Projects Name: ', (err, name)->
+		if err then throw err
+
+		cb null, name
+
+confirmProject = (name, cb)->
+	promptly.confirm 'Your application will create a project at '+process.cwd()+'/'+name+'. Is this correct?', (err, correct)->
+		if err then throw err
+
+		if correct then cb null, process.cwd()+'/'+name
+
+
+generateProject = (err, destination)->
+	fs.copy __dirname + '/files', destination, (err)->
+		if err then throw err
+
+		console.log 'Finishing building the project.....'.yellow
+
+		exec 'cd ' + destination + " && npm install && grunt build", (error, stdout, stderr)->
+			sys.puts stdout
+			console.log "Your project has been setup successfully \r\n".green
+
+
+# Start
+async.waterfall [askForName, confirmProject], generateProject at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

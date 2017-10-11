@@ -1,0 +1,38 @@
+/root/Targets/helix-inferno
+└─┬ helix-inferno@1.1.1 
+  ├─┬ helix-js@1.4.1 
+  │ ├── qs@6.5.1 
+  │ ├── rlite-router@2.0.3 
+  │ ├─┬ sheet-router@4.2.3 
+  │ │ ├─┬ global@4.3.2 
+  │ │ │ ├─┬ min-document@2.19.0 
+  │ │ │ │ └── dom-walk@0.1.1 
+  │ │ │ └── process@0.5.2 
+  │ │ ├── wayfarer@6.6.2 
+  │ │ └── xtend@4.0.1 
+  │ └── twine-js@1.9.3 
+  ├─┬ inferno@1.6.2 
+  │ ├── inferno-shared@1.6.1 
+  │ └── inferno-vnode-flags@1.6.2 
+  └─┬ inferno-create-element@1.6.2 
+    └── inferno-component@1.6.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/helix-inferno/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0384 took 4.7088s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: helix_js_1 is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/helix-inferno/node_modules/helix-inferno/lib/index.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,87 @@
+/root/Targets/buble
+└─┬ buble@0.15.2 
+  ├── acorn@3.3.0 
+  ├── acorn-jsx@3.0.1 
+  ├── acorn-object-spread@1.0.0 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├─┬ magic-string@0.14.0 
+  │ └── vlq@0.2.2 
+  ├── minimist@1.2.0 
+  └── os-homedir@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/buble/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 32% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 32% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 32% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 32% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 32% coverage ] ****** [3 done /2 queued / 2 running / 3 errors / 36% coverage ] ****** [3 done /1 queued / 3 running / 3 errors / 36% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 36% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 36% coverage ] ****** [4 done /0 queued / 4 running / 4 errors / 36% coverage ] ****** [4 done /0 queued / 4 running / 4 errors / 36% coverage ] ****** [5 done /0 queued / 3 running / 4 errors / 36% coverage ] ****** [6 done /1 queued / 3 running / 5 errors / 36% coverage ] ****** [6 done /0 queued / 4 running / 5 errors / 36% coverage ] ****** [6 done /0 queued / 4 running / 5 errors / 36% coverage ] ****** [7 done /2 queued / 4 running / 6 errors / 38% coverage ] ****** [7 done /1 queued / 5 running / 6 errors / 38% coverage ] ****** [7 done /0 queued / 6 running / 6 errors / 38% coverage ] ****** [7 done /0 queued / 6 running / 6 errors / 38% coverage ] ****** [8 done /0 queued / 6 running / 7 errors / 38% coverage ] ****** [8 done /0 queued / 6 running / 7 errors / 38% coverage ] ****** [9 done /0 queued / 6 running / 8 errors / 38% coverage ] ****** [9 done /0 queued / 6 running / 8 errors / 38% coverage ] ****** [10 done /0 queued / 5 running / 9 errors / 38% coverage ] ****** [11 done /24 queued / 5 running / 9 errors / 42% coverage ] ****** [11 done /23 queued / 6 running / 9 errors / 42% coverage ] ****** [11 done /22 queued / 7 running / 9 errors / 42% coverage ] ****** [11 done /21 queued / 8 running / 9 errors / 42% coverage ] ****** [11 done /20 queued / 9 running / 9 errors / 42% coverage ] ****** [11 done /19 queued / 10 running / 9 errors / 42% coverage ] ****** [11 done /18 queued / 11 running / 9 errors / 42% coverage ] ****** [11 done /17 queued / 12 running / 9 errors / 42% coverage ] ****** [11 done /16 queued / 13 running / 9 errors / 42% coverage ] ****** [11 done /15 queued / 14 running / 9 errors / 42% coverage ] ****** [11 done /14 queued / 15 running / 9 errors / 42% coverage ] ****** [11 done /13 queued / 16 running / 9 errors / 42% coverage ] ****** [11 done /13 queued / 16 running / 9 errors / 42% coverage ] ****** [12 done /13 queued / 16 running / 10 errors / 42% coverage ] ****** [12 done /13 queued / 16 running / 10 errors / 42% coverage ] ****** [13 done /15 queued / 16 running / 11 errors / 42% coverage ] ****** [13 done /15 queued / 16 running / 11 errors / 42% coverage ] ****** [14 done /14 queued / 16 running / 12 errors / 42% coverage ] ****** [14 done /14 queued / 16 running / 12 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","create","call","splice","reduce","toString","apply","bound target","bound transform","charCodeAt","Error","parseInt","defineProperties","isArray","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.0534 took 137.5994s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
+* Error: TypeError: Cannot convert undefined or null to object
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2} start 138.2001 took 157.7394s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}
+* Error: TypeError: Cannot convert undefined or null to object
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1,"ExpansionArg_type_2":0} start 138.0343 took 159.8648s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1,"ExpansionArg_type_2":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 296.5025 took 190.9906s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
+* Error: Error: Unknown environment 'concrete'. Please raise an issue at https://gitlab.com/Rich-Harris/buble/issues
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":2} start 298.6305 took 190.8549s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0} start 298.7466 took 191.8157s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0} start 298.438 took 196.4367s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"} start 488.4011 took 212.8328s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: Error: Unknown environment 'concrete'. Please raise an issue at https://gitlab.com/Rich-Harris/buble/issues
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 491.2463 took 217.4502s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5} start 491.5717 took 222.5733s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}
+* Error: TypeError: Cannot read property 'target' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_string":"PureString","ExpandedSwitcher":0} start 495.6821 took 225.3824s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4} start 496.423 took 231.2267s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"} start 495.9922 took 231.6576s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","ExpansionArg_type_2":0,"ExpandedSwitcher":0,"_bound":26} start 723.8238 took 28.9243s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","ExpansionArg_type_2":0,"ExpandedSwitcher":0,"_bound":26}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","ExpansionArg_type_2":0,"ExpandedSwitcher":0,"_bound":26}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/buble/node_modules/buble/dist/buble.umd.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/buble/node_modules/acorn/dist/acorn.js. Coverage (Term): 30% Coverage (LOC): 50%
+*- File /root/Targets/buble/node_modules/magic-string/dist/magic-string.cjs.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/buble/node_modules/vlq/dist/vlq.js. Coverage (Term): 55% Coverage (LOC): 61%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 14 paths with 12 errors **

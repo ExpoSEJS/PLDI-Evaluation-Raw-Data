@@ -1,0 +1,589 @@
+/root/Targets/backend-faker
+└─┬ backend-faker@0.0.7 
+  ├─┬ cors@2.8.4 
+  │ ├── object-assign@4.1.1 
+  │ └── vary@1.1.1 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.0.5 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ ├─┬ http-errors@1.6.2 
+  │ │ │ └── inherits@2.0.3 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ └── utils-merge@1.0.0 
+  ├── faker@2.1.5 
+  ├─┬ node.extend@1.1.6 
+  │ └── is@3.2.1 
+  ├── underscore@1.8.3 
+  └── yargs@1.3.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/backend-faker/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0679 took 6.0216s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+'use strict';
+
+var faker = require('faker'),
+    fs = require('fs'),
+    extend = require('node.extend'),
+    express = require('express'),
+    argv = require('yargs').argv,
+    server = express(),
+    cors = require('cors'),
+    _ = require('underscore'),
+    path = require('path');
+
+if (argv.h) {
+    console.log([
+        'usage: backend-faker [options]',
+        '',
+        'options:',
+        '  -D       set domain for CORS',
+        '  -P       set port for CORS',
+        '  -p       sets the port that the faker server listens to',
+        '  -d       sets a maximum delay (in milliseconds) for the server to wait before responding',
+        '  -b       looks for the backend.json file in the specified path',
+        '  -h       halp',
+        '  -s       silent mode. No logs of requests, etc.',
+        ''
+    ].join('\n'));
+    process.exit();
+}
+
+var isArray = function (arr) {
+    return Object.prototype.toString.call(arr) === '[object Array]';
+};
+
+/**
+ * Sets up a fake "backend" that intercepts calls made to paths specified in a backend.json file.
+ *
+ * Backend constructor.
+ *
+ * TODO: add support for request types other than just get
+ * TODO: add a way to "save" to the server by making a PUT request
+ * TODO: configure response to include headers etc.
+ * TODO: code coverage...
+ *
+ * @param config - backend config object. Possible configs at the moment:
+ *      - port(-p): sets the port that the server listens to
+ *      - delay(-d): sets a maximum delay (in milliseconds) for the server to wait before responding
+ *      - backendPath(-b): looks for the backend.json file in the specified path
+ *
+ * @constructor
+ */
+var BackendFaker = function (config) {
+    var DEFAULT = {
+        PORT: 2000,
+        BACKENDPATH: 'backend.json',
+        DELAY: 0
+    };
+    var CONFIG = extend(DEFAULT, config);
+
+    var RESERVEDKEYS = ['_LIST_', '_JOIN_', '_METHOD_'];
+
+    var self = this;
+
+    var fakerMethod = JSON.parse('{"name":["firstName","lastName","findName","prefix","suffix"],"address":["zipCode","city","cityPrefix","citySuffix","streetName","streetAddress","streetSuffix","secondaryAddress","county","country","state","stateAbbr","latitude","longitude"],"phone":["phoneNumber","phoneNumberFormat","phoneFormats"],"internet":["avatar","email","userName","domainName","domainSuffix","domainWord","ip","userAgent","color","password"],"company":["suffixes","companyName","companySuffix","catchPhrase","bs","catchPhraseAdjective","catchPhraseDescriptor","catchPhraseNoun","bsAdjective","bsBuzz","bsNoun"],"image":["image","avatar","imageUrl","abstract","animals","business","cats","city","food","nightlife","fashion","people","nature","sports","technics","transport"],"lorem":["words","sentence","sentences","paragraph","paragraphs"],"helpers":["randomNumber","randomize","slugify","replaceSymbolWithNumber","shuffle","mustache","createCard","contextualCard","userCard","createTransaction"],"date":["past","future","between","recent"],"random":["number","array_element","object_element"],"finance":["account","accountName","mask","amount","transactionType","currencyCode","currencyName","currencySymbol"],"hacker":["abbreviation","adjective","noun","verb","ingverb","phrase"]}');
+    
+    //log if not silent
+    var doLog = function(message) {
+        if (!argv.s) { console.log(message) }
+    };
+
+    var isEmpty = function (obj) {
+        for(var prop in obj) {
+            if(obj.hasOwnProperty(prop))
+                return false;
+        }
+
+        return true;
+    };
+
+    var deflated = {};
+
+    /**
+     * Deflate object depth for easier element interaction.
+     *
+     * Each value key populated by pointers to its original location for later use by inflate
+     * @param backendDef
+     * @param path
+     * @returns {*}
+     */
+    var deflate = function(backendDef, path) {
+        var dirty = [];
+        deflated[path] = backendDef;
+        var flatCheck = function() {
+            for (var prop in backendDef) {
+                if (typeof backendDef[prop] === 'object') {
+                    dirty.push(prop);
+                }
+            }
+        };
+        var makeFlat = function() {
+            dirty.forEach(function(el, index) {
+                for (var prop in backendDef[el]) {
+                    backendDef[prop + ':' + el] = backendDef[el][prop];           //set pointer to parent object
+                    dirty.splice(index, 1);
+
+                    delete backendDef[el][prop];
+                    if (isEmpty(backendDef[el])) { delete backendDef[el]; }
+                }
+            });
+            flatCheck();
+            if (dirty.length > 0) { makeFlat(); }
+        };
+        flatCheck();
+        makeFlat();
+        return backendDef;
+    };
+
+    /**
+     * Inflate the object back to its original state
+     * @param resp
+     */
+    var inflate = function (resp) {
+
+        resp = (!isArray(resp)) ? [resp] : resp;
+
+        /**
+         * Restores original depth.
+         * @param buffer
+         * @returns {*}
+         */
+        var makeDepth = function (buffer) {
+            var sortable = [];
+            //sort by property depth
+            for (var prop in buffer) {
+                sortable.push(prop);
+            }
+            sortable.sort(function (a, b) {
+                a = (a.match(/:/ig)) ? a.match(/:/ig).length : 0;
+                b = (b.match(/:/ig)) ? b.match(/:/ig).length : 0;
+                return b - a;
+            });
+            sortable.forEach(function (el) {
+                var tempObj = buffer[el];
+                delete buffer[el];
+                buffer[el] = tempObj;
+            });
+
+            for(var prop in buffer) {
+                var pointers = prop.split(':');
+                if (pointers.length > 1) {
+                    buffer[pointers.splice(1, pointers.length).join(':')][pointers[0]] = buffer[prop];
+                }
+            }
+            sortable.forEach(function (el) {
+                if (el.match(/:/ig)) { delete buffer[el]; }
+            });
+
+            return buffer;
+        };
+        /**
+         * Parses segments of each property marked by a :
+         * @param resp
+         * @returns {{}}
+         */
+        var parseSegmentTargets = function (resp) {
+            var segmentsBuffer = {};
+            for (var prop in resp) {
+                var pointerBuffer = prop.split(':');
+                if (pointerBuffer.length > 1) {
+                    for (var i = 1; i < pointerBuffer.length; i++) {
+                        if (i === pointerBuffer.length - 1) {
+                            var spliceCopy = pointerBuffer.splice(1,pointerBuffer.length).join(':');
+                            if (!segmentsBuffer[spliceCopy]) { segmentsBuffer[spliceCopy] = {}; }
+                            segmentsBuffer[spliceCopy][pointerBuffer[0]] = resp[prop];
+                        }
+                    }
+                }
+                else {
+                    segmentsBuffer[prop] = resp[prop];
+                }
+            }
+            return segmentsBuffer;
+        };
+
+        resp.forEach(function (el, index) {
+            resp[index] = makeDepth(parseSegmentTargets(el));
+        });
+
+        return resp;
+    };
+
+    //reads the backend.json file located in the path specified by the CONFIG
+    this.readBackendConfig = function (callback) {
+        console.log('Loading config ' + path.resolve(CONFIG.BACKENDPATH));
+
+        fs.readFile(CONFIG.BACKENDPATH, 'utf8', function (err, data) {
+            if (err) {
+                throw 'There was an error reading the backend config! Make sure you have a backend.json file in the directory where this is running.';
+            } else {
+                self.backend = JSON.parse(data);
+                callback();
+            }
+        });
+    };
+
+    /**
+     * Response constructor
+     * @param path
+     * @param id
+     * @param backendDefinition
+     * @returns {BackendFaker.Response}
+     * @constructor
+     */
+    var Response = function (path, id, backendDefinition) {
+        var response = {};
+        var status = 200;                                                           //set default status
+        backendDefinition = deflate(_.clone(backendDefinition), path);               //deflate backend structure
+        var args = parseMethodArguments(backendDefinition);
+
+        //set amount of items to return
+        var maxnOfListItems = (backendDefinition._LIST_)
+            ? faker.random.number(backendDefinition._LIST_)
+            : null;
+
+        //set any defined _JOINS_
+        var hasConnectionToPath = (backendDefinition._JOIN_)
+            ? backendDefinition._JOIN_
+            : null;
+
+        /**
+         * Throws an error if a response cannot be constructed.
+         * @param tProp - target faker property
+         * @param tMethod - target faker method
+         */
+        var definitionSuccessCheck = function (tProp, tMethod) {
+            if (!tProp || !tMethod) { throw new ReferenceError('Response could not be constructed! Please check your backend.json file.') }
+        };
+
+        /**
+         * Returns false if the definition property specified is a reserved key.
+         * @param definition
+         * @returns {boolean}
+         */
+        var abortIfReservedKey = function (definition) {
+            var pass = true;
+            RESERVEDKEYS.forEach(function (el) {
+                if (el === definition) {pass = false; return}
+            });
+            return pass;
+        };
+
+        function parseMethodArguments (definition) {
+            var obj = {};
+            var argRegex = /\(([^)]+)\)/ig;
+            var bracketRegex = /\[(.*?)\]/ig;
+            var nRegex = /^\d+$/;
+            var trueRegex = /^true$/;
+            var falseRegex = /^false$/;
+
+            function matchAndReplace(val, matchers) {
+                var returnval = val;
+                matchers.forEach(function (el) {
+                    if (val.match(el[0])) {
+                        returnval = el[1](val);
+                        return false;
+                    }
+                });
+                return returnval;
+            }
+
+            for (var prop in definition) {
+                if (typeof definition[prop] !== 'string') { continue; }
+                if (definition[prop].match(argRegex)) {
+                    var arr = (definition[prop].match(bracketRegex)) ? true : false;
+                    obj[prop] = definition[prop]
+                        .match(argRegex)[0]
+                        .replace('(', '')
+                        .replace(')', '')
+                        .replace('[', '')
+                        .replace(']', '')
+                        .replace(']', '')
+                        .replace(/\'/ig, '')
+                        .replace(' ', '')
+                        .split(',');
+                    
+                    backendDefinition[prop] = backendDefinition[prop].replace(argRegex, '').replace(bracketRegex, '');
+
+                    //look for and parse numbers
+                    obj[prop].forEach(function (el, index) {
+                        if (typeof el === 'string') {
+
+                            obj[prop][index] = matchAndReplace(el, [
+                                [trueRegex, function () {
+                                    return true;
+                                }],
+                                [falseRegex, function () {
+                                    return false;
+                                }],
+                                [nRegex, function (val) {
+                                    return parseInt(val, 10);
+                                }]
+                            ]);
+                        }
+                    });
+
+                    if (arr) { obj[prop] = [obj[prop]]}
+                }
+            }
+            return obj;
+        }
+
+        /**
+         * Assigns a targeted faker method to the provided response.
+         * @param bdp - backend definition property
+         * @param tProp - faker target property
+         * @param tMethod - target faker method
+         */
+        var assignToResponse = function (bdp, tProp, tMethod, response) {
+            var resp = response;
+            if (abortIfReservedKey(bdp)) {
+                definitionSuccessCheck(tProp, tMethod);
+                resp[bdp] = faker[tProp][tMethod];
+            }
+            return resp;
+        };
+
+        for (var backendDefinitionProp in backendDefinition) {
+            var targetProperty, targetMethod;
+            for (var fakerMethodProp in fakerMethod) {
+                fakerMethod[fakerMethodProp].forEach(function(el) {
+                    if (el === backendDefinition[backendDefinitionProp]) {
+                        targetMethod = el;
+                        targetProperty = fakerMethodProp;
+                    }
+                });
+            }
+            response = assignToResponse(backendDefinitionProp, targetProperty, targetMethod, response);
+            if (maxnOfListItems === null && abortIfReservedKey(backendDefinitionProp)) {
+                response[backendDefinitionProp] = response[backendDefinitionProp].apply(null, args[backendDefinitionProp]);
+            }
+        }
+
+
+        /**
+         * Extends the response with any joins connected to this request.
+         * @param resp
+         * @return {*}
+         */
+        var extendWithConnection = function (resp) {
+            for (var bufferId in responseBuffer[hasConnectionToPath]) {
+                
+                responseBuffer[hasConnectionToPath][bufferId].response.data
+                    = (isArray(responseBuffer[hasConnectionToPath][bufferId].response.data)) ?
+                        responseBuffer[hasConnectionToPath][bufferId].response.data :
+                        [responseBuffer[hasConnectionToPath][bufferId].response.data];
+
+                responseBuffer[hasConnectionToPath][bufferId].response.data.forEach(function (el, index) {
+                    if (el.id === parseInt(id, 10)) {
+                        resp = extend(resp, el);
+                    }
+                });
+            }
+            return resp;
+        };
+
+        if (hasConnectionToPath) { 
+            response = extendWithConnection(response);
+        }
+
+        if (maxnOfListItems !== null) {
+            var responseList = [];
+            for (var i = 0; i < maxnOfListItems; i++) {
+                for (var prop in response) {
+                    if (!responseList[i]) { responseList[i] = {} }
+                    responseList[i][prop] = response[prop].apply(null, args[prop]);
+                }
+            }
+            response = responseList;
+        }
+
+        //inflate the response back to original state
+        response = inflate(response);
+
+        if (maxnOfListItems === null) { response = response[0] }
+
+        this.response = {
+            data: response,
+            string: function () {
+                return JSON.stringify(response);
+            },
+            status: function () {
+                return status;
+            }
+        };
+
+        if (!responseBuffer[path]) {
+            responseBuffer[path] = {};
+        }
+
+        responseBuffer[path][id] = this;
+
+        return this;
+    };
+
+    var responseBuffer = {
+        _hasResponse_: function (path, id) {
+            if (!id) { return false }
+            for (var prop in this) {
+                if (path === prop) {
+                    return (this[prop][id]) ? true : false;
+                }
+            }
+        }
+    };
+
+    //var clone = function (def) {
+    //    return JSON.parse(JSON.stringify(def));
+    //};
+
+    this.createBackendRoutes = function () {
+
+        var config = correctConfig(self.backend);     // Make sure config uses the correct format
+
+        _.each(config, function (el, path) {
+            var type = (el._METHOD_ || 'get').toLowerCase();
+            var corsOrigin = 'http://' + CONFIG.CORSDOMAIN;
+            var corsOptions;
+
+            if (CONFIG.CORSPORT) {
+                corsOrigin = corsOrigin.concat(':' + CONFIG.CORSPORT)
+            }
+
+            corsOptions = {
+                origin: corsOrigin,
+                credentials: false,
+                methods: [ type ]
+            };
+
+            if (type == 'post') {
+                // Handle preflight request (OPTIONS). This is only sent for POST requests.
+                corsOptions.methods.push('options');
+                server.options(path, cors(corsOptions), function (response) {
+                    response.status(200);
+                });
+            }
+
+            // Set up server
+            server[type](path, cors(corsOptions), function (request, response) {
+                setTimeout(function () {
+                    var res = (responseBuffer._hasResponse_(path, (request.params.id) ? request.params.id : null))
+                        ? responseBuffer[path][request.params.id]
+                        : new Response(path, request.params.id, _.clone(el));
+                    response.send(res.response.string());
+                    doLog('REQUEST: ' + request.method + ' ' + request.url);
+                }, (CONFIG.DELAY === 0) ? CONFIG.DELAY : faker.random.number(CONFIG.DELAY));
+            });
+        });
+    };
+
+    this.launchServer = function () {
+        this.server = server.listen(CONFIG.PORT, function () {
+            console.log('Fake backend up and running! Listening in on port ' + CONFIG.PORT);
+        });
+    };
+
+    /**
+     * Automatically convert to latest config syntax version
+     * @param config
+     */
+    function correctConfig(config) {
+        var newConfig = {};
+
+        if (config.length > 1) {
+            // Version 1
+            _.each(config, function (o) {
+                _.each(o, function (properties, path) {
+                    newConfig[path] = _.clone(properties);
+                });
+            });
+        } else if (config.length == 1) {
+            // Version 2
+            newConfig = _.clone(config[0]);
+        } else {
+            throw 'Invalid config syntax';
+        }
+
+        return newConfig;
+    }
+};
+
+var translateCfg = {
+    'd': 'DELAY',
+    'p': 'PORT',
+    'b': 'BACKENDPATH',
+    'D': 'CORSDOMAIN',
+    'P': 'CORSPORT'
+};
+var config = {};
+
+for (var cfg in translateCfg) {
+    if (argv[cfg]) config[translateCfg[cfg]] = argv[cfg];
+}
+
+var backendFaker = new BackendFaker(config);
+
+backendFaker.readBackendConfig(function () {
+    backendFaker.createBackendRoutes();
+    backendFaker.launchServer();
+});
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

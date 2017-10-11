@@ -1,0 +1,307 @@
+/root/Targets/webbuilder
+└─┬ webbuilder@1.0.36 
+  ├─┬ chokidar@1.7.0 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@1.0.1 
+  │ ├── glob-parent@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├─┬ is-glob@2.0.1 
+  │ │ └── is-extglob@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@2.1.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── safe-buffer@5.1.1 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── set-immediate-shim@1.0.1 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ └── once@1.4.0 
+  ├── mime-db@1.30.0 
+  └─┬ mkdirp@0.5.1 
+    └── minimist@0.0.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/webbuilder/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0898 took 6.839s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (101:10) on program "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+const logger_1 = require("./utils/logger");
+const common_1 = require("./utils/common");
+const Plugin_1 = require("./utils/Plugin");
+const path = require("path");
+__export(require("./utils/Plugin"));
+var combineJS_1 = require("./plugins/combineJS");
+exports.combineJS = combineJS_1.combineJS;
+var combineCSS_1 = require("./plugins/combineCSS");
+exports.combineCSS = combineCSS_1.combineCSS;
+var copy_1 = require("./plugins/copy");
+exports.copy = copy_1.copy;
+var hash_1 = require("./plugins/hash");
+exports.hash = hash_1.hash;
+var conditional_1 = require("./utils/conditional");
+exports.conditional = conditional_1.conditional;
+var replaceCode_1 = require("./plugins/replaceCode");
+exports.replaceCode = replaceCode_1.replaceCode;
+var src_1 = require("./plugins/src");
+exports.src = src_1.src;
+var cleanDist_1 = require("./plugins/cleanDist");
+exports.cleanDist = cleanDist_1.cleanDist;
+class P {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.resolve = resolve;
+            this.reject = reject;
+        });
+    }
+}
+var PackerLogLevels;
+(function (PackerLogLevels) {
+    PackerLogLevels[PackerLogLevels["ALL"] = 1] = "ALL";
+    PackerLogLevels[PackerLogLevels["DEBUG"] = 2] = "DEBUG";
+    PackerLogLevels[PackerLogLevels["ERROR"] = 4] = "ERROR";
+})(PackerLogLevels = exports.PackerLogLevels || (exports.PackerLogLevels = {}));
+class Packer {
+    constructor(options, executor) {
+        this.executor = executor;
+        this.runIteration = 1;
+        this.listener = (filename) => {
+            //hack
+            if (!path.isAbsolute(filename)) {
+                return;
+            }
+            var watchedFileNames = this.plug.fs.watchedFileNames;
+            if (!watchedFileNames.has(filename))
+                return;
+            this.changedFiles.add(filename);
+            clearTimeout(this.timer);
+            this.timer = setTimeout(() => {
+                const promise = this.watchRunner();
+            }, 10);
+        };
+        this.changedFiles = new Set();
+        this.watchRunnerInProgress = false;
+        this.buildNumber = 0;
+        this.processOptions(options);
+    }
+    processOptions(options) {
+        const defaultOptions = {
+            context: process.cwd(),
+            sourceMap: true,
+            dest: 'dist',
+            alias: null,
+            maxInlineSize: 0,
+            publicPath: '',
+            skipNodeModulesWatch: false,
+            logLevel: PackerLogLevels.ERROR
+        };
+        if (options.context) {
+            defaultOptions.context = path.resolve(options.context);
+        }
+        if (options.dest) {
+            let dest = path.normalize(options.dest);
+            dest = path.isAbsolute(dest) ? dest : path.normalize(defaultOptions.context + '/' + dest);
+            defaultOptions.dest = dest;
+        }
+        if (typeof options.sourceMap === 'boolean') {
+            defaultOptions.sourceMap = options.sourceMap;
+        }
+        if (typeof options.maxInlineSize === 'number') {
+            defaultOptions.maxInlineSize = options.maxInlineSize;
+        }
+        if (typeof options.publicPath === 'string') {
+            defaultOptions.publicPath = options.publicPath;
+        }
+        if (typeof options.skipNodeModulesWatch === 'boolean') {
+            defaultOptions.skipNodeModulesWatch = options.skipNodeModulesWatch;
+        }
+        if (typeof options.logLevel === 'number') {
+            defaultOptions.logLevel = options.logLevel;
+        }
+        defaultOptions.alias = options.alias;
+        this.options = defaultOptions;
+    }
+    async run(options = {}) {
+        this.plug = new Plugin_1.Plugin(options.watch, this.options, options.nodeEnv);
+        if (options.watch) {
+            this.plug.fs.watcher.on('raw', (event, file) => this.listener(file));
+            this.plug.fs.watcher.on('change', (file) => this.listener(file));
+            await this.watchRunner(true);
+        }
+        else {
+            await this.runOnce();
+        }
+        return this;
+    }
+    getResult() {
+        return this.result;
+    }
+    async runOnce() {
+        var p = new P();
+        this.result = p.promise;
+        this.plug.performance.measureStart('overall');
+        logger_1.logger.info(`Build started...`);
+        await this.exec();
+        const dur = this.plug.performance.measureEnd('overall');
+        logger_1.logger.info(`Build done after ${dur | 0}ms`);
+        p.resolve(this.getCompilationResult());
+        this.plug.destroy();
+    }
+    async watchRunner(force = false) {
+        if (!force && (this.watchRunnerInProgress || this.changedFiles.size == 0))
+            return;
+        this.watchRunnerInProgress = true;
+        try {
+            this.buildNumber++;
+            this.plug.reset();
+            // logger.clear();
+            await this.watchRunnerUpdateFiles();
+            var p = new P();
+            this.result = p.promise;
+            this.plug.performance.measureStart('overall');
+            logger_1.logger.info(`-------------------------------------\nIncremental build #${this.buildNumber} started...`);
+            await this.exec();
+            const dur = this.plug.performance.measureEnd('overall');
+            const allMeasures = this.plug.performance.getAllMeasures();
+            for (let i = 0; i < allMeasures.length; i++) {
+                const m = allMeasures[i];
+                logger_1.logger.info(`${common_1.padRight(m.name, 20)} ${common_1.padLeft(m.dur | 0, 6)}ms`);
+            }
+            logger_1.logger.info(`Incremental build done after ${dur | 0}ms\n-------------------------------------`);
+            p.resolve(this.getCompilationResult());
+        }
+        catch (e) {
+            // logger.error('Build #' + this.buildNumber + ' Error: ' + (e instanceof Error ? (this.options.logLevel === PackerLogLevels.DEBUG ? e.stack : e.message) : e));
+            logger_1.logger.error('Build #' + this.buildNumber + ' Error: ' + (e instanceof Error ? (e.stack) : e));
+        }
+        this.watchRunnerInProgress = false;
+        await this.watchRunner();
+    }
+    async watchRunnerUpdateFiles() {
+        const files = [...this.changedFiles];
+        this.changedFiles.clear();
+        for (let i = 0; i < files.length; i++) {
+            const filename = files[i];
+            const file = this.plug.fs.findOrCreate(filename);
+            await this.plug.fs.readContent(file, true);
+            if (file.updated) {
+                logger_1.logger.info('Changed ' + this.plug.fs.relativeName(file));
+            }
+        }
+    }
+    async exec() {
+        await this.executor(Promise.resolve(this.plug));
+        const files = this.plug.fs.stage.list();
+        // plug.printAllGeneratedFiles()
+        // plug.printStageFiles();
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (this.plug.inDestFolder(file)) {
+                this.plug.emittedFiles.add(file);
+                if (file.updated) {
+                    await this.plug.fs.write(file);
+                    const content = await this.plug.fs.readContent(file); //todo: buffer length
+                    this.plug.changedFiles.add(file);
+                    logger_1.logger.success(common_1.padRight(`Emit file: ${this.plug.fs.relativeName(file)}`, 40) + common_1.padLeft(common_1.formatBytes(content.length), 10));
+                }
+            }
+        }
+        this.plug.fs.resetUpdatedFiles();
+    }
+    getCompilationResult() {
+        const changedFiles = [...this.plug.changedFiles];
+        const emittedFiles = [...this.plug.emittedFiles];
+        const result = {
+            plugin: this.plug,
+            runIteration: this.runIteration++,
+            changedFiles: changedFiles,
+            emittedFiles: emittedFiles,
+        };
+        return result;
+    }
+}
+exports.Packer = Packer;
+function plugin(name, fn) {
+    return (plug) => {
+        plug.performance.measureStart(name);
+        return fn(plug).then(() => {
+            plug.performance.measureEnd(name);
+            return plug;
+        });
+    };
+}
+exports.plugin = plugin;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFja2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL3BhY2tlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLDJDQUF3QztBQUN4QywyQ0FBZ0U7QUFDaEUsMkNBQXdDO0FBQ3hDLDZCQUE2QjtBQUk3QixvQ0FBK0I7QUFFL0IsaURBQWdEO0FBQXZDLGdDQUFBLFNBQVMsQ0FBQTtBQUNsQixtREFBa0Q7QUFBekMsa0NBQUEsVUFBVSxDQUFBO0FBQ25CLHVDQUFzQztBQUE3QixzQkFBQSxJQUFJLENBQUE7QUFDYix1Q0FBc0M7QUFBN0Isc0JBQUEsSUFBSSxDQUFBO0FBQ2IsbURBQWtEO0FBQXpDLG9DQUFBLFdBQVcsQ0FBQTtBQUNwQixxREFBb0Q7QUFBM0Msb0NBQUEsV0FBVyxDQUFBO0FBQ3BCLHFDQUFvQztBQUEzQixvQkFBQSxHQUFHLENBQUE7QUFDWixpREFBZ0Q7QUFBdkMsZ0NBQUEsU0FBUyxDQUFBO0FBR2xCO0lBQUE7UUFHSSxZQUFPLEdBQUcsSUFBSSxPQUFPLENBQUksQ0FBQyxPQUFPLEVBQUUsTUFBTTtZQUNyQyxJQUFJLENBQUMsT0FBTyxHQUFHLE9BQU8sQ0FBQztZQUN2QixJQUFJLENBQUMsTUFBTSxHQUFHLE1BQU0sQ0FBQztRQUN6QixDQUFDLENBQUMsQ0FBQztJQUNQLENBQUM7Q0FBQTtBQUVELElBQVksZUFLWDtBQUxELFdBQVksZUFBZTtJQUN2QixtREFBTyxDQUFBO0lBQ1AsdURBQVMsQ0FBQTtJQUNULHVEQUFTLENBQUE7QUFFYixDQUFDLEVBTFcsZUFBZSxHQUFmLHVCQUFlLEtBQWYsdUJBQWUsUUFLMUI7QUFvQkQ7SUFLSSxZQUFZLE9BQXNCLEVBQVksUUFBdUQ7UUFBdkQsYUFBUSxHQUFSLFFBQVEsQ0FBK0M7UUFGN0YsaUJBQVksR0FBRyxDQUFDLENBQUM7UUF5RHpCLGFBQVEsR0FBRyxDQUFDLFFBQWdCO1lBQ3hCLE1BQU07WUFDTixFQUFFLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDO2dCQUM3QixNQUFNLENBQUM7WUFDWCxDQUFDO1lBQ0QsSUFBSSxnQkFBZ0IsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxnQkFBZ0IsQ0FBQztZQUNyRCxFQUFFLENBQUMsQ0FBQyxDQUFDLGdCQUFnQixDQUFDLEdBQUcsQ0FBQyxRQUFRLENBQUMsQ0FBQztnQkFBQyxNQUFNLENBQUM7WUFDNUMsSUFBSSxDQUFDLFlBQVksQ0FBQyxHQUFHLENBQUMsUUFBUSxDQUFDLENBQUM7WUFDaEMsWUFBWSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQztZQUN6QixJQUFJLENBQUMsS0FBSyxHQUFHLFVBQVUsQ0FBQztnQkFDcEIsTUFBTSxPQUFPLEdBQUcsSUFBSSxDQUFDLFdBQVcsRUFBRSxDQUFDO1lBQ3ZDLENBQUMsRUFBRSxFQUFFLENBQUMsQ0FBQztRQUNYLENBQUMsQ0FBQztRQW9CTSxpQkFBWSxHQUFHLElBQUksR0FBRyxFQUFVLENBQUM7UUFDakMsMEJBQXFCLEdBQUcsS0FBSyxDQUFDO1FBQzlCLGdCQUFXLEdBQUcsQ0FBQyxDQUFDO1FBeEZwQixJQUFJLENBQUMsY0FBYyxDQUFDLE9BQU8sQ0FBQyxDQUFDO0lBQ2pDLENBQUM7SUFFTyxjQUFjLENBQUMsT0FBc0I7UUFDekMsTUFBTSxjQUFjLEdBQWtCO1lBQ2xDLE9BQU8sRUFBRSxPQUFPLENBQUMsR0FBRyxFQUFFO1lBQ3RCLFNBQVMsRUFBRSxJQUFJO1lBQ2YsSUFBSSxFQUFFLE1BQU07WUFDWixLQUFLLEVBQUUsSUFBSTtZQUNYLGFBQWEsRUFBRSxDQUFDO1lBQ2hCLFVBQVUsRUFBRSxFQUFFO1lBQ2Qsb0JBQW9CLEVBQUUsS0FBSztZQUMzQixRQUFRLEVBQUUsZUFBZSxDQUFDLEtBQUs7U0FDbEMsQ0FBQztRQUNGLEVBQUUsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDO1lBQ2xCLGNBQWMsQ0FBQyxPQUFPLEdBQUcsSUFBSSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUM7UUFDM0QsQ0FBQztRQUNELEVBQUUsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDO1lBQ2YsSUFBSSxJQUFJLEdBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUM7WUFDeEMsSUFBSSxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLEdBQUcsSUFBSSxHQUFHLElBQUksQ0FBQyxTQUFTLENBQUMsY0FBYyxDQUFDLE9BQU8sR0FBRyxHQUFHLEdBQUcsSUFBSSxDQUFDLENBQUM7WUFDMUYsY0FBYyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7UUFDL0IsQ0FBQztRQUNELEVBQUUsQ0FBQyxDQUFDLE9BQU8sT0FBTyxDQUFDLFNBQVMsS0FBSyxTQUFTLENBQUMsQ0FBQyxDQUFDO1lBQ3pDLGNBQWMsQ0FBQyxTQUFTLEdBQUcsT0FBTyxDQUFDLFNBQVMsQ0FBQztRQUNqRCxDQUFDO1FBQ0QsRUFBRSxDQUFDLENBQUMsT0FBTyxPQUFPLENBQUMsYUFBYSxLQUFLLFFBQVEsQ0FBQyxDQUFDLENBQUM7WUFDNUMsY0FBYyxDQUFDLGFBQWEsR0FBRyxPQUFPLENBQUMsYUFBYSxDQUFDO1FBQ3pELENBQUM7UUFDRCxFQUFFLENBQUMsQ0FBQyxPQUFPLE9BQU8sQ0FBQyxVQUFVLEtBQUssUUFBUSxDQUFDLENBQUMsQ0FBQztZQUN6QyxjQUFjLENBQUMsVUFBVSxHQUFHLE9BQU8sQ0FBQyxVQUFVLENBQUM7UUFDbkQsQ0FBQztRQUNELEVBQUUsQ0FBQyxDQUFDLE9BQU8sT0FBTyxDQUFDLG9CQUFvQixLQUFLLFNBQVMsQ0FBQyxDQUFDLENBQUM7WUFDcEQsY0FBYyxDQUFDLG9CQUFvQixHQUFHLE9BQU8sQ0FBQyxvQkFBb0IsQ0FBQztRQUN2RSxDQUFDO1FBQ0QsRUFBRSxDQUFDLENBQUMsT0FBTyxPQUFPLENBQUMsUUFBUSxLQUFLLFFBQVEsQ0FBQyxDQUFDLENBQUM7WUFDdkMsY0FBYyxDQUFDLFFBQVEsR0FBRyxPQUFPLENBQUMsUUFBUSxDQUFDO1FBQy9DLENBQUM7UUFDRCxjQUFjLENBQUMsS0FBSyxHQUFHLE9BQU8sQ0FBQyxLQUFLLENBQUM7UUFDckMsSUFBSSxDQUFDLE9BQU8sR0FBRyxjQUFjLENBQUM7SUFDbEMsQ0FBQztJQUVELEtBQUssQ0FBQyxHQUFHLENBQUMsVUFBa0QsRUFBRTtRQUMxRCxJQUFJLENBQUMsSUFBSSxHQUFHLElBQUksZUFBTSxDQUFDLE9BQU8sQ0FBQyxLQUFLLEVBQUUsSUFBSSxDQUFDLE9BQU8sRUFBRSxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUM7UUFDckUsRUFBRSxDQUFDLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUM7WUFDaEIsSUFBSSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsT0FBTyxDQUFDLEVBQUUsQ0FBQyxLQUFLLEVBQUUsQ0FBQyxLQUFhLEVBQUUsSUFBWSxLQUFLLElBQUksQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQztZQUNyRixJQUFJLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLFFBQVEsRUFBRSxDQUFDLElBQVksS0FBSyxJQUFJLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUM7WUFDekUsTUFBTSxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxDQUFDO1FBQ2pDLENBQUM7UUFBQyxJQUFJLENBQUMsQ0FBQztZQUNKLE1BQU0sSUFBSSxDQUFDLE9BQU8sRUFBRSxDQUFDO1FBQ3pCLENBQUM7UUFDRCxNQUFNLENBQUMsSUFBSSxDQUFDO0lBQ2hCLENBQUM7SUFtQkQsU0FBUztRQUNMLE1BQU0sQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDO0lBQ3ZCLENBQUM7SUFFTyxLQUFLLENBQUMsT0FBTztRQUNqQixJQUFJLENBQUMsR0FBRyxJQUFJLENBQUMsRUFBZ0IsQ0FBQztRQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLENBQUMsQ0FBQyxPQUFPLENBQUM7UUFDeEIsSUFBSSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxDQUFDO1FBQzlDLGVBQU0sQ0FBQyxJQUFJLENBQUMsa0JBQWtCLENBQUMsQ0FBQztRQUNoQyxNQUFNLElBQUksQ0FBQyxJQUFJLEVBQUUsQ0FBQztRQUNsQixNQUFNLEdBQUcsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLENBQUM7UUFDeEQsZUFBTSxDQUFDLElBQUksQ0FBQyxvQkFBb0IsR0FBRyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUM7UUFDN0MsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsb0JBQW9CLEVBQUUsQ0FBQyxDQUFDO1FBQ3ZDLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7SUFDeEIsQ0FBQztJQU1PLEtBQUssQ0FBQyxXQUFXLENBQUMsS0FBSyxHQUFHLEtBQUs7UUFDbkMsRUFBRSxDQUFDLENBQUMsQ0FBQyxLQUFLLElBQUksQ0FBQyxJQUFJLENBQUMscUJBQXFCLElBQUksSUFBSSxDQUFDLFlBQVksQ0FBQyxJQUFJLElBQUksQ0FBQyxDQUFDLENBQUM7WUFBQyxNQUFNLENBQUM7UUFDbEYsSUFBSSxDQUFDLHFCQUFxQixHQUFHLElBQUksQ0FBQztRQUNsQyxJQUFJLENBQUM7WUFDRCxJQUFJLENBQUMsV0FBVyxFQUFFLENBQUM7WUFDbkIsSUFBSSxDQUFDLElBQUksQ0FBQyxLQUFLLEVBQUUsQ0FBQztZQUNsQixrQkFBa0I7WUFDbEIsTUFBTSxJQUFJLENBQUMsc0JBQXNCLEVBQUUsQ0FBQztZQUNwQyxJQUFJLENBQUMsR0FBRyxJQUFJLENBQUMsRUFBZ0IsQ0FBQztZQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLENBQUMsQ0FBQyxPQUFPLENBQUM7WUFDeEIsSUFBSSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxDQUFDO1lBQzlDLGVBQU0sQ0FBQyxJQUFJLENBQUMsNkRBQTZELElBQUksQ0FBQyxXQUFXLGFBQWEsQ0FBQyxDQUFDO1lBQ3hHLE1BQU0sSUFBSSxDQUFDLElBQUksRUFBRSxDQUFDO1lBQ2xCLE1BQU0sR0FBRyxHQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsQ0FBQztZQUN4RCxNQUFNLFdBQVcsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxjQUFjLEVBQUUsQ0FBQztZQUMzRCxHQUFHLENBQUMsQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLFdBQVcsQ0FBQyxNQUFNLEVBQUUsQ0FBQyxFQUFFLEVBQUUsQ0FBQztnQkFDMUMsTUFBTSxDQUFDLEdBQUcsV0FBVyxDQUFDLENBQUMsQ0FBQyxDQUFDO2dCQUN6QixlQUFNLENBQUMsSUFBSSxDQUFDLEdBQUcsaUJBQVEsQ0FBQyxDQUFDLENBQUMsSUFBSSxFQUFFLEVBQUUsQ0FBQyxJQUFJLGdCQUFPLENBQUMsQ0FBQyxDQUFDLEdBQUcsR0FBRyxDQUFDLEVBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDO1lBQ3RFLENBQUM7WUFDRCxlQUFNLENBQUMsSUFBSSxDQUFDLGdDQUFnQyxHQUFHLEdBQUcsQ0FBQywyQ0FBMkMsQ0FBQyxDQUFDO1lBQ2hHLENBQUMsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLG9CQUFvQixFQUFFLENBQUMsQ0FBQztRQUMzQyxDQUFDO1FBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztZQUNULGdLQUFnSztZQUNoSyxlQUFNLENBQUMsS0FBSyxDQUFDLFNBQVMsR0FBRyxJQUFJLENBQUMsV0FBVyxHQUFHLFVBQVUsR0FBRyxDQUFDLENBQUMsWUFBWSxLQUFLLEdBQUcsQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUNuRyxDQUFDO1FBQ0QsSUFBSSxDQUFDLHFCQUFxQixHQUFHLEtBQUssQ0FBQztRQUNuQyxNQUFNLElBQUksQ0FBQyxXQUFXLEVBQUUsQ0FBQztJQUM3QixDQUFDO0lBRU8sS0FBSyxDQUFDLHNCQUFzQjtRQUNoQyxNQUFNLEtBQUssR0FBRyxDQUFDLEdBQUcsSUFBSSxDQUFDLFlBQVksQ0FBQyxDQUFDO1FBQ3JDLElBQUksQ0FBQyxZQUFZLENBQUMsS0FBSyxFQUFFLENBQUM7UUFDMUIsR0FBRyxDQUFDLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxLQUFLLENBQUMsTUFBTSxFQUFFLENBQUMsRUFBRSxFQUFFLENBQUM7WUFDcEMsTUFBTSxRQUFRLEdBQUcsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDO1lBQzFCLE1BQU0sSUFBSSxHQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLFlBQVksQ0FBQyxRQUFRLENBQUMsQ0FBQztZQUNqRCxNQUFNLElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsSUFBSSxDQUFDLENBQUM7WUFDM0MsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDLENBQUM7Z0JBQ2YsZUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsWUFBWSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUM7WUFDOUQsQ0FBQztRQUNMLENBQUM7SUFDTCxDQUFDO0lBRU8sS0FBSyxDQUFDLElBQUk7UUFDZCxNQUFNLElBQUksQ0FBQyxRQUFRLENBQUMsT0FBTyxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsSUFBVyxDQUFDLENBQUMsQ0FBQztRQUN2RCxNQUFNLEtBQUssR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxLQUFLLENBQUMsSUFBSSxFQUFFLENBQUM7UUFDeEMsZ0NBQWdDO1FBQ2hDLDBCQUEwQjtRQUMxQixHQUFHLENBQUMsQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLEtBQUssQ0FBQyxNQUFNLEVBQUUsQ0FBQyxFQUFFLEVBQUUsQ0FBQztZQUNwQyxNQUFNLElBQUksR0FBRyxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUM7WUFDdEIsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDO2dCQUMvQixJQUFJLENBQUMsSUFBSSxDQUFDLFlBQVksQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUM7Z0JBQ2pDLEVBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDO29CQUNmLE1BQU0sSUFBSSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxDQUFDO29CQUMvQixNQUFNLE9BQU8sR0FBRyxNQUFNLElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFBLHFCQUFxQjtvQkFDMUUsSUFBSSxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFDO29CQUNqQyxlQUFNLENBQUMsT0FBTyxDQUFDLGlCQUFRLENBQUMsY0FBYyxJQUFJLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLEVBQUUsRUFBRSxFQUFFLENBQUMsR0FBRyxnQkFBTyxDQUFDLG9CQUFXLENBQUMsT0FBTyxDQUFDLE1BQU0sQ0FBQyxFQUFFLEVBQUUsQ0FBQyxDQUFDLENBQUM7Z0JBQzdILENBQUM7WUFDTCxDQUFDO1FBQ0wsQ0FBQztRQUNELElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLGlCQUFpQixFQUFFLENBQUM7SUFDckMsQ0FBQztJQUVPLG9CQUFvQjtRQUN4QixNQUFNLFlBQVksR0FBRyxDQUFDLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQztRQUNqRCxNQUFNLFlBQVksR0FBRyxDQUFDLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQztRQUNqRCxNQUFNLE1BQU0sR0FBaUI7WUFDekIsTUFBTSxFQUFFLElBQUksQ0FBQyxJQUFJO1lBQ2pCLFlBQVksRUFBRSxJQUFJLENBQUMsWUFBWSxFQUFFO1lBQ2pDLFlBQVksRUFBRSxZQUFZO1lBQzFCLFlBQVksRUFBRSxZQUFZO1NBQzdCLENBQUM7UUFDRixNQUFNLENBQUMsTUFBTSxDQUFDO0lBQ2xCLENBQUM7Q0FDSjtBQXpLRCx3QkF5S0M7QUFFRCxnQkFBdUIsSUFBWSxFQUFFLEVBQW1DO0lBQ3BFLE1BQU0sQ0FBQyxDQUFDLElBQVk7UUFDaEIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLENBQUM7UUFDcEMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxJQUFJLENBQUMsQ0FBQyxJQUFJLENBQUM7WUFDakIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLENBQUM7WUFDbEMsTUFBTSxDQUFDLElBQUksQ0FBQztRQUNoQixDQUFDLENBQUMsQ0FBQztJQUNQLENBQUMsQ0FBQztBQUNOLENBQUM7QUFSRCx3QkFRQyJ9 at SyntaxError: Unexpected token (101:10)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:697:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

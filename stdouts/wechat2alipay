@@ -1,0 +1,304 @@
+/root/Targets/wechat2alipay
+└── wechat2alipay@0.6.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wechat2alipay/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0234 took 4.3219s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+// global.WATCH=1;
+var chokidar = require("chokidar");
+var os = require('os')
+var exec = require('child_process').exec
+var program = require('commander')
+var json = require('./package.json')
+var UpdateNotifier = require('update-notifier').UpdateNotifier
+var fs = require('fs')
+// var open = require('open')
+var chalk = require('chalk')
+var net = require('net')
+var boxen = require('boxen');
+var path = require('path');
+
+var crawler = require("./crawler.js")
+
+var isMac = process.platform === 'darwin';
+
+
+// /Applications/支付宝小程序开发工具.app/Contents/Resources/app
+
+
+function findAlipayTools() {
+  var possiblePaths = [];
+  if (isMac) {
+      possiblePaths.push(path.resolve('/Applications/支付宝小程序开发工具.app'));
+  }
+  else {
+      possiblePaths.push(path.resolve('C:/Program Files (x86)/支付宝小程序开发工具/0.2.3-beta'));
+      possiblePaths.push(path.resolve('C:/Program Files/支付宝小程序开发工具/0.2.3-beta'));
+      possiblePaths.push(path.resolve('D:/Program Files (x86)/支付宝小程序开发工具/0.2.3-beta'));
+      possiblePaths.push(path.resolve('D:/Program Files/支付宝小程序开发工具/0.2.3-beta'));
+  }
+  var currp=null;
+  for (var i = possiblePaths.length - 1; i >= 0; i--) {
+    var path_1 = possiblePaths[i];
+    
+    if (fs.existsSync(path_1)) {
+      currp =  path_1;
+      break;
+    }
+  }
+  return currp;
+}
+
+
+function copyIdeIndex(){
+  var apptempDir = findAlipayTools();
+  if (!apptempDir) {
+    console.log('[ find ide error ] 没有找到支付宝小程序开发工具，请安装支付宝小程序开发工具（0.2.3-beta）版本......')
+    process.exit(0);
+  }
+  var apptempContentDir;
+  var ideIndexPath;
+  if (isMac) {
+      apptempContentDir = path.join(apptempDir, 'Contents/Resources/app/dist/index.js');
+      ideIndexPath = path.join(__dirname,"tpls/ide/index.mac.js");
+  }
+  else { 
+      apptempContentDir = path.join(apptempDir, 'resources/app/dist/index.js');
+      ideIndexPath = path.join(__dirname,"tpls/ide/index.win.js");
+  }
+  
+  var ideIndexContent=fs.readFileSync(ideIndexPath,'utf-8');
+  console.log("[ hack ide ]",apptempContentDir);
+  fs.writeFileSync(apptempContentDir,ideIndexContent,'utf-8');
+}
+
+
+
+/*
+替换wept的样式处理正则，使其失效
+*/
+try{
+var utilPath = path.join(__dirname,"node_modules/wept/build/util.js");
+var utilContent=fs.readFileSync(utilPath,'utf-8');
+
+
+}catch(e){
+
+var utilPath = path.join(__dirname,"../wept/build/util.js");
+var utilContent=fs.readFileSync(utilPath,'utf-8');
+
+}
+
+
+var utilMatchs = utilContent.match(/RPXRE\s+=(\s*\/%%.*%%\/g;)/);
+if (utilMatchs&&utilMatchs[1]) {
+    utilContent = utilContent.replace(utilMatchs[1],"/___replace___/g;")
+    fs.writeFileSync(utilPath,utilContent,'utf-8');
+}
+
+
+
+
+
+
+
+program.version(json.version + ' 130400')
+  .usage('[app root]')
+  // .option('-o, --open', '使用 Chrome 打开小程序，仅对 Mac 有效')
+  // .option('-l, --list', '使用默认浏览器打开更新历史')
+  .option('-a, --allinone', '所有js、css合在一起走lzma压缩')
+  .option('-o, --allinoneonly', '仅仅进行lzma压缩')
+  // .option('-d, --debug', '控制是否压缩代码，默认为false')
+  .option('-p, --port <n>', '指定服务端口，默认 3000', parseInt)
+  .option('-v, --versions', '输出当前版本号')
+  .option('-s, --service <n>', '启动一个静态服务器默认5387', parseInt)
+
+program.parse(process.argv)
+
+var notifier = new UpdateNotifier({
+  pkg: json,
+  callback: function (err, result) {
+    if (err){
+      init();
+      return
+    } 
+    if (result.current !== result.latest) {
+      var message = 'Update available ' + chalk.dim(result.current) + chalk.reset(' → ') +
+        chalk.green(result.latest) + ' \nRun ' + chalk.cyan('npm i -g ' + json.name) + ' to update'
+      var msg = '\n' + boxen(message, {
+        padding: 1,
+        margin: 1,
+        align: 'center',
+        borderColor: 'yellow',
+        borderStyle: 'round'
+      })
+      console.log(msg);
+      process.exit(0);
+    }else{
+      init();
+    }
+    
+  }
+})
+
+if (program.versions) {
+  console.log(json.version);
+  process.exit(0);
+}
+
+ var cwd = process.cwd();
+
+
+
+if (program.service) {
+  console.log(program.service)
+  var express = require('express');
+  var app = express();
+  app.get('/', function (req, res) {
+  res.send('Hello World!');
+  });
+
+  function getIPAdress(){  
+      var interfaces = require('os').networkInterfaces();  
+      var ips = [];
+      for(var devName in interfaces){  
+            var iface = interfaces[devName];  
+            for(var i=0;i<iface.length;i++){  
+                 var alias = iface[i];  
+                 if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){  
+                       ips.push(alias)
+                 }  
+            }  
+      } 
+      var ret=ips[0].address;
+      for (var i = ips.length - 1; i >= 0; i--) {
+        var ip = ips[i].address;
+        if (/^10\./.test(ip)) {
+          ret=ip;
+          break;
+        }
+      }
+      return ret;
+  }  
+  // app.use(express.static('public'));
+  // app.use(express.static('/Users/wagon/Git/iScrollLite/'));
+  // app.use(express.static('/Users/wagon/Git/iScrollLite/demos'));
+  // app.use(express.static('/Users/wagon/Git/iScrollLite/demos/test_scroll'));
+
+  app.use(express.static(cwd));
+  var server = app.listen(program.service, function () {
+    var host = getIPAdress();//server.address().address;
+    var port = server.address().port;
+    console.log('web service listening at http://%s:%s', host, port);
+    console.log('web service  static address is :',cwd)
+
+    var qrcode = require('qrcode-terminal');
+    qrcode.generate('http://'+host+':'+port+'/index.html', {small: true},function (qrcode) {
+        console.log(qrcode);
+    });
+  });
+
+  return;
+}
+
+
+
+
+notifier.check()
+
+
+copyIdeIndex();
+
+var currCrawler;
+function init(){
+
+  if (!fs.existsSync('./app.json')) {
+    console.log(chalk.red('无法找到 app.json 文件，请检查'))
+    process.exit()
+  }
+
+  var server = require('wept')
+  var startPort = 3000
+
+  getPort(function (port) {
+    server.listen(port, function () {
+      console.log('listening on port ' + port)
+      
+
+      setTimeout(function(){
+
+        currCrawler = crawler(port,program.allinone,program.allinoneonly);
+
+        var tiemer;
+        chokidar.watch('.', {ignored: /node_modules/}).on('change', function(path){
+            
+            // global.WATCH++;
+            if (tiemer) {
+              clearTimeout(tiemer)
+              tiemer=null;
+            }
+            tiemer=setTimeout(function(){
+              if (currCrawler) {currCrawler.destroy();currCrawler=null};
+              clearTimeout(tiemer)
+              tiemer=null;
+              // console.log("chokidar.watch=======1-----",path);
+              currCrawler = crawler(port,program.allinone,program.allinoneonly);
+
+            },1000);
+            
+        })
+      },2000);
+      
+    })
+  })
+
+  function getPort(cb) {
+    if (program.port) return cb(program.port)
+    var port = startPort
+
+    var server = net.createServer()
+    server.listen(port, function () {
+      server.once('close', function () {
+        cb(port)
+      })
+      server.close()
+    })
+    server.on('error', function () {
+      startPort += 1
+      getPort(cb)
+    })
+  }
+
+}
+
+process.on('uncaughtException', function (e) {
+  console.log(chalk.red('发生了未知错误'))
+  console.error(e.stack)
+  process.exit(0);
+})
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

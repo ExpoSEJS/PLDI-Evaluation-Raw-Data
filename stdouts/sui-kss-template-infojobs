@@ -1,0 +1,225 @@
+/root/Targets/sui-kss-template-infojobs
+└── sui-kss-template-infojobs@0.3.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sui-kss-template-infojobs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0377 took 1.2005s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>SUI Framework Styleguides</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="public/kss.css">
+        <link rel="stylesheet" href="public/styleguide.css">
+        <link rel="stylesheet" href="public/styles.css">
+
+
+    </head>
+    <body id="kss-node">
+
+    	<nav class="sg-menu">
+            <div class="sg-logo">
+                <a href="./index.html" id="logo">
+                  <img src="public/media/sui-infojobs.jpg" alt="SUI InfoJobs">
+                </a>
+            </div>
+        	<ul>
+        		<li>
+        			<ul>
+        				<li><a href="./index.html" id="home">Introduction</a></li>
+        			</ul>
+        		</li>
+        		<li>
+
+        			<ul id="sg-menu">
+        				{{#eachRoot}}
+                        <li>
+                            <a href="section-{{referenceURI}}.html#sui-{{{reference}}}.1" class="js-itemMenu">
+                                {{header}}
+                            </a>
+                            {{#if overview}}
+                            {{else}}
+
+                            <ul class="sg-submenu">
+                                {{#eachSection reference}}
+                                    {{#ifDepth 2}}
+                                    <li>
+                                        <a href="section-{{referenceURI}}.html#sui-{{{reference}}}" class="js-itemMenu {{#isDisabled header}}disabled js-disabled{{/isDisabled}}" data-link="true">{{header}}</a>
+                                        <ul class="sg-second-submenu">
+                                        {{#eachSection reference}}
+                                            {{#ifDepth 3}}
+                                            <li>
+                                                <a href="section-{{../../../../reference}}.html#sui-{{{reference}}}" {{#isDisabled header}}class="disabled js-disabled"{{/isDisabled}}>{{header}}</a>
+                                            </li>
+                                            {{/ifDepth}}
+                                        {{/eachSection}}
+                                        </ul>
+                                    </li>
+                                    {{/ifDepth}}
+                                {{/eachSection}}
+                            </ul>
+
+                            {{/if}}
+
+        				</li>
+        				{{/eachRoot}}
+                        <!-- <li><a href="#">Pages</a></li>
+                        <li><a href="#">Templates</a></li> -->
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+        <div class="sg-overlay"></div>
+
+        <header class="sg-header">
+            <a id="burgerMenu" class="sg-icon-menu">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="#f5f5f5"><path d="M0 17v-3.2s0-.1.1-.1h63.8s.1 0 .1.1V17s0 .1-.1.1L0 17zM0 33.5v-3.2s0-.1.1-.1h63.8s.1 0 .1.1v3.2s0 .1-.1.1L0 33.5c0 .1 0 .1 0 0zM0 50.2V47s0-.1.1-.1h63.8s.1 0 .1.1v3.2s0 .1-.1.1L0 50.2c0 .1 0 .1 0 0z"/></g></svg>
+            </a>
+            <h1>Components</h1>
+        </header>
+
+        <section class="sg-content">
+
+            {{#if homepage}}
+            {{! - HOME ------------------------------------------------------ }}
+
+            <div class="home-intro">
+               <div class="intro-content">
+                   <p class="inner">SUI Framework Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat alias optio nulla, ipsa maxime aut doloremque repudiandae reprehenderit commodi sed libero necessitatibus tempora cupiditate veritatis rerum vitae esse perferendis saepe.</p>
+               </div>
+            </div>
+
+
+
+            {{else}}
+
+            <div class="sg-wrapper">
+            {{! - SECTIONS -------------------------------------------------- }}
+
+            {{#eachSection rootName}}
+
+                {{#isDisabled header}}
+
+                    {{! - If header have ##disabled## don't render section --}}
+
+                {{else}}
+
+
+                    {{#isntCasper header}}
+                        {{#if markup}}
+                            <div id="sui-{{reference}}" class="row sg-block">
+                                    <div class="col-12">
+                                    <header class="sg-block-header">
+                                        <h2 class="sg-block-title">{{{header}}}</h2>
+                                    </header>
+                                    {{#if description}}
+                                        <div class="sg-block-description">
+                                            {{{description}}}
+
+                                        </div>
+                                    {{/if}}
+
+                                    {{#if markup}}
+
+                                            {{#if modifiers}}
+                                                {{#eachModifier}}
+                                                    {{!
+                                                    <div>
+                                                        {{name}} <span style="display:none;">{{{description}}}</span>
+                                                    </div>
+                                                    }}
+                                                {{/eachModifier}}
+
+                                                {{#isntCasper markup}}
+                                                    <div class="sg-view">
+                                                        {{#eachModifier}}
+                                                            <div class="sg-modifiers">
+                                                                {{{markup}}}
+                                                            </div>
+                                                        {{/eachModifier}}
+                                                    </div>
+                                                {{/isntCasper}}
+                                            {{else}}
+                                                {{#isntCasper markup}}
+                                                <div class="sg-view">
+                                                    {{{markup}}}
+                                                </div>
+                                                {{/isntCasper}}
+                                            {{/if}}
+                                            <pre class="prettyprint linenums lang-html"><code data-language="html">
+{{#isModifiers markup}}
+{{markup}}
+{{/isModifiers}}
+</code></pre>
+<!-- <p class="small alternative">* {modifier_class} refers to classes are available to use to stylize an element or component </p> -->
+                                    {{/if}}
+
+                                </div>
+                            </div>
+
+                        {{else}}
+                        <div id="sui-{{reference}}" class="row sg-block">
+                            <div class="col-12">
+                                <header class="sg-block-header">
+                                    {{#ifDepth 2}}
+                                    <h1 class="sg-block-title">{{{header}}}</h1>
+                                    {{else}}
+                                    <h2 class="sg-block-title">{{{header}}}</h2>
+                                    {{/ifDepth}}
+                                </header>
+                                {{#if description}}
+                                    <div class="sg-block-description">
+                                        {{{description}}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        </div>
+                        {{/if}}
+                    {{/isntCasper}}
+                {{/isDisabled}}
+            {{/eachSection}}
+            </div>
+            {{/if}}
+
+        </section>
+        <section class="sg-content sg-footer">
+          ©SUI Framework
+        </section>
+
+        <script src="public/jquery-2.1.0.min.js"></script>
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="public/plugins.js"></script>
+        <script src="public/main.js"></script>
+    </body>
+</html>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

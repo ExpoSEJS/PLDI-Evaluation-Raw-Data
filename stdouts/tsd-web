@@ -1,0 +1,63 @@
+/root/Targets/tsd-web
+└─┬ tsd-web@0.1.2 
+  ├─┬ event-stream@3.3.4 
+  │ ├── duplexer@0.1.1 
+  │ ├── from@0.1.7 
+  │ ├── map-stream@0.1.0 
+  │ ├── pause-stream@0.0.11 
+  │ ├── split@0.3.3 
+  │ ├── stream-combiner@0.0.4 
+  │ └── through@2.3.8 
+  ├─┬ levelup@1.3.9 
+  │ ├─┬ deferred-leveldown@1.2.2 
+  │ │ └── abstract-leveldown@2.6.3 
+  │ ├── level-codec@7.0.1 
+  │ ├─┬ level-errors@1.0.5 
+  │ │ └─┬ errno@0.1.4 
+  │ │   └── prr@0.0.0 
+  │ ├─┬ level-iterator-stream@1.3.1 
+  │ │ ├── inherits@2.0.3 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ ├── prr@1.0.1 
+  │ ├── semver@5.4.1 
+  │ └── xtend@4.0.1 
+  ├─┬ st@1.2.0 
+  │ ├─┬ async-cache@1.1.0 
+  │ │ └─┬ lru-cache@4.1.1 
+  │ │   ├── pseudomap@1.0.2 
+  │ │   └── yallist@2.1.2 
+  │ ├─┬ bl@1.1.2 
+  │ │ └─┬ readable-stream@2.0.6 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├── fd@0.0.2 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── mime@1.3.6 
+  │ └── negotiator@0.6.1 
+  └─┬ ws@3.2.0 
+    ├── async-limiter@1.0.0 
+    ├── safe-buffer@5.1.1 
+    └── ultron@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tsd-web/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0465 took 3.6125s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'tsd-web'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,140 @@
+/root/Targets/casa-calida
+└─┬ casa-calida@0.10.1 
+  ├── bluebird@3.5.0 
+  ├── deepmerge@0.2.10 
+  ├─┬ hapi@13.5.3 
+  │ ├── accept@2.1.1 
+  │ ├── ammo@2.0.1 
+  │ ├── boom@3.2.0 
+  │ ├── call@3.0.2 
+  │ ├── catbox@7.1.1 
+  │ ├── catbox-memory@2.0.2 
+  │ ├── cryptiles@3.0.1 
+  │ ├── heavy@4.0.1 
+  │ ├── hoek@4.0.0 
+  │ ├── iron@4.0.1 
+  │ ├── items@2.1.0 
+  │ ├─┬ joi@8.1.0 
+  │ │ ├── isemail@2.1.2 
+  │ │ └── moment@2.13.0 
+  │ ├── kilt@2.0.1 
+  │ ├─┬ mimos@3.0.1 
+  │ │ └── mime-db@1.23.0 
+  │ ├── peekaboo@2.0.1 
+  │ ├── shot@3.1.0 
+  │ ├── statehood@4.0.1 
+  │ ├─┬ subtext@4.0.3 
+  │ │ ├── content@3.0.1 
+  │ │ ├─┬ pez@2.1.1 
+  │ │ │ ├── b64@3.0.1 
+  │ │ │ └─┬ nigel@2.0.1 
+  │ │ │   └── vise@2.0.1 
+  │ │ └── wreck@7.2.1 
+  │ └── topo@2.0.1 
+  ├── moment@2.18.1 
+  ├─┬ superagent@1.8.5 
+  │ ├── component-emitter@1.2.1 
+  │ ├── cookiejar@2.0.6 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── extend@3.0.0 
+  │ ├─┬ form-data@1.0.0-rc3 
+  │ │ ├── async@1.5.2 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ └─┬ mime-types@2.1.17 
+  │ │   └── mime-db@1.30.0 
+  │ ├── formidable@1.0.17 
+  │ ├── methods@1.1.2 
+  │ ├── mime@1.3.4 
+  │ ├── qs@2.3.3 
+  │ ├─┬ readable-stream@1.0.27-1 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── reduce-component@1.0.1 
+  ├─┬ winston@2.3.1 
+  │ ├── async@1.0.0 
+  │ ├── colors@1.0.3 
+  │ ├── cycle@1.0.3 
+  │ ├── eyes@0.1.8 
+  │ ├── isstream@0.1.2 
+  │ └── stack-trace@0.0.10 
+  ├─┬ ws@1.1.4 
+  │ ├── options@0.0.6 
+  │ └── ultron@1.0.2 
+  └─┬ xml2js@0.4.19 
+    ├── sax@1.2.4 
+    └── xmlbuilder@9.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/casa-calida/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0384 took 4.2714s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+'use strict';
+
+/**
+ * @author <a href="mailto:stefan@stefanmayer.me">Stefan Mayer</a>
+ */
+
+const fs = require('fs');
+const path = require('path');
+const logger = require('./logger');
+const config = require('./config');
+const CasaCalida = require('./CasaCalida');
+const zwave = require('./zwave');
+const iot = require('./iot');
+const server = require('./server');
+const processArguments = require('./utils/processArguments');
+
+const configPath = processArguments.get('config');
+
+if (!configPath) {
+    logger.error('Please provide "config" as arguments to point to your config file. See README for more infos.');
+    process.exit(1);
+}
+
+const absoluteConfigPath = path.resolve(configPath);
+try {
+    const stats = fs.lstatSync(absoluteConfigPath);
+
+    if (stats.isDirectory()) {
+        throw new Error('config is a directory');
+    }
+} catch (e) {
+    logger.error(`Couldn't find provided config file ${absoluteConfigPath}`);
+    process.exit(2);
+}
+
+config.setPath(absoluteConfigPath);
+const auth = config.getAuthentication();
+
+CasaCalida.connect().then(websocket => Promise.all([zwave.init(auth.username, auth.password, websocket), iot(config.getIotIps(), websocket), server(websocket)])).catch(e => {
+    logger.error(e);
+    process.exit(3);
+}); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

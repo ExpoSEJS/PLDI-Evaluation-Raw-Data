@@ -1,0 +1,55 @@
+/root/Targets/onestack-hapi-swagger
+├── UNMET PEER DEPENDENCY hapi@>= 8.x.x < 9
+└─┬ onestack-hapi-swagger@0.6.2 
+  ├── boom@2.6.1 
+  ├─┬ handlebars@1.3.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├── hoek@2.10.0 
+  └─┬ joi@5.0.2 
+    ├── isemail@1.2.0 
+    ├── moment@2.18.1 
+    └── topo@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/onestack-hapi-swagger/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","Date","bind","Array","charCodeAt","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0617 took 28.3848s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/onestack-hapi-swagger/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/onestack-hapi-swagger/lib/index.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/hoek/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/hoek/lib/index.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/hoek/lib/escape.js. Coverage (Term): 33% Coverage (LOC): 46%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/boom/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/boom/lib/index.js. Coverage (Term): 16% Coverage (LOC): 38%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/index.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/any.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/ref.js. Coverage (Term): 18% Coverage (LOC): 36%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/errors.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/language.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/cast.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/date.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/joi/lib/string.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/isemail/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/onestack-hapi-swagger/node_modules/isemail/lib/isemail.js. Coverage (Term): 7% Coverage (LOC): 16%
+*- File evalIndirect. Coverage (Term): 12% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

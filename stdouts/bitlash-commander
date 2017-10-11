@@ -1,0 +1,767 @@
+
+> uws@0.14.5 install /root/Targets/bitlash-commander/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+
+> serialport@5.0.0 install /root/Targets/bitlash-commander/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/bitlash-commander/node_modules/serialport/build'
+  CXX(target) Release/obj.target/serialport/src/serialport.o
+  CXX(target) Release/obj.target/serialport/src/serialport_unix.o
+  CXX(target) Release/obj.target/serialport/src/poller.o
+  SOLINK_MODULE(target) Release/obj.target/serialport.node
+  COPY Release/serialport.node
+make: Leaving directory '/root/Targets/bitlash-commander/node_modules/serialport/build'
+/root/Targets/bitlash-commander
+└─┬ bitlash-commander@0.0.14 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.0.5 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ ├── http-errors@1.6.2 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├─┬ redis@2.8.0 
+  │ ├── double-ended-queue@2.1.0-0 
+  │ ├── redis-commands@1.3.1 
+  │ └── redis-parser@2.6.0 
+  ├─┬ request@2.82.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.2 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── core-util-is@1.0.2 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.2 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  ├─┬ serialport@5.0.0 
+  │ ├── bindings@1.3.0 
+  │ ├── commander@2.11.0 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── nan@2.7.0 
+  │ ├─┬ node-pre-gyp@0.6.36 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ ├─┬ nopt@4.0.1 
+  │ │ │ ├── abbrev@1.1.0 
+  │ │ │ └─┬ osenv@0.1.4 
+  │ │ │   ├── os-homedir@1.0.2 
+  │ │ │   └── os-tmpdir@1.0.2 
+  │ │ ├─┬ npmlog@4.1.2 
+  │ │ │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ │ │ └── delegates@1.0.0 
+  │ │ │ ├── console-control-strings@1.1.0 
+  │ │ │ ├─┬ gauge@2.7.4 
+  │ │ │ │ ├── aproba@1.1.2 
+  │ │ │ │ ├── has-unicode@2.0.1 
+  │ │ │ │ ├── object-assign@4.1.1 
+  │ │ │ │ ├── signal-exit@3.0.2 
+  │ │ │ │ ├─┬ string-width@1.0.2 
+  │ │ │ │ │ ├── code-point-at@1.1.0 
+  │ │ │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │ │ │ │ │   └── number-is-nan@1.0.1 
+  │ │ │ │ ├─┬ strip-ansi@3.0.1 
+  │ │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ │ └── wide-align@1.1.2 
+  │ │ │ └── set-blocking@2.0.0 
+  │ │ ├─┬ rc@1.2.1 
+  │ │ │ ├── deep-extend@0.4.2 
+  │ │ │ ├── ini@1.3.4 
+  │ │ │ ├── minimist@1.2.0 
+  │ │ │ └── strip-json-comments@2.0.1 
+  │ │ ├─┬ request@2.81.0 
+  │ │ │ ├── aws-sign2@0.6.0 
+  │ │ │ ├── aws4@1.6.0 
+  │ │ │ ├── caseless@0.12.0 
+  │ │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ │ └── delayed-stream@1.0.0 
+  │ │ │ ├── extend@3.0.1 
+  │ │ │ ├── forever-agent@0.6.1 
+  │ │ │ ├─┬ form-data@2.1.4 
+  │ │ │ │ └── asynckit@0.4.0 
+  │ │ │ ├─┬ har-validator@4.2.1 
+  │ │ │ │ ├─┬ ajv@4.11.8 
+  │ │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ │ └── har-schema@1.0.5 
+  │ │ │ ├─┬ hawk@3.1.3 
+  │ │ │ │ ├── boom@2.10.1 
+  │ │ │ │ ├── cryptiles@2.0.5 
+  │ │ │ │ ├── hoek@2.16.3 
+  │ │ │ │ └── sntp@1.0.9 
+  │ │ │ ├─┬ http-signature@1.1.1 
+  │ │ │ │ ├── assert-plus@0.2.0 
+  │ │ │ │ ├─┬ jsprim@1.4.0 
+  │ │ │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ │ │ ├── extsprintf@1.0.2 
+  │ │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ │ └── verror@1.3.6 
+  │ │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │ │   ├── asn1@0.2.3 
+  │ │ │ │   ├── assert-plus@1.0.0 
+  │ │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │ │   ├─┬ dashdash@1.14.1 
+  │ │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │ │   ├─┬ getpass@0.1.7 
+  │ │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │ │   ├── jsbn@0.1.1 
+  │ │ │ │   └── tweetnacl@0.14.5 
+  │ │ │ ├── is-typedarray@1.0.0 
+  │ │ │ ├── isstream@0.1.2 
+  │ │ │ ├── json-stringify-safe@5.0.1 
+  │ │ │ ├─┬ mime-types@2.1.16 
+  │ │ │ │ └── mime-db@1.29.0 
+  │ │ │ ├── oauth-sign@0.8.2 
+  │ │ │ ├── performance-now@0.2.0 
+  │ │ │ ├── qs@6.4.0 
+  │ │ │ ├── stringstream@0.0.5 
+  │ │ │ ├─┬ tough-cookie@2.3.2 
+  │ │ │ │ └── punycode@1.4.1 
+  │ │ │ ├── tunnel-agent@0.6.0 
+  │ │ │ └── uuid@3.1.0 
+  │ │ ├─┬ rimraf@2.6.1 
+  │ │ │ └─┬ glob@7.1.2 
+  │ │ │   ├── fs.realpath@1.0.0 
+  │ │ │   ├── inflight@1.0.6 
+  │ │ │   ├─┬ minimatch@3.0.4 
+  │ │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │ │   │   ├── balanced-match@1.0.0 
+  │ │ │   │   └── concat-map@0.0.1 
+  │ │ │   └── path-is-absolute@1.0.1 
+  │ │ ├── semver@5.4.1 
+  │ │ ├─┬ tar@2.2.1 
+  │ │ │ ├── block-stream@0.0.9 
+  │ │ │ ├─┬ fstream@1.0.11 
+  │ │ │ │ └── graceful-fs@4.1.11 
+  │ │ │ └── inherits@2.0.3 
+  │ │ └─┬ tar-pack@3.4.0 
+  │ │   ├── fstream-ignore@1.0.5 
+  │ │   ├─┬ once@1.4.0 
+  │ │   │ └── wrappy@1.0.2 
+  │ │   ├─┬ readable-stream@2.3.3 
+  │ │   │ ├── core-util-is@1.0.2 
+  │ │   │ ├── isarray@1.0.0 
+  │ │   │ ├── process-nextick-args@1.0.7 
+  │ │   │ ├── string_decoder@1.0.3 
+  │ │   │ └── util-deprecate@1.0.2 
+  │ │   └── uid-number@0.0.6 
+  │ ├── promirepl@1.0.1 
+  │ └── safe-buffer@5.1.1 
+  ├─┬ shelljs@0.7.8 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ ├── once@1.4.0 
+  │ │ └── path-is-absolute@1.0.1 
+  │ ├── interpret@1.0.4 
+  │ └─┬ rechoir@0.6.2 
+  │   └─┬ resolve@1.4.0 
+  │     └── path-parse@1.0.5 
+  └─┬ socket.io@2.0.3 
+    ├─┬ engine.io@3.1.1 
+    │ ├── accepts@1.3.3 
+    │ ├── base64id@1.0.0 
+    │ ├─┬ engine.io-parser@2.1.1 
+    │ │ ├── after@0.8.2 
+    │ │ ├── arraybuffer.slice@0.0.6 
+    │ │ └── blob@0.0.4 
+    │ ├── uws@0.14.5 
+    │ └─┬ ws@2.3.1 
+    │   ├── safe-buffer@5.0.1 
+    │   └── ultron@1.1.0 
+    ├── object-assign@4.1.1 
+    ├── socket.io-adapter@1.1.1 
+    ├─┬ socket.io-client@2.0.3 
+    │ ├── backo2@1.0.2 
+    │ ├── base64-arraybuffer@0.1.5 
+    │ ├── component-bind@1.0.0 
+    │ ├── component-emitter@1.2.1 
+    │ ├─┬ engine.io-client@3.1.1 
+    │ │ ├── component-inherit@0.0.3 
+    │ │ ├── parsejson@0.0.3 
+    │ │ ├── xmlhttprequest-ssl@1.5.3 
+    │ │ └── yeast@0.1.2 
+    │ ├── has-cors@1.1.0 
+    │ ├── indexof@0.0.1 
+    │ ├── object-component@0.0.3 
+    │ ├─┬ parseqs@0.0.5 
+    │ │ └─┬ better-assert@1.0.2 
+    │ │   └── callsite@1.0.0 
+    │ ├── parseuri@0.0.5 
+    │ └── to-array@0.1.4 
+    └─┬ socket.io-parser@3.1.2 
+      ├── has-binary2@1.0.2 
+      └── isarray@2.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bitlash-commander/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0526 took 4.3805s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+//////////
+//
+//	index.js: Run the Bitlash Commander server
+//
+//	Copyright 2012-2013 Bill Roy (MIT License; see LICENSE file)
+//
+//
+var opt = require('optimist');
+var url = require('url');
+var argv = opt.usage('Usage: $0 [flags]')
+	.alias('i', 'ipclient')
+	.describe('i', 'Network address or hostname for Bitlash-over-IP')
+	.alias('p', 'port')
+	.describe('p', 'TCP port for the http server (3000)')
+	.alias('s', 'serialport')
+	.describe('s', 'port for usbserial arduino connection')
+	.alias('b', 'baud')
+	.describe('b', 'baud rate for usbserial arduino connection (57600)')
+	.alias('c', 'cache')
+	.describe('c', 'load cached values on restart')
+	.alias('r', 'redis')
+	.describe('r', 'redis server url in redis-url format')
+	.alias('x', 'rexec')
+	.describe('x', 'set true to accept remote bitlash commands on socket.io')
+	.boolean('l')
+	.alias('l', 'login')
+	.describe('l', 'require a valid login to use the server')
+	.alias('u', 'update')
+	.describe('u', 'allow HTTP updates via POST /update/:id/:value')
+	.argv;
+
+if (argv.help) {
+	opt.showHelp();
+	process.exit();
+} 
+
+console.log('Bitlash Commander here!', argv);
+
+
+//////////
+//
+//	Determine web port
+//
+var port;
+var heroku;
+if (argv.port) port = argv.port;
+else if (process && process.env && process.env.PORT) {
+	heroku = true;
+	port = process.env.PORT;
+}
+else port = 3000;
+
+
+//////////
+//
+//	Access Control: Username / Password Table
+//
+//	These credentials are only checked if the server is started with the -l flag.
+//
+//	Please change the defaults below so you don't become a security statistic.
+//
+var users = [
+	['bug', '1234'],			// [username, password]
+	['nemo', '12343']
+];
+
+function authorize(username, password) {
+	console.log('Auth:', username, password);
+	if (!argv.login) return true;
+	for (var u=0; u < users.length; u++) {
+		if ((username == users[u][0]) && (password == users[u][1])) return true;
+	}
+	return false;
+}
+if (argv.login) {
+	console.log('Server will check user credentials.');
+}
+
+
+//////////
+//
+//	Configure HTTP server
+//
+var express = require('express');
+var app = express();
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var server;
+
+if (0) {
+	var ssl_key = fs.readFileSync('server.key').toString();
+	var ssl_cert = fs.readFileSync('server.crt').toString();  
+	server = https.createServer({key:ssl_key, cert:ssl_cert}, app);
+}
+else {
+	server = http.createServer(app);
+}
+
+var io = require('socket.io').listen(server);
+
+if (argv.login) app.configure(function () {
+	app.use(express.basicAuth(authorize));
+});
+
+app.configure(function () {
+	app.use(express.logger());
+	app.use(express.bodyParser());
+	app.use(express.static(__dirname + '/public'));
+});
+
+
+//////////
+//
+//	Serve / as index of html and designer panels
+//
+var panelpath = 'panel/';
+var htmlpath  = 'public/*.html';
+var fs = require('fs');
+var shell = require('shelljs');
+//var indextemplate = fs.readFileSync('public/indextemplate.html', 'utf8');
+var indextemplate;
+
+app.get('/', function(req, res) {
+	indextemplate = fs.readFileSync('public/indextemplate.html', 'utf8');
+	var rawpanels = shell.ls(htmlpath);
+	var custompanels = [];
+	for (var i=0; i < rawpanels.length; i++) {
+		var p = rawpanels[i].split('/')[1];
+		p = p.replace(/.html$/, '');
+		if (p == 'template') continue;
+		if (p == 'indextemplate') continue;
+		custompanels.push(p);		
+	}
+
+	var rawguipanels = shell.ls(panelpath);
+	var guipanels = [];
+	for (var i=0; i < rawguipanels.length; i++) {
+		if (rawguipanels[i].charAt(0) != '.') {
+			guipanels.push(rawguipanels[i]);
+		}
+	}
+
+	console.log('panels:', guipanels, custompanels);
+
+	var html = indextemplate.replace(/{{guipanels}}/, JSON.stringify(guipanels));
+	html = html.replace(/{{custompanels}}/, JSON.stringify(custompanels));
+
+	res.send(html);
+});
+
+var paneltemplate = fs.readFileSync('public/template.html', 'utf8');
+
+
+//////////
+//
+//	Serve panel contents on panel startup
+//
+app.get('/panel/:id', function(req, res) {
+	var panelid = req.params.id;
+	var html = paneltemplate.replace(/{{panelid}}/g, panelid.toString());
+	res.send(html);
+});
+
+
+//////////
+//
+//	Receive JSON updates via POST /update/id/value
+//
+function handleUpdate(req, res) {
+	var id = req.params.id;
+	var value = req.params.value;
+	addCache(id, value);
+	data = {id:id, value:value};
+	console.log('Update:', id, value, data);
+	io.sockets.emit('update', data);	// or broadcastJSONUpdate
+	res.send(value);
+}
+
+if (argv.update) {
+	var mountpoint = '/update/:id/:value';
+	app.post(mountpoint, handleUpdate);
+	app.get(mountpoint, handleUpdate);
+}
+
+
+//////////
+//
+//	Return data series for chart: GET /d3/id
+//
+app.get('/d3/:id', function(req, res) {		// serve D3 chart series for given control :id
+	//console.log('D3Get:', req.params.id, data_cache);
+	var output = [];		// array of {time:23432, value:dsjklfjsd}
+	if (data_cache[req.params.id]) {
+		var data = data_cache[req.params.id];
+		for (var i=0; i<data.length; i++) {
+			var point = {time: data[i].time};
+			point[req.params.id] = data[i].value;
+			output.push(point);
+		}
+	}
+	else if (req.params.id == '$random') {
+		for (var i=0; i<100; i++) {
+			var point = {time: i};
+			point[req.params.id] = Math.floor(Math.random()*1000);
+			output.push(point);
+		}
+	}
+	//console.log('D3Out:', output);
+	res.send(output);
+});
+
+server.listen(port);
+console.log('Listening on port:', port);
+
+var mem = process.memoryUsage();
+var totalmem = mem.rss + mem.heapTotal;
+console.log("Memory:", totalmem, mem);
+
+//////////
+//
+//	Initialize Bitlash
+//
+var Bitlash = require('./lib/bitlash.js');
+var bitlash_options = {
+		debug: true, 
+		echo: true,
+		port: argv.serialport,
+		ipclient: argv.ipclient,
+		json_callback: broadcastJSONUpdate
+};
+if (argv.baud) bitlash_options.baud = argv.baud;
+var bitlash = new Bitlash.Bitlash(bitlash_options, function (readytext) {
+	console.log('Bitlash ready:', readytext);
+});
+
+
+//////////
+//
+//	Initialize the Redis Store for Socket.io, if needed
+//
+var redis_url = process.env.REDISTOGO_URL || argv.redis || undefined;
+var redis, redis_pub, redis_sub, redis_client, RedisStore, RedisURL;
+if (redis_url) {
+	var parsed_url = url.parse(redis_url);
+	console.log('Connecting to Redis at:', redis_url, parsed_url, parsed_url.auth.split(":")[1]);
+	redis = require('redis');
+	redis_pub = redis.createClient(parsed_url.port, parsed_url.hostname);
+	redis_sub = redis.createClient(parsed_url.port, parsed_url.hostname);
+	redis_client = redis.createClient(parsed_url.port, parsed_url.hostname);
+
+	redis_pub.auth(parsed_url.auth.split(':')[1]);
+	redis_sub.auth(parsed_url.auth.split(':')[1]);
+	redis_client.auth(parsed_url.auth.split(':')[1]);
+
+	RedisStore = require('socket.io/lib/stores/redis');
+}
+
+
+//////////
+//
+//	Initialize Socket.io
+//
+// for heroku,
+// per https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
+if (1 || heroku) {
+	io.configure(function () { 
+		io.set('transports', ['xhr-polling']); 
+		io.set('polling duration', 10); 
+		if (RedisStore) {
+			console.log('Starting RedisStore');
+			io.set('store', new RedisStore({redis: redis, redisPub: redis_pub, redisSub: redis_sub, redisClient: redis_client}));
+		}
+	});
+}
+io.set('log level', 1);
+
+
+//////////
+//
+//	Data log file and live cache for charts
+//
+var data_cache = {};		// caches updates per id by time
+var log_file = "log/datalog.txt";
+
+function addCache(id, value) {
+	if (!data_cache[id]) data_cache[id] = [];	// array of objects: {id:<id>, t:<time>, value:<value>}
+	var time = new Date().getTime();
+	data_cache[id].push({
+		time: time,
+		value: value
+	});
+
+	if (argv.cache) {
+		// Log the record to the JSON-like stream
+		var data_record = JSON.stringify({id:id, time:time, value:value}) + '\n';
+		fs.appendFile(log_file, data_record, function (err) {
+			if (err) console.log('LOG FILE WRITE ERROR:', data_record);
+			else {}
+		});
+	}
+}
+
+function loadCache() {
+
+	if (!fs.existsSync(log_file)) return;
+
+	// from http://stackoverflow.com/questions/6831918/node-js-read-a-text-file-into-an-array-each-line-an-item-in-the-array
+	require('readline').createInterface({
+		input: fs.createReadStream(log_file),
+		terminal: false
+	}).on('line', function(line){
+		var entry = JSON.parse(line);
+		//console.log('Line:', line, entry);
+
+		// cache only the latest value per entry
+		data_cache[entry.id] = [{time:entry.time, value:entry.value}];
+
+		// restore all values to the cache
+		//data_cache[entry.id].push({time:entry.time, value:entry.value});
+
+	})
+	.on('close', function() {
+		console.log('Loaded cache:', data_cache);
+	});
+}
+if (argv.cache) loadCache();
+
+
+//////////
+//
+//	Heroku socket.io configuration
+//
+// per https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
+if (heroku) {
+	io.configure(function () { 
+		io.set("transports", ["xhr-polling"]); 
+		io.set("polling duration", 10); 
+	});
+}
+io.set('log level', 1);
+
+
+//////////
+//
+//	Send command to Bitlash
+//
+function executeBitlash(data) {
+	console.log('Exec:', data, typeof data, bitlash.ready);
+	if (bitlash.ready) {
+		bitlash.exec(data.cmd + '\n', function(reply) {
+			reply = reply.trim();
+			if (reply && reply.length>0) {
+				addCache(data.id, reply);
+				console.log('sending update:', reply);
+				data.value = reply;
+				io.sockets.emit('update', data);
+			}
+		});
+	}
+	else if (heroku) {
+		console.log('Rexec:', data);
+		io.sockets.emit('rexec', data);
+	}
+	else console.log('Bitlash not ready, dropping:', data);
+}
+
+
+//////////
+//
+//	Set up Socket.io message handlers
+//
+
+io.sockets.on('connection', function (socket) {
+	console.log('Client connected via', socket.transport);
+	socket.on('message', function(data) {
+		console.log('Message:', data);
+	});
+	socket.on('exec', executeBitlash);
+	socket.on('rexec', function(data) {
+		console.log('rexec:', data);
+		executeBitlash(data);
+	});
+	socket.on('update', function(data) {
+		console.log('Update:', data);
+		socket.broadcast.emit('update', [data]);	// everyone but requester
+	});
+	socket.on('sync', function(data) {
+		var response = [];
+		for (var id in data_cache) {
+			var datalist = data_cache[id];
+			if (datalist.length) response.push({id:id, value:datalist[datalist.length-1].value});
+		}
+		console.log('Sync:', response);
+		// only to requester
+		if (response.length > 0) socket.emit('update', response);
+	});
+	socket.on('save', function(data) {
+		console.log('Save:', data);
+		fs.writeFile(panelpath + data[0].id, JSON.stringify(data, null, '\t'));
+	});
+	socket.on('open', function(data) {
+		var controltext;
+		try {
+			controltext = fs.readFileSync(panelpath + data);
+			var controls = JSON.parse(controltext);
+			controls[0].id = data;		// set the panel id to the filename
+			socket.emit('add', controls);
+		}
+		catch(e) {
+			console.log('Panel not found:', data);
+			var panel = {type: "Panel", id:data};
+			socket.emit('add', [panel]);
+		}
+	});
+	socket.on('ping', function(data) {
+		socket.emit('pong', data);
+	});
+});
+
+function broadcastJSONUpdate(data) {
+	io.sockets.emit('update', data);
+}
+
+
+//////////
+//
+//	Set up Socket.io client for rexec command
+//
+//	Required because at present socket.io does not provide server-to-server messaging.
+//	Activate with the -x flag.
+//
+if (argv.rexec) {
+	console.log('Starting socket.io client...');
+	var ioclient = require('socket.io/node_modules/socket.io-client');
+
+	var clientsocket = new ioclient.connect('http://localhost:' + port);		//Socket('localhost', port);
+
+	clientsocket.on('connect', function () {
+		console.log('Socket.io client connected.');
+	});
+
+	// A remote Commander, perhaps on the web, without an arduino,
+	// can control an arduino on a local Commander, provided they
+	// are both connected (-r) to the same socket.io/redis store
+	// Here we catch the rexec request and execute it on Bitlash;
+	// the reply is distributed over socket.io in the normal way
+	//  as an update message.
+	//
+	clientsocket.on('rexec', function (data) {
+		console.log('Incoming Rexec: ', data);
+		executeBitlash(data);
+	});
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,90 @@
+/root/Targets/node-giff
+└─┬ node-giff@0.0.7 
+  ├── commander@2.11.0 
+  └─┬ diff2html@2.3.0 
+    ├── diff@3.3.1 
+    ├─┬ hogan.js@3.0.2 
+    │ ├── mkdirp@0.3.0 
+    │ └─┬ nopt@1.0.10 
+    │   └── abbrev@1.1.0 
+    └── whatwg-fetch@2.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-giff/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0878 took 4.7071s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+// @ts-check
+
+'use strict';
+
+const
+  path    = require('path'),
+  fs      = require('fs'),
+  util    = require('util'),
+  spawn   = require('child_process').spawn,
+  exec    = require('child_process').exec,
+  program = require('commander');
+
+// set program info
+program
+  .version('0.0.7')
+  .usage('[options] [<commit>] [--] [<path>...]')
+  .option('--cached', 'show diff of staging files')
+  .parse(process.argv);
+
+// judge options
+const options = ['--patience'];
+if (program.cached) {
+  options.push('--cached');
+}
+
+// init output file
+const realPath = fs.realpathSync(__dirname);
+const output = fs.createWriteStream(`${realPath}/dest/diff.js`)
+output.write('var lineDiffExample="');
+
+// git diff
+const giff = spawn('git', ['diff'].concat(program.args).concat(options));
+giff.stdout.on('data', function (data) {
+  // encode to JSON to get escaping
+  const encoded = JSON.stringify(data.toString());
+  // extract the encoded string's contents
+  const contents = encoded.slice(1, -1);
+  output.write(contents);
+});
+
+giff.stderr.on('data', function (data) {
+  console.log('stderr: ' + data);
+});
+
+giff.on('exit', function (code) {
+  output.end('";', function () {
+    console.log(`${realPath}/index.html`);
+    exec(`which open && open ${realPath}/index.html`);
+  });
+});
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

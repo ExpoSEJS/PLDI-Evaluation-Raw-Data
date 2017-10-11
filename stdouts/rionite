@@ -1,0 +1,47 @@
+/root/Targets/rionite
+└─┬ rionite@0.27.67 
+  ├── @riim/camelize@1.0.0 
+  ├── @riim/clear-node@1.0.0 
+  ├── @riim/defer@1.1.0 
+  ├── @riim/di@0.1.2 
+  ├── @riim/escape-html@1.1.1 
+  ├── @riim/get-uid@1.0.0 
+  ├── @riim/gettext@1.1.1 
+  ├── @riim/hyphenize@1.0.0 
+  ├── @riim/is-regexp@1.0.0 
+  ├── @riim/logger@1.0.1 
+  ├── @riim/map-set-polyfill@1.0.1 
+  ├── @riim/mixin@1.0.0 
+  ├── @riim/move-content@1.0.0 
+  ├── @riim/next-tick@1.0.1 
+  ├── @riim/next-uid@1.0.0 
+  ├── @riim/set-attribute@1.0.0 
+  ├── @riim/symbol-polyfill@1.0.0 
+  ├─┬ cellx@1.7.53 
+  │ ├── @riim/is@1.0.0 
+  │ └── @riim/object-assign-polyfill@1.0.0 
+  ├── escape-string@1.0.2 
+  ├── html-to-fragment@1.0.1 
+  └─┬ nelm@0.4.18 
+    ├── @riim/self-closing-tags@1.0.2 
+    └── nelm-parser@1.1.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/rionite/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0246 took 10.3619s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/rionite/node_modules/rionite/dist/rionite.polyfills.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

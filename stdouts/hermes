@@ -1,0 +1,290 @@
+/root/Targets/hermes
+└─┬ hermes@0.4.4 
+  ├─┬ chalk@0.4.0 
+  │ ├── ansi-styles@1.0.0 
+  │ ├── has-color@0.1.7 
+  │ └── strip-ansi@0.1.1 
+  ├── commander@2.11.0 
+  ├── component-type@1.2.1 
+  ├── indent@0.0.1 
+  ├── lodash@2.4.2 
+  └─┬ to-function@2.0.6 
+    └── component-props@1.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hermes/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0641 took 3.3292s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (2:4) on program 
+var assert = require('assert');
+var echo = require('./echo');
+var format = require('util').format;
+var help = require('./help');
+var memory = require('./memory');
+var noop = function(){};
+var type = require('component-type');
+var Emitter = require('events').EventEmitter;
+var inherit = require('util').inherits;
+
+/**
+ * Expose `Robot`.
+ */
+
+module.exports = Robot;
+
+/**
+ * Initialize a new `Robot` instance with a `name`.
+ *
+ * @param {Object} name
+ */
+
+function Robot(name){
+  if (!(this instanceof Robot)) return new Robot(name);
+  this.setMaxListeners(Infinity);
+  this.on('error', noop);
+  this.name(name || 'Hermes');
+  this.template('@%s ');
+  this.use(memory());
+  this.use(help());
+  this.use(echo());
+}
+
+/**
+ * Inherit from `Emitter`.
+ */
+
+inherit(Robot, Emitter);
+
+var on = Robot.prototype.on;
+var once = Robot.prototype.once;
+var off = Robot.prototype.off = Robot.prototype.removeListener;
+
+/**
+ * Use a `plugin` function.
+ *
+ * @param {Function} plugin
+ * @return {Robot}
+ */
+
+Robot.prototype.use = function(plugin){
+  plugin(this);
+  return this;
+};
+
+/**
+ * Get or set the robot's `name`.
+ *
+ * @param {Object} name
+ * @return {Robot}
+ */
+
+Robot.prototype.name = function(name){
+  if (!arguments.length) return this._name;
+  assert('string' == type(name), 'The robot\'s name must be a string.');
+  this._name = name;
+  this.nickname(nickify(name));
+  this.emit('name', name);
+  return this;
+};
+
+/**
+ * Get or set the robot's `nickname`.
+ *
+ * @param {Object} nickname
+ * @return {Robot}
+ */
+
+Robot.prototype.nickname = function(nickname){
+  if (!arguments.length) return this._nickname;
+  assert('string' == type(nickname), 'The robot\'s nickname must be a string.');
+  this._nickname = nickname;
+  this.emit('nickname', nickname);
+  return this;
+};
+
+/**
+ * Get or set the way the robot is mentioned with a substitution `template`.
+ *
+ * @param {String} template
+ * @return {Robot}
+ */
+
+Robot.prototype.template = function(template){
+  if (!arguments.length) return this._template;
+  assert('string' == type(template), 'The mention template must be a string.');
+  this._template = template;
+  this.emit('template', template);
+  return this;
+};
+
+/**
+ * Format a `nickname` into a mention.
+ *
+ * @param {String} nickname
+ * @return {String}
+ */
+
+Robot.prototype.mention = function(nickname){
+  if (!nickname) nickname = this.nickname();
+  var template = this.template();
+  return format(template, nickname);
+};
+
+/**
+ * Hear a `string` with optional `context` and process it.
+ *
+ * @param {String} message
+ * @param {Object} context (optional)
+ *   @property {String} user
+ *   @property {String} room
+ * @return {Robot}
+ */
+
+Robot.prototype.hear = function(message, context){
+  context = context || {};
+  assert('string' == type(message), 'You must pass a message string.');
+  assert('object' == type(context), 'The message\'s context must be an object.');
+
+  var mention = this.mention();
+  var regex = new RegExp('^' + mention + '(.*)', 'i');
+  var match = message.match(regex);
+
+  this.emit('hear', message, context);
+  if (match) this.emit('mention', match[1], context);
+  return this;
+};
+
+/**
+ * Wrap `#on` to optionally filter messages by a `regex` and/or `context`.
+ *
+ * @param {String} event
+ * @param {RegExp or String} regex (optional)
+ * @param {Object} context (optional)
+ *   @property {String} user
+ *   @property {String} room
+ * @param {Function} fn
+ * @return {Robot}
+ */
+
+Robot.prototype.on = function(event, regex, context, fn){
+  if ('hear' != event && 'mention' != event) return on.call(this, event, regex);
+  if ('function' == type(regex)) fn = regex, context = null, regex = null;
+  if ('function' == type(context)) fn = context, context = null;
+  if ('object' == type(regex)) context = regex, regex = null;
+  if ('string' == type(regex)) regex = new RegExp(regex);
+
+  regex = regex || /.*/;
+  context = context || {};
+  var robot = this;
+
+  on.call(this, event, function(message, ctx){
+    if (!has(ctx, context)) return;
+    var res = message.match(regex);
+    if (!res) return;
+    res.message = message;
+    res.context = ctx;
+    if (ctx.user) res.user = robot.user(ctx.user);
+    if (ctx.room) res.room = robot.room(ctx.room);
+    bind(res, robot);
+    fn(res, robot);
+  });
+
+  return this;
+};
+
+/**
+ * Wrap `#once` to optionally filter messages by a `regex` and/or `context`.
+ *
+ * @param {String} event
+ * @param {RegExp or String} regex (optional)
+ * @param {Object} context (optional)
+ *   @property {String} user
+ *   @property {String} room
+ * @param {Function} fn
+ * @return {Robot}
+ */
+
+Robot.prototype.once = function(event, regex, context, fn){
+  if ('hear' != event && 'mention' != event) return on.call(this, event, regex);
+  var robot = this;
+
+  return this.on(event, regex, context, function callback(){
+    robot.off(event, callback);
+    fn.apply(this, arguments);
+  });
+};
+
+/**
+ * Convert a `name` into a nickname string.
+ *
+ * @param {String} name
+ * @return {String}
+ */
+
+function nickify(name){
+  return name.split(' ')[0].toLowerCase();
+}
+
+/**
+ * Check whether an `object` has all the values of `another` object.
+ *
+ * @param {Object} object
+ * @param {Object} another
+ * @return {Boolean}
+ */
+
+function has(object, another) {
+  for (var key in another) {
+    if (another[key] !== object[key]) return false;
+  }
+  return true;
+}
+
+/**
+ * Bind a `res` object with all of the speaking methods of a `robot`.
+ *
+ * @param {Object} res
+ * @param {Robot} robot
+ */
+
+function bind(res, robot){
+  var user = res.user;
+  var room = res.room;
+  var ctx = res.context;
+  res.say = function(msg){ robot.say(msg, ctx); };
+  res.emote = function(msg){ robot.emote(msg, ctx); };
+  res.reply = function(msg){ robot.reply(user, msg, ctx); };
+  res.error = function(msg){ robot.error(msg, ctx); };
+  res.warn = function(msg){ robot.warn(msg, ctx); };
+  res.info = function(msg){ robot.info(msg, ctx); };
+  res.success = function(msg){ robot.success(msg, ctx); };
+  res.topic = function(topic){ robot.topic(room, topic); };
+  res.on = function(event, regexp, fn){ robot.on(event, regexp, ctx, fn); };
+  res.once = function(event, regexp, fn){ robot.once(event, regexp, ctx, fn); };
+  res.off = function(event, fn){ robot.off(event, fn); };
+  res.hear = function(msg){ robot.hear(msg, ctx); };
+}
+ at SyntaxError: Unexpected token (2:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

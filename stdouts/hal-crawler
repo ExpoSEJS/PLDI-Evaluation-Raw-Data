@@ -1,0 +1,38 @@
+/root/Targets/hal-crawler
+└─┬ hal-crawler@0.1.1 
+  ├─┬ babel-runtime@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.11.0 
+  ├── immutable@3.8.2 
+  ├── lodash.get@4.4.2 
+  └── whatwg-fetch@2.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hal-crawler/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","imul","WeakMap","Symbol","getOwnPropertySymbols","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.12 took 37.9479s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hal-crawler/node_modules/hal-crawler/lib/index.js. Coverage (Term): 30% Coverage (LOC): 24%
+*- File /root/Targets/hal-crawler/node_modules/hal-crawler/lib/crawl.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/hal-crawler/node_modules/immutable/dist/immutable.js. Coverage (Term): 11% Coverage (LOC): 24%
+*- File /root/Targets/hal-crawler/node_modules/hal-crawler/lib/utils/load.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /root/Targets/hal-crawler/node_modules/babel-runtime/helpers/extends.js. Coverage (Term): 23% Coverage (LOC): 37%
+*- File /root/Targets/hal-crawler/node_modules/babel-runtime/core-js/object/assign.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/hal-crawler/node_modules/core-js/library/fn/object/assign.js. Coverage (Term): 58% Coverage (LOC): 100%
+*- File /root/Targets/hal-crawler/node_modules/core-js/library/modules/es6.object.assign.js. Coverage (Term): 48% Coverage (LOC): 100%
+*- File /root/Targets/hal-crawler/node_modules/core-js/library/modules/_export.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/hal-crawler/node_modules/core-js/library/modules/_global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

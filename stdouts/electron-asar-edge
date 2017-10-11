@@ -1,0 +1,37 @@
+
+> edge-asar-cs@1.0.3 install /root/Targets/electron-asar-edge/node_modules/edge-asar-cs
+> node tools/install.js
+
+
+> electron-asar-edge@1.2.0 install /root/Targets/electron-asar-edge/node_modules/electron-asar-edge
+> node tools/install.js
+
+make: Entering directory '/root/Targets/electron-asar-edge/node_modules/electron-asar-edge/build'
+  TOUCH Release/obj.target/edge_nativeclr.stamp
+  TOUCH Release/obj.target/edge_coreclr.stamp
+  TOUCH Release/obj.target/build_managed.stamp
+make: Leaving directory '/root/Targets/electron-asar-edge/node_modules/electron-asar-edge/build'
+/root/Targets/electron-asar-edge
+└─┬ electron-asar-edge@1.2.0 
+  ├── edge-asar-cs@1.0.3 
+  └── nan@2.7.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/electron-asar-edge/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0461 took 5.7487s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: The edge native module is not available at /root/Targets/electron-asar-edge/node_modules/electron-asar-edge/build/Release/edge_coreclr.node. You can use EDGE_NATIVE environment variable to provide alternate location of edge.node. If you need to build edge.node, follow build instructions for your platform at https://github.com/tjanczuk/edge
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/electron-asar-edge/node_modules/electron-asar-edge/lib/edge.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

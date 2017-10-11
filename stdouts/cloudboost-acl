@@ -1,0 +1,180 @@
+/root/Targets/cloudboost-acl
+├── cloudboost-acl@1.1.1 
+├── UNMET PEER DEPENDENCY material-ui@^0.16.0
+├── UNMET PEER DEPENDENCY react@^15.0.0
+├── UNMET PEER DEPENDENCY react-bootstrap@^0.30.7
+└── UNMET PEER DEPENDENCY react-dom@^15.0.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cloudboost-acl/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.045 took 3.8102s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (116:7) on program import React from 'react';
+import ReactDOM from 'react-dom';
+import { Modal, Button } from 'react-bootstrap';
+import ACLRows from './aclRows.js'
+
+// mui dependencies
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+class ACL extends React.Component {
+	constructor() {
+		super()
+		this.state = {
+			aclList: []
+		}
+	}
+	componentWillMount() {
+		this.generaliseACL(this.props.objectWithACL)
+	}
+	generaliseACL(props) {
+		let users = {}
+		let roles = {}
+		for (var k in props.ACL.document.read.allow.user) {
+			if (!users[props.ACL.document.read.allow.user[k]]) users[props.ACL.document.read.allow.user[k]] = {}
+			users[props.ACL.document.read.allow.user[k]].read = true
+		}
+		for (var k in props.ACL.document.read.deny.user) {
+			if (!users[props.ACL.document.read.deny.user[k]]) users[props.ACL.document.read.deny.user[k]] = {}
+			users[props.ACL.document.read.deny.user[k]].read = false
+		}
+		for (var k in props.ACL.document.write.allow.user) {
+			if (!users[props.ACL.document.write.allow.user[k]]) users[props.ACL.document.write.allow.user[k]] = {}
+			users[props.ACL.document.write.allow.user[k]].write = true
+		}
+		for (var k in props.ACL.document.write.deny.user) {
+			if (!users[props.ACL.document.write.deny.user[k]]) users[props.ACL.document.write.deny.user[k]] = {}
+			users[props.ACL.document.write.deny.user[k]].write = false
+		}
+
+		for (var k in props.ACL.document.read.allow.role) {
+			if (!roles[props.ACL.document.read.allow.role[k]]) roles[props.ACL.document.read.allow.role[k]] = {}
+			roles[props.ACL.document.read.allow.role[k]].read = true
+		}
+		for (var k in props.ACL.document.read.deny.role) {
+			if (!roles[props.ACL.document.read.deny.role[k]]) roles[props.ACL.document.read.deny.role[k]] = {}
+			roles[props.ACL.document.read.deny.role[k]].read = false
+		}
+		for (var k in props.ACL.document.write.allow.role) {
+			if (!roles[props.ACL.document.write.allow.role[k]]) roles[props.ACL.document.write.allow.role[k]] = {}
+			roles[props.ACL.document.write.allow.role[k]].write = true
+		}
+		for (var k in props.ACL.document.write.deny.role) {
+			if (!roles[props.ACL.document.write.deny.role[k]]) roles[props.ACL.document.write.deny.role[k]] = {}
+			roles[props.ACL.document.write.deny.role[k]].write = false
+		}
+
+		let usersList = []
+		let rolesList = []
+		usersList = Object.keys(users).map((x) => {
+			return {
+				id: x,
+				data: users[x],
+				type: 'user'
+			}
+		})
+		rolesList = Object.keys(roles).map((x) => {
+			return {
+				id: x,
+				data: roles[x],
+				type: 'role'
+			}
+		})
+		this.state.aclList = [...usersList, ...rolesList]
+		this.setState(this.state)
+	}
+	removeAcl(id) {
+		this.state.aclList = this.state.aclList.filter(x => x.id != id)
+		this.setState(this.state)
+	}
+	updateAclData(data, id) {
+		this.state.aclList = this.state.aclList.map((x) => {
+			if (x.id == id) {
+				x.data = data
+			}
+			return x
+		})
+		this.setState(this.state)
+	}
+	addAcl(obj) {
+		this.state.aclList.push(obj)
+		this.setState(this.state)
+	}
+	saveAcl() {
+		let AClObj = new CB.ACL()
+		for (var k in this.state.aclList) {
+			if (this.state.aclList[k].type == 'user' && this.state.aclList[k].id != 'all') {
+				let typeRead = this.state.aclList[k].data.read || false
+				let typeWrite = this.state.aclList[k].data.write || false
+				AClObj.setUserReadAccess(this.state.aclList[k].id, typeRead)
+				AClObj.setUserWriteAccess(this.state.aclList[k].id, typeWrite)
+			}
+			if (this.state.aclList[k].type == 'role') {
+				let typeRead = this.state.aclList[k].data.read || false
+				let typeWrite = this.state.aclList[k].data.write || false
+				AClObj.setRoleReadAccess(this.state.aclList[k].id, typeRead)
+				AClObj.setRoleWriteAccess(this.state.aclList[k].id, typeWrite)
+			}
+			if (this.state.aclList[k].id == 'all') {
+				AClObj.setPublicReadAccess(this.state.aclList[k].data.read)
+				AClObj.setPublicWriteAccess(this.state.aclList[k].data.write)
+			}
+		}
+		this.props.objectWithACL.ACL = AClObj
+		this.props.onACLSave(this.props.objectWithACL)
+		this.close()
+	}
+	close = () => {
+		this.props.closeACLModal()
+	}
+	render() {
+
+		return (
+			<Modal show={this.props.isOpenACLModal} onHide={this.close} dialogClassName={this.props.dialogClassName ? this.props.dialogClassName : "custom-modal"}>
+				<Modal.Header closeButton>
+					<Modal.Title>Edit ACL</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<MuiThemeProvider>
+						<ACLRows
+							aclList={this.state.aclList}
+							removeAcl={this.removeAcl.bind(this)}
+							addAcl={this.addAcl.bind(this)}
+							updateAclData={this.updateAclData.bind(this)}
+						/>
+					</MuiThemeProvider>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button onClick={this.close}>Cancel</Button>
+					<Button bsStyle="primary" onClick={this.saveAcl.bind(this)}>Save</Button>
+				</Modal.Footer>
+			</Modal>
+		);
+	}
+}
+
+// module.exports = ACL
+export default ACL at SyntaxError: Unexpected token (116:7)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:697:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

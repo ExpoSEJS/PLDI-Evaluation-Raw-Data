@@ -1,0 +1,75 @@
+/root/Targets/mk-electron-compile
+└─┬ mk-electron-compile@3.1.3 
+  ├─┬ @paulcbetts/mime-types@2.1.10 
+  │ └── @paulcbetts/mime-db@1.22.4 
+  ├─┬ babel-polyfill@6.26.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.10.5 
+  ├── btoa@1.1.2 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├── lodash@3.10.1 
+  ├─┬ lru-cache@4.1.1 
+  │ ├── pseudomap@1.0.2 
+  │ └── yallist@2.1.2 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── pify@2.3.0 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├─┬ inflight@1.0.6 
+  │   │ └── wrappy@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── once@1.4.0 
+  │   └── path-is-absolute@1.0.1 
+  ├─┬ spawn-rx@0.1.4 
+  │ └── rx@4.1.0 
+  └─┬ yargs@3.32.0 
+    ├── camelcase@2.1.1 
+    ├─┬ cliui@3.2.0 
+    │ ├─┬ strip-ansi@3.0.1 
+    │ │ └── ansi-regex@2.1.1 
+    │ └── wrap-ansi@2.1.0 
+    ├── decamelize@1.2.0 
+    ├─┬ os-locale@1.4.0 
+    │ └─┬ lcid@1.0.0 
+    │   └── invert-kv@1.0.0 
+    ├─┬ string-width@1.0.2 
+    │ ├── code-point-at@1.1.0 
+    │ └─┬ is-fullwidth-code-point@1.0.0 
+    │   └── number-is-nan@1.0.1 
+    ├── window-size@0.1.4 
+    └── y18n@3.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mk-electron-compile/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 15% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0773 took 3.8766s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mk-electron-compile/node_modules/mk-electron-compile/lib/index.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/mk-electron-compile/node_modules/mk-electron-compile/lib/babel-maybefill.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/mk-electron-compile/node_modules/babel-polyfill/lib/index.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/mk-electron-compile/node_modules/core-js/shim.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/mk-electron-compile/node_modules/core-js/modules/es6.symbol.js. Coverage (Term): 5% Coverage (LOC): 2%
+*- File /root/Targets/mk-electron-compile/node_modules/core-js/modules/_global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

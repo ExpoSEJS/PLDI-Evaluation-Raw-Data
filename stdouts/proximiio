@@ -1,0 +1,40 @@
+
+> bcrypt@0.8.5 install /root/Targets/proximiio/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/proximiio/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+bcrypt_lib.target.mk:96: recipe for target 'Release/obj.target/bcrypt_lib/src/bcrypt_node.o' failed
+make: Leaving directory '/root/Targets/proximiio/node_modules/bcrypt/build'
+
+> serialport@2.0.6 install /root/Targets/proximiio/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/proximiio/node_modules/serialport/build'
+  CXX(target) Release/obj.target/serialport/src/serialport.o
+serialport.target.mk:96: recipe for target 'Release/obj.target/serialport/src/serialport.o' failed
+make: Leaving directory '/root/Targets/proximiio/node_modules/serialport/build'
+Failed to execute '/root/.nvm/versions/node/v7.5.0/bin/node /root/.nvm/versions/node/v7.5.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/root/Targets/proximiio/node_modules/serialport/build/Release/node-v51-linux-x64/serialport.node --module_name=serialport --module_path=/root/Targets/proximiio/node_modules/serialport/build/Release/node-v51-linux-x64' (1)
+/root/Targets/proximiio
+└── proximiio@0.0.75 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/proximiio/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0582 took 3.6404s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'proximiio'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

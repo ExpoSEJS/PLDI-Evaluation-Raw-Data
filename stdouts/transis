@@ -1,0 +1,32 @@
+/root/Targets/transis
+└─┬ transis@0.11.1 
+  └── pluralize@3.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/transis/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","assign","call","create","RegExp","Map"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.066 took 8.9946s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/transis/node_modules/transis/dist/index.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- File /root/Targets/transis/node_modules/transis/dist/object.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/transis/node_modules/transis/dist/util.js. Coverage (Term): 11% Coverage (LOC): 17%
+*- File /root/Targets/transis/node_modules/transis/dist/array.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/transis/node_modules/transis/dist/model.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/transis/node_modules/pluralize/pluralize.js. Coverage (Term): 70% Coverage (LOC): 91%
+*- File /root/Targets/transis/node_modules/transis/dist/id_map.js. Coverage (Term): 25% Coverage (LOC): 39%
+*- File /root/Targets/transis/node_modules/transis/dist/validations.js. Coverage (Term): 16% Coverage (LOC): 29%
+*- File /root/Targets/transis/node_modules/transis/dist/parsers.js. Coverage (Term): 20% Coverage (LOC): 34%
+*- File /root/Targets/transis/node_modules/transis/dist/attrs.js. Coverage (Term): 35% Coverage (LOC): 49%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,215 @@
+/root/Targets/javelin
+└─┬ javelin@0.1.0 
+  ├── assert-plus@0.1.5 
+  └── underscore@1.5.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/javelin/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0314 took 2.1748s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program var fs = require('fs');
+var path = require('path');
+
+var assert = require('assert-plus');
+var _ = require('underscore');
+
+var parser = require('./parser').parser;
+parser.yy = require('./nodes');
+
+var Compiler = require('./compiler');
+
+// -----
+//  Fields
+// -----
+
+var exports = module.exports = {};
+var cache = {};
+var builders = {};
+
+// -----
+//  Helpers
+// -----
+
+// getBuilder()
+var getBuilder = function getBuilder(format) {
+  var builder = builders[format];
+  if ( builder == null ) {
+    throw new Error('A builder with the name "' + format + '" does not exist!');
+  }
+  else {
+    return builder;
+  }
+}; //- getBuilder()
+
+// parseSync()
+var parseSync = function parseSync(string) {
+  try {
+    return parser.parse(string);
+  }
+  catch ( error ) {
+    throw error;
+  }
+}; //- parseSync()
+
+// parse()
+var parse = function parse(string, callback) {
+  process.nextTick(function parseNextTick() {
+    var err = null;
+    var ast = null;
+
+    try {
+      ast = parser.parse(string);
+    }
+    catch ( error ) {
+      err = error;
+    }
+
+    if ( _.isFunction(callback) ) {
+      return callback(err, ast);
+    }
+  });
+}; //- parse()
+
+// compileSync()
+var compileSync = function compileSync(string, format) {
+  var builder = getBuilder(format);
+
+  var ast = parseSync(string);
+  var compiler = new Compiler(ast, builder);
+  return compiler.compile.bind(compiler);
+}; //- compileSync()
+
+// compileFileSync()
+var compileFileSync = function compileFileSync(filePath, format) {
+  try {
+    var data = fs.readFileSync(filePath, 'UTF8');
+    return compileSync(data, format);
+  }
+  catch ( error ) {
+    throw error;
+  }
+}; //- compileFileSync()
+
+// render()
+var render = function render(string, format, locals, callback) {
+  parse(string, function renderParseCallback(error, ast) {
+    if ( error != null ) {
+      if ( _.isFunction(callback) ) {
+        return callback(error);
+      }
+    }
+
+    process.nextTick(function renderNextTick() {
+      var err = null;
+      var result = null;
+
+      try {
+        var builder = getBuilder(format);
+        var compiler = new Compiler(ast, builder);
+        result = compiler.compile(locals)
+      }
+      catch ( error2 ) {
+        err = error2;
+      }
+
+      if ( _.isFunction(callback) ) {
+        return callback(err, result);
+      }
+    });
+  });
+}; //- render()
+
+// renderSync()
+var renderSync = function renderSync(string, format, locals) {
+  try {
+    var compile = compileSync(string, format);
+    return compile(locals);
+  }
+  catch ( error ) {
+    throw error;
+  }
+}; //- renderSync()
+
+// renderFile()
+var renderFile = function renderFile(file, format, locals, callback) {
+  fs.readFile(file, 'UTF8', function(error, data) {
+    if ( error != null ) {
+      if ( _.isFunction(callback) ) {
+        return callback(error);
+      }
+    }
+
+    return render(data, format, locals, callback);
+  });
+}; //- renderFile()
+
+// renderFileSync()
+var renderFileSync = function renderFileSync(file, format, locals) {
+  try {
+    var data = fs.readFileSync(file, 'UTF8');
+    return renderSync(data, format, locals);
+  }
+  catch ( error ) {
+    throw error;
+  }
+}; //- renderFileSync()
+
+// -----
+//  Exports
+// -----
+
+// registerBuilder()
+exports.registerBuilder = function registerBuilder(name, builder) {
+  builders[name] = builder;
+}; //- registerBuilder()
+
+// express()
+exports.express = function(format) {
+  return function javelinExpress(path, options, callback) {
+    if ( _.isFunction(options) ) {
+      callback = options;
+      options = {};
+    }
+
+    renderFile(path, format, options, callback);
+  };
+}; //- express()
+
+exports.parse = parse;
+exports.parseSync = parseSync;
+
+exports.compile = compileSync;
+exports.compileFile = compileFileSync;
+
+exports.render = render;
+exports.renderSync = renderSync;
+
+exports.renderFile = renderFile;
+exports.renderFileSync = renderFileSync;
+
+// Register default builders
+exports.registerBuilder('json', require('./builders/json')); at SyntaxError: Unexpected token (4:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/javelin/node_modules/javelin/index.js. Coverage (Term): 57% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,43 @@
+/root/Targets/lego-nico
+└─┬ lego-nico@0.0.2 
+  ├── commander@2.1.0 
+  ├─┬ glob@3.2.11 
+  │ ├── inherits@2.0.3 
+  │ └─┬ minimatch@0.3.0 
+  │   ├── lru-cache@2.7.3 
+  │   └── sigmund@1.0.1 
+  ├── highlight.js@7.5.0 
+  ├── lego-colorful@0.0.2 
+  ├── markit@0.1.0 
+  ├── rimraf@2.2.8 
+  ├── swig@0.14.0 
+  ├── underscore@1.5.2 
+  └── win-spawn@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/lego-nico/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0471 took 9.1097s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'colorful'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/index.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/index.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/sdk/events.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/build.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/lego-nico/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/sdk/post.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/sdk/encode.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/sdk/markdown/index.js. Coverage (Term): 36% Coverage (LOC): 50%
+*- File /root/Targets/lego-nico/node_modules/lego-nico/lib/sdk/log.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

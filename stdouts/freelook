@@ -1,0 +1,33 @@
+/root/Targets/freelook
+└── freelook@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/freelook/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","RegExp","some"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0707 took 8.2318s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/freelook/node_modules/freelook/server.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/freelook/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/freelook/node_modules/express/lib/express.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/freelook/node_modules/merge-descriptors/index.js. Coverage (Term): 31% Coverage (LOC): 44%
+*- File /root/Targets/freelook/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/freelook/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/freelook/node_modules/connect/lib/proto.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/freelook/node_modules/connect/lib/utils.js. Coverage (Term): 19% Coverage (LOC): 38%
+*- File /root/Targets/freelook/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 39%
+*- File /root/Targets/freelook/node_modules/bytes/index.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/freelook/node_modules/debug/lib/debug.js. Coverage (Term): 39% Coverage (LOC): 61%
+*- File /root/Targets/freelook/node_modules/connect/lib/patch.js. Coverage (Term): 20% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

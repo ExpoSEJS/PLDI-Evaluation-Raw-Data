@@ -1,0 +1,74 @@
+/root/Targets/nostra
+└─┬ nostra@0.0.7 
+  ├─┬ dateformat@1.0.12 
+  │ ├── get-stdin@4.0.1 
+  │ └─┬ meow@3.7.0 
+  │   ├─┬ camelcase-keys@2.1.0 
+  │   │ └── camelcase@2.1.1 
+  │   ├── decamelize@1.2.0 
+  │   ├─┬ loud-rejection@1.6.0 
+  │   │ ├─┬ currently-unhandled@0.4.1 
+  │   │ │ └── array-find-index@1.0.2 
+  │   │ └── signal-exit@3.0.2 
+  │   ├── map-obj@1.0.1 
+  │   ├── minimist@1.2.0 
+  │   ├─┬ normalize-package-data@2.4.0 
+  │   │ ├── hosted-git-info@2.5.0 
+  │   │ ├─┬ is-builtin-module@1.0.0 
+  │   │ │ └── builtin-modules@1.1.1 
+  │   │ ├── semver@5.4.1 
+  │   │ └─┬ validate-npm-package-license@3.0.1 
+  │   │   ├─┬ spdx-correct@1.0.2 
+  │   │   │ └── spdx-license-ids@1.2.2 
+  │   │   └── spdx-expression-parse@1.0.4 
+  │   ├── object-assign@4.1.1 
+  │   ├─┬ read-pkg-up@1.0.1 
+  │   │ ├─┬ find-up@1.1.2 
+  │   │ │ ├── path-exists@2.1.0 
+  │   │ │ └─┬ pinkie-promise@2.0.1 
+  │   │ │   └── pinkie@2.0.4 
+  │   │ └─┬ read-pkg@1.1.0 
+  │   │   ├─┬ load-json-file@1.1.0 
+  │   │   │ ├── graceful-fs@4.1.11 
+  │   │   │ ├─┬ parse-json@2.2.0 
+  │   │   │ │ └─┬ error-ex@1.3.1 
+  │   │   │ │   └── is-arrayish@0.2.1 
+  │   │   │ ├── pify@2.3.0 
+  │   │   │ └─┬ strip-bom@2.0.0 
+  │   │   │   └── is-utf8@0.2.1 
+  │   │   └── path-type@1.1.0 
+  │   ├─┬ redent@1.0.0 
+  │   │ ├─┬ indent-string@2.1.0 
+  │   │ │ └─┬ repeating@2.0.1 
+  │   │ │   └─┬ is-finite@1.0.2 
+  │   │ │     └── number-is-nan@1.0.1 
+  │   │ └── strip-indent@1.0.1 
+  │   └── trim-newlines@1.0.0 
+  └─┬ debug@2.6.9 
+    └── ms@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nostra/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 69% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 69% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 69% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","reduce","parseInt","charCodeAt","abs","toString","apply","bound generate","random","floor","toUpperCase","join","Date","getDate","setDate","isNaN","getDay","getMonth","getFullYear","getHours","getMinutes","getSeconds","getMilliseconds","getTimezoneOffset","setHours","round","pop"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0578 took 8.8536s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 9.0405 took 8.9629s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/nostra/node_modules/nostra/dist/index.js. Coverage (Term): 96% Coverage (LOC): 98%
+*- File /root/Targets/nostra/node_modules/nostra/dist/word_library.js. Coverage (Term): 84% Coverage (LOC): 94%
+*- File /root/Targets/nostra/node_modules/nostra/dist/nostra_utils.js. Coverage (Term): 90% Coverage (LOC): 94%
+*- File /root/Targets/nostra/node_modules/nostra/dist/sentence_mgr.js. Coverage (Term): 91% Coverage (LOC): 91%
+*- File /root/Targets/nostra/node_modules/dateformat/lib/dateformat.js. Coverage (Term): 80% Coverage (LOC): 85%
+*- File /root/Targets/nostra/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/nostra/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/nostra/node_modules/debug/src/debug.js. Coverage (Term): 47% Coverage (LOC): 51%
+*- File /root/Targets/nostra/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

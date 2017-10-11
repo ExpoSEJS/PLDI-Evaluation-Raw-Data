@@ -1,0 +1,47 @@
+/root/Targets/jsmb-cmd-transport
+└─┬ jsmb-cmd-transport@1.0.0 
+  ├─┬ clean-css@1.0.12 
+  │ └─┬ commander@1.3.2 
+  │   └── keypress@0.1.0 
+  ├─┬ cmd-util@0.3.13 
+  │ └─┬ uglify-js@2.3.6 
+  │   └── async@0.2.10 
+  ├─┬ css@1.4.4 
+  │ ├── css-parse@1.6.0 
+  │ └── css-stringify@1.3.2 
+  ├─┬ css2str@0.1.1 
+  │ └─┬ css@2.0.0 
+  │   ├─┬ source-map-resolve@0.1.4 
+  │   │ ├── atob@1.1.3 
+  │   │ ├── resolve-url@0.2.1 
+  │   │ └── source-map-url@0.2.0 
+  │   └── urix@0.1.0 
+  ├─┬ handlebars@1.0.12 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └── uglify-js@2.3.6 
+  ├── htmlclean@2.2.3 
+  ├── relative@1.2.0 
+  └─┬ uglify-js@2.2.5 
+    └─┬ source-map@0.1.43 
+      └── amdefine@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jsmb-cmd-transport/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0375 took 4.6201s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'colors'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jsmb-cmd-transport/node_modules/jsmb-cmd-transport/transport.js. Coverage (Term): 10% Coverage (LOC): 8%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

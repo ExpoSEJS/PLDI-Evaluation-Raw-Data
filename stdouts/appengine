@@ -1,0 +1,59 @@
+/root/Targets/appengine
+└─┬ appengine@0.3.0 
+  └─┬ winston@0.8.3 
+    ├── async@0.2.10 
+    ├── colors@0.6.2 
+    ├── cycle@1.0.3 
+    ├── eyes@0.1.8 
+    ├── isstream@0.1.2 
+    ├── pkginfo@0.3.1 
+    └── stack-trace@0.0.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/appengine/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 60% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","random","isArray","parse"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0209 took 28.0887s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/appengine/node_modules/appengine/lib/index.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/bootstrap/nodejs.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/deps.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/appengine/node_modules/appengine/lib/deps.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/debug/error.js. Coverage (Term): 52% Coverage (LOC): 50%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/dom/nodetype.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/string/string.js. Coverage (Term): 15% Coverage (LOC): 32%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/asserts/asserts.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/array/array.js. Coverage (Term): 12% Coverage (LOC): 25%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/object/object.js. Coverage (Term): 17% Coverage (LOC): 32%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/proto2/descriptor.js. Coverage (Term): 33% Coverage (LOC): 49%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/proto2/fielddescriptor.js. Coverage (Term): 32% Coverage (LOC): 52%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/proto2/message.js. Coverage (Term): 17% Coverage (LOC): 30%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/api/logservice/log_service.pb.js. Coverage (Term): 45% Coverage (LOC): 75%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/api/memcache/memcache_service.pb.js. Coverage (Term): 49% Coverage (LOC): 77%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/api/system/system_service.pb.js. Coverage (Term): 51% Coverage (LOC): 78%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/api/taskqueue/taskqueue_service.pb.js. Coverage (Term): 49% Coverage (LOC): 76%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/ext/remote_api/remote_api.pb.js. Coverage (Term): 54% Coverage (LOC): 77%
+*- File /root/Targets/appengine/node_modules/appengine/lib/apphosting/api/modules/modules_service.pb.js. Coverage (Term): 52% Coverage (LOC): 79%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/math/long.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File /root/Targets/appengine/node_modules/appengine/lib/closure/goog/proto2/serializer.js. Coverage (Term): 31% Coverage (LOC): 30%
+*- File /root/Targets/appengine/node_modules/appengine/lib/net/proto2/contrib/WireSerializer.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/appengine/node_modules/appengine/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 41%
+*- File /root/Targets/appengine/node_modules/winston/lib/winston.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/appengine/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
+*- File /root/Targets/appengine/node_modules/winston/lib/winston/transports.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/appengine/node_modules/winston/lib/winston/common.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/appengine/node_modules/cycle/cycle.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/appengine/node_modules/winston/lib/winston/config.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/appengine/node_modules/colors/colors.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,98 @@
+/root/Targets/rtc
+└─┬ rtc@3.4.0 
+  ├── cog@1.1.0 
+  ├── fdom@1.2.0 
+  ├─┬ kgo@2.2.1 
+  │ └── stack-slice@1.0.1 
+  ├─┬ rtc-attach@2.0.1 
+  │ └─┬ rtc-core@4.0.0 
+  │   └── detect-browser@1.12.0 
+  ├── rtc-capture@1.0.2 
+  ├─┬ rtc-quickconnect@4.5.0 
+  │ ├── mbus@2.0.0 
+  │ ├─┬ rtc-pluggable-signaller@2.1.0 
+  │ │ ├─┬ rtc-signaller@6.3.0 
+  │ │ │ ├─┬ cuid@1.3.8 
+  │ │ │ │ ├── browser-fingerprint@0.0.1 
+  │ │ │ │ ├── core-js@1.2.7 
+  │ │ │ │ └── node-fingerprint@0.0.2 
+  │ │ │ ├── formatter@0.4.1 
+  │ │ │ ├─┬ pull-pushable@1.1.4 
+  │ │ │ │ └─┬ pull-stream@2.18.3 
+  │ │ │ │   └── pull-core@1.0.0 
+  │ │ │ ├─┬ pull-stream@2.28.4 
+  │ │ │ │ └── pull-core@1.1.0 
+  │ │ │ └── rtc-signal@1.3.0 
+  │ │ └─┬ rtc-switchboard-messenger@2.0.3 
+  │ │   ├─┬ browserify-optional@1.0.1 
+  │ │   │ ├─┬ ast-transform@0.0.0 
+  │ │   │ │ ├─┬ escodegen@1.2.0 
+  │ │   │ │ │ ├── estraverse@1.5.1 
+  │ │   │ │ │ ├── esutils@1.0.0 
+  │ │   │ │ │ └─┬ source-map@0.1.43 
+  │ │   │ │ │   └── amdefine@1.0.1 
+  │ │   │ │ ├── esprima@1.0.4 
+  │ │   │ │ └── through@2.3.8 
+  │ │   │ ├── ast-types@0.7.8 
+  │ │   │ └─┬ browser-resolve@1.11.2 
+  │ │   │   └── resolve@1.1.7 
+  │ │   ├─┬ messenger-ws@3.0.1 
+  │ │   │ ├── pull-ws@2.3.0 
+  │ │   │ ├─┬ ws@1.1.4 
+  │ │   │ │ ├── options@0.0.6 
+  │ │   │ │ └── ultron@1.0.2 
+  │ │   │ └── wsurl@1.0.0 
+  │ │   ├─┬ through2@2.0.3 
+  │ │   │ ├─┬ readable-stream@2.3.3 
+  │ │   │ │ ├── core-util-is@1.0.2 
+  │ │   │ │ ├── inherits@2.0.3 
+  │ │   │ │ ├── isarray@1.0.0 
+  │ │   │ │ ├── process-nextick-args@1.0.7 
+  │ │   │ │ ├── safe-buffer@5.1.1 
+  │ │   │ │ ├── string_decoder@1.0.3 
+  │ │   │ │ └── util-deprecate@1.0.2 
+  │ │   │ └── xtend@4.0.1 
+  │ │   └─┬ viralify@0.4.2 
+  │ │     ├── ansicolors@0.3.2 
+  │ │     ├─┬ glob@3.2.11 
+  │ │     │ └─┬ minimatch@0.3.0 
+  │ │     │   ├── lru-cache@2.7.3 
+  │ │     │   └── sigmund@1.0.1 
+  │ │     ├── minimist@0.0.5 
+  │ │     └── runnel@0.5.3 
+  │ └─┬ rtc-tools@5.4.1 
+  │   └─┬ rtc-taskqueue@2.10.0 
+  │     ├── es6-promise@3.3.1 
+  │     ├── priorityqueuejs@1.0.0 
+  │     ├── rtc-sdp@1.3.1 
+  │     ├── rtc-sdpclean@1.0.1 
+  │     └─┬ rtc-validator@1.2.2 
+  │       └── reu@1.1.1 
+  └── whisk@1.3.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/rtc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0586 took 4.802s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: navigator is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/rtc/node_modules/rtc/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/rtc/node_modules/cog/defaults.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/rtc/node_modules/cog/extend.js. Coverage (Term): 31% Coverage (LOC): 36%
+*- File /root/Targets/rtc/node_modules/rtc-attach/index.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/rtc/node_modules/rtc-core/plugin.js. Coverage (Term): 30% Coverage (LOC): 57%
+*- File /root/Targets/rtc/node_modules/rtc-core/detect.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/rtc/node_modules/detect-browser/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/rtc/node_modules/rtc-capture/index.js. Coverage (Term): 17% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

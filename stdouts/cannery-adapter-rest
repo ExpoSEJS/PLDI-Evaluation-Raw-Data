@@ -1,0 +1,144 @@
+/root/Targets/cannery-adapter-rest
+└─┬ cannery-adapter-rest@2.0.0 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  └─┬ then-request@2.2.0 
+    ├── caseless@0.11.0 
+    ├─┬ concat-stream@1.6.0 
+    │ ├── inherits@2.0.3 
+    │ ├─┬ readable-stream@2.3.3 
+    │ │ ├── core-util-is@1.0.2 
+    │ │ ├── isarray@1.0.0 
+    │ │ ├── process-nextick-args@1.0.7 
+    │ │ ├── safe-buffer@5.1.1 
+    │ │ ├── string_decoder@1.0.3 
+    │ │ └── util-deprecate@1.0.2 
+    │ └── typedarray@0.0.6 
+    ├── http-basic@2.5.1 
+    ├── http-response-object@1.1.0 
+    ├─┬ promise@7.3.1 
+    │ └── asap@2.0.6 
+    └── qs@6.5.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cannery-adapter-rest/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0622 took 4.673s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program 'use strict';
+
+var assert = require('assert');
+var parseUrl = require('url').parse;
+var Promise = require('promise');
+var concat = require('concat-stream');
+var Response = require('http-response-object');
+var caseless = require('caseless');
+var handleQs = require('./lib/handle-qs.js');
+
+module.exports = doRequest;
+module.exports._request = require('http-basic');
+function doRequest(method, url, options, callback) {
+  var result = new Promise(function (resolve, reject) {
+    // check types of arguments
+
+    if (typeof method !== 'string') {
+      throw new TypeError('The method must be a string.');
+    }
+    if (typeof url !== 'string') {
+      throw new TypeError('The URL/path must be a string.');
+    }
+    if (typeof options === 'function') {
+      callback = options;
+      options = {};
+    }
+    if (options === null || options === undefined) {
+      options = {};
+    }
+    if (typeof options !== 'object') {
+      throw new TypeError('Options must be an object (or null).');
+    }
+    if (typeof callback !== 'function') {
+      callback = undefined;
+    }
+
+    method = method.toUpperCase();
+    options.headers = options.headers || {};
+    var headers = caseless(options.headers);
+
+    // handle query string
+    if (options.qs) {
+      url = handleQs(url, options.qs);
+    }
+
+    // handle json body
+    if (options.json) {
+      options.body = JSON.stringify(options.json);
+      headers.set('Content-Type', 'application/json');
+    }
+
+    var body = options.body ? options.body : new Buffer(0);
+    if (typeof body === 'string') body = new Buffer(body);
+    assert(Buffer.isBuffer(body), 'body should be a Buffer or a String');
+    if (!headers.has('Content-Length')) {
+      headers.set('Content-Length', body.length);
+    }
+
+    var req = module.exports._request(method, url, {
+      allowRedirectHeaders: options.allowRedirectHeaders,
+      headers: options.headers,
+      followRedirects: options.followRedirects !== false,
+      maxRedirects: options.maxRedirects,
+      gzip: options.gzip !== false,
+      cache: options.cache,
+      timeout: options.timeout,
+      socketTimeout: options.socketTimeout,
+      retry: options.retry,
+      retryDelay: options.retryDelay,
+      maxRetries: options.maxRetries
+    }, function (err, res) {
+      if (err) return reject(err);
+      res.body.on('error', reject);
+      res.body.pipe(concat(function (body) {
+        resolve(
+          new Response(
+            res.statusCode,
+            res.headers, Array.isArray(body) ? new Buffer(0) : body,
+            result.url
+          )
+        );
+      }));
+    });
+
+    if (req) {
+      req.end(body);
+    }
+  });
+  result.getBody = function (encoding) {
+    return result.then(function (res) { return res.getBody(encoding); });
+  };
+  return result.nodeify(callback);
+}
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cannery-adapter-rest/node_modules/cannery-adapter-rest/lib/index.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

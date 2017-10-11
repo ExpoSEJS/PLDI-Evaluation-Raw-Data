@@ -1,0 +1,126 @@
+/root/Targets/cp-framework
+└── cp-framework@1.0.23 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cp-framework/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.045 took 4.6466s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (29:6) on program var React = require('react');
+
+var FlatButton = require('../Button/flat-button');
+var Classable = require('../../mixins/classable');
+
+var ActionButtons = React.createClass({
+
+  mixins: [Classable],
+
+  propTypes: {
+    actions: React.PropTypes.array.isRequired,
+    actionFocus: React.PropTypes.string,
+    onDismiss: React.PropTypes.func
+  },
+
+  getInitialState: function() {
+    return {
+      actions: []
+    };
+  },
+
+  render: function() {
+
+    var {
+      className,
+      actions,
+      actionFocus,
+      onDismiss,
+      ...other
+    } = this.props;
+
+    var containerProps = {
+      className: this.getClasses('mui-action-buttons')
+    };
+
+    var actionObjects = this._getActionObjects();
+
+    return (
+      <div {...containerProps} {...other}>
+        {actionObjects}
+      </div>
+    );
+  },
+
+  _getActionObjects: function() {
+    var actionObjects = [];
+
+    var actions = this.props.actions;
+    if (actions.length) {
+      for (var i = 0, len = actions.length; i < len; i++) {
+        var currentAction = actions[i];
+
+        // if the current action isn't a react object, create one
+        if (!React.isValidElement(currentAction)) {
+          currentAction = this._getAction(currentAction, i);
+        }
+
+        actionObjects.push(currentAction);
+      }
+    }
+
+    return actionObjects;
+  },
+
+  _getAction: function(actionJSON, key, prefix) {
+
+    var props = {
+      key: key,
+      secondary: true,
+      className: 'mui-action-buttons-action',
+      onTouchTap: actionJSON.onTouchTap ? actionJSON.onTouchTap : this._onDismiss,
+      label: actionJSON.text
+    };
+
+    // var ref = actionJSON.ref ? actionJSON.ref : '';
+    if (actionJSON.ref) {
+      props.ref = actionJSON.ref;
+      props.keyboardFocused = actionJSON.ref === this.props.actionFocus;
+    }
+
+    return (
+      <FlatButton target={actionJSON.ref} {...props} />
+    );
+  },
+
+  _onDismiss: function () {
+    if ( this.props.onDismiss ) {
+      this.props.onDismiss();
+    }
+  }
+
+});
+
+module.exports = ActionButtons;
+ at SyntaxError: Unexpected token (29:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2189:12)
+    at Parser.pp$3.parsePropertyName (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2052:101)
+    at Parser.pp$3.parseObj (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1988:14)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1414:19)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cp-framework/node_modules/cp-framework/index.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

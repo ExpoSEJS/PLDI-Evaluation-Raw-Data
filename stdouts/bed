@@ -1,0 +1,42 @@
+/root/Targets/bed
+└─┬ bed@1.0.4 
+  ├── adiff@0.2.13 
+  ├── element-splice@1.0.1 
+  ├─┬ hyperscript@1.2.3 
+  │ ├── browser-split@0.0.0 
+  │ ├─┬ class-list@0.1.1 
+  │ │ └── indexof@0.0.1 
+  │ ├─┬ data-set@0.2.2 
+  │ │ ├─┬ individual@0.1.1 
+  │ │ │ └── global@0.1.5 
+  │ │ └── weakmap@0.0.6 
+  │ └── html-element@1.2.8 
+  └── js-tokenizer@1.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bed/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","toString","join","RegExp","eval"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0417 took 6.5409s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/bed/node_modules/bed/index.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/bed/node_modules/js-tokenizer/index.js. Coverage (Term): 58% Coverage (LOC): 64%
+*- File /root/Targets/bed/node_modules/hyperscript/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/bed/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/bed/node_modules/class-list/index.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/bed/node_modules/indexof/index.js. Coverage (Term): 33% Coverage (LOC): 42%
+*- File /root/Targets/bed/node_modules/data-set/index.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/bed/node_modules/weakmap/weakmap.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File evalIndirect. Coverage (Term): 25% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

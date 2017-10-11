@@ -1,0 +1,193 @@
+/root/Targets/ipld-dag-pb
+└─┬ ipld-dag-pb@0.11.2 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ bs58@4.0.1 
+  │ └── base-x@3.0.2 
+  ├── buffer-loader@0.0.1 
+  ├─┬ cids@0.5.1 
+  │ ├─┬ multibase@0.3.4 
+  │ │ └── base-x@3.0.0 
+  │ └── multicodec@0.1.9 
+  ├─┬ ipfs-block@0.6.0 
+  │ └── cids@0.4.2 
+  ├── is-ipfs@0.3.2 
+  ├─┬ multihashes@0.4.9 
+  │ └── varint@5.0.0 
+  ├─┬ multihashing-async@0.4.6 
+  │ ├── blakejs@1.1.0 
+  │ ├── js-sha3@0.6.1 
+  │ ├── murmurhash3js@3.0.1 
+  │ └─┬ nodeify@1.0.1 
+  │   ├── is-promise@1.0.1 
+  │   └── promise@1.3.0 
+  ├─┬ protons@1.0.0 
+  │ ├─┬ brfs@1.4.3 
+  │ │ ├─┬ quote-stream@1.0.2 
+  │ │ │ ├── buffer-equal@0.0.1 
+  │ │ │ └── minimist@1.2.0 
+  │ │ ├─┬ resolve@1.4.0 
+  │ │ │ └── path-parse@1.0.5 
+  │ │ ├─┬ static-module@1.5.0 
+  │ │ │ ├─┬ concat-stream@1.6.0 
+  │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ ├─┬ duplexer2@0.0.2 
+  │ │ │ │ └─┬ readable-stream@1.1.14 
+  │ │ │ │   ├── isarray@0.0.1 
+  │ │ │ │   └── string_decoder@0.10.31 
+  │ │ │ ├─┬ escodegen@1.3.3 
+  │ │ │ │ ├── esprima@1.1.1 
+  │ │ │ │ ├── estraverse@1.5.1 
+  │ │ │ │ ├── esutils@1.0.0 
+  │ │ │ │ └─┬ source-map@0.1.43 
+  │ │ │ │   └── amdefine@1.0.1 
+  │ │ │ ├─┬ falafel@2.1.0 
+  │ │ │ │ ├── acorn@5.1.2 
+  │ │ │ │ ├── foreach@2.0.5 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── object-keys@1.0.11 
+  │ │ │ ├─┬ has@1.0.1 
+  │ │ │ │ └── function-bind@1.1.1 
+  │ │ │ ├── object-inspect@0.4.0 
+  │ │ │ ├─┬ quote-stream@0.0.0 
+  │ │ │ │ └── minimist@0.0.8 
+  │ │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ ├── shallow-copy@0.0.1 
+  │ │ │ ├─┬ static-eval@0.2.4 
+  │ │ │ │ └─┬ escodegen@0.0.28 
+  │ │ │ │   ├── esprima@1.0.4 
+  │ │ │ │   └── estraverse@1.3.2 
+  │ │ │ └─┬ through2@0.4.2 
+  │ │ │   └─┬ xtend@2.1.2 
+  │ │ │     └── object-keys@0.4.0 
+  │ │ └─┬ through2@2.0.3 
+  │ │   ├─┬ readable-stream@2.3.3 
+  │ │   │ ├── isarray@1.0.0 
+  │ │   │ ├── process-nextick-args@1.0.7 
+  │ │   │ ├── string_decoder@1.0.3 
+  │ │   │ └── util-deprecate@1.0.2 
+  │ │   └── xtend@4.0.1 
+  │ ├── protocol-buffers-schema@3.3.2 
+  │ ├── safe-buffer@5.1.1 
+  │ └── signed-varint@2.0.1 
+  ├── pull-stream@3.6.1 
+  ├── pull-traverse@1.0.3 
+  └── stable@0.1.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ipld-dag-pb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0424 took 3.1771s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:6) on program 'use strict'
+
+const mh = require('multihashes')
+const assert = require('assert')
+
+class DAGNode {
+  constructor (data, links, serialized, multihash) {
+    assert(serialized, 'DAGNode needs its serialized format')
+    assert(multihash, 'DAGNode needs its multihash')
+
+    if (typeof multihash === 'string') {
+      multihash = mh.fromB58String(multihash)
+    }
+
+    this._data = data || Buffer.alloc(0)
+    this._links = links || []
+    this._serialized = serialized
+    this._multihash = multihash
+
+    this._size = this.links.reduce((sum, l) => sum + l.size, this.serialized.length)
+
+    this._json = {
+      data: this.data,
+      links: this.links.map((l) => l.toJSON()),
+      multihash: mh.toB58String(this.multihash),
+      size: this.size
+    }
+  }
+
+  toJSON () {
+    return this._json
+  }
+
+  toString () {
+    const mhStr = mh.toB58String(this.multihash)
+    return `DAGNode <${mhStr} - data: "${this.data.toString()}", links: ${this.links.length}, size: ${this.size}>`
+  }
+
+  get data () {
+    return this._data
+  }
+
+  set data (data) {
+    throw new Error("Can't set property: 'data' is immutable")
+  }
+
+  get links () {
+    return this._links
+  }
+
+  set links (links) {
+    throw new Error("Can't set property: 'links' is immutable")
+  }
+
+  get serialized () {
+    return this._serialized
+  }
+
+  set serialized (serialized) {
+    throw new Error("Can't set property: 'serialized' is immutable")
+  }
+
+  get size () {
+    return this._size
+  }
+
+  set size (size) {
+    throw new Error("Can't set property: 'size' is immutable")
+  }
+
+  get multihash () {
+    return this._multihash
+  }
+
+  set multihash (multihash) {
+    throw new Error("Can't set property: 'multihash' is immutable")
+  }
+}
+
+exports = module.exports = DAGNode
+exports.create = require('./create')
+exports.clone = require('./clone')
+exports.addLink = require('./addLink')
+exports.rmLink = require('./rmLink')
+ at SyntaxError: Unexpected token (4:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ipld-dag-pb/node_modules/ipld-dag-pb/src/index.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

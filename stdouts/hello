@@ -1,0 +1,493 @@
+/root/Targets/hello
+└─┬ hello@0.3.2 
+  ├── co@4.6.0 
+  ├─┬ fs-extra@4.0.2 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@4.0.0 
+  │ └── universalify@0.1.1 
+  ├── UNMET PEER DEPENDENCY glob@*
+  ├─┬ glob-promise@3.2.0 
+  │ ├─┬ codeclimate-test-reporter@0.5.0 
+  │ │ ├── async@1.5.2 
+  │ │ ├── lcov-parse@0.0.10 
+  │ │ └─┬ request@2.79.0 
+  │ │   ├── aws-sign2@0.6.0 
+  │ │   ├── aws4@1.6.0 
+  │ │   ├── caseless@0.11.0 
+  │ │   ├─┬ combined-stream@1.0.5 
+  │ │   │ └── delayed-stream@1.0.0 
+  │ │   ├── forever-agent@0.6.1 
+  │ │   ├─┬ form-data@2.1.4 
+  │ │   │ └── asynckit@0.4.0 
+  │ │   ├─┬ har-validator@2.0.6 
+  │ │   │ └─┬ is-my-json-valid@2.16.1 
+  │ │   │   ├── generate-function@2.0.0 
+  │ │   │   ├─┬ generate-object-property@1.2.0 
+  │ │   │   │ └── is-property@1.0.2 
+  │ │   │   ├── jsonpointer@4.0.1 
+  │ │   │   └── xtend@4.0.1 
+  │ │   ├─┬ hawk@3.1.3 
+  │ │   │ ├── boom@2.10.1 
+  │ │   │ ├── cryptiles@2.0.5 
+  │ │   │ ├── hoek@2.16.3 
+  │ │   │ └── sntp@1.0.9 
+  │ │   ├─┬ http-signature@1.1.1 
+  │ │   │ ├── assert-plus@0.2.0 
+  │ │   │ ├─┬ jsprim@1.4.1 
+  │ │   │ │ ├── assert-plus@1.0.0 
+  │ │   │ │ ├── extsprintf@1.3.0 
+  │ │   │ │ ├── json-schema@0.2.3 
+  │ │   │ │ └─┬ verror@1.10.0 
+  │ │   │ │   └── assert-plus@1.0.0 
+  │ │   │ └─┬ sshpk@1.13.1 
+  │ │   │   ├── asn1@0.2.3 
+  │ │   │   ├── assert-plus@1.0.0 
+  │ │   │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   │   ├─┬ dashdash@1.14.1 
+  │ │   │   │ └── assert-plus@1.0.0 
+  │ │   │   ├── ecc-jsbn@0.1.1 
+  │ │   │   ├─┬ getpass@0.1.7 
+  │ │   │   │ └── assert-plus@1.0.0 
+  │ │   │   ├── jsbn@0.1.1 
+  │ │   │   └── tweetnacl@0.14.5 
+  │ │   ├── is-typedarray@1.0.0 
+  │ │   ├── isstream@0.1.2 
+  │ │   ├── oauth-sign@0.8.2 
+  │ │   ├── qs@6.3.2 
+  │ │   ├── stringstream@0.0.5 
+  │ │   ├─┬ tough-cookie@2.3.3 
+  │ │   │ └── punycode@1.4.1 
+  │ │   └── tunnel-agent@0.4.3 
+  │ └─┬ semantic-release@8.0.3 
+  │   ├─┬ @semantic-release/commit-analyzer@3.0.4 
+  │   │ ├── @semantic-release/error@2.0.0 
+  │   │ ├─┬ conventional-changelog-angular@1.5.0 
+  │   │ │ ├─┬ compare-func@1.3.2 
+  │   │ │ │ ├── array-ify@1.0.0 
+  │   │ │ │ └─┬ dot-prop@3.0.0 
+  │   │ │ │   └── is-obj@1.0.1 
+  │   │ │ └── q@1.5.0 
+  │   │ ├─┬ conventional-commits-parser@2.0.0 
+  │   │ │ ├─┬ is-text-path@1.0.1 
+  │   │ │ │ └── text-extensions@1.6.0 
+  │   │ │ ├─┬ JSONStream@1.3.1 
+  │   │ │ │ ├── jsonparse@1.3.1 
+  │   │ │ │ └── through@2.3.8 
+  │   │ │ ├── split2@2.2.0 
+  │   │ │ ├── through2@2.0.3 
+  │   │ │ └── trim-off-newlines@1.0.1 
+  │   │ ├─┬ import-cwd@2.1.0 
+  │   │ │ └─┬ import-from@2.1.0 
+  │   │ │   └── resolve-from@3.0.0 
+  │   │ └── pify@3.0.0 
+  │   ├─┬ @semantic-release/condition-travis@6.0.3 
+  │   │ ├── @semantic-release/error@2.0.0 
+  │   │ └─┬ travis-deploy-once@2.1.0 
+  │   │   ├─┬ axios@0.16.2 
+  │   │   │ ├── follow-redirects@1.2.4 
+  │   │   │ └── is-buffer@1.1.5 
+  │   │   ├─┬ chalk@2.1.0 
+  │   │   │ ├─┬ ansi-styles@3.2.0 
+  │   │   │ │ └─┬ color-convert@1.9.0 
+  │   │   │ │   └── color-name@1.1.3 
+  │   │   │ └─┬ supports-color@4.4.0 
+  │   │   │   └── has-flag@2.0.0 
+  │   │   ├── p-retry@1.0.0 
+  │   │   └─┬ travis-ci@2.1.1 
+  │   │     ├── github@0.1.16 
+  │   │     ├── lodash@1.3.1 
+  │   │     ├─┬ request@2.74.0 
+  │   │     │ ├─┬ bl@1.1.2 
+  │   │     │ │ └─┬ readable-stream@2.0.6 
+  │   │     │ │   └── string_decoder@0.10.31 
+  │   │     │ ├─┬ form-data@1.0.1 
+  │   │     │ │ └─┬ async@2.5.0 
+  │   │     │ │   └── lodash@4.17.4 
+  │   │     │ ├── node-uuid@1.4.8 
+  │   │     │ └── qs@6.2.3 
+  │   │     └── underscore.string@2.2.1 
+  │   ├── @semantic-release/error@1.0.0 
+  │   ├─┬ @semantic-release/last-release-npm@2.0.1 
+  │   │ ├── @semantic-release/error@2.0.0 
+  │   │ └─┬ npm-registry-client@8.5.0 
+  │   │   ├─┬ concat-stream@1.6.0 
+  │   │   │ └── typedarray@0.0.6 
+  │   │   ├─┬ npm-package-arg@5.1.2 
+  │   │   │ └─┬ validate-npm-package-name@3.0.0 
+  │   │   │   └── builtins@1.0.3 
+  │   │   ├── once@1.4.0 
+  │   │   ├── retry@0.10.1 
+  │   │   ├── slide@1.1.6 
+  │   │   └── ssri@4.1.6 
+  │   ├─┬ @semantic-release/release-notes-generator@4.0.4 
+  │   │ ├── @semantic-release/error@2.0.0 
+  │   │ └─┬ conventional-changelog-core@1.9.1 
+  │   │   ├─┬ conventional-changelog-writer@2.0.1 
+  │   │   │ ├─┬ conventional-commits-filter@1.0.0 
+  │   │   │ │ ├── is-subset@0.1.1 
+  │   │   │ │ └── modify-values@1.0.0 
+  │   │   │ ├─┬ handlebars@4.0.10 
+  │   │   │ │ ├─┬ optimist@0.6.1 
+  │   │   │ │ │ ├── minimist@0.0.10 
+  │   │   │ │ │ └── wordwrap@0.0.3 
+  │   │   │ │ ├─┬ source-map@0.4.4 
+  │   │   │ │ │ └── amdefine@1.0.1 
+  │   │   │ │ └─┬ uglify-js@2.8.29 
+  │   │   │ │   ├── source-map@0.5.7 
+  │   │   │ │   ├── uglify-to-browserify@1.0.2 
+  │   │   │ │   └─┬ yargs@3.10.0 
+  │   │   │ │     ├── camelcase@1.2.1 
+  │   │   │ │     ├─┬ cliui@2.1.0 
+  │   │   │ │     │ ├─┬ center-align@0.1.3 
+  │   │   │ │     │ │ ├─┬ align-text@0.1.4 
+  │   │   │ │     │ │ │ └── longest@1.0.1 
+  │   │   │ │     │ │ └── lazy-cache@1.0.4 
+  │   │   │ │     │ ├── right-align@0.1.3 
+  │   │   │ │     │ └── wordwrap@0.0.2 
+  │   │   │ │     └── window-size@0.1.0 
+  │   │   │ └── split@1.0.1 
+  │   │   ├── dateformat@1.0.12 
+  │   │   ├── get-pkg-repo@1.4.0 
+  │   │   ├─┬ git-raw-commits@1.2.0 
+  │   │   │ ├── dargs@4.1.0 
+  │   │   │ └─┬ lodash.template@4.4.0 
+  │   │   │   ├── lodash._reinterpolate@3.0.0 
+  │   │   │   └── lodash.templatesettings@4.1.0 
+  │   │   ├─┬ git-remote-origin-url@2.0.0 
+  │   │   │ ├── gitconfiglocal@1.0.0 
+  │   │   │ └── pify@2.3.0 
+  │   │   └── git-semver-tags@1.2.1 
+  │   ├─┬ git-head@1.20.1 
+  │   │ └─┬ git-refs@1.1.3 
+  │   │   ├─┬ path-object@2.3.0 
+  │   │   │ └─┬ lodash.assign@3.2.0 
+  │   │   │   ├─┬ lodash._baseassign@3.2.0 
+  │   │   │   │ └── lodash._basecopy@3.0.1 
+  │   │   │   ├─┬ lodash._createassigner@3.1.1 
+  │   │   │   │ ├── lodash._bindcallback@3.0.1 
+  │   │   │   │ ├── lodash._isiterateecall@3.0.9 
+  │   │   │   │ └── lodash.restparam@3.6.1 
+  │   │   │   └─┬ lodash.keys@3.1.2 
+  │   │   │     ├── lodash._getnative@3.9.1 
+  │   │   │     ├── lodash.isarguments@3.1.0 
+  │   │   │     └── lodash.isarray@3.0.4 
+  │   │   ├── slash@1.0.0 
+  │   │   └─┬ walk@2.3.9 
+  │   │     └── foreachasync@3.0.0 
+  │   ├─┬ github@8.2.1 
+  │   │ ├─┬ follow-redirects@0.0.7 
+  │   │ │ └── stream-consume@0.1.0 
+  │   │ ├─┬ https-proxy-agent@1.0.0 
+  │   │ │ └─┬ agent-base@2.1.1 
+  │   │ │   └── semver@5.0.3 
+  │   │ ├── mime@1.4.1 
+  │   │ └── netrc@0.1.4 
+  │   ├── nerf-dart@1.0.0 
+  │   ├─┬ nopt@4.0.1 
+  │   │ ├── abbrev@1.1.1 
+  │   │ └─┬ osenv@0.1.4 
+  │   │   ├── os-homedir@1.0.2 
+  │   │   └── os-tmpdir@1.0.2 
+  │   ├─┬ npmconf@2.1.2 
+  │   │ ├─┬ config-chain@1.1.11 
+  │   │ │ └── proto-list@1.2.4 
+  │   │ ├── ini@1.3.4 
+  │   │ ├── nopt@3.0.6 
+  │   │ ├─┬ once@1.3.3 
+  │   │ │ └── wrappy@1.0.2 
+  │   │ ├── semver@4.3.6 
+  │   │ └── uid-number@0.0.5 
+  │   ├─┬ npmlog@4.1.2 
+  │   │ ├── are-we-there-yet@1.1.4 
+  │   │ ├── console-control-strings@1.1.0 
+  │   │ ├─┬ gauge@2.7.4 
+  │   │ │ ├── aproba@1.2.0 
+  │   │ │ ├── has-unicode@2.0.1 
+  │   │ │ ├─┬ string-width@1.0.2 
+  │   │ │ │ ├── code-point-at@1.1.0 
+  │   │ │ │ └── is-fullwidth-code-point@1.0.0 
+  │   │ │ └── wide-align@1.1.2 
+  │   │ └── set-blocking@2.0.0 
+  │   ├── parse-github-repo-url@1.4.1 
+  │   ├── require-relative@0.8.7 
+  │   ├─┬ run-auto@2.0.0 
+  │   │ └─┬ dezalgo@1.0.3 
+  │   │   └── asap@2.0.6 
+  │   ├── run-series@1.1.4 
+  │   └── semver@5.4.1 
+  ├─┬ hello-config@1.0.1 
+  │ ├── dotenv@4.0.0 
+  │ ├── lodash.get@4.4.2 
+  │ └── lodash.set@4.3.2 
+  ├─┬ hello-index@1.0.1 
+  │ ├── lodash.camelcase@4.3.0 
+  │ ├── lodash.flatten@4.4.0 
+  │ └── lodash.upperfirst@4.3.1 
+  ├── inflection@1.12.0 
+  ├── kcors@2.2.1 
+  ├─┬ knex@0.13.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├── bluebird@3.5.0 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ ├─┬ commander@2.9.0 
+  │ │ └── graceful-readlink@1.0.1 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── generic-pool@2.5.4 
+  │ ├── inherits@2.0.3 
+  │ ├── interpret@0.6.6 
+  │ ├─┬ liftoff@2.2.5 
+  │ │ ├── extend@3.0.1 
+  │ │ ├─┬ findup-sync@0.4.3 
+  │ │ │ ├─┬ detect-file@0.1.0 
+  │ │ │ │ └── fs-exists-sync@0.1.0 
+  │ │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ │ └── is-extglob@1.0.0 
+  │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ ├── extglob@0.3.2 
+  │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ ├── kind-of@3.2.2 
+  │ │ │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ │ │ └── glob-parent@2.0.0 
+  │ │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ └─┬ resolve-dir@0.1.1 
+  │ │ │   ├── expand-tilde@1.2.2 
+  │ │ │   └─┬ global-modules@0.2.3 
+  │ │ │     ├─┬ global-prefix@0.1.5 
+  │ │ │     │ ├─┬ homedir-polyfill@1.0.1 
+  │ │ │     │ │ └── parse-passwd@1.0.0 
+  │ │ │     │ └─┬ which@1.3.0 
+  │ │ │     │   └── isexe@2.0.0 
+  │ │ │     └── is-windows@0.2.0 
+  │ │ ├── flagged-respawn@0.3.2 
+  │ │ ├── rechoir@0.6.2 
+  │ │ └─┬ resolve@1.4.0 
+  │ │   └── path-parse@1.0.5 
+  │ ├── minimist@1.1.3 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── pg-connection-string@0.1.3 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ tildify@1.0.0 
+  │ │ └── user-home@1.1.1 
+  │ └── v8flags@2.1.1 
+  ├─┬ koa@2.3.0 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ cookies@0.7.1 
+  │ │ └── keygrip@1.0.2 
+  │ ├── delegates@1.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── destroy@1.0.4 
+  │ ├── error-inject@1.0.0 
+  │ ├── escape-html@1.0.3 
+  │ ├── fresh@0.5.2 
+  │ ├─┬ http-assert@1.3.0 
+  │ │ └── deep-equal@1.0.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── is-generator-function@1.0.6 
+  │ ├── koa-compose@4.0.0 
+  │ ├─┬ koa-convert@1.2.0 
+  │ │ └── koa-compose@3.2.1 
+  │ ├── koa-is-json@1.0.0 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── only@0.0.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ └── vary@1.1.2 
+  ├─┬ koa-body@2.4.0 
+  │ ├─┬ co-body@5.1.1 
+  │ │ ├── inflation@2.0.0 
+  │ │ ├── qs@6.5.1 
+  │ │ └─┬ raw-body@2.3.2 
+  │ │   ├── bytes@3.0.0 
+  │ │   ├── iconv-lite@0.4.19 
+  │ │   └── unpipe@1.0.0 
+  │ └── formidable@1.1.1 
+  ├─┬ koa-compress@2.0.0 
+  │ ├── bytes@2.5.0 
+  │ └── compressible@2.0.11 
+  ├── koa-conditional-get@2.0.0 
+  ├─┬ koa-ejs@4.1.0 
+  │ ├── ejs@2.5.7 
+  │ └─┬ mz@2.7.0 
+  │   ├── any-promise@1.3.0 
+  │   └─┬ thenify-all@1.6.0 
+  │     └── thenify@3.3.0 
+  ├─┬ koa-etag@3.0.0 
+  │ └── etag@1.8.1 
+  ├── koa-favicon@2.0.0 
+  ├─┬ koa-helmet@3.2.0 
+  │ └─┬ helmet@3.8.2 
+  │   ├─┬ connect@3.6.5 
+  │   │ ├─┬ finalhandler@1.0.6 
+  │   │ │ └── encodeurl@1.0.1 
+  │   │ └── utils-merge@1.0.1 
+  │   ├── dns-prefetch-control@0.1.0 
+  │   ├── dont-sniff-mimetype@1.0.0 
+  │   ├── expect-ct@0.1.0 
+  │   ├── frameguard@3.0.0 
+  │   ├─┬ helmet-csp@2.5.1 
+  │   │ ├── camelize@1.0.0 
+  │   │ ├─┬ content-security-policy-builder@1.1.0 
+  │   │ │ └── dashify@0.2.2 
+  │   │ ├── dasherize@2.0.0 
+  │   │ ├── lodash.reduce@4.6.0 
+  │   │ └── platform@1.3.4 
+  │   ├── hide-powered-by@1.0.0 
+  │   ├── hpkp@2.0.0 
+  │   ├── hsts@2.1.0 
+  │   ├── ienoopen@1.0.0 
+  │   ├── nocache@2.0.0 
+  │   ├── referrer-policy@1.1.0 
+  │   └── x-xss-protection@1.0.0 
+  ├─┬ koa-i18n@2.1.0 
+  │ └─┬ i18n-2@0.7.1 
+  │   └── sprintf@0.1.5 
+  ├─┬ koa-json@2.0.2 
+  │ └─┬ streaming-json-stringify@3.1.0 
+  │   ├── json-stringify-safe@5.0.1 
+  │   └─┬ readable-stream@2.3.3 
+  │     ├── isarray@1.0.0 
+  │     ├── process-nextick-args@1.0.7 
+  │     ├── string_decoder@1.0.3 
+  │     └── util-deprecate@1.0.2 
+  ├── koa-locale@1.3.0 
+  ├─┬ koa-morgan@1.0.1 
+  │ └─┬ morgan@1.9.0 
+  │   ├── basic-auth@2.0.0 
+  │   └── on-headers@1.0.1 
+  ├── koa-response-time@2.0.0 
+  ├─┬ koa-router@7.2.1 
+  │ ├── koa-compose@3.2.1 
+  │ ├── methods@1.1.2 
+  │ └─┬ path-to-regexp@1.7.0 
+  │   └── isarray@0.0.1 
+  ├─┬ koa-static@4.0.1 
+  │ └─┬ koa-send@4.1.1 
+  │   └─┬ resolve-path@1.3.3 
+  │     ├─┬ http-errors@1.5.1 
+  │     │ └── setprototypeof@1.0.2 
+  │     └── path-is-absolute@1.0.1 
+  ├── lodash@4.17.4 
+  ├── lodash.defaultsdeep@4.6.0 
+  ├── lodash.merge@4.6.0 
+  ├─┬ meow@3.7.0 
+  │ ├─┬ camelcase-keys@2.1.0 
+  │ │ └── camelcase@2.1.1 
+  │ ├── decamelize@1.2.0 
+  │ ├─┬ loud-rejection@1.6.0 
+  │ │ ├─┬ currently-unhandled@0.4.1 
+  │ │ │ └── array-find-index@1.0.2 
+  │ │ └── signal-exit@3.0.2 
+  │ ├── map-obj@1.0.1 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ normalize-package-data@2.4.0 
+  │ │ ├── hosted-git-info@2.5.0 
+  │ │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ └── builtin-modules@1.1.1 
+  │ │ └─┬ validate-npm-package-license@3.0.1 
+  │ │   ├─┬ spdx-correct@1.0.2 
+  │ │   │ └── spdx-license-ids@1.2.2 
+  │ │   └── spdx-expression-parse@1.0.4 
+  │ ├── object-assign@4.1.1 
+  │ ├─┬ read-pkg-up@1.0.1 
+  │ │ ├─┬ find-up@1.1.2 
+  │ │ │ ├── path-exists@2.1.0 
+  │ │ │ └─┬ pinkie-promise@2.0.1 
+  │ │ │   └── pinkie@2.0.4 
+  │ │ └─┬ read-pkg@1.1.0 
+  │ │   ├─┬ load-json-file@1.1.0 
+  │ │   │ ├─┬ parse-json@2.2.0 
+  │ │   │ │ └─┬ error-ex@1.3.1 
+  │ │   │ │   └── is-arrayish@0.2.1 
+  │ │   │ ├── pify@2.3.0 
+  │ │   │ └─┬ strip-bom@2.0.0 
+  │ │   │   └── is-utf8@0.2.1 
+  │ │   └─┬ path-type@1.1.0 
+  │ │     └── pify@2.3.0 
+  │ ├─┬ redent@1.0.0 
+  │ │ ├─┬ indent-string@2.1.0 
+  │ │ │ └─┬ repeating@2.0.1 
+  │ │ │   └─┬ is-finite@1.0.2 
+  │ │ │     └── number-is-nan@1.0.1 
+  │ │ └─┬ strip-indent@1.0.1 
+  │ │   └── get-stdin@4.0.1 
+  │ └── trim-newlines@1.0.0 
+  ├─┬ objection@0.8.9 
+  │ └─┬ ajv@5.2.3 
+  │   ├── fast-deep-equal@1.0.0 
+  │   ├── json-schema-traverse@0.3.1 
+  │   └─┬ json-stable-stringify@1.0.1 
+  │     └── jsonify@0.0.0 
+  ├─┬ objection-visibility@0.1.0 
+  │ ├── lodash.omit@4.5.0 
+  │ └── lodash.pick@4.4.0 
+  └── uuid@3.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hello/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0478 took 4.4609s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: App is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hello/node_modules/hello/lib/index.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

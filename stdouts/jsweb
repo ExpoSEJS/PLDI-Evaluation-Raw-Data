@@ -1,0 +1,105 @@
+/root/Targets/jsweb
+└─┬ jsweb@0.2.29 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ express@4.16.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.1.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ mssql@4.1.0 
+  │ ├── generic-pool@3.1.8 
+  │ └─┬ tedious@2.0.0 
+  │   ├─┬ babel-runtime@6.26.0 
+  │   │ ├── core-js@2.5.1 
+  │   │ └── regenerator-runtime@0.11.0 
+  │   ├── big-number@0.3.1 
+  │   ├── bl@1.2.1 
+  │   └── sprintf@0.1.5 
+  ├── mu2@0.5.21 
+  ├─┬ mysql@2.14.1 
+  │ ├── bignumber.js@4.0.2 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └── sqlstring@2.2.0 
+  ├─┬ pg@7.3.0 
+  │ ├── buffer-writer@1.0.1 
+  │ ├── js-string-escape@1.0.1 
+  │ ├── packet-reader@0.3.1 
+  │ ├── pg-connection-string@0.1.3 
+  │ ├── pg-pool@2.0.3 
+  │ ├─┬ pg-types@1.12.1 
+  │ │ ├── postgres-array@1.0.2 
+  │ │ ├── postgres-bytea@1.0.0 
+  │ │ ├── postgres-date@1.0.3 
+  │ │ └─┬ postgres-interval@1.1.1 
+  │ │   └── xtend@4.0.1 
+  │ ├─┬ pgpass@1.0.2 
+  │ │ └─┬ split@1.0.1 
+  │ │   └── through@2.3.8 
+  │ └── semver@4.3.2 
+  ├── serve-static@1.13.1 
+  ├── strong-cluster-tls-store@1.0.3 
+  └── strong-store-cluster@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jsweb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0235 took 2.9926s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0} start 3.0885 took 3.0525s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 65% Coverage (LOC): 68%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/jsweb/node_modules/jsweb/index.js. Coverage (Term): 92% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

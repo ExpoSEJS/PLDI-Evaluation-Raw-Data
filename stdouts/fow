@@ -1,0 +1,81 @@
+/root/Targets/fow
+└── fow@0.0.5-4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fow/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.049 took 4.6318s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+/* vim: set expandtab sw=2 ts=2 : */
+
+var path = require('path');
+var logger = require('log4js').getLogger();
+var fs = require('fs');
+
+process.on('uncaughtException', function (error) {
+  logger.error('Unexpected error: ' + error);
+});
+
+var Fow = module.exports = function(cwd, args) {
+  this.title = 'Focus On Writing';
+  this.version = require('../package.json').version;
+  this.cwd = cwd;
+  this.encoding = 'utf8';
+  this.port = 8090;
+  this.config = 'config.yml';
+  this.fowdir = path.join(__dirname, '..');
+  this.workspace = (function(cwd, config) {
+    while(!fs.existsSync(path.join(cwd, config))) {
+      if(cwd === '/') {
+        return '';
+      }
+      cwd = path.join(cwd, '..');
+    }
+    return cwd;
+  }(this.cwd, this.config));
+  this.config = path.join(this.workspace, this.config);
+  this.drafts = path.join(this.workspace, 'drafts');
+  this.layouts = path.join(this.workspace, 'layouts');
+  this.meta = path.join(this.drafts, 'meta.yml');
+  this.categories = path.join(this.drafts, 'categories');
+  this.args = {
+    command: args.slice(0, 1).toString().toLowerCase(),
+    option: args.slice(1, 2).toString().toLowerCase()
+  };
+  this.commands = {
+    'init': 'init', 'i': 'init',
+    'new': 'new', 'n': 'new',
+    'build': 'build', 'b': 'build',
+    'serve': 'serve', 's': 'serve',
+    'help': 'help', 'h': 'help'
+  };
+
+  this.args.command = this.args.command in this.commands
+    ? this.commands[this.args.command]
+    : 'help';
+  new require('./core/' + this.args.command + '.js')(this.cwd, this.args.option, this);
+};
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

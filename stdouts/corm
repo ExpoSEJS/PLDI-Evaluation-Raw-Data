@@ -1,0 +1,54 @@
+/root/Targets/corm
+└─┬ corm@2.0.1 
+  ├── native-or-bluebird@1.2.0 
+  └─┬ promised-mongo@1.2.0 
+    ├─┬ babel-runtime@5.8.38 
+    │ └── core-js@1.2.7 
+    ├── bluebird@2.11.0 
+    ├── harmony-proxy@0.0.2 
+    ├── lodash@3.10.1 
+    ├─┬ mongodb-core@1.3.21 
+    │ ├── bson@0.4.23 
+    │ └─┬ require_optional@1.0.1 
+    │   ├── resolve-from@2.0.0 
+    │   └── semver@5.4.1 
+    ├── parse-mongo-url@1.1.1 
+    └─┬ readable-stream@1.1.14 
+      ├── core-util-is@1.0.2 
+      ├── inherits@2.0.3 
+      ├── isarray@0.0.1 
+      └── string_decoder@0.10.31 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/corm/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 10% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0771 took 10.8843s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/corm/node_modules/corm/dist/index.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/corm/node_modules/promised-mongo/index.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/corm/node_modules/promised-mongo/dist/Database.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/corm/node_modules/babel-runtime/helpers/create-class.js. Coverage (Term): 33% Coverage (LOC): 41%
+*- File /root/Targets/corm/node_modules/babel-runtime/core-js/object/define-property.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/corm/node_modules/core-js/library/fn/object/define-property.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/corm/node_modules/core-js/library/modules/$.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/corm/node_modules/babel-runtime/helpers/class-call-check.js. Coverage (Term): 57% Coverage (LOC): 67%
+*- File /root/Targets/corm/node_modules/babel-runtime/regenerator/index.js. Coverage (Term): 44% Coverage (LOC): 47%
+*- File /root/Targets/corm/node_modules/babel-runtime/regenerator/runtime.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/corm/node_modules/babel-runtime/core-js/symbol.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/corm/node_modules/core-js/library/fn/symbol/index.js. Coverage (Term): 52% Coverage (LOC): 80%
+*- File /root/Targets/corm/node_modules/core-js/library/modules/es6.symbol.js. Coverage (Term): 6% Coverage (LOC): 4%
+*- File /root/Targets/corm/node_modules/core-js/library/modules/$.global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

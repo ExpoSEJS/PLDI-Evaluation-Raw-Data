@@ -1,0 +1,123 @@
+
+> ws@0.4.32 install /root/Targets/ws-testbed/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/ws-testbed/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/ws-testbed/node_modules/ws/build'
+/root/Targets/ws-testbed
+└─┬ ws-testbed@0.1.0 
+  ├── underscore@1.5.2 
+  └─┬ ws@0.4.32 
+    ├── commander@2.1.0 
+    ├── nan@1.0.0 
+    ├── options@0.0.6 
+    └── tinycolor@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ws-testbed/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0909 took 20.5691s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to arguments in strict mode (19:28) on program J$.iids = {"9":[1,20,1,27],"10":[6,36,6,47],"17":[1,28,1,32],"25":[1,20,1,33],"33":[1,20,1,33],"41":[1,20,1,33],"49":[2,26,2,38],"57":[2,26,2,45],"65":[2,26,2,45],"73":[2,26,2,45],"81":[3,10,3,17],"89":[3,18,3,22],"97":[3,10,3,23],"105":[3,10,3,23],"113":[3,10,3,23],"121":[4,15,4,17],"129":[4,30,4,39],"137":[4,15,4,40],"139":[4,15,4,29],"145":[4,15,4,40],"153":[4,15,4,40],"161":[5,1,5,8],"169":[6,5,6,11],"177":[6,5,6,19],"185":[6,20,6,24],"193":[6,28,6,35],"201":[6,36,6,40],"209":[6,43,6,47],"217":[6,28,6,48],"225":[6,5,6,48],"233":[6,5,6,49],"241":[5,17,7,2],"249":[5,17,7,2],"257":[5,17,7,2],"265":[5,17,7,2],"273":[5,1,7,3],"275":[5,1,5,16],"281":[5,1,7,4],"289":[1,1,7,4],"297":[1,1,7,4],"305":[1,1,7,4],"313":[1,1,7,4],"321":[1,1,7,4],"329":[5,17,7,2],"337":[5,17,7,2],"345":[1,1,7,4],"353":[1,1,7,4],"nBranches":0,"originalCodeFileName":"/root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/index.js","instrumentedCodeFileName":"/root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/index_jalangi_.js","code":"/* global __dirname */\nvar fs = require(\"fs\");\n\nvar plugins = fs.readdirSync(__dirname);\n\nplugins.forEach(function(name) {\n  module.exports[name] = require(\"./\" + name);\n});\n"};
+jalangiLabel478:
+    while (true) {
+        try {
+            J$.Se(289, '/root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/index_jalangi_.js', '/root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/index.js');
+            J$.N(297, '__secret__S$', __secret__S$, 0);
+            J$.N(305, '__secret__traits__', __secret__traits__, 0);
+            J$.N(313, 'fs', fs, 0);
+            J$.N(321, 'plugins', plugins, 0);
+            var __secret__S$ = J$.X1(41, J$.W(33, '__secret__S$', J$.F(25, J$.R(9, 'require', require, 2), 0)(J$.T(17, 'S$', 21, false)), __secret__S$, 3));
+            var __secret__traits__ = J$.X1(73, J$.W(65, '__secret__traits__', J$.G(57, J$.R(49, '__secret__S$', __secret__S$, 1), 'Traits', 0), __secret__traits__, 3));
+            var fs = J$.X1(113, J$.W(105, 'fs', J$.F(97, J$.R(81, 'require', require, 2), 0)(J$.T(89, 'fs', 21, false)), fs, 3));
+            var plugins = J$.X1(153, J$.W(145, 'plugins', J$.M(137, J$.R(121, 'fs', fs, 1), 'readdirSync', 0)(J$.R(129, '__dirname', __dirname, 2)), plugins, 3));
+            J$.X1(281, J$.M(273, J$.R(161, 'plugins', plugins, 1), 'forEach', 0)(J$.T(265, function (name) {
+                jalangiLabel477:
+                    while (true) {
+                        try {
+                            J$.Fe(241, arguments.callee, this, arguments);
+                            arguments = J$.N(249, 'arguments', arguments, 4);
+                            name = J$.N(257, 'name', name, 4);
+                            J$.X1(233, J$.P(225, J$.G(177, J$.R(169, 'module', module, 2), 'exports', 0), J$.R(185, 'name', name, 0), J$.F(217, J$.R(193, 'require', require, 2), 0)(J$.B(10, '+', J$.T(201, './', 21, false), J$.R(209, 'name', name, 0), 0)), 2));
+                        } catch (J$e) {
+                            J$.Ex(329, J$e);
+                        } finally {
+                            if (J$.Fr(337))
+                                continue jalangiLabel477;
+                            else
+                                return J$.Ra();
+                        }
+                    }
+            }, 12, false, 241)));
+        } catch (J$e) {
+            J$.Ex(345, J$e);
+        } finally {
+            if (J$.Sr(353)) {
+                J$.L();
+                continue jalangiLabel478;
+            } else {
+                J$.L();
+                break jalangiLabel478;
+            }
+        }
+    }
+// JALANGI DO NOT INSTRUMENT
+ at SyntaxError: Assigning to arguments in strict mode (19:28)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1472:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1606:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseTryStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:897:23)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:702:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/index.js. Coverage (Term): 70% Coverage (LOC): 86%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/WebSocketTestbed.js. Coverage (Term): 24% Coverage (LOC): 29%
+*- File /root/Targets/ws-testbed/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/StandardWebSocketFactory.js. Coverage (Term): 56% Coverage (LOC): 82%
+*- File /root/Targets/ws-testbed/node_modules/ws/index.js. Coverage (Term): 48% Coverage (LOC): 50%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/ws-testbed/node_modules/options/lib/options.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 7% Coverage (LOC): 15%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Receiver.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Validation.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/ws-testbed/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/Connection.js. Coverage (Term): 33% Coverage (LOC): 46%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/wsUtils.js. Coverage (Term): 33% Coverage (LOC): 43%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/Server.js. Coverage (Term): 44% Coverage (LOC): 46%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/Plugin.js. Coverage (Term): 53% Coverage (LOC): 68%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/DescriptionHelper.js. Coverage (Term): 33% Coverage (LOC): 57%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/DescriptionBuilder.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/core/ValueStore.js. Coverage (Term): 51% Coverage (LOC): 70%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/client/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/client/ClientPluginExports.js. Coverage (Term): 28% Coverage (LOC): 52%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/client/ClientPlugin.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/client/ConnectionEntry.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/configuration/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/configuration/ConfigurationPluginExports.js. Coverage (Term): 45% Coverage (LOC): 65%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/configuration/ConfigurationPlugin.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/ws-testbed/node_modules/ws-testbed/src/plugins/configuration/FileConfigurationStore.js. Coverage (Term): 35% Coverage (LOC): 59%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

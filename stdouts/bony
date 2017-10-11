@@ -1,0 +1,49 @@
+/root/Targets/bony
+└─┬ bony@1.0.1 
+  ├── backbone@1.3.3 
+  ├─┬ handlebars@3.0.3 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ ├─┬ source-map@0.1.43 
+  │ │ └── amdefine@1.0.1 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └── optimist@0.3.7 
+  ├── jquery@2.2.4 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bony/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 11% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 11% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 11% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 11% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 11% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 11% coverage ] ****** [4 done /0 queued / 0 running / 3 errors / 11% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","apply","create","toString","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.1633 took 57.8243s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 58.8404 took 56.3974s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 115.6153 took 54.0398s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"_bound":2}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"_bound":3} start 170.0879 took 45.1515s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/bony/node_modules/bony/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/bony/node_modules/bony/lib/Component.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/bony/node_modules/backbone/backbone.js. Coverage (Term): 11% Coverage (LOC): 25%
+*- File /root/Targets/bony/node_modules/underscore/underscore.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/bony/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/bony/node_modules/bony/lib/ItemView.js. Coverage (Term): 37% Coverage (LOC): 64%
+*- File /root/Targets/bony/node_modules/bony/lib/ListView.js. Coverage (Term): 22% Coverage (LOC): 40%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 4 paths with 3 errors **

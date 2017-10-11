@@ -1,0 +1,307 @@
+/root/Targets/chrome-mock
+└─┬ chrome-mock@0.0.9 
+  ├── require-dir@0.1.0 
+  ├─┬ rfile@1.0.0 
+  │ ├── callsite@1.0.0 
+  │ └── resolve@0.3.1 
+  └─┬ sinon@1.17.7 
+    ├── formatio@1.1.1 
+    ├── lolex@1.3.2 
+    ├── samsam@1.1.2 
+    └─┬ util@0.10.3 
+      └── inherits@2.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/chrome-mock/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","join","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0386 took 18.8675s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (106:15) on program /**
+ * @depend times_in_words.js
+ * @depend util/core.js
+ * @depend match.js
+ * @depend format.js
+ */
+/**
+ * Assertions matching the test spy retrieval interface.
+ *
+ * @author Christian Johansen (christian@cjohansen.no)
+ * @license BSD
+ *
+ * Copyright (c) 2010-2013 Christian Johansen
+ */
+(function (sinonGlobal, global) {
+    "use strict";
+
+    var slice = Array.prototype.slice;
+
+    function makeApi(sinon) {
+        var assert;
+
+        function verifyIsStub() {
+            var method;
+
+            for (var i = 0, l = arguments.length; i < l; ++i) {
+                method = arguments[i];
+
+                if (!method) {
+                    assert.fail("fake is not a spy");
+                }
+
+                if (method.proxy && method.proxy.isSinonProxy) {
+                    verifyIsStub(method.proxy);
+                } else {
+                    if (typeof method !== "function") {
+                        assert.fail(method + " is not a function");
+                    }
+
+                    if (typeof method.getCall !== "function") {
+                        assert.fail(method + " is not stubbed");
+                    }
+                }
+
+            }
+        }
+
+        function verifyIsValidAssertion(assertionMethod, assertionArgs) {
+            switch (assertionMethod) {
+                case "notCalled":
+                case "called":
+                case "calledOnce":
+                case "calledTwice":
+                case "calledThrice":
+                    if (assertionArgs.length !== 0) {
+                        assert.fail(assertionMethod +
+                                    " takes 1 argument but was called with " +
+                                    (assertionArgs.length + 1) + " arguments");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function failAssertion(object, msg) {
+            object = object || global;
+            var failMethod = object.fail || assert.fail;
+            failMethod.call(object, msg);
+        }
+
+        function mirrorPropAsAssertion(name, method, message) {
+            if (arguments.length === 2) {
+                message = method;
+                method = name;
+            }
+
+            assert[name] = function (fake) {
+                verifyIsStub(fake);
+
+                var args = slice.call(arguments, 1);
+                verifyIsValidAssertion(name, args);
+
+                var failed = false;
+
+                if (typeof method === "function") {
+                    failed = !method(fake);
+                } else {
+                    failed = typeof fake[method] === "function" ?
+                        !fake[method].apply(fake, args) : !fake[method];
+                }
+
+                if (failed) {
+                    failAssertion(this, (fake.printf || fake.proxy.printf).apply(fake, [message].concat(args)));
+                } else {
+                    assert.pass(name);
+                }
+            };
+        }
+
+        function exposedName(prefix, prop) {
+            return !prefix || /^fail/.test(prop) ? prop :
+                prefix + prop.slice(0, 1).toUpperCase() + prop.slice(1);
+        }
+
+        assert = {
+            failException: "AssertError",
+
+            fail: function fail(message) {
+                var error = new Error(message);
+                error.name = this.failException || assert.failException;
+
+                throw error;
+            },
+
+            pass: function pass() {},
+
+            callOrder: function assertCallOrder() {
+                verifyIsStub.apply(null, arguments);
+                var expected = "";
+                var actual = "";
+
+                if (!sinon.calledInOrder(arguments)) {
+                    try {
+                        expected = [].join.call(arguments, ", ");
+                        var calls = slice.call(arguments);
+                        var i = calls.length;
+                        while (i) {
+                            if (!calls[--i].called) {
+                                calls.splice(i, 1);
+                            }
+                        }
+                        actual = sinon.orderByFirstCall(calls).join(", ");
+                    } catch (e) {
+                        // If this fails, we'll just fall back to the blank string
+                    }
+
+                    failAssertion(this, "expected " + expected + " to be " +
+                                "called in order but were called as " + actual);
+                } else {
+                    assert.pass("callOrder");
+                }
+            },
+
+            callCount: function assertCallCount(method, count) {
+                verifyIsStub(method);
+
+                if (method.callCount !== count) {
+                    var msg = "expected %n to be called " + sinon.timesInWords(count) +
+                        " but was called %c%C";
+                    failAssertion(this, method.printf(msg));
+                } else {
+                    assert.pass("callCount");
+                }
+            },
+
+            expose: function expose(target, options) {
+                if (!target) {
+                    throw new TypeError("target is null or undefined");
+                }
+
+                var o = options || {};
+                var prefix = typeof o.prefix === "undefined" && "assert" || o.prefix;
+                var includeFail = typeof o.includeFail === "undefined" || !!o.includeFail;
+
+                for (var method in this) {
+                    if (method !== "expose" && (includeFail || !/^(fail)/.test(method))) {
+                        target[exposedName(prefix, method)] = this[method];
+                    }
+                }
+
+                return target;
+            },
+
+            match: function match(actual, expectation) {
+                var matcher = sinon.match(expectation);
+                if (matcher.test(actual)) {
+                    assert.pass("match");
+                } else {
+                    var formatted = [
+                        "expected value to match",
+                        "    expected = " + sinon.format(expectation),
+                        "    actual = " + sinon.format(actual)
+                    ];
+
+                    failAssertion(this, formatted.join("\n"));
+                }
+            }
+        };
+
+        mirrorPropAsAssertion("called", "expected %n to have been called at least once but was never called");
+        mirrorPropAsAssertion("notCalled", function (spy) {
+            return !spy.called;
+        }, "expected %n to not have been called but was called %c%C");
+        mirrorPropAsAssertion("calledOnce", "expected %n to be called once but was called %c%C");
+        mirrorPropAsAssertion("calledTwice", "expected %n to be called twice but was called %c%C");
+        mirrorPropAsAssertion("calledThrice", "expected %n to be called thrice but was called %c%C");
+        mirrorPropAsAssertion("calledOn", "expected %n to be called with %1 as this but was called with %t");
+        mirrorPropAsAssertion(
+            "alwaysCalledOn",
+            "expected %n to always be called with %1 as this but was called with %t"
+        );
+        mirrorPropAsAssertion("calledWithNew", "expected %n to be called with new");
+        mirrorPropAsAssertion("alwaysCalledWithNew", "expected %n to always be called with new");
+        mirrorPropAsAssertion("calledWith", "expected %n to be called with arguments %*%C");
+        mirrorPropAsAssertion("calledWithMatch", "expected %n to be called with match %*%C");
+        mirrorPropAsAssertion("alwaysCalledWith", "expected %n to always be called with arguments %*%C");
+        mirrorPropAsAssertion("alwaysCalledWithMatch", "expected %n to always be called with match %*%C");
+        mirrorPropAsAssertion("calledWithExactly", "expected %n to be called with exact arguments %*%C");
+        mirrorPropAsAssertion("alwaysCalledWithExactly", "expected %n to always be called with exact arguments %*%C");
+        mirrorPropAsAssertion("neverCalledWith", "expected %n to never be called with arguments %*%C");
+        mirrorPropAsAssertion("neverCalledWithMatch", "expected %n to never be called with match %*%C");
+        mirrorPropAsAssertion("threw", "%n did not throw exception%C");
+        mirrorPropAsAssertion("alwaysThrew", "%n did not always throw exception%C");
+
+        sinon.assert = assert;
+        return assert;
+    }
+
+    var isNode = typeof module !== "undefined" && module.exports && typeof require === "function";
+    var isAMD = typeof define === "function" && typeof define.amd === "object" && define.amd;
+
+    function loadDependencies(require, exports, module) {
+        var sinon = require("./util/core");
+        require("./match");
+        require("./format");
+        module.exports = makeApi(sinon);
+    }
+
+    if (isAMD) {
+        define(loadDependencies);
+        return;
+    }
+
+    if (isNode) {
+        loadDependencies(require, module.exports, module);
+        return;
+    }
+
+    if (sinonGlobal) {
+        makeApi(sinonGlobal);
+    }
+}(
+    typeof sinon === "object" && sinon, // eslint-disable-line no-undef
+    typeof global !== "undefined" ? global : self
+));
+ at SyntaxError: Unexpected token (106:15)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/chrome-mock/node_modules/chrome-mock/index.js. Coverage (Term): 64% Coverage (LOC): 100%
+*- File /root/Targets/chrome-mock/node_modules/chrome-mock/lib/Chrome.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/chrome-mock/node_modules/chrome-mock/lib/chrome/ContextMenus.js. Coverage (Term): 14% Coverage (LOC): 14%
+*- File /root/Targets/chrome-mock/node_modules/chrome-mock/lib/Event.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon.js. Coverage (Term): 67% Coverage (LOC): 70%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/util/core.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/extend.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/walk.js. Coverage (Term): 42% Coverage (LOC): 47%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/typeOf.js. Coverage (Term): 81% Coverage (LOC): 77%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/times_in_words.js. Coverage (Term): 64% Coverage (LOC): 59%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/spy.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/call.js. Coverage (Term): 16% Coverage (LOC): 30%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/match.js. Coverage (Term): 32% Coverage (LOC): 40%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/format.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /root/Targets/chrome-mock/node_modules/formatio/lib/formatio.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/chrome-mock/node_modules/samsam/lib/samsam.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/behavior.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/stub.js. Coverage (Term): 23% Coverage (LOC): 34%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/mock.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/chrome-mock/node_modules/sinon/lib/sinon/collection.js. Coverage (Term): 26% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

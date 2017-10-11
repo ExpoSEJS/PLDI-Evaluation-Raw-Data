@@ -1,0 +1,35 @@
+/root/Targets/remon-browser-sdk
+└── remon-browser-sdk@0.3.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/remon-browser-sdk/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 33% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 33% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 33% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 33% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 33% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 33% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 33% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 33% coverage ] ****** [5 done /0 queued / 1 running / 4 errors / 33% coverage ] ****** [5 done /0 queued / 1 running / 4 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","bind","bound ","random","toString","pow","toUpperCase","RegExp","freeze","create","apply","lastIndexOf","floor","setPrototypeOf","log","defineProperties","Uint8Array","bound e","Map","seal"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0586 took 128.8385s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 132.8186 took 186.7489s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
+* Error: TypeError: Cannot read property 'config' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 322.4555 took 202.6199s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
+* Error: TypeError: Cannot read property 'config' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 527.7013 took 176.9182s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'credential' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"} start 706.226 took 117.787s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'credential' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 24% Coverage (LOC): 42%
+*- File /root/Targets/remon-browser-sdk/node_modules/remon-browser-sdk/remon.min.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 5 paths with 4 errors **

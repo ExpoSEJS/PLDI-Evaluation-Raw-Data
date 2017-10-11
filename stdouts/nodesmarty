@@ -1,0 +1,1348 @@
+/root/Targets/nodesmarty
+└── nodesmarty@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nodesmarty/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.047 took 2.4758s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Binding arguments in strict mode (1274:23) on program /**
+* NodeSmarty
+* @author lampa (http://nodesmarty.com, http://lampacore.ru/nodesmarty)
+* @version 0.0.4
+*/
+(function() {
+
+function NodeSmarty(opts) {        
+        NodeSmarty.func.init.prototype = NodeSmarty.func;
+        return new NodeSmarty.func.init(opts);
+};
+
+NodeSmarty.func = {
+	constructor: NodeSmarty,
+	
+	/**
+	 * regexp
+	 */
+	_var_splitter_dot: '.',
+	_var_splitter: /\[["']?(.*?)["']?\]/g,
+	
+	_math_config: /(.*?)\s*=(.*)/,
+	_check_foreach_item: /^\w+$/,
+	_if_tag_tokens: /\.\d+|!==|===|==|!=|<>|<<|>>|<=|>=|\&\&|\|\||\(|\)|,|\!|\^|=|\&|\~|<|>|\||\%|\+|\-|\/|\*|\@|\$?\b[\w\.]+\b/g,
+	
+	_attr_pre_regexp: /[\w.]+\s*=\s*["']?\S+["']?|\w+/g,
+	_attr_regexp: /([\w.]+)\s*=\s*(?:["'](\S+?)["']|(\S+))|\w+/,
+	
+	_slash_replace: '%2F',
+	_slash_regexp: /\//g,
+	
+	_math_regexp: /[\w\s]+[\d\(\)\+\-\*\/][\w\s]+/g,
+	_math_splitter: /[+-\/*%]/,
+	
+	/**
+	 * initializate
+	 */
+	init: function(opts) {
+		/**
+		 *
+		 */
+		this.assignes = {};
+		this.config = {};
+		this.ldq = '{';
+		this.rdq = '}';	
+		this._CompileDir = opts.compileDir || false;
+		this._TemplateDir = opts.templateDir || false;
+		this._CacheDir = opts.cacheDir || false;
+		this.ajaxTimeout = 10000;
+		this._custom_error = opts.error_handler || false;
+		
+		this._tag_master = [];
+		this._pre_master = [];
+		
+		this._js_type = (typeof module !== 'undefined' && module.exports); // true - node.js; false - browser
+		
+		if(this._js_type) {
+			this._fs = require('fs');
+		}
+		
+		/**
+		 *
+		 */
+		
+		/**
+		 *
+		 */
+		this._template_tags_regexp = /{[\s\S]*?}/g;
+		this._text_blocks_regexp = new RegExp(this.ldq+".*?"+this.rdq,'g');
+		this._splitter_tags_regexp =  new RegExp(this.ldq+"((.*?)(:?\\s+(.*))?)"+this.rdq);
+		
+		this._special_regexp = new RegExp(this.ldq+"literal"+this.rdq + "[\\s\\S]*?" + this.ldq+"/literal"+this.rdq,'g');
+		this._special_replace = new RegExp("^"+this.ldq+"literal"+this.rdq + "([\\s\\S]*?)" + this.ldq+"/literal"+this.rdq+"$");
+		
+
+	},
+	
+	setTemplateDir: function (dir) {
+	
+	},
+	
+	setCompileDir: function(dir) {
+	
+	},
+	
+	setCacheDir: function(dir) {
+	
+	},
+	
+	/**
+	 * assign variables
+	 */
+	assign: function(data, value) {
+		if(value == undefined && typeof data == 'string') {
+			return false;
+		}
+                
+		if(typeof value == 'string' && typeof data == 'string') {
+			this.assignes[data] = value;
+		}
+                
+		if(typeof data == 'object') {
+			for(var me in data) {
+				this.assignes[me] = data[me];
+			}
+		}
+                
+		return this;
+	},
+	
+	/**
+	 * clear assign variables
+	 */
+	clearAssign: function(assign) {
+		if(assign == undefined) {
+			this.assignes = {};
+		}
+		else {
+			delete this.assignes[assign];
+		}	
+	},
+        
+	/**
+	 * get assigned values
+	 */	
+	getTemplateVars: function(assign) {
+		if(assign == undefined) {
+			return this.assignes;
+		}
+		else {
+			return this.assignes[assign];
+		}	
+	},
+	
+	clearCache: function() {
+		// if node.js
+		if(this._js_type) {
+			if(!this._CompileDir) {
+				return this._syntax_error('clearCache: cache dir not set', 200);
+			}
+			
+			var that = this;
+			//
+			this._fs.readdir(this._CompileDir, function(err, files) {
+				
+				for(var i=0; i < files.length; i++) {
+					var filePath = _this._CompileDir + files[i];
+					that.fs.unlink(filePath);
+				};
+			});
+		}
+		else { // browser
+			// clear cache files and etags
+			this._localStorage();
+		}
+	},
+
+	/**
+	 * parse vars
+	 */
+	_parse_vars: function(variab, line) {
+		if(this._math_regexp.test(variab)) {
+			return this._compile_conditional_expression(variab, line);
+		}
+		
+		if(variab[0] == '$') {
+			
+			var var_splitter = variab.split(this._var_splitter_dot)
+			,	var_splitter_sk = []
+			,	var_finish_splitter = []
+			,	i = 0
+			,	k = 0
+			,	number_of_count = -1
+			,	number_of_i = 0;
+			
+			if(var_splitter != null) {
+				for(; i < var_splitter.length; i++) {
+					var_splitter_sk = var_splitter[i].split(this._var_splitter);
+					
+					for(k=0; k < var_splitter_sk.length; k++) {
+						if(k > 1) {
+							if(k % 2) {
+								var_finish_splitter.push(var_splitter_sk[k]);
+							}
+						}
+						else {
+							var_finish_splitter.push(var_splitter_sk[k]);
+						}
+					}
+				}
+			}
+			
+			if(var_finish_splitter.indexOf("") != -1) {
+				this._syntax_error('syntax error, variable "'+ variab +'" is not valid (opened line '+ line +').', 100, line);
+			}
+			
+			for(i=0, length = this._tag_master.length; i < length; i++) {
+				number_of_count = this._tag_master[i].indexOf(variab);
+				
+				if(number_of_count != -1) {
+					number_of_i = i;
+					break;
+				}
+			}
+			
+			if(var_finish_splitter.length == 1) {
+				if(number_of_count != -1) {
+					return variab;
+				}
+				else {
+					return "__this.assignes['"+variab.slice(1)+"']";
+				}
+			}
+			else {
+				var return_var = [this._parse_vars(var_finish_splitter[0])];
+				
+				for(i=1; i < var_finish_splitter.length; i++) {
+					return_var.push('[' + this._parse_vars(var_finish_splitter[i]) + ']');
+				}
+				
+				return return_var.join('');
+			}
+		}
+		else if(variab[0] == '#') {
+			if(variab[variab.length-1] != '#') {
+				this._syntax_error('tag "'+variab+'" are unclosed (opened line '+ line +').', 100, line);
+			}
+			
+			
+			return "'"+this._quote_text(this.config[variab.slice(1, variab.length-1)])+"'";
+		}
+		else {
+			if(parseFloat(variab) == variab) {
+				return variab;
+			}
+		}
+		
+		return "'" + variab + "'";
+	},
+	
+	/**
+	 * content manager
+	 */
+	_add_to_content: function(value, type) {
+		if(!value) {
+			return '';
+		}
+		
+		if(type != undefined) {
+			return "content += "+value+";\n";
+		}
+		else {
+			return "content += '"+this._remove_n(this._quote_text(value))+"';\n";
+		}
+	},
+	
+	_parse_config: function(variab, line, file) {
+		variab = this._trimLeft(variab);
+		
+		if(variab[0] == '#') {
+			return;
+		}
+		
+		var split = variab.match(this._math_config);
+		
+		
+		if(split != null && split.length < 3) {
+			this._syntax_error('param "'+variab+'" if config file "'+file+'" as incorrect (opened line '+ (line+1) +').', 100, line+1);
+		}
+		else if(split == null) {
+			return;
+		}
+		this.config[split[1]] = split[2];
+	},
+	
+	_compile_math_tag: function (tag) {
+	
+	},
+
+	_compile_foreach_start: function(tag_args, line) {
+		if (tag_args.from == undefined || !tag_args.from) {
+			this._syntax_error('tag "foreach" must contain property "from" (opened line '+line+').', 100, line);
+		}
+		
+		if (tag_args.item == undefined || !tag_args.item) {
+			this._syntax_error('tag "foreach" must contain property "item" (opened line '+line+').', 100, line);
+		}
+		
+		var from = tag_args.from;
+		var item = tag_args.item;
+		var key = '';
+		
+		// check item
+        if (!this._check_foreach_item.test(item)) {
+            this._syntax_error('foreach: "item" must be a variable name (literal string, opened line '+line+').', 100, line);
+        }
+		
+		var number_of_count = this._tag_master.indexOf(from);
+		
+		if (tag_args.key != undefined) {
+			if (!this._check_foreach_item.test(tag_args.key)) {
+				this._syntax_error('foreach: "key" must be a variable name (literal string, opened line '+line+').', 100, line);
+			}
+			
+			this._tag_master.push(['$' + item, '$' + tag_args.key]);
+			key = ', $' + tag_args.key;
+		}
+		else {
+			this._tag_master.push(['$' + item]);
+		}
+		
+		if(number_of_count < 0) {
+			var from_builder = this._parse_vars(from, line);
+		}
+		else {
+			var from_builder = this._tag_master[number_of_count];
+		}
+		
+		return "__this._foreach_master("+from_builder+", function($"+tag_args.item + key + ") {\n";
+	},
+	
+	_compile_foreach_end: function() {
+		this._tag_master.length = this._tag_master.length - 1;
+		return "});\n";
+	},
+
+	/**
+	 * codes:
+	 * 
+	 */
+	_syntax_error: function(err, code, line) {
+		if(this._custom_error) {
+			this._custom_error(code, err, line);
+		}
+		
+		throw err + " Error code: " + code;
+	},
+	
+	fetch: function(file, params, callback) {
+		/**
+		 * parse document
+		 */
+		var that = this;
+		
+		this._document_parser(file, 0, params.cache, function(returned) {
+			
+			if(typeof params !== 'object') {
+				callback = params;
+			}
+			
+			// if not node.js
+			if(!that._js_type) {
+				if(!returned.cache || that._localStorage(file) == undefined) {
+					that._localStorage(file, returned.data);
+				}
+			}
+			else {
+				if(!returned.cache) {
+					that._fs.writeFile(returned.compilePath, returned.data, 'utf8');
+				}
+			}
+			
+			callback(new Function("var __this = this, content = ''; " + returned.data + "; return content;").call(that));
+		});
+	},
+	
+	text: function(text, callback) {
+		var that = this;
+		
+		this._parseTags(text, false, null, function(returned) {
+			callback(new Function("var __this = this, content = ''; " + returned.data + "; return content;").call(that));
+		});
+	},
+	
+	_compile_include_tag: function(attrs, line, caching, compilePath, callback) {
+		if(attrs.file == undefined || !attrs.file) {
+			this._syntax_error('tag "include" must contain property "file" (opened line '+line+').', 100, line);
+		}
+		
+		var that = this;
+		
+		this._get_template(attrs.file, line, caching, function(data) {
+			// if cache
+			if(data.type) {
+				callback(data.data);
+			}
+			else {
+				that._parseTags(data.data, caching, data.compilePath, function(returned) {
+					callback(returned.data);
+				});
+			}
+		});
+		
+		return '';
+	},
+	
+	_compile_config_tag: function(attrs, line, caching, callback) {
+		if(attrs.file == undefined || !attrs.file) {
+			this._syntax_error('tag "config_load" must contain property "file" (opened line '+line+').', 100, line);
+		}
+
+		//config
+		var that = this
+		,	__this = this;
+
+		attrs.file = eval(this._parse_vars(attrs.file, line));
+
+		this._get_template(attrs.file, line, caching, function(data) {
+			var tags = data.data.split(/\n/g)
+			,	length = tags.length;
+
+			for(var line=0; line < length; line++) {
+				that._parse_config(tags[line], line, attrs.file);
+			}
+
+			callback();
+		});
+		return '';
+	},
+	
+	_compile_assign_tag: function(attrs, line) {
+		if(attrs.var == undefined) {
+			this._syntax_error('tag "assign" must contain property "var" (opened line '+line+').',100, line);
+		}
+		
+		if(attrs.value == undefined) {
+			this._syntax_error('tag "assign" must contain property "value" (opened line '+line+').', 100, line);
+		}
+		
+		if(attrs.var[0] == '$') {
+			attrs.var = attrs.var.slice(1);
+		}
+		else if(attrs.var[0] == '#') {
+			attrs.var = this._parse_vars(attrs.var);
+		}
+		
+		this.assign(attrs.var, attrs.value);
+		return;
+	},
+
+	_compile_if_tag: function (attrs, line, tag) {
+		// check for arguments
+		if(attrs == undefined || !attrs) {
+			this._syntax_error('tag "'+tag+'" statement requires arguments (opened line '+line+').', 100);
+		}
+		
+		
+		var tokens = this._compile_conditional_expression(attrs, line);
+		
+		
+		if(tag == 'if') {
+			return "if("+tokens+") {";
+		}
+		else {
+			return "} else if("+tokens+") {";
+		}
+	},
+	
+	_compile_conditional_expression: function(conditional, line) {
+		var tokens = conditional.match(this._if_tag_tokens);
+		
+		/**
+		 * preparing elements
+		 */
+		var bogret = Array(), irrant = tokens.length, jet;
+		while(irrant--) {
+			jet = bogret[tokens[irrant]];
+			bogret[tokens[irrant]] = jet ? jet+1 : 1;
+		}
+		
+		// make sure we have balanced parenthesis
+		if((bogret['('] != undefined || bogret[')'] != undefined) && bogret['('] != bogret[')']) {
+            this._syntax_error('unbalanced parenthesis in if statement (opened line '+line+').', 100, line);
+        }
+		
+		for (var i = 0; i < tokens.length; i++) {
+			switch (tokens[i].toLowerCase()) {
+				case '!':
+				case '!==':
+				case '==':
+				case '===':
+				case '>':
+				case '<':
+				case '!=':
+				case '<>':
+				case '<<':
+				case '>>':
+				case '<=':
+				case '>=':
+				case '&&':
+				case '||':
+				case '|':
+				case '^':
+				case '&':
+				case '~':
+				case ')':
+				case '(':
+				case ',':
+				case '%':
+				case '+':
+				case '-':
+				case '*':
+				case '/':
+				case '@':
+					break;
+				
+				case 'eq':
+					tokens[i] = '==';
+					break;
+				
+				case 'ne':
+				case 'neq':
+					tokens[i] = '!=';
+					break;
+				
+				case 'lt':
+					tokens[i] = '<';
+					break;
+				
+				case 'le':
+				case 'lte':
+					tokens[i] = '<=';
+					break;
+				
+				case 'gt':
+					tokens[i] = '>';
+					break;
+				
+				case 'ge':
+				case 'gte':
+					tokens[i] = '>=';
+					break;
+				
+				case 'and':
+					tokens[i] = '&&';
+					break;
+				
+				case 'or':
+					tokens[i] = '||';
+					break;
+				
+				case 'not':
+					tokens[i] = '!';
+					break;
+				
+				case 'mod':
+					tokens[i] = '%';
+					break;
+				
+				default:
+					tokens[i] = this._parse_vars(tokens[i], line);
+					break;
+			}
+		}	
+		
+		return tokens.join(' ');
+	},
+	
+	_compile_else_tag: function(attrs, line) {
+		if(Object.keys(attrs).length > 0) {
+			this._syntax_error('Invalid assignment left-hand side "else" (opened line '+line+').', 100, line);
+		}
+		return "} else {";
+	},
+	
+	_compile_pre_master_tag: function(attrs, line) {
+		return this._add_to_content(this._pre_master[attrs['id']]);
+	},
+	
+	_compile_endif_tag: function(attrs, line) {
+		if(Object.keys(attrs).length > 0) {
+			this._syntax_error('Invalid assignment left-hand side "if" (opened line '+line+').', 100, line);
+		}
+		return "}";
+	},
+	
+	_parseTags: function(source, caching, compilePath, callback) {
+		/**
+		 * parse vars
+		 */
+		var special = source.match(this._special_regexp);
+		
+		if(special != null) {
+			for(var i=0, pre_master_length; i < special.length; i++) {
+				pre_master_length = this._pre_master.length;
+				
+				this._pre_master[pre_master_length] = special[i].replace(this._special_replace, '$1');
+				source = source.replace(special[i], '{_pre_master id='+pre_master_length+'}');
+			}
+		}
+		//
+		
+		var tags = source.match(this._template_tags_regexp);
+		
+		if(tags == null) {
+			return callback({'data' : "content += '"+this._quote_text(this._remove_n(source))+"';\n", 'cache': caching});
+		}
+		
+		var blocks = source.split(this._template_tags_regexp);
+
+		var splitten_tag;
+		var number_line = 1;
+		var cond_tags = [];
+		var array_pos = 0;
+		var tagMarks = this.AsyncMarks({start: false});
+		var that = this;
+		var openedConditions = 0;
+		var openedLiteral = 0;
+		var lastLineLiteralTag = 0;
+		var lastLineOpenIfTag = 0;
+		var finish_tags = [];
+		
+		/**
+		 *
+		 */
+		tagMarks.complete(function(data) {
+			/**
+			 * if unclosed consitions if
+			 */
+			if(openedConditions < 0) {
+				that._syntax_error('unopened consitions "if" (opened line '+lastLineOpenIfTag+').', 100, lastLineOpenIfTag);
+			}
+			else if(openedConditions > 0) {
+				that._syntax_error('unclosed consitions "if" (opened line '+lastLineOpenIfTag+').', 100, lastLineOpenIfTag);
+			}
+			
+			/**
+			 * if unclosed consitions literal
+			 */
+			if(openedLiteral > 0) {
+				that._syntax_error('unclosed consitions "literal" (opened line '+lastLineLiteralTag+').', 100, lastLineLiteralTag);
+			}
+			else if(openedLiteral < 0) {
+				that._syntax_error('unopened consitions "literal" (opened line '+lastLineLiteralTag+').', 100, lastLineLiteralTag);
+			}
+			
+			//
+			for(var i=0; i < finish_tags.length; i++) {
+				cond_tags[finish_tags[i].pos] = that._add_to_content(that._parse_vars(finish_tags[i].tag, finish_tags[i].line), true);
+			}
+			
+			for(i=0, new_array = []; i < blocks.length; i++) {
+				new_array.push(that._add_to_content(blocks[i]));
+				new_array.push((cond_tags[i]!=undefined?cond_tags[i]:'')+"\n");
+			}
+			
+			callback({'data' : new_array.join(''), 'cache': false, 'compilePath': compilePath});
+		});
+		
+
+		for(var i = 0, len = tags.length; i < len; i++) {
+			/**
+			 * get line in file
+			 */
+			number_line += blocks[i].split("\n").length - 1;
+			
+			/**
+			 * parse tag
+			 */
+			splitten_tag = tags[i].match(this._splitter_tags_regexp);
+			
+
+			/**
+			 * if corrupt tag
+			 */
+			if(splitten_tag == null) {
+				this._syntax_error('corrupt tag "'+tags[i]+'" (opened line '+number_line+').', 100, number_line);
+			}
+			if(!splitten_tag[2]) {
+				this._syntax_error('corrupt tag "'+tags[i]+'" (opened line '+number_line+').', 100, number_line);
+			}
+				
+			/**
+			 * matched comment 
+			 */
+			if (splitten_tag[1][0] == '*' && splitten_tag[1][splitten_tag[1].length-1] == '*') {
+				cond_tags[i] = null;
+				continue;
+			}
+
+			/**
+			 * switch default tags
+			 */
+			(function(splitten_tag, block, line, mark, pos) {
+				
+				var tag = splitten_tag[2];
+				var full_tag = splitten_tag[1];
+				var attributes = splitten_tag[4];
+				
+				switch(tag.toLowerCase()) {
+					// compile pre master
+					case '_pre_master':
+						cond_tags[pos] = that._compile_pre_master_tag(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+						
+					case 'literal':
+						openedLiteral++;
+						cond_tags[pos] = '';
+						lastLineLiteralTag = line;
+						mark.complete();
+						break;
+					
+					case '/literal':
+						openedLiteral--;
+						cond_tags[pos] = '';
+						lastLineLiteralTag = line;
+						mark.complete();
+						break;
+					
+					// compile include tag
+					case 'include':
+						that._compile_include_tag(that._parse_attrs(attributes), line, caching, compilePath, function(response) {
+							cond_tags[pos] = response;
+							mark.complete();
+						}); 
+						break;
+						
+					// load config file
+					case 'config_load':
+						that._compile_config_tag(that._parse_attrs(attributes), line, caching, function(response) {
+							mark.complete();
+							cond_tags[pos] = '';
+						});
+						break;
+						
+					//prepare assign tag
+					case 'assign':
+						cond_tags[pos] = that._compile_assign_tag(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+						
+					// compile if construct
+					case 'if':
+						openedConditions++;
+						lastLineOpenIfTag = line;
+						cond_tags[pos] = that._compile_if_tag(attributes, line, 'if');
+						mark.complete();
+						break;
+						
+					// compile else construct
+					case 'else':
+						lastLineOpenIfTag = line;
+						cond_tags[pos] = that._compile_else_tag(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+						
+					// compile elseif construct
+					case 'elseif':
+						lastLineOpenIfTag = line;
+						cond_tags[pos] = that._compile_if_tag(attributes, line, 'elseif');
+						mark.complete();
+						break;
+						
+					// compile endif construct
+					case '/if':
+						openedConditions--;
+						cond_tags[pos] = that._compile_endif_tag(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+					
+					// compile foreach construct
+					case 'foreach':
+						this._openedForeach++;
+						cond_tags[pos] = that._compile_foreach_start(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+						
+					// compile foreach else
+					case 'foreachelse':
+						cond_tags[pos] = that._compile_foreach_else(that._parse_attrs(attributes), line);
+						mark.complete();
+						
+					// compile foreach end
+					case '/foreach':
+						this._openedForeach--;
+						cond_tags[pos] = that._compile_foreach_end(that._parse_attrs(attributes), line);
+						mark.complete();
+						break;
+						
+					// compile section construct
+					case 'section':
+					case 'sectionelse':
+					case '/section':
+						break;
+					
+					// other (variable, math, constants)
+					default:
+						if(full_tag[0] == '#') {
+							finish_tags.push({
+								'tag': full_tag,
+								'attrs': attributes,
+								'line': line,
+								'pos': pos
+							});	
+						}
+						else {
+							cond_tags[pos] = that._add_to_content(that._parse_vars(full_tag, line), true);
+						}
+						
+						mark.complete();
+				}
+			})(splitten_tag, blocks[i], number_line, tagMarks.addMark(), i, tags[i]);
+		}
+		tagMarks.run();
+	},
+	
+	/**
+	 * parse attributes => {}
+	 */
+	_parse_attrs: function(attrs) {
+		if(attrs == undefined || attrs == null || !attrs) {
+			return {};
+		}
+		
+		
+		var commands = attrs.match(this._attr_pre_regexp);
+		
+		var parsed_tag;
+		var return_obj = {};
+		
+		//console.log('--', attrs, commands);
+		
+		if(commands == null) {
+			return return_obj;
+		}
+		
+		for(var i=0; i < commands.length; i++) {
+			parsed_tag = commands[i].match(this._attr_regexp);
+			
+			
+			if(parsed_tag[1] == undefined) {
+				return_obj[parsed_tag[0]] = undefined;
+			}
+			else {
+				if(parsed_tag[2] == undefined) {
+					return_obj[parsed_tag[1]] = parsed_tag[3];
+				}
+				else {
+					return_obj[parsed_tag[1]] = parsed_tag[2];
+				}
+			}
+		}
+
+		return return_obj;
+	},
+	
+	/**
+	 * document parser
+	 */
+	_document_parser: function(file, line, caching, callback) {
+		var that = this;
+		
+		this._get_template(file, line, caching, function(data) {
+			// if cache
+			if(data.type) {
+				callback({'data' : data.data, 'cache': true, 'compilePath': data.compilePath});
+			}
+			else {
+				that._parseTags(data.data, caching, data.compilePath, callback);
+			}
+		});
+	},
+	
+	/**
+	 * get template function
+	 */
+	_get_template: function(file, line, caching, callback) {
+		var templatePath = this._TemplateDir + file
+		,	compilePath = this._CompileDir + file.replace(this._slash_regexp, this._slash_replace)+".js"
+		,	that = this;
+		
+		// if node.js
+		if(this._js_type) {
+			// check compile file
+			if(caching === false) {
+				that._fs.readFile(templatePath, 'utf8', function (err, data) {
+					if (err) {
+						that._syntax_error(err, 400, line);
+					}
+					
+					callback({
+						'type': false, // no compiled
+						'data': data,
+						'compilePath': compilePath
+					});
+				});
+				return;
+			}
+			else if(caching === true) {
+				this._fs.stat(compilePath, function(err, stats) {
+					/**
+					 * if the file is not compiled
+					 */
+					if (err) {
+						that._fs.readFile(templatePath, 'utf8', function (err, data) {
+							if (err) {
+								that._syntax_error(err, 400, line);
+							}
+							
+							callback({
+								'type': false, // no compiled
+								'data': data,
+								'compilePath': compilePath
+							});
+						});
+					}
+					else {
+						that._fs.readFile(compilePath, 'utf8', function (err, data) {
+							// check error
+							if (err) {
+								that._syntax_error(err, 400, line);
+							}
+							
+							callback({
+								'type': true, // compiled
+								'data': data,
+								'compilePath': compilePath
+							});
+						});
+					}
+				});
+			}
+			else {
+				var ifTemplate = false
+				, ifCompile = false
+				, ifUpdateFile = false;
+				
+				/**
+				 * function, which performed after the collection of stats
+				 */
+				var postStatsFunc = function() {
+					if(!ifTemplate || !ifCompile) return;
+					
+					/**
+					 * check file times
+					 */
+					if((new Date(ifTemplate['mtime'])).getTime()/1000.0 < (new Date(ifCompile['mtime'])).getTime()/1000.0 && !ifUpdateFile) {
+						postTimeStats(false);
+					}
+					else {
+						postTimeStats(true);
+					}
+				}
+				
+				/**
+				 * 
+				 */
+				var postTimeStats = function(ifUpd) {
+					/**
+					 * if file need to be compiled
+					 */
+					if(ifUpd) {
+						that._fs.readFile(templatePath, 'utf8', function (err, data) {
+							if (err) {
+								that._syntax_error(err, 400, line);
+							}
+							
+							callback({
+								'type': false, // no compiled
+								'data': data,
+								'compilePath': compilePath
+							});
+						});
+					}
+					else {
+						that._fs.readFile(compilePath, 'utf8', function (err, data) {
+							if (err) {
+								that._syntax_error(err, 400, line);
+							}	
+							
+							callback({
+								'type': true, // compiled
+								'data': data,
+								'compilePath': compilePath
+							});
+						});
+					}	
+				}
+				
+				/**
+				 * stats of template file
+				 */
+				this._fs.stat(templatePath, function(err, stats) {
+					if (err) {
+						return _this._syntax_error(err, 400, line);
+					}
+					ifTemplate = stats;
+					
+					postStatsFunc();
+				});
+				
+				/**
+				 * stats of compile file
+				 */
+				this._fs.stat(compilePath, function(err, stats) {
+					if (err) {
+						//return this._syntax_error('err' + err);
+						ifUpdateFile = true;
+						ifCompile = true;
+					}
+					else {
+						ifCompile = stats;
+					}
+					
+					postStatsFunc();
+				});
+			}
+		}
+		else {
+			/**
+			 * if forsed caching
+			 */
+			if(caching === true) {
+				var localSt = that._localStorage(file);
+				
+				if(localSt != undefined) {
+					callback({
+						'type': true, // compiled
+						'data': localSt
+					});		
+					return;
+				}
+			}
+			
+			/**
+			 * create ajax 
+			 */
+			if (window.XMLHttpRequest)  {// code for IE7+, Firefox, Chrome, Opera, Safari
+				var xmlhttp = new XMLHttpRequest();
+			}
+			else {// code for IE6, IE5
+				var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.open("GET", templatePath, true);
+			
+			
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState != 4) {
+					return;
+				}
+				
+				clearTimeout(timeout);
+				
+				switch (xmlhttp.status) {
+					// if the file has modified
+					case 200:
+					case 304:
+						var localSt = that._localStorage(file);
+					
+						if(caching != true && caching != false && localSt != undefined && that._localStorage('etag' + file) != undefined && that._localStorage('etag' + file) == xmlhttp.getResponseHeader("Etag")) {
+							callback({
+								'type': true, // compiled
+								'data': localSt
+							});						
+						}
+						else {
+							callback({
+								'type': false, // no compiled
+								'data': xmlhttp.responseText
+							});	
+							
+							that._localStorage('etag' + file, xmlhttp.getResponseHeader("Etag"));
+						}
+							
+						break;
+					default:
+						that._syntax_error('file not found ' + templatePath + '(opened line '+line+').', 400, line);
+						break;
+				}
+			}
+			
+			var timeout = setTimeout(function(){
+				xmlhttp.abort(); 
+				that._syntax_error('load time has expired, template ' + templatePath + '(opened line '+line+').', 300, line);
+				handleError("Time over");
+			}, this.ajaxTimeout);
+			
+			xmlhttp.send(null);
+		}
+		
+		return;
+	},
+
+	_checkerDir: function() {
+	
+	},
+	
+	/**
+	 * local storage
+	 */
+	_localStorage: function(param, content) {
+		var ls = localStorage;
+		
+		if(!param) {
+			for (var i = 0; i < ls.length; i++) {
+				key = ls.key(i);
+				
+				if(key.indexOf('node_smarty_container--') == 0) {
+					ls.removeItem(key);
+				}
+			}
+			
+			return;
+		}
+		
+		if(!content) {
+			return ls.getItem("node_smarty_container--" + param);
+		}
+		
+		return ls.setItem("node_smarty_container--" + param, content);
+	},
+	
+	_trimLeft: function(string) {
+		var start = -1;
+		while(string.charCodeAt(++start) < 33);
+		return string.slice(start, string.length + 1);	
+	},
+	
+	_trimRight: function(string) {
+		var end = string.length;
+		while(string.charCodeAt(--end) < 33 );
+		return string.slice(0, end + 1);
+	},
+	
+	_trim: function (string) {
+		return this._trimLeft(this._trimRight(string));
+	},
+	
+	_remove_n: function(string) {
+		return string.replace(/(\n|\r\n)/g, "\\n\\$1");
+	},
+	
+	/**
+	 * quote text
+	 */
+	_quote_text: function(string) {
+		if(string == null || !string) {
+			return '';
+		}
+		
+		return string.replace(/(['\\])/g, "\\$1");
+	},
+	
+	/**
+	 * foreach master
+	 */
+	_foreach_master: function(mixed, callback) {
+		if (mixed == undefined) {
+			mixed = [];
+		}
+		
+		if(Object.prototype.toString.call(mixed) === '[object Array]') {
+			mixed.forEach(callback);
+		}
+		else {
+			Object.keys(mixed).forEach(function(key) {
+				callback(mixed[key], key);
+			});
+		}
+	},
+	
+	/**
+	 * AsyncMarks
+	 * 
+	 * https://github.com/lampaa/AsyncMarks
+	 */
+	AsyncMarks: function() {
+		var AsyncMarks = function(options) {
+			AsyncMarks.func.init.prototype = AsyncMarks.func;
+			return new AsyncMarks.func.init(options);
+		}
+		AsyncMarks.func = AsyncMarks.prototype = {
+			constructor: AsyncMarks,
+			init: function(options) {
+				options = options || {};
+				options.timeout = options.timeout || 0;
+				options.debug = !!options.debug || false;
+				options.start = (options.debug == false)?false:true;
+				this._markStack = {};
+				this.callback;
+				this.callbackResponse;
+				
+				this.start = options.start;
+				if(options.timeout !== 0) {
+					this.outTimer = setTimeout(function() {
+						throw new Error("Mark has expired");
+					}, options.timeout);
+				}     
+				return this;
+			},
+			addMark: function(mark) {
+				var that = this;
+				mark = mark || Object.keys(that._markStack).length + '_mark';
+				that._markStack[mark] = false;
+                        
+				return {
+					complete: function(response) {
+						if(response != undefined) {
+							that.callbackResponse = response;
+						}
+						that.completeMark(mark);
+					}
+				}
+			},
+			completeMark: function(markName, response) {
+				if(markName == undefined) {
+					throw new Error("markName is undefined");
+				}
+				if(response != undefined) {
+					this.callbackResponse = response;
+				}
+				this._markStack[markName] = true;
+				
+				if(this.start) {
+					this._compteleCall();
+				}
+			},
+			complete: function(callback) {
+				this.callback = callback;
+				return callback;
+			},
+			run: function() {
+				this.start = true;
+				this._compteleCall();
+			},
+			series: function() {
+				this._fManager(arguments);
+				this._executeSeriesFunc();
+			},              
+			_seriesMaster: function() {
+				var that = this;
+				return {
+					complete: function() {
+						that.function_list.splice(0, 1);
+						that._executeFunc();
+					}
+				}
+			},
+			_executeSeriesFunc: function() {
+				if(this.function_list.length > 0) {
+					if(!(this.function_list[0] instanceof Function)) {
+						throw new Error("Argument is not function.");
+					}         
+					this.function_list[0].call(this._seriesMaster());
+				}
+				else {
+					if(this.callback != undefined) {
+						this.callback();
+					}
+				}
+			},                
+			pack: function() {
+				this._fManager(arguments);
+				this._executePackFunc();
+			},
+			_executePackFunc: function() {
+				for(var i=0; i < this.function_list.length; i++) {
+					this.function_list[i].call(this._packMaster());
+				}
+			},
+			_packMaster: function() {
+				var that = this;
+				return {
+					complete: function() {
+						that.function_list.splice(0, 1);
+						if(that.function_list.length == 0 && that.callback != undefined) {
+							that.callback();
+						}
+					}
+				}
+			},
+			_fManager: function(arguments) {
+				this.function_list = [];
+				if(arguments.length == 0) {
+					throw new Error("Arguments is null.");
+				}
+				else if(arguments.length == 1 && arguments[0] instanceof Function) {
+					this.function_list.push(arguments[0]);
+				}
+				else if(arguments.length == 1 && arguments[0] instanceof Array) {
+					for(var i=0; i < arguments[0].length; i++) {
+						this.function_list.push(arguments[0][i]);
+					}
+				}
+				else {        
+					for(var i=0; i < arguments.length; i++) {
+						this.function_list.push(arguments[i]);
+					}                                
+				}                
+			},
+			_compteleCall: function() {
+				for (prop in this._markStack) {
+					if (this._markStack.hasOwnProperty(prop)) {
+						if(!this._markStack[prop]) {
+							return false;
+						}
+					}
+				}
+				if(this.outTimer != undefined) {
+					clearTimeout(this.outTimer);
+				}       
+				this.callback(this.callbackResponse);
+			}
+        }
+		return AsyncMarks(arguments);
+	}
+}
+
+if(typeof module !== 'undefined' && module.exports) {
+	module.exports = NodeSmarty;
+}
+else {
+	window['NodeSmarty'] = NodeSmarty;
+}
+		
+}()); at SyntaxError: Binding arguments in strict mode (1274:23)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1472:14)
+    at Parser.pp$3.checkParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2136:16)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2119:12)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

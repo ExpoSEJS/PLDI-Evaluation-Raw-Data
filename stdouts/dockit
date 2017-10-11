@@ -1,0 +1,67 @@
+/root/Targets/dockit
+└─┬ dockit@1.0.0 
+  ├─┬ ejstpl@4.0.0 
+  │ ├── commander@2.6.0 
+  │ ├── ejs@2.2.4 
+  │ ├─┬ globule@0.2.0 
+  │ │ ├─┬ glob@3.2.11 
+  │ │ │ └── minimatch@0.3.0 
+  │ │ ├── lodash@2.4.2 
+  │ │ └─┬ minimatch@0.2.14 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ └─┬ minimatch@2.0.10 
+  │   └─┬ brace-expansion@1.1.8 
+  │     ├── balanced-match@1.0.0 
+  │     └── concat-map@0.0.1 
+  ├─┬ glob-expand@0.1.0 
+  │ ├─┬ glob@4.4.2 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── once@1.4.0 
+  │ └── lodash@1.2.1 
+  ├── highlight.js@8.9.1 
+  ├── json5@0.4.0 
+  ├── marked@0.3.3 
+  ├── minimist@1.2.0 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── ncp@2.0.0 
+  ├─┬ noddocco@1.1.0 
+  │ └── html-entities@1.2.1 
+  └── strip@0.0.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dockit/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0653 took 7.4902s
+*-- Errors occured in test {"_bound":0}
+* Error: RangeError: Maximum call stack size exceeded
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/dockit/node_modules/dockit/index.js. Coverage (Term): 5% Coverage (LOC): 3%
+*- File /root/Targets/dockit/node_modules/noddocco/index.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/dockit/node_modules/marked/lib/marked.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/index.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/highlight.js. Coverage (Term): 15% Coverage (LOC): 27%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/1c.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/accesslog.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/actionscript.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/apache.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/applescript.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/armasm.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/xml.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/asciidoc.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/aspectj.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dockit/node_modules/highlight.js/lib/languages/autohotkey.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,78 @@
+/root/Targets/react-glitch
+├── UNMET PEER DEPENDENCY glitch-canvas@^1.0.2
+└─┬ react-glitch@0.1.3 
+  ├── lodash@4.17.4 
+  ├─┬ react@15.6.2 
+  │ ├── create-react-class@15.6.2 
+  │ ├─┬ fbjs@0.8.16 
+  │ │ ├── core-js@1.2.7 
+  │ │ ├─┬ isomorphic-fetch@2.2.1 
+  │ │ │ ├─┬ node-fetch@1.7.3 
+  │ │ │ │ ├─┬ encoding@0.1.12 
+  │ │ │ │ │ └── iconv-lite@0.4.19 
+  │ │ │ │ └── is-stream@1.1.0 
+  │ │ │ └── whatwg-fetch@2.0.3 
+  │ │ ├─┬ promise@7.3.1 
+  │ │ │ └── asap@2.0.6 
+  │ │ ├── setimmediate@1.0.5 
+  │ │ └── ua-parser-js@0.7.14 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ ├── object-assign@4.1.1 
+  │ └── prop-types@15.6.0 
+  └── react-dom@15.6.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-glitch/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","fromCharCode","join","assign","freeze","for","call","RegExp","Map","Set","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.105 took 11.5355s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'glitch-canvas'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/react-glitch/node_modules/react-glitch/lib/react-glitch.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/react-glitch/node_modules/react/react.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/React.js. Coverage (Term): 64% Coverage (LOC): 79%
+*- File /root/Targets/react-glitch/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactBaseClasses.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/react-glitch/node_modules/react/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactNoopUpdateQueue.js. Coverage (Term): 28% Coverage (LOC): 60%
+*- File /root/Targets/react-glitch/node_modules/fbjs/lib/warning.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/react-glitch/node_modules/fbjs/lib/emptyFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/react-glitch/node_modules/react/lib/canDefineProperty.js. Coverage (Term): 87% Coverage (LOC): 92%
+*- File /root/Targets/react-glitch/node_modules/fbjs/lib/emptyObject.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/fbjs/lib/invariant.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/react-glitch/node_modules/react/lib/lowPriorityWarning.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactChildren.js. Coverage (Term): 22% Coverage (LOC): 39%
+*- File /root/Targets/react-glitch/node_modules/react/lib/PooledClass.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactElement.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactCurrentOwner.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/react-glitch/node_modules/react/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/react-glitch/node_modules/react/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactDOMFactories.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactElementValidator.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactComponentTreeHook.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/react-glitch/node_modules/react/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactPropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/prop-types/factory.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/prop-types/factoryWithTypeCheckers.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/react-glitch/node_modules/prop-types/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/prop-types/checkPropTypes.js. Coverage (Term): 27% Coverage (LOC): 41%
+*- File /root/Targets/react-glitch/node_modules/react/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/react/lib/createClass.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/react-glitch/node_modules/create-react-class/factory.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/react-glitch/node_modules/react/lib/onlyChild.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,60 @@
+/root/Targets/cloudtypes
+└── cloudtypes@0.0.14 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cloudtypes/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0335 took 3.6239s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'static' is reserved (11:46) on program var Server = require('./Server');
+var State  = require('./State');
+
+module.exports = CServer;
+
+function CServer(state) {
+  this.state  = state || new State();
+  this.server = new Server(this.state);
+}
+
+CServer.prototype.publish = function (target, static) {
+  this.server.open(target, static);
+  this.state.published(this.server);
+  return this;
+};
+
+CServer.prototype.close = function () {
+  this.server.close();
+};
+
+CServer.prototype.declare = function (name, array) {
+  this.state.declare(name, array);
+  return this;
+};
+
+CServer.prototype.get = function (name) {
+  return this.state.get(name);
+}; at SyntaxError: The keyword 'static' is reserved (11:46)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cloudtypes/node_modules/cloudtypes/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/cloudtypes/node_modules/cloudtypes/server/main.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

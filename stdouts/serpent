@@ -1,0 +1,96 @@
+/root/Targets/serpent
+└─┬ serpent@0.0.1 
+  ├─┬ engine.io@1.8.4 
+  │ ├─┬ accepts@1.3.3 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── base64id@1.0.0 
+  │ ├── cookie@0.3.1 
+  │ ├─┬ debug@2.3.3 
+  │ │ └── ms@0.7.2 
+  │ ├─┬ engine.io-parser@1.3.2 
+  │ │ ├── after@0.8.2 
+  │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ ├── blob@0.0.4 
+  │ │ ├─┬ has-binary@0.1.7 
+  │ │ │ └── isarray@0.0.1 
+  │ │ └── wtf-8@1.0.0 
+  │ └─┬ ws@1.1.4 
+  │   ├── options@0.0.6 
+  │   └── ultron@1.0.2 
+  └─┬ engine.io-client@1.8.4 
+    ├── component-emitter@1.2.1 
+    ├── component-inherit@0.0.3 
+    ├── has-cors@1.1.0 
+    ├── indexof@0.0.1 
+    ├─┬ parsejson@0.0.3 
+    │ └─┬ better-assert@1.0.2 
+    │   └── callsite@1.0.0 
+    ├── parseqs@0.0.5 
+    ├── parseuri@0.0.5 
+    ├── ws@1.1.2 
+    ├── xmlhttprequest-ssl@1.5.3 
+    └── yeast@0.1.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/serpent/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","create","call","freeze","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0571 took 31.9495s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: Error: getaddrinfo ENOTFOUND robert-pc
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 39% Coverage (LOC): 43%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/serpent/node_modules/serpent/lib/Hub.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/engine.io.js. Coverage (Term): 49% Coverage (LOC): 53%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/server.js. Coverage (Term): 32% Coverage (LOC): 37%
+*- File /root/Targets/serpent/node_modules/base64id/lib/base64id.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transports/index.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transports/polling-xhr.js. Coverage (Term): 32% Coverage (LOC): 41%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transports/polling.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transport.js. Coverage (Term): 38% Coverage (LOC): 55%
+*- File /root/Targets/serpent/node_modules/engine.io-parser/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/serpent/node_modules/engine.io-parser/lib/index.js. Coverage (Term): 7% Coverage (LOC): 15%
+*- File /root/Targets/serpent/node_modules/wtf-8/wtf-8.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/serpent/node_modules/after/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/serpent/node_modules/engine.io-parser/lib/keys.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/serpent/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/serpent/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/serpent/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/serpent/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/serpent/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/serpent/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/serpent/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/serpent/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transports/polling-jsonp.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/transports/websocket.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/serpent/node_modules/engine.io/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/serpent/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/serpent/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/serpent/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/serpent/node_modules/ultron/index.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/serpent/node_modules/options/lib/options.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/serpent/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/serpent/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/serpent/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/serpent/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
+*- File /root/Targets/serpent/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/serpent/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/serpent/node_modules/ws/lib/Validation.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/serpent/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/serpent/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/serpent/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/serpent/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/serpent/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/serpent/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

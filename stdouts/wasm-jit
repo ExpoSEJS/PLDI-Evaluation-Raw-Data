@@ -1,0 +1,102 @@
+
+> mmap.js@1.0.3 install /root/Targets/wasm-jit/node_modules/mmap.js
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wasm-jit/node_modules/mmap.js/build'
+  CXX(target) Release/obj.target/mmap/src/mmap.o
+  SOLINK_MODULE(target) Release/obj.target/mmap.node
+  COPY Release/mmap.node
+make: Leaving directory '/root/Targets/wasm-jit/node_modules/mmap.js/build'
+
+> ref@1.3.5 install /root/Targets/wasm-jit/node_modules/ref
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wasm-jit/node_modules/ref/build'
+  CXX(target) Release/obj.target/binding/src/binding.o
+  SOLINK_MODULE(target) Release/obj.target/binding.node
+  COPY Release/binding.node
+make: Leaving directory '/root/Targets/wasm-jit/node_modules/ref/build'
+
+> jit.js@1.18.2 install /root/Targets/wasm-jit/node_modules/jit.js
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wasm-jit/node_modules/jit.js/build'
+  CXX(target) Release/obj.target/jit/src/jit.o
+  SOLINK_MODULE(target) Release/obj.target/jit.node
+  COPY Release/jit.node
+make: Leaving directory '/root/Targets/wasm-jit/node_modules/jit.js/build'
+
+> wasm-jit@1.2.2 install /root/Targets/wasm-jit/node_modules/wasm-jit
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wasm-jit/node_modules/wasm-jit/build'
+  CXX(target) Release/obj.target/std/src/std.o
+  SOLINK_MODULE(target) Release/obj.target/std.node
+  COPY Release/std.node
+make: Leaving directory '/root/Targets/wasm-jit/node_modules/wasm-jit/build'
+/root/Targets/wasm-jit
+└─┬ wasm-jit@1.2.2 
+  ├── bindings@1.3.0 
+  ├── bn.js@3.3.0 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├─┬ dominance-frontier@2.0.5 
+  │ └── hierarchical-bitfield.js@1.0.0 
+  ├── gvn@1.0.0 
+  ├─┬ jit.js@1.18.2 
+  │ ├── ref@1.3.5 
+  │ └─┬ wbuf@1.7.2 
+  │   └── minimalistic-assert@1.0.0 
+  ├── json-pipeline-reducer@1.5.2 
+  ├─┬ json-pipeline-scheduler@2.1.1 
+  │ ├── bitfield.js@1.4.0 
+  │ └── json-pipeline@3.12.3 
+  ├─┬ linearscan@5.1.3 
+  │ ├── binary-search@1.3.2 
+  │ ├── bit-set.js@1.1.0 
+  │ └── parallel-move@1.0.0 
+  ├── mmap.js@1.0.3 
+  ├── nan@2.7.0 
+  ├── ssa.js@2.0.4 
+  ├── wasm-ast@3.0.1 
+  └── wasm-cfg@3.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wasm-jit/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 47% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","getFileName","apply","join","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0357 took 8.1056s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Could not locate the bindings file. Tried:
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Debug/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Release/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Debug/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Debug/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Release/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Release/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/default/mmap.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/compiled/7.5.0/linux/x64/mmap.node
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm.js. Coverage (Term): 47% Coverage (LOC): 75%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/index.js. Coverage (Term): 71% Coverage (LOC): 100%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/codegen/index.js. Coverage (Term): 37% Coverage (LOC): 60%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/codegen/builder.js. Coverage (Term): 28% Coverage (LOC): 41%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/reductions/index.js. Coverage (Term): 44% Coverage (LOC): 43%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/reductions/inline-params.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/wasm-jit/node_modules/json-pipeline-reducer/lib/reducer.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/wasm-jit/node_modules/json-pipeline-reducer/lib/queue.js. Coverage (Term): 23% Coverage (LOC): 37%
+*- File /root/Targets/wasm-jit/node_modules/json-pipeline-reducer/lib/reduction.js. Coverage (Term): 31% Coverage (LOC): 52%
+*- File /root/Targets/wasm-jit/node_modules/wasm-jit/lib/wasm/base/reductions/select.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/wasm-jit/node_modules/mmap.js/lib/mmap.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/wasm-jit/node_modules/bindings/bindings.js. Coverage (Term): 87% Coverage (LOC): 91%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

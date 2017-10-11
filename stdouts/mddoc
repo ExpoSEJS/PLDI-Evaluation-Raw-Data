@@ -1,0 +1,60 @@
+/root/Targets/mddoc
+└─┬ mddoc@0.0.2 
+  ├── colors@0.6.2 
+  ├─┬ ect@0.5.9 
+  │ ├── coffee-script@1.12.7 
+  │ └─┬ optimist@0.4.0 
+  │   └── wordwrap@0.0.3 
+  ├── esprima@1.0.4 
+  ├─┬ markdown@0.5.0 
+  │ └─┬ nopt@2.1.2 
+  │   └── abbrev@1.1.0 
+  ├─┬ pretty-error@0.1.18 
+  │ ├─┬ renderkid@0.2.1 
+  │ │ ├─┬ CSSselect@0.3.11 
+  │ │ │ ├── CSSwhat@0.4.7 
+  │ │ │ └── domutils@1.2.2 
+  │ │ ├── dom-converter@0.1.4 
+  │ │ └─┬ htmlparser2@3.3.0 
+  │ │   ├── domelementtype@1.3.0 
+  │ │   ├── domhandler@2.1.0 
+  │ │   ├── domutils@1.1.6 
+  │ │   └─┬ readable-stream@1.0.34 
+  │ │     ├── core-util-is@1.0.2 
+  │ │     ├── inherits@2.0.3 
+  │ │     ├── isarray@0.0.1 
+  │ │     └── string_decoder@0.10.31 
+  │ └── utila@0.3.3 
+  ├─┬ pretty-monitor@0.1.7 
+  │ └── when-monitor@0.1.3 
+  ├── underscore@1.6.0 
+  └── when@2.8.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mddoc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","join","call","Object","sort","create","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0531 took 13.9722s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mddoc/node_modules/mddoc/index.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/mddoc/node_modules/mddoc/src/MarkdownReader.js. Coverage (Term): 11% Coverage (LOC): 6%
+*- File /root/Targets/mddoc/node_modules/markdown/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/mddoc/node_modules/markdown/lib/markdown.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/mddoc/node_modules/mddoc/src/utils.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/mddoc/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/mddoc/node_modules/when/when.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/mddoc/node_modules/mddoc/src/EventPromise.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/mddoc/node_modules/when/node/function.js. Coverage (Term): 27% Coverage (LOC): 46%
+*- File /root/Targets/mddoc/node_modules/colors/colors.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

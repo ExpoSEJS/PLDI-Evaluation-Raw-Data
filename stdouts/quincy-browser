@@ -1,0 +1,43 @@
+/root/Targets/quincy-browser
+└─┬ quincy-browser@0.6.1 
+  ├── quincy@0.5.8 
+  └── quincy-promise@0.5.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/quincy-browser/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.089 took 20.8583s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/quincy-browser/node_modules/quincy-browser/index.js. Coverage (Term): 58% Coverage (LOC): 67%
+*- File /root/Targets/quincy-browser/node_modules/quincy-browser/lib/ajax.js. Coverage (Term): 16% Coverage (LOC): 30%
+*- File /root/Targets/quincy-browser/node_modules/quincy/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/quincy.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/type.js. Coverage (Term): 63% Coverage (LOC): 87%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/forEach.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/fn.js. Coverage (Term): 17% Coverage (LOC): 39%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/fold.js. Coverage (Term): 53% Coverage (LOC): 65%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/reduce.js. Coverage (Term): 58% Coverage (LOC): 61%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/partial.js. Coverage (Term): 11% Coverage (LOC): 27%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/curry.js. Coverage (Term): 13% Coverage (LOC): 23%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/collect.js. Coverage (Term): 18% Coverage (LOC): 38%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/collections.js. Coverage (Term): 20% Coverage (LOC): 37%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/arrays.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/objects.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/strings.js. Coverage (Term): 18% Coverage (LOC): 35%
+*- File /root/Targets/quincy-browser/node_modules/quincy/lib/createClass.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/quincy-browser/node_modules/quincy-promise/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/quincy-browser/node_modules/quincy-promise/lib/promise.js. Coverage (Term): 13% Coverage (LOC): 28%
+*- File /root/Targets/quincy-browser/node_modules/quincy-browser/lib/ready.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

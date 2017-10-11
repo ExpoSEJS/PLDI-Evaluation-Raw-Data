@@ -1,0 +1,30 @@
+/root/Targets/snabbdom-pikaday
+└─┬ snabbdom-pikaday@0.0.2 
+  ├── moment@2.18.1 
+  ├── pikaday@1.6.1 
+  └── snabbdom@0.6.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/snabbdom-pikaday/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0474 took 23.2407s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/snabbdom-pikaday/node_modules/snabbdom-pikaday/build.js. Coverage (Term): 13% Coverage (LOC): 13%
+*- File /root/Targets/snabbdom-pikaday/node_modules/snabbdom/h.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- File /root/Targets/snabbdom-pikaday/node_modules/snabbdom/vnode.js. Coverage (Term): 52% Coverage (LOC): 47%
+*- File /root/Targets/snabbdom-pikaday/node_modules/snabbdom/is.js. Coverage (Term): 60% Coverage (LOC): 86%
+*- File /root/Targets/snabbdom-pikaday/node_modules/pikaday/pikaday.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/snabbdom-pikaday/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

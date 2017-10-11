@@ -1,0 +1,126 @@
+/root/Targets/hyperd
+└─┬ hyperd@0.1.0 
+  ├── clone@1.0.2 
+  ├── deep-equal@1.0.0 
+  ├── dom-delegate@2.0.3 
+  ├─┬ html-to-vdom@0.5.5  (git+https://github.com/nkzawa/html-to-vdom.git#9c02af8c57244a89c8680576b6966eb07d18ddcd)
+  │ ├── ent@2.2.0 
+  │ └─┬ htmlparser2@3.9.2 
+  │   ├── domelementtype@1.3.0 
+  │   ├── domhandler@2.4.1 
+  │   ├─┬ domutils@1.6.2 
+  │   │ └─┬ dom-serializer@0.1.0 
+  │   │   └── domelementtype@1.1.3 
+  │   ├── entities@1.1.1 
+  │   ├── inherits@2.0.3 
+  │   └─┬ readable-stream@2.3.3 
+  │     ├── core-util-is@1.0.2 
+  │     ├── isarray@1.0.0 
+  │     ├── process-nextick-args@1.0.7 
+  │     ├── safe-buffer@5.1.1 
+  │     ├── string_decoder@1.0.3 
+  │     └── util-deprecate@1.0.2 
+  ├─┬ raf@2.0.4 
+  │ └── performance-now@0.1.4 
+  ├── trim@0.0.1 
+  ├─┬ virtual-dom@2.0.1 
+  │ ├── browser-split@0.0.1 
+  │ ├─┬ error@4.4.0 
+  │ │ ├── camelize@1.0.0 
+  │ │ └── string-template@0.2.1 
+  │ ├─┬ ev-store@7.0.0 
+  │ │ └── individual@3.0.0 
+  │ ├─┬ global@4.3.2 
+  │ │ ├─┬ min-document@2.19.0 
+  │ │ │ └── dom-walk@0.1.1 
+  │ │ └── process@0.5.2 
+  │ ├── is-object@1.0.1 
+  │ ├── next-tick@0.2.2 
+  │ ├── x-is-array@0.1.0 
+  │ └── x-is-string@0.1.0 
+  └── xtend@4.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hyperd/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","create"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0458 took 31.5795s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: Element is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hyperd/node_modules/hyperd/index.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/hyperd/node_modules/hyperd/lib/component.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/diff.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vtree/diff.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/hyperd/node_modules/x-is-array/index.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/vpatch.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/version.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/is-vnode.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/is-vtext.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/is-widget.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/is-thunk.js. Coverage (Term): 58% Coverage (LOC): 80%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/handle-thunk.js. Coverage (Term): 34% Coverage (LOC): 32%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vtree/diff-props.js. Coverage (Term): 16% Coverage (LOC): 15%
+*- File /root/Targets/hyperd/node_modules/is-object/index.js. Coverage (Term): 53% Coverage (LOC): 83%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/is-vhook.js. Coverage (Term): 37% Coverage (LOC): 80%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/patch.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/patch.js. Coverage (Term): 20% Coverage (LOC): 21%
+*- File /root/Targets/hyperd/node_modules/global/document.js. Coverage (Term): 82% Coverage (LOC): 92%
+*- File /root/Targets/hyperd/node_modules/min-document/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/min-document/document.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/hyperd/node_modules/dom-walk/index.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/hyperd/node_modules/min-document/dom-comment.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/hyperd/node_modules/min-document/dom-text.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/hyperd/node_modules/min-document/dom-element.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/hyperd/node_modules/min-document/event/dispatch-event.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/hyperd/node_modules/min-document/event/add-event-listener.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/hyperd/node_modules/min-document/event/remove-event-listener.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/hyperd/node_modules/min-document/serialize.js. Coverage (Term): 9% Coverage (LOC): 24%
+*- File /root/Targets/hyperd/node_modules/min-document/dom-fragment.js. Coverage (Term): 55% Coverage (LOC): 59%
+*- File /root/Targets/hyperd/node_modules/min-document/event.js. Coverage (Term): 48% Coverage (LOC): 73%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/dom-index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/patch-op.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/apply-properties.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/create-element.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vdom/update-widget.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/h.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/virtual-hyperscript/index.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/vnode.js. Coverage (Term): 23% Coverage (LOC): 22%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/vnode/vtext.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/virtual-hyperscript/parse-tag.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/hyperd/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/virtual-hyperscript/hooks/soft-set-hook.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/virtual-hyperscript/hooks/ev-hook.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/hyperd/node_modules/ev-store/index.js. Coverage (Term): 63% Coverage (LOC): 64%
+*- File /root/Targets/hyperd/node_modules/individual/one-version.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/hyperd/node_modules/individual/index.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/hyperd/node_modules/virtual-dom/create-element.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/html-to-vdom/index.js. Coverage (Term): 44% Coverage (LOC): 56%
+*- File /root/Targets/hyperd/node_modules/html-to-vdom/lib/html-to-vdom.js. Coverage (Term): 25% Coverage (LOC): 33%
+*- File /root/Targets/hyperd/node_modules/html-to-vdom/lib/htmlparser-to-vdom.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/hyperd/node_modules/ent/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/hyperd/node_modules/ent/encode.js. Coverage (Term): 16% Coverage (LOC): 16%
+*- File /root/Targets/hyperd/node_modules/ent/decode.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/hyperd/node_modules/html-to-vdom/lib/parse-html.js. Coverage (Term): 37% Coverage (LOC): 38%
+*- File /root/Targets/hyperd/node_modules/htmlparser2/lib/index.js. Coverage (Term): 24% Coverage (LOC): 52%
+*- File /root/Targets/hyperd/node_modules/htmlparser2/lib/Parser.js. Coverage (Term): 22% Coverage (LOC): 46%
+*- File /root/Targets/hyperd/node_modules/htmlparser2/lib/Tokenizer.js. Coverage (Term): 24% Coverage (LOC): 21%
+*- File /root/Targets/hyperd/node_modules/entities/lib/decode_codepoint.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/hyperd/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/hyperd/node_modules/domhandler/index.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/hyperd/node_modules/domelementtype/index.js. Coverage (Term): 54% Coverage (LOC): 93%
+*- File /root/Targets/hyperd/node_modules/domhandler/lib/node.js. Coverage (Term): 45% Coverage (LOC): 68%
+*- File /root/Targets/hyperd/node_modules/domhandler/lib/element.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/hyperd/node_modules/dom-delegate/lib/index.js. Coverage (Term): 44% Coverage (LOC): 63%
+*- File /root/Targets/hyperd/node_modules/dom-delegate/lib/delegate.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

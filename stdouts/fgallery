@@ -1,0 +1,127 @@
+/root/Targets/fgallery
+└─┬ fgallery@1.2.0 
+  ├─┬ body-parser@1.18.1 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.6.8 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ └── inherits@2.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.0.5 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├── fs@0.0.2 
+  ├─┬ jsonwebtoken@7.4.3 
+  │ ├─┬ joi@6.10.1 
+  │ │ ├── hoek@2.16.3 
+  │ │ ├── isemail@1.2.0 
+  │ │ ├── moment@2.18.1 
+  │ │ └── topo@1.1.0 
+  │ ├─┬ jws@3.1.4 
+  │ │ ├── base64url@2.0.0 
+  │ │ ├─┬ jwa@1.1.5 
+  │ │ │ ├── buffer-equal-constant-time@1.0.1 
+  │ │ │ └── ecdsa-sig-formatter@1.0.9 
+  │ │ └── safe-buffer@5.1.1 
+  │ ├── lodash.once@4.1.1 
+  │ ├── ms@2.0.0 
+  │ └── xtend@4.0.1 
+  └─┬ path@0.12.7 
+    ├── process@0.11.10 
+    └─┬ util@0.10.3 
+      └── inherits@2.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fgallery/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","call","RegExp","Date","toString","bind","Array","charCodeAt","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0579 took 44.5856s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/fgallery/node_modules/fgallery/app.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/fgallery/node_modules/fgallery/config.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/fgallery/node_modules/fgallery/gallery.js. Coverage (Term): 17% Coverage (LOC): 29%
+*- File /root/Targets/fgallery/node_modules/fgallery/auth.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/index.js. Coverage (Term): 61% Coverage (LOC): 70%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/decode.js. Coverage (Term): 24% Coverage (LOC): 20%
+*- File /root/Targets/fgallery/node_modules/jws/index.js. Coverage (Term): 75% Coverage (LOC): 92%
+*- File /root/Targets/fgallery/node_modules/jws/lib/sign-stream.js. Coverage (Term): 22% Coverage (LOC): 28%
+*- File /root/Targets/fgallery/node_modules/base64url/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/fgallery/node_modules/base64url/dist/base64url.js. Coverage (Term): 35% Coverage (LOC): 53%
+*- File /root/Targets/fgallery/node_modules/base64url/dist/pad-string.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/fgallery/node_modules/jws/lib/data-stream.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/fgallery/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/fgallery/node_modules/jwa/index.js. Coverage (Term): 16% Coverage (LOC): 28%
+*- File /root/Targets/fgallery/node_modules/buffer-equal-constant-time/index.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/fgallery/node_modules/ecdsa-sig-formatter/src/ecdsa-sig-formatter.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/fgallery/node_modules/ecdsa-sig-formatter/src/param-bytes-for-alg.js. Coverage (Term): 69% Coverage (LOC): 71%
+*- File /root/Targets/fgallery/node_modules/jws/lib/tostring.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/fgallery/node_modules/jws/lib/verify-stream.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/verify.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/lib/JsonWebTokenError.js. Coverage (Term): 49% Coverage (LOC): 50%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/lib/NotBeforeError.js. Coverage (Term): 66% Coverage (LOC): 70%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/lib/TokenExpiredError.js. Coverage (Term): 66% Coverage (LOC): 70%
+*- File /root/Targets/fgallery/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/fgallery/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/fgallery/node_modules/jsonwebtoken/sign.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/fgallery/node_modules/joi/lib/index.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/fgallery/node_modules/joi/lib/any.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/fgallery/node_modules/hoek/lib/index.js. Coverage (Term): 7% Coverage (LOC): 16%
+*- File /root/Targets/fgallery/node_modules/hoek/lib/escape.js. Coverage (Term): 33% Coverage (LOC): 46%
+*- File /root/Targets/fgallery/node_modules/joi/lib/ref.js. Coverage (Term): 18% Coverage (LOC): 36%
+*- File /root/Targets/fgallery/node_modules/joi/lib/errors.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/fgallery/node_modules/joi/lib/language.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/fgallery/node_modules/joi/lib/cast.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/fgallery/node_modules/joi/lib/date.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/fgallery/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- File /root/Targets/fgallery/node_modules/joi/lib/string.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/fgallery/node_modules/isemail/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/fgallery/node_modules/isemail/lib/isemail.js. Coverage (Term): 7% Coverage (LOC): 16%
+*- File evalIndirect. Coverage (Term): 12% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

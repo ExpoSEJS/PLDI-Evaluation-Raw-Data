@@ -1,0 +1,60 @@
+
+> npool@1.4.7 install /root/Targets/npool/node_modules/npool
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/npool/node_modules/npool/build'
+  CC(target) Release/obj.target/threadpool/threadpool/synchronize.o
+  CC(target) Release/obj.target/threadpool/threadpool/task_queue.o
+  CC(target) Release/obj.target/threadpool/threadpool/thread_pool.o
+  AR(target) Release/obj.target/threadpool.a
+  COPY Release/threadpool.a
+  CXX(target) Release/obj.target/npool/npool.o
+  CXX(target) Release/obj.target/npool/source/thread.o
+  CXX(target) Release/obj.target/npool/source/file_manager.o
+  CXX(target) Release/obj.target/npool/source/json_utility.o
+  CXX(target) Release/obj.target/npool/source/callback_queue.o
+  CXX(target) Release/obj.target/npool/source/utilities.o
+  CXX(target) Release/obj.target/npool/source/nrequire.o
+  CXX(target) Release/obj.target/npool/source/isolate_context.o
+  SOLINK_MODULE(target) Release/obj.target/npool.node
+  COPY Release/npool.node
+make: Leaving directory '/root/Targets/npool/node_modules/npool/build'
+/root/Targets/npool
+└─┬ npool@1.4.7 
+  └── nan@2.7.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/npool/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 44% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 44% coverage ] ****** [4 done /0 queued / 1 running / 4 errors / 44% coverage ] ****** [4 done /0 queued / 1 running / 4 errors / 44% coverage ] ****** [5 done /0 queued / 1 running / 5 errors / 44% coverage ] ****** [5 done /0 queued / 1 running / 5 errors / 44% coverage ] ****** [6 done /0 queued / 0 running / 5 errors / 44% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0711 took 6.324s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: Error: createThreadPool() - Expects 1 arguments: 1) number of threads (uint32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 6.458 took 2.8214s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1}
+* Error: Error: destroyThreadPool() - No thread pool exists to destroy
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 9.3468 took 3.0079s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"_bound":2}
+* Error: Error: loadFile() - Expects 2 arguments: 1) file key (uint32) 2) file path (string)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"_bound":3} start 12.3725 took 2.5762s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"_bound":3}
+* Error: Error: loadFile() - Expects 1 argument: 1) file key (uint32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"_bound":4} start 14.9617 took 3.4721s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"_bound":4}
+* Error: Error: work() - Expects 1 argument: 1) work item (object)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":5,"_bound":5} start 18.4697 took 3.1074s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 6 paths with 5 errors **

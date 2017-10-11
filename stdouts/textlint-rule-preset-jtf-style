@@ -1,0 +1,183 @@
+/root/Targets/textlint-rule-preset-jtf-style
+├── UNMET PEER DEPENDENCY textlint@>= 5.6.0
+└─┬ textlint-rule-preset-jtf-style@2.3.0 
+  ├── analyze-desumasu-dearu@2.1.5 
+  ├── japanese-numerals-to-number@1.0.2 
+  ├── match-index@1.0.1 
+  ├─┬ moji@0.5.1 
+  │ └── object-assign@3.0.0 
+  ├─┬ regexp.prototype.flags@1.1.1 
+  │ └─┬ define-properties@1.1.2 
+  │   ├── foreach@2.0.5 
+  │   └── object-keys@1.0.11 
+  ├── regx@1.0.4 
+  ├─┬ sorted-joyo-kanji@0.2.0 
+  │ ├─┬ amp-each@1.0.1 
+  │ │ ├── amp-create-callback@1.0.1 
+  │ │ └─┬ amp-keys@1.0.1 
+  │ │   ├── amp-has@1.0.1 
+  │ │   ├─┬ amp-index-of@1.1.0 
+  │ │   │ └── amp-is-number@1.0.1 
+  │ │   └── amp-is-object@1.0.1 
+  │ ├── code-point@1.1.0 
+  │ ├── joyo-kanji@0.2.1 
+  │ └── sorted-array@2.0.1 
+  ├── UNMET PEER DEPENDENCY textlint@>= 5.5.0
+  ├─┬ textlint-rule-helper@2.0.0 
+  │ └── unist-util-visit@1.1.3 
+  └─┬ textlint-rule-prh@5.0.1 
+    ├─┬ prh@5.4.3 
+    │ ├── commandpost@1.2.1 
+    │ ├── diff@3.3.1 
+    │ └─┬ js-yaml@3.10.0 
+    │   ├─┬ argparse@1.0.9 
+    │   │ └── sprintf-js@1.0.3 
+    │   └── esprima@4.0.0 
+    └── untildify@3.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/textlint-rule-preset-jtf-style/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","freeze","defineProperties","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0322 took 3.6918s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (10:4) on program // LICENSE : MIT
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.matchCaptureGroupAll = matchCaptureGroupAll;
+exports.matchAll = matchAll;
+var flagsGetter = require("regexp.prototype.flags");
+var assert = require("assert");
+
+/**
+ * @typedef {Object} MatchCaptureGroup
+ * @property {string} text - text is matched texts
+ * @property {number} index - index is start of match
+ */
+/**
+ * @typedef {Object} MatchAllGroup
+ * @property {Array} all
+ * @property {string} input
+ * @property {number} index
+ * @property {MatchCaptureGroup[]} captureGroups
+ */
+
+/**
+ * @param {string} text
+ * @param {RegExp} regExp regExp should include capture
+ * @returns {MatchCaptureGroup[]} return array of MatchCaptureGroup
+ */
+function matchCaptureGroupAll(text, regExp) {
+    var source = regExp.source;
+    assert(source.indexOf("(") >= 0, "RegExp should contain capture group at least one");
+    var all = matchAll(text, regExp);
+    var captureGroups = [];
+    all.forEach(function (match) {
+        match.captureGroups.forEach(function (captureGroup) {
+            captureGroups.push(captureGroup);
+        });
+    });
+    return captureGroups;
+}
+/**
+ * matchAll function inspired String.prototype.matchAll
+ * @param {String} text
+ * @param {RegExp} regExp
+ * @returns {MatchAllGroup[]}
+ * @see reference https://github.com/tc39/String.prototype.matchAll
+ * http://stackoverflow.com/questions/15934353/get-index-of-each-capture-in-a-javascript-regex
+ */
+function matchAll(text, regExp) {
+    var matches = [];
+    var flags = regExp.flags || flagsGetter(regExp);
+    if (flags.indexOf('g') === -1) {
+        flags = 'g' + flags;
+    }
+    var rx = new RegExp(regExp.source, flags);
+    text.replace(rx, function () {
+        var matchAll = Array.prototype.slice.call(arguments, 0, -2);
+        var match = {};
+        match.all = matchAll;
+
+        match.input = arguments[arguments.length - 1];
+        match.index = arguments[arguments.length - 2];
+        var groups = matchAll.slice(1);
+
+        var captureGroups = [];
+        for (var cursor = match.index, l = groups.length, i = 0; i < l; i++) {
+            var index = cursor;
+
+            if (i + 1 !== l && groups[i] !== groups[i + 1]) {
+                var nextIndex = text.indexOf(groups[i + 1], cursor);
+                while (true) {
+                    var currentIndex = text.indexOf(groups[i], index);
+                    if (currentIndex !== -1 && currentIndex <= nextIndex) {
+                        index = currentIndex + 1;
+                    } else {
+                        break;
+                    }
+                }
+                index--;
+            } else {
+                index = text.indexOf(groups[i], cursor);
+            }
+            cursor = index + groups[i].length;
+            var captureGroup = {
+                text: groups[i],
+                index: index
+            };
+            captureGroups.push(captureGroup);
+        }
+        match.captureGroups = captureGroups;
+        matches.push(match);
+        /*
+            index,
+            input,
+            all,
+            captureGroups = [{
+                text,
+                index
+            }]
+         */
+    });
+    return matches;
+}
+//# sourceMappingURL=match-index.js.map at SyntaxError: Unexpected token (10:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/index.js. Coverage (Term): 18% Coverage (LOC): 12%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/1.1.1.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/analyze-desumasu-dearu/lib/analyze.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-helper/lib/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-helper/lib/textlint-rule-helper.js. Coverage (Term): 52% Coverage (LOC): 61%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-helper/lib/IgnoreNodeManager.js. Coverage (Term): 36% Coverage (LOC): 52%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/unist-util-visit/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/1.1.2.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/util/node-util.js. Coverage (Term): 50% Coverage (LOC): 47%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/1.1.3.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/1.1.5.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/1.2.1.js. Coverage (Term): 32% Coverage (LOC): 37%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/regx/dist/regx.js. Coverage (Term): 42% Coverage (LOC): 48%
+*- File /root/Targets/textlint-rule-preset-jtf-style/node_modules/textlint-rule-preset-jtf-style/lib/util/regexp.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

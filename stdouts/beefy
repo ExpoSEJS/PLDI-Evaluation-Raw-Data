@@ -1,0 +1,393 @@
+/root/Targets/beefy
+└─┬ beefy@2.1.8 
+  ├── ansicolors@0.3.2 
+  ├─┬ chokidar@1.7.0 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@1.0.1 
+  │ ├── glob-parent@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├─┬ is-glob@2.0.1 
+  │ │ └── is-extglob@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@2.1.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── readable-stream@2.3.3 
+  │   └── set-immediate-shim@1.0.1 
+  ├─┬ concat-stream@1.6.0 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └── typedarray@0.0.6 
+  ├── find-global-packages@0.0.1 
+  ├── ignorepatterns@1.1.0 
+  ├── leftpad@0.0.0 
+  ├── mime@1.2.11 
+  ├── minimist@0.0.8 
+  ├── open@0.0.3 
+  ├─┬ portfinder@0.2.1 
+  │ └── mkdirp@0.0.7 
+  ├── pretty-bytes@0.1.2 
+  ├─┬ readable-stream@1.1.14 
+  │ ├── core-util-is@1.0.2 
+  │ ├── isarray@0.0.1 
+  │ └── string_decoder@0.10.31 
+  ├── resolve@0.6.3 
+  ├── response-stream@0.0.0 
+  ├─┬ script-injector@1.0.0 
+  │ ├── duplexer2@0.0.2 
+  │ ├─┬ through2@0.6.5 
+  │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── xtend@4.0.1 
+  │ └─┬ trumpet@1.7.2 
+  │   ├─┬ html-select@2.3.24 
+  │   │ ├── cssauron@1.4.0 
+  │   │ ├── split@0.3.3 
+  │   │ ├─┬ stream-splicer@1.3.2 
+  │   │ │ ├── indexof@0.0.1 
+  │   │ │ ├── isarray@0.0.1 
+  │   │ │ ├── readable-wrap@1.0.0 
+  │   │ │ └─┬ through2@1.1.1 
+  │   │ │   └── xtend@4.0.1 
+  │   │ └─┬ through2@1.1.1 
+  │   │   └── xtend@4.0.1 
+  │   ├─┬ html-tokenize@1.2.5 
+  │   │ ├─┬ readable-stream@1.0.34 
+  │   │ │ ├── isarray@0.0.1 
+  │   │ │ └── string_decoder@0.10.31 
+  │   │ └── through2@0.4.2 
+  │   └─┬ through2@1.1.1 
+  │     └── xtend@4.0.1 
+  ├── through@2.2.7 
+  ├── which@1.0.9 
+  └─┬ xtend@2.1.2 
+    └── object-keys@0.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/beefy/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","create","charCodeAt","getOwnPropertyNames","getOwnPropertyDescriptor","call","apply","random"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0215 took 27.8827s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (17:21) on program module.exports = which
+which.sync = whichSync
+
+var path = require("path")
+  , fs
+  , COLON = process.platform === "win32" ? ";" : ":"
+  , isExe
+  , fs = require("fs")
+
+if (process.platform == "win32") {
+  // On windows, there is no good way to check that a file is executable
+  isExe = function isExe () { return true }
+} else {
+  isExe = function isExe (mod, uid, gid) {
+    //console.error(mod, uid, gid);
+    //console.error("isExe?", (mod & 0111).toString(8))
+    var ret = (mod & 0001)
+        || (mod & 0010) && process.getgid && gid === process.getgid()
+        || (mod & 0010) && process.getuid && 0   === process.getuid()
+        || (mod & 0100) && process.getuid && uid === process.getuid()
+        || (mod & 0100) && process.getuid && 0   === process.getuid()
+    //console.error("isExe?", ret)
+    return ret
+  }
+}
+
+
+
+function which (cmd, cb) {
+  if (isAbsolute(cmd)) return cb(null, cmd)
+  var pathEnv = (process.env.PATH || "").split(COLON)
+    , pathExt = [""]
+  if (process.platform === "win32") {
+    pathEnv.push(process.cwd())
+    pathExt = (process.env.PATHEXT || ".EXE").split(COLON)
+    if (cmd.indexOf(".") !== -1) pathExt.unshift("")
+  }
+  //console.error("pathEnv", pathEnv)
+  ;(function F (i, l) {
+    if (i === l) return cb(new Error("not found: "+cmd))
+    var p = path.resolve(pathEnv[i], cmd)
+    ;(function E (ii, ll) {
+      if (ii === ll) return F(i + 1, l)
+      var ext = pathExt[ii]
+      //console.error(p + ext)
+      fs.stat(p + ext, function (er, stat) {
+        if (!er &&
+            stat &&
+            stat.isFile() &&
+            isExe(stat.mode, stat.uid, stat.gid)) {
+          //console.error("yes, exe!", p + ext)
+          return cb(null, p + ext)
+        }
+        return E(ii + 1, ll)
+      })
+    })(0, pathExt.length)
+  })(0, pathEnv.length)
+}
+
+function whichSync (cmd) {
+  if (isAbsolute(cmd)) return cmd
+  var pathEnv = (process.env.PATH || "").split(COLON)
+    , pathExt = [""]
+  if (process.platform === "win32") {
+    pathEnv.push(process.cwd())
+    pathExt = (process.env.PATHEXT || ".EXE").split(COLON)
+    if (cmd.indexOf(".") !== -1) pathExt.unshift("")
+  }
+  for (var i = 0, l = pathEnv.length; i < l; i ++) {
+    var p = path.join(pathEnv[i], cmd)
+    for (var j = 0, ll = pathExt.length; j < ll; j ++) {
+      var cur = p + pathExt[j]
+      var stat
+      try { stat = fs.statSync(cur) } catch (ex) {}
+      if (stat &&
+          stat.isFile() &&
+          isExe(stat.mode, stat.uid, stat.gid)) return cur
+    }
+  }
+  throw new Error("not found: "+cmd)
+}
+
+var isAbsolute = process.platform === "win32" ? absWin : absUnix
+
+function absWin (p) {
+  if (absUnix(p)) return true
+  // pull off the device/UNC bit from a windows path.
+  // from node's lib/path.js
+  var splitDeviceRe =
+        /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/][^\\\/]+)?([\\\/])?/
+    , result = splitDeviceRe.exec(p)
+    , device = result[1] || ''
+    , isUnc = device && device.charAt(1) !== ':'
+    , isAbsolute = !!result[2] || isUnc // UNC paths are always absolute
+
+  return isAbsolute
+}
+
+function absUnix (p) {
+  return p.charAt(0) === "/" || p === ""
+}
+ at SyntaxError: Invalid number (17:21)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1654:14)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1639:17)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/beefy/node_modules/beefy/index.js. Coverage (Term): 11% Coverage (LOC): 8%
+*- File /root/Targets/beefy/node_modules/beefy/lib/bundlers/watchify.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /root/Targets/beefy/node_modules/concat-stream/index.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/readable.js. Coverage (Term): 61% Coverage (LOC): 60%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/beefy/node_modules/process-nextick-args/index.js. Coverage (Term): 22% Coverage (LOC): 19%
+*- File /root/Targets/beefy/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/internal/streams/stream.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/beefy/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/beefy/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/internal/streams/BufferList.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/internal/streams/destroy.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/beefy/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/beefy/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/beefy/node_modules/minimist/index.js. Coverage (Term): 3% Coverage (LOC): 6%
+*- File /root/Targets/beefy/node_modules/resolve/index.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/beefy/node_modules/resolve/lib/core.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/resolve/lib/async.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/beefy/node_modules/resolve/lib/caller.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/beefy/node_modules/resolve/lib/node-modules-paths.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/beefy/node_modules/resolve/lib/sync.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/beefy/node_modules/through/index.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/beefy/node_modules/beefy/lib/create-handler.js. Coverage (Term): 43% Coverage (LOC): 25%
+*- File /root/Targets/beefy/node_modules/xtend/index.js. Coverage (Term): 30% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/object-keys/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/xtend/has-keys.js. Coverage (Term): 48% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/legacy-bundle.js. Coverage (Term): 18% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/beefy/lib/accumulate-error.js. Coverage (Term): 36% Coverage (LOC): 30%
+*- File /root/Targets/beefy/node_modules/ansicolors/ansicolors.js. Coverage (Term): 85% Coverage (LOC): 96%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/default-index.js. Coverage (Term): 21% Coverage (LOC): 19%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/live-reload.js. Coverage (Term): 17% Coverage (LOC): 10%
+*- File /root/Targets/beefy/node_modules/response-stream/index.js. Coverage (Term): 10% Coverage (LOC): 9%
+*- File /root/Targets/beefy/node_modules/script-injector/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/script-injector/lib/script-injector.js. Coverage (Term): 21% Coverage (LOC): 18%
+*- File /root/Targets/beefy/node_modules/trumpet/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/readable-stream/readable.js. Coverage (Term): 90% Coverage (LOC): 92%
+*- File /root/Targets/beefy/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/beefy/node_modules/readable-stream/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/beefy/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/beefy/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/beefy/node_modules/trumpet/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/trumpet/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/duplexer2/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/beefy/node_modules/html-tokenize/index.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/readable.js. Coverage (Term): 91% Coverage (LOC): 92%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/beefy/node_modules/html-tokenize/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/beefy/node_modules/html-select/index.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/beefy/node_modules/html-select/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/html-select/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/stream-splicer/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/beefy/node_modules/stream-splicer/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/indexof/index.js. Coverage (Term): 33% Coverage (LOC): 42%
+*- File /root/Targets/beefy/node_modules/readable-wrap/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/beefy/node_modules/html-select/lib/match.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/beefy/node_modules/html-select/lib/interface.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/html-select/lib/parse_tag.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/beefy/node_modules/html-select/lib/set_attrs.js. Coverage (Term): 15% Coverage (LOC): 29%
+*- File /root/Targets/beefy/node_modules/html-select/lib/self_closing.js. Coverage (Term): 72% Coverage (LOC): 90%
+*- File /root/Targets/beefy/node_modules/html-select/lib/get_tag.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/html-select/lib/lang.js. Coverage (Term): 42% Coverage (LOC): 39%
+*- File /root/Targets/beefy/node_modules/cssauron/index.js. Coverage (Term): 4% Coverage (LOC): 12%
+*- File /root/Targets/beefy/node_modules/cssauron/tokenizer.js. Coverage (Term): 9% Coverage (LOC): 3%
+*- File /root/Targets/beefy/node_modules/html-select/lib/get_attr.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/beefy/node_modules/trumpet/lib/wrap.js. Coverage (Term): 9% Coverage (LOC): 7%
+*- File /root/Targets/beefy/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/through2/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/ignorepatterns/es5/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/chokidar/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/beefy/node_modules/async-each/index.js. Coverage (Term): 24% Coverage (LOC): 24%
+*- File /root/Targets/beefy/node_modules/anymatch/index.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/micromatch/index.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/beefy/node_modules/micromatch/lib/expand.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/beefy/node_modules/micromatch/lib/utils.js. Coverage (Term): 36% Coverage (LOC): 58%
+*- File /root/Targets/beefy/node_modules/filename-regex/index.js. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/arr-diff/index.js. Coverage (Term): 30% Coverage (LOC): 32%
+*- File /root/Targets/beefy/node_modules/arr-flatten/index.js. Coverage (Term): 26% Coverage (LOC): 43%
+*- File /root/Targets/beefy/node_modules/array-unique/index.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/braces/index.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/beefy/node_modules/expand-range/index.js. Coverage (Term): 19% Coverage (LOC): 19%
+*- File /root/Targets/beefy/node_modules/fill-range/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/beefy/node_modules/isobject/index.js. Coverage (Term): 52% Coverage (LOC): 86%
+*- File /root/Targets/beefy/node_modules/is-number/index.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/beefy/node_modules/kind-of/index.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /root/Targets/beefy/node_modules/is-buffer/index.js. Coverage (Term): 22% Coverage (LOC): 67%
+*- File /root/Targets/beefy/node_modules/randomatic/index.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/randomatic/node_modules/is-number/index.js. Coverage (Term): 36% Coverage (LOC): 43%
+*- File /root/Targets/beefy/node_modules/randomatic/node_modules/is-number/node_modules/kind-of/index.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /root/Targets/beefy/node_modules/randomatic/node_modules/kind-of/index.js. Coverage (Term): 9% Coverage (LOC): 6%
+*- File /root/Targets/beefy/node_modules/repeat-string/index.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/beefy/node_modules/repeat-element/index.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/beefy/node_modules/preserve/index.js. Coverage (Term): 28% Coverage (LOC): 50%
+*- File /root/Targets/beefy/node_modules/expand-brackets/index.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/beefy/node_modules/is-posix-bracket/index.js. Coverage (Term): 49% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/extglob/index.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/is-extglob/index.js. Coverage (Term): 49% Coverage (LOC): 80%
+*- File /root/Targets/beefy/node_modules/is-glob/index.js. Coverage (Term): 51% Coverage (LOC): 83%
+*- File /root/Targets/beefy/node_modules/normalize-path/index.js. Coverage (Term): 37% Coverage (LOC): 38%
+*- File /root/Targets/beefy/node_modules/remove-trailing-separator/index.js. Coverage (Term): 28% Coverage (LOC): 38%
+*- File /root/Targets/beefy/node_modules/object.omit/index.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/beefy/node_modules/is-extendable/index.js. Coverage (Term): 41% Coverage (LOC): 83%
+*- File /root/Targets/beefy/node_modules/for-own/index.js. Coverage (Term): 45% Coverage (LOC): 58%
+*- File /root/Targets/beefy/node_modules/for-in/index.js. Coverage (Term): 41% Coverage (LOC): 56%
+*- File /root/Targets/beefy/node_modules/parse-glob/index.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/glob-base/index.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File /root/Targets/beefy/node_modules/glob-parent/index.js. Coverage (Term): 54% Coverage (LOC): 64%
+*- File /root/Targets/beefy/node_modules/is-dotfile/index.js. Coverage (Term): 25% Coverage (LOC): 44%
+*- File /root/Targets/beefy/node_modules/regex-cache/index.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/beefy/node_modules/is-equal-shallow/index.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/is-primitive/index.js. Coverage (Term): 46% Coverage (LOC): 83%
+*- File /root/Targets/beefy/node_modules/micromatch/lib/glob.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/beefy/node_modules/micromatch/lib/chars.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/path-is-absolute/index.js. Coverage (Term): 39% Coverage (LOC): 57%
+*- File /root/Targets/beefy/node_modules/chokidar/lib/nodefs-handler.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/beefy/node_modules/readdirp/readdirp.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/beefy/node_modules/graceful-fs/graceful-fs.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/beefy/node_modules/graceful-fs/polyfills.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/beefy/node_modules/graceful-fs/fs.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/beefy/node_modules/graceful-fs/legacy-streams.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/beefy/node_modules/minimatch/minimatch.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/beefy/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/beefy/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/beefy/node_modules/set-immediate-shim/index.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/beefy/node_modules/is-binary-path/index.js. Coverage (Term): 72% Coverage (LOC): 92%
+*- File /root/Targets/beefy/node_modules/chokidar/lib/fsevents-handler.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/bundle.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/static.js. Coverage (Term): 20% Coverage (LOC): 19%
+*- File /root/Targets/beefy/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/beefy/node_modules/beefy/lib/handlers/log.js. Coverage (Term): 22% Coverage (LOC): 14%
+*- File /root/Targets/beefy/node_modules/pretty-bytes/pretty-bytes.js. Coverage (Term): 27% Coverage (LOC): 26%
+*- File /root/Targets/beefy/node_modules/leftpad/index.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/beefy/node_modules/beefy/lib/make-io.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/beefy/node_modules/beefy/lib/args-to-options.js. Coverage (Term): 10% Coverage (LOC): 8%
+*- File /root/Targets/beefy/node_modules/beefy/lib/normalize-entry-points.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/beefy/node_modules/beefy/lib/setup-bundlers.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/beefy/node_modules/find-global-packages/index.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

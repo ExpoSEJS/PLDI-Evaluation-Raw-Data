@@ -1,0 +1,135 @@
+/root/Targets/jaeger-client
+└─┬ jaeger-client@3.5.3 
+  ├── node-int64@0.4.0 
+  ├── opentracing@0.13.0 
+  ├─┬ thriftrw@3.11.1 
+  │ ├─┬ bufrw@1.2.1 
+  │ │ ├── ansi-color@0.2.1 
+  │ │ └── xtend@4.0.1 
+  │ ├─┬ error@7.0.2 
+  │ │ └── string-template@0.2.1 
+  │ └── long@2.4.0 
+  └── xorshift@0.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jaeger-client/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","setPrototypeOf","apply","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0623 took 9.8745s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (5:4) on program 'use strict';
+
+var template = require('string-template');
+var extend = require('xtend/mutable');
+var assert = require('assert');
+
+var isWordBoundary = /[_.-](\w|$)/g;
+
+module.exports = TypedError;
+
+function TypedError(args) {
+    assert(args, 'TypedError: must specify options');
+    assert(args.type, 'TypedError: must specify options.type');
+    assert(args.message, 'TypedError: must specify options.message');
+
+    assert(!has(args, 'fullType'),
+        'TypedError: fullType field is reserved');
+
+    var message = args.message;
+    if (args.type && !args.name) {
+        var errorName = camelCase(args.type) + 'Error';
+        args.name = errorName[0].toUpperCase() + errorName.substr(1);
+    }
+
+    extend(createError, args);
+    createError._name = args.name;
+
+    return createError;
+
+    function createError(opts) {
+        var result = new Error();
+
+        Object.defineProperty(result, 'type', {
+            value: result.type,
+            enumerable: true,
+            writable: true,
+            configurable: true
+        });
+
+        var options = extend({}, args, opts);
+        if (!options.fullType) {
+            options.fullType = options.type;
+        }
+
+        extend(result, options);
+        if (opts && opts.message) {
+            result.message = template(opts.message, options);
+        } else if (message) {
+            result.message = template(message, options);
+        }
+
+        return result;
+    }
+}
+
+function camelCase(str) {
+    return str.replace(isWordBoundary, upperCase);
+}
+
+function upperCase(_, x) {
+    return x.toUpperCase();
+}
+
+function has(obj, key) {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+}
+ at SyntaxError: Unexpected token (5:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/entrypoint.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/configuration.js. Coverage (Term): 14% Coverage (LOC): 11%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/samplers/const_sampler.js. Coverage (Term): 51% Coverage (LOC): 64%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/constants.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/samplers/probabilistic_sampler.js. Coverage (Term): 47% Coverage (LOC): 61%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/samplers/ratelimiting_sampler.js. Coverage (Term): 50% Coverage (LOC): 61%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/rate_limiter.js. Coverage (Term): 53% Coverage (LOC): 59%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/reporters/remote_reporter.js. Coverage (Term): 16% Coverage (LOC): 15%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/logger.js. Coverage (Term): 75% Coverage (LOC): 89%
+*- File /root/Targets/jaeger-client/node_modules/jaeger-client/dist/src/thrift.js. Coverage (Term): 15% Coverage (LOC): 14%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/index.js. Coverage (Term): 95% Coverage (LOC): 98%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/global_tracer.js. Coverage (Term): 70% Coverage (LOC): 86%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/tracer.js. Coverage (Term): 57% Coverage (LOC): 70%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/span.js. Coverage (Term): 45% Coverage (LOC): 69%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/noop.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/span_context.js. Coverage (Term): 87% Coverage (LOC): 91%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/constants.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/functions.js. Coverage (Term): 54% Coverage (LOC): 54%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/reference.js. Coverage (Term): 70% Coverage (LOC): 83%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/ext/tags.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/jaeger-client/node_modules/opentracing/lib/binary_carrier.js. Coverage (Term): 50% Coverage (LOC): 58%
+*- File /root/Targets/jaeger-client/node_modules/thriftrw/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/jaeger-client/node_modules/thriftrw/TYPE.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/jaeger-client/node_modules/bufrw/index.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/jaeger-client/node_modules/bufrw/interface.js. Coverage (Term): 8% Coverage (LOC): 17%
+*- File /root/Targets/jaeger-client/node_modules/bufrw/lib/can-require.js. Coverage (Term): 79% Coverage (LOC): 91%
+*- File /root/Targets/jaeger-client/node_modules/bufrw/result.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/jaeger-client/node_modules/bufrw/errors.js. Coverage (Term): 7% Coverage (LOC): 4%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

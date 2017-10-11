@@ -1,0 +1,37 @@
+/root/Targets/ventus-clone
+└─┬ ventus-clone@0.0.11 
+  ├── es6-promise@3.3.1 
+  ├─┬ handlebars@2.0.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  └── jquery@3.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ventus-clone/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 3% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0684 took 79.627s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot set property 'transform' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/main.js. Coverage (Term): 41% Coverage (LOC): 58%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/ventus-clone.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/ventus/wm/windowmanager.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/ventus-clone/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/ventus/wm/window.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/ventus/core/emitter.js. Coverage (Term): 10% Coverage (LOC): 22%
+*- File /root/Targets/ventus-clone/node_modules/ventus-clone/dist/ventus/core/view.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

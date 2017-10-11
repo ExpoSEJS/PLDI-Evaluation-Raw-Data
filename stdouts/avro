@@ -1,0 +1,31 @@
+/root/Targets/avro
+└── avro@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/avro/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 24% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 24% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 26% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 26% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 27% coverage ] ****** [3 done /0 queued / 1 running / 3 errors / 27% coverage ] ****** [4 done /0 queued / 0 running / 3 errors / 27% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.071 took 6.3786s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Cannot read property 'name' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 6.5506 took 5.1413s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1}
+* Error: R:Invalid schema type: undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 11.712 took 9.4982s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"_bound":2}
+* Error: R:Invalid schema type: undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"_bound":3} start 21.2717 took 8.4233s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/avro/node_modules/avro/avro.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 4 paths with 3 errors **

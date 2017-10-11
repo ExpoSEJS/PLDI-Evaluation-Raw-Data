@@ -1,0 +1,85 @@
+/root/Targets/react-file
+└── react-file@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-file/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.106 took 3.5908s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (36:12) on program /**
+ * react-file - index.js
+ * Created by mengdesen on 15/5/15.
+ */
+
+'use strict';
+
+var React = require('react/addons');
+
+
+var File = React.createClass({
+    componentDidMount: function () {
+        this.input = this.refs.input.getDOMNode();
+        this.form = this.refs.form.getDOMNode();
+        window.onmessage = this.props.onMessage;
+    },
+    onClick: function () {
+        this.input.click();
+    },
+    onChange: function () {
+        this.form.submit();
+    },
+    getDefaultProps: function () {
+        return {
+            inputStyle: {
+                visibility: 'hidden',
+                width: '1px'
+            },
+            style: {
+                display: 'inline-block'
+            }
+        }
+    },
+    render: function () {
+        return (
+            <div onClick={this.onClick} style={this.props.style}>
+                {this.props.children}
+                <form
+                    encType="multipart/form-data"
+                    action={this.props.action}
+                    method="post"
+                    target="file_upload"
+                    ref="form"
+                    >
+                    <input type="file" name="file" style={this.props.inputStyle} ref='input' onChange={this.onChange}/>
+                </form>
+                <iframe name="file_upload" style={{display:'none'}}></iframe>
+            </div>
+        )
+    }
+});
+
+module.exports = File;
+
+ at SyntaxError: Unexpected token (36:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

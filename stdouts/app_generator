@@ -1,0 +1,90 @@
+/root/Targets/app_generator
+└─┬ app_generator@0.1.2 
+  └── shelljs@0.5.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/app_generator/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0502 took 4.018s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var shell = require('shelljs');
+
+
+var config = require('./config').config;
+var util = require('./util');
+var file = require('./file');
+var deploy = require('./deploy');
+
+var project_absolute_path = file.getAbsolutePath();
+
+if (!file.isExistDir(project_absolute_path)) {
+    shell.exec("git clone " + config.project_base  + ' ' + config.project_name);
+    file.cd(config.project_name);
+} else {
+    file.cd(config.project_name);
+    shell.exec("git pull");
+}
+
+
+deploy.writeDeploy(project_absolute_path + '/fis-conf.js');
+
+// 创建layout文件夹
+if (!util.isEmpty(config.layout)) {
+    file.cd(project_absolute_path);
+    if (!file.isExistDir(config.layout)) {
+        file.writeDir(config.layout, 'layout', '11');
+    }
+}
+
+// 创建widget文件夹
+if (!util.isEmpty(config.widget)) {
+    file.cd(project_absolute_path);
+    if (!file.isExistDir(config.widget)) {
+        file.writeDir(config.widget, 'widget', 'ff');
+    }
+}
+
+// 创建template文件夹
+if (!util.isEmpty(config.template)) {
+    file.cd(project_absolute_path);
+    if (!file.isExistDir(config.template)) {
+        file.writeDir(config.template, 'template', '3');
+    }
+}
+
+// 创建static文件夹
+if (!util.isEmpty(config.template)) {
+    file.cd(project_absolute_path);
+    if (!file.isExistDir(config.template)) {
+        file.writeDir(config.template, 'template', '33');
+    }
+}
+
+// 创建BCLOUD文件
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

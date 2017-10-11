@@ -1,0 +1,84 @@
+/root/Targets/nodejs_editor
+└── nodejs_editor@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nodejs_editor/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.069 took 2.3687s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+var forever = require('forever')
+	, commander = require('commander');
+
+//start 명령에 대해 처리하는 부분입니다.
+commander
+	.command('start [option]')
+	.option('-d, --daemon', 'run the server as a daemon using the forever module...')
+	.action(function (env, options) {
+		if (options.daemon) { //데몬 옵션이 있을 때 처리하는 부분입니다.
+			//데몬 형식으로 실행
+			forever.startDaemon(__dirname+'/app.js', {
+				'env': { 'NODE_ENV': 'production' },
+				'spawnWith': { env: process.env }
+			});
+			console.log("Realtime Editor server is started...");
+		}
+		else {
+			//데몬 형식이 아닌 forever 모듈을 이용하여 실행합니다.
+			forever.start(__dirname+'/app.js', []);
+		}
+	});
+
+//restart 명령에 대해 처리하는 부분입니다.
+commander
+	.command('restart')
+	.action(function (env, options) {
+		//종료하고 새로 시작하는 부분입니다.
+		forever.stop(__dirname+'/app.js', stop);
+		//restart는 데몬으로 실행됐을 경우에만 호출가능한 것이기 때문에 바로 데몬으로 실행합니다.
+		forever.startDaemon(__dirname+'/app.js', {
+			'env': { 'NODE_ENV': 'production' },
+			'spawnWith': { env: process.env }
+		});
+		
+		console.log("Realtime Editor server is restarted...");
+	});
+
+//stop 명령에 대해 처리하는 부분입니다.
+commander
+	.command('stop')
+	.action(function (env, options) {
+		//stopAll()을 통해 forever 로 실행된 모든 애플리케이션을 종료하도록 했습니다.
+		//forever.stopAll();
+		//만약 하나만 종료하고 싶다면 아래와 같이 작성하면 됩니다.
+		//forever.stop("실행 파일의 경로", true);
+		forever.stop(__dirname+'/app.js', true);
+		
+		console.log("Realtime Editor server is stopped...");
+	});
+
+//process.argv 정보를 파싱해서 위에서 정의했던 명령들 중 하나가 실행될 수 있도록 합니다.
+commander.parse(process.argv); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

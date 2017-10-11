@@ -1,0 +1,176 @@
+/root/Targets/timetip
+└─┬ timetip@0.1.1 
+  ├── commander@2.0.0 
+  ├── ini@1.1.0 
+  └── underscore@1.5.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/timetip/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0421 took 15.901s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (39:12) on program /**
+ * ANSI colorizer.
+ *
+ *     var c = require('color');
+ *
+ * Use it as:
+ *
+ *     c('blue', 'Hello');
+ *
+ * You can use multiple flags (see `color.flags` for a list):
+ *
+ *     c('bold red', 'Hello');
+ *     c('white bgblue', 'Hello');
+ *     c('underline red', 'Hello');
+ *
+ * Or raw ANSI codes:
+ *
+ *     c(34, 'Hello');
+ *
+ * You can also use shortcuts:
+ *
+ *     c.blue('Hello');
+ *
+ * Or make your own theme with `.use()`:
+ *
+ *     em = color.use('green');
+ *     h1 = color.use('bold white');
+ *
+ *     h1('Books:');
+ *     em("Cuckoo's Calling");
+ */
+
+var color = module.exports = function(c, str) {
+  c = color.ansi(c);
+
+  if (!c || !color.enabled())
+    return str;
+  else
+    return "\033["+c+"m"+str+"\033[0m";
+};
+
+/**
+ * Returns `true` if color is supposed to be on, or `false` if off.
+ * By default, it checks the NO_COLOR env var.
+ *
+ * Hint: you can override this.
+ */
+
+color.enabled = function() {
+  return ! process.env.NO_COLOR;
+};
+
+/**
+ * Great map of color names.
+ */
+
+color.flags = {
+  clear     : 0,
+  bold      : 1,
+  reverse   : 3,
+  underline : 4,
+  blink     : 5,
+
+  grey      : 30,
+  red       : 31,
+  green     : 32,
+  yellow    : 33,
+  blue      : 34,
+  magenta   : 35,
+  cyan      : 36,
+  white     : 37,
+
+  bggrey    : 40,
+  bgred     : 41,
+  bggreen   : 42,
+  bgyellow  : 43,
+  bgblue    : 44,
+  bgmagenta : 45,
+  bgcyan    : 46,
+  bgwhite   : 47
+};
+
+/**
+ * Converts a symbol string to an ansi color code.
+ *
+ *     color.ansi('red')      //=> 31
+ *     color.ansi('bold red') //=> 1;31
+ */
+
+color.ansi = function(str) {
+  // Raw ansi code (32)
+  if (typeof str === 'number')
+    return str;
+
+  // Raw ansi code as string ("32")
+  if (typeof str === 'string' && str.match(/^\d/))
+    return str;
+
+  // Multiple words ("bold red")
+  if (typeof str === 'string' && str.indexOf(' ') > -1)
+    return str.split(' ')
+      .map(function(s) { return color.flags[s]; })
+      .join(';');
+
+  return color.flags[str];
+};
+
+/**
+ * Functionizes a color.
+ *
+ *     var accent = color.use('blue');
+ *     accent('hello');
+ *
+ * Example:
+ *
+ *     var theme = {
+ *       em: color.use('green'),
+ *       h1: color.use('bold white')
+ *     };
+ *
+ *     console.log(theme.h1('Books:'));
+ *     console.log(theme.em("Cuckoo's Calling") + " by R. Galbraith");
+ */
+
+color.use = function(c) {
+  c = color.ansi(c);
+  return function(str) { return color(c, str); };
+};
+
+
+/**
+ * Expose `c.blue()` shortcuts (and so on).
+ */
+
+for (var name in color.flags)
+  color[name] = color.use(color.flags[name]);
+ at SyntaxError: Octal literal in strict mode (39:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:832:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/timetip/node_modules/timetip/index.js. Coverage (Term): 50% Coverage (LOC): 50%
+*- File /root/Targets/timetip/node_modules/timetip/lib/time_log.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/timetip/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/timetip/node_modules/timetip/lib/helpers.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/timetip/node_modules/timetip/lib/formatter.js. Coverage (Term): 18% Coverage (LOC): 31%
+*- File /root/Targets/timetip/node_modules/timetip/lib/reporters/default.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

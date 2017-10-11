@@ -1,0 +1,49 @@
+/root/Targets/typescript-ioc
+└─┬ typescript-ioc@1.0.2 
+  ├── reflect-metadata@0.1.10 
+  └─┬ require-glob@3.2.0 
+    ├─┬ glob-parent@3.1.0 
+    │ ├─┬ is-glob@3.1.0 
+    │ │ └── is-extglob@2.1.1 
+    │ └── path-dirname@1.0.2 
+    ├─┬ globby@6.1.0 
+    │ ├─┬ array-union@1.0.2 
+    │ │ └── array-uniq@1.0.3 
+    │ ├─┬ glob@7.1.2 
+    │ │ ├── fs.realpath@1.0.0 
+    │ │ ├─┬ inflight@1.0.6 
+    │ │ │ └── wrappy@1.0.2 
+    │ │ ├── inherits@2.0.3 
+    │ │ ├─┬ minimatch@3.0.4 
+    │ │ │ └─┬ brace-expansion@1.1.8 
+    │ │ │   ├── balanced-match@1.0.0 
+    │ │ │   └── concat-map@0.0.1 
+    │ │ ├── once@1.4.0 
+    │ │ └── path-is-absolute@1.0.1 
+    │ ├── object-assign@4.1.1 
+    │ ├── pify@2.3.0 
+    │ └─┬ pinkie-promise@2.0.1 
+    │   └── pinkie@2.0.4 
+    └─┬ parent-module@0.1.0 
+      └── callsites@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/typescript-ioc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0406 took 2.9226s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/typescript-ioc/node_modules/typescript-ioc/index.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File evalIndirect. Coverage (Term): 14% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

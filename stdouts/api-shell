@@ -1,0 +1,279 @@
+/root/Targets/api-shell
+└─┬ api-shell@0.2.0 
+  ├── async@0.6.2 
+  ├── colors@0.6.2 
+  ├── editor@0.1.0 
+  ├── expansion@0.1.0 
+  └─┬ request@2.36.0 
+    ├── aws-sign2@0.5.0 
+    ├── forever-agent@0.5.2 
+    ├─┬ form-data@0.1.4 
+    │ ├── async@0.9.2 
+    │ └─┬ combined-stream@0.0.7 
+    │   └── delayed-stream@0.0.5 
+    ├─┬ hawk@1.0.0 
+    │ ├── boom@0.4.2 
+    │ ├── cryptiles@0.2.2 
+    │ ├── hoek@0.9.1 
+    │ └── sntp@0.2.4 
+    ├─┬ http-signature@0.10.1 
+    │ ├── asn1@0.1.11 
+    │ ├── assert-plus@0.1.5 
+    │ └── ctype@0.5.3 
+    ├── json-stringify-safe@5.0.1 
+    ├── mime@1.2.11 
+    ├── node-uuid@1.4.8 
+    ├── oauth-sign@0.3.0 
+    ├── qs@0.6.6 
+    ├─┬ tough-cookie@2.3.3 
+    │ └── punycode@1.4.1 
+    └── tunnel-agent@0.4.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/api-shell/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0445 took 2.5888s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+var util = require('./lib/util.js'),
+	commands = require('./lib/commands.js'),
+	Output = require('./lib/output.js'),
+	parser = require('./lib/parser.js')(commands),
+	path = require('path'),
+	history = require(path.join(util.configPath, 'history.json')),
+	setups = require(path.join(util.configPath, 'setups.json')),
+	scripts = require(path.join(util.configPath, 'scripts.json')),
+	endpoints = require(path.join(util.configPath, 'endpoints.json')),
+	colors = require('colors'),
+	readline = require('readline'),
+	async = require('async'),
+	cluster = require('cluster'),
+	worker = null,
+	previousInput = "",
+    dropLines = 0;
+
+cluster.setupMaster({
+	exec : path.join(__dirname, "worker.js")
+});
+
+var rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+	completer: function(line){
+		var hits = [],
+            cmd = null;
+
+		if(line.indexOf(' ') == -1){
+			for(cmd in commands){
+				if(cmd.indexOf(line) == 0 && !commands[cmd].hidden)
+					hits.push(cmd)
+			}
+            for(var script in scripts){
+                if(script.indexOf(line) == 0)
+                    hits.push(script)
+            }
+			return [hits, line]
+		} else {
+			var args = line.match(/([^\s]+)+|"(?:\\.|[^"\\])+"/g),
+				currentlyOn = args.length-1,
+				completing;
+
+            cmd = args[0];
+			if(line[line.length-1] == " "){
+				completing = "";
+				currentlyOn++;
+			} else {
+				completing = args[args.length -1];
+			}
+
+			if(commands[cmd]){
+				var cmdComp = commands[cmd].completer(completing, currentlyOn);
+				completing = cmdComp[1] !== undefined ? cmdComp[1] : completing;
+				hits = cmdComp[0];
+			}
+			return [hits, completing]
+		}
+	}
+});
+
+
+for(var i in history){
+    rl.history.push(history[i].escape());
+}
+
+rl.on('SIGINT', function(){
+	rl.emit('line', {err: "SIGINT"});
+	rl.clearLine();
+	previousInput = '';
+	if(worker)
+		worker.kill();
+	else
+		util.getInput({
+            rl: rl,
+			description: "(^C again to quit)",
+			error: function(){
+				console.log('Goodbye!');
+				process.exit(0);
+			}
+		}, function(err, input){
+			run(input, mainMenu, true)
+		})
+});
+
+function mainMenu(options){
+    if(!options) options = {};
+    options.rl = rl;
+    util.getInput(options, function(err, input){
+		if(!err)
+			run(input, mainMenu, true)
+	})
+}
+
+function run(input, cb, print){
+	var tree = null,
+		data = previousInput + input;
+
+	try {
+		tree = parser.parse(data);
+	} catch(err){
+		if(err.name == "SyntaxError"){
+			if(err.found != null){
+				console.log(err.message);
+                previousInput = '';
+				mainMenu();
+			} else {
+				previousInput += input + '\n';
+                dropLines++;
+				mainMenu({prompt: "... "})
+			}
+			return;
+		} else throw err
+	}
+    if(dropLines > 0){
+        rl.history.splice(0, dropLines + 1);
+        rl.history.unshift(data.escape());
+    }
+	previousInput = '';
+    dropLines = 0;
+	var exiting = false;
+
+	if(history.unshift(data) > 30)
+		history.pop();
+	util.writeConfig('history.json', JSON.stringify(history, null, 4));
+
+	worker = cluster.fork({
+		globals: JSON.stringify(util.global),
+		command: data,
+		tree: JSON.stringify(tree),
+		colors: colors.mode,
+		print: print
+	});
+	worker.on('message', function(msg){
+		if(msg.name == "exitCalled"){
+			console.log("Goodbye!");
+			exiting = true;
+			worker.kill();
+			rl.close();
+		} else if(msg.name == "configUpdate"){
+			if(msg.file == 'setups.json')
+                util.rewriteObject(msg.content, setups);
+			else if(msg.file == 'scripts.json')
+                util.rewriteObject(msg.content, scripts);
+			else if(msg.file == 'endpoints.json')
+				util.rewriteObject(msg.content, endpoints);
+            else if(msg.file == 'history.json') {
+                history = msg.content;
+                for(var i in history){
+                    rl.history.push(history[i].escape());
+                }
+            } else if(msg.file == "global") {
+				util.global = msg.content;
+			}
+		} else if(msg.name == "rl.pause"){
+			rl.pause();
+		}
+	});
+	worker.on('exit', function(){
+		worker = null;
+		if(!exiting){
+			cb ? cb() : mainMenu()
+		}
+	});
+}
+
+var i = -1,
+	cmds = [];
+
+async.eachSeries(process.argv, function(arg, next){
+	i++;
+	try {
+		if(arg == "-c" || arg == "--no-colors"){
+			colors.mode = "none";
+			next();
+		} else if(arg == "--setup"){
+			commands.setup.cmd(function(){
+				next();
+			}, new Output(false), 'use', process.argv[i+1])
+		} else if(arg == "-g" || arg == "--global"){
+			var cmdValue = process.argv[i+1];
+			var eIndex = cmdValue.indexOf('=');
+			var key = cmdValue.substring(0, eIndex);
+			var value = cmdValue.substring(eIndex+1, cmdValue.length);
+			commands.set.cmd(function(){
+				next();
+			}, new Output(true), key, value)
+		} else if(arg == "-e" || arg == "--execute"){
+			cmds.push(process.argv[i+1]);
+			next();
+		} else {
+			next();
+		}
+	} catch(err){
+		console.log(err.message.red);
+        next();
+	}
+}, function(){
+	delete i;
+	async.series([
+		function(cb){
+			if(scripts.autostart)
+				run("run autostart", cb, cmds.length == 0);
+			else
+				cb()
+		},
+		function(){
+			if(cmds.length == 0)
+				return mainMenu();
+			async.eachSeries(cmds, function(command, next){
+				run(command, function(){
+					next();
+				}, true)
+			}, function(){
+				process.exit(0)
+			})
+		}
+	]);
+}); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

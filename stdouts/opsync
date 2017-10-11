@@ -1,0 +1,462 @@
+
+> bson@0.2.22 install /root/Targets/opsync/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/opsync/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:92: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/opsync/node_modules/bson/build'
+
+> kerberos@0.0.11 install /root/Targets/opsync/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/opsync/node_modules/kerberos/build'
+  CXX(target) Release/obj.target/kerberos/lib/kerberos.o
+kerberos.target.mk:98: recipe for target 'Release/obj.target/kerberos/lib/kerberos.o' failed
+make: Leaving directory '/root/Targets/opsync/node_modules/kerberos/build'
+
+> node-syslog@1.1.7 install /root/Targets/opsync/node_modules/node-syslog
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/opsync/node_modules/node-syslog/build'
+  CXX(target) Release/obj.target/syslog/syslog.o
+syslog.target.mk:94: recipe for target 'Release/obj.target/syslog/syslog.o' failed
+make: Leaving directory '/root/Targets/opsync/node_modules/node-syslog/build'
+
+> hashring@1.0.1 install /root/Targets/opsync/node_modules/hashring
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/opsync/node_modules/hashring/build'
+  CXX(target) Release/obj.target/hashvalue/src/hashvalue.o
+hashvalue.target.mk:92: recipe for target 'Release/obj.target/hashvalue/src/hashvalue.o' failed
+make: Leaving directory '/root/Targets/opsync/node_modules/hashring/build'
+/root/Targets/opsync
+└─┬ opsync@0.16.2 
+  ├── async@0.9.2 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.6.9 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── setprototypeof@1.0.3 
+  │ │ └── statuses@1.3.1 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ debug@1.0.5 
+  │ └── ms@2.0.0 
+  ├─┬ express@4.8.8 
+  │ ├─┬ accepts@1.0.7 
+  │ │ ├── mime-types@1.0.2 
+  │ │ └── negotiator@0.4.7 
+  │ ├── buffer-crc32@0.2.3 
+  │ ├── cookie@0.1.2 
+  │ ├── cookie-signature@1.0.4 
+  │ ├─┬ debug@1.0.4 
+  │ │ └── ms@0.6.2 
+  │ ├── depd@0.4.4 
+  │ ├── escape-html@1.0.1 
+  │ ├─┬ finalhandler@0.1.0 
+  │ │ └─┬ debug@1.0.4 
+  │ │   └── ms@0.6.2 
+  │ ├── fresh@0.2.2 
+  │ ├── media-typer@0.2.0 
+  │ ├── merge-descriptors@0.0.2 
+  │ ├── methods@1.1.0 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.3 
+  │ ├─┬ proxy-addr@1.0.1 
+  │ │ └── ipaddr.js@0.1.2 
+  │ ├── qs@2.2.2 
+  │ ├── range-parser@1.0.0 
+  │ ├─┬ send@0.8.5 
+  │ │ ├── debug@1.0.4 
+  │ │ ├── depd@0.4.4 
+  │ │ ├── destroy@1.0.3 
+  │ │ ├── mime@1.2.11 
+  │ │ ├── ms@0.6.2 
+  │ │ └─┬ on-finished@2.1.0 
+  │ │   └── ee-first@1.0.5 
+  │ ├── serve-static@1.5.4 
+  │ ├─┬ type-is@1.3.2 
+  │ │ └── mime-types@1.0.2 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@0.1.0 
+  ├─┬ lynx@0.2.0 
+  │ ├── mersenne@0.0.4 
+  │ └── statsd-parser@0.0.4 
+  ├─┬ mongodb@1.4.40 
+  │ ├─┬ bson@0.2.22 
+  │ │ └── nan@1.8.4 
+  │ ├── kerberos@0.0.11 
+  │ └─┬ readable-stream@2.3.3 
+  │   ├── core-util-is@1.0.2 
+  │   ├── isarray@1.0.0 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── safe-buffer@5.1.1 
+  │   ├── string_decoder@1.0.3 
+  │   └── util-deprecate@1.0.2 
+  ├── node-uuid@1.4.8 
+  ├─┬ request@2.40.0 
+  │ ├── aws-sign2@0.5.0 
+  │ ├── forever-agent@0.5.2 
+  │ ├─┬ form-data@0.1.4 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├─┬ hawk@1.1.1 
+  │ │ ├── boom@0.4.2 
+  │ │ ├── cryptiles@0.2.2 
+  │ │ ├── hoek@0.9.1 
+  │ │ └── sntp@0.2.4 
+  │ ├─┬ http-signature@0.10.1 
+  │ │ ├── asn1@0.1.11 
+  │ │ ├── assert-plus@0.1.5 
+  │ │ └── ctype@0.5.3 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├── mime-types@1.0.2 
+  │ ├── oauth-sign@0.3.0 
+  │ ├── qs@1.0.2 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ └── tunnel-agent@0.4.3 
+  └─┬ statsd@0.7.2 
+    └─┬ winser@0.1.6 
+      ├─┬ commander@1.3.1 
+      │ └── keypress@0.1.0 
+      └── sequence@2.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/opsync/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /3 queued / 1 running / 1 errors / 40% coverage ] ****** [1 done /2 queued / 2 running / 1 errors / 40% coverage ] ****** [1 done /1 queued / 3 running / 1 errors / 40% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 40% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 40% coverage ] ****** [2 done /0 queued / 4 running / 2 errors / 40% coverage ] ****** [2 done /0 queued / 4 running / 2 errors / 40% coverage ] ****** [3 done /0 queued / 3 running / 2 errors / 40% coverage ] ****** [4 done /1 queued / 3 running / 3 errors / 42% coverage ] ****** [4 done /0 queued / 4 running / 3 errors / 42% coverage ] ****** [4 done /0 queued / 4 running / 3 errors / 42% coverage ] ****** [5 done /0 queued / 4 running / 3 errors / 42% coverage ] ****** [5 done /0 queued / 4 running / 3 errors / 42% coverage ] ****** [6 done /1 queued / 4 running / 4 errors / 42% coverage ] ****** [6 done /0 queued / 5 running / 4 errors / 42% coverage ] ****** [6 done /0 queued / 5 running / 4 errors / 42% coverage ] ****** [7 done /1 queued / 5 running / 4 errors / 42% coverage ] ****** [7 done /0 queued / 6 running / 4 errors / 42% coverage ] ****** [7 done /0 queued / 6 running / 4 errors / 42% coverage ] ****** [8 done /0 queued / 6 running / 5 errors / 42% coverage ] ****** [8 done /0 queued / 6 running / 5 errors / 42% coverage ] ****** [9 done /0 queued / 6 running / 6 errors / 42% coverage ] ****** [9 done /0 queued / 6 running / 6 errors / 42% coverage ] ****** [10 done /2 queued / 6 running / 7 errors / 42% coverage ] ****** [10 done /1 queued / 7 running / 7 errors / 42% coverage ] ****** [10 done /0 queued / 8 running / 7 errors / 42% coverage ] ****** [10 done /0 queued / 8 running / 7 errors / 42% coverage ] ****** [11 done /2 queued / 8 running / 8 errors / 42% coverage ] ****** [11 done /1 queued / 9 running / 8 errors / 42% coverage ] ****** [11 done /0 queued / 10 running / 8 errors / 42% coverage ] ****** [11 done /0 queued / 10 running / 8 errors / 42% coverage ] ****** [12 done /2 queued / 10 running / 8 errors / 42% coverage ] ****** [12 done /1 queued / 11 running / 8 errors / 42% coverage ] ****** [12 done /0 queued / 12 running / 8 errors / 42% coverage ] ****** [12 done /0 queued / 12 running / 8 errors / 42% coverage ] ****** [13 done /2 queued / 12 running / 9 errors / 42% coverage ] ****** [13 done /1 queued / 13 running / 9 errors / 42% coverage ] ****** [13 done /0 queued / 14 running / 9 errors / 42% coverage ] ****** [13 done /0 queued / 14 running / 9 errors / 42% coverage ] ****** [14 done /0 queued / 14 running / 10 errors / 42% coverage ] ****** [14 done /0 queued / 14 running / 10 errors / 42% coverage ] ****** [15 done /1 queued / 14 running / 11 errors / 42% coverage ] ****** [15 done /0 queued / 15 running / 11 errors / 42% coverage ] ****** [15 done /0 queued / 15 running / 11 errors / 42% coverage ] ****** [16 done /2 queued / 15 running / 12 errors / 42% coverage ] ****** [16 done /1 queued / 16 running / 12 errors / 42% coverage ] ****** [16 done /1 queued / 16 running / 12 errors / 42% coverage ] ****** [17 done /1 queued / 16 running / 13 errors / 42% coverage ] ****** [17 done /1 queued / 16 running / 13 errors / 42% coverage ] ****** [18 done /3 queued / 16 running / 14 errors / 42% coverage ] ****** [18 done /3 queued / 16 running / 14 errors / 42% coverage ] ****** [19 done /8 queued / 16 running / 15 errors / 42% coverage ] ****** [19 done /8 queued / 16 running / 15 errors / 42% coverage ] ****** [20 done /12 queued / 16 running / 16 errors / 42% coverage ] ****** [20 done /12 queued / 16 running / 16 errors / 42% coverage ] ****** [21 done /15 queued / 16 running / 17 errors / 42% coverage ] ****** [21 done /15 queued / 16 running / 17 errors / 42% coverage ] ****** [22 done /14 queued / 16 running / 17 errors / 42% coverage ] ****** [22 done /14 queued / 16 running / 17 errors / 42% coverage ] ****** [23 done /13 queued / 16 running / 17 errors / 42% coverage ] ****** [23 done /13 queued / 16 running / 17 errors / 42% coverage ] ****** [24 done /14 queued / 16 running / 18 errors / 42% coverage ] ****** [24 done /14 queued / 16 running / 18 errors / 42% coverage ] ****** [25 done /15 queued / 16 running / 19 errors / 42% coverage ] ****** [25 done /15 queued / 16 running / 19 errors / 42% coverage ] ****** [26 done /14 queued / 16 running / 20 errors / 42% coverage ] ****** [26 done /14 queued / 16 running / 20 errors / 42% coverage ] ****** [27 done /16 queued / 16 running / 21 errors / 42% coverage ] ****** [27 done /16 queued / 16 running / 21 errors / 42% coverage ] ****** [28 done /19 queued / 16 running / 22 errors / 42% coverage ] ****** [28 done /19 queued / 16 running / 22 errors / 42% coverage ] ****** [29 done /22 queued / 16 running / 23 errors / 42% coverage ] ****** [29 done /22 queued / 16 running / 23 errors / 42% coverage ] ****** [30 done /21 queued / 16 running / 24 errors / 42% coverage ] ****** [30 done /21 queued / 16 running / 24 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","pow","random","parseInt","RegExp","toString","isNaN","isFinite","bound dir","bound warn","create","Array","Date","getTime","apply","call","randomBytes","freeze","cwd","max","captureStackTrace","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","Int32Array","toUpperCase","bound EventEmitter","bound setMaxListeners","bound Opsync","pop","isArray","floor","bound ","Error","bound getMaxListeners","bound emit","bound addListener"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":0} start 0.0514 took 130.7452s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":0}
+* Error: TypeError: "n" argument must be a positive number
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":1,"_bound":4} start 134.1295 took 126.322s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":1,"_bound":4}
+* Error: TypeError: "n" argument must be a positive number
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":1,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"ExpansionArg_type":0,"_bound":2} start 132.9294 took 129.148s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":0,"_bound":1,"Target_Switcher":0} start 133.5498 took 130.1857s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":0,"_bound":1,"Target_Switcher":0}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":1,"ExpansionArg_type":0,"_bound":3,"ExpandedSwitcher_2":0} start 133.2001 took 133.967s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2} start 264.4773 took 128.6794s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_type":0} start 267.9415 took 128.2589s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":2,"_bound":5,"ExpansionArg_int":0} start 261.4859 took 134.7188s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":2,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: "n" argument must be a positive number
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":2,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":1,"_bound":3} start 265.2177 took 259.8929s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":1,"_bound":3}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":1,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0} start 394.4999 took 139.2124s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_type_2":0} start 398.2694 took 150.6397s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_type_2":0}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpandedSwitcher_2":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpansionArg_type":3,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_string":"PureString"} start 397.5005 took 266.714s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":2,"_bound":4,"ExpansionArg_type_2":0} start 395.1219 took 272.6893s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":2,"_bound":4,"ExpansionArg_type_2":0}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":2,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 400.1439 took 272.114s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
+* Error: TypeError: "n" argument must be a positive number
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":2,"_bound":4,"ExpansionArg_type_2":0} start 526.3713 took 155.5752s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":2,"_bound":4,"ExpansionArg_type_2":0}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"Target_Switcher":2,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4,"ExpansionArg_string":"PureString"} start 535.8511 took 151.8416s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5} start 535.3882 took 170.7878s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":3,"Target_Switcher":0,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6} start 551.892 took 159.4685s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_length":0} start 550.9819 took 175.323s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":4,"ExpansionArg_type_2":0,"_bound":7}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"_bound":8,"ExpansionArg_array_length":0} start 551.54 took 180.769s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"_bound":8,"ExpansionArg_array_length":0}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"Target_Switcher":3,"_bound":6,"ExpansionArg_type_2":0} start 536.1703 took 277.4709s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"Target_Switcher":3,"_bound":6,"ExpansionArg_type_2":0}
+* Error: TypeError: "n" argument must be a positive number
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"Target_Switcher":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpansionArg_type":2,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":8,"ExpansionArg_int":0} start 665.3825 took 158.3981s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpansionArg_type":1,"ExpansionArg_string":"","ExpandedSwitcher_2":0,"_bound":7} start 666.6657 took 158.3802s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":3,"ExpansionArg_type_2":0,"_bound":6} start 671.2783 took 153.7677s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":3,"ExpansionArg_type_2":0,"_bound":6}
+* Error: TypeError: "n" argument must be a positive number
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":3,"ExpansionArg_type_2":0,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 673.7284 took 151.3177s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
+* Error: TypeError: "n" argument must be a positive number
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":1,"ExpansionArg_type_2":0,"_bound":5} start 670.3694 took 160.3645s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":1,"ExpansionArg_type_2":0,"_bound":5}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":1,"ExpansionArg_type_2":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","Target_Switcher":0,"_bound":5,"ExpansionArg_array_length":0} start 689.5364 took 147.5781s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","Target_Switcher":0,"_bound":5,"ExpansionArg_array_length":0}
+* Error: TypeError: Cannot read property 'bind' of undefined
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","Target_Switcher":0,"_bound":5}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":1,"Target_Switcher":3,"_bound":6,"ExpansionArg_type_2":0} start 707.1889 took 154.8128s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":1,"Target_Switcher":3,"_bound":6,"ExpansionArg_type_2":0}
+* Error: TypeError: "n" argument must be a positive number
+* Error: Error: failed to connect to [127.0.0.1:27017]
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":1,"Target_Switcher":3,"_bound":6}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false} start 712.7107 took 153.8901s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":4,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"_bound":9}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false} start 733.3072 took 146.8344s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false}
+* Error: TypeError: "listener" argument must be a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":12}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 95% Coverage (LOC): 97%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 37% Coverage (LOC): 56%
+*- File /root/Targets/opsync/node_modules/opsync/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/opsync/lib/opsync.js. Coverage (Term): 31% Coverage (LOC): 41%
+*- File /root/Targets/opsync/node_modules/opsync/settings.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/index.js. Coverage (Term): 95% Coverage (LOC): 96%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/index.js. Coverage (Term): 40% Coverage (LOC): 38%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/bson.js. Coverage (Term): 9% Coverage (LOC): 33%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/double.js. Coverage (Term): 45% Coverage (LOC): 60%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/objectid.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/binary_parser.js. Coverage (Term): 8% Coverage (LOC): 30%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/symbol.js. Coverage (Term): 44% Coverage (LOC): 62%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/code.js. Coverage (Term): 39% Coverage (LOC): 47%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/min_key.js. Coverage (Term): 56% Coverage (LOC): 63%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/max_key.js. Coverage (Term): 56% Coverage (LOC): 63%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/db_ref.js. Coverage (Term): 34% Coverage (LOC): 41%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/binary.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/opsync/node_modules/bson/lib/bson/float_parser.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/bson/ext/index.js. Coverage (Term): 86% Coverage (LOC): 94%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/base_command.js. Coverage (Term): 60% Coverage (LOC): 80%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/admin.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection.js. Coverage (Term): 65% Coverage (LOC): 76%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/insert_command.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/query_command.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/delete_command.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/update_command.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/db_command.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/utils.js. Coverage (Term): 19% Coverage (LOC): 34%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/cursor.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/get_more_command.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/commands/kill_cursor_command.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/read_preference.js. Coverage (Term): 44% Coverage (LOC): 71%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/cursorstream.js. Coverage (Term): 22% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/shared.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/core.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/query.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/command_cursor.js. Coverage (Term): 5% Coverage (LOC): 3%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/scope.js. Coverage (Term): 18% Coverage (LOC): 12%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/index.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/geo.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/commands.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/aggregation.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/aggregation_cursor.js. Coverage (Term): 11% Coverage (LOC): 7%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/batch/unordered.js. Coverage (Term): 5% Coverage (LOC): 2%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/batch/common.js. Coverage (Term): 11% Coverage (LOC): 13%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/collection/batch/ordered.js. Coverage (Term): 6% Coverage (LOC): 2%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/connection.js. Coverage (Term): 31% Coverage (LOC): 33%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/connection_utils.js. Coverage (Term): 44% Coverage (LOC): 74%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/server.js. Coverage (Term): 33% Coverage (LOC): 45%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/responses/mongo_reply.js. Coverage (Term): 10% Coverage (LOC): 27%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/connection_pool.js. Coverage (Term): 52% Coverage (LOC): 58%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/server_capabilities.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/base.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_cr.js. Coverage (Term): 14% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_gssapi.js. Coverage (Term): 11% Coverage (LOC): 13%
+*- File /root/Targets/opsync/node_modules/kerberos/index.js. Coverage (Term): 53% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/kerberos/lib/kerberos.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_sspi.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_plain.js. Coverage (Term): 18% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_x509.js. Coverage (Term): 19% Coverage (LOC): 12%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/auth/mongodb_scram.js. Coverage (Term): 7% Coverage (LOC): 5%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/mongos.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/ping_strategy.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/statistics_strategy.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/options.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set_state.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/repl_set/ha.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/mongo_client.js. Coverage (Term): 47% Coverage (LOC): 53%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/db.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/connection/url_parser.js. Coverage (Term): 33% Coverage (LOC): 35%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/gridfs/grid.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/gridfs/gridstore.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/gridfs/chunk.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/opsync/node_modules/mongodb/lib/mongodb/gridfs/readstream.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/opsync/lib/oplog.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/opsync/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/opsync/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/opsync/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/lynx/lib/lynx.js. Coverage (Term): 23% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/statsd-parser/index.js. Coverage (Term): 35% Coverage (LOC): 46%
+*- File /root/Targets/opsync/node_modules/mersenne/lib/mersenne.js. Coverage (Term): 30% Coverage (LOC): 46%
+*- File /root/Targets/opsync/node_modules/opsync/lib/filter.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/opsync/node_modules/opsync/lib/queue.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/opsync/lib/heap.js. Coverage (Term): 16% Coverage (LOC): 29%
+*- File /root/Targets/opsync/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/opsync/node_modules/opsync/lib/remote.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/opsync/node_modules/request/index.js. Coverage (Term): 13% Coverage (LOC): 23%
+*- File /root/Targets/opsync/node_modules/request/lib/cookies.js. Coverage (Term): 45% Coverage (LOC): 55%
+*- File /root/Targets/opsync/node_modules/request/lib/optional.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/cookie.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/pubsuffix.js. Coverage (Term): 98% Coverage (LOC): 99%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/store.js. Coverage (Term): 43% Coverage (LOC): 74%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/memstore.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/permuteDomain.js. Coverage (Term): 25% Coverage (LOC): 27%
+*- File /root/Targets/opsync/node_modules/tough-cookie/lib/pathMatch.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/request/lib/copy.js. Coverage (Term): 33% Coverage (LOC): 44%
+*- File /root/Targets/opsync/node_modules/request/request.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/opsync/node_modules/request/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/request/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/request/node_modules/qs/lib/stringify.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/request/node_modules/qs/lib/parse.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/opsync/node_modules/request/node_modules/qs/lib/utils.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/opsync/node_modules/oauth-sign/index.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/opsync/node_modules/hawk/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/hawk/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/boom/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/boom/lib/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/opsync/node_modules/hoek/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/hoek/lib/index.js. Coverage (Term): 8% Coverage (LOC): 21%
+*- File /root/Targets/opsync/node_modules/hoek/lib/escape.js. Coverage (Term): 34% Coverage (LOC): 46%
+*- File /root/Targets/opsync/node_modules/sntp/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/sntp/lib/index.js. Coverage (Term): 6% Coverage (LOC): 13%
+*- File /root/Targets/opsync/node_modules/hawk/lib/server.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/opsync/node_modules/cryptiles/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/cryptiles/lib/index.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/opsync/node_modules/hawk/lib/crypto.js. Coverage (Term): 20% Coverage (LOC): 45%
+*- File /root/Targets/opsync/node_modules/hawk/lib/utils.js. Coverage (Term): 17% Coverage (LOC): 23%
+*- File /root/Targets/opsync/node_modules/hawk/lib/client.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/aws-sign2/index.js. Coverage (Term): 26% Coverage (LOC): 51%
+*- File /root/Targets/opsync/node_modules/http-signature/lib/index.js. Coverage (Term): 32% Coverage (LOC): 24%
+*- File /root/Targets/opsync/node_modules/request/node_modules/mime-types/lib/index.js. Coverage (Term): 43% Coverage (LOC): 48%
+*- File /root/Targets/opsync/node_modules/json-stringify-safe/stringify.js. Coverage (Term): 14% Coverage (LOC): 27%
+*- File /root/Targets/opsync/node_modules/stringstream/stringstream.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/opsync/node_modules/forever-agent/index.js. Coverage (Term): 21% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/form-data/lib/form_data.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/opsync/node_modules/combined-stream/lib/combined_stream.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/opsync/node_modules/delayed-stream/lib/delayed_stream.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/request/lib/debug.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/opsync/node_modules/request/lib/getSafe.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/opsync/node_modules/opsync/lib/proxy.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/express/lib/express.js. Coverage (Term): 66% Coverage (LOC): 74%
+*- File /root/Targets/opsync/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/opsync/node_modules/express/lib/application.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/opsync/node_modules/finalhandler/index.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/opsync/node_modules/finalhandler/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/opsync/node_modules/finalhandler/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/opsync/node_modules/finalhandler/node_modules/ms/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/escape-html/index.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/opsync/node_modules/express/lib/utils.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/opsync/node_modules/send/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/send/lib/send.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/opsync/node_modules/send/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/opsync/node_modules/send/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/opsync/node_modules/send/node_modules/ms/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/send/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/opsync/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/opsync/node_modules/range-parser/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/opsync/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/opsync/node_modules/send/lib/utils.js. Coverage (Term): 30% Coverage (LOC): 54%
+*- File /root/Targets/opsync/node_modules/send/node_modules/on-finished/index.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/opsync/node_modules/send/node_modules/ee-first/index.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/opsync/node_modules/buffer-crc32/index.js. Coverage (Term): 70% Coverage (LOC): 94%
+*- File /root/Targets/opsync/node_modules/proxy-addr/index.js. Coverage (Term): 9% Coverage (LOC): 19%
+*- File /root/Targets/opsync/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 34% Coverage (LOC): 61%
+*- File /root/Targets/opsync/node_modules/express/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/express/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/opsync/node_modules/express/node_modules/qs/lib/stringify.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/opsync/node_modules/express/node_modules/qs/lib/utils.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/opsync/node_modules/express/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/opsync/node_modules/express/node_modules/media-typer/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/opsync/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/opsync/node_modules/express/lib/router/route.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/express/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/opsync/node_modules/express/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/opsync/node_modules/express/node_modules/ms/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/opsync/node_modules/path-to-regexp/index.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/opsync/node_modules/methods/index.js. Coverage (Term): 56% Coverage (LOC): 22%
+*- File /root/Targets/opsync/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/opsync/node_modules/express/lib/middleware/init.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/opsync/node_modules/express/lib/middleware/query.js. Coverage (Term): 34% Coverage (LOC): 35%
+*- File /root/Targets/opsync/node_modules/express/lib/view.js. Coverage (Term): 30% Coverage (LOC): 43%
+*- File /root/Targets/opsync/node_modules/express/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/opsync/node_modules/express/lib/request.js. Coverage (Term): 29% Coverage (LOC): 46%
+*- File /root/Targets/opsync/node_modules/accepts/index.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/opsync/node_modules/negotiator/lib/negotiator.js. Coverage (Term): 68% Coverage (LOC): 75%
+*- File /root/Targets/opsync/node_modules/negotiator/lib/charset.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/opsync/node_modules/negotiator/lib/encoding.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/opsync/node_modules/negotiator/lib/language.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/opsync/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/opsync/node_modules/accepts/node_modules/mime-types/lib/index.js. Coverage (Term): 43% Coverage (LOC): 48%
+*- File /root/Targets/opsync/node_modules/express/node_modules/type-is/index.js. Coverage (Term): 11% Coverage (LOC): 17%
+*- File /root/Targets/opsync/node_modules/express/node_modules/mime-types/lib/index.js. Coverage (Term): 43% Coverage (LOC): 48%
+*- File /root/Targets/opsync/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/opsync/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/opsync/node_modules/cookie/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/opsync/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/opsync/node_modules/serve-static/index.js. Coverage (Term): 20% Coverage (LOC): 21%
+*- File /root/Targets/opsync/node_modules/body-parser/index.js. Coverage (Term): 40% Coverage (LOC): 49%
+*- File /root/Targets/opsync/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/opsync/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/opsync/node_modules/async/lib/async.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 30 paths with 24 errors **

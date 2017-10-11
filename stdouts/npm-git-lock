@@ -1,0 +1,102 @@
+/root/Targets/npm-git-lock
+└─┬ npm-git-lock@3.5.0 
+  ├─┬ del@1.2.1 
+  │ ├─┬ each-async@1.1.1 
+  │ │ ├── onetime@1.1.0 
+  │ │ └── set-immediate-shim@1.0.1 
+  │ ├─┬ globby@2.1.0 
+  │ │ ├─┬ array-union@1.0.2 
+  │ │ │ └── array-uniq@1.0.3 
+  │ │ ├── async@1.5.2 
+  │ │ └─┬ glob@5.0.15 
+  │ │   ├─┬ inflight@1.0.6 
+  │ │   │ └── wrappy@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├─┬ minimatch@3.0.4 
+  │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │   │   ├── balanced-match@1.0.0 
+  │ │   │   └── concat-map@0.0.1 
+  │ │   ├── once@1.4.0 
+  │ │   └── path-is-absolute@1.0.1 
+  │ ├── is-path-cwd@1.0.0 
+  │ ├─┬ is-path-in-cwd@1.0.0 
+  │ │ └─┬ is-path-inside@1.0.0 
+  │ │   └── path-is-inside@1.0.2 
+  │ ├── object-assign@3.0.0 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     └── fs.realpath@1.0.0 
+  ├── es6-promise@3.2.1 
+  ├─┬ es6-promisify@1.1.1 
+  │ └── es6-promise@1.0.0 
+  ├─┬ git-promise@0.2.0 
+  │ ├── q@1.0.1 
+  │ └── shelljs@0.3.0 
+  ├─┬ json-stable-stringify@1.0.1 
+  │ └── jsonify@0.0.0 
+  ├── lodash@3.10.1 
+  ├── loglevel@1.4.1 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├── shelljs@0.5.3 
+  └── string.prototype.startswith@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/npm-git-lock/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0521 took 3.1835s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+'use strict';
+
+var argv = require('optimist')
+.usage('Usage: $0 --repo [git@bitbucket.org:your/dedicated/node_modules/git/repository.git] --verbose --cross-platform')
+.describe('verbose', '[-v] Print progress log messages')
+.describe('repo', 'git url to repository with node_modules content')
+.describe('cross-platform', 'do not archive platform-specific files in node_modules')
+.describe('incremental-install', 'start npm install with last node_modules instead of clearing them')
+.describe('production', 'start npm install with production flag')
+.describe('check-all-json-elements', 'Sha-1 calculated from all elements in package.json instead of only dependencies and devDependencies')
+.alias('v', 'verbose')
+.demand(['repo']).argv;
+
+var checkoutNodeModules = require('./lib/checkout-node-modules');
+
+checkoutNodeModules(process.cwd(), {
+    verbose: argv.verbose,
+    repo: argv.repo,
+    crossPlatform: argv['cross-platform'],
+    incrementalInstall: argv['incremental-install'],
+    production: argv['production'],
+    checkAllJsonElements: argv['check-all-json-elements']
+})
+.then(function () {
+    process.exit(0);
+})
+.catch(function (error) {
+    process.exit(1);
+});
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

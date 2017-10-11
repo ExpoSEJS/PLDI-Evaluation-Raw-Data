@@ -1,0 +1,30 @@
+/root/Targets/try-utils
+└─┬ try-utils@0.0.2 
+  ├── bluebird@3.5.0 
+  └─┬ cliui@3.2.0 
+    ├─┬ string-width@1.0.2 
+    │ ├── code-point-at@1.1.0 
+    │ └─┬ is-fullwidth-code-point@1.0.0 
+    │   └── number-is-nan@1.0.1 
+    ├─┬ strip-ansi@3.0.1 
+    │ └── ansi-regex@2.1.1 
+    └── wrap-ansi@2.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/try-utils/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0826 took 2.4893s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (4:0)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

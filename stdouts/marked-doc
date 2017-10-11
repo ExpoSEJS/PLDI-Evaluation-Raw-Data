@@ -1,0 +1,144 @@
+/root/Targets/marked-doc
+└── marked-doc@0.1.20 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/marked-doc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0791 took 4.9546s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (20:31) on program var marked = require('marked');
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitize: false, // Ignore any HTML that has been input.
+    smartLists: true,
+    smartypants: false,
+    langPrefix: ''
+});
+
+var path = require('path');
+var fs = require('fs');
+
+function doc(path) {
+    var path_doc = path.replace('mds', 'html');
+    if (!fs.existsSync(path_doc)) {
+        fs.mkdirSync(path_doc, 0777);
+    }
+    else{
+        deleteFolder(path_doc, false);
+    }
+    walk(path);
+    console.log('docs generated at: ' + path_doc);
+}
+
+function walk(path) {
+    var dirList = fs.readdirSync(path);
+    dirList.forEach(function(item) {
+        if (fs.statSync(path + '/' + item).isDirectory()) {
+            buildDir(path + '/' + item);
+            walk(path + '/' + item);
+        } else {
+            if (item.match(/\.md$/i)) {
+                buildHtml(path, item);
+            } else {
+                copyFile(path + '/' + item, (path + '/' + item).replace('mds', 'html'));
+            }
+        }
+    });
+}
+
+function buildHtml(path, item) {
+    var htmlPath, htmlName;
+    fs.readFile(path + '/' + item, 'utf-8', function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            // console.log(data);
+            // htmlPath = path.replace(/\/.+$/, '') + '/doc/';
+            // htmlName = item.replace(/\.md$/i, '') + '.html';
+            // htmlPath = __dirname + '/doc/' + path.replace(__dirname + '/mds', '') + '/';
+            htmlPath = path.replace('mds', 'html') + '/';
+            htmlName = item.replace(/\.md$/i, '') + '.html';
+            fs.writeFile(htmlPath + htmlName, fixedHTML(marked(data), item));
+        }
+    });
+}
+
+function buildDir(path) {
+    path = path.replace('mds', 'html');
+    if (!fs.existsSync(path)) {
+        fs.mkdirSync(path, 0777);
+    }
+}
+
+function fixedHTML(str, title) {
+    var preStr = '\
+        <!DOCTYPE html>\
+            <html>\
+                <head>\
+                    <meta charset="utf-8">\
+                    <link href="http://news.sina.com.cn/268/2014/1203/markfx.css" rel="stylesheet" type="text/css">\
+                    <title>' + title + '</title>\
+                </head>\
+                <body>\
+                    <article class="markdown-body">';
+    var clzStr = '\
+                    </article>\
+                    <link rel="stylesheet" href="http://news.sina.com.cn/268/2014/1210/monokai_sublime.css">\
+                    <script src="http://news.sina.com.cn/268/2014/1210/highlight.pack.js">\
+                    </script><script>hljs.initHighlightingOnLoad();</script>\
+                </body>\
+            </html>';
+
+    return preStr + str + clzStr;
+}
+
+function copyFile(src, dest) {
+    fs.writeFileSync(dest, fs.readFileSync(src));
+}
+
+function deleteFolder(path, delRoot) {
+    var files = [];
+    if (fs.existsSync(path)) {
+        files = fs.readdirSync(path);
+        files.forEach(function(file, index) {
+            var curPath = path + "/" + file;
+            if (fs.statSync(curPath).isDirectory()) {
+                deleteFolder(curPath, true);
+            } else {
+                fs.unlinkSync(curPath);
+            }
+        });
+        if(delRoot){
+            fs.rmdirSync(path);
+        }
+    }
+}
+
+exports.doc = doc; at SyntaxError: Invalid number (20:31)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:10)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2152:16)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/marked-doc/node_modules/marked-doc/doc.js. Coverage (Term): 59% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

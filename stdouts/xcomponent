@@ -1,0 +1,41 @@
+
+> zalgo-promise@1.0.18 postinstall /root/Targets/xcomponent/node_modules/zalgo-promise
+> node postinstall.js
+
+
+> cross-domain-safe-weakmap@1.0.17 postinstall /root/Targets/xcomponent/node_modules/cross-domain-safe-weakmap
+> node postinstall.js
+
+
+> post-robot@7.0.15 postinstall /root/Targets/xcomponent/node_modules/post-robot
+> node postinstall.js
+
+/root/Targets/xcomponent
+└─┬ xcomponent@5.0.3 
+  ├── beaver-logger@3.0.10 
+  ├── cross-domain-safe-weakmap@1.0.17 
+  ├── cross-domain-utils@1.0.25 
+  ├── hi-base32@0.1.1 
+  ├── post-robot@7.0.15 
+  └── zalgo-promise@1.0.18 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/xcomponent/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 6% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","now"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0778 took 41.4127s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/xcomponent/node_modules/xcomponent/index.js. Coverage (Term): 62% Coverage (LOC): 100%
+*- File /root/Targets/xcomponent/node_modules/xcomponent/dist/xcomponent.js. Coverage (Term): 2% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

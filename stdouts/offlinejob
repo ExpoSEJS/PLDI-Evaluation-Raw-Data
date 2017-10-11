@@ -1,0 +1,126 @@
+/root/Targets/offlinejob
+└── offlinejob@1.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/offlinejob/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0429 took 5.2307s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'return' outside of function (20:4) on program var fs = require('fs');
+var child_process = require('child_process');
+var exec = require('child_process').exec;
+var http = require('http');
+var path = require('path')
+
+var iconvlite = require('iconv-lite');
+var fse = require('fs-extra')
+var mkdirp = require('mkdirp');
+
+
+// Badic parameters
+var settingPath = path.resolve('./setting.json');
+settingTxt = fs.readFileSync(settingPath);
+
+try {
+    var setting = JSON.parse(settingTxt)
+} catch (e) {
+    console.log(e);
+    return;
+}
+
+
+var projectName = setting.projectName,
+    urlToOffline = setting.targetUrl,
+    port = setting.port,
+    charset = setting.charset,	//'utf8'/'gb2312'
+    hostnameToOffline = urlToOffline.match(/.*(\.com)|.*(\.cn)|.*(\.io)/g)[0], 
+    rootPath = 'http://localhost:' + port,
+    startServerCommand = 'node bin/www ' + port,
+    fileLocalDir = path.resolve('./export', projectName),
+    fileLocalPath = path.resolve('./export', projectName, projectName + '.html'),
+    fileUrl = rootPath + '/export/' + projectName + '/' + projectName + '.html',
+    interval = 0;
+
+
+// add attachments
+(function () {
+    var serverPath = path.resolve('./bin/attachment/server.js'),
+        nodeModuleDir = path.resolve('./bin/attachment/base_node_modules/');
+    // copy server.js
+    try {
+        fse.copySync(serverPath, fileLocalDir + '/server.js')
+    } catch (err) {
+        console.error(err)
+    }
+    // copy express
+    try {
+        fse.copySync(nodeModuleDir, fileLocalDir + '/node_modules')
+    } catch (err) {
+        console.error(err)
+    }
+})();
+
+
+
+//  create offline html(if html was created, it won't be created again)
+http.get(urlToOffline, function (http_res) {
+    var data = "";
+    http_res.on("data", function (chunk) {
+        data += iconvlite.decode(chunk, charset);
+    });
+
+    http_res.on("end", function () {
+        // check if html exsits
+        var isHTMLExsits = fs.existsSync(fileLocalPath)
+        if (!isHTMLExsits) {
+            mkdirp(fileLocalDir);
+            fs.writeFileSync(fileLocalPath, data);
+        }
+
+        // start node server
+        exec(startServerCommand, function (err, stdout, stderr) {
+            if (err) {
+                // console.log(err);
+            }
+        });
+        setTimeout(function () {
+            // open url in browser
+            exec('explorer ' + fileUrl, function (err, stdout, stderr) {
+                if (err) {
+                    // console.log(err);
+                }
+
+                setTimeout(function () {
+                    // slimerjs excute the sync window
+                    exec('bin\\slimerjs-0.10.2\\slimerjs bin\\slimerjsSetting.js ' + hostnameToOffline, function (err, stdout, stderr) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                }, interval);
+            })
+        }, 0);
+    });
+}); at SyntaxError: 'return' outside of function (20:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:831:12)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseTryStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:906:26)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:702:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

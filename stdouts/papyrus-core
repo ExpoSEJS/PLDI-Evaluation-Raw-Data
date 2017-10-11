@@ -1,0 +1,29 @@
+/root/Targets/papyrus-core
+└─┬ papyrus-core@0.3.3 
+  └── log4javascript@1.4.9  (git://github.com/DECK36/log4javascript.git#863630b40e36d8bad7d5809c5e8c8f35d8fb6ca7)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/papyrus-core/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","reverse","call","Date","RegExp","join","parseInt","sort","splice"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0852 took 23.895s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'getLogger' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/papyrus-core/node_modules/papyrus-core/index.js. Coverage (Term): 31% Coverage (LOC): 29%
+*- File /root/Targets/papyrus-core/node_modules/papyrus-core/base/index.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- File /root/Targets/papyrus-core/node_modules/dcl/dcl.js. Coverage (Term): 44% Coverage (LOC): 51%
+*- File /root/Targets/papyrus-core/node_modules/dcl/mini.js. Coverage (Term): 62% Coverage (LOC): 74%
+*- File /root/Targets/papyrus-core/node_modules/papyrus-core/base/chains.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/papyrus-core/node_modules/papyrus-core/utils/logger.js. Coverage (Term): 35% Coverage (LOC): 51%
+*- File /root/Targets/papyrus-core/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

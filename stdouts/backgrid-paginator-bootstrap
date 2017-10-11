@@ -1,0 +1,47 @@
+/root/Targets/backgrid-paginator-bootstrap
+└── backgrid-paginator-bootstrap@0.3.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/backgrid-paginator-bootstrap/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 11% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","apply","create","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.052 took 31.2832s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (2:0) on program (function(obj, _) { var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+with(obj||{}){
+__p+='<option value="'+
+((__t=( value ))==null?'':_.escape(__t))+
+'" '+
+((__t=( selected ? 'selected="selected"' : "" ))==null?'':__t)+
+'>'+
+((__t=( text ))==null?'':_.escape(__t))+
+'</option>';
+}
+return __p;
+ }) at SyntaxError: 'with' in strict mode (2:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/backgrid-paginator-bootstrap/node_modules/backgrid-paginator-bootstrap/backgrid-paginator-bootstrap.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/backgrid-paginator-bootstrap/node_modules/backbone/backbone.js. Coverage (Term): 10% Coverage (LOC): 24%
+*- File /root/Targets/backgrid-paginator-bootstrap/node_modules/underscore/underscore.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/backgrid-paginator-bootstrap/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/backgrid-paginator-bootstrap/node_modules/backgrid/lib/backgrid.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

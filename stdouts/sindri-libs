@@ -1,0 +1,24 @@
+/root/Targets/sindri-libs
+└─┬ sindri-libs@0.3.0 
+  ├── backbone.iobind@0.4.9  (git://github.com/noveogroup/backbone.iobind.git#667a6bc71e2af4fd8127bc151e67633dcfba8a5e)
+  ├── jquery-dialogextend@2.0.4  (git://github.com/ROMB/jquery-dialogextend.git#ae24ecb32d24334ce241c66dd3e593e4484db7e6)
+  └── select2@4.0.3  extraneous (git://github.com/select2/select2.git#c4544077aeee56b74f888937677285eae1e801da)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sindri-libs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0779 took 4.5964s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'sindri-libs'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,99 @@
+/root/Targets/adawarp
+└─┬ adawarp@0.0.1-alpha6 
+  ├── @types/axios@0.9.36 
+  ├── @types/debug@0.0.29 
+  ├── @types/node@6.0.88 
+  ├─┬ @types/power-assert@1.4.29 
+  │ ├── @types/empower@1.2.30 
+  │ └── @types/power-assert-formatter@1.4.28 
+  ├── @types/socket.io-client@1.4.30 
+  ├── @types/webrtc@0.0.20 
+  ├─┬ ajv@4.1.7 
+  │ ├── co@4.6.0 
+  │ └─┬ json-stable-stringify@1.0.1 
+  │   └── jsonify@0.0.0 
+  ├─┬ axios@0.13.1 
+  │ └─┬ follow-redirects@0.0.7 
+  │   └── stream-consume@0.1.0 
+  ├── bootstrap@4.0.0-alpha.2 
+  ├─┬ debug@2.2.0 
+  │ └── ms@0.7.1 
+  ├─┬ log4js@0.6.37 
+  │ ├─┬ readable-stream@1.0.34 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── semver@4.3.6 
+  ├─┬ morgan@1.7.0 
+  │ ├── basic-auth@1.0.4 
+  │ ├── depd@1.1.1 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ └── on-headers@1.0.1 
+  ├─┬ rxjs@5.0.0-rc.1 
+  │ └── symbol-observable@1.0.4 
+  ├─┬ socket.io@1.4.8 
+  │ ├─┬ engine.io@1.6.11 
+  │ │ ├─┬ accepts@1.1.4 
+  │ │ │ ├─┬ mime-types@2.0.14 
+  │ │ │ │ └── mime-db@1.12.0 
+  │ │ │ └── negotiator@0.4.9 
+  │ │ ├── base64id@0.1.0 
+  │ │ ├─┬ engine.io-parser@1.2.4 
+  │ │ │ ├── after@0.8.1 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ ├── base64-arraybuffer@0.1.2 
+  │ │ │ ├── blob@0.0.4 
+  │ │ │ ├── has-binary@0.1.6 
+  │ │ │ └── utf8@2.1.0 
+  │ │ └─┬ ws@1.1.0 
+  │ │   ├── options@0.0.6 
+  │ │   └── ultron@1.0.2 
+  │ ├── has-binary@0.1.7 
+  │ ├─┬ socket.io-adapter@0.4.0 
+  │ │ └─┬ socket.io-parser@2.2.2 
+  │ │   ├── debug@0.7.4 
+  │ │   └── json3@3.2.6 
+  │ └─┬ socket.io-parser@2.2.6 
+  │   ├── benchmark@1.0.0 
+  │   ├── component-emitter@1.1.2 
+  │   └── json3@3.3.2 
+  └─┬ socket.io-client@1.4.8 
+    ├── backo2@1.0.2 
+    ├── component-bind@1.0.0 
+    ├── component-emitter@1.2.0 
+    ├─┬ engine.io-client@1.6.11 
+    │ ├── component-inherit@0.0.3 
+    │ ├── has-cors@1.1.0 
+    │ ├── parsejson@0.0.1 
+    │ ├── parseqs@0.0.2 
+    │ ├── ws@1.0.1 
+    │ ├── xmlhttprequest-ssl@1.5.1 
+    │ └── yeast@0.1.2 
+    ├── indexof@0.0.1 
+    ├── object-component@0.0.3 
+    ├─┬ parseuri@0.0.4 
+    │ └─┬ better-assert@1.0.2 
+    │   └── callsite@1.0.0 
+    └── to-array@0.1.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/adawarp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 46% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","for","Symbol","pow","apply","bind","getOwnPropertyNames","Date","getUTCFullYear","getUTCMonth","getUTCDate","getUTCHours","getUTCMinutes","getUTCSeconds","getUTCMilliseconds","stringify","Number","parse"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0916 took 76.2226s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: navigator is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/adawarp/node_modules/adawarp/dist/adawarp.min.js. Coverage (Term): 32% Coverage (LOC): 46%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

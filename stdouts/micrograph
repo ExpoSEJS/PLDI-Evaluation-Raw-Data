@@ -1,0 +1,114 @@
+/root/Targets/micrograph
+└─┬ micrograph@1.0.0-rc.3 
+  └─┬ graphql@0.7.2 
+    └── iterall@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/micrograph/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 34% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 34% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 35% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 35% coverage ] ****** [3 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","isArray","Boolean","toString","apply","bound ","TypeError","Array","bound Middleware"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0644 took 47.1526s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Option "schema" must be an object
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1,"ExpandedSwitcher":0} start 47.8132 took 48.655s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":2} start 96.708 took 46.842s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/compile.js. Coverage (Term): 58% Coverage (LOC): 59%
+*- File /root/Targets/micrograph/node_modules/graphql/index.js. Coverage (Term): 52% Coverage (LOC): 81%
+*- File /root/Targets/micrograph/node_modules/graphql/graphql.js. Coverage (Term): 37% Coverage (LOC): 48%
+*- File /root/Targets/micrograph/node_modules/graphql/language/source.js. Coverage (Term): 44% Coverage (LOC): 54%
+*- File /root/Targets/micrograph/node_modules/graphql/language/parser.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/micrograph/node_modules/graphql/error/index.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/micrograph/node_modules/graphql/error/GraphQLError.js. Coverage (Term): 19% Coverage (LOC): 17%
+*- File /root/Targets/micrograph/node_modules/graphql/language/index.js. Coverage (Term): 61% Coverage (LOC): 76%
+*- File /root/Targets/micrograph/node_modules/graphql/language/location.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/micrograph/node_modules/graphql/language/lexer.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/micrograph/node_modules/graphql/language/printer.js. Coverage (Term): 7% Coverage (LOC): 21%
+*- File /root/Targets/micrograph/node_modules/graphql/language/visitor.js. Coverage (Term): 16% Coverage (LOC): 37%
+*- File /root/Targets/micrograph/node_modules/graphql/language/kinds.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/graphql/error/syntaxError.js. Coverage (Term): 19% Coverage (LOC): 48%
+*- File /root/Targets/micrograph/node_modules/graphql/error/locatedError.js. Coverage (Term): 46% Coverage (LOC): 58%
+*- File /root/Targets/micrograph/node_modules/graphql/error/formatError.js. Coverage (Term): 70% Coverage (LOC): 71%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/invariant.js. Coverage (Term): 84% Coverage (LOC): 89%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/validate.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/micrograph/node_modules/graphql/type/schema.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/micrograph/node_modules/graphql/type/definition.js. Coverage (Term): 37% Coverage (LOC): 51%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/isNullish.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/assertValidName.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/graphql/type/directives.js. Coverage (Term): 96% Coverage (LOC): 98%
+*- File /root/Targets/micrograph/node_modules/graphql/type/scalars.js. Coverage (Term): 41% Coverage (LOC): 59%
+*- File /root/Targets/micrograph/node_modules/graphql/type/introspection.js. Coverage (Term): 32% Coverage (LOC): 49%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/astFromValue.js. Coverage (Term): 20% Coverage (LOC): 15%
+*- File /root/Targets/micrograph/node_modules/iterall/index.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/find.js. Coverage (Term): 46% Coverage (LOC): 55%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/typeComparators.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/TypeInfo.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/typeFromAST.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/specifiedRules.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/UniqueOperationNames.js. Coverage (Term): 33% Coverage (LOC): 35%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/LoneAnonymousOperation.js. Coverage (Term): 39% Coverage (LOC): 48%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/KnownTypeNames.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/suggestionList.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/quotedOrList.js. Coverage (Term): 33% Coverage (LOC): 54%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/FragmentsOnCompositeTypes.js. Coverage (Term): 30% Coverage (LOC): 50%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/VariablesAreInputTypes.js. Coverage (Term): 41% Coverage (LOC): 60%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/ScalarLeafs.js. Coverage (Term): 31% Coverage (LOC): 46%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/FieldsOnCorrectType.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/UniqueFragmentNames.js. Coverage (Term): 34% Coverage (LOC): 38%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/KnownFragmentNames.js. Coverage (Term): 41% Coverage (LOC): 53%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/NoUnusedFragments.js. Coverage (Term): 23% Coverage (LOC): 27%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/PossibleFragmentSpreads.js. Coverage (Term): 24% Coverage (LOC): 44%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/NoFragmentCycles.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/UniqueVariableNames.js. Coverage (Term): 33% Coverage (LOC): 39%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/NoUndefinedVariables.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/NoUnusedVariables.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/KnownDirectives.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/KnownArgumentNames.js. Coverage (Term): 28% Coverage (LOC): 35%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/UniqueArgumentNames.js. Coverage (Term): 30% Coverage (LOC): 35%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/ArgumentsOfCorrectType.js. Coverage (Term): 33% Coverage (LOC): 48%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/isValidLiteralValue.js. Coverage (Term): 21% Coverage (LOC): 21%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/keyMap.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/ProvidedNonNullArguments.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/DefaultValuesOfCorrectType.js. Coverage (Term): 25% Coverage (LOC): 39%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/VariablesInAllowedPosition.js. Coverage (Term): 24% Coverage (LOC): 33%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/OverlappingFieldsCanBeMerged.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/rules/UniqueInputFieldNames.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/micrograph/node_modules/graphql/execution/execute.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/micrograph/node_modules/graphql/execution/values.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/valueFromAST.js. Coverage (Term): 26% Coverage (LOC): 24%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/isValidJSValue.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/micrograph/node_modules/graphql/type/index.js. Coverage (Term): 53% Coverage (LOC): 81%
+*- File /root/Targets/micrograph/node_modules/graphql/execution/index.js. Coverage (Term): 79% Coverage (LOC): 90%
+*- File /root/Targets/micrograph/node_modules/graphql/validation/index.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/introspectionQuery.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/getOperationAST.js. Coverage (Term): 33% Coverage (LOC): 32%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/buildClientSchema.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File /root/Targets/micrograph/node_modules/graphql/jsutils/keyValMap.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/buildASTSchema.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/extendSchema.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/schemaPrinter.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/concatAST.js. Coverage (Term): 33% Coverage (LOC): 38%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/separateOperations.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/micrograph/node_modules/graphql/utilities/findBreakingChanges.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/createMutationRootType.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/decorateWithResolvers.js. Coverage (Term): 24% Coverage (LOC): 28%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/handleResolver.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/resolver.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/createQueryRootType.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/instantiateObjectTypes.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/buildAttributes.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/buildRelationships.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/titleizeType.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/micrograph/node_modules/micrograph/dist/middleware.js. Coverage (Term): 62% Coverage (LOC): 59%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 1 errors **

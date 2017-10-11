@@ -1,0 +1,918 @@
+/root/Targets/gulp-cm-phpspec-tasks
+└─┬ gulp-cm-phpspec-tasks@1.1.0 
+  ├─┬ gulp-notify@2.2.0 
+  │ ├─┬ gulp-util@3.0.8 
+  │ │ ├── array-differ@1.0.0 
+  │ │ ├── array-uniq@1.0.3 
+  │ │ ├── beeper@1.1.1 
+  │ │ ├── dateformat@2.2.0 
+  │ │ ├─┬ fancy-log@1.3.0 
+  │ │ │ └── time-stamp@1.1.0 
+  │ │ ├─┬ gulplog@1.0.0 
+  │ │ │ └── glogg@1.0.0 
+  │ │ ├─┬ has-gulplog@0.1.0 
+  │ │ │ └── sparkles@1.0.0 
+  │ │ ├── lodash._reescape@3.0.0 
+  │ │ ├── lodash._reevaluate@3.0.0 
+  │ │ ├── lodash._reinterpolate@3.0.0 
+  │ │ ├── minimist@1.2.0 
+  │ │ ├─┬ multipipe@0.1.2 
+  │ │ │ └─┬ duplexer2@0.0.2 
+  │ │ │   └── readable-stream@1.1.14 
+  │ │ ├── object-assign@3.0.0 
+  │ │ ├── replace-ext@0.0.1 
+  │ │ ├─┬ through2@2.0.3 
+  │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │   ├── isarray@1.0.0 
+  │ │ │   ├── process-nextick-args@1.0.7 
+  │ │ │   ├── safe-buffer@5.1.1 
+  │ │ │   ├── string_decoder@1.0.3 
+  │ │ │   └── util-deprecate@1.0.2 
+  │ │ └─┬ vinyl@0.5.3 
+  │ │   ├── clone@1.0.2 
+  │ │   └── clone-stats@0.0.1 
+  │ ├─┬ lodash.template@3.6.2 
+  │ │ ├── lodash._basecopy@3.0.1 
+  │ │ ├── lodash._basetostring@3.0.1 
+  │ │ ├── lodash._basevalues@3.0.0 
+  │ │ ├── lodash._isiterateecall@3.0.9 
+  │ │ ├─┬ lodash.escape@3.2.0 
+  │ │ │ └── lodash._root@3.0.1 
+  │ │ ├─┬ lodash.keys@3.1.2 
+  │ │ │ ├── lodash._getnative@3.9.1 
+  │ │ │ ├── lodash.isarguments@3.1.0 
+  │ │ │ └── lodash.isarray@3.0.4 
+  │ │ ├── lodash.restparam@3.6.1 
+  │ │ └── lodash.templatesettings@3.1.1 
+  │ ├─┬ node-notifier@4.6.1 
+  │ │ ├─┬ cli-usage@0.1.4 
+  │ │ │ ├── marked@0.3.6 
+  │ │ │ └─┬ marked-terminal@1.7.0 
+  │ │ │   ├─┬ cardinal@1.0.0 
+  │ │ │   │ ├── ansicolors@0.2.1 
+  │ │ │   │ └─┬ redeyed@1.0.1 
+  │ │ │   │   └── esprima@3.0.0 
+  │ │ │   ├─┬ cli-table@0.3.1 
+  │ │ │   │ └── colors@1.0.3 
+  │ │ │   ├── lodash.assign@4.2.0 
+  │ │ │   └─┬ node-emoji@1.8.1 
+  │ │ │     └── lodash.toarray@4.4.0 
+  │ │ ├── growly@1.3.0 
+  │ │ ├─┬ lodash.clonedeep@3.0.2 
+  │ │ │ ├─┬ lodash._baseclone@3.3.0 
+  │ │ │ │ ├── lodash._arraycopy@3.0.0 
+  │ │ │ │ ├── lodash._arrayeach@3.0.0 
+  │ │ │ │ ├── lodash._baseassign@3.2.0 
+  │ │ │ │ └── lodash._basefor@3.0.3 
+  │ │ │ └── lodash._bindcallback@3.0.1 
+  │ │ ├── semver@5.4.1 
+  │ │ ├── shellwords@0.1.1 
+  │ │ └─┬ which@1.3.0 
+  │ │   └── isexe@2.0.0 
+  │ ├─┬ node.extend@1.1.6 
+  │ │ └── is@3.2.1 
+  │ └─┬ through2@0.6.5 
+  │   ├─┬ readable-stream@1.0.34 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── inherits@2.0.3 
+  │   │ ├── isarray@0.0.1 
+  │   │ └── string_decoder@0.10.31 
+  │   └── xtend@4.0.1 
+  ├─┬ gulp-phpspec@0.5.5 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ ├── lodash@3.10.1 
+  │ └── map-stream@0.0.6 
+  ├── shelljs@0.5.3 
+  └─┬ yargs@3.32.0 
+    ├── camelcase@2.1.1 
+    ├─┬ cliui@3.2.0 
+    │ └── wrap-ansi@2.1.0 
+    ├── decamelize@1.2.0 
+    ├─┬ os-locale@1.4.0 
+    │ └─┬ lcid@1.0.0 
+    │   └── invert-kv@1.0.0 
+    ├─┬ string-width@1.0.2 
+    │ ├── code-point-at@1.1.0 
+    │ └─┬ is-fullwidth-code-point@1.0.0 
+    │   └── number-is-nan@1.0.1 
+    ├── window-size@0.1.4 
+    └── y18n@3.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gulp-cm-phpspec-tasks/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","bind","defineProperties","call","max","create","Set","getOSType","isArray","Object"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0693 took 36.1103s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require('assert')
+var Completion = require('./lib/completion')
+var Parser = require('./lib/parser')
+var path = require('path')
+var tokenizeArgString = require('./lib/tokenize-arg-string')
+var Usage = require('./lib/usage')
+var Validation = require('./lib/validation')
+var Y18n = require('y18n')
+
+Argv(process.argv.slice(2))
+
+var exports = module.exports = Argv
+function Argv (processArgs, cwd) {
+  processArgs = processArgs || [] // handle calling yargs().
+
+  var self = {}
+  var completion = null
+  var usage = null
+  var validation = null
+  var y18n = Y18n({
+    directory: path.resolve(__dirname, './locales'),
+    updateFiles: false
+  })
+
+  if (!cwd) cwd = process.cwd()
+
+  self.$0 = process.argv
+    .slice(0, 2)
+    .map(function (x, i) {
+      // ignore the node bin, specify this in your
+      // bin file with #!/usr/bin/env node
+      if (i === 0 && /\b(node|iojs)$/.test(x)) return
+      var b = rebase(cwd, x)
+      return x.match(/^\//) && b.length < x.length ? b : x
+    })
+    .join(' ').trim()
+
+  if (process.env._ !== undefined && process.argv[1] === process.env._) {
+    self.$0 = process.env._.replace(
+      path.dirname(process.execPath) + '/', ''
+    )
+  }
+
+  var options
+  self.resetOptions = self.reset = function () {
+    // put yargs back into its initial
+    // state, this is useful for creating a
+    // nested CLI.
+    options = {
+      array: [],
+      boolean: [],
+      string: [],
+      narg: {},
+      key: {},
+      alias: {},
+      default: {},
+      defaultDescription: {},
+      choices: {},
+      requiresArg: [],
+      count: [],
+      normalize: [],
+      config: {},
+      envPrefix: undefined
+    }
+
+    usage = Usage(self, y18n) // handle usage output.
+    validation = Validation(self, usage, y18n) // handle arg validation.
+    completion = Completion(self, usage)
+
+    demanded = {}
+    groups = {}
+
+    exitProcess = true
+    strict = false
+    helpOpt = null
+    versionOpt = null
+    commandHandlers = {}
+    self.parsed = false
+
+    return self
+  }
+  self.resetOptions()
+
+  self.boolean = function (bools) {
+    options.boolean.push.apply(options.boolean, [].concat(bools))
+    return self
+  }
+
+  self.array = function (arrays) {
+    options.array.push.apply(options.array, [].concat(arrays))
+    return self
+  }
+
+  self.nargs = function (key, n) {
+    if (typeof key === 'object') {
+      Object.keys(key).forEach(function (k) {
+        self.nargs(k, key[k])
+      })
+    } else {
+      options.narg[key] = n
+    }
+    return self
+  }
+
+  self.choices = function (key, values) {
+    if (typeof key === 'object') {
+      Object.keys(key).forEach(function (k) {
+        self.choices(k, key[k])
+      })
+    } else {
+      options.choices[key] = (options.choices[key] || []).concat(values)
+    }
+    return self
+  }
+
+  self.normalize = function (strings) {
+    options.normalize.push.apply(options.normalize, [].concat(strings))
+    return self
+  }
+
+  self.config = function (key, msg, parseFn) {
+    if (typeof msg === 'function') {
+      parseFn = msg
+      msg = null
+    }
+    self.describe(key, msg || usage.deferY18nLookup('Path to JSON config file'))
+    ;(Array.isArray(key) ? key : [key]).forEach(function (k) {
+      options.config[k] = parseFn || true
+    })
+    return self
+  }
+
+  self.example = function (cmd, description) {
+    usage.example(cmd, description)
+    return self
+  }
+
+  self.command = function (cmd, description, fn) {
+    if (description !== false) {
+      usage.command(cmd, description)
+    }
+    if (fn) commandHandlers[cmd] = fn
+    return self
+  }
+
+  var commandHandlers = {}
+  self.getCommandHandlers = function () {
+    return commandHandlers
+  }
+
+  self.string = function (strings) {
+    options.string.push.apply(options.string, [].concat(strings))
+    return self
+  }
+
+  self.default = function (key, value, defaultDescription) {
+    if (typeof key === 'object') {
+      Object.keys(key).forEach(function (k) {
+        self.default(k, key[k])
+      })
+    } else {
+      if (defaultDescription) options.defaultDescription[key] = defaultDescription
+      if (typeof value === 'function') {
+        if (!options.defaultDescription[key]) options.defaultDescription[key] = usage.functionDescription(value)
+        value = value.call()
+      }
+      options.default[key] = value
+    }
+    return self
+  }
+
+  self.alias = function (x, y) {
+    if (typeof x === 'object') {
+      Object.keys(x).forEach(function (key) {
+        self.alias(key, x[key])
+      })
+    } else {
+      // perhaps 'x' is already an alias in another list?
+      // if so we should append to x's list.
+      var aliases = null
+      Object.keys(options.alias).forEach(function (key) {
+        if (~options.alias[key].indexOf(x)) aliases = options.alias[key]
+      })
+
+      if (aliases) { // x was an alias itself.
+        aliases.push(y)
+      } else { // x is a new alias key.
+        options.alias[x] = (options.alias[x] || []).concat(y)
+      }
+
+      // wait! perhaps we've created two lists of aliases
+      // that reference each other?
+      if (options.alias[y]) {
+        Array.prototype.push.apply((options.alias[x] || aliases), options.alias[y])
+        delete options.alias[y]
+      }
+    }
+    return self
+  }
+
+  self.count = function (counts) {
+    options.count.push.apply(options.count, [].concat(counts))
+    return self
+  }
+
+  var demanded = {}
+  self.demand = self.required = self.require = function (keys, max, msg) {
+    // you can optionally provide a 'max' key,
+    // which will raise an exception if too many '_'
+    // options are provided.
+    if (typeof max !== 'number') {
+      msg = max
+      max = Infinity
+    }
+
+    if (typeof keys === 'number') {
+      if (!demanded._) demanded._ = { count: 0, msg: null, max: max }
+      demanded._.count = keys
+      demanded._.msg = msg
+    } else if (Array.isArray(keys)) {
+      keys.forEach(function (key) {
+        self.demand(key, msg)
+      })
+    } else {
+      if (typeof msg === 'string') {
+        demanded[keys] = { msg: msg }
+      } else if (msg === true || typeof msg === 'undefined') {
+        demanded[keys] = { msg: undefined }
+      }
+    }
+
+    return self
+  }
+  self.getDemanded = function () {
+    return demanded
+  }
+
+  self.requiresArg = function (requiresArgs) {
+    options.requiresArg.push.apply(options.requiresArg, [].concat(requiresArgs))
+    return self
+  }
+
+  self.implies = function (key, value) {
+    validation.implies(key, value)
+    return self
+  }
+
+  self.usage = function (msg, opts) {
+    if (!opts && typeof msg === 'object') {
+      opts = msg
+      msg = null
+    }
+
+    usage.usage(msg)
+
+    if (opts) self.options(opts)
+
+    return self
+  }
+
+  self.epilogue = self.epilog = function (msg) {
+    usage.epilog(msg)
+    return self
+  }
+
+  self.fail = function (f) {
+    usage.failFn(f)
+    return self
+  }
+
+  self.check = function (f) {
+    validation.check(f)
+    return self
+  }
+
+  self.defaults = self.default
+
+  self.describe = function (key, desc) {
+    options.key[key] = true
+    usage.describe(key, desc)
+    return self
+  }
+
+  self.parse = function (args) {
+    return parseArgs(args)
+  }
+
+  self.option = self.options = function (key, opt) {
+    if (typeof key === 'object') {
+      Object.keys(key).forEach(function (k) {
+        self.options(k, key[k])
+      })
+    } else {
+      assert(typeof opt === 'object', 'second argument to option must be an object')
+
+      options.key[key] = true // track manually set keys.
+
+      if (opt.alias) self.alias(key, opt.alias)
+
+      var demand = opt.demand || opt.required || opt.require
+
+      if (demand) {
+        self.demand(key, demand)
+      } if ('config' in opt) {
+        self.config(key, opt.configParser)
+      } if ('default' in opt) {
+        self.default(key, opt.default)
+      } if ('nargs' in opt) {
+        self.nargs(key, opt.nargs)
+      } if ('choices' in opt) {
+        self.choices(key, opt.choices)
+      } if ('group' in opt) {
+        self.group(key, opt.group)
+      } if (opt.boolean || opt.type === 'boolean') {
+        self.boolean(key)
+        if (opt.alias) self.boolean(opt.alias)
+      } if (opt.array || opt.type === 'array') {
+        self.array(key)
+        if (opt.alias) self.array(opt.alias)
+      } if (opt.string || opt.type === 'string') {
+        self.string(key)
+        if (opt.alias) self.string(opt.alias)
+      } if (opt.count || opt.type === 'count') {
+        self.count(key)
+      } if (opt.defaultDescription) {
+        options.defaultDescription[key] = opt.defaultDescription
+      }
+
+      var desc = opt.describe || opt.description || opt.desc
+      if (desc) {
+        self.describe(key, desc)
+      }
+
+      if (opt.requiresArg) {
+        self.requiresArg(key)
+      }
+    }
+
+    return self
+  }
+  self.getOptions = function () {
+    return options
+  }
+
+  var groups = {}
+  self.group = function (opts, groupName) {
+    var seen = {}
+    groups[groupName] = (groups[groupName] || []).concat(opts).filter(function (key) {
+      if (seen[key]) return false
+      return (seen[key] = true)
+    })
+    return self
+  }
+  self.getGroups = function () {
+    return groups
+  }
+
+  // as long as options.envPrefix is not undefined,
+  // parser will apply env vars matching prefix to argv
+  self.env = function (prefix) {
+    if (prefix === false) options.envPrefix = undefined
+    else options.envPrefix = prefix || ''
+    return self
+  }
+
+  self.wrap = function (cols) {
+    usage.wrap(cols)
+    return self
+  }
+
+  var strict = false
+  self.strict = function () {
+    strict = true
+    return self
+  }
+  self.getStrict = function () {
+    return strict
+  }
+
+  self.showHelp = function (level) {
+    if (!self.parsed) parseArgs(processArgs) // run parser, if it has not already been executed.
+    usage.showHelp(level)
+    return self
+  }
+
+  var versionOpt = null
+  self.version = function (ver, opt, msg) {
+    versionOpt = opt || 'version'
+    usage.version(ver)
+    self.boolean(versionOpt)
+    self.describe(versionOpt, msg || usage.deferY18nLookup('Show version number'))
+    return self
+  }
+
+  var helpOpt = null
+  self.addHelpOpt = function (opt, msg) {
+    helpOpt = opt
+    self.boolean(opt)
+    self.describe(opt, msg || usage.deferY18nLookup('Show help'))
+    return self
+  }
+
+  self.showHelpOnFail = function (enabled, message) {
+    usage.showHelpOnFail(enabled, message)
+    return self
+  }
+
+  var exitProcess = true
+  self.exitProcess = function (enabled) {
+    if (typeof enabled !== 'boolean') {
+      enabled = true
+    }
+    exitProcess = enabled
+    return self
+  }
+  self.getExitProcess = function () {
+    return exitProcess
+  }
+
+  self.help = function () {
+    if (arguments.length > 0) return self.addHelpOpt.apply(self, arguments)
+
+    if (!self.parsed) parseArgs(processArgs) // run parser, if it has not already been executed.
+
+    return usage.help()
+  }
+
+  var completionCommand = null
+  self.completion = function (cmd, desc, fn) {
+    // a function to execute when generating
+    // completions can be provided as the second
+    // or third argument to completion.
+    if (typeof desc === 'function') {
+      fn = desc
+      desc = null
+    }
+
+    // register the completion command.
+    completionCommand = cmd || 'completion'
+    if (!desc && desc !== false) {
+      desc = 'generate bash completion script'
+    }
+    self.command(completionCommand, desc)
+
+    // a function can be provided
+    if (fn) completion.registerFunction(fn)
+
+    return self
+  }
+
+  self.showCompletionScript = function ($0) {
+    $0 = $0 || self.$0
+    console.log(completion.generateCompletionScript($0))
+    return self
+  }
+
+  self.locale = function (locale) {
+    if (arguments.length === 0) {
+      guessLocale()
+      return y18n.getLocale()
+    }
+    detectLocale = false
+    y18n.setLocale(locale)
+    return self
+  }
+
+  self.updateStrings = self.updateLocale = function (obj) {
+    detectLocale = false
+    y18n.updateLocale(obj)
+    return self
+  }
+
+  var detectLocale = true
+  self.detectLocale = function (detect) {
+    detectLocale = detect
+    return self
+  }
+  self.getDetectLocale = function () {
+    return detectLocale
+  }
+
+  self.getUsageInstance = function () {
+    return usage
+  }
+
+  self.getValidationInstance = function () {
+    return validation
+  }
+
+  self.terminalWidth = function () {
+    return require('window-size').width
+  }
+
+  Object.defineProperty(self, 'argv', {
+    get: function () {
+      var args = null
+
+      try {
+        args = parseArgs(processArgs)
+      } catch (err) {
+        usage.fail(err.message)
+      }
+
+      return args
+    },
+    enumerable: true
+  })
+
+  function parseArgs (args) {
+    args = normalizeArgs(args)
+
+    var parsed = Parser(args, options, y18n)
+    var argv = parsed.argv
+    var aliases = parsed.aliases
+
+    argv.$0 = self.$0
+
+    self.parsed = parsed
+
+    guessLocale() // guess locale lazily, so that it can be turned off in chain.
+
+    // while building up the argv object, there
+    // are two passes through the parser. If completion
+    // is being performed short-circuit on the first pass.
+    if (completionCommand &&
+      (process.argv.join(' ')).indexOf(completion.completionKey) !== -1 &&
+      !argv[completion.completionKey]) {
+      return argv
+    }
+
+    // if there's a handler associated with a
+    // command defer processing to it.
+    var handlerKeys = Object.keys(self.getCommandHandlers())
+    for (var i = 0, command; (command = handlerKeys[i]) !== undefined; i++) {
+      if (~argv._.indexOf(command)) {
+        runCommand(command, self, argv)
+        return self.argv
+      }
+    }
+
+    // generate a completion script for adding to ~/.bashrc.
+    if (completionCommand && ~argv._.indexOf(completionCommand) && !argv[completion.completionKey]) {
+      self.showCompletionScript()
+      if (exitProcess) {
+        process.exit(0)
+      }
+    }
+
+    // we must run completions first, a user might
+    // want to complete the --help or --version option.
+    if (completion.completionKey in argv) {
+      // we allow for asynchronous completions,
+      // e.g., loading in a list of commands from an API.
+      completion.getCompletion(function (completions) {
+        ;(completions || []).forEach(function (completion) {
+          console.log(completion)
+        })
+
+        if (exitProcess) {
+          process.exit(0)
+        }
+      })
+      return
+    }
+
+    var helpOrVersion = false
+    Object.keys(argv).forEach(function (key) {
+      if (key === helpOpt && argv[key]) {
+        helpOrVersion = true
+        self.showHelp('log')
+        if (exitProcess) {
+          process.exit(0)
+        }
+      } else if (key === versionOpt && argv[key]) {
+        helpOrVersion = true
+        usage.showVersion()
+        if (exitProcess) {
+          process.exit(0)
+        }
+      }
+    })
+
+    // If the help or version options where used and exitProcess is false,
+    // we won't run validations
+    if (!helpOrVersion) {
+      if (parsed.error) throw parsed.error
+
+      // if we're executed via bash completion, don't
+      // bother with validation.
+      if (!argv[completion.completionKey]) {
+        validation.nonOptionCount(argv)
+        validation.missingArgumentValue(argv)
+        validation.requiredArguments(argv)
+        if (strict) validation.unknownArguments(argv, aliases)
+        validation.customChecks(argv, aliases)
+        validation.limitedChoices(argv)
+        validation.implications(argv)
+      }
+    }
+
+    setPlaceholderKeys(argv)
+
+    return argv
+  }
+
+  function guessLocale () {
+    if (!detectLocale) return
+
+    try {
+      var osLocale = require('os-locale')
+      self.locale(osLocale.sync({ spawn: false }))
+    } catch (err) {
+      // if we explode looking up locale just noop
+      // we'll keep using the default language 'en'.
+    }
+  }
+
+  function runCommand (command, yargs, argv) {
+    setPlaceholderKeys(argv)
+    yargs.getCommandHandlers()[command](yargs.reset(), argv)
+  }
+
+  function setPlaceholderKeys (argv) {
+    Object.keys(options.key).forEach(function (key) {
+      // don't set placeholder keys for dot
+      // notation options 'foo.bar'.
+      if (~key.indexOf('.')) return
+      if (typeof argv[key] === 'undefined') argv[key] = undefined
+    })
+  }
+
+  function normalizeArgs (args) {
+    if (typeof args === 'string') {
+      return tokenizeArgString(args)
+    }
+    return args
+  }
+
+  singletonify(self)
+  return self
+}
+
+// rebase an absolute path to a relative one with respect to a base directory
+// exported for tests
+exports.rebase = rebase
+function rebase (base, dir) {
+  return path.relative(base, dir)
+}
+
+/*  Hack an instance of Argv with process.argv into Argv
+    so people can do
+    require('yargs')(['--beeble=1','-z','zizzle']).argv
+    to parse a list of args and
+    require('yargs').argv
+    to get a parsed version of process.argv.
+*/
+function singletonify (inst) {
+  Object.keys(inst).forEach(function (key) {
+    if (key === 'argv') {
+      Argv.__defineGetter__(key, inst.__lookupGetter__(key))
+    } else {
+      Argv[key] = typeof inst[key] === 'function' ? inst[key].bind(inst) : inst[key]
+    }
+  })
+}
+ at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-cm-phpspec-tasks/index.js. Coverage (Term): 15% Coverage (LOC): 10%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-notify/index.js. Coverage (Term): 76% Coverage (LOC): 89%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-notify/lib/extra_api.js. Coverage (Term): 27% Coverage (LOC): 35%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/xtend/immutable.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/index.js. Coverage (Term): 20% Coverage (LOC): 33%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/clone/clone.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/clone-stats/index.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/lib/cloneBuffer.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/lib/isBuffer.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/lib/isStream.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/lib/isNull.js. Coverage (Term): 61% Coverage (LOC): 80%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/vinyl/lib/inspectStream.js. Coverage (Term): 40% Coverage (LOC): 45%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/replace-ext/index.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/chalk/index.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/escape-string-regexp/index.js. Coverage (Term): 85% Coverage (LOC): 90%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/ansi-styles/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/strip-ansi/index.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/ansi-regex/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/has-ansi/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/supports-color/index.js. Coverage (Term): 63% Coverage (LOC): 56%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/dateformat/lib/dateformat.js. Coverage (Term): 17% Coverage (LOC): 41%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/log.js. Coverage (Term): 38% Coverage (LOC): 42%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/has-gulplog/index.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/sparkles/index.js. Coverage (Term): 31% Coverage (LOC): 37%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/template.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.template/index.js. Coverage (Term): 20% Coverage (LOC): 33%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._basecopy/index.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._basetostring/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._basevalues/index.js. Coverage (Term): 31% Coverage (LOC): 44%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._isiterateecall/index.js. Coverage (Term): 20% Coverage (LOC): 43%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._reinterpolate/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.keys/index.js. Coverage (Term): 40% Coverage (LOC): 48%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._getnative/index.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.isarguments/index.js. Coverage (Term): 30% Coverage (LOC): 64%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.isarray/index.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.restparam/index.js. Coverage (Term): 29% Coverage (LOC): 34%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.templatesettings/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.escape/index.js. Coverage (Term): 41% Coverage (LOC): 59%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._root/index.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._reescape/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._reevaluate/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/env.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/minimist/index.js. Coverage (Term): 22% Coverage (LOC): 34%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/beeper/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/noop.js. Coverage (Term): 70% Coverage (LOC): 83%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/through2/through2.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/transform.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/readable.js. Coverage (Term): 61% Coverage (LOC): 60%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/process-nextick-args/index.js. Coverage (Term): 22% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/internal/streams/stream.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/internal/streams/BufferList.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/internal/streams/destroy.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/isStream.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/isBuffer.js. Coverage (Term): 64% Coverage (LOC): 86%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/isNull.js. Coverage (Term): 61% Coverage (LOC): 80%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/combine.js. Coverage (Term): 36% Coverage (LOC): 45%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/multipipe/index.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/duplexer2/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/readable.js. Coverage (Term): 90% Coverage (LOC): 92%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/buffer.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-util/lib/PluginError.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/array-differ/index.js. Coverage (Term): 32% Coverage (LOC): 56%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/array-uniq/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/object-assign/index.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/index.js. Coverage (Term): 64% Coverage (LOC): 61%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/lib/utils.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/shellwords/lib/shellwords.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash.clonedeep/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._baseclone/index.js. Coverage (Term): 62% Coverage (LOC): 54%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._arraycopy/index.js. Coverage (Term): 32% Coverage (LOC): 40%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._arrayeach/index.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._baseassign/index.js. Coverage (Term): 58% Coverage (LOC): 83%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._basefor/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/lodash._bindcallback/index.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/notifiers/notifysend.js. Coverage (Term): 38% Coverage (LOC): 35%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/which/which.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/isexe/index.js. Coverage (Term): 24% Coverage (LOC): 23%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/isexe/mode.js. Coverage (Term): 16% Coverage (LOC): 36%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/notifiers/notificationcenter.js. Coverage (Term): 28% Coverage (LOC): 22%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/notifiers/growl.js. Coverage (Term): 26% Coverage (LOC): 21%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/lib/checkGrowl.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/growly/lib/growly.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/growly/lib/gntp.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/notifiers/toaster.js. Coverage (Term): 31% Coverage (LOC): 22%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node-notifier/notifiers/balloon.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-notify/lib/report.js. Coverage (Term): 17% Coverage (LOC): 16%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node.extend/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/node.extend/lib/extend.js. Coverage (Term): 15% Coverage (LOC): 16%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/is/index.js. Coverage (Term): 17% Coverage (LOC): 41%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-notify/lib/notify.js. Coverage (Term): 13% Coverage (LOC): 13%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-notify/lib/withReporter.js. Coverage (Term): 27% Coverage (LOC): 31%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-phpspec/index.js. Coverage (Term): 23% Coverage (LOC): 19%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-phpspec/config.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/map-stream/index.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/gulp-cm-phpspec-tasks/node_modules/gulp-phpspec/lib/phpspec.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

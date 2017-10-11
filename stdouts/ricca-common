@@ -1,0 +1,191 @@
+/root/Targets/ricca-common
+└── ricca-common@0.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ricca-common/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0336 took 3.5175s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (11:14) on program /* Generic logging module.
+ *
+ * Log Levels:
+ * - 3 (Debug)
+ * - 2 (Info)
+ * - 1 (Warn)
+ * - 0 (Error)
+ */
+
+var ansi = {
+    'reset': '\033[0m',
+    'bold': '\033[1m',
+    'italic': '\033[3m',
+    'underline': '\033[4m',
+
+    'black': '\033[30m',
+    'grey': '\033[1;30m',
+    'ltGrey': '\033[0;37m',
+    'red': '\033[1;31m',
+    'green': '\033[1;32m',
+    'yellow': '\033[1;33m',
+    'dkyellow': '\033[33m',
+    'dkblue': '\033[34m',
+    'blue': '\033[1;34m',
+    'magenta': '\033[35m',
+    'dkcyan': '\033[36m',
+    'cyan': '\033[1;36m',
+    'white': '\033[1;37m',
+    'error': '\033[41m\033[1;37m',
+    'warn': '\033[43m\033[30m',
+    'prepend': '\033[1;37m'
+};
+
+var Logger = function (log_level, time, prepend) {
+    if (prepend == undefined && typeof time != "boolean") {
+        prepend = time;
+        time = true
+    }
+    switch (log_level) {
+        case 'error':
+            log_level = 1;
+            break;
+        case 'warn':
+            log_level = 2;
+            break;
+        case 'info':
+            log_level = 3;
+            break;
+        case 'debug':
+            log_level = 4;
+    }
+    this.showtime = time;
+    this._log_level = log_level || 3;
+    this.prepend = '';
+    if (typeof prepend != "undefined") {
+        this.prepend = ansi.prepend + prepend.toUpperCase() + " ==> " + ansi.reset;
+    }
+};
+
+Logger.prototype = {
+    _timestamp: function (msg) {
+        var date = new Date();
+        return date.getUTCFullYear() + '-' + (date.getUTCMonth() + 1) + '-' + date.getUTCDate() + ' ' + ((date.getUTCHours() < 10) ? '0' : '') + date.getUTCHours() + ':' + ((date.getUTCMinutes() < 10) ? '0' : '') + date.getUTCMinutes() + ':' + ((date.getUTCSeconds() < 10) ? '0' : '') + date.getUTCSeconds();
+    },
+    dumpError: function (err) {
+        if (typeof err === 'object') {
+            if (err.stack) {
+                console.error(ansi.warn + 'Stacktrace:\n====================' + ansi.reset);
+                if (err.message) {
+                    console.error(this.msg('ERROR', '[' + err.name + ': ' + err.message + ']'));
+                }
+                //stack = err.stack.replace(/PATH/g, '');
+                stack = err.stack;
+                if (this._log_level == 1) {
+                    stachspl = stack.split("\n");
+                    console.info(ansi.yellow + (stachspl[1] + '\n' + stachspl[2]) + ansi.reset);
+                } else if (this._log_level == 2) {
+                    stachspl = stack.split("\n");
+                    console.info(ansi.yellow + (stachspl[1] + '\n' + stachspl[2] + '\n' + stachspl[3]) + ansi.reset);
+                } else {
+                    stachspl = stack.split("\n");
+                    console.info(ansi.yellow + stack + ansi.reset);
+                }
+
+                console.error(ansi.warn + '====================' + ansi.reset);
+            }
+        }
+    },
+    status: function (status, msg) {
+        switch (status) {
+            case 'pass':
+                stat = ansi.green + "[Passed]" + ansi.reset;
+                break;
+            case 'fail':
+                stat = ansi.red + "[Failed]" + ansi.reset;
+                break;
+            case 'start':
+                if (this._log_level < 1) { return; }
+                stat = ansi.cyan + "[Starting]" + ansi.reset;
+                break;
+        }
+
+        console.info(this.msg('', stat + " " + msg));
+    },
+    msg: function (status, msg) {
+        switch (status) {
+            case 'DEBUG':
+                stat = ansi.grey + "DEBUG: ";
+                break;
+            case 'INFO':
+                stat = ansi.white + "INFO: ";
+                break;
+            case 'WARN':
+                stat = ansi.warn + "WARN: ";
+                break;
+            case 'ERROR':
+                stat = ansi.error + "ERROR: ";
+                break;
+            default:
+                stat = '';
+        }
+        return (this.showtime ? this._timestamp() + ' - ' : '') + this.prepend + stat + msg + ansi.reset;
+    },
+
+    debug: function (msg) {
+        if (this._log_level < 4) {
+            return;
+        }
+        console.info(this.msg('DEBUG', msg));
+    },
+
+    info: function (msg) {
+        if (this._log_level < 3) {
+            return;
+        }
+        console.info(this.msg('INFO', msg));
+    },
+
+    log: function (msg) {
+        if (this._log_level < 3) {
+            return;
+        }
+        console.info(this.msg('INFO', msg));
+    },
+    warn: function (msg) {
+        if (this._log_level < 2) {
+            return;
+        }
+        console.warn(this.msg('WARN', msg));
+    },
+
+    error: function (msg, rawErr) {
+        if (this._log_level < 1) {
+            return;
+        }
+        console.error(this.msg('ERROR', msg));
+        this.dumpError(rawErr);
+    }
+};
+
+exports.Logger = Logger; at SyntaxError: Octal literal in strict mode (11:14)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parsePropertyValue (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1997:14)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

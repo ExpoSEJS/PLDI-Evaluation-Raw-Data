@@ -1,0 +1,64 @@
+/root/Targets/traverson-angular
+└── traverson-angular@6.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/traverson-angular/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0436 took 8.5405s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (3:20) on program var styles = {
+    //styles
+    'bold'      : ['\033[1m',  '\033[22m'],
+    'italic'    : ['\033[3m',  '\033[23m'],
+    'underline' : ['\033[4m',  '\033[24m'],
+    'inverse'   : ['\033[7m',  '\033[27m'],
+    //grayscale
+    'white'     : ['\033[37m', '\033[39m'],
+    'grey'      : ['\033[90m', '\033[39m'],
+    'black'     : ['\033[30m', '\033[39m'],
+    //colors
+    'blue'      : ['\033[34m', '\033[39m'],
+    'cyan'      : ['\033[36m', '\033[39m'],
+    'green'     : ['\033[32m', '\033[39m'],
+    'magenta'   : ['\033[35m', '\033[39m'],
+    'red'       : ['\033[31m', '\033[39m'],
+    'yellow'    : ['\033[33m', '\033[39m']
+  };
+
+exports.levelMap = { debug: 1, info: 2, warn: 3, error: 4 };
+
+exports.style = function(str, style) {
+  return styles[style][0] + str + styles[style][1];
+}
+
+ at SyntaxError: Octal literal in strict mode (3:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1800:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/traverson-angular/node_modules/traverson-angular/traverson-angular.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/traverson-angular/node_modules/traverson/traverson.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/traverson-angular/node_modules/minilog/lib/index.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/traverson-angular/node_modules/minilog/lib/common/minilog.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/traverson-angular/node_modules/minilog/lib/common/transform.js. Coverage (Term): 31% Coverage (LOC): 42%
+*- File /root/Targets/traverson-angular/node_modules/microee/index.js. Coverage (Term): 16% Coverage (LOC): 37%
+*- File /root/Targets/traverson-angular/node_modules/minilog/lib/common/filter.js. Coverage (Term): 34% Coverage (LOC): 54%
+*- File /root/Targets/traverson-angular/node_modules/minilog/lib/node/console.js. Coverage (Term): 30% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,147 @@
+/root/Targets/charlotte
+└─┬ charlotte@0.1.8 
+  ├─┬ express@2.5.11 
+  │ ├─┬ connect@1.9.2 
+  │ │ └── formidable@1.0.17 
+  │ ├── mime@1.2.4 
+  │ ├── mkdirp@0.3.0 
+  │ └── qs@0.4.2 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/charlotte/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0739 took 9.4172s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (22:4) on program (function() {
+  var shared = {},
+      HTML_BUNDLE_MIME_TYPE = "application/x-html-bundle+charlotte";
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = shared;
+  } else {
+    this.charlotte = this.charlotte || {};
+    this.charlotte.shared = shared;
+  }
+  
+  function removeUrlMultislashes(url) {
+    return url.replace(/([^:])\/{2,}/g, '$1/').
+               replace(/^\/{2,}/, '/');
+  }
+
+  shared.HTML_BUNDLE_MIME_TYPE = HTML_BUNDLE_MIME_TYPE;
+  
+  shared.removeUrlMultislashes = removeUrlMultislashes;
+  
+  shared.isBlank = function(varName, globally) {
+    with(this) {
+      var theVarIsBlank = eval("(" + 
+                      '"undefined" === typeof ' + varName +  
+                      '|| ' + varName + ' === null || ' +
+                      varName + ' === "" )'),
+          globalObj;
+      if ('undefined' !== typeof global) globalObj = global;
+      else if ('undefined' !== typeof window) globalObj = window;
+      else throw new Error("Unknown global object.");
+      if (globally) {
+        return theVarIsBlank;
+      } else {
+        return theVarIsBlank || eval('(' + varName + ')') === globalObj[varName];
+      }
+    }
+  };
+
+  // should only be used with absolute urls because the browser implementation 
+  // of this does (using an anchor element) does something different than 
+  // the node's url module
+  shared.parseUrl = function(url) {
+    var parsed;
+    if (!url.match(/^http/)) throw new Error("Can only parse absolute url's.");
+    if ('undefined' !== typeof require && require('url')) {
+      parsed = require('url').parse(url);
+    } else if ('undefined' !== typeof window) {
+      parsed = document.createElement('a');
+      parsed.href = url;
+      parsed.path = parsed.pathname;
+    } else {
+      throw new Error("Can't parse url, don't know where the hell I am.");
+    }
+    return parsed;
+  };
+  
+  shared.resolveUrl = function(rootUrl, url) {
+    if (url.match(/^http/)) return url;
+    
+    if (url.match(/^file/)) url = url.substring(7);
+    return removeUrlMultislashes(rootUrl + url);
+  };
+  
+  shared.versionAssetUrl = function(version, url) {
+    if (!version) return url;
+    var path, parsedUrl, server = '';
+    if (!url.match(/^http/)) {
+      path = url;
+    } else {
+      parsedUrl = this.parseUrl(url);
+      path = parsedUrl.path;
+      server = parsedUrl.protocol + '//' + parsedUrl.host;
+    }
+    return server + removeUrlMultislashes("/versions/" + version + "/" + path);
+  };
+  
+  shared.tag = function(name, urlAttr, urlMapper, options) {
+    var s, url = urlMapper(options[urlAttr]);
+    
+    if (!url) return '<!-- skipping tag with url: ' + options[urlAttr] + ' -->';
+    
+    s = '<' + name + ' ';
+    _.each(options, function(v,k) {
+      v = (k == urlAttr ? url : v);
+      s += k + '="' + v + '" ';
+    });
+    s += '></' + name + '>';
+    return s;
+  };
+
+  shared.tags = function(name, urlAttribute, urlMapper, baseOptions, helperArgs) {
+    var lastHelperArg = helperArgs[helperArgs.length-1],
+        options = _.extend({}, baseOptions),
+        tags = [], 
+        end = helperArgs.length;
+    if (_.isObject(lastHelperArg)) {
+      _.extend(options, lastHelperArg);
+      end -= 1;
+    }
+    for (var i = 0; i < end; i++) {
+      options[urlAttribute] = helperArgs[i];
+      tags.push(this.tag(name, urlAttribute, urlMapper, options));
+    }
+    return tags.join('\n'); 
+  };
+    
+}).call(this); at SyntaxError: 'with' in strict mode (22:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/charlotte/node_modules/charlotte/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/charlotte/node_modules/charlotte/lib/support_express.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/charlotte/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

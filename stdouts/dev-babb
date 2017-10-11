@@ -1,0 +1,867 @@
+/root/Targets/dev-babb
+└─┬ dev-babb@0.1.11-alpha 
+  ├── babel@6.23.0 
+  ├─┬ babel-cli@6.26.0 
+  │ ├─┬ chokidar@1.7.0 
+  │ │ ├── anymatch@1.3.2 
+  │ │ ├── async-each@1.0.1 
+  │ │ ├── glob-parent@2.0.0 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ is-binary-path@1.0.1 
+  │ │ │ └── binary-extensions@1.10.0 
+  │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ └── is-extglob@1.0.0 
+  │ │ └─┬ readdirp@2.1.0 
+  │ │   └── set-immediate-shim@1.0.1 
+  │ ├── commander@2.11.0 
+  │ ├── fs-readdir-recursive@1.0.0 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ └── once@1.4.0 
+  │ ├── output-file-sync@1.1.2 
+  │ └─┬ v8flags@2.1.1 
+  │   └── user-home@1.1.1 
+  ├─┬ babel-core@6.26.0 
+  │ ├─┬ babel-code-frame@6.26.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ └── js-tokens@3.0.2 
+  │ ├─┬ babel-generator@6.26.0 
+  │ │ ├─┬ detect-indent@4.0.0 
+  │ │ │ └─┬ repeating@2.0.1 
+  │ │ │   └─┬ is-finite@1.0.2 
+  │ │ │     └── number-is-nan@1.0.1 
+  │ │ ├── jsesc@1.3.0 
+  │ │ └── trim-right@1.0.1 
+  │ ├── babel-helpers@6.24.1 
+  │ ├── babel-messages@6.23.0 
+  │ ├─┬ babel-register@6.26.0 
+  │ │ ├─┬ home-or-tmp@2.0.0 
+  │ │ │ └── os-tmpdir@1.0.2 
+  │ │ └── source-map-support@0.4.18 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├── babel-template@6.26.0 
+  │ ├─┬ babel-traverse@6.26.0 
+  │ │ ├── globals@9.18.0 
+  │ │ └─┬ invariant@2.2.2 
+  │ │   └── loose-envify@1.3.1 
+  │ ├─┬ babel-types@6.26.0 
+  │ │ └── to-fast-properties@1.0.3 
+  │ ├── babylon@6.18.0 
+  │ ├── convert-source-map@1.5.0 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── json5@0.5.1 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├── private@0.1.7 
+  │ ├── slash@1.0.0 
+  │ └── source-map@0.5.7 
+  ├─┬ babel-loader@6.4.1 
+  │ ├─┬ find-cache-dir@0.1.1 
+  │ │ ├── commondir@1.0.1 
+  │ │ └─┬ pkg-dir@1.0.0 
+  │ │   └─┬ find-up@1.1.2 
+  │ │     ├── path-exists@2.1.0 
+  │ │     └─┬ pinkie-promise@2.0.1 
+  │ │       └── pinkie@2.0.4 
+  │ ├─┬ loader-utils@0.2.17 
+  │ │ ├── big.js@3.2.0 
+  │ │ └── emojis-list@2.1.0 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ └── object-assign@4.1.1 
+  ├─┬ babel-polyfill@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.10.5 
+  ├─┬ babel-preset-es2015@6.24.1 
+  │ ├── babel-plugin-check-es2015-constants@6.22.0 
+  │ ├── babel-plugin-transform-es2015-arrow-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoped-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoping@6.26.0 
+  │ ├─┬ babel-plugin-transform-es2015-classes@6.24.1 
+  │ │ ├── babel-helper-define-map@6.26.0 
+  │ │ ├── babel-helper-function-name@6.24.1 
+  │ │ ├── babel-helper-optimise-call-expression@6.24.1 
+  │ │ └── babel-helper-replace-supers@6.24.1 
+  │ ├── babel-plugin-transform-es2015-computed-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-destructuring@6.23.0 
+  │ ├── babel-plugin-transform-es2015-duplicate-keys@6.24.1 
+  │ ├── babel-plugin-transform-es2015-for-of@6.23.0 
+  │ ├── babel-plugin-transform-es2015-function-name@6.24.1 
+  │ ├── babel-plugin-transform-es2015-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-modules-amd@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-commonjs@6.26.0 
+  │ │ └── babel-plugin-transform-strict-mode@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-systemjs@6.24.1 
+  │ │ └── babel-helper-hoist-variables@6.24.1 
+  │ ├── babel-plugin-transform-es2015-modules-umd@6.24.1 
+  │ ├── babel-plugin-transform-es2015-object-super@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-parameters@6.24.1 
+  │ │ ├── babel-helper-call-delegate@6.24.1 
+  │ │ └── babel-helper-get-function-arity@6.24.1 
+  │ ├── babel-plugin-transform-es2015-shorthand-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-spread@6.22.0 
+  │ ├─┬ babel-plugin-transform-es2015-sticky-regex@6.24.1 
+  │ │ └── babel-helper-regex@6.26.0 
+  │ ├── babel-plugin-transform-es2015-template-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-typeof-symbol@6.23.0 
+  │ ├─┬ babel-plugin-transform-es2015-unicode-regex@6.24.1 
+  │ │ └─┬ regexpu-core@2.0.0 
+  │ │   ├── regenerate@1.3.3 
+  │ │   ├── regjsgen@0.2.0 
+  │ │   └─┬ regjsparser@0.1.5 
+  │ │     └── jsesc@0.5.0 
+  │ └─┬ babel-plugin-transform-regenerator@6.26.0 
+  │   └── regenerator-transform@0.10.1 
+  ├── bluebird@3.5.0 
+  ├── bootstrap@3.3.4 
+  ├─┬ bubbletree@2.1.0  (git+https://github.com/okfn/bubbletree.git#1b16bc3934c494e32e0bff0fb2936a89770019aa)
+  │ ├── jquery@1.12.4 
+  │ ├── tween.js@16.6.0 
+  │ └─┬ webpack-raphael@2.1.4 
+  │   └── eve@0.4.1  (git://github.com/adobe-webplatform/eve.git#eef80ed8d188423c2272746fb8ae5cc8dad84cb1)
+  ├── c3@0.4.18  (git+https://github.com/masayuki0812/c3.git#0391272caefbe268991d7cea04402351da61a430)
+  ├─┬ chai@3.5.0 
+  │ ├── assertion-error@1.0.2 
+  │ ├─┬ deep-eql@0.1.3 
+  │ │ └── type-detect@0.1.1 
+  │ └── type-detect@1.0.0 
+  ├── concat-with-sourcemaps@1.0.4 
+  ├── d3@3.5.17 
+  ├─┬ gulp@3.9.1 
+  │ ├── archy@1.0.0 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├── has-ansi@2.0.0 
+  │ │ └── supports-color@2.0.0 
+  │ ├── deprecated@0.0.1 
+  │ ├── interpret@1.0.4 
+  │ ├─┬ liftoff@2.3.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├─┬ findup-sync@0.4.3 
+  │ │ │ ├─┬ detect-file@0.1.0 
+  │ │ │ │ └── fs-exists-sync@0.1.0 
+  │ │ │ └─┬ resolve-dir@0.1.1 
+  │ │ │   ├── expand-tilde@1.2.2 
+  │ │ │   └─┬ global-modules@0.2.3 
+  │ │ │     ├─┬ global-prefix@0.1.5 
+  │ │ │     │ ├── ini@1.3.4 
+  │ │ │     │ └─┬ which@1.3.0 
+  │ │ │     │   └── isexe@2.0.0 
+  │ │ │     └── is-windows@0.2.0 
+  │ │ ├─┬ fined@1.1.0 
+  │ │ │ ├─┬ expand-tilde@2.0.2 
+  │ │ │ │ └─┬ homedir-polyfill@1.0.1 
+  │ │ │ │   └── parse-passwd@1.0.0 
+  │ │ │ ├─┬ is-plain-object@2.0.4 
+  │ │ │ │ └── isobject@3.0.1 
+  │ │ │ ├─┬ object.defaults@1.1.0 
+  │ │ │ │ ├── array-each@1.0.1 
+  │ │ │ │ ├── array-slice@1.0.0 
+  │ │ │ │ ├─┬ for-own@1.0.0 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── isobject@3.0.1 
+  │ │ │ ├─┬ object.pick@1.3.0 
+  │ │ │ │ └── isobject@3.0.1 
+  │ │ │ └─┬ parse-filepath@1.0.1 
+  │ │ │   ├─┬ is-absolute@0.2.6 
+  │ │ │   │ └─┬ is-relative@0.2.1 
+  │ │ │   │   └─┬ is-unc-path@0.1.2 
+  │ │ │   │     └── unc-path-regex@0.1.2 
+  │ │ │   ├── map-cache@0.2.2 
+  │ │ │   └─┬ path-root@0.1.1 
+  │ │ │     └── path-root-regex@0.1.2 
+  │ │ ├── flagged-respawn@0.3.2 
+  │ │ ├── lodash.isplainobject@4.0.6 
+  │ │ ├── lodash.isstring@4.0.1 
+  │ │ ├── lodash.mapvalues@4.6.0 
+  │ │ └── rechoir@0.6.2 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ orchestrator@0.3.8 
+  │ │ ├─┬ end-of-stream@0.1.5 
+  │ │ │ └── once@1.3.3 
+  │ │ ├── sequencify@0.0.7 
+  │ │ └── stream-consume@0.1.0 
+  │ ├── pretty-hrtime@1.0.3 
+  │ ├── semver@4.3.6 
+  │ ├─┬ tildify@1.2.0 
+  │ │ └── os-homedir@1.0.2 
+  │ └─┬ vinyl-fs@0.3.14 
+  │   ├── defaults@1.0.3 
+  │   ├─┬ glob-stream@3.1.18 
+  │   │ ├── glob@4.5.3 
+  │   │ ├─┬ glob2base@0.0.12 
+  │   │ │ └── find-index@0.1.1 
+  │   │ ├── minimatch@2.0.10 
+  │   │ ├── ordered-read-streams@0.1.0 
+  │   │ ├─┬ through2@0.6.5 
+  │   │ │ └─┬ readable-stream@1.0.34 
+  │   │ │   ├── isarray@0.0.1 
+  │   │ │   └── string_decoder@0.10.31 
+  │   │ └── unique-stream@1.0.0 
+  │   ├─┬ glob-watcher@0.0.6 
+  │   │ └─┬ gaze@0.5.2 
+  │   │   └─┬ globule@0.1.0 
+  │   │     ├─┬ glob@3.1.21 
+  │   │     │ ├── graceful-fs@1.2.3 
+  │   │     │ └── inherits@1.0.2 
+  │   │     ├── lodash@1.0.2 
+  │   │     └── minimatch@0.2.14 
+  │   ├─┬ graceful-fs@3.0.11 
+  │   │ └── natives@1.1.0 
+  │   ├─┬ strip-bom@1.0.0 
+  │   │ └── first-chunk-stream@1.0.0 
+  │   ├─┬ through2@0.6.5 
+  │   │ └─┬ readable-stream@1.0.34 
+  │   │   ├── isarray@0.0.1 
+  │   │   └── string_decoder@0.10.31 
+  │   └─┬ vinyl@0.4.6 
+  │     └── clone@0.2.0 
+  ├─┬ gulp-autoprefixer@3.1.1 
+  │ ├─┬ autoprefixer@6.7.7 
+  │ │ ├─┬ browserslist@1.7.7 
+  │ │ │ └── electron-to-chromium@1.3.21 
+  │ │ ├── caniuse-db@1.0.30000733 
+  │ │ ├── normalize-range@0.1.2 
+  │ │ ├── num2fraction@1.2.2 
+  │ │ └── postcss-value-parser@3.3.0 
+  │ ├─┬ postcss@5.2.17 
+  │ │ ├── js-base64@2.3.2 
+  │ │ └── supports-color@3.2.3 
+  │ └── vinyl-sourcemaps-apply@0.2.1 
+  ├─┬ gulp-babel@6.1.2 
+  │ └── replace-ext@0.0.1 
+  ├─┬ gulp-concat@2.6.1 
+  │ └─┬ vinyl@2.1.0 
+  │   ├── clone@2.1.1 
+  │   ├── clone-buffer@1.0.0 
+  │   ├── clone-stats@1.0.0 
+  │   ├── cloneable-readable@1.0.0 
+  │   ├── remove-trailing-separator@1.1.0 
+  │   └── replace-ext@1.0.0 
+  ├── gulp-include-file@0.1.1  (git+https://github.com/tweedegolf/gulp-include-file.git#2fc4274029f3f34911a7574b09cbf5a8fabbd544)
+  ├─┬ gulp-less@3.3.2 
+  │ ├─┬ accord@0.27.3 
+  │ │ ├── indx@0.2.3 
+  │ │ ├── lodash.clone@4.5.0 
+  │ │ ├── lodash.defaults@4.2.0 
+  │ │ ├── lodash.flatten@4.4.0 
+  │ │ ├── lodash.merge@4.6.0 
+  │ │ ├── lodash.partialright@4.2.1 
+  │ │ ├── lodash.pick@4.4.0 
+  │ │ ├── lodash.uniq@4.5.0 
+  │ │ ├── semver@5.4.1 
+  │ │ ├── uglify-js@2.8.29 
+  │ │ └── when@3.7.8 
+  │ └─┬ less@2.7.2 
+  │   ├─┬ errno@0.1.4 
+  │   │ └── prr@0.0.0 
+  │   ├── image-size@0.5.5 
+  │   ├── mime@1.4.0 
+  │   └─┬ promise@7.3.1 
+  │     └── asap@2.0.6 
+  ├─┬ gulp-minify-css@1.2.4 
+  │ ├─┬ clean-css@3.4.28 
+  │ │ ├── commander@2.8.1 
+  │ │ └─┬ source-map@0.4.4 
+  │ │   └── amdefine@1.0.1 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └─┬ vinyl-bufferstream@1.0.1 
+  │   └─┬ bufferstreams@1.0.1 
+  │     └─┬ readable-stream@1.1.14 
+  │       ├── isarray@0.0.1 
+  │       └── string_decoder@0.10.31 
+  ├─┬ gulp-sourcemaps@1.12.0 
+  │ ├─┬ @gulp-sourcemaps/map-sources@1.0.0 
+  │ │ └── normalize-path@2.1.1 
+  │ ├── acorn@4.0.13 
+  │ ├─┬ css@2.2.1 
+  │ │ ├── source-map@0.1.43 
+  │ │ ├─┬ source-map-resolve@0.3.1 
+  │ │ │ ├── atob@1.1.3 
+  │ │ │ ├── resolve-url@0.2.1 
+  │ │ │ └── source-map-url@0.3.0 
+  │ │ └── urix@0.1.0 
+  │ ├─┬ debug-fabulous@0.0.4 
+  │ │ ├── lazy-debug-legacy@0.0.1 
+  │ │ └── object-assign@4.1.0 
+  │ ├── detect-newline@2.1.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├─┬ strip-bom@2.0.0 
+  │ │ └── is-utf8@0.2.1 
+  │ └─┬ vinyl@1.2.0 
+  │   └── clone-stats@0.0.1 
+  ├─┬ gulp-util@3.0.8 
+  │ ├── array-differ@1.0.0 
+  │ ├── array-uniq@1.0.3 
+  │ ├── beeper@1.1.1 
+  │ ├── dateformat@2.2.0 
+  │ ├─┬ fancy-log@1.3.0 
+  │ │ └── time-stamp@1.1.0 
+  │ ├─┬ gulplog@1.0.0 
+  │ │ └── glogg@1.0.0 
+  │ ├─┬ has-gulplog@0.1.0 
+  │ │ └── sparkles@1.0.0 
+  │ ├── lodash._reescape@3.0.0 
+  │ ├── lodash._reevaluate@3.0.0 
+  │ ├── lodash._reinterpolate@3.0.0 
+  │ ├─┬ lodash.template@3.6.2 
+  │ │ ├── lodash._basecopy@3.0.1 
+  │ │ ├── lodash._basetostring@3.0.1 
+  │ │ ├── lodash._basevalues@3.0.0 
+  │ │ ├── lodash._isiterateecall@3.0.9 
+  │ │ ├─┬ lodash.escape@3.2.0 
+  │ │ │ └── lodash._root@3.0.1 
+  │ │ ├─┬ lodash.keys@3.1.2 
+  │ │ │ ├── lodash._getnative@3.9.1 
+  │ │ │ ├── lodash.isarguments@3.1.0 
+  │ │ │ └── lodash.isarray@3.0.4 
+  │ │ ├── lodash.restparam@3.6.1 
+  │ │ └── lodash.templatesettings@3.1.1 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ multipipe@0.1.2 
+  │ │ └─┬ duplexer2@0.0.2 
+  │ │   └─┬ readable-stream@1.1.14 
+  │ │     ├── isarray@0.0.1 
+  │ │     └── string_decoder@0.10.31 
+  │ ├── object-assign@3.0.0 
+  │ └── vinyl@0.5.3 
+  ├─┬ html-minifier@0.7.2 
+  │ ├─┬ change-case@2.3.1 
+  │ │ ├── camel-case@1.2.2 
+  │ │ ├── constant-case@1.1.2 
+  │ │ ├── dot-case@1.1.2 
+  │ │ ├── is-lower-case@1.1.3 
+  │ │ ├── is-upper-case@1.1.2 
+  │ │ ├── lower-case@1.1.4 
+  │ │ ├── lower-case-first@1.0.2 
+  │ │ ├── param-case@1.1.2 
+  │ │ ├── pascal-case@1.1.2 
+  │ │ ├── path-case@1.1.2 
+  │ │ ├── sentence-case@1.1.3 
+  │ │ ├── snake-case@1.1.2 
+  │ │ ├── swap-case@1.1.2 
+  │ │ ├── title-case@1.1.2 
+  │ │ ├── upper-case@1.1.3 
+  │ │ └── upper-case-first@1.1.2 
+  │ ├─┬ clean-css@3.1.9 
+  │ │ ├── commander@2.6.0 
+  │ │ └── source-map@0.1.43 
+  │ ├─┬ cli@0.6.6 
+  │ │ └─┬ glob@3.2.11 
+  │ │   └── minimatch@0.3.0 
+  │ ├─┬ concat-stream@1.4.10 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── typedarray@0.0.6 
+  │ ├── relateurl@0.2.7 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── async@0.2.10 
+  │   ├── source-map@0.1.34 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.5.4 
+  │     ├── camelcase@1.2.1 
+  │     ├── decamelize@1.2.0 
+  │     └── window-size@0.1.0 
+  ├─┬ isomorphic-fetch@2.2.1 
+  │ ├─┬ node-fetch@1.7.3 
+  │ │ ├─┬ encoding@0.1.12 
+  │ │ │ └── iconv-lite@0.4.19 
+  │ │ └── is-stream@1.1.0 
+  │ └── whatwg-fetch@2.0.3 
+  ├─┬ jscs@2.11.0 
+  │ ├─┬ babel-jscs@2.0.5 
+  │ │ ├─┬ babel-core@5.8.38 
+  │ │ │ ├── babel-plugin-constant-folding@1.0.1 
+  │ │ │ ├── babel-plugin-dead-code-elimination@1.0.2 
+  │ │ │ ├── babel-plugin-eval@1.0.1 
+  │ │ │ ├── babel-plugin-inline-environment-variables@1.0.1 
+  │ │ │ ├── babel-plugin-jscript@1.0.4 
+  │ │ │ ├── babel-plugin-member-expression-literals@1.0.1 
+  │ │ │ ├── babel-plugin-property-literals@1.0.1 
+  │ │ │ ├─┬ babel-plugin-proto-to-assign@1.0.4 
+  │ │ │ │ └── lodash@3.10.1 
+  │ │ │ ├── babel-plugin-react-constant-elements@1.0.3 
+  │ │ │ ├── babel-plugin-react-display-name@1.0.3 
+  │ │ │ ├── babel-plugin-remove-console@1.0.1 
+  │ │ │ ├── babel-plugin-remove-debugger@1.0.1 
+  │ │ │ ├── babel-plugin-runtime@1.0.7 
+  │ │ │ ├─┬ babel-plugin-undeclared-variables-check@1.0.2 
+  │ │ │ │ └── leven@1.0.2 
+  │ │ │ ├── babel-plugin-undefined-to-void@1.1.6 
+  │ │ │ ├── babylon@5.8.38 
+  │ │ │ ├── bluebird@2.11.0 
+  │ │ │ ├── core-js@1.2.7 
+  │ │ │ ├─┬ detect-indent@3.0.1 
+  │ │ │ │ ├── get-stdin@4.0.1 
+  │ │ │ │ └── minimist@1.2.0 
+  │ │ │ ├── fs-readdir-recursive@0.1.2 
+  │ │ │ ├── globals@6.4.1 
+  │ │ │ ├── home-or-tmp@1.0.0 
+  │ │ │ ├── is-integer@1.0.7 
+  │ │ │ ├── js-tokens@1.0.1 
+  │ │ │ ├── json5@0.4.0 
+  │ │ │ ├── lodash@3.10.1 
+  │ │ │ ├── minimatch@2.0.10 
+  │ │ │ ├── path-exists@1.0.0 
+  │ │ │ ├─┬ regenerator@0.8.40 
+  │ │ │ │ ├─┬ commoner@0.10.8 
+  │ │ │ │ │ ├─┬ detective@4.5.0 
+  │ │ │ │ │ │ └── defined@1.0.0 
+  │ │ │ │ │ ├── glob@5.0.15 
+  │ │ │ │ │ ├── q@1.5.0 
+  │ │ │ │ │ └─┬ recast@0.11.23 
+  │ │ │ │ │   ├── ast-types@0.9.6 
+  │ │ │ │ │   └── esprima@3.1.3 
+  │ │ │ │ ├─┬ defs@1.1.1 
+  │ │ │ │ │ ├─┬ alter@0.2.0 
+  │ │ │ │ │ │ └── stable@0.1.6 
+  │ │ │ │ │ ├── ast-traverse@0.1.1 
+  │ │ │ │ │ ├── breakable@1.0.0 
+  │ │ │ │ │ ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │ │ │ │ ├── simple-fmt@0.1.0 
+  │ │ │ │ │ ├── simple-is@0.2.0 
+  │ │ │ │ │ ├── stringmap@0.2.2 
+  │ │ │ │ │ ├── stringset@0.2.1 
+  │ │ │ │ │ ├── tryor@0.1.2 
+  │ │ │ │ │ └─┬ yargs@3.27.0 
+  │ │ │ │ │   ├─┬ os-locale@1.4.0 
+  │ │ │ │ │   │ └─┬ lcid@1.0.0 
+  │ │ │ │ │   │   └── invert-kv@1.0.0 
+  │ │ │ │ │   ├── window-size@0.1.4 
+  │ │ │ │ │   └── y18n@3.2.1 
+  │ │ │ │ ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │ │ │ ├─┬ recast@0.10.33 
+  │ │ │ │ │ ├── ast-types@0.8.12 
+  │ │ │ │ │ └── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │ │ │ └── through@2.3.8 
+  │ │ │ ├── regexpu@1.3.0 
+  │ │ │ ├── repeating@1.1.3 
+  │ │ │ ├── shebang-regex@1.0.0 
+  │ │ │ ├─┬ source-map-support@0.2.10 
+  │ │ │ │ └── source-map@0.1.32 
+  │ │ │ └── try-resolve@1.0.1 
+  │ │ └─┬ lodash.assign@3.2.0 
+  │ │   ├── lodash._baseassign@3.2.0 
+  │ │   └─┬ lodash._createassigner@3.1.1 
+  │ │     └── lodash._bindcallback@3.0.1 
+  │ ├─┬ cli-table@0.3.1 
+  │ │ └── colors@1.0.3 
+  │ ├─┬ commander@2.9.0 
+  │ │ └── graceful-readlink@1.0.1 
+  │ ├─┬ escope@3.6.0 
+  │ │ ├─┬ es6-map@0.1.5 
+  │ │ │ ├── d@1.0.0 
+  │ │ │ ├── es5-ext@0.10.30 
+  │ │ │ ├── es6-iterator@2.0.1 
+  │ │ │ ├── es6-set@0.1.5 
+  │ │ │ ├── es6-symbol@3.1.1 
+  │ │ │ └── event-emitter@0.3.5 
+  │ │ ├── es6-weak-map@2.0.2 
+  │ │ └── esrecurse@4.2.0 
+  │ ├── esprima@2.7.3 
+  │ ├── estraverse@4.2.0 
+  │ ├── exit@0.1.2 
+  │ ├── glob@5.0.15 
+  │ ├─┬ htmlparser2@3.8.3 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.3.0 
+  │ │ ├─┬ domutils@1.5.1 
+  │ │ │ └─┬ dom-serializer@0.1.0 
+  │ │ │   ├── domelementtype@1.1.3 
+  │ │ │   └── entities@1.1.1 
+  │ │ ├── entities@1.0.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ ├─┬ js-yaml@3.4.6 
+  │ │ ├─┬ argparse@1.0.9 
+  │ │ │ └── sprintf-js@1.0.3 
+  │ │ └── inherit@2.2.6 
+  │ ├─┬ jscs-jsdoc@1.3.2 
+  │ │ ├── comment-parser@0.3.2 
+  │ │ └─┬ jsdoctypeparser@1.2.0 
+  │ │   └── lodash@3.10.1 
+  │ ├── jscs-preset-wikimedia@1.0.0 
+  │ ├─┬ jsonlint@1.6.2 
+  │ │ ├── JSV@4.0.2 
+  │ │ └─┬ nomnom@1.8.1 
+  │ │   ├─┬ chalk@0.4.0 
+  │ │   │ ├── ansi-styles@1.0.0 
+  │ │   │ ├── has-color@0.1.7 
+  │ │   │ └── strip-ansi@0.1.1 
+  │ │   └── underscore@1.6.0 
+  │ ├── lodash@3.10.1 
+  │ ├── natural-compare@1.2.2 
+  │ ├── pathval@0.1.1 
+  │ ├─┬ prompt@0.2.14 
+  │ │ ├── pkginfo@0.4.1 
+  │ │ ├─┬ read@1.0.7 
+  │ │ │ └── mute-stream@0.0.7 
+  │ │ ├── revalidator@0.1.8 
+  │ │ ├─┬ utile@0.2.1 
+  │ │ │ ├── i@0.3.5 
+  │ │ │ ├── ncp@0.4.2 
+  │ │ │ └── rimraf@2.6.2 
+  │ │ └─┬ winston@0.8.3 
+  │ │   ├── colors@0.6.2 
+  │ │   ├── cycle@1.0.3 
+  │ │   ├── eyes@0.1.8 
+  │ │   ├── pkginfo@0.3.1 
+  │ │   └── stack-trace@0.0.10 
+  │ ├── reserved-words@0.1.2 
+  │ ├─┬ resolve@1.4.0 
+  │ │ └── path-parse@1.0.5 
+  │ ├── strip-bom@2.0.0 
+  │ ├── strip-json-comments@1.0.4 
+  │ ├── to-double-quotes@2.0.0 
+  │ ├── to-single-quotes@2.0.1 
+  │ ├── vow@0.4.16 
+  │ ├─┬ vow-fs@0.3.6 
+  │ │ ├── uuid@2.0.3 
+  │ │ └── vow-queue@0.4.2 
+  │ └─┬ xmlbuilder@3.1.0 
+  │   └── lodash@3.10.1 
+  ├─┬ jsdom@7.2.2 
+  │ ├── abab@1.0.4 
+  │ ├── acorn@2.7.0 
+  │ ├─┬ acorn-globals@1.0.9 
+  │ │ └── acorn@2.7.0 
+  │ ├── cssom@0.3.2 
+  │ ├── cssstyle@0.2.37 
+  │ ├─┬ escodegen@1.9.0 
+  │ │ ├── esprima@3.1.3 
+  │ │ └─┬ optionator@0.8.2 
+  │ │   ├── deep-is@0.1.3 
+  │ │   ├── fast-levenshtein@2.0.6 
+  │ │   ├── levn@0.3.0 
+  │ │   ├── prelude-ls@1.1.2 
+  │ │   ├── type-check@0.3.2 
+  │ │   └── wordwrap@1.0.0 
+  │ ├── nwmatcher@1.4.1 
+  │ ├── parse5@1.5.1 
+  │ ├─┬ request@2.82.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.2 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.10.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ ├── sax@1.2.4 
+  │ ├── symbol-tree@3.2.2 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── webidl-conversions@2.0.1 
+  │ ├─┬ whatwg-url-compat@0.6.5 
+  │ │ └── tr46@0.0.3 
+  │ └── xml-name-validator@2.0.1 
+  ├── lodash@4.17.4 
+  ├─┬ mocha@2.5.3 
+  │ ├── commander@2.3.0 
+  │ ├─┬ debug@2.2.0 
+  │ │ └── ms@0.7.1 
+  │ ├── diff@1.4.0 
+  │ ├── escape-string-regexp@1.0.2 
+  │ ├─┬ glob@3.2.11 
+  │ │ └─┬ minimatch@0.3.0 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ ├── growl@1.9.2 
+  │ ├─┬ jade@0.26.3 
+  │ │ ├── commander@0.6.1 
+  │ │ └── mkdirp@0.3.0 
+  │ ├── supports-color@1.2.0 
+  │ └── to-iso-string@0.0.2 
+  ├── mocha-jsdom@1.1.0 
+  ├─┬ nock@7.7.3 
+  │ ├── deep-equal@1.0.1 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├── lodash@3.10.1 
+  │ ├── propagate@0.3.1 
+  │ └── qs@6.5.1 
+  ├── pivottable@2.15.0  (git+https://github.com/nicolaskruchten/pivottable.git#b15ea33268b587d986371c0b6f215c36ffbb860c)
+  ├─┬ raphael@2.2.7 
+  │ └── eve-raphael@0.5.0 
+  ├── raw-loader@0.5.1 
+  ├─┬ through2@2.0.3 
+  │ └── xtend@4.0.1 
+  ├─┬ webpack@1.15.0 
+  │ ├── acorn@3.3.0 
+  │ ├── async@1.5.2 
+  │ ├── clone@1.0.2 
+  │ ├─┬ enhanced-resolve@0.9.1 
+  │ │ └── memory-fs@0.2.0 
+  │ ├── interpret@0.6.6 
+  │ ├── memory-fs@0.3.0 
+  │ ├─┬ node-libs-browser@0.7.0 
+  │ │ ├── assert@1.4.1 
+  │ │ ├─┬ browserify-zlib@0.1.4 
+  │ │ │ └── pako@0.2.9 
+  │ │ ├─┬ buffer@4.9.1 
+  │ │ │ ├── base64-js@1.2.1 
+  │ │ │ └── ieee754@1.1.8 
+  │ │ ├─┬ console-browserify@1.1.0 
+  │ │ │ └── date-now@0.1.4 
+  │ │ ├── constants-browserify@1.0.0 
+  │ │ ├─┬ crypto-browserify@3.3.0 
+  │ │ │ ├── browserify-aes@0.4.0 
+  │ │ │ ├── pbkdf2-compat@2.0.1 
+  │ │ │ ├── ripemd160@0.2.0 
+  │ │ │ └── sha.js@2.2.6 
+  │ │ ├── domain-browser@1.1.7 
+  │ │ ├── events@1.1.1 
+  │ │ ├── https-browserify@0.0.1 
+  │ │ ├── os-browserify@0.2.1 
+  │ │ ├── path-browserify@0.0.0 
+  │ │ ├── process@0.11.10 
+  │ │ ├── querystring-es3@0.2.1 
+  │ │ ├── stream-browserify@2.0.1 
+  │ │ ├─┬ stream-http@2.7.2 
+  │ │ │ ├── builtin-status-codes@3.0.0 
+  │ │ │ └── to-arraybuffer@1.0.1 
+  │ │ ├── string_decoder@0.10.31 
+  │ │ ├─┬ timers-browserify@2.0.4 
+  │ │ │ └── setimmediate@1.0.5 
+  │ │ ├── tty-browserify@0.0.0 
+  │ │ ├─┬ url@0.11.0 
+  │ │ │ ├── punycode@1.3.2 
+  │ │ │ └── querystring@0.2.0 
+  │ │ ├─┬ util@0.10.3 
+  │ │ │ └── inherits@2.0.1 
+  │ │ └─┬ vm-browserify@0.0.4 
+  │ │   └── indexof@0.0.1 
+  │ ├─┬ optimist@0.6.1 
+  │ │ └── wordwrap@0.0.2 
+  │ ├─┬ supports-color@3.2.3 
+  │ │ └── has-flag@1.0.0 
+  │ ├── tapable@0.1.10 
+  │ ├─┬ uglify-js@2.7.5 
+  │ │ ├── async@0.2.10 
+  │ │ └─┬ yargs@3.10.0 
+  │ │   └─┬ cliui@2.1.0 
+  │ │     ├─┬ center-align@0.1.3 
+  │ │     │ ├─┬ align-text@0.1.4 
+  │ │     │ │ ├── longest@1.0.1 
+  │ │     │ │ └── repeat-string@1.6.1 
+  │ │     │ └── lazy-cache@1.0.4 
+  │ │     └── right-align@0.1.3 
+  │ ├─┬ watchpack@0.2.9 
+  │ │ └── async@0.9.2 
+  │ └─┬ webpack-core@0.6.9 
+  │   ├── source-list-map@0.1.8 
+  │   └── source-map@0.4.4 
+  └─┬ webpack-dev-server@1.16.5 
+    ├─┬ compression@1.7.0 
+    │ ├─┬ accepts@1.3.4 
+    │ │ └── negotiator@0.6.1 
+    │ ├── bytes@2.5.0 
+    │ ├── compressible@2.0.11 
+    │ ├── on-headers@1.0.1 
+    │ └── vary@1.1.1 
+    ├── connect-history-api-fallback@1.3.0 
+    ├─┬ express@4.15.4 
+    │ ├── array-flatten@1.1.1 
+    │ ├── content-disposition@0.5.2 
+    │ ├── content-type@1.0.4 
+    │ ├── cookie@0.3.1 
+    │ ├── cookie-signature@1.0.6 
+    │ ├── depd@1.1.1 
+    │ ├── encodeurl@1.0.1 
+    │ ├── escape-html@1.0.3 
+    │ ├── etag@1.8.1 
+    │ ├─┬ finalhandler@1.0.5 
+    │ │ └── unpipe@1.0.0 
+    │ ├── fresh@0.5.0 
+    │ ├── merge-descriptors@1.0.1 
+    │ ├── methods@1.1.2 
+    │ ├─┬ on-finished@2.3.0 
+    │ │ └── ee-first@1.1.1 
+    │ ├── parseurl@1.3.2 
+    │ ├── path-to-regexp@0.1.7 
+    │ ├─┬ proxy-addr@1.1.5 
+    │ │ ├── forwarded@0.1.2 
+    │ │ └── ipaddr.js@1.4.0 
+    │ ├── qs@6.5.0 
+    │ ├── range-parser@1.2.0 
+    │ ├─┬ send@0.15.4 
+    │ │ ├── destroy@1.0.4 
+    │ │ └── mime@1.3.4 
+    │ ├── serve-static@1.12.4 
+    │ ├── setprototypeof@1.0.3 
+    │ ├── statuses@1.3.1 
+    │ ├─┬ type-is@1.6.15 
+    │ │ └── media-typer@0.3.0 
+    │ └── utils-merge@1.0.0 
+    ├─┬ http-proxy-middleware@0.17.4 
+    │ ├─┬ http-proxy@1.16.2 
+    │ │ ├── eventemitter3@1.2.0 
+    │ │ └── requires-port@1.0.0 
+    │ ├─┬ is-glob@3.1.0 
+    │ │ └── is-extglob@2.1.1 
+    │ └─┬ micromatch@2.3.11 
+    │   ├─┬ arr-diff@2.0.0 
+    │   │ └── arr-flatten@1.1.0 
+    │   ├── array-unique@0.2.1 
+    │   ├─┬ braces@1.8.5 
+    │   │ ├─┬ expand-range@1.8.2 
+    │   │ │ └─┬ fill-range@2.2.3 
+    │   │ │   ├── is-number@2.1.0 
+    │   │ │   ├── isobject@2.1.0 
+    │   │ │   └─┬ randomatic@1.1.7 
+    │   │ │     ├─┬ is-number@3.0.0 
+    │   │ │     │ └── kind-of@3.2.2 
+    │   │ │     └── kind-of@4.0.0 
+    │   │ ├── preserve@0.2.0 
+    │   │ └── repeat-element@1.1.2 
+    │   ├─┬ expand-brackets@0.1.5 
+    │   │ └── is-posix-bracket@0.1.1 
+    │   ├── extglob@0.3.2 
+    │   ├── filename-regex@2.0.1 
+    │   ├─┬ kind-of@3.2.2 
+    │   │ └── is-buffer@1.1.5 
+    │   ├─┬ object.omit@2.0.1 
+    │   │ ├── for-own@0.1.5 
+    │   │ └── is-extendable@0.1.1 
+    │   ├─┬ parse-glob@3.0.4 
+    │   │ ├── glob-base@0.3.0 
+    │   │ └── is-dotfile@1.0.3 
+    │   └─┬ regex-cache@0.4.4 
+    │     └─┬ is-equal-shallow@0.1.3 
+    │       └── is-primitive@2.0.0 
+    ├── open@0.0.5 
+    ├─┬ serve-index@1.9.0 
+    │ ├── batch@0.6.1 
+    │ └── http-errors@1.6.2 
+    ├─┬ sockjs@0.3.18 
+    │ ├─┬ faye-websocket@0.10.0 
+    │ │ └─┬ websocket-driver@0.7.0 
+    │ │   ├── http-parser-js@0.4.8 
+    │ │   └── websocket-extensions@0.1.2 
+    │ └── uuid@2.0.3 
+    ├─┬ sockjs-client@1.1.4 
+    │ ├─┬ eventsource@0.1.6 
+    │ │ └─┬ original@1.0.0 
+    │ │   └─┬ url-parse@1.0.5 
+    │ │     └── querystringify@0.0.4 
+    │ ├── faye-websocket@0.11.1 
+    │ ├── json3@3.3.2 
+    │ └─┬ url-parse@1.1.9 
+    │   └── querystringify@1.0.0 
+    ├── stream-cache@0.0.2 
+    ├─┬ strip-ansi@3.0.1 
+    │ └── ansi-regex@2.1.1 
+    ├── supports-color@3.2.3 
+    └─┬ webpack-dev-middleware@1.12.0 
+      ├── memory-fs@0.4.1 
+      └── time-stamp@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dev-babb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","call","RegExp","join","binding","Object","WeakMap","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","Error","Promise","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0724 took 49.363s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/dev-babb/node_modules/dev-babb/lib/index.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/dev-babb/node_modules/dev-babb/lib/api/index.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/dev-babb/node_modules/isomorphic-fetch/fetch-npm-node.js. Coverage (Term): 66% Coverage (LOC): 75%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/index.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/lib/body.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/dev-babb/node_modules/encoding/lib/encoding.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/dev-babb/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/dev-babb/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/dev-babb/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/dev-babb/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/dev-babb/node_modules/encoding/lib/iconv-loader.js. Coverage (Term): 84% Coverage (LOC): 100%
+*- File /root/Targets/dev-babb/node_modules/is-stream/index.js. Coverage (Term): 24% Coverage (LOC): 72%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/lib/fetch-error.js. Coverage (Term): 41% Coverage (LOC): 42%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/lib/response.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/lib/headers.js. Coverage (Term): 18% Coverage (LOC): 34%
+*- File /root/Targets/dev-babb/node_modules/node-fetch/lib/request.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/dev-babb/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/bluebird.js. Coverage (Term): 53% Coverage (LOC): 62%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/promise.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/util.js. Coverage (Term): 36% Coverage (LOC): 49%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/es5.js. Coverage (Term): 45% Coverage (LOC): 52%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/async.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/schedule.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/queue.js. Coverage (Term): 20% Coverage (LOC): 37%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/errors.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/thenables.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/promise_array.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/context.js. Coverage (Term): 27% Coverage (LOC): 41%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/debuggability.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/finally.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/catch_filter.js. Coverage (Term): 24% Coverage (LOC): 30%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/nodeback.js. Coverage (Term): 22% Coverage (LOC): 28%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/method.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/bind.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/cancel.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/direct_resolve.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/synchronous_inspection.js. Coverage (Term): 32% Coverage (LOC): 56%
+*- File /root/Targets/dev-babb/node_modules/bluebird/js/release/join.js. Coverage (Term): 36% Coverage (LOC): 37%
+*- File evalIndirect. Coverage (Term): 2% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

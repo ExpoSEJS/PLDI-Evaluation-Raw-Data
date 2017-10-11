@@ -1,0 +1,49 @@
+
+> ws@0.4.20 install /root/Targets/express-livereload/node_modules/ws
+> node install.js
+
+[34m[ws v0.4.20][39m[32m Attempting to compile blazing fast native extensions.[39m
+[34m[ws v0.4.20][39m[33m Native code compile failed (but the module will still work):[39m
+[34m[ws v0.4.20][39m[33m The native extensions are faster, but not required.[39m
+[34m[ws v0.4.20][39m[33m On Windows, native extensions require Visual Studio and Python.[39m
+[34m[ws v0.4.20][39m[33m On Unix, native extensions require Python, make and a C++ compiler.[39m
+[34m[ws v0.4.20][39m[33m Start npm with --ws:verbose to show compilation output (if any).[39m
+/root/Targets/express-livereload
+└─┬ express-livereload@0.0.24 
+  └─┬ livereload@0.3.3  (git://github.com/mnmly/node-livereload.git#0363d553f3b0a2f99db1564bcb6edf0a9c2daa0d)
+    ├── commander@2.11.0 
+    ├─┬ watchr@2.1.6 
+    │ └── bal-util@1.13.13 
+    └─┬ websocket.io@0.2.1 
+      ├─┬ debug@3.0.1 
+      │ └── ms@2.0.0 
+      └─┬ ws@0.4.20 
+        ├── commander@0.6.1 
+        ├── options@0.0.6 
+        └── tinycolor@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/express-livereload/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0888 took 7.8619s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'prototype' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/express-livereload/node_modules/express-livereload/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/express-livereload/node_modules/express-livereload/lib/livereload.js. Coverage (Term): 24% Coverage (LOC): 27%
+*- File /root/Targets/express-livereload/node_modules/livereload/lib/livereload.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/express-livereload/node_modules/websocket.io/lib/websocket.io.js. Coverage (Term): 21% Coverage (LOC): 21%
+*- File /root/Targets/express-livereload/node_modules/websocket.io/lib/protocols/index.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/express-livereload/node_modules/websocket.io/lib/protocols/drafts.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/express-livereload/node_modules/websocket.io/lib/socket.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

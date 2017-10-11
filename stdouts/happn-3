@@ -1,0 +1,376 @@
+/root/Targets/happn-3
+└─┬ happn-3@3.1.1 
+  ├── async@1.5.2 
+  ├── bluebird@2.10.2 
+  ├─┬ body-parser@1.14.1 
+  │ ├── bytes@2.1.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.2.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.3.1 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── statuses@1.3.1 
+  │ ├── iconv-lite@0.4.12 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@5.1.0 
+  │ ├─┬ raw-body@2.1.7 
+  │ │ ├── bytes@2.4.0 
+  │ │ ├── iconv-lite@0.4.13 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ connect@3.4.0 
+  │ ├── finalhandler@0.4.0 
+  │ ├── parseurl@1.3.2 
+  │ └── utils-merge@1.0.0 
+  ├─┬ connect-cookies@0.0.0 
+  │ ├── cookies@0.3.8 
+  │ └── keygrip@1.0.2 
+  ├── deep-copy@1.1.2 
+  ├─┬ fs-extra@2.0.0 
+  │ ├── graceful-fs@4.1.11 
+  │ └── jsonfile@2.4.0 
+  ├─┬ happn-logger@0.0.2 
+  │ └─┬ log4js@0.6.38 
+  │   ├─┬ readable-stream@1.0.34 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@0.0.1 
+  │   │ └── string_decoder@0.10.31 
+  │   └── semver@4.3.6 
+  ├─┬ happn-nedb@1.8.1 
+  │ ├── async@0.2.10 
+  │ ├─┬ binary-search-tree@0.2.5 
+  │ │ └── underscore@1.4.4 
+  │ ├─┬ localforage@1.5.0 
+  │ │ └─┬ lie@3.0.2 
+  │ │   ├─┬ es3ify@0.1.4 
+  │ │   │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ │   │ ├─┬ jstransform@3.0.0 
+  │ │   │ │ ├── base62@0.1.1 
+  │ │   │ │ └─┬ source-map@0.1.31 
+  │ │   │ │   └── amdefine@1.0.1 
+  │ │   │ └── through@2.3.8 
+  │ │   ├── immediate@3.0.6 
+  │ │   ├─┬ inline-process-browser@1.0.0 
+  │ │   │ ├─┬ falafel@1.2.0 
+  │ │   │ │ ├── acorn@1.2.2 
+  │ │   │ │ ├── foreach@2.0.5 
+  │ │   │ │ └── object-keys@1.0.11 
+  │ │   │ └─┬ through2@0.6.5 
+  │ │   │   └── xtend@4.0.1 
+  │ │   └─┬ unreachable-branch-transform@0.3.0 
+  │ │     ├── esmangle-evaluator@1.0.1 
+  │ │     └─┬ recast@0.10.43 
+  │ │       ├── ast-types@0.8.15 
+  │ │       ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │       ├── private@0.1.7 
+  │ │       └── source-map@0.5.7 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── underscore@1.8.3 
+  │ └── underscore.deep@0.5.1 
+  ├── happn-password-hash-and-salt@1.1.0 
+  ├─┬ happn-primus@5.2.4 
+  │ ├─┬ access-control@1.0.0 
+  │ │ ├── millisecond@0.1.2 
+  │ │ └── vary@1.1.2 
+  │ ├── asyncemit@3.0.1 
+  │ ├─┬ create-server@1.0.1 
+  │ │ └── connected@0.0.2 
+  │ ├─┬ diagnostics@1.0.1 
+  │ │ ├─┬ colorspace@1.0.1 
+  │ │ │ ├─┬ color@0.8.0 
+  │ │ │ │ ├── color-convert@0.5.3 
+  │ │ │ │ └─┬ color-string@0.3.0 
+  │ │ │ │   └── color-name@1.1.3 
+  │ │ │ └── text-hex@0.0.0 
+  │ │ ├─┬ enabled@1.0.2 
+  │ │ │ └── env-variable@0.0.3 
+  │ │ └─┬ kuler@0.0.0 
+  │ │   └── colornames@0.0.2 
+  │ ├── eventemitter3@1.2.0 
+  │ ├── forwarded-for@1.0.1 
+  │ ├─┬ fusing@1.0.0 
+  │ │ ├── emits@3.0.0 
+  │ │ └─┬ predefine@0.1.2 
+  │ │   └── extendible@0.1.1 
+  │ ├── load@1.0.2 
+  │ ├─┬ setheader@0.0.4 
+  │ │ └── debug@0.7.4 
+  │ ├── ultron@1.0.2 
+  │ └── yeast@0.1.2 
+  ├── happn-sillyname@0.1.0 
+  ├─┬ happn-tcp-port-used@0.1.3 
+  │ ├── debug@0.7.4 
+  │ ├─┬ is2@0.0.9 
+  │ │ └── deep-is@0.1.2 
+  │ └── q@0.9.7 
+  ├─┬ happn-util-crypto@0.2.3 
+  │ ├── aes@0.1.0 
+  │ ├── bigi@1.4.1 
+  │ ├── bitcore-ecies@1.0.3 
+  │ ├─┬ bitcore-lib@0.14.0 
+  │ │ ├── bn.js@2.0.4 
+  │ │ ├── bs58@2.0.0 
+  │ │ ├── buffer-compare@1.0.0 
+  │ │ ├─┬ elliptic@3.0.3 
+  │ │ │ ├── brorand@1.0.5 
+  │ │ │ └── hash.js@1.0.3 
+  │ │ ├── inherits@2.0.1 
+  │ │ └── lodash@3.10.1 
+  │ ├─┬ crypto-browserify@3.11.0 
+  │ │ ├─┬ browserify-cipher@1.0.0 
+  │ │ │ ├─┬ browserify-aes@1.0.8 
+  │ │ │ │ └── buffer-xor@1.0.3 
+  │ │ │ ├─┬ browserify-des@1.0.0 
+  │ │ │ │ └── des.js@1.0.0 
+  │ │ │ └─┬ evp_bytestokey@1.0.3 
+  │ │ │   └─┬ md5.js@1.3.4 
+  │ │ │     └── hash-base@3.0.4 
+  │ │ ├─┬ browserify-sign@4.0.4 
+  │ │ │ ├── bn.js@4.11.8 
+  │ │ │ ├── browserify-rsa@4.0.1 
+  │ │ │ ├─┬ elliptic@6.4.0 
+  │ │ │ │ ├── brorand@1.1.0 
+  │ │ │ │ ├── hash.js@1.1.3 
+  │ │ │ │ ├── hmac-drbg@1.0.1 
+  │ │ │ │ ├── minimalistic-assert@1.0.0 
+  │ │ │ │ └── minimalistic-crypto-utils@1.0.1 
+  │ │ │ └─┬ parse-asn1@5.1.0 
+  │ │ │   └── asn1.js@4.9.1 
+  │ │ ├── create-ecdh@4.0.0 
+  │ │ ├─┬ create-hash@1.1.3 
+  │ │ │ ├── cipher-base@1.0.4 
+  │ │ │ ├─┬ ripemd160@2.0.1 
+  │ │ │ │ └── hash-base@2.0.2 
+  │ │ │ └── sha.js@2.4.9 
+  │ │ ├─┬ create-hmac@1.1.6 
+  │ │ │ └── safe-buffer@5.1.1 
+  │ │ ├─┬ diffie-hellman@5.0.2 
+  │ │ │ └── miller-rabin@4.0.1 
+  │ │ ├── public-encrypt@4.0.0 
+  │ │ └── randombytes@2.0.5 
+  │ ├── node-uuid@1.4.8 
+  │ └── pbkdf2@3.0.4 
+  ├── homedir@0.6.0 
+  ├── jsonpack@1.1.5 
+  ├── jwt-simple@0.2.0 
+  ├── long-timeout@0.1.1 
+  ├─┬ lru-cache@4.0.0 
+  │ ├── pseudomap@1.0.2 
+  │ └── yallist@2.1.2 
+  ├─┬ md5@2.2.1 
+  │ ├── charenc@0.0.2 
+  │ ├── crypt@0.0.2 
+  │ └── is-buffer@1.1.5 
+  ├── ms@0.7.1 
+  ├─┬ pem@1.8.3 
+  │ ├── os-tmpdir@1.0.2 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ serve-static@1.10.0 
+  │ ├── escape-html@1.0.2 
+  │ └─┬ send@0.13.0 
+  │   ├── depd@1.0.1 
+  │   ├── destroy@1.0.3 
+  │   ├── etag@1.7.0 
+  │   ├── fresh@0.3.0 
+  │   ├── mime@1.3.4 
+  │   ├── range-parser@1.0.3 
+  │   └── statuses@1.2.1 
+  ├── shortid@2.2.4 
+  ├── sift@3.2.6 
+  ├── sorted-object-array@1.0.0 
+  ├── traverse@0.6.6 
+  ├─┬ trie-search@1.0.7 
+  │ └─┬ hasharray@1.1.0 
+  │   └── jclass@1.2.1 
+  ├─┬ uglify-js@2.6.1 
+  │ ├── async@0.2.10 
+  │ ├── source-map@0.5.7 
+  │ ├── uglify-to-browserify@1.0.2 
+  │ └─┬ yargs@3.10.0 
+  │   ├── camelcase@1.2.1 
+  │   ├─┬ cliui@2.1.0 
+  │   │ ├─┬ center-align@0.1.3 
+  │   │ │ ├─┬ align-text@0.1.4 
+  │   │ │ │ ├── kind-of@3.2.2 
+  │   │ │ │ ├── longest@1.0.1 
+  │   │ │ │ └── repeat-string@1.6.1 
+  │   │ │ └── lazy-cache@1.0.4 
+  │   │ ├── right-align@0.1.3 
+  │   │ └── wordwrap@0.0.2 
+  │   ├── decamelize@1.2.0 
+  │   └── window-size@0.1.0 
+  ├─┬ underscore.string@3.3.4 
+  │ ├── sprintf-js@1.1.1 
+  │ └── util-deprecate@1.0.2 
+  ├─┬ user-home@2.0.0 
+  │ └── os-homedir@1.0.2 
+  ├── uuid@3.0.0 
+  └─┬ ws@1.0.1 
+    └── options@0.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/happn-3/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0385 took 5.8861s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (5:4) on program var fs = require('fs-extra')
+  , Utils = require('./services/utils/service')
+  , utils = new Utils()
+  , path = require('path')
+  , package = require('../package.json')
+  , md5 = require('md5')
+  , minifyJS = require('uglify-js').minify
+  ;
+
+module.exports = {
+
+  package: package,
+
+  protocol: package.protocol,
+
+  version: package.version,
+
+  __cachedBrowserClient: null,
+
+  __createBrowserClient: function (options) {
+
+    var _this = this;
+
+    var package = require('../package.json');
+
+    var protocol = package.protocol;
+
+    var buf = fs.readFileSync(path.resolve(__dirname, './client.js'));
+
+    var constantsbuf = '\r\n_this.constants = ' + fs.readFileSync(path.resolve(__dirname, './constants.js'), 'utf8').replace('module.exports = ', '') + '\r\n';
+
+    var utilsbuf = '\r\n_this.utils = ' + fs.readFileSync(path.resolve(__dirname, './services/utils/shared.js'), 'utf8').replace('module.exports = ', '') + '\r\n';
+
+    var clientScript = buf.toString()
+      .replace('{{protocol}}', protocol)//set the protocol here
+      .replace('//{{constants}}', constantsbuf)
+      .replace('//{{utils}}', utilsbuf);
+
+    if (process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() == 'production') {
+      _this.__cachedBrowserClient = '\/\/happn client v' + package.version + '\r\n' +
+        '\/\/protocol v' + protocol + '\r\n' +
+        '\/\/id ' + options.id + '\r\n' +
+        clientScript;
+    } else {
+      _this.__cachedBrowserClient = '\/\/happn client v' + package.version + '\r\n' +
+        '\/\/protocol v' + protocol + '\r\n' +
+        clientScript;
+    }
+
+    if (options.min) _this.__cachedBrowserClient = minifyJS(_this.__cachedBrowserClient, {fromString: true}).code;
+
+  },
+
+  browserClient: function (options) {
+
+    try {
+
+      var _this = this;
+
+      var fs = require('fs');
+
+      if (!options) options = {};
+
+      var clientDirPath;
+
+      var clientFilePath;
+
+      var dirPath = require('homedir')();
+
+      if (process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() == 'production') {
+        if (!options.id) options.id = Date.now().toString();
+      }
+
+      clientDirPath = utils.removeLast(path.sep, dirPath);
+
+      clientFilePath = clientDirPath + path.sep + 'happn-3-browser-client-' + this.version + '.js';
+
+      if (options.overwrite) {
+        _this.__cachedBrowserClient = null;
+        try{
+          fs.unlinkSync(clientFilePath);
+        } catch (e) {}
+      }
+
+      //return a cached version if we are in production
+      if (options.contentsOnly && _this.__cachedBrowserClient) return _this.__cachedBrowserClient;
+
+      //we delete the file, so a new one is always generated
+      //but only if it's not the same (md5)
+      if (!process.env.NODE_ENV || process.env.NODE_ENV.toLowerCase() != 'production'){
+
+        _this.__createBrowserClient(options);
+
+        if (utils.fileExists(clientFilePath)) {
+
+          var oldMd5 = md5(fs.readFileSync(clientFilePath, 'utf8'));
+          var newMd5 = md5(_this.__cachedBrowserClient);
+
+          if (oldMd5 !== newMd5) {
+            try{
+              fs.unlinkSync(clientFilePath);
+            }catch(e){}
+          }
+        }
+      }
+
+      if (utils.fileExists(clientFilePath)) {
+
+        if (!options.contentsOnly) return clientFilePath;
+
+        _this.__cachedBrowserClient = fs.readFileSync(clientFilePath, 'utf8').toString();
+
+        return _this.__cachedBrowserClient;
+      }
+
+      if (!_this.__cachedBrowserClient) _this.__createBrowserClient(options);
+
+      if (!dirPath) return _this.__cachedBrowserClient;
+
+      fs.writeFileSync(clientFilePath, _this.__cachedBrowserClient, 'utf8');
+
+      if (!options.contentsOnly) return clientFilePath;
+
+      return _this.__cachedBrowserClient;
+
+    } catch (e) {
+
+      throw e;
+    }
+  }
+};
+ at SyntaxError: The keyword 'package' is reserved (5:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/happn-3/node_modules/happn-3/lib/index.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

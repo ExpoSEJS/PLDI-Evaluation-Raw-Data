@@ -1,0 +1,207 @@
+
+> bufferutil@1.2.1 install /root/Targets/play-nodejs/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/play-nodejs/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+make: Leaving directory '/root/Targets/play-nodejs/node_modules/bufferutil/build'
+
+> utf-8-validate@1.2.2 install /root/Targets/play-nodejs/node_modules/utf-8-validate
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/play-nodejs/node_modules/utf-8-validate/build'
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/play-nodejs/node_modules/utf-8-validate/build'
+/root/Targets/play-nodejs
+└─┬ play-nodejs@1.1.0 
+  ├── @cycle/core@6.0.3 
+  ├─┬ @cycle/dom@9.4.0 
+  │ ├── hyperscript-helpers@2.0.3 
+  │ ├── matches-selector@1.0.0 
+  │ ├── vdom-parser@1.2.1 
+  │ ├─┬ vdom-to-html@2.2.0 
+  │ │ └── xtend@4.0.1 
+  │ ├─┬ virtual-dom@2.1.1 
+  │ │ ├── browser-split@0.0.1 
+  │ │ ├─┬ error@4.4.0 
+  │ │ │ ├── camelize@1.0.0 
+  │ │ │ └── string-template@0.2.1 
+  │ │ ├─┬ ev-store@7.0.0 
+  │ │ │ └── individual@3.0.0 
+  │ │ ├─┬ global@4.3.2 
+  │ │ │ ├─┬ min-document@2.19.0 
+  │ │ │ │ └── dom-walk@0.1.1 
+  │ │ │ └── process@0.5.2 
+  │ │ ├── is-object@1.0.1 
+  │ │ ├── next-tick@0.2.2 
+  │ │ └── x-is-string@0.1.0 
+  │ └── x-is-array@0.1.0 
+  ├── byline@4.2.0  (git+https://github.com/nakaji-dayo/node-byline.git#f8f2845044146b2ad85a2b43b53e646f3d84fbea)
+  ├─┬ connect@3.6.5 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├─┬ finalhandler@1.0.6 
+  │ │ ├── encodeurl@1.0.1 
+  │ │ └── unpipe@1.0.0 
+  │ ├── parseurl@1.3.2 
+  │ └── utils-merge@1.0.1 
+  ├─┬ cycle-socket.io@1.0.2  (git+https://github.com/nakaji-dayo/cycle-socket.io.git#03b5402c206eb101201acd1ff4fac3a935f4ac32)
+  │ └─┬ socket.io-client@1.3.7 
+  │   ├── backo2@1.0.2 
+  │   ├── component-bind@1.0.0 
+  │   ├── component-emitter@1.1.2 
+  │   ├── debug@0.7.4 
+  │   ├─┬ engine.io-client@1.5.4 
+  │   │ ├── component-inherit@0.0.3 
+  │   │ ├─┬ debug@1.0.4 
+  │   │ │ └── ms@0.6.2 
+  │   │ ├─┬ engine.io-parser@1.2.2 
+  │   │ │ ├── after@0.8.1 
+  │   │ │ ├── base64-arraybuffer@0.1.2 
+  │   │ │ └── utf8@2.1.0 
+  │   │ ├─┬ has-cors@1.0.3 
+  │   │ │ └── global@2.0.1 
+  │   │ ├── parsejson@0.0.1 
+  │   │ ├── parseqs@0.0.2 
+  │   │ ├── parseuri@0.0.4 
+  │   │ ├─┬ ws@0.8.0 
+  │   │ │ ├─┬ bufferutil@1.2.1 
+  │   │ │ │ ├── bindings@1.2.1 
+  │   │ │ │ └── nan@2.7.0 
+  │   │ │ └─┬ utf-8-validate@1.2.2 
+  │   │ │   └── nan@2.4.0 
+  │   │ └── xmlhttprequest@1.5.0 
+  │   ├── has-binary@0.1.6 
+  │   ├── indexof@0.0.1 
+  │   ├── object-component@0.0.3 
+  │   ├─┬ parseuri@0.0.2 
+  │   │ └─┬ better-assert@1.0.2 
+  │   │   └── callsite@1.0.0 
+  │   ├─┬ socket.io-parser@2.2.4 
+  │   │ ├── benchmark@1.0.0 
+  │   │ ├── debug@0.7.4 
+  │   │ └── json3@3.2.6 
+  │   └── to-array@0.1.3 
+  ├─┬ koa@1.4.0 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── co@4.6.0 
+  │ ├─┬ composition@2.3.0 
+  │ │ └── any-promise@1.3.0 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ cookies@0.7.1 
+  │ │ ├── depd@1.1.1 
+  │ │ └── keygrip@1.0.2 
+  │ ├── delegates@1.0.0 
+  │ ├── destroy@1.0.4 
+  │ ├── error-inject@1.0.0 
+  │ ├── escape-html@1.0.3 
+  │ ├── fresh@0.3.0 
+  │ ├─┬ http-assert@1.3.0 
+  │ │ └── deep-equal@1.0.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── koa-compose@2.5.1 
+  │ ├── koa-is-json@1.0.0 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── only@0.0.2 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ └── vary@1.1.2 
+  ├─┬ koa-static@2.1.0 
+  │ └─┬ koa-send@3.3.0 
+  │   ├─┬ mz@2.7.0 
+  │   │ ├── object-assign@4.1.1 
+  │   │ └─┬ thenify-all@1.6.0 
+  │   │   └── thenify@3.3.0 
+  │   └─┬ resolve-path@1.3.3 
+  │     ├─┬ http-errors@1.5.1 
+  │     │ └── setprototypeof@1.0.2 
+  │     └── path-is-absolute@1.0.1 
+  ├── open@0.0.5 
+  ├── rx@4.1.0 
+  ├─┬ schema-args@1.1.1 
+  │ ├── lodash@4.17.4 
+  │ └─┬ param-case@1.1.2 
+  │   └─┬ sentence-case@1.1.3 
+  │     └── lower-case@1.1.4 
+  ├─┬ socket.io@1.7.4 
+  │ ├─┬ debug@2.3.3 
+  │ │ └── ms@0.7.2 
+  │ ├─┬ engine.io@1.8.4 
+  │ │ ├── accepts@1.3.3 
+  │ │ ├── base64id@1.0.0 
+  │ │ ├── cookie@0.3.1 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├─┬ engine.io-parser@1.3.2 
+  │ │ │ ├── after@0.8.2 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ │ ├── blob@0.0.4 
+  │ │ │ ├── has-binary@0.1.7 
+  │ │ │ └── wtf-8@1.0.0 
+  │ │ └─┬ ws@1.1.4 
+  │ │   ├── options@0.0.6 
+  │ │   └── ultron@1.0.2 
+  │ ├─┬ has-binary@0.1.7 
+  │ │ └── isarray@0.0.1 
+  │ ├── object-assign@4.1.0 
+  │ ├─┬ socket.io-adapter@0.5.0 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ └─┬ socket.io-parser@2.3.1 
+  │ │   ├─┬ debug@2.2.0 
+  │ │   │ └── ms@0.7.1 
+  │ │   └── json3@3.3.2 
+  │ ├─┬ socket.io-client@1.7.4 
+  │ │ ├── component-emitter@1.2.1 
+  │ │ ├─┬ engine.io-client@1.8.4 
+  │ │ │ ├─┬ engine.io-parser@1.3.2 
+  │ │ │ │ ├── after@0.8.2 
+  │ │ │ │ └── base64-arraybuffer@0.1.5 
+  │ │ │ ├── has-cors@1.1.0 
+  │ │ │ ├── parsejson@0.0.3 
+  │ │ │ ├── parseqs@0.0.5 
+  │ │ │ ├── ws@1.1.2 
+  │ │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │ │ └── yeast@0.1.2 
+  │ │ ├── parseuri@0.0.5 
+  │ │ └── to-array@0.1.4 
+  │ └─┬ socket.io-parser@2.3.1 
+  │   ├── component-emitter@1.1.2 
+  │   ├─┬ debug@2.2.0 
+  │   │ └── ms@0.7.1 
+  │   └── json3@3.3.2 
+  └─┬ touch@1.0.0 
+    └─┬ nopt@1.0.10 
+      └── abbrev@1.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/play-nodejs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0505 took 4.0813s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token .
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

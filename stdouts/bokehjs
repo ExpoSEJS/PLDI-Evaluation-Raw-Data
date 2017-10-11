@@ -1,0 +1,27 @@
+/root/Targets/bokehjs
+└─┬ bokehjs@0.12.9 
+  ├── canvas2svg@1.0.21  (git+https://github.com/bokeh/canvas2svg.git#6c526739ab8b07fa335f51d5a78e15e021c2fe1b)
+  ├── kiwi@0.1.0  (git+https://github.com/bokeh/kiwi.git#1a3dabb22dff8d4a776fec490f9836f4247ad8a9)
+  ├── numbro@1.6.2  (git+https://github.com/bokeh/numbro.git#e1b6c52a220d0a1e05dca1bee35dbd1b761fd260)
+  └── slickgrid@2.3.4  (git+https://github.com/bokeh/SlickGrid.git#6c1327bbf85128d6cccce82436bfcccfe6b33afc)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bokehjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound ","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0255 took 2.0906s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1} start 2.156 took 2.7468s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1}
+* Error: Error: bokehjs requires a window with a document. If your runtime environment doesn't provide those, e.g. pure node.js, you can use jsdom library to configure window and document.
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 57% Coverage (LOC): 62%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/bokehjs/node_modules/bokehjs/build/js/tree/index.js. Coverage (Term): 72% Coverage (LOC): 80%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

@@ -1,0 +1,207 @@
+
+> ws@0.4.32 install /root/Targets/cozy-sync/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/cozy-sync/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/cozy-sync/node_modules/ws/build'
+
+> cozy-sync@1.0.22 postinstall /root/Targets/cozy-sync/node_modules/cozy-sync
+> node postinstall.js
+
+
+> time@0.11.4 install /root/Targets/cozy-sync/node_modules/cozy-sync/node_modules/time
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/cozy-sync/node_modules/cozy-sync/node_modules/time/build'
+  CXX(target) Release/obj.target/time/src/time.o
+  SOLINK_MODULE(target) Release/obj.target/time.node
+  COPY Release/time.node
+make: Leaving directory '/root/Targets/cozy-sync/node_modules/cozy-sync/node_modules/time/build'
+cozy-sync@1.0.22 /root/Targets/cozy-sync/node_modules/cozy-sync
+└─┬ time@0.11.4 
+  ├── bindings@1.2.1 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  └── nan@2.7.0 
+
+/root/Targets/cozy-sync
+└─┬ cozy-sync@1.0.22 
+  ├─┬ americano@0.4.4 
+  │ ├─┬ body-parser@1.3.0 
+  │ │ ├── bytes@1.0.0 
+  │ │ ├── qs@0.6.6 
+  │ │ ├── raw-body@1.1.6 
+  │ │ └── type-is@1.2.0 
+  │ ├── commander@2.2.0 
+  │ ├── errorhandler@1.0.1 
+  │ ├─┬ express@4.11.1 
+  │ │ ├─┬ accepts@1.2.13 
+  │ │ │ └── negotiator@0.5.3 
+  │ │ ├── content-disposition@0.5.0 
+  │ │ ├── cookie@0.1.2 
+  │ │ ├── cookie-signature@1.0.5 
+  │ │ ├── depd@1.0.1 
+  │ │ ├── escape-html@1.0.1 
+  │ │ ├─┬ etag@1.5.1 
+  │ │ │ └── crc@3.2.1 
+  │ │ ├── finalhandler@0.3.3 
+  │ │ ├── fresh@0.2.4 
+  │ │ ├── media-typer@0.3.0 
+  │ │ ├── merge-descriptors@0.0.2 
+  │ │ ├── methods@1.1.2 
+  │ │ ├─┬ on-finished@2.2.1 
+  │ │ │ └── ee-first@1.1.0 
+  │ │ ├── parseurl@1.3.2 
+  │ │ ├── path-to-regexp@0.1.3 
+  │ │ ├─┬ proxy-addr@1.0.10 
+  │ │ │ ├── forwarded@0.1.2 
+  │ │ │ └── ipaddr.js@1.0.5 
+  │ │ ├── qs@2.3.3 
+  │ │ ├── range-parser@1.0.3 
+  │ │ ├─┬ send@0.11.1 
+  │ │ │ └── destroy@1.0.3 
+  │ │ ├── serve-static@1.8.1 
+  │ │ ├─┬ type-is@1.5.7 
+  │ │ │ └─┬ mime-types@2.0.14 
+  │ │ │   └── mime-db@1.12.0 
+  │ │ ├── utils-merge@1.0.0 
+  │ │ └── vary@1.0.1 
+  │ ├─┬ method-override@2.0.0 
+  │ │ ├── methods@1.0.0 
+  │ │ └── parseurl@1.0.1 
+  │ ├─┬ mkdirp@0.5.0 
+  │ │ └── minimist@0.0.8 
+  │ ├── morgan@1.1.1 
+  │ └── printit@0.1.3 
+  ├── async@0.2.10 
+  ├─┬ axon@1.0.0 
+  │ ├── configurable@0.0.1 
+  │ ├─┬ debug@2.1.3 
+  │ │ └── ms@0.7.0 
+  │ └── escape-regexp@0.0.1 
+  ├─┬ cozy-ical@1.1.19 
+  │ ├── byline@4.2.1 
+  │ ├── extend@2.0.0 
+  │ ├─┬ moment-timezone@0.4.0 
+  │ │ └── moment@2.18.1 
+  │ ├── printit@0.1.15 
+  │ ├── rrule@2.1.0 
+  │ └── uuid@2.0.1 
+  ├─┬ cozy-jsdav-fork@0.3.16 
+  │ ├── asyncjs@0.0.10 
+  │ ├── formidable@1.0.17 
+  │ ├── moment@2.11.1 
+  │ ├── xmldom@0.1.21 
+  │ └── xpath@0.0.21 
+  ├─┬ cozy-realtime-adapter@0.11.3 
+  │ ├── axon@0.6.1 
+  │ └─┬ socket.io@0.9.14 
+  │   ├── base64id@0.1.0 
+  │   ├── policyfile@0.0.4 
+  │   ├── redis@0.7.3 
+  │   └─┬ socket.io-client@0.9.11 
+  │     ├─┬ active-x-obfuscator@0.0.1 
+  │     │ └── zeparser@0.0.5 
+  │     ├── uglify-js@1.2.5 
+  │     ├─┬ ws@0.4.32 
+  │     │ ├── commander@2.1.0 
+  │     │ ├── nan@1.0.0 
+  │     │ ├── options@0.0.6 
+  │     │ └── tinycolor@0.0.1 
+  │     └── xmlhttprequest@1.4.2 
+  ├─┬ cozy-vcard@0.2.17 
+  │ ├── quoted-printable@0.2.1 
+  │ └── utf8@2.0.0 
+  ├─┬ cozydb@0.1.10 
+  │ ├── async@1.5.1 
+  │ ├─┬ form-data@1.0.0-rc3 
+  │ │ ├── async@1.5.2 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ └─┬ mime-types@2.1.17 
+  │ │   └── mime-db@1.30.0 
+  │ ├── mkdirp@0.5.1 
+  │ ├── node-uuid@1.4.7 
+  │ ├── printit@0.1.15 
+  │ ├─┬ request-json-light@0.5.22 
+  │ │ └── mime@1.2.11 
+  │ └── simple-bufferstream@1.0.0 
+  ├─┬ jade@1.1.5 
+  │ ├── character-parser@1.2.0 
+  │ ├── commander@2.1.0 
+  │ ├─┬ constantinople@1.0.2 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├─┬ source-map@0.1.34 
+  │ │   │ └── amdefine@1.0.1 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     ├── window-size@0.1.0 
+  │ │     └── wordwrap@0.0.2 
+  │ ├── mkdirp@0.3.5 
+  │ ├─┬ monocle@1.1.51 
+  │ │ └─┬ readdirp@0.2.5 
+  │ │   └─┬ minimatch@3.0.4 
+  │ │     └─┬ brace-expansion@1.1.8 
+  │ │       ├── balanced-match@1.0.0 
+  │ │       └── concat-map@0.0.1 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   └── optimist@0.3.7 
+  │ └─┬ with@2.0.0 
+  │   └── uglify-js@2.4.0 
+  ├── lazy@1.0.11 
+  ├── moment@2.5.1 
+  ├── node-polyglot@0.4.5 
+  ├── printit@0.1.16 
+  └── shortid@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cozy-sync/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","create","random","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0619 took 10.9601s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: stream is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cozy-sync/node_modules/cozy-sync/build/server.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/cozy-sync/node_modules/cozy-sync/build/server/initialize.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/cozy-sync/node_modules/cozy-sync/build/server/controllers/account.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/cozy-sync/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/cozy-sync/node_modules/cozy-sync/build/server/models/webdavaccount.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/index.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/node_modules/printit/main.js. Coverage (Term): 25% Coverage (LOC): 50%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/node_modules/printit/date-format.js. Coverage (Term): 13% Coverage (LOC): 39%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/node_modules/async/lib/async.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/model.js. Coverage (Term): 14% Coverage (LOC): 29%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/utils/errors.js. Coverage (Term): 30% Coverage (LOC): 46%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/utils/type_checking.js. Coverage (Term): 17% Coverage (LOC): 16%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/cozymodel.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/cozy-sync/node_modules/cozydb/lib/utils/client.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- File /root/Targets/cozy-sync/node_modules/request-json-light/main.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/cozy-sync/node_modules/form-data/lib/form_data.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/cozy-sync/node_modules/combined-stream/lib/combined_stream.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/cozy-sync/node_modules/delayed-stream/lib/delayed_stream.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/cozy-sync/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/cozy-sync/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/cozy-sync/node_modules/form-data/node_modules/async/lib/async.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/cozy-sync/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/cozy-sync/node_modules/simple-bufferstream/index.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,260 @@
+/root/Targets/vue-haru-ripple
+└─┬ vue-haru-ripple@1.0.2 
+  └── vue@2.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/vue-haru-ripple/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1097 took 5.9104s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <template>
+  <div class="haru-ripple">
+    <div ref="content">
+      <slot></slot>
+    </div>
+    <transition name="spread"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @enter-cancelled="enterCancelled"
+      @after-leave="afterLeave">
+      <div v-show="showWave" class="wave" :style="waveStyle" ref="ripple"></div>
+    </transition>
+  </div>
+</template>
+
+<script>
+  import Vue from 'vue'
+  import { SUPPORT_TOUCH, INITIAL_SCALE, FINAL_SCALE, TRANSFORM_DURATION, RIPPLE_STATE_INIT, RIPPLE_STATE_READY_TO_VANISH, RIPPLE_STATE_VANISH } from './constants'
+  import { transitionEndEvent, onceTransitionEnds, sqrt, ceil, furthestCornerDistanceFrom, addClass, removeClass } from './utils'
+
+  const { bind: utilBind } = Vue.util
+
+  export default {
+    name: 'vue-haru-ripple',
+
+    mounted() {
+      this._boundDownAction = utilBind(this.downAction, this)
+      this._boundUpAction = utilBind(this.upAction, this)
+
+      // pointerdown, pointerup
+      // focus, blur
+      if (SUPPORT_TOUCH) {
+        this.$el.addEventListener('touchstart', this._boundDownAction)
+        this.$el.addEventListener('touchend', this._boundUpAction)
+        this.$el.addEventListener('touchcancel', this._boundUpAction)
+      } else {
+        this.$el.addEventListener('mousedown', this._boundDownAction)
+        this.$el.addEventListener('mouseup', this._boundUpAction)
+      }
+
+      // el'rect
+      let boundingRect = this._boundingRect = this.$el.getBoundingClientRect()
+
+      // have not pass color prop
+      if (!this.color) {
+        let color = this.$refs.content.firstElementChild && window.getComputedStyle(this.$refs.content.firstElementChild).color
+        this.color = color || '#fff'
+      }
+
+      this.waveStyle.backgroundColor = this.color
+    },
+
+    props: {
+      // ripple initial opacity
+      opacity: {
+        type: Number | String,
+        default: 0.3
+      },
+      // ripple color, default is its color
+      // TODO: support rgba
+      color: {
+        type: String
+      }
+    },
+
+    data() {
+      return {
+        showWave: false,
+
+        waveStyle: {
+          backgroundColor: '',
+          opacity: this.opacity,
+          width: '',
+          height: '',
+          marginLeft: '',
+          marginTop: '',
+          transform: ''
+        }
+      }
+    },
+
+    methods: {
+      _forwardState(el, hook) {
+        const rippleState = {
+          [RIPPLE_STATE_INIT]: RIPPLE_STATE_READY_TO_VANISH,
+          [RIPPLE_STATE_READY_TO_VANISH]: RIPPLE_STATE_VANISH,
+          [RIPPLE_STATE_VANISH]: RIPPLE_STATE_INIT
+        }
+
+        const currentRippleState = el.dataset.ripplestate
+
+        if (currentRippleState == RIPPLE_STATE_READY_TO_VANISH) {
+          this.showWave = false
+          hook && hook()
+        }
+
+        el.dataset.ripplestate = rippleState[currentRippleState]
+      },
+
+      // prev ripple should vanish immediately
+      // optimisticly remove
+      beforeEnter(el) {
+        removeClass(el, 'animating')
+        Object.assign(el.style, { opacity: this.opacity, transform: `${this._rippleTranslate}${INITIAL_SCALE}` })
+      },
+
+      // after the subsequent two frames `spread-enter` class will be removed
+      enter(el, done) {
+        window.requestAnimationFrame(() => {
+          addClass(el, 'animating')
+          Object.assign(el.style, { transform: `${this._rippleTranslate}` })
+          this._disposeTransHandler = onceTransitionEnds(el, 'transform', transitionEndEvent, TRANSFORM_DURATION, done)
+        })
+      },
+
+      afterEnter(el) {
+        removeClass(el, 'animating')
+
+        this._forwardState(el)
+      },
+
+      afterLeave(el) {
+        if (this._upaction) {
+          removeClass(el, 'vanish')
+        }
+      },
+
+      enterCancelled(el) {
+        el.style.setProperty('transform', `${this._rippleTranslate}${INITIAL_SCALE})`)
+      },
+
+      animFrameHandler() {
+        this.showWave = true
+      },
+
+      // mouseup event in task queue `should` trigger before raf animation frames
+      upAction(event) {
+        let ripple = this.$refs.ripple
+
+        ripple.style.opacity = 0
+
+        this._upaction = false
+        this._forwardState(ripple, () => {
+          this._upaction = true
+          addClass(ripple, 'vanish')
+        })
+
+        this.handleMouseUp(event)
+      },
+
+      handleMouseUp(event) {
+        if (event.type.indexOf('mouse') === 0) {
+          this.$el.removeEventListener('mouseleave', this._boundUpAction)
+        }
+      },
+
+      handleMouseDown(event) {
+        if (event.type === 'mousedown') {
+          // only left mouse button
+          if (event.button !== 0) {
+            return false
+          }
+          this.$el.addEventListener('mouseleave', this._boundUpAction)
+        }
+      },
+      
+      downAction(event) {
+        if (this.handleMouseDown(event) === false) {
+          return
+        }
+
+        this._disposeTransHandler && this._disposeTransHandler()
+
+        const boundingRect = this._boundingRect
+
+        // identify 'mousedown' or 'touchstart' x, y
+        const downX = event.touches ? event.touches[0].pageX : event.clientX
+        const downY = event.touches ? event.touches[0].pageY : event.clientY
+
+        let rippleX = ceil(downX - boundingRect.left)
+        let rippleY = ceil(downY - boundingRect.top)
+
+        let rippleTranslate = this._rippleTranslate = `translate(-50%, -50%) translate(${rippleX}px, ${rippleY}px)`
+        // ripple diameter
+        let rippleSize = ceil(2.05 * furthestCornerDistanceFrom(rippleX, rippleY, boundingRect.width, boundingRect.height))
+
+        this.showWave = false
+
+        this.waveStyle.width = `${rippleSize}px`
+        this.waveStyle.height = `${rippleSize}px`
+
+        this.$refs.ripple.dataset.ripplestate = RIPPLE_STATE_INIT
+
+        Vue.nextTick(() => {
+          this.animFrameHandler()
+        })
+      }
+    },
+
+    beforeDestroy() {
+      console.log('beforeDestroy')
+    }
+  }
+</script>
+
+<style lang="stylus">
+  .haru-ripple
+    position: relative
+    overflow: hidden
+
+    // wave default style
+    .wave
+      pointer-events: none
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: 50%
+    
+    // cubic-bezier(0, 0, 0.2, 1)
+    .animating.spread-enter-active
+      transition: transform .8s cubic-bezier(.157, .72, .386, .987), opacity .6s linear
+
+    .vanish.spread-leave-active
+      transition: opacity 0.4s linear
+</style>
+ at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

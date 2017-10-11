@@ -1,0 +1,204 @@
+/root/Targets/hammerdown
+└─┬ hammerdown@2.0.1 
+  ├─┬ concat-stream@1.4.7 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── typedarray@0.0.6 
+  ├── sax@0.6.1 
+  ├── through@2.3.8 
+  └─┬ trumpet@1.7.2 
+    ├── duplexer2@0.0.2 
+    ├─┬ html-select@2.3.24 
+    │ ├── cssauron@1.4.0 
+    │ ├── minimist@0.0.10 
+    │ ├── split@0.3.3 
+    │ └─┬ stream-splicer@1.3.2 
+    │   ├── indexof@0.0.1 
+    │   └── readable-wrap@1.0.0 
+    ├─┬ html-tokenize@1.2.5 
+    │ ├── readable-stream@1.0.34 
+    │ └─┬ through2@0.4.2 
+    │   └─┬ xtend@2.1.2 
+    │     └── object-keys@0.4.0 
+    └─┬ through2@1.1.1 
+      └── xtend@4.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hammerdown/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","getOwnPropertyNames","Number"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0609 took 16.3223s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require("assert");
+var lists = require('./markdownDefinitions/lists');
+var links = require('./markdownDefinitions/links');
+var images = require('./markdownDefinitions/images');
+var DocumentStream = require("../utils/documentStream");
+var formatting = require('./markdownDefinitions/formatting');
+var textFormatting = require('./markdownDefinitions/textFormatting');
+var blockFormatting = require('./markdownDefinitions/blockFormatting');
+
+var HtmlToMarkdownConverter = module.exports = exports = function(options){
+	var self = this;
+
+	self.data = '';
+	self.stash = [];
+	self.listsFormatting = lists();
+	self.linksFormatting = links();
+	self.imagesFormatting = images();
+	self.initTagConversions();
+	self.readableStream = new DocumentStream();
+};
+
+HtmlToMarkdownConverter.prototype.done = function(){
+	this.data += '\n'+this.linksFormatting.linkReferences();
+	this.data += '\n'+this.imagesFormatting.linkReferences();
+
+	this.data = this.data.replace(/\n*$/,'');
+	this.readableStream.append(this.data);
+	return this.readableStream.done();
+};
+HtmlToMarkdownConverter.prototype.onTagDepth = function(depth){
+	if(depth !== 0)
+		return;
+
+	var dataToAppend = this.data.replace(/\n*$/,'');
+	this.readableStream.append(dataToAppend);
+	this.data = this.data.replace(dataToAppend,'');
+};
+HtmlToMarkdownConverter.prototype.hasTag = function(htmlTag){
+	if(this.tagConversions[htmlTag])
+		return true;
+
+	return false;
+};
+
+HtmlToMarkdownConverter.prototype.stashSaveData = function(){
+	this.stash.push(this.data);
+	this.data = '';
+};
+
+HtmlToMarkdownConverter.prototype.stashPopData = function(dataToAppend){
+	this.data = this.stash.pop();
+	this.appendTextData(dataToAppend);
+};
+
+HtmlToMarkdownConverter.prototype.appendTextData = function(textData){
+	if(textData)
+		this.data += textData;
+};
+
+HtmlToMarkdownConverter.prototype.convertOpenTag = function(htmlTag,convertOptions) {
+	var tagConversion = this.tagConversions[htmlTag];
+	if(!tagConversion)
+		return;
+	
+	if(tagConversion.open)
+		this.appendTextData(tagConversion.open(convertOptions));
+
+	if(tagConversion.text)
+		this.stashSaveData();
+};
+
+HtmlToMarkdownConverter.prototype.convertCloseTag = function(htmlTag,convertOptions) {
+	var tagConversion = this.tagConversions[htmlTag];
+	if(!tagConversion)
+		return;
+
+	if(tagConversion.text)
+		this.stashPopData(tagConversion.text(this.data));
+
+	if(tagConversion.close)
+		this.appendTextData(tagConversion.close());
+};
+
+HtmlToMarkdownConverter.prototype.initTagConversions = function() {
+	var self = this;
+	self.tagConversions = {};
+
+	self.tagConversions['H1'] = { text: function(textData){return textFormatting.header(textData,1);}};
+	self.tagConversions['H2'] = { text: function(textData){return textFormatting.header(textData,2);}};
+	self.tagConversions['H3'] = { text: function(textData){return textFormatting.header(textData,3);}};
+	self.tagConversions['H4'] = { text: function(textData){return textFormatting.header(textData,4);}};
+	self.tagConversions['H5'] = { text: function(textData){return textFormatting.header(textData,5);}};
+	self.tagConversions['H6'] = { text: function(textData){return textFormatting.header(textData,6);}};
+
+	self.tagConversions['BR'] = { open: function(){ return formatting.lineBreak();}};
+	self.tagConversions['HR'] = { open: function(){ return formatting.headerMarker();}};
+	
+	self.tagConversions['CITE'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['DFN'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['EM'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['I'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['U'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['VAR'] = { text: function(textData){ return textFormatting.emphasis(textData);}};
+	self.tagConversions['B'] = { text: function(textData){ return textFormatting.bold(textData);}};
+	self.tagConversions['STRONG'] = { text: function(textData){ return textFormatting.bold(textData);}};
+	self.tagConversions['Q'] = { text: function(textData){ return textFormatting.quote(textData);}};
+
+	self.tagConversions['PRE'] = { text: function(textData){ return blockFormatting.prefixWithBlockCode(textData);}};
+	self.tagConversions['CODE'] = {	text: function(textData){ return textFormatting.code(textData);}};
+	self.tagConversions['KBD'] = { text: function(textData){ return textFormatting.code(textData);}};
+	self.tagConversions['SAMP'] = { text: function(textData){ return textFormatting.code(textData);}};
+	self.tagConversions['BLOCKQUOTE'] = { text: function(textData){ return blockFormatting.prefixWithBlockQuote(textData);}};
+	self.tagConversions['DD'] = { text: function(textData){ return blockFormatting.prefixWithBlockQuote(textData);}};
+	self.tagConversions['P'] = { open: function(){ return formatting.paragraph();}};
+
+	self.tagConversions['LI'] = { text: function(textData){ return self.listsFormatting.listItem(textData);}};
+	self.tagConversions['OL'] = {
+					open: function(){ return self.listsFormatting.orderedList();},
+					close : function(){ return self.listsFormatting.listClose();}
+				};
+	self.tagConversions['UL'] = {
+					open: function(){ return self.listsFormatting.unOrderedList();},
+					close : function(){ return self.listsFormatting.listClose();}
+				};
+
+	self.tagConversions['A'] = {
+					open :function(linkDefinition){ self.linksFormatting.currentLinkDefinition = linkDefinition;},
+					text: function(text){ return self.linksFormatting.link(text);}
+				};
+	self.tagConversions['IMG'] = { 
+					open :function(imageDefinition){ self.imagesFormatting.currentImageDefinition = imageDefinition;},
+					text: function(){ return self.imagesFormatting.image();}
+				};
+}; at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hammerdown/node_modules/hammerdown/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/hammerdown/node_modules/hammerdown/lib/hammerdown.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/hammerdown/node_modules/through/index.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/hammerdown/node_modules/concat-stream/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/readable.js. Coverage (Term): 90% Coverage (LOC): 92%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/hammerdown/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/hammerdown/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/hammerdown/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 16%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/hammerdown/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/hammerdown/node_modules/typedarray/index.js. Coverage (Term): 38% Coverage (LOC): 44%
+*- File /root/Targets/hammerdown/node_modules/hammerdown/lib/converters/htmlToGFM.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

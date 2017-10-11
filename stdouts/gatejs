@@ -1,0 +1,99 @@
+
+> diskusage@0.2.3 install /root/Targets/gatejs/node_modules/diskusage
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/gatejs/node_modules/diskusage/build'
+  CXX(target) Release/obj.target/diskusage/src/main.o
+  CXX(target) Release/obj.target/diskusage/src/diskusage_posix.o
+  SOLINK_MODULE(target) Release/obj.target/diskusage.node
+  COPY Release/diskusage.node
+make: Leaving directory '/root/Targets/gatejs/node_modules/diskusage/build'
+
+> node-ipaddr@1.1.2 install /root/Targets/gatejs/node_modules/node-ipaddr
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/gatejs/node_modules/node-ipaddr/build'
+  CXX(target) Release/obj.target/ippool/src/module.o
+  CXX(target) Release/obj.target/ippool/src/ippool.o
+  SOLINK_MODULE(target) Release/obj.target/ippool.node
+  COPY Release/ippool.node
+make: Leaving directory '/root/Targets/gatejs/node_modules/node-ipaddr/build'
+
+> gatejs@2.0.12 postinstall /root/Targets/gatejs/node_modules/gatejs
+> make
+
+cd ./src/lib/core && node-gyp rebuild
+make[1]: Entering directory '/root/Targets/gatejs/node_modules/gatejs/src/lib/core/build'
+  CXX(target) Release/obj.target/core/src/utils.o
+  CXX(target) Release/obj.target/core/src/module.o
+  CXX(target) Release/obj.target/core/src/nreg.o
+  CXX(target) Release/obj.target/core/src/nreg_wrap.o
+  CXX(target) Release/obj.target/core/src/unicode.o
+  SOLINK_MODULE(target) Release/obj.target/core.node
+  COPY Release/core.node
+make[1]: Leaving directory '/root/Targets/gatejs/node_modules/gatejs/src/lib/core/build'
+if test $(uname -s) = "Linux"; then cd ./src/lib/tproxy && node-gyp rebuild; fi
+make[1]: Entering directory '/root/Targets/gatejs/node_modules/gatejs/src/lib/tproxy/build'
+  CXX(target) Release/obj.target/tproxy/src/tproxy.o
+  CXX(target) Release/obj.target/tproxy/src/module.o
+  SOLINK_MODULE(target) Release/obj.target/tproxy.node
+  COPY Release/tproxy.node
+make[1]: Leaving directory '/root/Targets/gatejs/node_modules/gatejs/src/lib/tproxy/build'
+/root/Targets/gatejs
+└─┬ gatejs@2.0.12 
+  ├─┬ diskusage@0.2.3 
+  │ └── nan@2.7.0 
+  ├── mu2@0.5.21 
+  ├── node-ipaddr@1.1.2 
+  ├── node-jen@1.0.6 
+  ├─┬ node-schedule@1.2.5 
+  │ ├─┬ cron-parser@2.4.1 
+  │ │ ├─┬ is-nan@1.2.1 
+  │ │ │ └─┬ define-properties@1.1.2 
+  │ │ │   ├── foreach@2.0.5 
+  │ │ │   └── object-keys@1.0.11 
+  │ │ └─┬ moment-timezone@0.5.13 
+  │ │   └── moment@2.18.1 
+  │ ├── long-timeout@0.1.1 
+  │ └── sorted-array-functions@1.0.0 
+  ├─┬ spdy@3.4.7 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── handle-thing@1.2.5 
+  │ ├── http-deceiver@1.2.7 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── select-hose@2.0.0 
+  │ └─┬ spdy-transport@2.0.20 
+  │   ├── detect-node@2.0.3 
+  │   ├── hpack.js@2.1.6 
+  │   ├── obuf@1.1.1 
+  │   └─┬ wbuf@1.7.2 
+  │     └── minimalistic-assert@1.0.0 
+  └─┬ throttle@1.0.3 
+    ├─┬ readable-stream@2.3.3 
+    │ ├── core-util-is@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ ├── isarray@1.0.0 
+    │ ├── process-nextick-args@1.0.7 
+    │ ├── string_decoder@1.0.3 
+    │ └── util-deprecate@1.0.2 
+    └── stream-parser@0.3.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/gatejs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0458 took 4.6271s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'gatejs'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

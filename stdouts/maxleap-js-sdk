@@ -1,0 +1,27 @@
+/root/Targets/maxleap-js-sdk
+└── maxleap-js-sdk@2.1.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/maxleap-js-sdk/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","randomBytes","toString","call","pow","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0627 took 20.0796s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/maxleap-js-sdk/node_modules/maxleap-js-sdk/lib/ml.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/maxleap-js-sdk/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/maxleap-js-sdk/node_modules/underscore/underscore.js. Coverage (Term): 22% Coverage (LOC): 36%
+*- File /root/Targets/maxleap-js-sdk/node_modules/maxleap-js-sdk/lib/version.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/maxleap-js-sdk/node_modules/maxleap-js-sdk/lib/promise.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/maxleap-js-sdk/node_modules/localStorage/lib/localStorage.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

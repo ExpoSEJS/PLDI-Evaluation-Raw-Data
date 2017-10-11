@@ -1,0 +1,149 @@
+/root/Targets/inside-git
+└─┬ inside-git@0.0.1 
+  ├── async@0.2.10 
+  ├─┬ chalk@0.4.0 
+  │ ├── ansi-styles@1.0.0 
+  │ ├── has-color@0.1.7 
+  │ └── strip-ansi@0.1.1 
+  ├── commander@2.1.0 
+  ├── filesize@2.0.4 
+  ├── lodash@2.4.2 
+  ├── sprintf-js@0.0.7 
+  └── strftime@0.8.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/inside-git/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0631 took 4.7349s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:90) on program _ = require 'lodash'
+async = require 'async'
+fs = require 'fs'
+path = require 'path'
+zlib = require 'zlib'
+strftime = require 'strftime'
+sprintf = require("sprintf-js").sprintf
+exec = require('child_process').exec
+chalk = require 'chalk'
+pack = require './pack/coffee-pack'
+loadable = require './pack/loadable'
+
+class Index
+  constructor: (@index) ->
+    @entries = []
+    data = new pack.BufferStack fs.readFileSync @index
+    [@header, @version, count] = data.pop '4 char', 'int32', 'int32'
+    throw new Error 'version 2 only..' unless @version is 2
+    _.times count, =>
+      @entries.push entry = new Entry data.pop(_.times(10, -> 'uint32')..., '20 byte', 'uint16', 'string')...
+      data.pop "#{8 - s % 8} byte" if (s = data.total - data.length - 12) % 8 isnt 0 # for padding
+
+class Entry
+  constructor: (ctime_s, ctime_ns, mtime_s, mtime_ns,
+    @dev, @ino, @mode, @uid, @gid, @file_size, @sha1, flags, @name) ->
+    [@stage, @name_len, @ctime, @mtime] = [flags << 2 >> 14, flags & 0xFFF,
+      strftime('%Y-%m-%d %H:%M:%S', new Date(ctime_s*10**3)) + sprintf('.%09d', ctime_ns),
+      strftime('%Y-%m-%d %H:%M:%S', new Date(mtime_s*10**3)) + sprintf('.%09d', mtime_ns)]
+
+class Blob
+  @include loadable
+
+class Tree
+  @include loadable
+  constructor: (@items = []) ->
+  parse_body: (callback) ->
+    buffer = new pack.BufferStack @body
+    while buffer.length > 0
+      [mode, name] = buffer.pop('string').split /\s/
+      sha1 = buffer.pop '20 byte'
+      @items.push mode: mode, name: name, sha1: sha1
+
+    async.map @items, (item, done) =>
+      new Builder(item.sha1.toString('hex')).build (err, result) ->
+        result[k] = v for k,v of item
+        done null, result
+    , (err, results) =>
+      @items = results
+      callback null, this
+
+class Commit
+  @include loadable
+  parse_body: (callback) ->
+    @body = @body.toString().trim()
+    callback null, this
+
+class Tag
+  @include loadable
+  parse_body: (callback) ->
+    @body = @body.toString().trim()
+    callback null, this
+
+class Branch
+
+class Builder
+  @Types = blob: Blob, tree: Tree, tag: Tag, commit: Commit
+  constructor: (sha1) ->
+    item = Context.instance().find(sha1)
+    [@sha1, @file] = [item.sha1, item.file]
+
+  build: (done) ->
+    obj = {}
+    [obj.file, obj.sha1, obj.stat, obj.dir, obj.name] =
+      [@file, new Buffer(@sha1, 'hex'), fs.statSync(@file), @file.split(path.sep)[-2..]...]
+
+    (source = fs.createReadStream(@file)).pipe(zlib.createInflate()).on 'readable', ->
+      return if obj.type? # return表示跳过这次readable event，不应该调用done err
+      source.unpipe()
+      chunk = new pack.BufferStack @read()
+      [obj.type, obj.size] = chunk.pop('string').split ' '
+      obj.size = parseInt obj.size
+      obj.sample = chunk.pop '55 byte' # 55 - 只为一行显示，没有特殊含义
+
+      result = new Builder.Types[obj.type]()
+      result[k] = v for k, v of obj
+      done null, result
+
+class Context
+  _instance = null
+  @instance: -> _instance = _instance or new this
+  initialize: (root, callback) ->
+    @root = root
+    @objects = path.join @root, 'objects'
+    @index = path.join @root, 'index'
+
+    exec "find #{@objects} -type f", (err, stdout, stderr) =>
+      files = stdout.trim().split('\n')
+      files = _.filter files, (p) -> path.basename(p).length is 38
+      @objects = _.map files, (x) -> file: x, sha1: x.split(path.sep)[-2..].join ''
+      callback null, this
+
+  find: (sha1) -> _.find @objects, (p) -> p.sha1.match sha1
+
+exports.Index = Index
+exports.Builder = Builder
+exports.Context = null
+exports.config = (root, callback) ->
+  (exports.context = Context.instance()).initialize root, callback
+ at SyntaxError: Unexpected token (1:90)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

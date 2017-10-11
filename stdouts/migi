@@ -1,0 +1,40 @@
+/root/Targets/migi
+└─┬ migi@3.8.2 
+  ├── es5-shim@4.5.9 
+  ├─┬ jaw@3.0.1 
+  │ └── homunculus@1.1.0 
+  ├── lefty@3.8.0 
+  └─┬ migi-es6-shim@0.34.1 
+    └── es6-shim@0.35.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/migi/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","setPrototypeOf"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0398 took 12.2654s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/migi/node_modules/migi/index.js. Coverage (Term): 73% Coverage (LOC): 100%
+*- File /root/Targets/migi/node_modules/migi/build/migi.js. Coverage (Term): 22% Coverage (LOC): 16%
+*- File /root/Targets/migi/node_modules/migi/build/Event.js. Coverage (Term): 22% Coverage (LOC): 34%
+*- File /root/Targets/migi/node_modules/migi/build/Element.js. Coverage (Term): 25% Coverage (LOC): 40%
+*- File /root/Targets/migi/node_modules/migi/build/util.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/migi/node_modules/migi/build/EventBus.js. Coverage (Term): 25% Coverage (LOC): 39%
+*- File /root/Targets/migi/node_modules/migi/build/Model.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/migi/node_modules/migi/build/Component.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/migi/node_modules/migi/build/VirtualDom.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/migi/node_modules/migi/build/Obj.js. Coverage (Term): 49% Coverage (LOC): 63%
+*- File /root/Targets/migi/node_modules/migi/build/Cb.js. Coverage (Term): 46% Coverage (LOC): 54%
+*- File /root/Targets/migi/node_modules/migi/build/range.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/migi/node_modules/migi/build/browser.js. Coverage (Term): 21% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

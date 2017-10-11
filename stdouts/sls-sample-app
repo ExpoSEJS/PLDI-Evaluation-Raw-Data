@@ -1,0 +1,431 @@
+
+> bson@0.2.22 install /root/Targets/sls-sample-app/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/sls-sample-app/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:92: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/sls-sample-app/node_modules/bson/build'
+
+> kerberos@0.0.11 install /root/Targets/sls-sample-app/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/sls-sample-app/node_modules/kerberos/build'
+  CXX(target) Release/obj.target/kerberos/lib/kerberos.o
+kerberos.target.mk:98: recipe for target 'Release/obj.target/kerberos/lib/kerberos.o' failed
+make: Leaving directory '/root/Targets/sls-sample-app/node_modules/kerberos/build'
+
+> loopback-oracle-installer@1.2.1 install /root/Targets/sls-sample-app/node_modules/loopback-oracle-installer
+> node pkginstall.js
+
+Downloading/Extracting /root/Targets/sls-sample-app/node_modules/loopback-oracle-builder/build/Linux/loopback-oracle-Linux-x64-1.2.1.tar.gz
+
+> sls-sample-app@2.0.5 install /root/Targets/sls-sample-app/node_modules/sls-sample-app
+> node build/readme.js
+
+/root/Targets/sls-sample-app
+└─┬ sls-sample-app@2.0.5 
+  ├── async@0.9.2 
+  ├── cors@2.3.2 
+  ├─┬ loopback@1.9.1 
+  │ ├── bcryptjs@1.0.5 
+  │ ├─┬ debug@1.0.5 
+  │ │ └── ms@2.0.0 
+  │ ├── ejs@1.0.0 
+  │ ├─┬ express@3.5.3 
+  │ │ ├── buffer-crc32@0.2.1 
+  │ │ ├─┬ commander@1.3.2 
+  │ │ │ └── keypress@0.1.0 
+  │ │ ├─┬ connect@2.14.5 
+  │ │ │ ├── basic-auth-connect@1.0.0 
+  │ │ │ ├── bytes@0.3.0 
+  │ │ │ ├─┬ compression@1.0.0 
+  │ │ │ │ ├── bytes@0.2.1 
+  │ │ │ │ ├── compressible@1.0.0 
+  │ │ │ │ └── negotiator@0.3.0 
+  │ │ │ ├── connect-timeout@1.0.0 
+  │ │ │ ├─┬ cookie-parser@1.0.1 
+  │ │ │ │ └── cookie@0.1.0 
+  │ │ │ ├─┬ csurf@1.1.0 
+  │ │ │ │ └── scmp@0.0.3 
+  │ │ │ ├── debug@0.8.1 
+  │ │ │ ├── errorhandler@1.0.0 
+  │ │ │ ├─┬ express-session@1.0.2 
+  │ │ │ │ ├── cookie@0.1.0 
+  │ │ │ │ ├── debug@0.7.4 
+  │ │ │ │ └── utils-merge@1.0.0 
+  │ │ │ ├── method-override@1.0.0 
+  │ │ │ ├─┬ morgan@1.0.0 
+  │ │ │ │ └── bytes@0.2.1 
+  │ │ │ ├─┬ multiparty@2.2.0 
+  │ │ │ │ └── stream-counter@0.2.0 
+  │ │ │ ├── pause@0.0.1 
+  │ │ │ ├── raw-body@1.1.4 
+  │ │ │ ├── response-time@1.0.0 
+  │ │ │ ├─┬ serve-index@1.0.1 
+  │ │ │ │ ├── batch@0.5.0 
+  │ │ │ │ └── negotiator@0.4.2 
+  │ │ │ ├─┬ serve-static@1.1.0 
+  │ │ │ │ └── parseurl@1.0.1 
+  │ │ │ ├── setimmediate@1.0.1 
+  │ │ │ ├── static-favicon@1.0.2 
+  │ │ │ └── vhost@1.0.0 
+  │ │ ├── cookie@0.1.2 
+  │ │ ├── cookie-signature@1.0.3 
+  │ │ ├── debug@0.8.1 
+  │ │ ├── fresh@0.2.2 
+  │ │ ├── merge-descriptors@0.0.2 
+  │ │ ├── mkdirp@0.4.0 
+  │ │ ├── range-parser@1.0.0 
+  │ │ └─┬ send@0.3.0 
+  │ │   └── debug@0.8.0 
+  │ ├── inflection@1.3.8 
+  │ ├─┬ nodemailer@0.7.1 
+  │ │ ├─┬ aws-sdk@2.0.5 
+  │ │ │ ├── aws-sdk-apis@3.1.10 
+  │ │ │ ├─┬ xml2js@0.2.6 
+  │ │ │ │ └── sax@0.4.2 
+  │ │ │ └── xmlbuilder@0.4.2 
+  │ │ ├── directmail@0.1.8 
+  │ │ ├── he@0.3.6 
+  │ │ ├─┬ mailcomposer@0.2.12 
+  │ │ │ ├─┬ dkim-signer@0.1.2 
+  │ │ │ │ └── punycode@1.2.4 
+  │ │ │ ├─┬ follow-redirects@0.0.3 
+  │ │ │ │ └── underscore@1.8.3 
+  │ │ │ └─┬ mimelib@0.2.19 
+  │ │ │   ├── addressparser@0.3.2 
+  │ │ │   └─┬ encoding@0.1.12 
+  │ │ │     └── iconv-lite@0.4.19 
+  │ │ ├── public-address@0.1.2 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └─┬ simplesmtp@0.3.35 
+  │ │   ├── rai@0.1.12 
+  │ │   └── xoauth2@0.1.8 
+  │ ├─┬ strong-remoting@1.5.3 
+  │ │ ├── browser-request@0.3.3 
+  │ │ ├── cors@2.4.2 
+  │ │ ├── eventemitter2@0.4.14 
+  │ │ ├─┬ jayson@1.1.3 
+  │ │ │ ├── eyes@0.1.8 
+  │ │ │ └─┬ JSONStream@0.8.0 
+  │ │ │   ├── jsonparse@0.0.5 
+  │ │ │   └── through@2.2.7 
+  │ │ ├── qs@1.2.2 
+  │ │ └─┬ request@2.37.0 
+  │ │   ├── hawk@1.1.1 
+  │ │   ├── mime-types@1.0.2 
+  │ │   └── qs@0.6.6 
+  │ ├── uid2@0.0.3 
+  │ ├── underscore@1.6.0 
+  │ └── underscore.string@2.3.3 
+  ├─┬ loopback-connector-mongodb@1.4.5 
+  │ ├── loopback-connector@1.2.1 
+  │ ├─┬ mongodb@1.4.40 
+  │ │ ├─┬ bson@0.2.22 
+  │ │ │ └── nan@1.8.4 
+  │ │ ├── kerberos@0.0.11 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── safe-buffer@5.1.1 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ └── sl-blip@1.0.0 
+  ├─┬ loopback-connector-mysql@1.4.9 
+  │ ├─┬ debug@2.0.0 
+  │ │ └── ms@0.6.2 
+  │ ├─┬ mysql@2.5.5 
+  │ │ ├── bignumber.js@2.0.0 
+  │ │ └── require-all@1.0.0 
+  │ └── sl-blip@1.0.0 
+  ├─┬ loopback-connector-oracle@1.4.5 
+  │ ├─┬ debug@2.0.0 
+  │ │ └── ms@0.6.2 
+  │ ├─┬ loopback-oracle-installer@1.2.1 
+  │ │ ├─┬ buffered-stream@0.0.1 
+  │ │ │ ├─┬ each@0.6.1 
+  │ │ │ │ └─┬ glob@7.0.6 
+  │ │ │ │   ├── fs.realpath@1.0.0 
+  │ │ │ │   ├─┬ inflight@1.0.6 
+  │ │ │ │   │ └── wrappy@1.0.2 
+  │ │ │ │   ├─┬ minimatch@3.0.4 
+  │ │ │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │   │   ├── balanced-match@1.0.0 
+  │ │ │ │   │   └── concat-map@0.0.1 
+  │ │ │ │   ├── once@1.4.0 
+  │ │ │ │   └── path-is-absolute@1.0.1 
+  │ │ │ └── pad@1.1.0 
+  │ │ ├─┬ fstream@0.1.25 
+  │ │ │ ├── mkdirp@0.3.5 
+  │ │ │ └── rimraf@2.6.2 
+  │ │ ├── graceful-fs@2.0.3 
+  │ │ └─┬ tar@0.1.19 
+  │ │   └── block-stream@0.0.9 
+  │ └── sl-blip@1.0.0 
+  ├─┬ loopback-connector-rest@1.1.4 
+  │ ├── JSONPath@0.10.0 
+  │ ├── methods@0.1.0 
+  │ ├── mime@1.2.11 
+  │ ├── qs@0.6.6 
+  │ ├─┬ request@2.34.0 
+  │ │ ├── hawk@1.0.0 
+  │ │ └── tunnel-agent@0.3.0 
+  │ └── traverse@0.6.6 
+  ├── loopback-datasource-juggler@1.6.3 
+  ├── loopback-explorer@1.1.1 
+  ├─┬ rc@0.4.0 
+  │ ├── deep-extend@0.2.11 
+  │ ├── ini@1.1.0 
+  │ ├── minimist@0.0.10 
+  │ └── strip-json-comments@0.1.3 
+  ├─┬ request@2.36.0 
+  │ ├── aws-sign2@0.5.0 
+  │ ├── forever-agent@0.5.2 
+  │ ├─┬ form-data@0.1.4 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├─┬ hawk@1.0.0 
+  │ │ ├── boom@0.4.2 
+  │ │ ├── cryptiles@0.2.2 
+  │ │ ├── hoek@0.9.1 
+  │ │ └── sntp@0.2.4 
+  │ ├─┬ http-signature@0.10.1 
+  │ │ ├── asn1@0.1.11 
+  │ │ ├── assert-plus@0.1.5 
+  │ │ └── ctype@0.5.3 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├── node-uuid@1.4.8 
+  │ ├── oauth-sign@0.3.0 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ └── tunnel-agent@0.4.3 
+  ├── shuffle@0.2.2 
+  ├─┬ strong-task-emitter@0.0.7 
+  │ └── debug@0.7.4 
+  ├── text-table@0.2.0 
+  └── weighted@0.2.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sls-sample-app/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0596 took 3.8831s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (15:4) on program /*!
+ * Module dependencies.
+ */
+
+var express = require('express')
+  , proto = require('./application')
+  , fs = require('fs')
+  , ejs = require('ejs')
+  , EventEmitter = require('events').EventEmitter
+  , path = require('path')
+  , DataSource = require('loopback-datasource-juggler').DataSource
+  , ModelBuilder = require('loopback-datasource-juggler').ModelBuilder
+  , i8n = require('inflection')
+  , merge = require('util')._extend
+  , assert = require('assert');
+
+/**
+ * Main entry for LoopBack core module. It provides static properties and
+ * methods to create models and data sources. The module itself is a function
+ * that creates loopback `app`. For example,
+ *
+ * ```js
+ * var loopback = require('loopback');
+ * var app = loopback();
+ * ```
+ *
+ * @class loopback
+ * @header loopback
+ */
+
+var loopback = exports = module.exports = createApplication;
+
+/**
+ * Framework version.
+ */
+
+loopback.version = require('../package.json').version;
+
+/**
+ * Expose mime.
+ */
+
+loopback.mime = express.mime;
+
+/*!
+ * Compatibility layer, intentionally left undocumented.
+ */
+loopback.compat = require('./compat');
+
+/*!
+ * Create an loopback application.
+ *
+ * @return {Function}
+ * @api public
+ */
+
+function createApplication() {
+  var app = express();
+
+  merge(app, proto);
+
+  app.loopback = loopback;
+
+  // Create a new instance of models registry per each app instance
+  app.models = function() {
+    return proto.models.apply(this, arguments);
+  };
+
+  // Create a new instance of datasources registry per each app instance
+  app.datasources = app.dataSources = {};
+
+  // Create a new instance of connector registry per each app instance
+  app.connectors = {};
+
+  // Register built-in connectors. It's important to keep this code
+  // hand-written, so that all require() calls are static
+  // and thus browserify can process them (include connectors in the bundle)
+  app.connector('memory', loopback.Memory);
+  app.connector('remote', loopback.Remote);
+
+  return app;
+}
+
+function mixin(source) {
+  for (var key in source) {
+    var desc = Object.getOwnPropertyDescriptor(source, key);
+    Object.defineProperty(loopback, key, desc);
+  }
+}
+
+mixin(require('./runtime'));
+mixin(require('./registry'));
+
+/*!
+ * Expose express.middleware as loopback.*
+ * for example `loopback.errorHandler` etc.
+ */
+
+mixin(express);
+
+
+/*!
+ * Expose additional loopback middleware
+ * for example `loopback.configure` etc.
+ *
+ * ***only in node***
+ */
+
+if (loopback.isServer) {
+  fs
+    .readdirSync(path.join(__dirname, 'middleware'))
+    .filter(function (file) {
+      return file.match(/\.js$/);
+    })
+    .forEach(function (m) {
+      loopback[m.replace(/\.js$/, '')] = require('./middleware/' + m);
+    });
+}
+
+/*!
+ * Error handler title
+ */
+
+loopback.errorHandler.title = 'Loopback';
+
+/**
+ * Add a remote method to a model.
+ * @param {Function} fn
+ * @param {Object} options (optional)
+ */
+
+loopback.remoteMethod = function (fn, options) {
+  fn.shared = true;
+  if(typeof options === 'object') {
+    Object.keys(options).forEach(function (key) {
+      fn[key] = options[key];
+    });
+  }
+  fn.http = fn.http || {verb: 'get'};
+};
+
+/**
+ * Create a template helper.
+ *
+ *     var render = loopback.template('foo.ejs');
+ *     var html = render({foo: 'bar'});
+ *
+ * @param {String} path Path to the template file.
+ * @returns {Function}
+ */
+
+loopback.template = function (file) {
+  var templates = this._templates || (this._templates = {});
+  var str = templates[file] || (templates[file] = fs.readFileSync(file, 'utf8'));
+  return ejs.compile(str);
+};
+
+
+/*!
+ * Built in models / services
+ */
+
+loopback.Email = require('./models/email');
+loopback.User = require('./models/user');
+loopback.Application = require('./models/application');
+loopback.AccessToken = require('./models/access-token');
+loopback.Role = require('./models/role').Role;
+loopback.RoleMapping = require('./models/role').RoleMapping;
+loopback.ACL = require('./models/acl').ACL;
+loopback.Scope = require('./models/acl').Scope;
+
+/*!
+ * Automatically attach these models to dataSources
+ */
+
+var dataSourceTypes = {
+  DB: 'db',
+  MAIL: 'mail'
+};
+
+loopback.Email.autoAttach = dataSourceTypes.MAIL;
+loopback.DataModel.autoAttach = dataSourceTypes.DB;
+loopback.User.autoAttach = dataSourceTypes.DB;
+loopback.AccessToken.autoAttach = dataSourceTypes.DB;
+loopback.Role.autoAttach = dataSourceTypes.DB;
+loopback.RoleMapping.autoAttach = dataSourceTypes.DB;
+loopback.ACL.autoAttach = dataSourceTypes.DB;
+loopback.Scope.autoAttach = dataSourceTypes.DB;
+loopback.Application.autoAttach = dataSourceTypes.DB;
+ at SyntaxError: Unexpected token (15:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sls-sample-app/node_modules/sls-sample-app/app.js. Coverage (Term): 9% Coverage (LOC): 9%
+*- File /root/Targets/sls-sample-app/node_modules/loopback/index.js. Coverage (Term): 28% Coverage (LOC): 40%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

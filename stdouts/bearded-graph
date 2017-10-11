@@ -1,0 +1,127 @@
+/root/Targets/bearded-graph
+└── bearded-graph@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bearded-graph/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0514 took 3.1626s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (2:5) on program // @flow
+type Edge = {
+	node: Node,
+	weight: number
+}
+
+export class Node {
+	data: any
+	edges: Array<Edge>
+	
+	constructor(data: any = {}) {
+		this.data = data
+		this.edges = []
+	}
+
+	addEdge = (node: Node, weight: number = 1) => {
+		const index = this.edges.findIndex(({node: n}) => n === node)
+		if(~index){
+			this.updateEdge(node,weight)
+		}else {
+			this.edges.push({node,weight})
+		}
+	}
+	
+	removeEdge = (node: Node) => {
+		const index = this.edges.findIndex(({node: n}) => n === node)
+		
+		// If index is >= 0
+		if(~index){
+			this.edges.splice(index,1)
+		}
+	}
+	
+	updateEdge = (node: Node, newWeight: number) => {
+		const edge = this.edges.find(({node: n}) => n === node)
+		if(edge){
+			edge.weight = newWeight
+		}else {
+			this.addEdge(node,newWeight)
+		}
+	}
+	
+	connectedTo = (node: Node): boolean => !!this.edges.find(({node: n}) => n === node)
+	
+	find = (node: Node): ?Edge => this.edges.find(({node: n}) => n === node)
+	
+	weightTo = (node: Node): ?number => {
+		const found = this.find(node)
+		if(found){
+			return found.weight
+		}else {
+			return void 0
+		}
+	}
+}
+
+export class Graph {
+	root: Node
+	nodes: Array<Node>
+	
+	constructor(root: Node = new Node()){
+		this.root = root instanceof Node ? root : new Node(root)
+		this.nodes = [this.root]
+	}
+	
+	connect = (a: Node, b: Node, weight: number = 1) => {
+		a.addEdge(b,weight)
+		b.addEdge(a,weight)
+		
+		if(!this.nodes.includes(a)){
+			this.nodes.push(a)
+		}
+		if(!this.nodes.includes(b)){
+			this.nodes.push(b)
+		}
+	}
+	
+	update = (a: Node, b: Node, weight: number = 1) => a.updateEdge(b,weight)
+	
+	contains = (node: Node): boolean => this.nodes.includes(node)
+	
+	removeNode = (node: Node) => {
+		const index = this.nodes.indexOf(node)
+		if(~index){
+			this.nodes.splice(index,1)
+			this.nodes.forEach(n => {
+				if(n.connectedTo(node)){
+					n.removeEdge(node)
+				}
+			})
+		}
+	}
+	
+	cost = (a: Node, b: Node): ?number => a.weightTo(b)
+}
+
+ at SyntaxError: Unexpected token (2:5)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

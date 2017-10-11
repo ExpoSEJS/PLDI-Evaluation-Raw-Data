@@ -1,0 +1,747 @@
+/root/Targets/dry-calendar
+└── dry-calendar@0.0.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dry-calendar/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","isArray","create","random","reduce"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0429 took 33.2058s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'await' is reserved (55:4) on program "use strict";
+
+var nativeFs = require('fs');
+
+function lib(_){
+
+var fs = {};
+
+fs.names = _.partial(_.pluck, _, "name");
+fs.paths = _.partial(_.pluck, _, "path");
+
+// function(filePath, text, callback){
+fs.writeFile = fs.write_file = nativeFs.writeFile;
+fs.writeFile.sync = fs.write_file.sync = nativeFs.writeFileSync;
+
+fs.moveFile = fs.move_file = nativeFs.rename;
+fs.moveFile.sync = fs.move_file.sync = nativeFs.renameSync;
+
+fs.readFile = fs.read_file = function(file_path, encoding, callback){
+    if(_.isFunction(encoding)){
+        callback = encoding;
+        encoding = 'utf8';
+    }
+    nativeFs.readFile(file_path, encoding, callback);
+};
+
+fs.readFile.sync = fs.read_file.sync = function(file_path, encoding){
+    encoding = encoding || 'utf8';
+    return(nativeFs.readFileSync(file_path, encoding));
+};
+
+fs.readDir = fs.read_dir = nativeFs.readdir;
+fs.readDir.sync = fs.read_dir.sync = nativeFs.readdirSync;
+
+fs.stat = nativeFs.stat;
+fs.stat.sync = nativeFs.statSync;
+
+fs.mtime = function(file_path, callback){
+    fs.stat(file_path, function(err, stat){
+        if(err){ callback(err); }
+        else{ callback(null, stat.mtime.valueOf()); }
+    });
+};
+
+fs.lstat = nativeFs.lstat;
+fs.lstat.sync = nativeFs.lstatSync;
+
+fs.symlink = nativeFs.symlink;
+fs.symlink.sync = nativeFs.symlinkSync;
+
+fs.rm = nativeFs.unlink;
+fs.rm.sync = nativeFs.unlinkSync;
+
+fs.estat = fs.exists = function(path, callback){
+    await{ fs.stat(path, defer(var err, stats)); }
+
+    if(err){
+        if(_.code.noent(err)){ return callback(null, false); }
+        else{ return callback(err); }
+    }else if(stats){
+        callback(null, true, stats);
+    }
+};
+
+fs.exists.sync = function(path){
+    try { return(nativeFs.statSync(path) !== null); }
+    catch(e){ 
+        if(_.code.noent(e)){ return(false); }
+        else{ throw(e); }
+    }
+};
+
+fs.fileExists = fs.file_exists = function (path, callback) {
+    await{ fs.estat(path, _.plumb(defer(var exists, stats), callback)); }
+    return callback(null, exists && !stats.isDirectory());
+};
+    
+fs.fileExists.sync = fs.file_exists.sync = function (path) {
+    try { return(!(fs.stat.sync(path).isDirectory())); }
+    catch(e){ 
+        if(_.code.noent(e)){ return(false); }
+        else{ throw(e); }
+    }
+};
+
+fs.directoryExists = fs.directory_exists = function (path, callback) {
+    await{ fs.estat(path, _.plumb(defer(var exists, stats), callback)); }
+    return callback(null, exists && stats.isDirectory());
+};
+    
+fs.directoryExists.sync = fs.directory_exists.sync = function (path) {
+    try { return(fs.stat.sync(path).isDirectory()); }
+    catch(e){ 
+        if(_.code.noent(e)){ return(false); }
+        else{ throw(e); }
+    }
+};
+
+fs.isFile = fs.is_file = fs.fileExists;
+fs.isFile.sync = fs.is_file.sync = fs.fileExists.sync;
+
+fs.isDirectory = fs.is_directory = fs.directoryExists;
+fs.isDirectory.sync = fs.is_directory.sync = fs.directoryExists.sync;
+
+fs.statDir = fs.stat_dir = function(root, options, callback){
+
+    if(_.isFunction(options)){
+        callback = options;
+        options = {};
+    }
+
+    await{ nativeFs.readdir(root, _.plumb(defer(var contents), callback)); }
+
+    var w = _.waiter();
+
+    _.each(contents, function(name, i){
+        var context = { name: name, path: _.path.prepend(root, name) };
+        if(options.lstat){
+            fs.lstat(context.path, w.callback(context));
+        }else{
+            fs.stat(context.path, w.callback(context));
+        }
+    });
+
+    w.wait(function(errors, results, contexts){
+        if(errors){ return callback(errors); }
+        var stats = _.map(results, function(r, i){ return(_.extend(contexts[i], { stat: r[0] })); });
+        return callback(null, stats);
+    });
+};
+
+fs.lstatDir = fs.lstat_dir = function(root, options, callback){
+
+    if(_.isFunction(options)){
+        callback = options;
+        options = {};
+    }
+
+    options = _.extend({}, options, { lstat: true });
+
+    return fs.stat_dir(root, options, callback);
+};
+
+fs.statDir.sync = fs.stat_dir.sync = function(root, options){
+
+    options = options || {};
+
+    var contents = nativeFs.readdirSync(root);
+
+    var results = []
+    _.each(contents, function(name, i){
+        var path = _.path.prepend(root, name);
+        if(options.lstat){
+            results.push({ name: name, path: path, stat: fs.lstat.sync(path) });
+        }else{
+            results.push({ name: name, path: path, stat: fs.stat.sync(path) });
+        }
+    });
+
+    return(results);
+};
+
+fs.lstatDir.sync = fs.lstat_dir.sync = function(root, options){
+    options = options || {};
+
+    options = _.extend({}, options, { lstat: true });
+
+    return fs.stat_dir.sync(root, options);
+};
+
+fs.links = function(root, callback){ 
+    await{ fs.lstat_dir(root, _.plumb(defer(var stats), callback)); }
+    return callback(null, _.filter(stats, function(s){ return(s.stat.isSymbolicLink()); }));
+};
+
+fs.links.sync = function(root){ 
+    var stats = fs.lstat_dir.sync(root);
+    return(_.filter(stats, function(s){ return(s.stat.isSymbolicLink()); }));
+};
+
+fs.directories = function(root, callback){ 
+    await{ fs.stat_dir(root, _.plumb(defer(var stats), callback)); }
+    return callback(null, _.filter(stats, function(s){ return(s.stat.isDirectory()); }));
+};
+
+fs.directories.sync = function(root){ 
+    var stats = fs.stat_dir.sync(root);
+    return(_.filter(stats, function(s){ return(s.stat.isDirectory()); }));
+};
+
+fs.files = function(root, callback){ 
+    await{ fs.stat_dir(root, _.plumb(defer(var stats), callback)); }
+    return callback(null, _.filter(stats, function(s){ return(!s.stat.isDirectory()); }));
+};
+
+fs.files.sync = function(root){ 
+    var stats = fs.stat_dir.sync(root);
+    return(_.filter(stats, function(s){ return(!s.stat.isDirectory()); }));
+};
+
+fs.writeJson = fs.write_json = function(path, obj, callback){
+    fs.write_file(path, _.stringify(obj), callback);
+};
+
+fs.writeJson.sync = fs.write_json.sync = function(path, obj){
+    return fs.write_file.sync(path, _.stringify(obj));
+};
+
+fs.readJson = fs.read_json = function(path, callback){
+    fs.readFile(path, _.plumb(function(text){
+        try{ var result = _.parse(text); }
+        catch(e){ return callback(_.error("parse_error", "There was a problem parsing a file: " + path, e)); }
+
+        return callback(null, result);
+    }, callback));
+};
+
+fs.readJson.sync = fs.read_json.sync = function(path){
+    var data = fs.read_file.sync(path);
+    try{ return(_.parse(data)); }
+    catch(e){ throw(_.error("parse_error", "There was a problem parsing a file: " + path, e)); }
+};
+
+ 
+fs.evalFile = fs.eval_file = function(path, callback){
+    fs.readFile(path, _.plumb(function(data){
+        try{ var result = eval("(" + data + ")"); }
+        catch(e){ return callback(_.error("parse_error", "There was a problem parsing a file: " + path  + " Error: " + e.message, e)); }
+
+        return callback(null, result); 
+    }, callback));
+};
+
+fs.evalFile.sync = fs.eval_file.sync = function(path){
+    var data = fs.read_file.sync(path);
+
+    try{ return(eval("(" + data + ")")); }
+    catch(e){ throw(_.error("parse_error", "There was a problem parsing a file: " + path, e)); }
+};
+
+fs.moveFiles = fs.move_files = function(paths, callback){
+    var w = _.waiter();
+
+    _.each(paths, function(path){
+        fs.move_file(path.src, path.dest, w.callback(path));
+    });
+
+    w.wait(callback);
+};
+
+fs.isDirectoryEmpty = fs.is_directory_empty = function(path, ignore, callback){
+    if(_.isFunction(ignore)){
+       callback = ignore;
+       ignore = [];
+    }
+
+    await{ fs.read_dir(path, _.plumb(defer(var contents), callback)); }
+
+    for(var i = 0; i < contents.length; i++){
+        if(!_.exists(ignore, contents[i], true)){
+            return callback(null, false);
+        }
+    }
+
+    return callback(null, true);
+
+};
+
+fs.isDirectoryEmpty.sync = fs.is_directory_empty.sync = function(path, ignore){
+    if(ignore === undefined){ ignore = []; }
+
+    var contents = fs.readDir.sync(path);
+    for(var i = 0; i < contents.length; i++){
+        if(!_.exists(ignore, contents[i], true)){
+            return(false);
+        }
+    }
+    return(true);
+};
+
+fs.directoryContains = fs.directory_contains = function(path, name, case_sensitive, callback){
+    if(_.isFunction(case_sensitive)){
+	callback = case_sensitive;
+	case_sensitive = false;
+    }
+    
+    await{ fs.read_dir(path, _.plumb(defer(var contents), callback)); }
+    for(var i = 0; i < contents.length; i++){
+        if(case_sensitive){
+            if(contents[i] === name){ return callback(null, true); }
+        }else{
+            if(_.lc(contents[i]) === _.lc(name)){ return callback(null, true); }
+        }
+    }
+
+    return callback(null, false);
+};
+
+fs.directoryContains.sync = fs.directory_contains.sync = function(path, name, case_sensitive){
+    
+    var contents = fs.readDir.sync(path);
+    for(var i = 0; i < contents.length; i++){
+        if(case_sensitive){
+            if(contents[i] === name){ return(true); }
+        }else{
+            if(_.lc(contents[i]) === _.lc(name)){ return(true); }
+        }
+    }
+
+    return(false);
+};
+
+fs.findInParents = fs.find_in_parents = function(child_directory, file_name, callback){
+    
+    var current_path = _.path.slash(child_directory);
+    
+    if(current_path === ""){ return callback(null, null); }
+
+    await{ fs.directory_contains(current_path, file_name, _.plumb(defer(var exists), callback)); }
+
+    if(exists){ return callback(null, current_path); }
+
+    current_path = _.path.pop(current_path);
+
+    fs.find_in_parents(current_path, file_name, callback);
+};
+
+fs.findInParents.sync = fs.find_in_parents.sync = function(child_directory, file_name){
+    
+    var current_path = _.path.slash(child_directory);
+
+    while(!fs.directory_contains.sync(current_path, file_name)){
+    
+        current_path = _.path.pop(current_path);
+        
+        if(current_path === ""){ return(""); }
+    }
+
+    return(current_path);
+};
+
+fs.walk = function(root, options, on_file, on_dir, callback){
+
+    if(_.isFunction(options)){
+        callback = on_dir;
+        on_dir = on_file;
+        on_file = options;
+        options = {};
+    }
+
+    var results = null;
+
+    if(options.lstat){
+        await{ fs.lstat_dir(root, _.plumb(defer(results), callback)); }
+    }else{
+        await{ fs.stat_dir(root, _.plumb(defer(results), callback)); }
+    }
+
+    var dir_paths = [];
+
+    _.each.async(results, function(info, index, next){
+        if(info.stat.isDirectory()){
+            on_dir(info, function(recurse){
+                if(recurse !== false){ dir_paths.push(info.path); }
+                next();
+            });
+        }else{
+            on_file(info, next);
+        }
+    }, function(){
+        _.each.async(dir_paths, function(dir_path, index, next){
+            fs.walk(dir_path, options, on_file, on_dir, function(err){
+                if(err){ return callback(err); }
+                else{ next(); }
+            });
+        }, function(){ if(callback){ callback(); } });
+    });
+};
+
+fs.walk.sync = function(root, options, on_file, on_dir){
+
+    if(_.isFunction(options)){
+        on_dir = on_file;
+        on_file = options;
+        options = {};
+    }
+
+    var results = [];
+
+    if(options.lstat){
+        results = fs.lstat_dir.sync(root);
+    }else{
+        results = fs.stat_dir.sync(root);
+    }
+
+    var dir_paths = [];
+
+    _.each(results, function(info){
+        if(info.stat.isDirectory()){
+            if(on_dir(info) !== false){
+                dir_paths.push(info.path);
+            }
+        }else{
+            on_file(info);
+        }
+    });
+
+    _.each(dir_paths, function(path){
+        fs.walk.sync(path, options, on_file, on_dir);
+    });
+};
+
+fs.find = function(root, options, callback){
+    if(_.isFunction(options) && !_.isFunction(callback)){
+        callback = options;
+        options = {};
+    }
+
+    if(_.isString(options) || _.isFunction(options)){
+        options = { pattern: options };
+    }
+    
+    options = options || {};
+
+    var include = function (info){
+        var should_include = true;
+        if(_.isFunction(options.pattern)){
+            should_include = options.pattern(info);
+        }else if(_.isString(options.pattern)){
+            should_include = _.glob.match_file(info.name, options.pattern);
+        }
+        return(should_include);
+    }
+ 
+    var found = [];
+
+    fs.walk(root, function on_file(info, next){
+        if(include(info)){ found.push(info); }
+        next();
+    }, function on_dir(info, next){ 
+        var recurse = true;
+        if(options.ignore){  
+            if(options.ignore(info)){ recurse = false; }
+        }
+        next(recurse);
+    }, function(err){ 
+        if(err){ callback(err); }
+        else{ callback(null, found); }
+    }); 
+};
+
+fs.find.sync = function(path, options){
+
+    if(_.isString(options) || _.isFunction(options)){
+        options = { pattern: options };
+    }
+    
+    options = options || {};
+
+    var include = function (info){
+        var should_include = true;
+        if(_.isFunction(options.pattern)){
+            should_include = options.pattern(info);
+        }else if(_.isString(options.pattern)){
+            should_include = _.glob.matchFile(info.name, options.pattern);
+        }
+        return(should_include);
+    }
+ 
+    var found = [];
+
+    fs.walk.sync(path, function on_file(info){
+        if(include(info)){ found.push(info); }
+    }, function on_dir(info){
+        if(options.ignore){ return(!(options.ignore(info) === true)); }
+    }); 
+
+    return(found);
+};
+
+fs.mkdir = function(path, mode, callback){
+    
+    if(_.isFunction(mode)){
+        callback = mode;
+        mode = null;
+    }
+    
+    mode = mode || '755';
+    
+    path = _.path.slash(path);
+    path = _.path.normalize(path);
+    
+    await{ fs.exists(path, _.plumb(defer(var exists), callback)); }
+
+    if(exists){ return callback(); }
+
+    fs.mkdir(_.path.slash(_.path.pop(path)), mode, function(err){
+        if(err){ callback(err); }
+        else{ nativeFs.mkdir(path, mode, callback); }
+    });
+};
+
+fs.mkdir.sync = function(path, mode){
+
+    mode = mode || '755';
+    
+    path = _.path.slash(path);
+    path = _.path.normalize(path);
+
+    if(fs.exists.sync(path)){ return; }
+
+    fs.mkdir.sync(_.path.slash(_.path.pop(path)), mode);
+    nativeFs.mkdirSync(path, mode);
+};
+
+fs.rmdir = function(path, callback){
+    path = _.path.slash(path);
+        
+    _.fs.walk(path, { lstat: true }, function on_file(info, next){
+        if(info.stat.isSymbolicLink()){
+            await{ nativeFs.unlink(info.path, _.plumb(defer(), callback)); }
+        }else{
+            await{ nativeFs.unlink(info.path, _.plumb(defer(), callback)); }
+        }
+        next();
+    }, function on_dir(info, next){
+        await{ fs.rmdir(info.path, _.plumb(defer(), callback)); }
+        next();
+    }, function(){
+        await{ nativeFs.rmdir(path, _.plumb(defer(), callback)); }
+        callback();
+    });
+};
+
+fs.rmdir.sync = function(root){
+
+    function allow_noent(f){
+        try{ f(); }
+        catch(e){
+            if(!_.code.noent(e)){ throw(e); } 
+        }
+    };
+
+    var contents = [];
+
+    allow_noent(function(){
+        contents = fs.lstat_dir.sync(root);
+    });
+    
+    _.each(contents, function(info){
+        if(info.stat.isSymbolicLink() || !info.stat.isDirectory()){
+            allow_noent(function(){
+                nativeFs.unlinkSync(info.path);
+            });
+        }else{
+            allow_noent(function(){
+                fs.rmdir.sync(info.path);
+            });
+        }
+    });
+
+    allow_noent(function(){
+        nativeFs.rmdirSync(root);
+    });
+};
+
+fs.module = function(path, callback){
+    var module = null;
+
+    function error_matches_path(path, err){
+        var match_path = _.regex(_.path.base(path) + "'$");
+        if(err.message && err.message.match && err.message.match(match_path)){
+            return(err.message.match(match_path));
+        }else{ return(false); }
+    }
+ 
+    try{ module = require(path); }
+    catch(e){ 
+        if(_.code.noent(e) && error_matches_path(path, e)){
+            callback(null, module);
+        }else{ 
+            e.path = path;
+            return callback(e);
+        }
+    }
+
+    callback(null, module);
+};
+
+// if errors, callsback an array of errors
+fs.modules = function(root, callback, options){
+
+    if(_.isArray(options)){
+        options = { extensions: options };
+    }
+
+    options = options || { };
+
+    if(!options.extensions){ 
+        options.extensions = _.map(_.keys(require.extensions), function(ex){ return(ex.slice(1)); });
+        _.log.debug("fs.modules finding extensions: ", options.extensions);
+    }
+
+    var file_filter = function(path){ 
+        if(!options.hidden){
+            if(_.path.hidden(path)){ return(false); }
+        }
+
+        var ext = _.path.extension(path);
+        // find returns the extension string, we want a bool, hence the !!
+        var valid = !!_.find(options.extensions, function(e){ return(e === ext); });
+        return(valid);
+    };
+
+    await{ _.fs.files(root, defer(var err, contents)); }
+
+    if(err){ return callback([_.error("read_directory_error", err.message, err)]); }
+
+    var files = fs.paths(contents);
+
+    var errors = []
+    var modules = [];
+
+    _.log.debug("fs.modules files before filter: ", files);
+    files = _.filter(files, file_filter);
+    _.log.debug("fs.modules files after filter: ", files);
+
+    _.beach(files, function(path){
+        try{ 
+            modules.push({ module: require(path), path: path });
+        }catch(e){ 
+            e.path = path;
+            errors.push(e);
+        }
+    });
+
+    if(errors.length){
+        callback(errors);
+    }else{
+        callback(null, modules);
+    }
+};
+ 
+fs.print_info = function(str, results){
+    if(_.isArray(str)){ results = str; str = ""; }
+    if(str){ _.p(str); }
+    _.each(results, function(info){
+        _.p("is_symlink: ", info.stat.isSymbolicLink(), " is_dir: ", info.stat.isDirectory(), " name: ", info.name, " path: ", info.path);
+    });
+};
+
+/*
+fs.cpdir = function(from, to, callback){
+
+    await{ _.fs.stat(from, defer(var err, stat)); }
+
+    if(_.code.noent(err)){ return callback(err); }
+    else if(!stat.isDirectory()){ return callback(_.error("ENOTDIR", err)); }
+    else if(err){ return callback(_.error("cpdir_error", err)); }
+ 
+    await{ _.exec("cp -r " + from + " " + to, defer(var ecode, stderr, stdout)); }
+    if(ecode){ return callback(_.error("cpdir_error", "exit code: " + ecode + " stderr: " + stderr + " stdout: " + stdout)); }
+        
+    callback(null);
+};
+
+fs.copyFileSync = function(srcFile, destFile){
+    var BUF_LENGTH, buff, bytesRead, fdr, fdw, pos;
+    BUF_LENGTH = 64 * 1024;
+    buff = new Buffer(BUF_LENGTH);
+    fdr = nativeFs.openSync(srcFile, 'r');
+    fdw = nativeFs.openSync(destFile, 'w');
+    bytesRead = 1;
+    pos = 0;
+    while (bytesRead > 0) {
+        bytesRead = nativeFs.readSync(fdr, buff, 0, BUF_LENGTH, pos);
+        nativeFs.writeSync(fdw, buff, 0, bytesRead);
+        pos += bytesRead;
+    }
+    nativeFs.closeSync(fdr);
+    return nativeFs.closeSync(fdw);
+};
+
+*/
+
+return(fs);
+
+}
+
+exports.fs = lib;
+ at SyntaxError: The keyword 'await' is reserved (55:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1774:21)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/lib/index.js. Coverage (Term): 73% Coverage (LOC): 100%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/lib/calendar.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/index.js. Coverage (Term): 84% Coverage (LOC): 100%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/deps/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/deps/underscore.string/lib/underscore.string.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/common.js. Coverage (Term): 15% Coverage (LOC): 25%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/server.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/tamejs/lib/tamejs.js. Coverage (Term): 38% Coverage (LOC): 48%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/tamejs/lib/runtime.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/log.js. Coverage (Term): 36% Coverage (LOC): 49%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/uuid.js. Coverage (Term): 19% Coverage (LOC): 30%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/sha256.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/format.js. Coverage (Term): 5% Coverage (LOC): 10%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/test.js. Coverage (Term): 23% Coverage (LOC): 35%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/string_builder.js. Coverage (Term): 37% Coverage (LOC): 56%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/diff.js. Coverage (Term): 2% Coverage (LOC): 6%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/path.js. Coverage (Term): 28% Coverage (LOC): 44%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/url.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/querystring.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/http_base.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/http.node.js. Coverage (Term): 29% Coverage (LOC): 29%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/lib/glob.js. Coverage (Term): 45% Coverage (LOC): 52%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/minimatch/minimatch.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/minimatch/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/dry-calendar/node_modules/dry-calendar/node_modules/dry-underscore/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

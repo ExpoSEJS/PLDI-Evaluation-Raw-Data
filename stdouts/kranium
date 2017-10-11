@@ -1,0 +1,129 @@
+/root/Targets/kranium
+└── kranium@0.1.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/kranium/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0842 took 2.8229s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+var nomnom = require('nomnom'),
+	parser = nomnom(),
+	path = require('path'),
+	utils = require('./lib/utils'),
+	fs = require('fs');
+
+(function(){
+	
+	var defaults = {
+		port: 8128,
+		ip: '127.0.0.1',
+		test: false,
+		debug: false,
+		backbone: false
+	};
+
+	function autoload(str){
+		return function(opts){
+			var fn = require(str);
+			//fn.apply(fn, arguments);
+			new fn(opts);
+		};
+	}
+
+	function cwdToTiRoot(){
+		var cwd, found = false;
+		while(!path.existsSync(process.cwd() + '/tiapp.xml') && (process.chdir('../'), (cwd = process.cwd()) !== '/'));
+		return cwd !== '/';
+	}
+
+	if(!cwdToTiRoot()){
+		return "No Titanium project found, KTHXBAI".err(); 
+	}
+
+	parser.globalOpts({
+		version: {
+			string: '-v, --version',
+			help: 'print version and exit',
+			callback: function() {
+				return JSON.parse(fs.readFileSync(require.main.filename.replace(/[^\/]+$/, 'package.json'))).version;
+			}
+		}
+	});
+
+	parser.command('init').opts({
+		debug: {
+			string: '-d, --debug',
+			help: 'set app to debug mode',
+			"default": defaults.debug
+		},
+	
+		test: {
+			string: '-t, --test',
+			help: 'activate app tests',
+			"default": defaults.test
+		},
+		
+		backbone: {
+			string: '-b, --backbone',
+			help: 'activate backbone for app',
+			"default": defaults.backbone
+		},
+	
+		ip: {
+			string: '-i, --ip',
+			help: 'ip to bind to'
+		},
+	
+		port: {
+			string: '-p, --port',
+			help: 'port to bind to',
+			"default": defaults.port
+		},
+	}).callback(autoload('./lib/command/init'));
+
+	parser.command('watch').opts({
+		debug: {
+			string: '-d, --debug',
+			help: 'set app to debug mode',
+			"default": defaults.debug
+		},
+	
+		ip: {
+			string: '-i, --ip',
+			help: 'ip to bind to'
+		},
+	
+		port: {
+			string: '-p, --port',
+			help: 'port to bind to',
+			"default": defaults.port
+		},
+	}).callback(autoload('./lib/command/watch'));
+
+	parser.parseArgs();
+
+})();
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

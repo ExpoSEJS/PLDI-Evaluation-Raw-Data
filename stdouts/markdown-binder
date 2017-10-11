@@ -1,0 +1,465 @@
+/root/Targets/markdown-binder
+└─┬ markdown-binder@0.3.6 
+  ├── async@0.2.10 
+  ├─┬ express-device@0.3.13 
+  │ ├─┬ express@3.21.2 
+  │ │ ├── basic-auth@1.0.4 
+  │ │ ├── commander@2.6.0 
+  │ │ ├─┬ connect@2.30.2 
+  │ │ │ ├── basic-auth-connect@1.0.0 
+  │ │ │ ├─┬ body-parser@1.13.3 
+  │ │ │ │ ├── iconv-lite@0.4.11 
+  │ │ │ │ └─┬ raw-body@2.1.7 
+  │ │ │ │   ├── bytes@2.4.0 
+  │ │ │ │   └── iconv-lite@0.4.13 
+  │ │ │ ├── bytes@2.1.0 
+  │ │ │ ├─┬ compression@1.5.2 
+  │ │ │ │ ├─┬ accepts@1.2.13 
+  │ │ │ │ │ └── negotiator@0.5.3 
+  │ │ │ │ └── compressible@2.0.11 
+  │ │ │ ├── connect-timeout@1.6.2 
+  │ │ │ ├── cookie-parser@1.3.5 
+  │ │ │ ├─┬ csurf@1.8.3 
+  │ │ │ │ └─┬ csrf@3.0.6 
+  │ │ │ │   ├── rndm@1.2.0 
+  │ │ │ │   ├── tsscmp@1.0.5 
+  │ │ │ │   └─┬ uid-safe@2.1.4 
+  │ │ │ │     └── random-bytes@1.0.0 
+  │ │ │ ├─┬ errorhandler@1.4.3 
+  │ │ │ │ ├─┬ accepts@1.3.4 
+  │ │ │ │ │ └── negotiator@0.6.1 
+  │ │ │ │ └── escape-html@1.0.3 
+  │ │ │ ├─┬ express-session@1.11.3 
+  │ │ │ │ ├── crc@3.3.0 
+  │ │ │ │ └─┬ uid-safe@2.0.0 
+  │ │ │ │   └── base64-url@1.2.1 
+  │ │ │ ├─┬ finalhandler@0.4.0 
+  │ │ │ │ └── unpipe@1.0.0 
+  │ │ │ ├─┬ http-errors@1.3.1 
+  │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ └── statuses@1.3.1 
+  │ │ │ ├─┬ method-override@2.3.9 
+  │ │ │ │ ├─┬ debug@2.6.8 
+  │ │ │ │ │ └── ms@2.0.0 
+  │ │ │ │ └── vary@1.1.1 
+  │ │ │ ├── morgan@1.6.1 
+  │ │ │ ├─┬ multiparty@3.3.2 
+  │ │ │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ │ └── stream-counter@0.2.0 
+  │ │ │ ├── on-headers@1.0.1 
+  │ │ │ ├── pause@0.1.0 
+  │ │ │ ├── qs@4.0.0 
+  │ │ │ ├─┬ response-time@2.3.2 
+  │ │ │ │ └── depd@1.1.1 
+  │ │ │ ├─┬ serve-favicon@2.3.2 
+  │ │ │ │ └── ms@0.7.2 
+  │ │ │ ├─┬ serve-index@1.7.3 
+  │ │ │ │ ├── batch@0.5.3 
+  │ │ │ │ └── escape-html@1.0.3 
+  │ │ │ ├─┬ serve-static@1.10.3 
+  │ │ │ │ ├── escape-html@1.0.3 
+  │ │ │ │ └─┬ send@0.13.2 
+  │ │ │ │   ├── depd@1.1.1 
+  │ │ │ │   ├── destroy@1.0.4 
+  │ │ │ │   └── statuses@1.2.1 
+  │ │ │ ├─┬ type-is@1.6.15 
+  │ │ │ │ └── media-typer@0.3.0 
+  │ │ │ └── vhost@3.0.2 
+  │ │ ├── content-disposition@0.5.0 
+  │ │ ├── content-type@1.0.4 
+  │ │ ├── cookie@0.1.3 
+  │ │ ├── cookie-signature@1.0.6 
+  │ │ ├─┬ debug@2.2.0 
+  │ │ │ └── ms@0.7.1 
+  │ │ ├── depd@1.0.1 
+  │ │ ├── escape-html@1.0.2 
+  │ │ ├── etag@1.7.0 
+  │ │ ├── fresh@0.3.0 
+  │ │ ├── merge-descriptors@1.0.0 
+  │ │ ├── methods@1.1.2 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ ├── parseurl@1.3.2 
+  │ │ ├─┬ proxy-addr@1.0.10 
+  │ │ │ ├── forwarded@0.1.2 
+  │ │ │ └── ipaddr.js@1.0.5 
+  │ │ ├── range-parser@1.0.3 
+  │ │ ├─┬ send@0.13.0 
+  │ │ │ ├── destroy@1.0.3 
+  │ │ │ ├── mime@1.3.4 
+  │ │ │ ├─┬ on-finished@2.3.0 
+  │ │ │ │ └── ee-first@1.1.1 
+  │ │ │ └── statuses@1.2.1 
+  │ │ ├── utils-merge@1.0.0 
+  │ │ └── vary@1.0.1 
+  │ └── express-partials@0.3.0 
+  ├── file-picker@0.1.8 
+  ├─┬ jade@0.33.0 
+  │ ├── character-parser@1.0.2 
+  │ ├─┬ commander@1.2.0 
+  │ │ └── keypress@0.1.0 
+  │ ├─┬ constantinople@1.0.2 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├─┬ source-map@0.1.34 
+  │ │   │ └── amdefine@1.0.1 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     ├── window-size@0.1.0 
+  │ │     └── wordwrap@0.0.2 
+  │ ├── mkdirp@0.3.5 
+  │ ├─┬ monocle@0.1.48 
+  │ │ └─┬ readdirp@0.2.5 
+  │ │   └─┬ minimatch@3.0.4 
+  │ │     └─┬ brace-expansion@1.1.8 
+  │ │       ├── balanced-match@1.0.0 
+  │ │       └── concat-map@0.0.1 
+  │ ├─┬ transformers@2.0.1 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   └── optimist@0.3.7 
+  │ └─┬ with@1.1.1 
+  │   └── uglify-js@2.4.0 
+  ├─┬ less@1.4.2 
+  │ ├── mime@1.2.11 
+  │ ├── mkdirp@0.3.5 
+  │ ├─┬ request@2.82.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.2 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.10.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── qs@6.5.1 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.2 
+  │ │ │ └── punycode@1.4.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ └── ycssmin@1.0.1 
+  ├── marked@0.2.10 
+  ├── moment@2.1.0 
+  ├── underscore@1.5.2 
+  └── unorm@1.0.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/markdown-binder/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pop","join","RegExp","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0722 took 27.1454s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (98:45) on program /*!
+ * Jade
+ * Copyright(c) 2010 TJ Holowaychuk <tj@vision-media.ca>
+ * MIT Licensed
+ */
+
+/**
+ * Module dependencies.
+ */
+
+var Parser = require('./parser')
+  , Lexer = require('./lexer')
+  , Compiler = require('./compiler')
+  , runtime = require('./runtime')
+  , addWith = require('with')
+  , fs = require('fs');
+
+/**
+ * Expose self closing tags.
+ */
+
+exports.selfClosing = require('./self-closing');
+
+/**
+ * Default supported doctypes.
+ */
+
+exports.doctypes = require('./doctypes');
+
+/**
+ * Text filters.
+ */
+
+exports.filters = require('./filters');
+
+/**
+ * Utilities.
+ */
+
+exports.utils = require('./utils');
+
+/**
+ * Expose `Compiler`.
+ */
+
+exports.Compiler = Compiler;
+
+/**
+ * Expose `Parser`.
+ */
+
+exports.Parser = Parser;
+
+/**
+ * Expose `Lexer`.
+ */
+
+exports.Lexer = Lexer;
+
+/**
+ * Nodes.
+ */
+
+exports.nodes = require('./nodes');
+
+/**
+ * Jade runtime helpers.
+ */
+
+exports.runtime = runtime;
+
+/**
+ * Template function cache.
+ */
+
+exports.cache = {};
+
+/**
+ * Parse the given `str` of jade and return a function body.
+ *
+ * @param {String} str
+ * @param {Object} options
+ * @return {String}
+ * @api private
+ */
+
+function parse(str, options){
+  try {
+    // Parse
+    var parser = new (options.parser || Parser)(str, options.filename, options);
+
+    // Compile
+    var compiler = new (options.compiler || Compiler)(parser.parse(), options)
+      , js = compiler.compile();
+
+    // Debug compiler
+    if (options.debug) {
+      console.error('\nCompiled Function:\n\n\033[90m%s\033[0m', js.replace(/^/gm, '  '));
+    }
+
+    return ''
+      + 'var buf = [];\n'
+      + (options.self
+        ? 'var self = locals || {};\n' + js
+        : addWith('locals || {}', js, ['jade', 'buf'])) + ';'
+      + 'return buf.join("");';
+  } catch (err) {
+    parser = parser.context();
+    runtime.rethrow(err, parser.filename, parser.lexer.lineno, str);
+  }
+}
+
+/**
+ * Strip any UTF-8 BOM off of the start of `str`, if it exists.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+function stripBOM(str){
+  return 0xFEFF == str.charCodeAt(0)
+    ? str.substring(1)
+    : str;
+}
+
+/**
+ * Compile a `Function` representation of the given jade `str`.
+ *
+ * Options:
+ *
+ *   - `compileDebug` when `false` debugging code is stripped from the compiled
+       template, when it is explicitly `true`, the source code is included in
+       the compiled template for better accuracy.
+ *   - `filename` used to improve errors when `compileDebug` is not `false`
+ *
+ * @param {String} str
+ * @param {Options} options
+ * @return {Function}
+ * @api public
+ */
+
+exports.compile = function(str, options){
+  var options = options || {}
+    , filename = options.filename
+      ? JSON.stringify(options.filename)
+      : 'undefined'
+    , fn;
+
+  str = stripBOM(String(str));
+
+  if (options.compileDebug !== false) {
+    fn = [
+        'jade.debug = [{ lineno: 1, filename: ' + filename + ' }];'
+      , 'try {'
+      , parse(str, options)
+      , '} catch (err) {'
+      , '  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno' + (options.compileDebug === true ? ',' + JSON.stringify(str) : '') + ');'
+      , '}'
+    ].join('\n');
+  } else {
+    fn = parse(str, options);
+  }
+
+  if (options.client) return new Function('locals', fn)
+  fn = new Function('locals, jade', fn)
+  return function(locals){ return fn(locals, Object.create(runtime)) }
+};
+
+/**
+ * Render the given `str` of jade and invoke
+ * the callback `fn(err, str)`.
+ *
+ * Options:
+ *
+ *   - `cache` enable template caching
+ *   - `filename` filename required for `include` / `extends` and caching
+ *
+ * @param {String} str
+ * @param {Object|Function} options or fn
+ * @param {Function} fn
+ * @api public
+ */
+
+exports.render = function(str, options, fn){
+  // swap args
+  if ('function' == typeof options) {
+    fn = options, options = {};
+  }
+
+  // cache requires .filename
+  if (options.cache && !options.filename) {
+    return fn(new Error('the "filename" option is required for caching'));
+  }
+
+  try {
+    var path = options.filename;
+    var tmpl = options.cache
+      ? exports.cache[path] || (exports.cache[path] = exports.compile(str, options))
+      : exports.compile(str, options);
+    fn(null, tmpl(options));
+  } catch (err) {
+    fn(err);
+  }
+};
+
+/**
+ * Render a Jade file at the given `path` and callback `fn(err, str)`.
+ *
+ * @param {String} path
+ * @param {Object|Function} options or callback
+ * @param {Function} fn
+ * @api public
+ */
+
+exports.renderFile = function(path, options, fn){
+  var key = path + ':string';
+
+  if ('function' == typeof options) {
+    fn = options, options = {};
+  }
+
+  try {
+    options.filename = path;
+    var str = options.cache
+      ? exports.cache[key] || (exports.cache[key] = fs.readFileSync(path, 'utf8'))
+      : fs.readFileSync(path, 'utf8');
+    exports.render(str, options, fn);
+  } catch (err) {
+    fn(err);
+  }
+};
+
+/**
+ * Express support.
+ */
+
+exports.__express = exports.renderFile;
+ at SyntaxError: Octal literal in strict mode (98:45)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parseSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1738:37)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/markdown-binder/node_modules/markdown-binder/lib/main.js. Coverage (Term): 53% Coverage (LOC): 63%
+*- File /root/Targets/markdown-binder/node_modules/markdown-binder/lib/DataPublisher.js. Coverage (Term): 9% Coverage (LOC): 18%
+*- File /root/Targets/markdown-binder/node_modules/moment/moment.js. Coverage (Term): 13% Coverage (LOC): 30%
+*- File /root/Targets/markdown-binder/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/markdown-binder/node_modules/markdown-binder/lib/helper.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/markdown-binder/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/markdown-binder/node_modules/markdown-binder/lib/JadeTemplatePublisher.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/markdown-binder/node_modules/jade/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,892 @@
+
+> heapdump@0.3.9 install /root/Targets/wlpn-cli-server/node_modules/heapdump
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wlpn-cli-server/node_modules/heapdump/build'
+  CXX(target) Release/obj.target/addon/src/heapdump.o
+  SOLINK_MODULE(target) Release/obj.target/addon.node
+  COPY Release/addon.node
+make: Leaving directory '/root/Targets/wlpn-cli-server/node_modules/heapdump/build'
+
+> modern-syslog@1.1.4 install /root/Targets/wlpn-cli-server/node_modules/modern-syslog
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wlpn-cli-server/node_modules/modern-syslog/build'
+  CXX(target) Release/obj.target/core/core.o
+  SOLINK_MODULE(target) Release/obj.target/core.node
+  COPY Release/core.node
+make: Leaving directory '/root/Targets/wlpn-cli-server/node_modules/modern-syslog/build'
+
+> node-report@2.2.1 install /root/Targets/wlpn-cli-server/node_modules/node-report
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/wlpn-cli-server/node_modules/node-report/build'
+  CXX(target) Release/obj.target/api/src/node_report.o
+  CXX(target) Release/obj.target/api/src/module.o
+  CXX(target) Release/obj.target/api/src/utilities.o
+  SOLINK_MODULE(target) Release/obj.target/api.node
+  COPY Release/api.node
+  COPY /root/Targets/wlpn-cli-server/node_modules/node-report/api.node
+  TOUCH Release/obj.target/install.stamp
+make: Leaving directory '/root/Targets/wlpn-cli-server/node_modules/node-report/build'
+
+> appmetrics@3.1.0 install /root/Targets/wlpn-cli-server/node_modules/appmetrics
+> node extract_all_binaries.js || node-gyp rebuild
+
+Fri, 06 Oct 2017 01:55:33 GMT
+********************************************************************************
+You are installing the Node Application Metrics monitoring and profiling module.
+Licensed under the Apache License, Version 2.0 (the "License")
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+********************************************************************************
+7/appmetrics-3.1.0-linux-x64.tgz does not exist.
+Falling back to node-gyp rebuild
+make: Entering directory '/root/Targets/wlpn-cli-server/node_modules/appmetrics/build'
+  ACTION binding_gyp_appmetrics_target_Set_appmetrics_reported_version_build_level Release/obj.target/appmetrics/geni/appmetrics.cpp
+infile: ./src/appmetrics.cpp
+outfile: /root/Targets/wlpn-cli-server/node_modules/appmetrics/build/Release/obj.target/appmetrics/geni/appmetrics.cpp
+Replacing '"99\.99\.99\.29991231"' with '"3.1.0.201710060155"'
+  CXX(target) Release/obj.target/appmetrics/geni/appmetrics.o
+  CXX(target) Release/obj.target/appmetrics/src/headlessutils.o
+  CXX(target) Release/obj.target/appmetrics/src/objecttracker.o
+  SOLINK_MODULE(target) Release/obj.target/appmetrics.node
+  COPY Release/appmetrics.node
+  CXX(target) Release/obj.target/heapdump/src/heapdump/heapdump.o
+  SOLINK_MODULE(target) Release/obj.target/heapdump.node
+  COPY Release/heapdump.node
+  ACTION omr_agentcore_binding_gyp_agentcore_target_Set_core_reported_version_build_level Release/obj.target/agentcore/geni/monitoring/agent/Agent.cpp
+infile: ./src/ibmras/monitoring/agent/Agent.cpp
+outfile: /root/Targets/wlpn-cli-server/node_modules/appmetrics/build/Release/obj.target/agentcore/geni/monitoring/agent/Agent.cpp
+Replacing '"99\.99\.99\.29991231"' with '"3.2.2.201710060155"'
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/Logger.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/LogManager.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/MemoryManager.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/util/FileUtils.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/util/LibraryUtils.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/port/linux/Thread.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/port/linux/Process.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/port/Lock.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/port/ThreadData.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/Properties.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/PropertiesFile.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/util/strUtils.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/common/util/sysUtils.o
+  CXX(target) Release/obj.target/agentcore/geni/monitoring/agent/Agent.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/agent/threads/ThreadPool.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/agent/threads/WorkerThread.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/agent/SystemReceiver.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/connector/ConnectorManager.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/agent/Bucket.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/agent/BucketList.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/Plugin.o
+  CXX(target) Release/obj.target/agentcore/omr-agentcore/src/ibmras/monitoring/connector/configuration/ConfigurationConnector.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libagentcore.so
+  COPY Release/libagentcore.so
+  CXX(target) Release/obj.target/hcapiplugin/omr-agentcore/src/ibmras/monitoring/connector/api/APIConnector.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libhcapiplugin.so
+  COPY Release/libhcapiplugin.so
+  CXX(target) Release/obj.target/envplugin/omr-agentcore/src/ibmras/monitoring/plugins/common/environment/envplugin.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libenvplugin.so
+  COPY Release/libenvplugin.so
+  CXX(target) Release/obj.target/cpuplugin/omr-agentcore/src/ibmras/monitoring/plugins/common/cpu/cpuplugin.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libcpuplugin.so
+  COPY Release/libcpuplugin.so
+  CXX(target) Release/obj.target/memoryplugin/omr-agentcore/src/ibmras/monitoring/plugins/common/memory/MemoryPlugin.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libmemoryplugin.so
+  COPY Release/libmemoryplugin.so
+  CXX(target) Release/obj.target/headlessplugin/omr-agentcore/src/ibmras/monitoring/connector/headless/HLConnector.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libheadlessplugin.so
+  COPY Release/libheadlessplugin.so
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Clients.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Heap.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/LinkedList.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Log.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Messages.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTAsync.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTPacket.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTPacketOut.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTPersistence.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTPersistenceDefault.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTProtocolClient.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/MQTTProtocolOut.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/SocketBuffer.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Socket.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/StackTrace.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Thread.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/Tree.o
+  CC(target) Release/obj.target/hcmqtt/omr-agentcore/org.eclipse.paho.mqtt.c/src/utf-8.o
+  CXX(target) Release/obj.target/hcmqtt/omr-agentcore/src/ibmras/monitoring/connector/mqtt/MQTTConnector.o
+  SOLINK(target) Release/obj.target/omr-agentcore/libhcmqtt.so
+  COPY Release/libhcmqtt.so
+  COPY ../omr-agentcore/libagentcore.so
+  COPY ../omr-agentcore/plugins/libhcmqtt.so
+  COPY ../omr-agentcore/plugins/libcpuplugin.so
+  COPY ../omr-agentcore/plugins/libenvplugin.so
+  COPY ../omr-agentcore/plugins/libmemoryplugin.so
+  COPY ../omr-agentcore/plugins/libhcapiplugin.so
+  COPY ../omr-agentcore/plugins/libheadlessplugin.so
+  TOUCH Release/obj.target/omr-agentcore/external.stamp
+  TOUCH Release/obj.target/omr-agentcore.stamp
+  CXX(target) Release/obj.target/nodeenvplugin/src/plugins/node/env/nodeenvplugin.o
+  SOLINK(target) Release/obj.target/libnodeenvplugin.so
+  COPY Release/libnodeenvplugin.so
+  CXX(target) Release/obj.target/nodegcplugin/src/plugins/node/gc/nodegcplugin.o
+  SOLINK(target) Release/obj.target/libnodegcplugin.so
+  COPY Release/libnodegcplugin.so
+  CXX(target) Release/obj.target/nodeprofplugin/src/plugins/node/prof/nodeprofplugin.o
+  SOLINK(target) Release/obj.target/libnodeprofplugin.so
+  COPY Release/libnodeprofplugin.so
+  CXX(target) Release/obj.target/nodeloopplugin/src/plugins/node/loop/nodeloopplugin.o
+  SOLINK(target) Release/obj.target/libnodeloopplugin.so
+  COPY Release/libnodeloopplugin.so
+  CXX(target) Release/obj.target/nodeheapplugin/src/plugins/node/heap/nodeheapplugin.o
+  SOLINK(target) Release/obj.target/libnodeheapplugin.so
+  COPY Release/libnodeheapplugin.so
+  COPY ../appmetrics.node
+  COPY ../heapdump.node
+  COPY ../libagentcore.so
+  COPY ../plugins/libnodeenvplugin.so
+  COPY ../plugins/libnodeheapplugin.so
+  COPY ../plugins/libnodegcplugin.so
+  COPY ../plugins/libnodeprofplugin.so
+  COPY ../plugins/libnodeloopplugin.so
+  COPY ../plugins/libhcmqtt.so
+  COPY ../plugins/libcpuplugin.so
+  COPY ../plugins/libenvplugin.so
+  COPY ../plugins/libmemoryplugin.so
+  COPY ../plugins/libhcapiplugin.so
+  COPY ../plugins/libheadlessplugin.so
+  TOUCH Release/obj.target/install.stamp
+make: Leaving directory '/root/Targets/wlpn-cli-server/node_modules/appmetrics/build'
+
+> uws@0.14.5 install /root/Targets/wlpn-cli-server/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+/root/Targets/wlpn-cli-server
+└─┬ wlpn-cli-server@2.7.10 
+  ├─┬ apiconnect-collective-controller-api@2.0.1 
+  │ ├── async@1.5.2 
+  │ ├─┬ request@2.83.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.3 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.10.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ └── streamifier@0.1.1 
+  ├─┬ apiconnect-collective-jmx@1.2.0 
+  │ └── lodash@3.10.1 
+  ├─┬ apiconnect-collective-unpack-cli@1.0.4 
+  │ └─┬ tar-fs@1.16.0 
+  │   ├── chownr@1.0.1 
+  │   └─┬ tar-stream@1.5.4 
+  │     └── bl@1.2.1 
+  ├── async@2.5.0 
+  ├── bluebird@3.5.1 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   └── media-typer@0.3.0 
+  ├── byline@4.2.2 
+  ├─┬ chokidar@1.7.0 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├── kind-of@3.2.2 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@1.0.1 
+  │ ├── glob-parent@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├─┬ is-glob@2.0.1 
+  │ │ └── is-extglob@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@2.1.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── set-immediate-shim@1.0.1 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├─┬ express@4.16.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.1.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ get-port@2.1.0 
+  │ └─┬ pinkie-promise@2.0.1 
+  │   └── pinkie@2.0.4 
+  ├─┬ json-file-plus@3.3.0 
+  │ ├── is@3.2.1 
+  │ ├── node.extend@1.1.6 
+  │ └─┬ promiseback@2.0.2 
+  │   ├── is-callable@1.1.3 
+  │   └─┬ promise-deferred@2.0.1 
+  │     └─┬ promise@6.1.0 
+  │       └── asap@1.0.0 
+  ├── lodash@4.17.4 
+  ├─┬ loopback-swagger@2.9.0 
+  │ ├── async@1.5.2 
+  │ ├── ejs@2.5.7 
+  │ ├── lodash@3.10.1 
+  │ └── underscore.string@2.3.3 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── posix-getopt@1.2.0 
+  ├─┬ properties-reader@0.0.15 
+  │ └── mkdirp@0.3.5 
+  ├─┬ pump@1.0.2 
+  │ ├── end-of-stream@1.4.0 
+  │ └─┬ once@1.4.0 
+  │   └── wrappy@1.0.2 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   └── inflight@1.0.6 
+  ├─┬ strong-control-channel@2.2.3 
+  │ ├── async@0.9.2 
+  │ ├─┬ newline-json@0.1.1 
+  │ │ └── stream2buffer@0.0.4 
+  │ └─┬ ws@1.1.4 
+  │   ├── options@0.0.6 
+  │   └── ultron@1.0.2 
+  ├── strong-debug-utils@1.0.2 
+  ├─┬ strong-globalize@2.8.5 
+  │ ├── async@1.5.2 
+  │ ├── esprima@3.1.3 
+  │ ├── estraverse@4.2.0 
+  │ ├─┬ g11n-pipeline@1.5.1 
+  │ │ └─┬ swagger-client@2.1.32 
+  │ │   ├── btoa@1.1.2 
+  │ │   ├── cookiejar@2.1.1 
+  │ │   ├─┬ js-yaml@3.10.0 
+  │ │   │ └── esprima@4.0.0 
+  │ │   ├── lodash-compat@3.10.2 
+  │ │   ├── q@1.5.0 
+  │ │   └─┬ superagent@2.3.0 
+  │ │     ├── component-emitter@1.2.1 
+  │ │     ├─┬ form-data@1.0.0-rc4 
+  │ │     │ └── async@1.5.2 
+  │ │     └── formidable@1.1.1 
+  │ ├─┬ htmlparser2@3.9.2 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.4.1 
+  │ │ ├─┬ domutils@1.6.2 
+  │ │ │ └─┬ dom-serializer@0.1.0 
+  │ │ │   └── domelementtype@1.1.3 
+  │ │ └── entities@1.1.1 
+  │ ├─┬ md5@2.2.1 
+  │ │ ├── charenc@0.0.2 
+  │ │ ├── crypt@0.0.2 
+  │ │ └── is-buffer@1.1.5 
+  │ ├─┬ mktmpdir@0.1.1 
+  │ │ └── rimraf@2.2.8 
+  │ ├── optional@0.1.4 
+  │ ├─┬ os-locale@1.4.0 
+  │ │ └─┬ lcid@1.0.0 
+  │ │   └── invert-kv@1.0.0 
+  │ ├── word-count@0.2.2 
+  │ ├── xtend@4.0.1 
+  │ └─┬ yamljs@0.2.10 
+  │   └─┬ argparse@1.0.9 
+  │     └── sprintf-js@1.0.3 
+  ├── strong-pack@1.0.2 
+  ├─┬ strong-supervisor@6.2.0 
+  │ ├─┬ appmetrics@3.1.0 
+  │ │ ├─┬ jszip@2.5.0 
+  │ │ │ └── pako@0.2.9 
+  │ │ ├── nan@2.7.0 
+  │ │ ├── semver@5.4.1 
+  │ │ └─┬ tar@2.2.1 
+  │ │   ├── block-stream@0.0.9 
+  │ │   ├─┬ fstream@1.0.11 
+  │ │   │ ├── graceful-fs@4.1.11 
+  │ │   │ ├─┬ mkdirp@0.5.1 
+  │ │   │ │ └── minimist@0.0.8 
+  │ │   │ └─┬ rimraf@2.6.2 
+  │ │   │   └─┬ glob@7.1.2 
+  │ │   │     ├── fs.realpath@1.0.0 
+  │ │   │     ├─┬ inflight@1.0.6 
+  │ │   │     │ └── wrappy@1.0.2 
+  │ │   │     ├─┬ minimatch@3.0.4 
+  │ │   │     │ └─┬ brace-expansion@1.1.8 
+  │ │   │     │   ├── balanced-match@1.0.0 
+  │ │   │     │   └── concat-map@0.0.1 
+  │ │   │     ├─┬ once@1.4.0 
+  │ │   │     │ └── wrappy@1.0.2 
+  │ │   │     └── path-is-absolute@1.0.1 
+  │ │   └── inherits@2.0.3 
+  │ ├─┬ appmetrics-dash@3.3.3 
+  │ │ ├─┬ express-basic-auth@1.1.2 
+  │ │ │ ├─┬ @types/express@4.0.37 
+  │ │ │ │ ├─┬ @types/express-serve-static-core@4.0.53 
+  │ │ │ │ │ └── @types/node@8.0.32 
+  │ │ │ │ └─┬ @types/serve-static@1.7.32 
+  │ │ │ │   └── @types/mime@2.0.0 
+  │ │ │ └── basic-auth@1.1.0 
+  │ │ ├── node-report@2.2.1 
+  │ │ └─┬ socket.io@2.0.3 
+  │ │   ├─┬ engine.io@3.1.2 
+  │ │   │ ├── accepts@1.3.3 
+  │ │   │ ├── base64id@1.0.0 
+  │ │   │ ├─┬ engine.io-parser@2.1.1 
+  │ │   │ │ ├── after@0.8.2 
+  │ │   │ │ ├── arraybuffer.slice@0.0.6 
+  │ │   │ │ └── blob@0.0.4 
+  │ │   │ ├── uws@0.14.5 
+  │ │   │ └─┬ ws@2.3.1 
+  │ │   │   ├── safe-buffer@5.0.1 
+  │ │   │   └── ultron@1.1.0 
+  │ │   ├── object-assign@4.1.1 
+  │ │   ├── socket.io-adapter@1.1.1 
+  │ │   ├─┬ socket.io-client@2.0.3 
+  │ │   │ ├── backo2@1.0.2 
+  │ │   │ ├── base64-arraybuffer@0.1.5 
+  │ │   │ ├── component-bind@1.0.0 
+  │ │   │ ├─┬ engine.io-client@3.1.2 
+  │ │   │ │ ├── component-inherit@0.0.3 
+  │ │   │ │ ├─┬ ws@2.3.1 
+  │ │   │ │ │ ├── safe-buffer@5.0.1 
+  │ │   │ │ │ └── ultron@1.1.0 
+  │ │   │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │   │ │ └── yeast@0.1.2 
+  │ │   │ ├── has-cors@1.1.0 
+  │ │   │ ├── indexof@0.0.1 
+  │ │   │ ├── object-component@0.0.3 
+  │ │   │ ├─┬ parseqs@0.0.5 
+  │ │   │ │ └─┬ better-assert@1.0.2 
+  │ │   │ │   └── callsite@1.0.0 
+  │ │   │ ├── parseuri@0.0.5 
+  │ │   │ └── to-array@0.1.4 
+  │ │   └─┬ socket.io-parser@3.1.2 
+  │ │     ├─┬ has-binary2@1.0.2 
+  │ │     │ └── isarray@2.0.1 
+  │ │     └── isarray@2.0.1 
+  │ ├── dotenv@1.2.0 
+  │ ├── heapdump@0.3.9 
+  │ ├── modern-syslog@1.1.4 
+  │ ├─┬ strong-cluster-control@2.2.3 
+  │ │ └── lodash@3.10.1 
+  │ ├─┬ strong-log-transformer@1.0.6 
+  │ │ ├── byline@5.0.0 
+  │ │ ├── duplexer@0.1.1 
+  │ │ ├── minimist@0.1.0 
+  │ │ ├── moment@2.18.1 
+  │ │ └── through@2.3.8 
+  │ ├─┬ strong-npm-ls@1.0.10 
+  │ │ ├─┬ read-installed@4.0.3 
+  │ │ │ ├── debuglog@1.0.1 
+  │ │ │ ├─┬ read-package-json@2.0.12 
+  │ │ │ │ ├── json-parse-better-errors@1.0.1 
+  │ │ │ │ ├─┬ normalize-package-data@2.4.0 
+  │ │ │ │ │ ├── hosted-git-info@2.5.0 
+  │ │ │ │ │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ │ │ │ └── builtin-modules@1.1.1 
+  │ │ │ │ │ └─┬ validate-npm-package-license@3.0.1 
+  │ │ │ │ │   ├─┬ spdx-correct@1.0.2 
+  │ │ │ │ │   │ └── spdx-license-ids@1.2.2 
+  │ │ │ │ │   └── spdx-expression-parse@1.0.4 
+  │ │ │ │ └── slash@1.0.0 
+  │ │ │ ├─┬ readdir-scoped-modules@1.0.2 
+  │ │ │ │ └─┬ dezalgo@1.0.3 
+  │ │ │ │   └── asap@2.0.6 
+  │ │ │ ├── slide@1.1.6 
+  │ │ │ └── util-extend@1.0.3 
+  │ │ └── topiary@1.1.2 
+  │ ├─┬ strong-statsd@2.0.7 
+  │ │ ├── async@0.9.2 
+  │ │ └─┬ statsd-udpkv-backend@0.2.1 
+  │ │   ├── fmt@0.4.0 
+  │ │   └── underscore@1.4.4 
+  │ ├─┬ strong-trace@1.3.4 
+  │ │ ├── esprima@1.2.5 
+  │ │ ├── estraverse@1.9.3 
+  │ │ ├── glob-to-regexp@0.0.1 
+  │ │ ├─┬ stats-incremental@1.2.1 
+  │ │ │ └─┬ stats-lite@2.1.0 
+  │ │ │   └── isnumber@1.0.0 
+  │ │ ├─┬ statware@1.1.3 
+  │ │ │ ├── fixed-array@1.0.0 
+  │ │ │ └── stats-incremental@1.1.0 
+  │ │ ├─┬ strongloop-license@1.5.2 
+  │ │ │ ├─┬ strong-license@1.2.3 
+  │ │ │ │ └── jwt-simple@0.5.1 
+  │ │ │ └── user-home@1.1.1 
+  │ │ └─┬ transaction-tracer@1.1.0 
+  │ │   ├── eenano@1.0.0 
+  │ │   └── seqid@1.0.1 
+  │ └── strong-url-defaults@1.2.3 
+  ├── userhome@1.0.0 
+  ├─┬ winston@2.4.0 
+  │ ├── async@1.0.0 
+  │ ├── colors@1.0.3 
+  │ ├── cycle@1.0.3 
+  │ ├── eyes@0.1.8 
+  │ ├── isstream@0.1.2 
+  │ └── stack-trace@0.0.10 
+  └── wlpn-password@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wlpn-cli-server/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0389 took 2.8037s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (30:16) on program // Copyright IBM Corp. 2016,2017. All Rights Reserved.
+// Node module: wlpn-cli-server
+// US Government Users Restricted Rights - Use, duplication or disclosure
+// restricted by GSA ADP Schedule Contract with IBM Corp.
+
+'use strict';
+
+var SG = require('strong-globalize');
+SG.SetRootDir(__dirname);
+var g = SG();
+
+exports.getTopics = getTopics;
+exports.getComponents = getComponents;
+
+function getTopics() {
+  return [
+    {
+      name: 'server',
+      description: g.f('Commands to start, stop and manage Node.js servers.'),
+      commands: [
+        {
+          command: 'start <serverName>',
+          options: [
+            '-A, --adminPort <adminPort>',
+            '-W, --appPort <appPort>',
+          ],
+          action: function(serverName, cmd) {
+            var Promise = require('bluebird');
+            var _ = require('lodash');
+            var assert = require('assert');
+            var start = Promise.promisify(require('./lib/commands/start'));
+            assert(cmd.components, 'components are required!');
+            // The start command assigns to options.logger, which we don't want,
+            // so clone the options, and make options.logger can be different
+            // for the CLI code and the runtime code.
+            var opts = _.merge({}, cmd);
+            return start(serverName, opts);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('start.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'run <serverName>',
+          options: [
+            '-A, --adminPort <adminPort>',
+            '-W, --appPort <appPort>',
+          ],
+          action: function(serverName, cmd) {
+            var Promise = require('bluebird');
+            var _ = require('lodash');
+            var assert = require('assert');
+            var run = Promise.promisify(require('./lib/commands/run'));
+
+            assert(cmd.components, 'components are required!');
+            // The start command assigns to options.logger, which we don't want,
+            // so clone the options, and make options.logger can be different
+            // for the CLI code and the runtime code.
+            var opts = _.merge({}, cmd);
+            return run(serverName, opts);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('run.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'stop <serverName>',
+          action: function(serverName, cmd) {
+            var Promise = require('bluebird');
+            var assert = require('assert');
+            var stop = Promise.promisify(require('./lib/commands/stop'));
+            assert(cmd.components, 'components are required!');
+            return stop(serverName, cmd);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('stop.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'unpack <serverName> <srcPath> ',
+          action: function(serverName, srcPath, cmd) {
+            var Promise = require('bluebird');
+            var unpack = Promise.promisify(
+              require('./lib/commands/unpack'));
+            return unpack(srcPath, serverName);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('unpack.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'pack <srcPath>',
+          action: function(srcPath, cmd) {
+            var Promise = require('bluebird');
+            var pack = Promise.promisify(require('./lib/commands/pack'));
+            return pack(srcPath);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('pack.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'status <serverName>',
+          options: [
+            '-p, --parseable',
+          ],
+          action: function(serverName, cmd) {
+            var _ = require('lodash');
+            var Promise = require('bluebird');
+            var status = Promise.promisify(require('./lib/commands/status'));
+            var opts = _.merge({}, cmd);
+            return status(serverName, opts);
+          },
+          helpInfo: function() {
+            var defaults = require('./lib/defaults');
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('status.txt')
+                .replace(/%USERDIR%/g, defaults.wlpnUserDir)
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'list',
+          action: function(cmd) {
+            var Promise = require('bluebird');
+            var list = Promise.promisify(require('./lib/commands/list'));
+            return list(cmd);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('list.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'getPackage <srcFile>',
+          options: [
+            '-A, --autoAcceptCertificates',
+            '-H, --host <host>',
+            '-P, --port <port>',
+            '-o, --outputFile <outputFile>',
+            '-p, --password <password>',
+            '-u, --user <user>',
+          ],
+          action: function(srcFile, cmd) {
+            var Promise = require('bluebird');
+            var getPackage = Promise.promisify(
+              require('./lib/commands/get-package'));
+            cmd.srcFile = srcFile;
+            return getPackage(cmd);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('get-package.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'checkDeployDir <deployDir>',
+          action: function(deployDir, cmd) {
+            var Promise = require('bluebird');
+            var checkDeployDir = Promise.promisify(
+              require('./lib/commands/check-deploy-dir'));
+            cmd.deployDir = deployDir;
+            return checkDeployDir(cmd);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('check-deploy-dir.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'version',
+          action: function(cmd) {
+            var Promise = require('bluebird');
+            var pkg = require('./package.json');
+            return Promise.resolve(pkg.name + ': v' + pkg.version);
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]) || 'wlpn';
+            return g.f('version.txt')
+                .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'write',
+          options: [
+            '-f, --file <file>',
+            '-k, --key <key>',
+            '-v, --value <value>',
+          ],
+          action: function(cmd) {
+            var Promise = require('bluebird');
+            var Editor = require('./lib/json-editor');
+            var editor = new Editor({cfgPath: cmd.file});
+            Promise.promisifyAll(editor);
+
+            var obj = {};
+            obj[cmd.key] = cmd.value;
+            return editor.writeAsync(obj).then(function() {
+              // This Promise handler does not listen for the returned
+              // object; we don't want to give it to the end-user.
+              return g.f('Added key-value pair to %s: "%s": "%s"',
+                cmd.file, cmd.key, cmd.value);
+            });
+          },
+          helpInfo: function() {
+            var path = require('path');
+            var appName = path.basename(process.argv[1]);
+            return g.f('write.txt')
+              .replace(/%MAIN%/g, appName);
+          },
+        },
+        {
+          command: 'help',
+          action: topicHelp,
+          helpInfo: topicHelp,
+          aliases: [ 'server' ],
+        },
+      ],
+      helpInfo: topicHelp,
+    },
+  ];
+}
+
+function topicHelp() {
+  var defaults = require('./lib/defaults');
+  var path = require('path');
+
+  var appName = path.basename(process.argv[1]) || 'wlpn';
+  return g.f('server.txt')
+  .replace(/%ADMIN%/g, defaults.adminPort)
+  .replace(/%WORK%/g, defaults.appPort)
+  .replace(/%TIMEOUT%/g, defaults.timeout)
+  .replace(/%USERDIR%/g, defaults.wlpnUserDir)
+  .replace(/%MAIN%/g, appName);
+}
+
+// Helper function for shortening require calls.
+function getComponent(name, basePath) {
+  var path = require('path');
+  var compPath = './lib/components/';
+  if (basePath)
+    compPath = basePath;
+  return require(path.join(__dirname, compPath, name));
+}
+
+function getComponents() {
+  return [
+    {
+      name: 'env',
+      ctor: getComponent('env'),
+    },
+    {
+      name: 'runner',
+      ctor: getComponent('runner'),
+      required: true,
+    },
+    {
+      name: 'liveness-control',
+      ctor: getComponent('liveness-control'),
+    },
+    {
+      name: 'controller',
+      ctor: getComponent('controller'),
+    },
+    {
+      name: 'admin-info',
+      ctor: getComponent('admin-info'),
+    },
+    {
+      name: 'cluster-member',
+      ctor: getComponent('cluster-member'),
+    },
+    {
+      name: 'resource-usage',
+      ctor: getComponent('resource-usage'),
+    },
+    {
+      name: 'router-client',
+      ctor: getComponent('router-client'),
+    },
+    {
+      name: 'swagger-gen',
+      ctor: getComponent('swagger-gen'),
+    },
+    {
+      name: 'watcher',
+      ctor: getComponent('watcher'),
+    },
+  ];
+}
+ at SyntaxError: Unexpected token (30:16)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

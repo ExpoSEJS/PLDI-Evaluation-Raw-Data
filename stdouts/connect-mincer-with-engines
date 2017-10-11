@@ -1,0 +1,52 @@
+/root/Targets/connect-mincer-with-engines
+└─┬ connect-mincer-with-engines@0.2.5 
+  ├─┬ mincer@0.4.5 
+  │ ├─┬ argparse@0.1.16 
+  │ │ ├── underscore@1.7.0 
+  │ │ └── underscore.string@2.4.0 
+  │ ├── async@0.1.22 
+  │ ├─┬ fs-tools@0.2.11 
+  │ │ ├── async@0.2.10 
+  │ │ └── lodash@2.4.2 
+  │ ├── hike@0.1.4 
+  │ ├── mimoza@0.1.1 
+  │ ├── shellwords@0.1.1 
+  │ ├── types@0.1.1 
+  │ └── underscore@1.3.3 
+  └── underscore@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/connect-mincer-with-engines/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","getOwnPropertyNames","getOwnPropertyDescriptor","create","isArray","Date","RegExp","join","parseInt","sort"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 1.8862 took 320.3556s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/connect-mincer-with-engines/lib/connect-mincer.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/mincer/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/mincer/lib/mincer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/mimoza/lib/mimoza.js. Coverage (Term): 78% Coverage (LOC): 90%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/trail.js. Coverage (Term): 48% Coverage (LOC): 70%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/index.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/common.js. Coverage (Term): 23% Coverage (LOC): 34%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/paths.js. Coverage (Term): 48% Coverage (LOC): 59%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/normalized_array.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/extensions.js. Coverage (Term): 50% Coverage (LOC): 60%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/hike/lib/hike/aliases.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/types/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/types/lib/types.js. Coverage (Term): 62% Coverage (LOC): 75%
+*- File /root/Targets/connect-mincer-with-engines/node_modules/types/lib/types/hash.js. Coverage (Term): 19% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

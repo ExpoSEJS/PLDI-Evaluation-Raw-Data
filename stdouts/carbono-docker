@@ -1,0 +1,277 @@
+/root/Targets/carbono-docker
+└─┬ carbono-docker@0.0.4 
+  ├── colors@1.1.2 
+  ├─┬ dockerode@2.5.1 
+  │ ├─┬ concat-stream@1.5.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ readable-stream@2.0.6 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ ├── string_decoder@0.10.31 
+  │ │ │ └── util-deprecate@1.0.2 
+  │ │ └── typedarray@0.0.6 
+  │ ├─┬ docker-modem@1.0.2 
+  │ │ ├─┬ debug@2.6.9 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├─┬ JSONStream@0.10.0 
+  │ │ │ ├── jsonparse@0.0.5 
+  │ │ │ └── through@2.3.8 
+  │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ └── isarray@0.0.1 
+  │ │ └── split-ca@1.0.1 
+  │ └─┬ tar-fs@1.12.0 
+  │   ├─┬ mkdirp@0.5.1 
+  │   │ └── minimist@0.0.8 
+  │   ├─┬ pump@1.0.2 
+  │   │ ├── end-of-stream@1.4.0 
+  │   │ └─┬ once@1.4.0 
+  │   │   └── wrappy@1.0.2 
+  │   └─┬ tar-stream@1.5.4 
+  │     ├── bl@1.2.1 
+  │     └── xtend@4.0.1 
+  └── q@1.5.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/carbono-docker/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 15% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","parseInt","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0629 took 10.8537s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+var Parser = require('jsonparse')
+  , through = require('through')
+
+/*
+
+  the value of this.stack that creationix's jsonparse has is weird.
+
+  it makes this code ugly, but his problem is way harder that mine,
+  so i'll forgive him.
+
+*/
+
+exports.parse = function (path, map) {
+
+  var parser = new Parser()
+  var stream = through(function (chunk) {
+    if('string' === typeof chunk)
+      chunk = new Buffer(chunk)
+    parser.write(chunk)
+  },
+  function (data) {
+    if(data)
+      stream.write(data)
+    stream.queue(null)
+  })
+
+  if('string' === typeof path)
+    path = path.split('.').map(function (e) {
+      if (e === '*')
+        return true
+      else if (e === '') // '..'.split('.') returns an empty string
+        return {recurse: true}
+      else
+        return e
+    })
+
+
+  var count = 0, _key
+  if(!path || !path.length)
+    path = null
+
+  parser.onValue = function (value) {
+    if (!this.root)
+      stream.root = value
+
+    if(! path) return
+
+    var i = 0 // iterates on path
+    var j  = 0 // iterates on stack
+    while (i < path.length) {
+      var key = path[i]
+      var c
+      j++
+
+      if (key && !key.recurse) {
+        c = (j === this.stack.length) ? this : this.stack[j]
+        if (!c) return
+        if (! check(key, c.key)) return
+        i++
+      } else {
+        i++
+        var nextKey = path[i]
+        if (! nextKey) return
+        while (true) {
+          c = (j === this.stack.length) ? this : this.stack[j]
+          if (!c) return
+          if (check(nextKey, c.key)) { i++; break}
+          j++
+        }
+      }
+    }
+    if (j !== this.stack.length) return
+
+    count ++
+    var actualPath = this.stack.slice(1).map(function(element) { return element.key }).concat([this.key])
+    var data = this.value[this.key]
+    if(null != data)
+      if(null != (data = map ? map(data, actualPath) : data))
+        stream.queue(data)
+    delete this.value[this.key]
+  }
+  parser._onToken = parser.onToken;
+
+  parser.onToken = function (token, value) {
+    parser._onToken(token, value);
+    if (this.stack.length === 0) {
+      if (stream.root) {
+        if(!path)
+          stream.queue(stream.root)
+        stream.emit('root', stream.root, count)
+        count = 0;
+        stream.root = null;
+      }
+    }
+  }
+
+  parser.onError = function (err) {
+    stream.emit('error', err)
+  }
+
+
+  return stream
+}
+
+function check (x, y) {
+  if ('string' === typeof x)
+    return y == x
+  else if (x && 'function' === typeof x.exec)
+    return x.exec(y)
+  else if ('boolean' === typeof x)
+    return x
+  else if ('function' === typeof x)
+    return x(y)
+  return false
+}
+
+exports.stringify = function (op, sep, cl, indent) {
+  indent = indent || 0
+  if (op === false){
+    op = ''
+    sep = '\n'
+    cl = ''
+  } else if (op == null) {
+
+    op = '[\n'
+    sep = '\n,\n'
+    cl = '\n]\n'
+
+  }
+
+  //else, what ever you like
+
+  var stream
+    , first = true
+    , anyData = false
+  stream = through(function (data) {
+    anyData = true
+    var json = JSON.stringify(data, null, indent)
+    if(first) { first = false ; stream.queue(op + json)}
+    else stream.queue(sep + json)
+  },
+  function (data) {
+    if(!anyData)
+      stream.queue(op)
+    stream.queue(cl)
+    stream.queue(null)
+  })
+
+  return stream
+}
+
+exports.stringifyObject = function (op, sep, cl, indent) {
+  indent = indent || 0
+  if (op === false){
+    op = ''
+    sep = '\n'
+    cl = ''
+  } else if (op == null) {
+
+    op = '{\n'
+    sep = '\n,\n'
+    cl = '\n}\n'
+
+  }
+
+  //else, what ever you like
+
+  var first = true
+    , anyData = false
+  stream = through(function (data) {
+    anyData = true
+    var json = JSON.stringify(data[0]) + ':' + JSON.stringify(data[1], null, indent)
+    if(first) { first = false ; this.queue(op + json)}
+    else this.queue(sep + json)
+  },
+  function (data) {
+    if(!anyData) this.queue(op)
+    this.queue(cl)
+
+    this.queue(null)
+  })
+
+  return stream
+}
+
+if(!module.parent && process.title !== 'browser') {
+  process.stdin
+    .pipe(exports.parse(process.argv[2]))
+    .pipe(exports.stringify('[', ',\n', ']\n', 2))
+    .pipe(process.stdout)
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/carbono-docker/node_modules/carbono-docker/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/carbono-docker/node_modules/carbono-docker/lib/index.js. Coverage (Term): 64% Coverage (LOC): 100%
+*- File /root/Targets/carbono-docker/node_modules/carbono-docker/lib/classes/docker-manager.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/carbono-docker/node_modules/dockerode/lib/docker.js. Coverage (Term): 1% Coverage (LOC): 0%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/lib/modem.js. Coverage (Term): 6% Coverage (LOC): 2%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/lib/http.js. Coverage (Term): 31% Coverage (LOC): 34%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/lib/util.js. Coverage (Term): 45% Coverage (LOC): 47%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/readable.js. Coverage (Term): 91% Coverage (LOC): 92%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/carbono-docker/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/carbono-docker/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/carbono-docker/node_modules/docker-modem/lib/http_duplex.js. Coverage (Term): 27% Coverage (LOC): 39%
+*- File /root/Targets/carbono-docker/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/carbono-docker/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/carbono-docker/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/carbono-docker/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/carbono-docker/node_modules/split-ca/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

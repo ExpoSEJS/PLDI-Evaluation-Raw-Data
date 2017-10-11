@@ -1,0 +1,141 @@
+/root/Targets/meanstack-cli
+└─┬ meanstack-cli@0.4.6 
+  ├── bluebird@3.5.1 
+  ├─┬ commander@2.9.0 
+  │ └── graceful-readlink@1.0.1 
+  └─┬ shelljs@0.7.8 
+    ├─┬ glob@7.1.2 
+    │ ├── fs.realpath@1.0.0 
+    │ ├─┬ inflight@1.0.6 
+    │ │ └── wrappy@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ ├─┬ minimatch@3.0.4 
+    │ │ └─┬ brace-expansion@1.1.8 
+    │ │   ├── balanced-match@1.0.0 
+    │ │   └── concat-map@0.0.1 
+    │ ├── once@1.4.0 
+    │ └── path-is-absolute@1.0.1 
+    ├── interpret@1.0.4 
+    └─┬ rechoir@0.6.2 
+      └─┬ resolve@1.4.0 
+        └── path-parse@1.0.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/meanstack-cli/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0515 took 3.7678s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+/**
+ * MEANStack Client
+ *
+ * @author: Rafael Pegorari <rafapegorari@gmail.com>
+ * @copyright Copyright (c) 2015-2016, MEANStack.io.
+ * @license See License
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var program = require('commander'),
+    packageInfo = require('../package.json'),
+    argv = process.argv;
+
+program
+    .version('MEANStack Client, version ' + packageInfo.version, '-v, --version');
+
+program
+    .command('new <path_app>')
+    .option('-d, --verifyDependencies <verifyDependencies>', 'Verify dependencies.', true)
+    .option('-g, --git', 'Use Git, SVN will be used by default with web URL.')
+    .option('-b, --branch <branch>', 'Specify the branch version.')
+    .description('Create a new MEANStack application')
+    .action(require('../lib/commands/new'));
+
+program
+    .command('serve')
+    .option('-i, --index <index>', 'File index for start application', 'index')
+    .option('-e, --nodeEnv <nodeEnv>', 'Environment mode.', 'development')
+    .option('-p, --port <port>', 'Environment variable PORT.')
+    .option('-d, --debug <debug>', 'Use the debug module for log information about application.')
+    .option('-n, --nodemon <nodemon>', 'Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development. By default it is used.', true)
+    .description('Run application MEANStack')
+    .action(require('../lib/commands/run'));
+
+program
+    .command('db:seed')
+    .description('Run seeder')
+    .option('-s, --seed <seed>', 'Use the specified seed. Used by default seed index.', 'index')
+    .action(require('../lib/commands/database/seeder'));
+
+program
+    .command('db:reset')
+    .option('-i, --ignoreModels <ignoreModels>', 'Ignore models.')
+    .description('Reset database MongoDB.')
+    .action(require('../lib/commands/database/reset'));
+
+program
+    .command('make:controller <controller>')
+    .option('-r, --resource', 'Create RESTful controller.')
+    .option('-m, --model <model>', 'Include model.')
+    .description('Make controller.')
+    .action(require('../lib/commands/make/controller'));
+
+program
+    .command('make:model <model>')
+    .description('Make model.')
+    .option('-p, --pluralization <pluralization>', 'Pluralize collection name.', true)
+    .action(require('../lib/commands/make/model'));
+
+program
+    .command('make:request <request>')
+    .description('Make request.')
+    .action(require('../lib/commands/make/request'));
+
+program
+    .command('make:seed <seed>')
+    .option('-m, --model <model>', 'Model.')
+    .description('Make seed.')
+    .action(require('../lib/commands/make/seed'));
+
+program
+    .command('make:auth')
+    .description('Make auth.')
+    .action(require('../lib/commands/make/auth'));
+
+// Show help on unknown commands
+program.on('*', function () {
+    program.help();
+});
+
+// If no command specified
+if (program.parse(argv).args.length === 0) {
+    // display help
+    program.help();
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,125 @@
+
+> ws@0.4.32 install /root/Targets/emberbase/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/emberbase/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/emberbase/node_modules/ws/build'
+
+> leveldown@0.10.6 install /root/Targets/emberbase/node_modules/leveldown
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/emberbase/node_modules/leveldown/build'
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/builder.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/db_impl.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/db_iter.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/filename.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/dbformat.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/log_reader.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/log_writer.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/memtable.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/repair.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/table_cache.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/version_edit.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/version_set.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/db/write_batch.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/helpers/memenv/memenv.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/block.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/block_builder.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/filter_block.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/format.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/iterator.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/merger.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/table.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/table_builder.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/table/two_level_iterator.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/arena.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/bloom.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/cache.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/coding.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/comparator.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/crc32c.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/env.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/filter_policy.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/hash.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/logging.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/options.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/status.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/port/port_posix.o
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-1.14.0/util/env_posix.o
+  AR(target) Release/obj.target/deps/leveldb/leveldb.a
+  COPY Release/leveldb.a
+  CXX(target) Release/obj.target/snappy/deps/snappy/snappy-1.1.1/snappy-sinksource.o
+  CXX(target) Release/obj.target/snappy/deps/snappy/snappy-1.1.1/snappy-stubs-internal.o
+  CXX(target) Release/obj.target/snappy/deps/snappy/snappy-1.1.1/snappy.o
+  AR(target) Release/obj.target/deps/snappy/snappy.a
+  COPY Release/snappy.a
+  CXX(target) Release/obj.target/leveldown/src/batch.o
+leveldown.target.mk:114: recipe for target 'Release/obj.target/leveldown/src/batch.o' failed
+make: Leaving directory '/root/Targets/emberbase/node_modules/leveldown/build'
+/root/Targets/emberbase
+├─┬ body-parser@1.2.2 
+│ ├── bytes@1.0.0 
+│ ├── qs@0.6.6 
+│ ├── raw-body@1.1.6 
+│ └─┬ type-is@1.2.0 
+│   └── mime@1.2.11 
+├── commander@2.2.0 
+├─┬ cookie-parser@1.1.0 
+│ ├── cookie@0.1.2 
+│ └── cookie-signature@1.0.3 
+├─┬ cookie-session@1.0.2 
+│ ├─┬ cookies@0.4.1 
+│ │ └── keygrip@1.0.2 
+│ └─┬ debug@3.1.0 
+│   └── ms@2.0.0 
+├── ejs@1.0.0 
+├─┬ express@4.0.0 
+│ ├─┬ accepts@1.0.0 
+│ │ └── negotiator@0.3.0 
+│ ├── buffer-crc32@0.2.1 
+│ ├── cookie@0.1.0 
+│ ├── debug@0.8.1 
+│ ├── escape-html@1.0.1 
+│ ├── fresh@0.2.2 
+│ ├── merge-descriptors@0.0.2 
+│ ├── methods@0.1.0 
+│ ├── parseurl@1.0.1 
+│ ├── path-to-regexp@0.1.2 
+│ ├── range-parser@1.0.0 
+│ ├── send@0.2.0 
+│ ├─┬ serve-static@1.0.1 
+│ │ └─┬ send@0.1.4 
+│ │   ├── fresh@0.2.0 
+│ │   └── range-parser@0.0.4 
+│ ├── type-is@1.0.0 
+│ └── utils-merge@1.0.0 
+├─┬ levelup@0.18.6 
+│ ├── bl@0.8.2 
+│ ├─┬ deferred-leveldown@0.2.0 
+│ │ └── abstract-leveldown@0.12.4 
+│ ├── errno@0.1.4 
+│ ├── prr@0.0.0 
+│ ├─┬ readable-stream@1.0.34 
+│ │ ├── core-util-is@1.0.2 
+│ │ ├── inherits@2.0.3 
+│ │ ├── isarray@0.0.1 
+│ │ └── string_decoder@0.10.31 
+│ ├── semver@2.3.2 
+│ └── xtend@3.0.0 
+└─┬ socket.io@0.9.19 
+  ├── base64id@0.1.0 
+  ├── policyfile@0.0.4 
+  ├── redis@0.7.3 
+  └─┬ socket.io-client@0.9.16 
+    ├─┬ active-x-obfuscator@0.0.1 
+    │ └── zeparser@0.0.5 
+    ├── uglify-js@1.2.5 
+    ├─┬ ws@0.4.32 
+    │ ├── commander@2.1.0 
+    │ ├── nan@1.0.0 
+    │ ├── options@0.0.6 
+    │ └── tinycolor@0.0.1 
+    └── xmlhttprequest@1.4.2 
+

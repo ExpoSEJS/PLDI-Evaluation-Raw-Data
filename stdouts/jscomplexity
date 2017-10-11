@@ -1,0 +1,73 @@
+/root/Targets/jscomplexity
+└─┬ jscomplexity@2.0.0 
+  ├── bluebird@2.3.11 
+  ├── cli-table@0.3.1 
+  ├── colors@1.0.3 
+  ├── commander@2.5.0 
+  ├─┬ complexity-report@1.0.6 
+  │ ├── check-types@1.1.1 
+  │ ├── commander@2.0.0 
+  │ └─┬ escomplex-js@0.1.4 
+  │   └── esprima@1.0.4 
+  ├─┬ escomplex@0.2.5 
+  │ └── matrix-utilities@1.2.4 
+  ├─┬ escomplex-ast-moz@0.1.5 
+  │ └── escomplex-traits@0.2.0 
+  ├── esprima@1.2.2 
+  ├─┬ glob@4.3.1 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@2.0.10 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ └── once@1.4.0 
+  ├─┬ handlebars@1.3.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  └── lodash@2.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jscomplexity/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0439 took 11.2944s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jscomplexity/node_modules/jscomplexity/index.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/jscomplexity/node_modules/jscomplexity/src/scan.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/bluebird.js. Coverage (Term): 70% Coverage (LOC): 100%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/promise.js. Coverage (Term): 17% Coverage (LOC): 29%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/util.js. Coverage (Term): 31% Coverage (LOC): 47%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/es5.js. Coverage (Term): 55% Coverage (LOC): 55%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/async.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/schedule.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/queue.js. Coverage (Term): 24% Coverage (LOC): 39%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/errors.js. Coverage (Term): 43% Coverage (LOC): 58%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/thenables.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/promise_array.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/captured_trace.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/catch_filter.js. Coverage (Term): 22% Coverage (LOC): 27%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/promise_resolver.js. Coverage (Term): 24% Coverage (LOC): 37%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/errors_api_rejection.js. Coverage (Term): 47% Coverage (LOC): 53%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/finally.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/direct_resolve.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/synchronous_inspection.js. Coverage (Term): 38% Coverage (LOC): 51%
+*- File /root/Targets/jscomplexity/node_modules/bluebird/js/main/join.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File evalIndirect. Coverage (Term): 12% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

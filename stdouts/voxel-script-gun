@@ -1,0 +1,46 @@
+/root/Targets/voxel-script-gun
+└─┬ voxel-script-gun@0.0.1 
+  ├── inherits@1.0.0 
+  └─┬ voxel-engine@0.3.5 
+    ├─┬ aabb-3d@0.0.0 
+    │ └── gl-matrix@2.4.0 
+    ├── collide-3d-tilemap@0.0.1 
+    ├─┬ interact@0.0.2 
+    │ ├─┬ drag-stream@0.0.2 
+    │ │ ├─┬ domnode-dom@0.0.4 
+    │ │ │ └─┬ domnode@0.0.3 
+    │ │ │   └── mustache@0.4.0 
+    │ │ └── through@1.1.2 
+    │ ├── fullscreen@0.0.1 
+    │ └── pointer-lock@0.0.3 
+    ├── player-physics@0.0.11 
+    ├── raf@0.0.1 
+    ├── spatial-events@0.0.0 
+    ├── spatial-trigger@0.0.0 
+    ├── three@0.54.0 
+    ├── toolbar@0.0.2 
+    ├── voxel@0.1.1 
+    ├── voxel-mesh@0.1.0 
+    └─┬ voxel-texture@0.2.2 
+      └── three@0.55.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/voxel-script-gun/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 6% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0292 took 21.0971s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: navigator is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/voxel-script-gun/node_modules/voxel-script-gun/index.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/voxel-script-gun/node_modules/voxel-script-gun/codemirror/codemirror.js. Coverage (Term): 2% Coverage (LOC): 4%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

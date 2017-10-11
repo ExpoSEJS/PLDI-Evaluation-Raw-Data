@@ -1,0 +1,57 @@
+
+> websocket@1.0.24 install /root/Targets/sublime-amqp/node_modules/websocket
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/sublime-amqp/node_modules/websocket/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/sublime-amqp/node_modules/websocket/build'
+/root/Targets/sublime-amqp
+└─┬ sublime-amqp@0.0.13 
+  ├─┬ shoe@0.0.15 
+  │ ├─┬ sockjs@0.3.7 
+  │ │ ├── faye-websocket@0.4.4 
+  │ │ └── node-uuid@1.3.3 
+  │ └── sockjs-client@0.0.0-unreleasable 
+  ├─┬ stompjs@2.3.3 
+  │ └─┬ websocket@1.0.24 
+  │   ├─┬ debug@2.6.9 
+  │   │ └── ms@2.0.0 
+  │   ├── nan@2.7.0 
+  │   ├─┬ typedarray-to-buffer@3.1.2 
+  │   │ └── is-typedarray@1.0.0 
+  │   └── yaeti@0.0.6 
+  └─┬ sublime-core@0.0.20 
+    ├── detect-node@2.0.3 
+    ├── intravenous@0.1.4-beta 
+    ├── lodash@3.10.1 
+    ├── logdown@1.5.0 
+    ├── portable-uuid@0.1.0 
+    ├── property.js@0.0.2 
+    ├── stately.js@1.3.0 
+    └── when@3.7.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sublime-amqp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0431 took 3.2742s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'sublime-core'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sublime-amqp/node_modules/sublime-amqp/out/index.js. Coverage (Term): 73% Coverage (LOC): 100%
+*- File /root/Targets/sublime-amqp/node_modules/sublime-amqp/out/modules/queue.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

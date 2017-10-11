@@ -1,0 +1,267 @@
+
+> hiredis@0.5.0 install /root/Targets/magic-reload/node_modules/hiredis
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/magic-reload/node_modules/hiredis/build'
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/sds.o
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/read.o
+  AR(target) Release/obj.target/deps/hiredis-c.a
+  COPY Release/hiredis-c.a
+  CXX(target) Release/obj.target/hiredis/src/hiredis.o
+  CXX(target) Release/obj.target/hiredis/src/reader.o
+  SOLINK_MODULE(target) Release/obj.target/hiredis.node
+  COPY Release/hiredis.node
+make: Leaving directory '/root/Targets/magic-reload/node_modules/hiredis/build'
+
+> ws@0.4.32 install /root/Targets/magic-reload/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/magic-reload/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/magic-reload/node_modules/ws/build'
+/root/Targets/magic-reload
+└─┬ magic-reload@0.0.21 
+  ├── async@0.1.22 
+  ├── coffee-script@1.12.7 
+  ├─┬ express@3.0.0-rc3 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.4.3 
+  │ │ ├── bytes@0.1.0 
+  │ │ ├── formidable@1.0.11 
+  │ │ ├── pause@0.0.1 
+  │ │ └── qs@0.4.2 
+  │ ├── cookie@0.0.4 
+  │ ├── crc@0.2.0 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.3 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.0.3 
+  │   └── mime@1.2.6 
+  ├─┬ jade@0.27.2 
+  │ └── mkdirp@0.3.0 
+  ├─┬ minimatch@0.2.6 
+  │ └── lru-cache@2.0.4 
+  ├─┬ optimist@0.3.7 
+  │ └── wordwrap@0.0.3 
+  ├─┬ socket.io@0.9.10 
+  │ ├── policyfile@0.0.4 
+  │ ├─┬ redis@0.7.2 
+  │ │ └─┬ hiredis@0.5.0 
+  │ │   ├── bindings@1.3.0 
+  │ │   └── nan@2.7.0 
+  │ └─┬ socket.io-client@0.9.10 
+  │   ├─┬ active-x-obfuscator@0.0.1 
+  │   │ └── zeparser@0.0.5 
+  │   ├── uglify-js@1.2.5 
+  │   ├─┬ ws@0.4.32 
+  │   │ ├── commander@2.1.0 
+  │   │ ├── nan@1.0.0 
+  │   │ ├── options@0.0.6 
+  │   │ └── tinycolor@0.0.1 
+  │   └── xmlhttprequest@1.4.2 
+  ├── underscore@1.3.3 
+  └── yaml@0.2.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/magic-reload/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0545 took 3.7871s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env coffee
+
+_               = require "underscore"
+express         = require 'express'
+app             = express()
+socketIo        = require('socket.io')
+fs              = require 'fs'
+path            = require 'path'
+async           = require 'async'
+spawn           = require('child_process').spawn
+Plugins         = new (require './lib/plugins')()
+
+server = app.listen 35538
+io = socketIo.listen(server, origins: '*:*', log: false)
+Watcher = require('./lib/watcher')(io)
+
+# Express config
+app.use express.methodOverride()
+app.use express.bodyParser()
+app.use express.static __dirname + '/public'
+app.set 'view engine', 'jade'
+
+app.get '/', (req, res) ->
+  res.render __dirname + '/views/index.jade'
+
+send500 = (res) -> res.send 500, 'Something broke !'
+
+
+class Project
+  @projectsDir = __dirname + '/projects/'
+
+  @findOne = (id, next) ->
+    @parseFile @projectsDir+id+'.json', next
+
+  @all = (next) ->
+    fs.readdir @projectsDir, (err, files) =>
+      return next err if err
+      return next null, [] if files.length < 0
+
+      filesPath = []
+      _.each files, (file) =>
+        filesPath.push @projectsDir+file
+
+      @parseFiles filesPath, (err, files) ->
+        files = _.sortBy files, (v) -> v.id
+        next null, files
+
+  @edit = (id, object, next) ->
+    file = @projectsDir+id+'.json'
+    object.id = id unless object.id
+    Project.writeFile file , object, (err) ->
+      return next err if err
+      next null, object
+
+  @create = (object, next) ->
+    id = @createId (err, id) =>
+      return next err if err
+      @edit id, object, next
+
+  @createId = (next) ->
+    @all (err, projects) ->
+      return next err if err
+      unless projects.length > 0
+        return next null, 1
+      sorted = _.sortBy projects, (val) ->
+        return val.id
+      next null, +_.last(sorted).id
+
+  @remove = (id, next) ->
+    file = @projectsDir+id+'.json'
+    @deleteFile file, next
+
+
+  @deleteFile = (file, next) ->
+    fs.unlink file, next
+
+  @parseFile = (file, next) ->
+    if path.extname(file) is ".json"
+      fs.readFile file, (err, data) ->
+        return next err if err
+
+        obj = id: path.basename(file, '.json')
+        fileParsed = JSON.parse(data.toString('ascii'))
+        next null, _.extend obj, fileParsed
+    else next 'need to be a json file'
+
+  @parseFiles = (files, next, result) ->
+    result = [] unless result
+    if files.length > 0
+      file = files.shift()
+      @parseFile file, (err, fileParsed) =>
+        result.push fileParsed
+        @parseFiles files, next, result
+    else next null, result
+
+  @writeFile = (file, json, next) ->
+    if path.extname(file) is ".json"
+      string = JSON.stringify json
+      fs.writeFile file, string, (err) ->
+        return next err if err
+        next null
+    else next 'need to be a json file'
+
+Watchers = {}
+plugins = Plugins
+plugins.load()
+Project.all (err, projects) ->
+  throw new Error if err
+  _.each projects, (project) ->
+    Watchers[project.id] = new Watcher project, plugins
+
+
+projects_routes =
+  index: (req, res) ->
+    Project.all (err, projects) ->
+      return send500(res) if err
+      res.send projects
+
+  show: (req, res) ->
+    if req.params.projects
+      Project.findOne req.params.projects, (err, project) ->
+        return send500(res) if err
+        res.send project
+    else send500(res)
+
+  create: (req, res) ->
+    default_project =
+      enable: true
+      directories: ''
+      extensions: ''
+      ignore: ''
+
+      compilations: [
+        name: 'CoffeeScript'
+        enable: true
+      ,
+        name: 'Jade'
+        enable: true
+      ,
+        name: 'Stylus'
+        enable: true
+      ]
+    project = _.extend default_project, req.body
+
+    Project.create project, (err, project)->
+      return send500(res) if err
+      Watchers[project.id] = new Watcher project
+      res.send project
+
+  edit: (req, res) ->
+    Project.edit req.body.id, req.body, (err, project) ->
+      return send500(res) if err
+
+      res.send project
+      Watchers[req.body.id].reloadWatcher(project)
+
+  delete: (req, res) ->
+    Project.remove req.params.projects, (err)->
+      return send500(res) if err
+      Watchers[req.params.projects].deleteWatcher()
+      delete Watchers[req.params.projects]
+      res.send {}
+
+app.get '/projects', projects_routes['index'] if projects_routes['index']
+app.get '/projects/:projects', projects_routes['show'] if projects_routes['show']
+app.post '/projects', projects_routes['create'] if projects_routes['create']
+app.put '/projects/:projects', projects_routes['edit'] if projects_routes['edit']
+app.del '/projects/:projects', projects_routes['delete'] if projects_routes['delete']
+
+
+spawn('open', ['http://localhost:35538'])
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

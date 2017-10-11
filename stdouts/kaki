@@ -1,0 +1,229 @@
+/root/Targets/kaki
+└─┬ kaki@2.0.0 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── commander@2.11.0 
+  ├── microasync@1.0.3 
+  └─┬ ora@0.2.3 
+    ├─┬ cli-cursor@1.0.2 
+    │ └─┬ restore-cursor@1.0.1 
+    │   ├── exit-hook@1.1.1 
+    │   └── onetime@1.1.0 
+    ├── cli-spinners@0.1.2 
+    └── object-assign@4.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/kaki/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0657 took 5.0693s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var program = require('commander');
+var ora = require('ora');
+var fs = require('./../lib/fs-improved');
+var types = require('./../lib/types');
+var filters = require('./../lib/filters');
+var defaultConfig = require('./../lib/default-config');
+var util = require('./../lib/util');
+var err = require('./../lib/error');
+var spinner = ora('searching files');
+
+var timeStart = 0;
+var typeList = types.getAll();
+var selectedTypes = [];
+
+/**
+ * configure input options
+ */
+function initialize() {
+
+    program
+        .version('1.5.8')
+        .option('-i, --ignorecase', 'Ignore case distinctions')
+        .option('-t, --extension <items>', 'Filter by custom types ex: ".app,.jar,.exe"')
+        .option('-R, --rec', 'Recurse into subdirectories')
+        .option('-x, --text [text]', 'Find text or /regex/ in files')
+        .option('-w, --word [word]', 'Force PATTERN to match only whole words or /regex/ (file name)')
+        .option('-v, --invert', 'Invert match: select non-matching lines')
+        .option('--ignore-dir <items>', 'Ignore directories')
+        .option('--ignore-file <items>', 'Ignore files')
+        .option('--ignore-ext <items>', 'Ignore extensions')
+        .option('--sort', 'Sort the found files');
+
+
+    //dynamic generate options
+    Object.keys(typeList).forEach(function(type) {
+        program.option('--' + type, 'filter ' + type + ' files');
+    });
+
+    program.parse(process.argv);
+    checkParams();
+}
+
+/**
+ * check passed params and populate selectedType
+ */
+function checkParams() {
+
+    timeStart = Date.now();
+    spinner.start();
+    filters.configure(program.ignorecase, program.invert);
+
+    //verify if path exists
+    if (program.args[0]) {
+        fs.access(program.args[0], function (error) {
+            if (error) {
+                err.shallStop('ERROR: path not found.');
+            }
+        });
+    }
+
+    shouldIgnore();
+
+    //if extension param exists
+    if (program.extension) {
+        program.extension.split(",").forEach(function (el) {
+            selectedTypes.push(el);
+        });
+    }
+
+    //verify dynamic type params
+    Object.keys(typeList).forEach(function(type) {
+        if (program[type]) {
+            types.get(type).forEach(function (el) {
+                selectedTypes.push(el);
+            });
+        }
+    });
+
+    var path = program.args[0] || process.cwd();
+    // go recursively or not
+    if (program.rec) {
+        fs.readdirRec(path, applyFilters);
+    } else {
+        fs.readdir(path, applyFilters);
+    }
+
+    function shouldIgnore() {
+        var ignoreDirList, ignoreFileList, ignoreExtList;
+
+        //ignore directories
+        if (program.ignoreDir) {
+            ignoreDirList = program.ignoreDir.split(',');
+        }
+
+        if (program.ignoreFile) {
+            ignoreFileList = program.ignoreFile.split(',');
+        }
+
+        if (program.ignoreExt) {
+            ignoreExtList = program.ignoreExt.split(',');
+        }
+        defaultConfig.setIgnoreList(ignoreDirList, ignoreFileList, ignoreExtList);
+    }
+}
+
+/**
+ * filter files based on input params
+ * @param err
+ * @param {Array <string>} files
+ */
+function applyFilters(error, files) {
+
+    if (error)
+        err.shallStop(error);
+
+    runFilters(files);
+
+    function runFilters(files) {
+        files = filters.validExtensions(files, selectedTypes);
+
+        //sort files by base name
+        if (program.sort) {
+            util.sortByFirstLetter(files);
+        }
+
+        //search by file name
+        if (program.word) {
+            files = filters.fileNameMatch(files, program.word);
+        }
+
+        //search by file content
+        if (program.text) {
+            filters.fileContentMatch(files, program.text, function (error, result) {
+                if (error)
+                    err.shallStop(error);
+                processResult(result);
+            });
+        } else {
+            processResult(files);
+        }
+    }
+
+    /**
+     * print result after all filters
+     * @param response
+     */
+    function processResult(response) {
+        spinner.stop();
+
+        if (!response.length)
+            err.shallStop('-- sorry, no files were found --');
+
+        if (response && typeof response[0] === 'object') {
+            printForTextSearch(response);
+        } else {
+            util.print(response.join('\n'))();
+            util.print('\n%s matched file(s) in %s ms\n',
+                    response.length, Date.now() - timeStart)('yellow');
+        }
+
+
+        //print matched files and related lines that contains the searched expression
+        function printForTextSearch(input) {
+            var totalMatches = 0;
+            var totalLines = 0;
+            input.forEach(function (item) {
+                totalMatches += item.matches;
+                totalLines += item.lines.length;
+                util.print(item.file)('green');
+                if (item.lines.length) {
+                    util.print(item.lines.join('\n'))();
+                }
+            });
+            util.print("\nTotal of: %s file(s), %s line(s), %s matche(s) in %sms ",
+                    input.length, totalLines, totalMatches, Date.now() - timeStart)('yellow');
+        }
+    }
+}
+
+initialize();
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

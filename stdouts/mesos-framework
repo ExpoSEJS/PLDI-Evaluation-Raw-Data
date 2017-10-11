@@ -1,0 +1,106 @@
+/root/Targets/mesos-framework
+└─┬ mesos-framework@0.6.0 
+  ├── lodash@4.17.4 
+  ├─┬ node-zookeeper-client@0.2.2 
+  │ ├── async@0.2.10 
+  │ └── underscore@1.4.4 
+  ├─┬ protobufjs@5.0.2 
+  │ ├─┬ ascli@1.0.1 
+  │ │ ├── colour@0.7.1 
+  │ │ └── optjs@3.2.2 
+  │ ├─┬ bytebuffer@5.0.1 
+  │ │ └── long@3.2.0 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ ├── once@1.4.0 
+  │ │ └── path-is-absolute@1.0.1 
+  │ └─┬ yargs@3.32.0 
+  │   ├── camelcase@2.1.1 
+  │   ├─┬ cliui@3.2.0 
+  │   │ ├─┬ strip-ansi@3.0.1 
+  │   │ │ └── ansi-regex@2.1.1 
+  │   │ └── wrap-ansi@2.1.0 
+  │   ├── decamelize@1.2.0 
+  │   ├─┬ os-locale@1.4.0 
+  │   │ └─┬ lcid@1.0.0 
+  │   │   └── invert-kv@1.0.0 
+  │   ├─┬ string-width@1.0.2 
+  │   │ ├── code-point-at@1.1.0 
+  │   │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │   └── number-is-nan@1.0.1 
+  │   ├── window-size@0.1.4 
+  │   └── y18n@3.2.1 
+  ├── requirefrom@0.2.1 
+  ├── uuid@3.1.0 
+  ├─┬ winston@2.3.1 
+  │ ├── async@1.0.0 
+  │ ├── colors@1.0.3 
+  │ ├── cycle@1.0.3 
+  │ ├── eyes@0.1.8 
+  │ ├── isstream@0.1.2 
+  │ └── stack-trace@0.0.10 
+  └─┬ winston-daily-rotate-file@1.7.2 
+    └─┬ mkdirp@0.5.1 
+      └── minimist@0.0.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mesos-framework/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","randomBytes","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","defineProperties","toUpperCase","reduce","isArray","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0256 took 40.097s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module '/root/Targets/mesos-framework/lib/mesos'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mesos-framework/node_modules/mesos-framework/index.js. Coverage (Term): 37% Coverage (LOC): 63%
+*- File /root/Targets/mesos-framework/node_modules/mesos-framework/lib/scheduler.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/mesos-framework/node_modules/uuid/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/uuid/v1.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/mesos-framework/node_modules/uuid/lib/rng.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/uuid/lib/bytesToUuid.js. Coverage (Term): 22% Coverage (LOC): 73%
+*- File /root/Targets/mesos-framework/node_modules/uuid/v4.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/mesos-framework/node_modules/mesos-framework/lib/helpers.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/mesos-framework/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston.js. Coverage (Term): 55% Coverage (LOC): 73%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/transports.js. Coverage (Term): 66% Coverage (LOC): 88%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/common.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/mesos-framework/node_modules/cycle/cycle.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/config.js. Coverage (Term): 56% Coverage (LOC): 62%
+*- File /root/Targets/mesos-framework/node_modules/colors/safe.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/colors.js. Coverage (Term): 44% Coverage (LOC): 56%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/styles.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/system/supports-colors.js. Coverage (Term): 62% Coverage (LOC): 44%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/custom/trap.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/custom/zalgo.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/maps/america.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/maps/zebra.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/maps/rainbow.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/mesos-framework/node_modules/colors/lib/maps/random.js. Coverage (Term): 57% Coverage (LOC): 94%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/config/cli-config.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/config/npm-config.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/config/syslog-config.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/exception.js. Coverage (Term): 26% Coverage (LOC): 30%
+*- File /root/Targets/mesos-framework/node_modules/stack-trace/lib/stack-trace.js. Coverage (Term): 24% Coverage (LOC): 30%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/container.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/logger.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/Targets/mesos-framework/node_modules/winston/node_modules/async/lib/async.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/transports/transport.js. Coverage (Term): 40% Coverage (LOC): 44%
+*- File /root/Targets/mesos-framework/node_modules/winston/lib/winston/transports/console.js. Coverage (Term): 56% Coverage (LOC): 47%
+*- File /root/Targets/mesos-framework/node_modules/mesos-framework/lib/schedulerHandlers.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File /root/Targets/mesos-framework/node_modules/requirefrom/index.js. Coverage (Term): 50% Coverage (LOC): 45%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

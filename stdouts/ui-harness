@@ -1,0 +1,32 @@
+/root/Targets/ui-harness
+└─┬ ui-harness@4.0.0-alpha.9 
+  ├── UNMET PEER DEPENDENCY react@^15.5.4
+  ├── UNMET PEER DEPENDENCY react-dom@^15.5.4
+  └─┬ ui-harness.common@1.0.5
+    └── @types/ramda@0.24.13 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ui-harness/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.057 took 5.6024s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/index.js. Coverage (Term): 74% Coverage (LOC): 100%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/state/index.js. Coverage (Term): 54% Coverage (LOC): 67%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/state/update-id.js. Coverage (Term): 45% Coverage (LOC): 67%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/common/index.js. Coverage (Term): 53% Coverage (LOC): 75%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/common/constants.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/ui-harness/node_modules/ui-harness.common/lib/client/constants.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/ui-harness/node_modules/ui-harness/lib/common/libs.js. Coverage (Term): 39% Coverage (LOC): 58%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

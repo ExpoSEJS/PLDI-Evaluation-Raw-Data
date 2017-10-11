@@ -1,0 +1,54 @@
+/root/Targets/walltime-js
+└─┬ walltime-js@0.2.0 
+  ├── coffee-script@1.6.3 
+  ├── line-reader@0.2.4 
+  ├─┬ mocha@1.21.5 
+  │ ├── commander@2.3.0 
+  │ ├─┬ debug@2.0.0 
+  │ │ └── ms@0.6.2 
+  │ ├── diff@1.0.8 
+  │ ├── escape-string-regexp@1.0.2 
+  │ ├─┬ glob@3.2.3 
+  │ │ ├── graceful-fs@2.0.3 
+  │ │ ├── inherits@2.0.3 
+  │ │ └─┬ minimatch@0.2.14 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ ├── growl@1.8.1 
+  │ ├─┬ jade@0.26.3 
+  │ │ ├── commander@0.6.1 
+  │ │ └── mkdirp@0.3.0 
+  │ └─┬ mkdirp@0.5.0 
+  │   └── minimist@0.0.8 
+  ├── requirejs@2.0.6 
+  ├── should@1.1.1 
+  ├── strscan@1.0.1 
+  └── uglify-js@1.3.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/walltime-js/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 95% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","charCodeAt","lastIndexOf","max","pop","toUpperCase","apply","splice","reverse","sort","parseInt","toString","abs","stringify"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0737 took 432.5084s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token in
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/walltime-js/node_modules/walltime-js/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/coffee-script.js. Coverage (Term): 36% Coverage (LOC): 42%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/lexer.js. Coverage (Term): 72% Coverage (LOC): 79%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/rewriter.js. Coverage (Term): 86% Coverage (LOC): 89%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/helpers.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/parser.js. Coverage (Term): 92% Coverage (LOC): 99%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/sourcemap.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/nodes.js. Coverage (Term): 64% Coverage (LOC): 74%
+*- File /root/Targets/walltime-js/node_modules/coffee-script/lib/coffee-script/scope.js. Coverage (Term): 91% Coverage (LOC): 96%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

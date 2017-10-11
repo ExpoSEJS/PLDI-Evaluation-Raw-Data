@@ -1,0 +1,36 @@
+/root/Targets/mimeo-framework
+└─┬ mimeo-framework@0.1.4 
+  ├─┬ parseuri@0.0.4 
+  │ └─┬ better-assert@1.0.2 
+  │   └── callsite@1.0.0 
+  └── route-recognizer@0.1.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mimeo-framework/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","create"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0486 took 17.989s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token .
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/Mimeo.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/Module.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/dependencies/Modules.js. Coverage (Term): 20% Coverage (LOC): 20%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/dependencies/DependencyManager.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/dependencies/Graph.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/dependencies/Injectables.js. Coverage (Term): 17% Coverage (LOC): 17%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/builtins/Register.js. Coverage (Term): 20% Coverage (LOC): 18%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/builtins/Promise.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/mimeo-framework/node_modules/mimeo-framework/src/builtins/Routing.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/mimeo-framework/node_modules/route-recognizer/dist/route-recognizer.js. Coverage (Term): 9% Coverage (LOC): 23%
+*- File /root/Targets/mimeo-framework/node_modules/parseuri/index.js. Coverage (Term): 21% Coverage (LOC): 57%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

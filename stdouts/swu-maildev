@@ -1,0 +1,403 @@
+/root/Targets/swu-maildev
+└─┬ swu-maildev@0.15.6 
+  ├── async@1.5.2 
+  ├─┬ body-parser@1.18.1 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ └── inherits@2.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ commander@2.9.0 
+  │ └── graceful-readlink@1.0.1 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.0.5 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ └── destroy@1.0.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├─┬ mailparser@0.5.3 
+  │ ├── encoding@0.1.12 
+  │ ├── mime@1.3.4 
+  │ ├─┬ mimelib@0.2.19 
+  │ │ └── addressparser@0.3.2 
+  │ └─┬ uue@3.1.0 
+  │   └── extend@3.0.1 
+  ├─┬ matchdep@1.0.1 
+  │ ├─┬ findup-sync@0.3.0 
+  │ │ └─┬ glob@5.0.15 
+  │ │   ├─┬ inflight@1.0.6 
+  │ │   │ └── wrappy@1.0.2 
+  │ │   ├─┬ minimatch@3.0.4 
+  │ │   │ └─┬ brace-expansion@1.1.8 
+  │ │   │   ├── balanced-match@1.0.0 
+  │ │   │   └── concat-map@0.0.1 
+  │ │   ├── once@1.4.0 
+  │ │   └── path-is-absolute@1.0.1 
+  │ ├─┬ micromatch@2.3.11 
+  │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ └── arr-flatten@1.1.0 
+  │ │ ├── array-unique@0.2.1 
+  │ │ ├─┬ braces@1.8.5 
+  │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │   ├─┬ isobject@2.1.0 
+  │ │ │ │   │ └── isarray@1.0.0 
+  │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ ├── preserve@0.2.0 
+  │ │ │ └── repeat-element@1.1.2 
+  │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ ├── extglob@0.3.2 
+  │ │ ├── filename-regex@2.0.1 
+  │ │ ├── is-extglob@1.0.0 
+  │ │ ├── is-glob@2.0.1 
+  │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ └── is-buffer@1.1.5 
+  │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ └── for-in@1.0.2 
+  │ │ │ └── is-extendable@0.1.1 
+  │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ └── glob-parent@2.0.0 
+  │ │ │ └── is-dotfile@1.0.3 
+  │ │ └─┬ regex-cache@0.4.4 
+  │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │     └── is-primitive@2.0.0 
+  │ ├── resolve@1.1.7 
+  │ └── stack-trace@0.0.9 
+  ├─┬ nodemailer@1.11.0 
+  │ ├─┬ libmime@1.2.0 
+  │ │ ├── libbase64@0.1.0 
+  │ │ └── libqp@1.1.0 
+  │ ├─┬ mailcomposer@2.1.0 
+  │ │ └─┬ buildmail@2.0.0 
+  │ │   └── needle@0.10.0 
+  │ ├── needle@0.11.0 
+  │ ├── nodemailer-direct-transport@1.1.0 
+  │ └─┬ nodemailer-smtp-transport@1.1.0 
+  │   ├── clone@1.0.2 
+  │   └── nodemailer-wellknown@0.1.10 
+  ├── open@0.0.5 
+  ├── smtp-connection@1.3.8 
+  ├─┬ smtp-server@1.17.0 
+  │ ├── ipv6-normalize@1.0.1 
+  │ └─┬ nodemailer-shared@1.1.0 
+  │   └── nodemailer-fetch@1.6.0 
+  ├─┬ socket.io@1.7.4 
+  │ ├─┬ debug@2.3.3 
+  │ │ └── ms@0.7.2 
+  │ ├─┬ engine.io@1.8.4 
+  │ │ ├── accepts@1.3.3 
+  │ │ ├── base64id@1.0.0 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├─┬ engine.io-parser@1.3.2 
+  │ │ │ ├── after@0.8.2 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ │ ├── blob@0.0.4 
+  │ │ │ └── wtf-8@1.0.0 
+  │ │ └─┬ ws@1.1.4 
+  │ │   ├── options@0.0.6 
+  │ │   └── ultron@1.0.2 
+  │ ├─┬ has-binary@0.1.7 
+  │ │ └── isarray@0.0.1 
+  │ ├── object-assign@4.1.0 
+  │ ├─┬ socket.io-adapter@0.5.0 
+  │ │ └─┬ debug@2.3.3 
+  │ │   └── ms@0.7.2 
+  │ ├─┬ socket.io-client@1.7.4 
+  │ │ ├── backo2@1.0.2 
+  │ │ ├── component-bind@1.0.0 
+  │ │ ├── component-emitter@1.2.1 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├─┬ engine.io-client@1.8.4 
+  │ │ │ ├── component-emitter@1.2.1 
+  │ │ │ ├── component-inherit@0.0.3 
+  │ │ │ ├─┬ debug@2.3.3 
+  │ │ │ │ └── ms@0.7.2 
+  │ │ │ ├── has-cors@1.1.0 
+  │ │ │ ├── parsejson@0.0.3 
+  │ │ │ ├── parseqs@0.0.5 
+  │ │ │ ├── ws@1.1.2 
+  │ │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │ │ └── yeast@0.1.2 
+  │ │ ├── indexof@0.0.1 
+  │ │ ├── object-component@0.0.3 
+  │ │ ├─┬ parseuri@0.0.5 
+  │ │ │ └─┬ better-assert@1.0.2 
+  │ │ │   └── callsite@1.0.0 
+  │ │ └── to-array@0.1.4 
+  │ └─┬ socket.io-parser@2.3.1 
+  │   ├── component-emitter@1.1.2 
+  │   ├─┬ debug@2.2.0 
+  │   │ └── ms@0.7.1 
+  │   ├── isarray@0.0.1 
+  │   └── json3@3.3.2 
+  └── wildstring@1.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/swu-maildev/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 22% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","parseInt","charCodeAt","abs","Number","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","toString","toUpperCase","join","call","RegExp","getOwnPropertyNames","getOwnPropertyDescriptor","isArray","Array","Date","getUTCFullYear","getUTCMonth","getUTCDate","getUTCHours","getUTCMinutes","getUTCSeconds","getUTCMilliseconds","stringify","parse","fromCharCode","assign","bind","freeze","setPrototypeOf"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0477 took 119.673s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 40% Coverage (LOC): 43%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/index.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/commander/index.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/graceful-readlink/index.js. Coverage (Term): 56% Coverage (LOC): 56%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/web.js. Coverage (Term): 28% Coverage (LOC): 33%
+*- File /root/Targets/swu-maildev/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/express.js. Coverage (Term): 86% Coverage (LOC): 97%
+*- File /root/Targets/swu-maildev/node_modules/merge-descriptors/index.js. Coverage (Term): 83% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/application.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/swu-maildev/node_modules/finalhandler/index.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/swu-maildev/node_modules/debug/src/debug.js. Coverage (Term): 47% Coverage (LOC): 51%
+*- File /root/Targets/swu-maildev/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/swu-maildev/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/swu-maildev/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/router/index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/swu-maildev/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/swu-maildev/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/swu-maildev/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/swu-maildev/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/swu-maildev/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/swu-maildev/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/middleware/init.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/middleware/query.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/swu-maildev/node_modules/express/node_modules/qs/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/express/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/express/node_modules/qs/lib/utils.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/swu-maildev/node_modules/express/node_modules/qs/lib/formats.js. Coverage (Term): 61% Coverage (LOC): 87%
+*- File /root/Targets/swu-maildev/node_modules/express/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/view.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/utils.js. Coverage (Term): 38% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/swu-maildev/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/send/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/swu-maildev/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/swu-maildev/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/swu-maildev/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/swu-maildev/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/swu-maildev/node_modules/fresh/index.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/swu-maildev/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/proxy-addr/index.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/swu-maildev/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 27% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/swu-maildev/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/swu-maildev/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/swu-maildev/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/swu-maildev/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/swu-maildev/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/swu-maildev/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/swu-maildev/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/swu-maildev/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/vary/index.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/body-parser/index.js. Coverage (Term): 40% Coverage (LOC): 49%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/lib/index.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/engine.io.js. Coverage (Term): 49% Coverage (LOC): 53%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/server.js. Coverage (Term): 32% Coverage (LOC): 37%
+*- File /root/Targets/swu-maildev/node_modules/base64id/lib/base64id.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transports/index.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transports/polling-xhr.js. Coverage (Term): 32% Coverage (LOC): 41%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transports/polling.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transport.js. Coverage (Term): 38% Coverage (LOC): 55%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-parser/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-parser/lib/index.js. Coverage (Term): 7% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/wtf-8/wtf-8.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/swu-maildev/node_modules/after/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-parser/lib/keys.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transports/polling-jsonp.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/transports/websocket.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/swu-maildev/node_modules/engine.io/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/lib/index.js. Coverage (Term): 28% Coverage (LOC): 30%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/lib/url.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/parseuri/index.js. Coverage (Term): 21% Coverage (LOC): 57%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/index.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/json3/lib/json3.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/swu-maildev/node_modules/component-emitter/index.js. Coverage (Term): 26% Coverage (LOC): 35%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/binary.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-parser/is-buffer.js. Coverage (Term): 45% Coverage (LOC): 80%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/lib/manager.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transports/index.js. Coverage (Term): 30% Coverage (LOC): 30%
+*- File /root/Targets/swu-maildev/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js. Coverage (Term): 15% Coverage (LOC): 25%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transports/polling-xhr.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transports/polling.js. Coverage (Term): 21% Coverage (LOC): 25%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transport.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/component-emitter/index.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/swu-maildev/node_modules/parseqs/index.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/swu-maildev/node_modules/component-inherit/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/yeast/index.js. Coverage (Term): 40% Coverage (LOC): 46%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transports/polling-jsonp.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/lib/transports/websocket.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/swu-maildev/node_modules/ultron/index.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/swu-maildev/node_modules/options/lib/options.js. Coverage (Term): 42% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Validation.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/engine.io-client/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/swu-maildev/node_modules/indexof/index.js. Coverage (Term): 33% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/parsejson/index.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/lib/socket.js. Coverage (Term): 19% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/node_modules/component-emitter/index.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/swu-maildev/node_modules/to-array/index.js. Coverage (Term): 30% Coverage (LOC): 40%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-client/lib/on.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- File /root/Targets/swu-maildev/node_modules/component-bind/index.js. Coverage (Term): 28% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/has-binary/index.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/has-binary/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/swu-maildev/node_modules/backo2/index.js. Coverage (Term): 22% Coverage (LOC): 45%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/lib/client.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/node_modules/debug/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/node_modules/debug/node.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/node_modules/debug/debug.js. Coverage (Term): 34% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/lib/namespace.js. Coverage (Term): 32% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/socket.io/lib/socket.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/object-assign/index.js. Coverage (Term): 52% Coverage (LOC): 53%
+*- File /root/Targets/swu-maildev/node_modules/socket.io-adapter/index.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/swu-maildev/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Validation.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/routes.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/auth.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/logger.js. Coverage (Term): 56% Coverage (LOC): 71%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/mailserver.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/swu-maildev/node_modules/smtp-server/lib/smtp-server.js. Coverage (Term): 16% Coverage (LOC): 28%
+*- File /root/Targets/swu-maildev/node_modules/smtp-server/lib/smtp-connection.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/swu-maildev/node_modules/smtp-server/lib/smtp-stream.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/ipv6-normalize/index.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/swu-maildev/node_modules/smtp-server/lib/sasl.js. Coverage (Term): 4% Coverage (LOC): 8%
+*- File /root/Targets/swu-maildev/node_modules/smtp-server/lib/tls-options.js. Coverage (Term): 64% Coverage (LOC): 48%
+*- File /root/Targets/swu-maildev/node_modules/nodemailer-shared/lib/shared.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/swu-maildev/node_modules/nodemailer-fetch/lib/fetch.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/swu-maildev/node_modules/nodemailer-fetch/lib/cookies.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/swu-maildev/node_modules/mailparser/lib/mailparser.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/swu-maildev/node_modules/mimelib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/mimelib/lib/mimelib.js. Coverage (Term): 5% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/encoding/lib/encoding.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/swu-maildev/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/swu-maildev/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/swu-maildev/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/swu-maildev/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/swu-maildev/node_modules/encoding/lib/iconv-loader.js. Coverage (Term): 84% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/addressparser/src/addressparser.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/swu-maildev/node_modules/mimelib/lib/content-types.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/mimelib/lib/content-types-reversed.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/swu-maildev/node_modules/mailparser/lib/datetime.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/swu-maildev/node_modules/mailparser/lib/streams.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File /root/Targets/swu-maildev/node_modules/uue/uue.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/swu-maildev/node_modules/extend/index.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/swu-maildev/node_modules/wildstring/wildstring.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/swu-maildev/node_modules/swu-maildev/lib/outgoing.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/swu-maildev/node_modules/smtp-connection/src/smtp-connection.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/swu-maildev/node_modules/smtp-connection/src/data-stream.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/swu-maildev/node_modules/async/lib/async.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 0 errors **

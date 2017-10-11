@@ -1,0 +1,194 @@
+/root/Targets/goji
+└─┬ goji@0.9.1 
+  ├─┬ cheerio@0.19.0 
+  │ ├─┬ css-select@1.0.0 
+  │ │ ├── boolbase@1.0.0 
+  │ │ ├── css-what@1.0.0 
+  │ │ ├── domutils@1.4.3 
+  │ │ └── nth-check@1.0.1 
+  │ ├─┬ dom-serializer@0.1.0 
+  │ │ └── domelementtype@1.1.3 
+  │ ├── entities@1.1.1 
+  │ ├─┬ htmlparser2@3.8.3 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.3.0 
+  │ │ ├── domutils@1.5.1 
+  │ │ ├── entities@1.0.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ └── lodash@3.10.1 
+  ├─┬ exprjs@0.0.3 
+  │ ├── amdefine@1.0.1 
+  │ └── requirejs@2.3.5 
+  ├── js-sha256@0.3.2 
+  └─┬ node-cache@3.2.1 
+    ├── clone@1.0.2 
+    └── lodash@4.17.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/goji/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","Object","binding","max","now","apply","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","join","create","Array","sort","reduce","bind","isArray","stringify","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0284 took 32.8324s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/goji/node_modules/goji/goji.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/goji/node_modules/goji/lib/Compiler.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/goji/node_modules/node-cache/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/lib/node_cache.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/assignIn.js. Coverage (Term): 73% Coverage (LOC): 86%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_copyObject.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_assignValue.js. Coverage (Term): 49% Coverage (LOC): 64%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseAssignValue.js. Coverage (Term): 45% Coverage (LOC): 36%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_defineProperty.js. Coverage (Term): 94% Coverage (LOC): 89%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_getNative.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseIsNative.js. Coverage (Term): 95% Coverage (LOC): 94%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isFunction.js. Coverage (Term): 84% Coverage (LOC): 91%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseGetTag.js. Coverage (Term): 87% Coverage (LOC): 91%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_Symbol.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_root.js. Coverage (Term): 76% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_freeGlobal.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_getRawTag.js. Coverage (Term): 91% Coverage (LOC): 90%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_objectToString.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isObject.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_isMasked.js. Coverage (Term): 81% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_coreJsData.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_toSource.js. Coverage (Term): 79% Coverage (LOC): 69%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_getValue.js. Coverage (Term): 92% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/eq.js. Coverage (Term): 49% Coverage (LOC): 80%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_createAssigner.js. Coverage (Term): 25% Coverage (LOC): 33%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseRest.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/identity.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_overRest.js. Coverage (Term): 38% Coverage (LOC): 42%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_apply.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_setToString.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseSetToString.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/constant.js. Coverage (Term): 74% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_shortOut.js. Coverage (Term): 84% Coverage (LOC): 82%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_isIterateeCall.js. Coverage (Term): 43% Coverage (LOC): 38%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isArrayLike.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isLength.js. Coverage (Term): 46% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_isIndex.js. Coverage (Term): 37% Coverage (LOC): 75%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/keysIn.js. Coverage (Term): 65% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_arrayLikeKeys.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseTimes.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isArguments.js. Coverage (Term): 70% Coverage (LOC): 92%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseIsArguments.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isObjectLike.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isBuffer.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/stubFalse.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isTypedArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseIsTypedArray.js. Coverage (Term): 90% Coverage (LOC): 91%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseUnary.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_nodeUtil.js. Coverage (Term): 97% Coverage (LOC): 91%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseKeysIn.js. Coverage (Term): 46% Coverage (LOC): 41%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_isPrototype.js. Coverage (Term): 44% Coverage (LOC): 71%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_nativeKeysIn.js. Coverage (Term): 39% Coverage (LOC): 36%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isString.js. Coverage (Term): 60% Coverage (LOC): 86%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isNumber.js. Coverage (Term): 61% Coverage (LOC): 86%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/size.js. Coverage (Term): 50% Coverage (LOC): 35%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseKeys.js. Coverage (Term): 47% Coverage (LOC): 41%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_nativeKeys.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_overArg.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_getTag.js. Coverage (Term): 69% Coverage (LOC): 38%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_DataView.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_Map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_Promise.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_Set.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_WeakMap.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_stringSize.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_asciiSize.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseProperty.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_hasUnicode.js. Coverage (Term): 85% Coverage (LOC): 88%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_unicodeSize.js. Coverage (Term): 88% Coverage (LOC): 78%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/template.js. Coverage (Term): 25% Coverage (LOC): 18%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/assignInWith.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/attempt.js. Coverage (Term): 61% Coverage (LOC): 67%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isError.js. Coverage (Term): 49% Coverage (LOC): 55%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isPlainObject.js. Coverage (Term): 52% Coverage (LOC): 53%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_getPrototype.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseValues.js. Coverage (Term): 52% Coverage (LOC): 63%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_arrayMap.js. Coverage (Term): 28% Coverage (LOC): 44%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_customDefaultsAssignIn.js. Coverage (Term): 51% Coverage (LOC): 64%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_escapeStringChar.js. Coverage (Term): 69% Coverage (LOC): 92%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/keys.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_reInterpolate.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/templateSettings.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/escape.js. Coverage (Term): 61% Coverage (LOC): 75%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_escapeHtmlChar.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_basePropertyOf.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/toString.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_baseToString.js. Coverage (Term): 49% Coverage (LOC): 39%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/isSymbol.js. Coverage (Term): 61% Coverage (LOC): 86%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_reEscape.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/node-cache/node_modules/lodash/_reEvaluate.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/clone/clone.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/goji/node_modules/js-sha256/src/sha256.js. Coverage (Term): 9% Coverage (LOC): 40%
+*- File /root/Targets/goji/node_modules/cheerio/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/cheerio/lib/cheerio.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/goji/node_modules/cheerio/lib/parse.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/goji/node_modules/htmlparser2/lib/index.js. Coverage (Term): 37% Coverage (LOC): 62%
+*- File /root/Targets/goji/node_modules/htmlparser2/lib/Parser.js. Coverage (Term): 22% Coverage (LOC): 46%
+*- File /root/Targets/goji/node_modules/htmlparser2/lib/Tokenizer.js. Coverage (Term): 24% Coverage (LOC): 21%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/entities/lib/decode_codepoint.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/goji/node_modules/domhandler/index.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/goji/node_modules/domelementtype/index.js. Coverage (Term): 54% Coverage (LOC): 93%
+*- File /root/Targets/goji/node_modules/domhandler/lib/node.js. Coverage (Term): 45% Coverage (LOC): 68%
+*- File /root/Targets/goji/node_modules/domhandler/lib/element.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/goji/node_modules/lodash/index.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/goji/node_modules/cheerio/lib/api/attributes.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/goji/node_modules/cheerio/lib/utils.js. Coverage (Term): 32% Coverage (LOC): 59%
+*- File /root/Targets/goji/node_modules/dom-serializer/index.js. Coverage (Term): 22% Coverage (LOC): 53%
+*- File /root/Targets/goji/node_modules/dom-serializer/node_modules/domelementtype/index.js. Coverage (Term): 53% Coverage (LOC): 92%
+*- File /root/Targets/goji/node_modules/entities/index.js. Coverage (Term): 55% Coverage (LOC): 83%
+*- File /root/Targets/goji/node_modules/entities/lib/encode.js. Coverage (Term): 61% Coverage (LOC): 79%
+*- File /root/Targets/goji/node_modules/entities/lib/decode.js. Coverage (Term): 65% Coverage (LOC): 72%
+*- File /root/Targets/goji/node_modules/entities/lib/decode_codepoint.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/goji/node_modules/cheerio/lib/api/traversing.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/goji/node_modules/css-select/index.js. Coverage (Term): 49% Coverage (LOC): 69%
+*- File /root/Targets/goji/node_modules/css-select/lib/pseudos.js. Coverage (Term): 12% Coverage (LOC): 21%
+*- File /root/Targets/goji/node_modules/domutils/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/domutils/lib/stringify.js. Coverage (Term): 25% Coverage (LOC): 55%
+*- File /root/Targets/goji/node_modules/domutils/lib/traversal.js. Coverage (Term): 34% Coverage (LOC): 67%
+*- File /root/Targets/goji/node_modules/domutils/lib/manipulation.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/goji/node_modules/domutils/lib/querying.js. Coverage (Term): 10% Coverage (LOC): 24%
+*- File /root/Targets/goji/node_modules/domutils/lib/legacy.js. Coverage (Term): 11% Coverage (LOC): 26%
+*- File /root/Targets/goji/node_modules/domutils/lib/helpers.js. Coverage (Term): 19% Coverage (LOC): 19%
+*- File /root/Targets/goji/node_modules/nth-check/index.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/goji/node_modules/nth-check/parse.js. Coverage (Term): 17% Coverage (LOC): 17%
+*- File /root/Targets/goji/node_modules/nth-check/compile.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /root/Targets/goji/node_modules/boolbase/index.js. Coverage (Term): 53% Coverage (LOC): 75%
+*- File /root/Targets/goji/node_modules/css-select/lib/attributes.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/goji/node_modules/css-select/lib/compile.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/goji/node_modules/css-what/index.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/goji/node_modules/css-select/lib/general.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/goji/node_modules/css-select/lib/sort.js. Coverage (Term): 28% Coverage (LOC): 57%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/stringify.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/traversal.js. Coverage (Term): 33% Coverage (LOC): 67%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/manipulation.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/querying.js. Coverage (Term): 10% Coverage (LOC): 24%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/legacy.js. Coverage (Term): 11% Coverage (LOC): 26%
+*- File /root/Targets/goji/node_modules/htmlparser2/node_modules/domutils/lib/helpers.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/goji/node_modules/cheerio/lib/api/manipulation.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/goji/node_modules/cheerio/lib/static.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/goji/node_modules/cheerio/lib/api/css.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/goji/node_modules/cheerio/lib/api/forms.js. Coverage (Term): 18% Coverage (LOC): 14%
+*- File /root/Targets/goji/node_modules/exprjs/lib/expr.js. Coverage (Term): 15% Coverage (LOC): 30%
+*- File /root/Targets/goji/node_modules/amdefine/amdefine.js. Coverage (Term): 41% Coverage (LOC): 47%
+*- File evalIndirect. Coverage (Term): 6% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

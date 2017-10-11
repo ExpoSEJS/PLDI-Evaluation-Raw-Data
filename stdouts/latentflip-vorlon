@@ -1,0 +1,88 @@
+qs@6.4.0 node_modules/request/node_modules/qs -> node_modules/azure-storage/node_modules/qs
+- assert-plus@1.0.0 node_modules/dashdash/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/getpass/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/jsprim/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/sshpk/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/verror/node_modules/assert-plus
+/root/Targets/latentflip-vorlon
+└─┬ latentflip-vorlon@0.0.3 
+  ├─┬ favicon@0.0.2
+  │ └─┬ request@2.82.0 
+  │   ├── aws-sign2@0.7.0 
+  │   ├── form-data@2.3.1 
+  │   ├─┬ har-validator@5.0.3 
+  │   │ ├─┬ ajv@5.2.2 
+  │   │ │ ├── fast-deep-equal@1.0.0 
+  │   │ │ └── json-schema-traverse@0.3.1 
+  │   │ └── har-schema@2.0.0 
+  │   ├─┬ hawk@6.0.2 
+  │   │ ├── boom@4.3.1 
+  │   │ ├─┬ cryptiles@3.1.2 
+  │   │ │ └── boom@5.2.0 
+  │   │ ├── hoek@4.2.0 
+  │   │ └── sntp@2.0.2 
+  │   ├─┬ http-signature@1.2.0 
+  │   │ └── assert-plus@1.0.0 
+  │   └── performance-now@2.1.0 
+  └─┬ winston-azure@0.0.4
+    └─┬ azure-storage@2.5.0
+      └─┬ request@2.81.0 
+        ├── aws-sign2@0.6.0 
+        ├── extend@3.0.1 
+        ├── form-data@2.1.4 
+        ├─┬ har-validator@4.2.1 
+        │ ├── ajv@4.11.8 
+        │ └── har-schema@1.0.5 
+        ├─┬ hawk@3.1.3 
+        │ ├── boom@2.10.1 
+        │ ├── cryptiles@2.0.5 
+        │ ├── hoek@2.16.3 
+        │ └── sntp@1.0.9 
+        ├─┬ http-signature@1.1.1 
+        │ └── assert-plus@0.2.0 
+        └── performance-now@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/latentflip-vorlon/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","call","isArray","parse","RegExp","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0502 took 21.1973s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/latentflip-vorlon/node_modules/latentflip-vorlon/Server/server.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/latentflip-vorlon/node_modules/latentflip-vorlon/Server/Scripts/vorlon.server.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/index.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/util.js. Coverage (Term): 77% Coverage (LOC): 67%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/queue.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/to_array.js. Coverage (Term): 32% Coverage (LOC): 44%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/parser/hiredis.js. Coverage (Term): 19% Coverage (LOC): 17%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/parser/javascript.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/latentflip-vorlon/node_modules/redis/lib/commands.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/latentflip-vorlon/node_modules/winston/lib/winston.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/latentflip-vorlon/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
+*- File /root/Targets/latentflip-vorlon/node_modules/winston/lib/winston/transports.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/latentflip-vorlon/node_modules/winston/lib/winston/common.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/latentflip-vorlon/node_modules/cycle/cycle.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/latentflip-vorlon/node_modules/winston/lib/winston/config.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/index.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/colors.js. Coverage (Term): 44% Coverage (LOC): 56%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/styles.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/system/supports-colors.js. Coverage (Term): 62% Coverage (LOC): 44%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/custom/trap.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/custom/zalgo.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/maps/america.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/maps/zebra.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/maps/rainbow.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/maps/random.js. Coverage (Term): 57% Coverage (LOC): 94%
+*- File /root/Targets/latentflip-vorlon/node_modules/colors/lib/extendStringPrototype.js. Coverage (Term): 13% Coverage (LOC): 11%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

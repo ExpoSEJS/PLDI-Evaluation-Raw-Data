@@ -1,0 +1,550 @@
+
+> fibers@2.0.0 install /root/Targets/sankey-report/node_modules/fibers
+> node build.js || nodejs build.js
+
+make: Entering directory '/root/Targets/sankey-report/node_modules/fibers/build'
+  CXX(target) Release/obj.target/fibers/src/fibers.o
+  CXX(target) Release/obj.target/fibers/src/coroutine.o
+  CC(target) Release/obj.target/fibers/src/libcoro/coro.o
+  SOLINK_MODULE(target) Release/obj.target/fibers.node
+  COPY Release/fibers.node
+make: Leaving directory '/root/Targets/sankey-report/node_modules/fibers/build'
+Installed in `/root/Targets/sankey-report/node_modules/fibers/bin/linux-x64-51/fibers.node`
+
+> sqlite3@3.1.11 install /root/Targets/sankey-report/node_modules/sqlite3
+> node-pre-gyp install --fallback-to-build
+
+[sqlite3] Success: "/root/Targets/sankey-report/node_modules/sqlite3/lib/binding/node-v51-linux-x64/node_sqlite3.node" is installed via remote
+/root/Targets/sankey-report
+└─┬ sankey-report@1.0.0 
+  ├── basic-auth@1.1.0 
+  ├─┬ body-parser@1.18.1 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── http-errors@1.6.2 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├── bower@1.8.2 
+  ├── deep-diff@0.3.8 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.0.5 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── once@1.4.0 
+  │ └── path-is-absolute@1.0.1 
+  ├── UNMET PEER DEPENDENCY grunt@~0.4.0
+  ├── grunt-contrib-rename@0.0.3 
+  ├── jquery@2.2.4 
+  ├─┬ jsdom@9.12.0 
+  │ ├── abab@1.0.4 
+  │ ├── acorn@4.0.13 
+  │ ├── acorn-globals@3.1.0 
+  │ ├── array-equal@1.0.0 
+  │ ├── content-type-parser@1.0.1 
+  │ ├── cssom@0.3.2 
+  │ ├── cssstyle@0.2.37 
+  │ ├─┬ escodegen@1.9.0 
+  │ │ ├── esprima@3.1.3 
+  │ │ ├── estraverse@4.2.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ ├─┬ optionator@0.8.2 
+  │ │ │ ├── deep-is@0.1.3 
+  │ │ │ ├── fast-levenshtein@2.0.6 
+  │ │ │ ├── levn@0.3.0 
+  │ │ │ ├── prelude-ls@1.1.2 
+  │ │ │ ├── type-check@0.3.2 
+  │ │ │ └── wordwrap@1.0.0 
+  │ │ └── source-map@0.5.7 
+  │ ├── html-encoding-sniffer@1.0.1 
+  │ ├── nwmatcher@1.4.1 
+  │ ├── parse5@1.5.1 
+  │ ├─┬ request@2.82.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.2 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │ │   └── jsonify@0.0.0 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └─┬ verror@1.10.0 
+  │ │ │ │   └── core-util-is@1.0.2 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ ├── sax@1.2.4 
+  │ ├── symbol-tree@3.2.2 
+  │ ├─┬ tough-cookie@2.3.2 
+  │ │ └── punycode@1.4.1 
+  │ ├── webidl-conversions@4.0.2 
+  │ ├─┬ whatwg-encoding@1.0.1 
+  │ │ └── iconv-lite@0.4.13 
+  │ ├─┬ whatwg-url@4.8.0 
+  │ │ ├── tr46@0.0.3 
+  │ │ └── webidl-conversions@3.0.1 
+  │ └── xml-name-validator@2.0.1 
+  ├── n@2.1.8 
+  ├─┬ pg@6.0.1 
+  │ ├── buffer-writer@1.0.1 
+  │ ├── packet-reader@0.2.0 
+  │ ├── pg-connection-string@0.1.3 
+  │ ├─┬ pg-pool@1.8.0 
+  │ │ └── generic-pool@2.4.3 
+  │ ├─┬ pg-types@1.12.1 
+  │ │ ├── postgres-array@1.0.2 
+  │ │ ├── postgres-bytea@1.0.0 
+  │ │ ├── postgres-date@1.0.3 
+  │ │ └─┬ postgres-interval@1.1.1 
+  │ │   └── xtend@4.0.1 
+  │ ├─┬ pgpass@0.0.6 
+  │ │ └─┬ split@1.0.1 
+  │ │   └── through@2.3.8 
+  │ └── semver@4.3.2 
+  ├─┬ socket.io@1.7.4 
+  │ ├─┬ debug@2.3.3 
+  │ │ └── ms@0.7.2 
+  │ ├─┬ engine.io@1.8.4 
+  │ │ ├── accepts@1.3.3 
+  │ │ ├── base64id@1.0.0 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├─┬ engine.io-parser@1.3.2 
+  │ │ │ ├── after@0.8.2 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ ├── base64-arraybuffer@0.1.5 
+  │ │ │ ├── blob@0.0.4 
+  │ │ │ └── wtf-8@1.0.0 
+  │ │ └─┬ ws@1.1.4 
+  │ │   ├── options@0.0.6 
+  │ │   └── ultron@1.0.2 
+  │ ├─┬ has-binary@0.1.7 
+  │ │ └── isarray@0.0.1 
+  │ ├── object-assign@4.1.0 
+  │ ├─┬ socket.io-adapter@0.5.0 
+  │ │ └─┬ debug@2.3.3 
+  │ │   └── ms@0.7.2 
+  │ ├─┬ socket.io-client@1.7.4 
+  │ │ ├── backo2@1.0.2 
+  │ │ ├── component-bind@1.0.0 
+  │ │ ├── component-emitter@1.2.1 
+  │ │ ├─┬ debug@2.3.3 
+  │ │ │ └── ms@0.7.2 
+  │ │ ├─┬ engine.io-client@1.8.4 
+  │ │ │ ├── component-emitter@1.2.1 
+  │ │ │ ├── component-inherit@0.0.3 
+  │ │ │ ├─┬ debug@2.3.3 
+  │ │ │ │ └── ms@0.7.2 
+  │ │ │ ├── has-cors@1.1.0 
+  │ │ │ ├── parsejson@0.0.3 
+  │ │ │ ├── parseqs@0.0.5 
+  │ │ │ ├── ws@1.1.2 
+  │ │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │ │ └── yeast@0.1.2 
+  │ │ ├── indexof@0.0.1 
+  │ │ ├── object-component@0.0.3 
+  │ │ ├─┬ parseuri@0.0.5 
+  │ │ │ └─┬ better-assert@1.0.2 
+  │ │ │   └── callsite@1.0.0 
+  │ │ └── to-array@0.1.4 
+  │ └─┬ socket.io-parser@2.3.1 
+  │   ├── component-emitter@1.1.2 
+  │   ├─┬ debug@2.2.0 
+  │   │ └── ms@0.7.1 
+  │   └── json3@3.3.2 
+  ├─┬ sqlite3@3.1.11 
+  │ ├── nan@2.7.0 
+  │ └─┬ node-pre-gyp@0.6.37 
+  │   ├─┬ mkdirp@0.5.1 
+  │   │ └── minimist@0.0.8 
+  │   ├─┬ nopt@4.0.1 
+  │   │ ├── abbrev@1.1.0 
+  │   │ └─┬ osenv@0.1.4 
+  │   │   ├── os-homedir@1.0.2 
+  │   │   └── os-tmpdir@1.0.2 
+  │   ├─┬ npmlog@4.1.2 
+  │   │ ├─┬ are-we-there-yet@1.1.4 
+  │   │ │ └── delegates@1.0.0 
+  │   │ ├── console-control-strings@1.1.0 
+  │   │ ├─┬ gauge@2.7.4 
+  │   │ │ ├── aproba@1.1.2 
+  │   │ │ ├── has-unicode@2.0.1 
+  │   │ │ ├── object-assign@4.1.1 
+  │   │ │ ├── signal-exit@3.0.2 
+  │   │ │ ├─┬ string-width@1.0.2 
+  │   │ │ │ ├── code-point-at@1.1.0 
+  │   │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │ │ │   └── number-is-nan@1.0.1 
+  │   │ │ ├─┬ strip-ansi@3.0.1 
+  │   │ │ │ └── ansi-regex@2.1.1 
+  │   │ │ └── wide-align@1.1.2 
+  │   │ └── set-blocking@2.0.0 
+  │   ├─┬ rc@1.2.1 
+  │   │ ├── deep-extend@0.4.2 
+  │   │ ├── ini@1.3.4 
+  │   │ ├── minimist@1.2.0 
+  │   │ └── strip-json-comments@2.0.1 
+  │   ├─┬ request@2.81.0 
+  │   │ ├── aws-sign2@0.6.0 
+  │   │ ├── aws4@1.6.0 
+  │   │ ├── caseless@0.12.0 
+  │   │ ├─┬ combined-stream@1.0.5 
+  │   │ │ └── delayed-stream@1.0.0 
+  │   │ ├── extend@3.0.1 
+  │   │ ├── forever-agent@0.6.1 
+  │   │ ├─┬ form-data@2.1.4 
+  │   │ │ └── asynckit@0.4.0 
+  │   │ ├─┬ har-validator@4.2.1 
+  │   │ │ ├─┬ ajv@4.11.8 
+  │   │ │ │ ├── co@4.6.0 
+  │   │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │   │ │ │   └── jsonify@0.0.0 
+  │   │ │ └── har-schema@1.0.5 
+  │   │ ├─┬ hawk@3.1.3 
+  │   │ │ ├── boom@2.10.1 
+  │   │ │ ├── cryptiles@2.0.5 
+  │   │ │ ├── hoek@2.16.3 
+  │   │ │ └── sntp@1.0.9 
+  │   │ ├─┬ http-signature@1.1.1 
+  │   │ │ ├── assert-plus@0.2.0 
+  │   │ │ ├─┬ jsprim@1.4.1 
+  │   │ │ │ ├── assert-plus@1.0.0 
+  │   │ │ │ ├── extsprintf@1.3.0 
+  │   │ │ │ ├── json-schema@0.2.3 
+  │   │ │ │ └─┬ verror@1.10.0 
+  │   │ │ │   └── assert-plus@1.0.0 
+  │   │ │ └─┬ sshpk@1.13.1 
+  │   │ │   ├── asn1@0.2.3 
+  │   │ │   ├── assert-plus@1.0.0 
+  │   │ │   ├── bcrypt-pbkdf@1.0.1 
+  │   │ │   ├─┬ dashdash@1.14.1 
+  │   │ │   │ └── assert-plus@1.0.0 
+  │   │ │   ├── ecc-jsbn@0.1.1 
+  │   │ │   ├─┬ getpass@0.1.7 
+  │   │ │   │ └── assert-plus@1.0.0 
+  │   │ │   ├── jsbn@0.1.1 
+  │   │ │   └── tweetnacl@0.14.5 
+  │   │ ├── is-typedarray@1.0.0 
+  │   │ ├── isstream@0.1.2 
+  │   │ ├── json-stringify-safe@5.0.1 
+  │   │ ├─┬ mime-types@2.1.17 
+  │   │ │ └── mime-db@1.30.0 
+  │   │ ├── oauth-sign@0.8.2 
+  │   │ ├── performance-now@0.2.0 
+  │   │ ├── qs@6.4.0 
+  │   │ ├── safe-buffer@5.1.1 
+  │   │ ├── stringstream@0.0.5 
+  │   │ ├─┬ tough-cookie@2.3.2 
+  │   │ │ └── punycode@1.4.1 
+  │   │ ├── tunnel-agent@0.6.0 
+  │   │ └── uuid@3.1.0 
+  │   ├─┬ rimraf@2.6.2 
+  │   │ └─┬ glob@7.1.2 
+  │   │   ├── fs.realpath@1.0.0 
+  │   │   ├── inflight@1.0.6 
+  │   │   ├─┬ minimatch@3.0.4 
+  │   │   │ └─┬ brace-expansion@1.1.8 
+  │   │   │   ├── balanced-match@1.0.0 
+  │   │   │   └── concat-map@0.0.1 
+  │   │   └── path-is-absolute@1.0.1 
+  │   ├── semver@5.4.1 
+  │   ├─┬ tape@4.8.0 
+  │   │ ├── deep-equal@1.0.1 
+  │   │ ├── defined@1.0.0 
+  │   │ ├─┬ for-each@0.3.2 
+  │   │ │ └── is-function@1.0.1 
+  │   │ ├── function-bind@1.1.1 
+  │   │ ├── has@1.0.1 
+  │   │ ├── inherits@2.0.3 
+  │   │ ├── minimist@1.2.0 
+  │   │ ├── object-inspect@1.3.0 
+  │   │ ├─┬ resolve@1.4.0 
+  │   │ │ └── path-parse@1.0.5 
+  │   │ ├── resumer@0.0.0 
+  │   │ ├─┬ string.prototype.trim@1.1.2 
+  │   │ │ ├─┬ define-properties@1.1.2 
+  │   │ │ │ ├── foreach@2.0.5 
+  │   │ │ │ └── object-keys@1.0.11 
+  │   │ │ └─┬ es-abstract@1.8.2 
+  │   │ │   ├─┬ es-to-primitive@1.1.1 
+  │   │ │   │ ├── is-date-object@1.0.1 
+  │   │ │   │ └── is-symbol@1.0.1 
+  │   │ │   ├── is-callable@1.1.3 
+  │   │ │   └── is-regex@1.0.4 
+  │   │ └── through@2.3.8 
+  │   ├─┬ tar@2.2.1 
+  │   │ ├── block-stream@0.0.9 
+  │   │ └─┬ fstream@1.0.11 
+  │   │   └── graceful-fs@4.1.11 
+  │   └─┬ tar-pack@3.4.0 
+  │     ├─┬ debug@2.6.8 
+  │     │ └── ms@2.0.0 
+  │     ├── fstream-ignore@1.0.5 
+  │     ├─┬ once@1.4.0 
+  │     │ └── wrappy@1.0.2 
+  │     ├─┬ readable-stream@2.3.3 
+  │     │ ├── core-util-is@1.0.2 
+  │     │ ├── isarray@1.0.0 
+  │     │ ├── process-nextick-args@1.0.7 
+  │     │ ├── string_decoder@1.0.3 
+  │     │ └── util-deprecate@1.0.2 
+  │     └── uid-number@0.0.6 
+  └─┬ wait.for@0.6.6 
+    └── fibers@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sankey-report/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0422 took 3.5148s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+// Load the http module to create an http server.
+var sankey  = require('./sankey');
+
+var express =require('express');
+var os   = require('os');
+var fs   = require('fs');
+var app  = express();
+var http = require('http').Server(app);
+var io   = require('socket.io')(http);
+var glob = require("glob");
+var path = require('path');
+var bodyParser = require('body-parser');
+var persistence = require('./persistence');
+var basicAuth = require('basic-auth');
+
+
+var auth = function (req, res, next) {
+    function unauthorized(res) {
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        return res.send(401);
+    }
+
+    var user = basicAuth(req);
+
+    if (!user || !user.name || !user.pass) {
+        return unauthorized(res);
+    }
+
+    if (user.name === 'admin' && user.pass === 'admin') {
+        return next();
+    } else {
+        return unauthorized(res);
+    }
+};
+
+
+sankey.socket(io);
+
+// determine the ip address of the running node server
+//
+var ifaces = os.networkInterfaces();
+var address ="*";
+for (var dev in ifaces) {
+    var iface = ifaces[dev].filter(function(details) {
+        return details.family === 'IPv4' && details.internal === false;
+    });
+    if(iface.length > 0) address = iface[0].address;
+}
+
+
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 6800;
+
+// provide the DigitalTrainingStudio WebApp with this very simple
+// HTTP server. good enough for an private raspi access
+//
+app.use("/editor", [auth, express.static(__dirname+'/html/editor')]);
+app.use("/"      , [      express.static(__dirname+'/html/landingpage')]);
+
+// to support JSON-encoded bodies
+app.use(bodyParser.json({limit: '50mb'}));
+// to support URL-encoded bodies
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
+
+app.get('/backend/file/list', function (req, res) {
+    var query = persistence.client.query("SELECT * from file");
+    query.on("row", function (row, result) {
+        result.addRow(row);
+    });
+    query.on("end", function (result) {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify( {files:result.rows.map(function(f){return {id: f.id};})}));
+    });
+});
+
+app.post('/backend/file/get', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var query = persistence.client.query("SELECT * from file where id=$1",[req.body.id]);
+    query.on("row", function (row, result) {
+        result.addRow(row);
+    });
+    query.on("end", function (result) {
+        res.setHeader('Content-Type', 'application/json');
+        if(result.rows.length>0) {
+            res.send(result.rows[0].doc);
+        }
+        else{
+            res.status(404).send('Not found');
+        }
+    });
+});
+
+app.post('/backend/file/save', function (req, res) {
+    persistence.client.query('INSERT into file (id, doc) VALUES($1, $2) ON CONFLICT (id) DO UPDATE SET doc = $3',  [req.body.id, req.body.content,req.body.content],function(){
+        res.send('true');
+    });
+});
+
+app.post('/backend/sankey/weights', function (req, res) {
+    sankey.weights(req.body.id , function(records){
+        res.send(records);
+    });
+});
+
+app.get('/delete/:file', function (req, res) {
+    persistence.cleanupForFile(req.params.file);
+    res.send(req.params.file);
+});
+
+app.post('/backend/suggestPath', function(req, res){
+    var body = req.body;
+    var query  = body.query;
+    sankey.suggestPath(query, function(records){
+        res.send(records.map(function(obj){return {value:obj.path};}));
+    });
+});
+
+app.post('/backend/suggestValue/', function(req, res){
+    var body  = req.body;
+    var path  = body.path;
+    var query = body.query;
+    sankey.suggestValue(path, query, function(records){
+        res.send(records.map(function(obj){return {value:obj.value};}));
+    });
+});
+
+app.post('/backend/hook', function(req, res){
+    var body = req.body;
+    var id  = body.id;
+    var json = {
+        EVENT : body.event,  // deprecated
+        OBJECT: body.object, // deprecated
+
+        event  : body.event,
+        type   : body.object,
+        object : body.content
+    };
+    console.log(json);
+    sankey.process({jsonId:body.object+":"+id,json:json});
+    res.send('true');
+});
+
+http.listen(port, function(){
+    console.log('Serve directory "'+__dirname+'"');
+    console.log('Admin UI: on http://'+address+':'+port+'/editor');
+    console.log('WebHook URL: on http://'+address+':'+port+'/backend/hook');
+});
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,217 @@
+
+> node-sass@4.5.2 install /root/Targets/aurora-demo-frontend/node_modules/node-sass
+> node scripts/install.js
+
+Cached binary found at /root/.npm/node-sass/4.5.2/linux-x64-51_binding.node
+
+> node-sass@4.5.2 postinstall /root/Targets/aurora-demo-frontend/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /root/Targets/aurora-demo-frontend/node_modules/node-sass/vendor/linux-x64-51/binding.node
+Testing binary
+Binary is fine
+
+> aurora-demo-frontend@1.2.1 postinstall /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend
+> npm run build
+
+
+> aurora-demo-frontend@1.2.1 build /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend
+> webpack
+
+Hash: 0399a211eed9483b4f4f
+Version: webpack 2.4.1
+Time: 14484ms
+ [141] ../timers-browserify/main.js 1.36 kB {9} [built]
+ [221] ./src/client-bootstrap.js 921 bytes {9} [built]
+ [222] ../webpack/hot/only-dev-server.js 2.29 kB {9} [built]
+ [224] ../aurora-core/dist/render/client.js 13.7 kB {9} [built]
+ [240] ./src/modules/get-module.js 2.79 kB {9} [built]
+ [241] ./src/services/get-route-config.js 332 bytes {9} [built] [failed] [1 error]
+ [242] ./src/utils/is-visible.js 1.51 kB {9} [built]
+ [243] ../babel-polyfill/lib/index.js 833 bytes {9} [built]
+ [244] ../bluebird/js/browser/bluebird.js 179 kB {9} [built]
+ [449] ../es5-shim/es5-sham.js 22.6 kB {9} [built]
+ [450] ../es5-shim/es5-shim.js 84.5 kB {9} [built]
+ [480] ../react-dom/index.js 59 bytes {9} [built]
+ [580] ../webpack/hot/emitter.js 77 bytes {9} [built]
+ [581] ../webpack/hot/log-apply-result.js 1.02 kB {9} [built]
+ [582] multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap 52 bytes {9} [built]
+    + 577 hidden modules
+
+ERROR in multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+Module not found: Error: Can't resolve 'webpack-dev-server/client?http://localhost:3000' in '/root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend'
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/services/get-route-config.js
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/services/get-route-config.js Unexpected token (48:17)
+You may need an appropriate loader to handle this file type.
+|   const apiQuery = {
+|     params: {
+|       options: { ...query },
+|       page,
+|       skip,
+ @ ./src/client-bootstrap.js 39:12-50
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoAppModule/DemoAppModule.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoAppModule/DemoAppModule.jsx Unexpected token (58:6)
+You may need an appropriate loader to handle this file type.
+| 
+|     return (
+|       <main style={{ height: '101vh' }}>
+|         {newVersionAvailable && <VersionAlert />}
+|         {/* the function below is exposed by render-modules-mixin */}
+ @ ./src/modules/get-module.js 22:21-65
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoHigherOrderModule/DemoHigherOrderModule.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoHigherOrderModule/DemoHigherOrderModule.jsx Unexpected token (46:8)
+You may need an appropriate loader to handle this file type.
+| 
+|       return (
+|         <Module
+|           key={i}
+|           {...module.options}
+ @ ./src/modules/get-module.js 27:21-81
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModule/DemoModule.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModule/DemoModule.jsx Unexpected token (20:6)
+You may need an appropriate loader to handle this file type.
+|   render() {
+|     return (
+|       <Main {...this.props} />
+|     );
+|   }
+ @ ./src/modules/get-module.js 32:21-59
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModuleWithData/DemoModuleWithData.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModuleWithData/DemoModuleWithData.jsx Unexpected token (34:8)
+You may need an appropriate loader to handle this file type.
+|     if (isLoadingData) {
+|       return (
+|         <Loading />
+|       );
+|     }
+ @ ./src/modules/get-module.js 37:21-75
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModuleWithGeolocation/DemoModuleWithGeolocation.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModuleWithGeolocation/DemoModuleWithGeolocation.jsx Unexpected token (34:8)
+You may need an appropriate loader to handle this file type.
+|     if (isLoadingData) {
+|       return (
+|         <Loading />
+|       );
+|     }
+ @ ./src/modules/get-module.js 42:21-89
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModuleWithPersonalization/DemoModuleWithPersonalization.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModuleWithPersonalization/DemoModuleWithPersonalization.jsx Unexpected token (34:8)
+You may need an appropriate loader to handle this file type.
+|     if (isLoadingData) {
+|       return (
+|         <Loading />
+|       );
+|     }
+ @ ./src/modules/get-module.js 47:21-97
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModuleWithRandomization/DemoModuleWithRandomization.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModuleWithRandomization/DemoModuleWithRandomization.jsx Unexpected token (34:8)
+You may need an appropriate loader to handle this file type.
+|     if (isLoadingData) {
+|       return (
+|         <Loading />
+|       );
+|     }
+ @ ./src/modules/get-module.js 52:21-93
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+
+ERROR in ./src/modules/DemoModuleWithRedux/DemoModuleWithRedux.jsx
+Module parse failed: /root/Targets/aurora-demo-frontend/node_modules/aurora-demo-frontend/src/modules/DemoModuleWithRedux/DemoModuleWithRedux.jsx Unexpected token (19:6)
+You may need an appropriate loader to handle this file type.
+|   render() {
+|     return (
+|       <Main {...this.props} />
+|     );
+|   }
+ @ ./src/modules/get-module.js 57:21-77
+ @ ./src/client-bootstrap.js
+ @ multi webpack-dev-server/client?http://localhost:3000 webpack/hot/only-dev-server ./src/client-bootstrap
+/root/Targets/aurora-demo-frontend
+├── ansi-regex@2.1.1 
+├── ansi-styles@2.2.1 
+├─┬ babel-code-frame@6.26.0 
+│ ├─┬ chalk@1.1.3 
+│ │ ├── escape-string-regexp@1.0.5 
+│ │ ├── has-ansi@2.0.0 
+│ │ ├── strip-ansi@3.0.1 
+│ │ └── supports-color@2.0.0 
+│ ├── esutils@2.0.2 
+│ └── js-tokens@3.0.2 
+├─┬ babel-generator@6.26.0 
+│ ├── babel-messages@6.23.0 
+│ ├─┬ babel-runtime@6.26.0 
+│ │ └── regenerator-runtime@0.11.0 
+│ ├─┬ babel-types@6.26.0 
+│ │ ├─┬ babel-runtime@6.26.0 
+│ │ │ └── regenerator-runtime@0.11.0 
+│ │ └── to-fast-properties@1.0.3 
+│ ├─┬ detect-indent@4.0.0 
+│ │ └─┬ repeating@2.0.1 
+│ │   └─┬ is-finite@1.0.2 
+│ │     └── number-is-nan@1.0.1 
+│ ├── jsesc@1.3.0 
+│ ├── source-map@0.5.7 
+│ └── trim-right@1.0.1 
+├─┬ babel-helpers@6.24.1 
+│ ├─┬ babel-runtime@6.23.0 
+│ │ └── regenerator-runtime@0.10.5 
+│ └─┬ babel-template@6.26.0 
+│   └─┬ babel-runtime@6.26.0 
+│     └── regenerator-runtime@0.11.0 
+└─┬ babel-register@6.26.0 
+  ├─┬ babel-core@6.26.0 
+  │ ├─┬ babel-traverse@6.26.0 
+  │ │ ├─┬ babel-runtime@6.26.0 
+  │ │ │ └── regenerator-runtime@0.11.0 
+  │ │ ├─┬ debug@2.6.8 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├── globals@9.18.0 
+  │ │ └─┬ invariant@2.2.2 
+  │ │   └── loose-envify@1.3.1 
+  │ ├── babylon@6.18.0 
+  │ ├── convert-source-map@1.5.0 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── json5@0.5.1 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├── private@0.1.7 
+  │ ├── slash@1.0.0 
+  │ └── source-map@0.5.7 
+  ├─┬ babel-runtime@6.26.0 
+  │ └── regenerator-runtime@0.11.0 
+  ├── core-js@2.5.1 
+  ├─┬ home-or-tmp@2.0.0 
+  │ ├── os-homedir@1.0.2 
+  │ └── os-tmpdir@1.0.2 
+  ├── lodash@4.17.4 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  └─┬ source-map-support@0.4.18 
+    └── source-map@0.5.7 
+

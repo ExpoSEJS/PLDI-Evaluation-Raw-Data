@@ -1,0 +1,115 @@
+
+> images@2.1.10 install /root/Targets/dtjs/node_modules/images
+> echo "Hello, World."
+
+Hello, World.
+/root/Targets/dtjs
+└─┬ dtjs@1.1.2 
+  ├── adm-zip@0.4.7 
+  ├─┬ chokidar@1.4.2 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@0.1.6 
+  │ ├── glob-parent@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├─┬ is-glob@2.0.1 
+  │ │ └── is-extglob@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@2.1.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── safe-buffer@5.1.1 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── set-immediate-shim@1.0.1 
+  ├── colors@1.0.2 
+  ├── iconv-lite@0.4.19 
+  ├── images@2.1.10 
+  ├─┬ layout@2.2.0 
+  │ └── bin-pack@1.0.2 
+  ├─┬ resolve@1.4.0 
+  │ └── path-parse@1.0.5 
+  └─┬ ws@1.1.4 
+    ├── options@0.0.6 
+    └── ultron@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/dtjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0398 took 12.7863s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/dtjs/node_modules/dtjs/index.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/dtjs/node_modules/dtjs/lib/dtjs.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/dtjs/node_modules/resolve/index.js. Coverage (Term): 79% Coverage (LOC): 91%
+*- File /root/Targets/dtjs/node_modules/resolve/lib/core.js. Coverage (Term): 92% Coverage (LOC): 95%
+*- File /root/Targets/dtjs/node_modules/resolve/lib/async.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/dtjs/node_modules/resolve/lib/caller.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/dtjs/node_modules/resolve/lib/node-modules-paths.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/dtjs/node_modules/resolve/lib/sync.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/dtjs/node_modules/dtjs/lib/log.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/dtjs/node_modules/colors/lib/index.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/dtjs/node_modules/colors/lib/colors.js. Coverage (Term): 44% Coverage (LOC): 56%
+*- File /root/Targets/dtjs/node_modules/colors/lib/styles.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/dtjs/node_modules/colors/lib/system/supports-colors.js. Coverage (Term): 62% Coverage (LOC): 44%
+*- File /root/Targets/dtjs/node_modules/colors/lib/custom/trap.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/dtjs/node_modules/colors/lib/custom/zalgo.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/dtjs/node_modules/colors/lib/maps/america.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/dtjs/node_modules/colors/lib/maps/zebra.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/dtjs/node_modules/colors/lib/maps/rainbow.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/dtjs/node_modules/colors/lib/maps/random.js. Coverage (Term): 57% Coverage (LOC): 94%
+*- File /root/Targets/dtjs/node_modules/colors/lib/extendStringPrototype.js. Coverage (Term): 14% Coverage (LOC): 12%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

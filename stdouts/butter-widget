@@ -1,0 +1,294 @@
+/root/Targets/butter-widget
+└─┬ butter-widget@0.0.1 
+  ├─┬ ftp@0.3.10 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └── xregexp@2.0.0 
+  └── requirejs@2.3.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/butter-widget/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0884 took 2.1493s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (141:8) on program /**
+ * Created by HDC on 16/8/28.
+ */
+
+
+var path = require('path');
+//var fs = require('fs');
+var util = require('util');
+
+var Widget = require("./widget.js");
+var Config = require("./config-b.js");
+var f = require('./file.js');
+var Log = require("./log.js");
+
+
+var bwt = module.exports;
+
+
+/**
+ * 配置项
+ */
+bwt.config = Config;
+
+
+/**
+ * @commoder help
+ */
+bwt.help = function() {
+    var content = [];
+    content = content.concat([
+        '',
+        '  Usage: bwt <Command>',
+        '',
+        '  Command:',
+        '',
+        '    install      install init dir, demo',
+        //'  init         project directory init',
+        '    build        build project',
+        '      -open      auto open html/index.html ',
+        '      -combo     combo debug for online/RD debug',
+        '      -css       compile less/scss file in current dir',
+        '      -plain     output project with plain',
+        '',
+        '    release      release project',
+        '',
+        '    output       output project',
+        '      -html      output project (include html) ',
+        '      -rjs      output project based requirejs',
+        '      dirname    output your own custom dirname',
+        '      -debug     uncompressed js,css,images for test',
+        '      -backup    backup outputdir to tags dir',
+        '      -path [p]  replace projectPath to specified path option',
+        '',
+        '    upload       upload css/js dir to remote sever',
+        //'    -html      upload output project (include html) ',
+        '      dirname    upload output your own custom dirname',
+        '      -debug     uncompressed js,css,images for test',
+        '      -preview   upload html dir to preview server dir',
+        '      -nc        upload css/js dir to preview server dir use newcdn url',
+        '      -nh        upload html dir to preview server dir use newcdn url',
+        '      -custom    upload a dir/file to server',
+        '      -list      upload file list from config.json to server',
+        '',
+        '    widget',
+        '      -all       preview all widget',
+        '      -list      get widget list from server',
+        '      -preview xxx  preview a widget',
+        '      -install xxx  install a widget to local',
+        '      -publish xxx  publish a widget to server',
+        '      -create xxx   create a widget to local',
+        //'    -w    watch upload output files to remote sever',
+        '',
+        '    server       debug for online/RD debug',
+        '    lint         file lint',
+        '    format       file formater',
+        ' ',
+        '  Extra commands:',
+        '',
+        '    compress     compress js/css (bwt compress input output)',
+        '    clean        clean cache folder',
+        '    -h           get help information',
+        '    -v           get the version number',
+        ''
+    ]);
+    console.log(content.join('\n'));
+}
+
+
+/**
+ * @总的初始化函数 from ../index.js
+ * @commander
+ */
+bwt.init = function(argv) {
+
+    //读取配置文件
+    bwt.getConfig(function(configData) {
+        var cmd2 = argv[2];
+        bwt.currentDir = f.currentDir();
+
+        if (argv.length < 3 || cmd2 === '-h' || cmd2 === '--help') {
+            Log.send('help');
+            bwt.help();
+
+        } else if (cmd2 === '-v' || cmd2 === '--version') {
+            Log.send('version');
+            bwt.version();
+
+        } else if (cmd2[0] === '-') {
+            Log.send('help');
+            bwt.help();
+
+        } else if(cmd2 === 'init') {
+            Log.send('install-init');
+            bwt.install('init', argv[3]);
+            
+        } else if (cmd2 === 'install') {
+            Log.send('widget-install');
+            Widget.install(argv[3], false);
+
+        } else if(cmd2 === 'publish') {
+            Log.send('widget-publish');
+            Widget.publish(argv[3], argv[4], false);
+            
+          //clean	
+        } else if (cmd2 === 'clean') {
+            Log.send('clean');
+            bwt.clean();
+
+            //todo: beautiful/jsbin/
+        } else {
+            console.log('bwt error [bwt.init] invalid option: ' + cmd2 + ' \rType "bwt -h" for usage.');
+        }
+    });
+};
+
+
+/**
+ * @读取bwt version
+ */
+bwt.version = function() {
+    var package = require('../package.json');
+    console.log(package.version);
+}
+
+
+/**
+ * @从服务器端下载jdj, jdm, demo 或其它文件
+ */
+bwt.install = function(type, dir) {
+    bwt.bgMkdir();
+
+    /**
+     widget模块安装走bwt widget -install widget/header
+     console.log('bwt downloading');
+     bwt.download('jdj', bwt.libDir);
+     bwt.download('jdm', bwt.libDir);
+     */
+    bwt.createStandardDir(dir);
+}
+
+
+/**
+ * @工程后台文件夹生成
+ * @bwt.bgCurrentDir 为后台文件根目录
+ */
+bwt.bgMkdir = function() {
+
+    var list = ['LOCALAPPDATA', 'HOME', 'APPDATA'];
+    var temp;
+    for (var i = 0, len = list.length; i < len; i++) {
+        if (temp = process.env[list[i]]) {
+            break;
+        }
+    }
+    if (temp) {
+        temp = temp || __dirname + '/../';
+        temp += '/.bwt-temp/';
+        temp = path.normalize(temp);
+        f.mkdir(temp);
+
+        //创建文件夹
+        var creatDir = function(filename) {
+            var dir = path.normalize(temp + '/' + filename + '/');
+            f.mkdir(dir);
+            bwt[filename + 'Dir'] = dir;
+        };
+
+        //项目缓存文件夹
+        creatDir('cache');
+        //项目temp文件夹
+        creatDir('temp');
+        //项目lib文件夹
+        //todo:自动从服务器下载最新版的jdj和jdm,现在是需要install手动下载
+        creatDir('lib');
+        //creatDir('jdj');
+        //creatDir('jdm');
+
+        creatDir('backup');
+
+        //复制当前项目至temp文件夹(除outputdir)
+        //取得当前工程名
+        var currentDirName = path.basename(bwt.currentDir);
+        bwt.bgCurrentDir = path.normalize(bwt.tempDir + '/' + currentDirName);
+
+        bwt.bgCurrentDirName = currentDirName;
+        f.mkdir(bwt.bgCurrentDir);
+    }
+}
+
+
+/**
+ * @项目工程目录初始化
+ * @time 2014-2-19 10:21:37
+ */
+bwt.createStandardDir = function(dir) {
+    var dirArray = [];
+    dirArray[0] = bwt.config.baseDir;
+    dirArray[1] = bwt.config.cssDir;
+    dirArray[2] = bwt.config.imagesDir;
+    dirArray[3] = bwt.config.jsDir;
+    dirArray[4] = bwt.config.htmlDir;
+    dirArray[5] = bwt.config.widgetDir;
+
+    if(dir){
+        dir += '/';
+    }else{
+        dir = 'bwt_init/';
+    }
+
+    for (var i = 0; i < dirArray.length; i++) {
+        f.mkdir(dir+dirArray[i]);
+    }
+
+    var fileArray = [];
+    fileArray[0] = bwt.config.configFileName;
+    fileArray[1] = bwt.config.htmlDir + '/index.html';
+
+    var templateDir = path.resolve(__dirname, '../template/');
+
+    for (var i = 0; i < fileArray.length; i++) {
+        if (!f.exists(fileArray[i])) f.write(dir+'/'+fileArray[i], f.read(templateDir + '/' + fileArray[i]));
+    }
+    console.log('bwt project directory init done!');
+}
+
+
+/**
+ * @清除项目缓存文件夹
+ */
+bwt.clean = function() {
+    bwt.bgMkdir();
+    f.del(bwt.tempDir, function() {
+        console.log('bwt cache dir clean done');
+    });
+} at SyntaxError: The keyword 'package' is reserved (141:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/butter-widget/node_modules/butter-widget/index.js. Coverage (Term): 46% Coverage (LOC): 57%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

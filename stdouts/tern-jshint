@@ -1,0 +1,139 @@
+/root/Targets/tern-jshint
+└── tern-jshint@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tern-jshint/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","create","call","ArrayBuffer","Float64Array","pow","WeakMap","max","parseInt","Array","isArray"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.089 took 107.3528s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program /*global window, global*/
+var util = require("util")
+var assert = require("assert")
+var now = require("date-now")
+
+var slice = Array.prototype.slice
+var console
+var times = {}
+
+if (typeof global !== "undefined" && global.console) {
+    console = global.console
+} else if (typeof window !== "undefined" && window.console) {
+    console = window.console
+} else {
+    console = {}
+}
+
+var functions = [
+    [log, "log"],
+    [info, "info"],
+    [warn, "warn"],
+    [error, "error"],
+    [time, "time"],
+    [timeEnd, "timeEnd"],
+    [trace, "trace"],
+    [dir, "dir"],
+    [consoleAssert, "assert"]
+]
+
+for (var i = 0; i < functions.length; i++) {
+    var tuple = functions[i]
+    var f = tuple[0]
+    var name = tuple[1]
+
+    if (!console[name]) {
+        console[name] = f
+    }
+}
+
+module.exports = console
+
+function log() {}
+
+function info() {
+    console.log.apply(console, arguments)
+}
+
+function warn() {
+    console.log.apply(console, arguments)
+}
+
+function error() {
+    console.warn.apply(console, arguments)
+}
+
+function time(label) {
+    times[label] = now()
+}
+
+function timeEnd(label) {
+    var time = times[label]
+    if (!time) {
+        throw new Error("No such label: " + label)
+    }
+
+    var duration = now() - time
+    console.log(label + ": " + duration + "ms")
+}
+
+function trace() {
+    var err = new Error()
+    err.name = "Trace"
+    err.message = util.format.apply(null, arguments)
+    console.error(err.stack)
+}
+
+function dir(object) {
+    console.log(util.inspect(object) + "\n")
+}
+
+function consoleAssert(expression) {
+    if (!expression) {
+        var arr = slice.call(arguments, 1)
+        assert.ok(false, util.format.apply(null, arr))
+    }
+}
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/tern-jshint/node_modules/tern-jshint/jshint.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/tern-jshint/node_modules/tern/lib/infer.js. Coverage (Term): 8% Coverage (LOC): 22%
+*- File /root/Targets/tern-jshint/node_modules/tern/node_modules/acorn/dist/acorn.js. Coverage (Term): 13% Coverage (LOC): 35%
+*- File /root/Targets/tern-jshint/node_modules/tern/node_modules/acorn/dist/acorn_loose.js. Coverage (Term): 5% Coverage (LOC): 12%
+*- File /root/Targets/tern-jshint/node_modules/tern/node_modules/acorn/dist/walk.js. Coverage (Term): 18% Coverage (LOC): 39%
+*- File /root/Targets/tern-jshint/node_modules/tern/lib/def.js. Coverage (Term): 6% Coverage (LOC): 14%
+*- File /root/Targets/tern-jshint/node_modules/tern/lib/signal.js. Coverage (Term): 26% Coverage (LOC): 47%
+*- File /root/Targets/tern-jshint/node_modules/tern/lib/tern.js. Coverage (Term): 5% Coverage (LOC): 12%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/jshint.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/tern-jshint/node_modules/lodash/index.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/vars.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/messages.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/lex.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/reg.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/state.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/name-stack.js. Coverage (Term): 27% Coverage (LOC): 43%
+*- File /root/Targets/tern-jshint/node_modules/jshint/data/ascii-identifier-data.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/data/non-ascii-identifier-start.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/data/non-ascii-identifier-part-only.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/style.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/options.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/tern-jshint/node_modules/jshint/src/scope-manager.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

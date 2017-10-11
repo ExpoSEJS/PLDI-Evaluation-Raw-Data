@@ -1,0 +1,130 @@
+/root/Targets/redis-generational-cache
+└─┬ redis-generational-cache@1.0.2 
+  └── redis@0.12.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/redis-generational-cache/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0742 took 4.0168s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require("assert");
+
+/**
+ * Creates a Generational Cache object
+ *
+ * @constructor
+ * @param {Object} options options for the cache
+ * @param {Object} options.redis a redis client
+ * @param {string} [options.namespace] namespace to be appended to cache keys.
+ * defaults to a random string
+ */
+function GenCache(options) {
+  this.namespace = options.namespace || Math.random().toString(36).slice(2);
+  this._client = options.redis;
+  assert(this._client, "`options.redis` must be a redis client");
+}
+
+function parseArgs(self, key, groups, callback) {
+  if (!callback) {
+    callback = groups;
+    groups = [self.namespace];
+  }
+  groups = [].concat(groups).sort();
+  key = self.namespace + key + groups.join('');
+  groups = groups.map(function(group) {
+    return self.namespace + group;
+  });
+  return {key: key, groups: groups, callback: callback.bind(self)};
+}
+
+/**
+ * Sets a key/value pair
+ *
+ * @param {String} key the key to set
+ * @param {*} value a JSON.strigifiable object
+ * @param {(string|string[])} [groups] groups that this cache key is dependent on
+ * @param {redisCallback} callback a callback which is invoked after the value
+ * is set in redis
+ */
+GenCache.prototype.set = function(key, value, groups, callback) {
+
+  var args = parseArgs(this, key, groups, callback);
+
+  var multi =  this._client.multi();
+  args.groups.forEach(function(group) {
+    multi.sadd([group, key]);
+  });
+
+  multi.set([args.key, JSON.stringify(value)])
+    .exec(function(err) {
+      if (err) { return args.callback(err); }
+      args.callback(null, value);
+    });
+
+};
+
+/**
+ * Gets the value associated with the key and groups
+ *
+ * @param {String} key the key to get
+ * @param {(string|string[])} [groups] groups that this cache key is dependent on
+ * @param {redisCallback} callback a callback which is invoked after the value is
+ * retrieved from redis
+ */
+GenCache.prototype.get = function(key, groups, callback) {
+
+  var args = parseArgs(this, key, groups, callback);
+
+  return this._client.multi()
+    .sinter(args.groups)
+    .get([args.key])
+    .exec(function(err, res) {
+      if (err) { return args.callback(err); }
+      // key is not a member of group, group has been invalidated
+      if (res[0].indexOf(key) === -1) { return args.callback(null, null); }
+      args.callback(null, JSON.parse(res[1]));
+    });
+};
+
+/**
+ * Invalidates groups and all cache keys that are dependent on those groups
+ *
+ * @param {(string|string[])} groups groups to invalidate
+ * @param {Function} callback a callback which is invoked after the groups are
+ * invaidated in redis
+ */
+GenCache.prototype.invalidateGroups = function(groups, callback) {
+  var args = parseArgs(this, '', groups, callback);
+  return this._client.del(args.groups, args.callback);
+};
+
+/**
+ * @callback GenCache~redisCallback
+ * @param {Error|null} error either an error from redis or null
+ * @param {*} value the value stored in redis
+ */
+
+module.exports = GenCache;
+ at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,58 @@
+/root/Targets/unimodel-schema-types
+└─┬ unimodel-schema-types@0.2.8 
+  ├─┬ babel-runtime@6.18.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.9.6 
+  ├─┬ common-query@1.10.6 
+  │ ├─┬ babel-runtime@5.6.15 
+  │ │ └── core-js@0.9.18 
+  │ ├─┬ crisphooks@2.0.0 
+  │ │ └── es6-promise@2.3.0 
+  │ ├── geolib@2.0.23 
+  │ ├── lodash@3.10.1 
+  │ ├── moment@2.18.1 
+  │ ├─┬ objtools@1.6.5 
+  │ │ ├─┬ babel-runtime@5.6.15 
+  │ │ │ └── core-js@0.9.18 
+  │ │ └── lodash@3.10.1 
+  │ └── regexp-quote@0.0.0 
+  ├─┬ common-schema@1.9.3 
+  │ ├─┬ babel-runtime@5.8.3 
+  │ │ └── core-js@0.9.18 
+  │ └─┬ pasync@0.2.0 
+  │   └── neo-async@0.6.5 
+  ├── lodash@4.17.4 
+  └── xerror@1.1.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/unimodel-schema-types/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 35% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0524 took 3.1016s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/unimodel-schema-types/node_modules/unimodel-schema-types/dist/lib/index.js. Coverage (Term): 25% Coverage (LOC): 28%
+*- File /root/Targets/unimodel-schema-types/node_modules/unimodel-schema-types/dist/lib/schema-type-document.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/unimodel-schema-types/node_modules/babel-runtime/helpers/get.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/Targets/unimodel-schema-types/node_modules/babel-runtime/core-js/object/get-prototype-of.js. Coverage (Term): 73% Coverage (LOC): 83%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/fn/object/get-prototype-of.js. Coverage (Term): 58% Coverage (LOC): 100%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/es6.object.get-prototype-of.js. Coverage (Term): 42% Coverage (LOC): 63%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_to-object.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_defined.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_object-gpo.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_has.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_shared-key.js. Coverage (Term): 35% Coverage (LOC): 57%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_shared.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/unimodel-schema-types/node_modules/core-js/library/modules/_global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

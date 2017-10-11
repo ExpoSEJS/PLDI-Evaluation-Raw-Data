@@ -1,0 +1,50 @@
+/root/Targets/varo-flux
+└─┬ varo-flux@1.0.1 
+  ├── node-uuid@1.4.8 
+  └─┬ varo@0.3.0 
+    ├─┬ bloomrun@1.1.2 
+    │ ├── bloomfilter@0.0.16 
+    │ └─┬ es6-set@0.1.5 
+    │   ├── d@1.0.0 
+    │   ├── es5-ext@0.10.30 
+    │   ├── es6-iterator@2.0.1 
+    │   ├── es6-symbol@3.1.1 
+    │   └── event-emitter@0.3.5 
+    └─┬ fastparallel@2.3.0 
+      ├── reusify@1.0.2 
+      └── xtend@4.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/varo-flux/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 42% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 42% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 42% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Set","values","next","randomBytes","toString","apply","bound Dispatcher"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0606 took 6.5504s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 6.6807 took 11.3214s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/varo-flux/node_modules/varo-flux/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/varo-flux/node_modules/varo-flux/lib/Dispatcher.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/varo-flux/node_modules/varo/lib/varo.js. Coverage (Term): 36% Coverage (LOC): 50%
+*- File /root/Targets/varo-flux/node_modules/fastparallel/parallel.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/varo-flux/node_modules/xtend/immutable.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/varo-flux/node_modules/reusify/reusify.js. Coverage (Term): 49% Coverage (LOC): 55%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/bloomrun.js. Coverage (Term): 26% Coverage (LOC): 36%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/bucket.js. Coverage (Term): 61% Coverage (LOC): 75%
+*- File /root/Targets/varo-flux/node_modules/bloomfilter/bloomfilter.js. Coverage (Term): 11% Coverage (LOC): 26%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/iterator.js. Coverage (Term): 20% Coverage (LOC): 23%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/matchingBuckets.js. Coverage (Term): 27% Coverage (LOC): 35%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/genKeys.js. Coverage (Term): 29% Coverage (LOC): 67%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/deepMatch.js. Coverage (Term): 21% Coverage (LOC): 25%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/patternSet.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/varo-flux/node_modules/bloomrun/lib/deepSort.js. Coverage (Term): 40% Coverage (LOC): 45%
+*- File /root/Targets/varo-flux/node_modules/es6-set/index.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/varo-flux/node_modules/es6-set/is-implemented.js. Coverage (Term): 76% Coverage (LOC): 100%
+*- File /root/Targets/varo-flux/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 0 errors **

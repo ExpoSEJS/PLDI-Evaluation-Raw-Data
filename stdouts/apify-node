@@ -1,0 +1,923 @@
+- assert-plus@1.0.0 node_modules/dashdash/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/getpass/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/jsprim/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/sshpk/node_modules/assert-plus
+- assert-plus@1.0.0 node_modules/verror/node_modules/assert-plus
+/root/Targets/apify-node
+└─┬ apify-node@1.3.10 
+  └─┬ electron-prebuilt@1.4.13
+    └─┬ electron-download@3.3.0
+      └─┬ nugget@2.0.1
+        └─┬ request@2.82.0 
+          ├── aws-sign2@0.7.0 
+          ├── form-data@2.3.1 
+          ├─┬ har-validator@5.0.3 
+          │ ├─┬ ajv@5.2.2 
+          │ │ ├── fast-deep-equal@1.0.0 
+          │ │ └── json-schema-traverse@0.3.1 
+          │ └── har-schema@2.0.0 
+          ├─┬ hawk@6.0.2 
+          │ ├── boom@4.3.1 
+          │ ├─┬ cryptiles@3.1.2 
+          │ │ └── boom@5.2.0 
+          │ ├── hoek@4.2.0 
+          │ └── sntp@2.0.2 
+          ├─┬ http-signature@1.2.0 
+          │ └── assert-plus@1.0.0 
+          ├── performance-now@2.1.0 
+          └── qs@6.5.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/apify-node/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0644 took 4.9692s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+var shell = require("shelljs");
+var fs = require('fs');
+
+String.prototype.insert = function (index, string) {
+  if (index > 0)
+    return this.substring(0, index) + string + this.substring(index, this.length);
+  else
+    return string + this;
+};
+
+var obj = {
+  "routes" : {
+
+    "index" : {
+      "/" : {
+          "type" : "get",
+          "comment" : "This root of index"
+      }
+
+    },
+
+    "users" : {
+      "/" : {
+          "type" : "get",
+          "comment" : "This root of users"
+      }
+
+  }
+}
+};
+
+
+try {
+  obj = JSON.parse(fs.readFileSync('apify.json', 'utf8'));
+}catch (err) {
+
+}
+
+
+var routeDbTemplate = `
+var connection = require('./connection.js').conn;
+var <route-name>Db = function <route-name>Db(){
+    var parent = this;
+
+    if(<route-name>Db.caller != <route-name>Db.getInstance){
+        throw new Error('This object cannot be instanciated');
+    }
+}
+
+/* ************************************************************************
+<route-name>Db CLASS DEFINITION
+************************************************************************ */
+<route-name>Db.instance = null;
+
+/**
+ * db getInstance definition
+ * @return <route-name>Db class
+ */
+<route-name>Db.getInstance = function(){
+    if(this.instance === null){
+        this.instance = new <route-name>Db();
+    }
+    return this.instance;
+}
+
+module.exports = <route-name>Db.getInstance();
+`
+var dbFuncTemplate = `
+this.<func-name> = function(callback) {
+      //query the database here, and respond to frontend routes
+      var query = "SHOW TABLES";
+
+      connection.query(query, callback);
+    }
+
+`
+
+
+var dbFunctionPartialTemplate = `
+db.<func>(function(err, result, fields) {
+    if(err) {
+      throw err;
+    }else{
+      res.send(result);
+    }
+  })
+`
+
+
+var mysqlTemplate =
+`
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : '<host>',
+  user     : '<user>',
+  password : '<password>',
+  database : '<database>'
+});
+
+
+var db = function db(){
+    var parent = this;
+    this.conn = connection;
+
+    //this function will be called when the node.js instance is launced in order to connect to mysql db
+    this.initDb = function() {
+      connection.connect(function(err, res) {
+        if(err) {
+          throw err;
+        }else{
+          console.log('Mysql connected');
+        }
+
+      });
+    }
+
+    if(db.caller != db.getInstance){
+        throw new Error('This object cannot be instanciated');
+    }
+}
+
+/* ************************************************************************
+db CLASS DEFINITION
+************************************************************************ */
+db.instance = null;
+
+/**
+ * db getInstance definition
+ * @return db class
+ */
+db.getInstance = function(){
+    if(this.instance === null){
+        this.instance = new db();
+    }
+    return this.instance;
+}
+
+module.exports = db.getInstance();
+
+`;
+
+
+var routeTemplate = `
+var express = require("express");
+var router = express.Router();
+
+
+router.get("/", function(req, res, next) {
+  res.send("This is <routename> /");
+});
+
+module.exports = router;
+
+`
+
+
+var postTemplate = `
+/* <comment> */
+router.post("/<route>", function(req, res, next) {
+  res.send("This is <routename> /<route>");
+});
+`
+
+var getTemplate = `
+/* <comment> */
+router.get("/<route>", function(req, res, next) {
+  res.send("This is <routename> /<route>");
+});
+`
+
+
+var postTemplateSecure = `
+/* <comment> */
+router.post("/<route>", authCheck.isAuthenticated, authCheck.hasRole([<roles-array>]), function(req, res, next) {
+  res.send("This is <routename> /<route>");
+});
+`
+
+var getTemplateSecure = `
+/* <comment> */
+router.get("/<route>", authCheck.isAuthenticated, authCheck.hasRole([<roles-array>]), function(req, res, next) {
+  res.send("This is <routename> /<route>");
+});
+`
+
+var getTemplate = `
+/* <comment> */
+router.get("/<route>", function(req, res, next) {
+  res.send("This is <routename> /<route>");
+});
+`
+
+
+
+
+
+if(!process.argv[2]) {
+  showHelp();
+}else{
+  if(process.argv[2] == "gpost"){
+
+    if(process.argv[3] && process.argv[4]) {
+      if(isInited())
+        generatePost();
+      else
+        console.log("You have to initialize your project! USE: 'apify init'");
+      }else{
+        console.log("Please provide a post name!");
+      }
+
+  }else if(process.argv[2] == "gmysql") {
+    if(isInited()) {
+      if(obj.db && obj.db.mysql) {
+        console.log("Mysql already initialized!");
+      }else{
+        generateMysql();
+      }
+    }else{
+      console.log("You have to initialize your project! USE: 'apify init'");
+    }
+
+
+
+  }else if(process.argv[2] == "addrole") {
+    addRole(process.argv[3]);
+  }else if(process.argv[2] == "gauth") {
+
+    if(isInited()) {
+
+        generateAuth();
+
+    }else{
+      console.log("You have to initialize your project! USE: 'apify init'");
+    }
+
+
+  }else if(process.argv[2] == "gget") {
+
+    if(process.argv[3] && process.argv[4]) {
+        if(isInited())
+          generateGet();
+        else
+          console.log("You have to initialize your project! USE: 'apify init'");
+      }else{
+        console.log("Please provide a get name!");
+      }
+
+  }else if(process.argv[2] == "groute") {
+
+    if(process.argv[3]) {
+      if(isInited())
+        generateRoute();
+      else
+        console.log("You have to initialize your project! USE: 'apify init'");
+    }else{
+      console.log("Please provide a route name!");
+    }
+
+
+
+
+  }else if(process.argv[2] == "init") {
+    console.log();
+    shell.exec("node "+__dirname+"/node_modules/express-generator/bin/express && npm install");
+
+    var jadeTemplate =
+`extends layout
+
+block content
+  h1 Welcome to Apify
+  p <b>Initialize:</b>
+  p
+    b cmd: npm install -g apify<br>
+    | - will install apify
+  p
+    b cmd: apify init<br>
+    | - will initialize a new Project, based on express-generator npm module
+  p
+    b cmd: apify serve<br>
+    | - will create a http server on port 3000 <br><br><br><br>
+  p <b>USING UI</b>
+    p
+      b cmd: apify ui<br>
+      | - will open the UI based Apify application <br><br><br><br>
+  p <b>USING CLI</b>
+  p
+    b cmd: apify groute "route-name"<br>
+    | - will generate a new route for you project
+    | <br> Example: <span style="color: red">apify groute songs</span> ---> <span style="color: green">http://localhost:3000/songs</span>
+  p
+    b cmd: apify gget "route-name" "child route-name" "comments (optional)" <br>
+    | - will generate a new child route for you project, under the specified main route, using <b>GET</b> method
+    | <br> Example: <span style="color: red">apify gget songs list</span> ---> <span style="color: green">http://localhost:3000/songs/list</span> OR <span style="color: red">apify gget songs list/titles</span> ---> <span style="color: green">http://localhost:3000/songs/list/titles</span>
+  p
+    b cmd: apify gget "route-name" "child route-name" "comments (optional)"<br>
+    | - will generate a new child route for you project, under the specified main route, using <b>POST</b> method
+    | <br> Example: <span style="color: red">apify gpost songs save</span> ---> <span style="color: green">http://localhost:3000/songs/save</span> OR <span style="color: red">apify gpost songs list/titles</span> ---> <span style="color: green">http://localhost:3000/songs/save/all</span>
+
+`
+  console.log("write template!");
+    shell.exec(`echo '`+jadeTemplate+`' > views/index.jade`);
+    try {
+      obj = JSON.parse(fs.readFileSync('apify.json', 'utf8'));
+    }catch (err) {
+      shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+      obj = JSON.parse(fs.readFileSync('apify.json', 'utf8'));
+    }
+  }else if(process.argv[2] == "serve") {
+    shell.exec(__dirname+"/node_modules/nodemon/bin/nodemon.js bin/www");
+  }else if(process.argv[2] == "ui") {
+    shell.exec(__dirname+"/node_modules/electron-prebuilt/dist/electron "+ __dirname+"/ui $(pwd) $(which node)");
+  }else {
+    showHelp();
+  }
+}
+
+function addRole(roleName) {
+  console.log("Add role");
+    if(!obj.auth.jwt.roles)
+      obj.auth.jwt.roles = [];
+    obj.auth.jwt.roles.push(roleName);
+    shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+}
+
+function generateAuth() {
+  var authSecret = process.argv[3];
+  if(!authSecret)
+  {
+    console.log("Please provide Auth secret key!");
+    return;
+  }
+
+    if(!obj.auth) {
+      obj.auth = {};
+      obj.auth.jwt = {};
+    }
+
+    obj.auth.jwt.added = true;
+    obj.auth.jwt.secret = authSecret;
+
+    console.log("generating auth");
+    shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+
+
+
+    var authCheckTemplate = `
+    var jwt = require('jsonwebtoken');
+
+
+    var authS = '`+authSecret+`';
+    module.exports = {
+      isAuthenticated : function(req, res, next) {
+        //decode and check the token
+        jwt.verify(req.headers.authorization, authS, function(err, decoded) {
+          if(decoded) {
+            req.user = decoded;
+            next();
+          }else{
+            res.json({notAuth : true});
+          }
+        });
+      },
+
+
+      hasRole : function(roles) {
+        return this.hasRole[roles] || (this.hasRole[roles] = function(req, res, next) {
+          var permissionGranted = false;
+
+          if(!req.user) {
+            res.json({noRole : true});
+            return;
+          }
+
+          for (var i = 0; i < roles.length; i++) {
+            if(roles[i] === req.user.role) {
+
+              permissionGranted = true;
+              next();
+              break;
+            }
+          }
+
+          if(!permissionGranted)
+            res.json({noRole : true});
+
+        })
+      },
+      authSecret : authS
+    };
+    `
+
+    shell.exec("mkdir libs");
+    shell.exec("mkdir libs/jwt");
+
+    var authCheckFile = "";
+    try {
+       authCheckFile = fs.readFileSync("libs/jwt/authCheck.js", 'utf8');
+    }catch (err) {
+      authCheckFile = authCheckTemplate;
+    }
+    shell.exec("echo \""+authCheckTemplate+"\" > libs/jwt/authCheck.js");
+
+    shell.exec("npm install --save jsonwebtoken");
+
+
+    generateUserAuthRoutes();
+
+    console.log("Authentication Enabled");
+
+}
+
+
+function generateUserAuthRoutes() {
+  //open users route file
+  var appFile = fs.readFileSync("routes/users.js", 'utf8');
+  appFile = appFile.replace(new RegExp("'", 'g'), '"')
+
+  //require jsonwebtoken if not exists
+  if(appFile.indexOf('var jwt = require("jsonwebtoken");') == -1)
+    appFile = appFile.insert(appFile.indexOf('var router = express.Router();'), `\nvar jwt = require("jsonwebtoken");\n`);
+
+  //require usersDb if not exists
+  if(appFile.indexOf('var usersDb = require("../libs/mysql/users.js");') == -1)
+    appFile = appFile.insert(appFile.indexOf('var router = express.Router();'), `\nvar usersDb = require("../libs/mysql/users.js");\n`);
+
+
+
+    //require authcheck if not exists
+    if(appFile.indexOf('var authCheck = require("../libs/jwt/authCheck.js")') == -1)
+      appFile = appFile.insert(appFile.indexOf('var router = express.Router();'), `\nvar authCheck = require("../libs/jwt/authCheck.js")\n`);
+
+
+
+  var createUserTemplate = `
+  /* This route will create users based on username and password parameters. */
+  router.post("/create", function(req, res, next){
+    //call the create user method of our db class
+    usersDb.create(req.body, function(err, result){
+      if(err){
+        res.json({success : false, reason : "500 Error"})
+        return;
+      }
+
+      //if the user exist send json to inform frontend
+      if(result == "User exists") {
+        res.json({success : false, reason : result});
+      }else{
+        res.json({success : true});
+      }
+
+    });
+    })
+  `;
+
+  var loginUserTemplate = `
+  /* This route will generate a JSON Web Token on a successfull login. */
+  router.post("/login", function (req, res) {
+        usersDb.login(req.body.email, req.body.password, function(err, result){
+
+              //if there were any erros responde with 500 Internal error status code
+              if(err) {
+                res.sendStatus(500);
+                return;
+              }
+
+              //if the user can not be found responde with 401 Unauthorized status code
+              if(result.length == 0 || result.length > 1) {
+                res.sendStatus(401);
+                return;
+              }
+
+              //if everything is ok, save the user profile in the profile var
+              var profile = result;
+
+              //sign the token and send it as a response
+              var token = jwt.sign(profile, authCheck.authSecret);
+              res.json({success : true, token: token});
+        })
+      });
+`
+
+
+  //make  create template if not exists
+  if(appFile.indexOf('router.post("/create", function(req, res, next){') == -1) {
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), createUserTemplate);
+    generateDbFunction("users", "create", "post");
+  }
+
+  //make  login template if not exists
+  if(appFile.indexOf('router.post("/login", function (req, res) {') == -1) {
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), loginUserTemplate);
+    generateDbFunction("users", "login", "post");
+  }
+
+  shell.exec(`echo '`+appFile+`' > routes/users.js`);
+
+
+  obj.routes.users.create = {
+
+          type : "post",
+          hasDb : true,
+          comment : "This route will create users based on username and password parameters."
+        }
+
+  obj.routes.users.login = {
+
+          type : "post",
+          hasDb : true,
+          comment : "This route will generate a JSON Web Token on a successfull login."
+        }
+
+
+  shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+
+}
+
+
+function generateMysql() {
+  if(!process.argv[3] ||  !process.argv[4] ||  !process.argv[5] ||  !process.argv[6]) {
+    console.log(`
+      Please provide all the parameters
+      apify gmysql <host> <username> <password> <database>
+      `);
+    return;
+  }
+  shell.exec("mkdir libs");
+  shell.exec("mkdir libs/mysql");
+  shell.exec("npm install --save mysql");
+
+  shell.exec(`echo "`+mysqlTemplate.replace("<host>", process.argv[3]).replace("<user>", process.argv[4]).replace("<password>", process.argv[5]).replace("<database>", process.argv[6])+`"> libs/mysql/connection.js`)
+
+
+  var appFile = fs.readFileSync("bin/www", 'utf8');
+
+
+  appFile = appFile.replace(new RegExp("'", 'g'), '"')
+
+
+
+
+
+
+  if(appFile.indexOf(`var mysqldb = require("../libs/mysql/connection.js");`) == -1) {
+    appFile = appFile.insert(appFile.indexOf('var http = require("http");'), `\nvar mysqldb = require("../libs/mysql/connection.js");\n`);
+  }
+  if(appFile.indexOf(`mysqldb.initDb();`) == -1) {
+    appFile = appFile.insert(appFile.indexOf('var server = http.createServer(app);'), `\nmysqldb.initDb();\n`);
+  }
+
+
+  shell.exec(`echo '`+appFile+`' > bin/www`);
+
+  if(!obj.database) {
+    obj.database = {};
+  }
+  obj.database.mysql = {
+      hostname : process.argv[3],
+      username : process.argv[4],
+      password : process.argv[5],
+      database : process.argv[6],
+      added : true
+  }
+
+  shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+
+  console.log("Mysql enabled!");
+}
+//obj.dasda="dasda";
+function  generatePost() {
+  var appFile;
+
+  try {
+     appFile = fs.readFileSync("routes/"+process.argv[3]+".js", 'utf8');
+    console.log("Route exists!");
+  }catch (err) {
+    appFile = generateRoute();
+  }
+
+
+
+  appFile = appFile.replace(new RegExp("'", 'g'), '"')
+
+  if(appFile.indexOf('router.post("/'+process.argv[4]) != -1) {
+    console.log("child route exists!");
+    return;
+  }
+
+
+
+
+  if(process.argv[7]) {
+    //route must use secure template
+    var roles = process.argv[7].split(",")
+    for (var i = 0; i < roles.length; i++) {
+      roles[i] = '"' +roles[i] + '"'
+    }
+    roles = roles.toString();
+    console.log(roles);
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), postTemplateSecure.replace( new RegExp("<route>", 'g'), process.argv[4]).replace("<routename>", process.argv[3]).replace("<comment>", process.argv[6]).replace(new RegExp("<roles-array>", 'g'), roles));
+
+    if(appFile.indexOf('var authCheck = require("../libs/jwt/authCheck.js') == -1)
+      appFile = appFile.insert(appFile.indexOf('var router = express.Router();'), `\nvar authCheck = require("../libs/jwt/authCheck.js")\n`);
+
+  }else{
+    //route is not secured by Authentication
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), postTemplate.replace( new RegExp("<route>", 'g'), process.argv[4]).replace("<routename>", process.argv[3]).replace("<comment>", process.argv[6]));
+  }
+
+  if(process.argv[5] == "true") {
+    appFile = appFile.replace("res.send('This is "+process.argv[3]+" /"+process.argv[4]+"');", dbFunctionPartialTemplate.replace("db", process.argv[3]+"Db").replace("<func>", process.argv[4].replace("/", "_")));
+    appFile = appFile.replace("res.send(\"This is "+process.argv[3]+" /"+process.argv[4]+"\");", dbFunctionPartialTemplate.replace("db", process.argv[3]+"Db").replace("<func>", process.argv[4].replace("/", "_")));
+  }
+
+
+  shell.exec(`echo '`+appFile+`' > routes/`+process.argv[3]+`.js`);
+
+
+  obj.routes[process.argv[3]][process.argv[4]] = {
+
+          type : "post"
+        }
+
+  if(process.argv[5] == "true") {
+    obj.routes[process.argv[3]][process.argv[4]].hasDb = true;
+  }
+  if(process.argv[7]) {
+    obj.routes[process.argv[3]][process.argv[4]].hasAuth = true;
+  }
+
+        if(process.argv[6]) {
+          obj.routes[process.argv[3]][process.argv[4]].comment = process.argv[6];
+        }
+
+
+  shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+
+  if(process.argv[5] == "true") {
+    generateDbFunction(process.argv[3], process.argv[4], "post");
+  }
+
+
+  console.log("POST generated!");
+}
+
+
+
+
+function generateDbFunction(routeName, childName, type ) {
+  var appFile = "";
+  try {
+     appFile = fs.readFileSync("libs/mysql/"+routeName+".js", 'utf8');
+    console.log("Route exists!");
+  }catch (err) {
+    appFile = routeDbTemplate.replace(new RegExp("<route-name>", 'g'), routeName)
+    shell.exec("echo \""+appFile+"\" > libs/mysql/"+routeName+".js");
+  }
+
+
+
+
+  var routeFile = fs.readFileSync("routes/"+routeName+".js", 'utf8');
+
+  if(routeFile.indexOf(`var `+routeName+`Db = require("../libs/mysql/`+routeName+`.js");`) == -1)
+  routeFile = routeFile.insert(routeFile.indexOf('var router = express.Router();'), `\nvar `+routeName+`Db = require("../libs/mysql/`+routeName+`.js");\n`);
+  routeFile = routeFile.replace(new RegExp("\"", 'g'), "'")
+  shell.exec("echo \""+routeFile+"\" > routes/"+routeName+".js");
+
+
+  if(routeName == "users" && childName == "create") {
+    dbFuncTemplate = `
+    this.create = function(req, callback) {
+        //query the database here, and respond to frontend routes
+        var query = "SHOW TABLES";
+
+        connection.query(query, callback);
+      }
+    `
+  }else if(routeName == "users" && childName == "login") {
+    dbFuncTemplate = `
+    this.login = function(email, password, callback) {
+        //query the database here, and respond to frontend routes
+        var query = "SHOW TABLES";
+
+        connection.query(query, function(err, result) {
+          console.log(err);
+          callback(err, {name : "John", role : "admin"});
+        });
+      }
+    `
+  }
+
+
+  childName = childName.replace(new RegExp("/", 'g'), "_");
+
+  appFile = appFile.insert(appFile.indexOf("if("+routeName+"Db.caller != "+routeName+"Db.getInstance){"), dbFuncTemplate.replace(new RegExp("<func-name>", 'g'), childName))
+  appFile = appFile.replace(new RegExp("\"", 'g'), "'")
+  shell.exec("echo \""+appFile+"\" > libs/mysql/"+routeName+".js");
+}
+
+function generateGet() {
+  var appFile;
+
+  try {
+     appFile = fs.readFileSync("routes/"+process.argv[3]+".js", 'utf8');
+    console.log("Route exists!");
+  }catch (err) {
+    appFile = generateRoute();
+  }
+
+
+
+  appFile = appFile.replace(new RegExp("'", 'g'), '"')
+
+  if(appFile.indexOf('router.get("/'+process.argv[4]) != -1) {
+    console.log("child route exists!");
+    return;
+  }else{
+    console.log('router.get("/'+process.argv[4]);
+  }
+
+
+
+  if(process.argv[7]) {
+    //route must use secure template
+    var roles = process.argv[7].split(",")
+    for (var i = 0; i < roles.length; i++) {
+      roles[i] = '"' +roles[i] + '"'
+    }
+    roles = roles.toString();
+    console.log(roles);
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), getTemplateSecure.replace( new RegExp("<route>", 'g'), process.argv[4]).replace("<routename>", process.argv[3]).replace("<comment>", process.argv[6]).replace(new RegExp("<roles-array>", 'g'), roles));
+
+    if(appFile.indexOf('var authCheck = require("../libs/jwt/authCheck.js') == -1)
+      appFile = appFile.insert(appFile.indexOf('var router = express.Router();'), `\nvar authCheck = require("../libs/jwt/authCheck.js")\n`);
+
+  }else{
+    //route is not secured by Authentication
+    appFile = appFile.insert(appFile.indexOf('module.exports = router;'), getTemplate.replace( new RegExp("<route>", 'g'), process.argv[4]).replace("<routename>", process.argv[3]).replace("<comment>", process.argv[6]));
+  }
+
+
+  if(process.argv[5] == "true") {
+    appFile = appFile.replace("res.send('This is "+process.argv[3]+" /"+process.argv[4]+"');", dbFunctionPartialTemplate.replace("db", process.argv[3]+"Db").replace("<func>", process.argv[4].replace("/", "_")));
+    appFile = appFile.replace("res.send(\"This is "+process.argv[3]+" /"+process.argv[4]+"\");", dbFunctionPartialTemplate.replace("db", process.argv[3]+"Db").replace("<func>", process.argv[4].replace("/", "_")));
+  }
+
+  shell.exec(`echo '`+appFile+`' > routes/`+process.argv[3]+`.js`);
+
+
+  obj.routes[process.argv[3]][process.argv[4]] = {
+
+          type : "get"
+        }
+
+  if(process.argv[5] == "true") {
+    obj.routes[process.argv[3]][process.argv[4]].hasDb = true;
+  }
+  if(process.argv[7]) {
+    obj.routes[process.argv[3]][process.argv[4]].hasAuth = true;
+  }
+
+        if(process.argv[6]) {
+          obj.routes[process.argv[3]][process.argv[4]].comment = process.argv[6];
+        }
+
+
+
+  shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+
+  if(process.argv[5] == "true") {
+    generateDbFunction(process.argv[3], process.argv[4], "get");
+  }
+
+  console.log("GET generated!");
+
+}
+
+
+function generateRoute() {
+
+  var file;
+  try {
+    file = fs.readFileSync("routes/"+process.argv[3]+".js", 'utf8');
+    console.log("Route already exists!");
+
+    return file;
+  }catch (err) {
+    shell.exec(`echo '`+routeTemplate.replace("<routename>",process.argv[3] )+`' > ./routes/`+process.argv[3]+`.js`);
+
+    obj.routes[process.argv[3]] = {
+        "/" : {
+            type : "get",
+            comment : "This root of "+process.argv[3]
+          }
+    }
+
+    shell.exec(`echo '`+JSON.stringify(obj)+`' > apify.json`);
+    obj = JSON.parse(fs.readFileSync('apify.json', 'utf8'));
+
+
+    var appFile = fs.readFileSync("app.js", 'utf8');
+    appFile = appFile.replace(new RegExp("'", 'g'), '"')
+
+
+    appFile = appFile.insert(appFile.indexOf('var index = require("./routes/index");'), `\nvar `+process.argv[3]+` = require("./routes/`+process.argv[3]+`");\n`);
+
+    appFile = appFile.insert(appFile.indexOf('app.use("/", index);'), `\napp.use("/`+process.argv[3]+`", `+process.argv[3]+`);\n`);
+
+    shell.exec(`echo '`+appFile+`' > app.js`);
+
+
+    console.log("Route generated!");
+
+    return routeTemplate.replace("<routename>",process.argv[3] );
+  }
+}
+
+
+function isInited() {
+  try {
+    obj = JSON.parse(fs.readFileSync('apify.json', 'utf8'));
+
+    return true;
+  }catch (err) {
+    return false;
+  }
+}
+
+function showHelp() {
+  console.log(`
+    Help
+    Initialize:
+
+    cmd: npm install -g apify
+    - will install apify
+
+    cmd: apify init
+    - will initialize a new Project, based on express-generator npm module
+
+    cmd: apify serve
+    - will create a http server on port 3000
+
+
+    USING UI
+
+    cmd: apify ui
+    - will open the UI based Apify application
+
+
+    USING CLI
+
+    cmd: apify groute "route-name"
+    - will generate a new route for you project
+    Example: apify groute songs ---> http://localhost:3000/songs
+
+    cmd: apify gget "route-name" "child route-name" "comments (optional)"
+    - will generate a new child route for you project, under the specified main route, using GET method
+    Example: apify gget songs list ---> http://localhost:3000/songs/list OR apify gget songs list/titles ---> http://localhost:3000/songs/list/titles
+
+    cmd: apify gget "route-name" "child route-name" "comments (optional)"
+    - will generate a new child route for you project, under the specified main route, using POST method
+    Example: apify gpost songs save ---> http://localhost:3000/songs/save OR apify gpost songs list/titles ---> http://localhost:3000/songs/save/all
+    `);
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

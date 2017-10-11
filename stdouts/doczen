@@ -1,0 +1,32 @@
+/root/Targets/doczen
+└─┬ doczen@0.0.5 
+  ├─┬ ansi-highlight@1.0.2  (git://github.com/runningskull/ansi-highlight.git#7b1d3b88c983dd14f6e26bd5b9980d6401b4cb19)
+  │ ├── colors@0.6.2 
+  │ └── js-tokenizer@1.3.3 
+  ├── booter@0.0.3 
+  └── jq-console@2.10.0  (git://github.com/runningskull/jq-console.git#e1b4e1813b537c76b80fcea7adb32320e2a071c8)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/doczen/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","toString","join","RegExp"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0314 took 6.6196s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/doczen/node_modules/doczen/src/main.js. Coverage (Term): 4% Coverage (LOC): 9%
+*- File /root/Targets/doczen/node_modules/doczen/src/repl.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/doczen/node_modules/booter/booter.js. Coverage (Term): 20% Coverage (LOC): 18%
+*- File /root/Targets/doczen/node_modules/ansi-highlight/index.js. Coverage (Term): 23% Coverage (LOC): 50%
+*- File /root/Targets/doczen/node_modules/js-tokenizer/index.js. Coverage (Term): 67% Coverage (LOC): 72%
+*- File /root/Targets/doczen/node_modules/colors/colors.js. Coverage (Term): 9% Coverage (LOC): 10%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

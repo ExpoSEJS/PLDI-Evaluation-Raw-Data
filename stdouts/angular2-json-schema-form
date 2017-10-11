@@ -1,0 +1,53 @@
+/root/Targets/angular2-json-schema-form
+├── UNMET PEER DEPENDENCY @angular/cdk@^2.0.0-beta.10
+├── UNMET PEER DEPENDENCY @angular/common@^4.0.0
+├── UNMET PEER DEPENDENCY @angular/core@^4.0.0
+├── UNMET PEER DEPENDENCY @angular/flex-layout@2.0.0-beta.9
+├── UNMET PEER DEPENDENCY @angular/forms@^4.0.0
+├── UNMET PEER DEPENDENCY @angular/material@^2.0.0-beta.10
+├── UNMET PEER DEPENDENCY @angular/platform-browser@^4.0.0
+├─┬ angular2-json-schema-form@0.5.0-alpha.8 
+│ ├─┬ ajv@5.2.3 
+│ │ ├── co@4.6.0 
+│ │ ├── fast-deep-equal@1.0.0 
+│ │ ├── json-schema-traverse@0.3.1 
+│ │ └─┬ json-stable-stringify@1.0.1 
+│ │   └── jsonify@0.0.0 
+│ ├─┬ json-schema-ref-parser@3.3.1 
+│ │ ├── call-me-maybe@1.0.1 
+│ │ ├─┬ debug@3.1.0 
+│ │ │ └── ms@2.0.0 
+│ │ ├── es6-promise@4.1.1 
+│ │ ├─┬ js-yaml@3.10.0 
+│ │ │ ├─┬ argparse@1.0.9 
+│ │ │ │ └── sprintf-js@1.0.3 
+│ │ │ └── esprima@4.0.0 
+│ │ ├─┬ ono@4.0.2 
+│ │ │ └── format-util@1.0.3 
+│ │ └─┬ z-schema@3.18.4 
+│ │   ├── commander@2.11.0 
+│ │   ├── lodash.get@4.4.2 
+│ │   ├── lodash.isequal@4.5.0 
+│ │   └── validator@8.2.0 
+│ └── lodash@4.17.4 
+└── UNMET PEER DEPENDENCY rxjs@5.x
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular2-json-schema-form/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 0% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0393 took 58.7565s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module '@angular/core'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/angular2-json-schema-form/node_modules/angular2-json-schema-form/bundles/angular2-json-schema-form.umd.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

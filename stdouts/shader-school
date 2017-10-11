@@ -1,0 +1,832 @@
+
+> canvas@1.6.7 install /root/Targets/shader-school/node_modules/canvas
+> node-gyp rebuild
+
+
+> stanford-dragon@1.1.1 postinstall /root/Targets/shader-school/node_modules/stanford-dragon
+> npm run build
+
+
+> stanford-dragon@1.1.1 build /root/Targets/shader-school/node_modules/stanford-dragon
+> npm run res1 && npm run res2 && npm run res3 && npm run res4
+
+
+> stanford-dragon@1.1.1 res1 /root/Targets/shader-school/node_modules/stanford-dragon
+> node lib/build.js models/dragon_vrip.ply.gz 1.js
+
+
+> stanford-dragon@1.1.1 res2 /root/Targets/shader-school/node_modules/stanford-dragon
+> node lib/build.js models/dragon_vrip_res2.ply.gz 2.js
+
+
+> stanford-dragon@1.1.1 res3 /root/Targets/shader-school/node_modules/stanford-dragon
+> node lib/build.js models/dragon_vrip_res3.ply.gz 3.js
+
+
+> stanford-dragon@1.1.1 res4 /root/Targets/shader-school/node_modules/stanford-dragon
+> node lib/build.js models/dragon_vrip_res4.ply.gz 4.js
+
+/root/Targets/shader-school
+└─┬ shader-school@1.1.1 
+  ├─┬ a-big-triangle@0.0.0 
+  │ ├─┬ gl-buffer@0.1.2 
+  │ │ └─┬ typedarray-pool@0.1.2 
+  │ │   ├── bit-twiddle@0.0.2 
+  │ │   └── dup@0.0.0 
+  │ └─┬ gl-vao@0.0.3 
+  │   └── webglew@0.0.0 
+  ├─┬ apprise@1.0.0 
+  │ ├── emitter-component@1.1.1 
+  │ └─┬ once@1.4.0 
+  │   └── wrappy@1.0.2 
+  ├─┬ autoprefixer@1.3.1 
+  │ ├── caniuse-db@1.0.30000741 
+  │ ├─┬ fs-extra@0.9.1 
+  │ │ ├── jsonfile@1.1.1 
+  │ │ ├── ncp@0.5.1 
+  │ │ └─┬ rimraf@2.6.2 
+  │ │   └─┬ glob@7.1.2 
+  │ │     └── fs.realpath@1.0.0 
+  │ └─┬ postcss@0.3.5 
+  │   ├── base64-js@0.0.8 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├─┬ baboon-image@1.0.1 
+  │ └─┬ ndpack-image@1.0.4 
+  │   ├─┬ get-pixels@1.1.3 
+  │   │ ├── jpeg-js@0.0.3 
+  │   │ ├── ndarray-pack@1.2.1 
+  │   │ ├── node-bitmap@0.0.1 
+  │   │ ├── omggif@1.0.8 
+  │   │ ├── pngparse@1.1.4 
+  │   │ └─┬ ppm@0.0.0 
+  │   │   └── through@2.2.7 
+  │   ├── pngparse-sync@1.0.2 
+  │   └─┬ save-pixels@1.0.0 
+  │     └── pngjs@0.4.0 
+  ├─┬ beefy@2.1.8 
+  │ ├── ansicolors@0.3.2 
+  │ ├─┬ chokidar@1.7.0 
+  │ │ ├─┬ anymatch@1.3.2 
+  │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ ├── extglob@0.3.2 
+  │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ ├── kind-of@3.2.2 
+  │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ └─┬ normalize-path@2.1.1 
+  │ │ │   └── remove-trailing-separator@1.1.0 
+  │ │ ├── async-each@1.0.1 
+  │ │ ├── glob-parent@2.0.0 
+  │ │ ├─┬ is-binary-path@1.0.1 
+  │ │ │ └── binary-extensions@1.10.0 
+  │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ └── is-extglob@1.0.0 
+  │ │ ├── path-is-absolute@1.0.1 
+  │ │ └─┬ readdirp@2.1.0 
+  │ │   ├── graceful-fs@4.1.11 
+  │ │   ├── minimatch@3.0.4 
+  │ │   └── set-immediate-shim@1.0.1 
+  │ ├─┬ concat-stream@1.6.0 
+  │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ ├── string_decoder@1.0.3 
+  │ │ │ └── util-deprecate@1.0.2 
+  │ │ └── typedarray@0.0.6 
+  │ ├── find-global-packages@0.0.1 
+  │ ├── ignorepatterns@1.1.0 
+  │ ├── leftpad@0.0.0 
+  │ ├── mime@1.2.11 
+  │ ├── minimist@0.0.8 
+  │ ├── open@0.0.3 
+  │ ├─┬ portfinder@0.2.1 
+  │ │ └── mkdirp@0.0.7 
+  │ ├── pretty-bytes@0.1.2 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ ├── resolve@0.6.3 
+  │ ├── response-stream@0.0.0 
+  │ ├─┬ script-injector@1.0.0 
+  │ │ ├─┬ through2@0.6.5 
+  │ │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ └── xtend@4.0.1 
+  │ │ └─┬ trumpet@1.7.2 
+  │ │   ├─┬ html-select@2.3.24 
+  │ │   │ ├─┬ readable-stream@1.1.14 
+  │ │   │ │ ├── isarray@0.0.1 
+  │ │   │ │ └── string_decoder@0.10.31 
+  │ │   │ ├── split@0.3.3 
+  │ │   │ └─┬ through2@1.1.1 
+  │ │   │   └── xtend@4.0.1 
+  │ │   ├─┬ html-tokenize@1.2.5 
+  │ │   │ ├─┬ readable-stream@1.0.34 
+  │ │   │ │ ├── isarray@0.0.1 
+  │ │   │ │ └── string_decoder@0.10.31 
+  │ │   │ └── through2@0.4.2 
+  │ │   ├─┬ readable-stream@1.1.14 
+  │ │   │ ├── isarray@0.0.1 
+  │ │   │ └── string_decoder@0.10.31 
+  │ │   └─┬ through2@1.1.1 
+  │ │     └── xtend@4.0.1 
+  │ ├── through@2.2.7 
+  │ ├── which@1.0.9 
+  │ └─┬ xtend@2.1.2 
+  │   └── object-keys@0.4.0 
+  ├─┬ brfs@1.4.3 
+  │ ├─┬ quote-stream@1.0.2 
+  │ │ ├── buffer-equal@0.0.1 
+  │ │ ├── minimist@1.2.0 
+  │ │ └─┬ through2@2.0.3 
+  │ │   └── xtend@4.0.1 
+  │ ├─┬ resolve@1.4.0 
+  │ │ └── path-parse@1.0.5 
+  │ ├─┬ static-module@1.5.0 
+  │ │ ├─┬ escodegen@1.3.3 
+  │ │ │ ├── estraverse@1.5.1 
+  │ │ │ └── esutils@1.0.0 
+  │ │ ├─┬ falafel@2.1.0 
+  │ │ │ ├── acorn@5.1.2 
+  │ │ │ ├── foreach@2.0.5 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── object-keys@1.0.11 
+  │ │ ├─┬ has@1.0.1 
+  │ │ │ └── function-bind@1.1.1 
+  │ │ ├── object-inspect@0.4.0 
+  │ │ ├── quote-stream@0.0.0 
+  │ │ ├─┬ readable-stream@1.0.34 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── through2@0.4.2 
+  │ └─┬ through2@2.0.3 
+  │   └── xtend@4.0.1 
+  ├─┬ browser-menu@0.1.0 
+  │ ├── events@1.1.1 
+  │ ├─┬ terminal-menu@0.2.0 
+  │ │ ├── charm@0.1.2 
+  │ │ └── resumer@0.0.0 
+  │ └── vkey@0.0.3 
+  ├─┬ browserify@6.3.4 
+  │ ├── assert@1.1.2 
+  │ ├─┬ browser-pack@3.2.0 
+  │ │ ├─┬ combine-source-map@0.3.0 
+  │ │ │ └─┬ inline-source-map@0.3.1 
+  │ │ │   └── source-map@0.3.0 
+  │ │ ├─┬ concat-stream@1.4.10 
+  │ │ │ └─┬ readable-stream@1.1.14 
+  │ │ │   ├── isarray@0.0.1 
+  │ │ │   └── string_decoder@0.10.31 
+  │ │ └─┬ through2@0.5.1 
+  │ │   ├── readable-stream@1.0.34 
+  │ │   └── xtend@3.0.0 
+  │ ├─┬ browser-resolve@1.11.2 
+  │ │ └── resolve@1.1.7 
+  │ ├─┬ browserify-zlib@0.1.4 
+  │ │ └── pako@0.2.9 
+  │ ├─┬ buffer@2.8.2 
+  │ │ ├── base64-js@0.0.7 
+  │ │ ├── ieee754@1.1.8 
+  │ │ └── is-array@1.0.1 
+  │ ├── builtins@0.0.7 
+  │ ├── commondir@0.0.1 
+  │ ├── concat-stream@1.4.10 
+  │ ├─┬ console-browserify@1.1.0 
+  │ │ └── date-now@0.1.4 
+  │ ├── constants-browserify@0.0.1 
+  │ ├─┬ crypto-browserify@3.11.1 
+  │ │ ├─┬ browserify-cipher@1.0.0 
+  │ │ │ ├─┬ browserify-aes@1.0.8 
+  │ │ │ │ └── buffer-xor@1.0.3 
+  │ │ │ ├─┬ browserify-des@1.0.0 
+  │ │ │ │ └── des.js@1.0.0 
+  │ │ │ └─┬ evp_bytestokey@1.0.3 
+  │ │ │   └─┬ md5.js@1.3.4 
+  │ │ │     └── hash-base@3.0.4 
+  │ │ ├─┬ browserify-sign@4.0.4 
+  │ │ │ ├── bn.js@4.11.8 
+  │ │ │ ├── browserify-rsa@4.0.1 
+  │ │ │ ├─┬ elliptic@6.4.0 
+  │ │ │ │ ├── brorand@1.1.0 
+  │ │ │ │ ├── hash.js@1.1.3 
+  │ │ │ │ ├── hmac-drbg@1.0.1 
+  │ │ │ │ ├── minimalistic-assert@1.0.0 
+  │ │ │ │ └── minimalistic-crypto-utils@1.0.1 
+  │ │ │ └─┬ parse-asn1@5.1.0 
+  │ │ │   └── asn1.js@4.9.1 
+  │ │ ├── create-ecdh@4.0.0 
+  │ │ ├─┬ create-hash@1.1.3 
+  │ │ │ ├── cipher-base@1.0.4 
+  │ │ │ └─┬ ripemd160@2.0.1 
+  │ │ │   └── hash-base@2.0.2 
+  │ │ ├── create-hmac@1.1.6 
+  │ │ ├─┬ diffie-hellman@5.0.2 
+  │ │ │ └── miller-rabin@4.0.1 
+  │ │ ├── pbkdf2@3.0.14 
+  │ │ ├── public-encrypt@4.0.0 
+  │ │ └── randombytes@2.0.5 
+  │ ├── deep-equal@0.2.2 
+  │ ├── defined@0.0.0 
+  │ ├─┬ deps-sort@1.3.9 
+  │ │ ├─┬ JSONStream@1.3.1 
+  │ │ │ └── jsonparse@1.3.1 
+  │ │ └─┬ through2@1.1.1 
+  │ │   ├─┬ readable-stream@1.1.14 
+  │ │   │ ├── isarray@0.0.1 
+  │ │   │ └── string_decoder@0.10.31 
+  │ │   └── xtend@4.0.1 
+  │ ├── domain-browser@1.1.7 
+  │ ├─┬ duplexer2@0.0.2 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ ├── events@1.0.2 
+  │ ├─┬ glob@4.5.3 
+  │ │ ├── inflight@1.0.6 
+  │ │ └─┬ minimatch@2.0.10 
+  │ │   └─┬ brace-expansion@1.1.8 
+  │ │     ├── balanced-match@1.0.0 
+  │ │     └── concat-map@0.0.1 
+  │ ├─┬ http-browserify@1.7.0 
+  │ │ └── Base64@0.2.1 
+  │ ├── https-browserify@0.0.1 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ insert-module-globals@6.6.3 
+  │ │ ├─┬ combine-source-map@0.6.1 
+  │ │ │ ├── convert-source-map@1.1.3 
+  │ │ │ ├── inline-source-map@0.5.0 
+  │ │ │ ├── lodash.memoize@3.0.4 
+  │ │ │ └── source-map@0.4.4 
+  │ │ ├─┬ concat-stream@1.4.10 
+  │ │ │ └─┬ readable-stream@1.1.14 
+  │ │ │   ├── isarray@0.0.1 
+  │ │ │   └── string_decoder@0.10.31 
+  │ │ ├─┬ JSONStream@1.3.1 
+  │ │ │ └── jsonparse@1.3.1 
+  │ │ ├─┬ lexical-scope@1.2.0 
+  │ │ │ └─┬ astw@2.2.0 
+  │ │ │   └── acorn@4.0.13 
+  │ │ ├── process@0.11.10 
+  │ │ ├── through2@1.1.1 
+  │ │ └── xtend@4.0.1 
+  │ ├── isarray@0.0.1 
+  │ ├─┬ JSONStream@0.8.4 
+  │ │ └── jsonparse@0.0.5 
+  │ ├─┬ labeled-stream-splicer@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └─┬ stream-splicer@1.3.2 
+  │ │   ├── isarray@0.0.1 
+  │ │   ├─┬ readable-stream@1.1.14 
+  │ │   │ └── string_decoder@0.10.31 
+  │ │   ├─┬ readable-wrap@1.0.0 
+  │ │   │ └─┬ readable-stream@1.1.14 
+  │ │   │   ├── isarray@0.0.1 
+  │ │   │   └── string_decoder@0.10.31 
+  │ │   └─┬ through2@1.1.1 
+  │ │     └── xtend@4.0.1 
+  │ ├─┬ module-deps@3.9.1 
+  │ │ ├── concat-stream@1.4.10 
+  │ │ ├── defined@1.0.0 
+  │ │ ├─┬ detective@4.5.0 
+  │ │ │ ├── acorn@4.0.13 
+  │ │ │ └── defined@1.0.0 
+  │ │ ├─┬ JSONStream@1.3.1 
+  │ │ │ └── jsonparse@1.3.1 
+  │ │ ├─┬ parents@1.0.1 
+  │ │ │ └── path-platform@0.11.15 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ ├── resolve@1.4.0 
+  │ │ ├─┬ stream-combiner2@1.0.2 
+  │ │ │ └─┬ through2@0.5.1 
+  │ │ │   ├─┬ readable-stream@1.0.34 
+  │ │ │   │ ├── isarray@0.0.1 
+  │ │ │   │ └── string_decoder@0.10.31 
+  │ │ │   └── xtend@3.0.0 
+  │ │ ├── through2@1.1.1 
+  │ │ └── xtend@4.0.1 
+  │ ├── os-browserify@0.1.2 
+  │ ├─┬ parents@0.0.3 
+  │ │ └── path-platform@0.0.1 
+  │ ├── path-browserify@0.0.0 
+  │ ├── process@0.8.0 
+  │ ├── punycode@1.2.4 
+  │ ├── querystring-es3@0.2.1 
+  │ ├── readable-stream@1.1.14 
+  │ ├── resolve@0.7.4 
+  │ ├── shallow-copy@0.0.1 
+  │ ├─┬ shasum@1.0.2 
+  │ │ ├─┬ json-stable-stringify@0.0.1 
+  │ │ │ └── jsonify@0.0.0 
+  │ │ └── sha.js@2.4.9 
+  │ ├── shell-quote@0.0.1 
+  │ ├─┬ stream-browserify@1.0.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ ├── string_decoder@0.10.31 
+  │ ├─┬ subarg@1.0.0 
+  │ │ └── minimist@1.2.0 
+  │ ├─┬ syntax-error@1.3.0 
+  │ │ └── acorn@4.0.13 
+  │ ├─┬ through2@1.1.1 
+  │ │ └── xtend@4.0.1 
+  │ ├─┬ timers-browserify@1.4.2 
+  │ │ └── process@0.11.10 
+  │ ├── tty-browserify@0.0.0 
+  │ ├─┬ umd@2.1.0 
+  │ │ ├─┬ rfile@1.0.0 
+  │ │ │ ├── callsite@1.0.0 
+  │ │ │ └── resolve@0.3.1 
+  │ │ ├─┬ ruglify@1.0.0 
+  │ │ │ └─┬ uglify-js@2.2.5 
+  │ │ │   └── optimist@0.3.7 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├── async@0.2.10 
+  │ │   ├── source-map@0.1.34 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     └── window-size@0.1.0 
+  │ ├─┬ url@0.10.3 
+  │ │ ├── punycode@1.3.2 
+  │ │ └── querystring@0.2.0 
+  │ ├─┬ util@0.10.3 
+  │ │ └── inherits@2.0.1 
+  │ ├─┬ vm-browserify@0.0.4 
+  │ │ └── indexof@0.0.1 
+  │ └── xtend@3.0.0 
+  ├── canvas-fit@0.0.0 
+  ├─┬ chalk@0.4.0 
+  │ ├── ansi-styles@1.0.0 
+  │ ├── has-color@0.1.7 
+  │ └── strip-ansi@0.1.1 
+  ├── clamp@1.0.1 
+  ├── conway-hart@0.1.0 
+  ├── domify@1.4.0 
+  ├─┬ ecstatic@1.4.1 
+  │ ├── he@0.5.0 
+  │ ├── minimist@1.2.0 
+  │ └── url-join@1.1.0 
+  ├─┬ envify@1.2.1 
+  │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ ├─┬ jstransform@3.0.0 
+  │ │ ├── base62@0.1.1 
+  │ │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ │ └── source-map@0.1.31 
+  │ └── through@2.3.8 
+  ├── findup-element@0.0.0 
+  ├─┬ frame-debounce@0.0.0 
+  │ └── raf-component@1.1.2 
+  ├─┬ gl-axes@2.3.0 
+  │ ├── bit-twiddle@1.0.2 
+  │ ├── extract-frustum-planes@1.0.0 
+  │ ├─┬ gl-state@1.0.0 
+  │ │ └── uniq@1.0.1 
+  │ ├─┬ split-polygon@1.0.0 
+  │ │ ├─┬ robust-dot-product@1.0.0 
+  │ │ │ └── two-product@1.0.2 
+  │ │ └── robust-sum@1.0.0 
+  │ └─┬ vectorize-text@2.0.4 
+  │   ├── canvas-browserify@1.1.3 
+  │   ├─┬ planar-graph-to-polyline@1.0.5 
+  │   │ ├── edges-to-adjacency-list@1.0.0 
+  │   │ ├─┬ planar-dual@1.0.2 
+  │   │ │ ├─┬ compare-angle@1.0.1 
+  │   │ │ │ ├── robust-product@1.0.0 
+  │   │ │ │ ├── signum@0.0.0 
+  │   │ │ │ └── two-sum@1.0.0 
+  │   │ │ └── dup@1.0.0 
+  │   │ ├─┬ point-in-big-polygon@2.0.0 
+  │   │ │ ├── binary-search-bounds@1.0.0 
+  │   │ │ ├── interval-tree-1d@1.0.3 
+  │   │ │ └─┬ slab-decomposition@1.0.2 
+  │   │ │   └── functional-red-black-tree@1.0.1 
+  │   │ └─┬ robust-orientation@1.1.3 
+  │   │   ├── robust-scale@1.0.2 
+  │   │   └── robust-subtract@1.0.0 
+  │   ├─┬ simplify-planar-graph@2.0.1 
+  │   │ └─┬ simplicial-complex@0.3.3 
+  │   │   └── union-find@0.0.4 
+  │   ├─┬ surface-nets@1.0.2 
+  │   │ ├─┬ ndarray-extract-contour@1.0.1 
+  │   │ │ └─┬ typedarray-pool@1.1.0 
+  │   │ │   ├── bit-twiddle@1.0.2 
+  │   │ │   └── dup@1.0.0 
+  │   │ ├─┬ triangulate-hypercube@1.0.1 
+  │   │ │ ├── gamma@0.1.0 
+  │   │ │ ├─┬ permutation-parity@1.0.0 
+  │   │ │ │ └─┬ typedarray-pool@1.1.0 
+  │   │ │ │   ├── bit-twiddle@1.0.2 
+  │   │ │ │   └── dup@1.0.0 
+  │   │ │ └─┬ permutation-rank@1.0.0 
+  │   │ │   ├── invert-permutation@1.0.0 
+  │   │ │   └─┬ typedarray-pool@1.1.0 
+  │   │ │     ├── bit-twiddle@1.0.2 
+  │   │ │     └── dup@1.0.0 
+  │   │ └── zero-crossings@1.0.1 
+  │   └─┬ triangulate-polyline@1.0.3 
+  │     └─┬ cdt2d@1.0.0 
+  │       ├── binary-search-bounds@2.0.3 
+  │       └── robust-in-sphere@1.1.3 
+  ├─┬ gl-buffer@2.1.2 
+  │ ├─┬ ndarray-ops@1.2.2 
+  │ │ └── cwise-compiler@1.1.3 
+  │ └─┬ typedarray-pool@1.1.0 
+  │   ├── bit-twiddle@1.0.2 
+  │   └── dup@1.0.0 
+  ├─┬ gl-compare@1.0.0 
+  │ └── canvas-pixels@0.0.0 
+  ├─┬ gl-compare-sidebar@1.1.4 
+  │ ├── escape-html@1.0.3 
+  │ └── range-slider@1.0.2 
+  ├── gl-context@0.1.1 
+  ├─┬ gl-fbo@1.1.3 
+  │ └─┬ webglew@1.0.5 
+  │   └── weak-map@1.0.5 
+  ├── gl-fbo-matching@1.0.0 
+  ├── gl-matrix@2.4.0 
+  ├─┬ gl-texture2d@1.2.0 
+  │ ├─┬ typedarray-pool@1.1.0 
+  │ │ ├── bit-twiddle@1.0.2 
+  │ │ └── dup@1.0.0 
+  │ └── webglew@1.0.5 
+  ├── gl-vao@1.3.0 
+  ├── glsldoc@0.0.4 
+  ├─┬ glslify@1.6.1 
+  │ ├── cssauron@0.0.2 
+  │ ├─┬ cssauron-glsl@0.0.0 
+  │ │ └── cssauron@1.4.0 
+  │ ├── emit-function@0.0.2 
+  │ ├── esprima@1.1.1 
+  │ ├─┬ gl-shader-core@2.2.0 
+  │ │ └── dup@1.0.0 
+  │ ├─┬ glsl-deparser@0.0.2 
+  │ │ └── through@1.1.2 
+  │ ├─┬ glsl-extract@0.0.2 
+  │ │ ├─┬ glsl-parser@0.0.5 
+  │ │ │ └── through@1.1.2 
+  │ │ ├── glsl-tokenizer@0.0.8 
+  │ │ └─┬ utf8-stream@0.0.0 
+  │ │   └─┬ readable-stream@1.0.34 
+  │ │     ├── isarray@0.0.1 
+  │ │     └── string_decoder@0.10.31 
+  │ ├─┬ glsl-min-stream@0.0.2 
+  │ │ └── through@1.1.2 
+  │ ├─┬ glslify-stream@0.4.1 
+  │ │ ├── cssauron@0.0.3 
+  │ │ ├─┬ glsl-parser@1.0.1 
+  │ │ │ ├── glsl-tokenizer@1.1.1 
+  │ │ │ └── through@2.3.4 
+  │ │ ├── resolve@0.5.1 
+  │ │ ├─┬ stream-combiner@0.0.2 
+  │ │ │ └── duplexer@0.0.4 
+  │ │ ├── through@1.1.2 
+  │ │ └── wrap-stream@0.0.0 
+  │ ├─┬ new-from@0.0.3 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ ├─┬ nopt@2.2.1 
+  │ │ └── abbrev@1.1.1 
+  │ ├─┬ replace-method@0.0.0 
+  │ │ └─┬ recast@0.5.27 
+  │ │   ├── ast-types@0.3.38 
+  │ │   ├── cls@0.1.5 
+  │ │   ├── esprima@1.1.0-dev-harmony  (git+https://github.com/ariya/esprima.git#a65a3eb93b9a5dce9a1184ca2d1bd0b184c6b8fd)
+  │ │   ├── private@0.1.7 
+  │ │   └── source-map@0.1.32 
+  │ ├── shortest@0.0.0 
+  │ ├─┬ sleuth@0.1.1 
+  │ │ ├── is-require@0.0.1 
+  │ │ └── static-eval@0.1.1 
+  │ └─┬ static-eval@0.2.4 
+  │   └─┬ escodegen@0.0.28 
+  │     ├── esprima@1.0.4 
+  │     └── estraverse@1.3.2 
+  ├─┬ glslify-live@2.1.1 
+  │ ├─┬ envify@2.0.1 
+  │ │ └── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ ├── esprima@1.2.5 
+  │ ├─┬ gl-shader-update@0.0.0 
+  │ │ └── glsl-extract-sync@0.0.0 
+  │ ├── glsl-resolve@0.0.1 
+  │ ├─┬ glslify-bundle@1.0.3 
+  │ │ ├─┬ glsl-deparser@0.0.3 
+  │ │ │ └── through@1.1.2 
+  │ │ ├── multipipe@0.1.2 
+  │ │ └── resolve@0.7.4 
+  │ ├─┬ request@2.83.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.3 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ │ └── json-stable-stringify@1.0.1 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.10.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├── dashdash@1.14.1 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├── getpass@0.1.7 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── qs@6.5.1 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ ├─┬ sse-stream@0.0.4 
+  │ │ └── through@2.2.7 
+  │ └── uuid@1.4.2 
+  ├── google-fonts@0.0.0 
+  ├── highlight.js@8.9.1 
+  ├─┬ inquirer@0.5.1 
+  │ ├── async@0.8.0 
+  │ ├─┬ cli-color@0.3.3 
+  │ │ ├── d@0.1.1 
+  │ │ ├─┬ es5-ext@0.10.30 
+  │ │ │ ├─┬ es6-iterator@2.0.1 
+  │ │ │ │ └── d@1.0.0 
+  │ │ │ └─┬ es6-symbol@3.1.1 
+  │ │ │   └── d@1.0.0 
+  │ │ ├─┬ memoizee@0.3.10 
+  │ │ │ ├─┬ es6-weak-map@0.1.4 
+  │ │ │ │ ├── es6-iterator@0.1.3 
+  │ │ │ │ └── es6-symbol@2.0.1 
+  │ │ │ ├─┬ event-emitter@0.3.5 
+  │ │ │ │ └── d@1.0.0 
+  │ │ │ ├── lru-queue@0.1.0 
+  │ │ │ └── next-tick@0.2.2 
+  │ │ └─┬ timers-ext@0.1.2 
+  │ │   └── next-tick@1.0.0 
+  │ ├── lodash@2.4.2 
+  │ ├── mute-stream@0.0.4 
+  │ └─┬ readline2@0.1.1 
+  │   └─┬ strip-ansi@2.0.1 
+  │     └── ansi-regex@1.1.1 
+  ├── insert-css@0.1.1 
+  ├── marked@0.3.6 
+  ├─┬ mesh-normals@1.0.0 
+  │ ├── face-normals@0.0.0 
+  │ ├── normals@0.1.0 
+  │ └── unindex-mesh@0.0.0 
+  ├── mkdirp@0.5.1 
+  ├── mouse-position@1.0.0 
+  ├── mouse-pressed@0.0.1 
+  ├─┬ ndarray@1.0.18 
+  │ ├── iota-array@1.0.0 
+  │ └── is-buffer@1.1.5 
+  ├─┬ ndarray-distance@0.0.0 
+  │ └─┬ cwise@0.4.0 
+  │   ├─┬ cwise-compiler@0.1.0 
+  │   │ └── uniq@0.0.2 
+  │   └─┬ cwise-parser@0.0.1 
+  │     ├── esprima@1.0.4 
+  │     └── uniq@0.0.2 
+  ├── opener@1.4.3 
+  ├── quotemeta@0.0.0 
+  ├─┬ raf@2.0.4 
+  │ └── performance-now@0.1.4 
+  ├── remove-element@0.0.0 
+  ├─┬ rework@0.20.3 
+  │ ├── color-parser@0.1.0 
+  │ ├── convert-source-map@0.3.5 
+  │ ├─┬ css@1.6.0 
+  │ │ └── css-stringify@1.4.1 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├── hsb2rgb@1.0.2 
+  │ ├── rework-inherit@0.2.3 
+  │ └── rework-visit@1.0.0 
+  ├─┬ rework-inline@0.2.0 
+  │ ├── find-file@0.1.4 
+  │ └── parse-import@0.1.3 
+  ├─┬ rework-npm@0.6.1 
+  │ └── css-parse@1.7.0 
+  ├── right-now@1.0.0 
+  ├── sidenote@1.0.0 
+  ├── sliced@0.0.5 
+  ├─┬ stanford-dragon@1.1.1 
+  │ ├─┬ glob@3.2.11 
+  │ │ └─┬ minimatch@0.3.0 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ ├─┬ map-limit@0.0.0 
+  │ │ └── once@1.3.3 
+  │ └─┬ parse-ply@0.1.0 
+  │   └── is-little-endian@0.0.0 
+  ├── wordwrap@0.0.2 
+  ├─┬ xhr@1.17.1 
+  │ ├─┬ global@4.3.2 
+  │ │ ├─┬ min-document@2.19.0 
+  │ │ │ └── dom-walk@0.1.1 
+  │ │ └── process@0.5.2 
+  │ ├── once@1.1.1 
+  │ └─┬ parse-headers@2.0.1 
+  │   ├─┬ for-each@0.3.2 
+  │   │ └── is-function@1.0.1 
+  │   └── trim@0.0.1 
+  └── zfill@0.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/shader-school/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0286 took 3.3641s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var livePort  = Number(process.env.GLSLIFY_LIVE_PORT = 12491)
+var answers   = require('./lib/create-answers')
+var exmap     = require('./lib/exercise-map')
+var live      = require('glslify-live/server')
+var exercises = require('./exercises')
+var styles    = require('./style')
+var opener    = require('opener')
+var beefy     = require('beefy')
+var chalk     = require('chalk')
+var http      = require('http')
+var path      = require('path')
+var url       = require('url')
+var fs        = require('fs')
+
+var mainPort = 12492
+var closeWindow = fs.readFileSync(
+  path.join(__dirname, 'lib/close-window.html')
+)
+
+module.exports = createServer
+
+createServer(process.cwd())
+
+function createServer(root) {
+  console.error(fs.readFileSync(
+    __dirname + '/intro.txt', 'utf8'
+  ))
+
+  live().listen(livePort, function(err) {
+    if (err) throw err
+
+    answers(root, function(err) {
+      if (err) throw err
+      console.error('Done!')
+      console.error('Booting up the workshop in your browser in just a second...')
+      console.error('')
+      setTimeout(loadedAnswers, 1000)
+    })
+  })
+
+  function loadedAnswers(err) {
+    if (err) throw err
+    var exNames  = Object.keys(exercises)
+    var exLinks  = exNames.map(function(k) { return exercises[k] })
+    var exSlugs  = exLinks.map(function(k) { return exmap[k] })
+    var exFiles  = exSlugs.map(function(link, i) {
+      var dir = path.resolve(root, link)
+
+      return fs.readdirSync(dir).map(function(name) {
+        return path.resolve(dir, name)
+      })
+    })
+
+    var exRoutes = exLinks.map(function(link, i) {
+      return require('./exercises/' + link + '/server.js')(exFiles[i])
+    })
+
+    var menu = beefy({
+        cwd: path.join(__dirname, 'menu')
+      , entries: ['index.js']
+      , quiet: false
+      , watchify: false
+    })
+
+    http.createServer(function(req, res) {
+      // Force the addition of a query string. This
+      // works around an issue in beefy until it gets fixed:
+      // https://github.com/stackgl/shader-school/issues/107
+      req.url = req.url.indexOf('?') === -1
+        ? req.url + '?'
+        : req.url
+
+      var uri = url.parse(req.url).pathname
+      var paths = uri.split('/').filter(Boolean)
+
+      if (uri === '/style.css') {
+        res.setHeader('content-type', 'text/css')
+        res.end(styles())
+        return
+      }
+
+      if (paths[0] === 'open') {
+        var exPath = exmap[paths[1]]
+        if (exPath) {
+          opener(path.join(root, exPath))
+        }
+        return res.end(closeWindow)
+      }
+
+      for (var i = 0; i < exLinks.length; i++) {
+        if (uri.indexOf(exLinks[i]) === 1) {
+          req.url = req.url
+            .replace(exLinks[i], '')
+            .replace(/\/+/g, '/')
+
+          return exRoutes[i](req, res)
+        }
+      }
+
+      return menu(req, res)
+    }).listen(mainPort, function(err) {
+      if (err) throw err
+
+      var url = 'http://localhost:'+mainPort
+      opener(url)
+      console.log(chalk.yellow('WORKSHOP URL:'), chalk.underline.blue(url))
+      console.log()
+    })
+  }
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

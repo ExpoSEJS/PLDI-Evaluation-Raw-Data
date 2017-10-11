@@ -1,0 +1,77 @@
+/root/Targets/attyc
+└─┬ attyc@0.1.9 
+  ├─┬ command-line-args@3.0.5 
+  │ ├── array-back@1.0.4 
+  │ ├── feature-detect-es6@1.3.1 
+  │ ├─┬ find-replace@1.0.3 
+  │ │ └── test-value@2.1.0 
+  │ └── typical@2.6.1 
+  ├─┬ command-line-usage@3.0.8 
+  │ ├── ansi-escape-sequences@3.0.0 
+  │ └─┬ table-layout@0.3.0 
+  │   ├── core-js@2.5.1 
+  │   ├── deep-extend@0.4.2 
+  │   └─┬ wordwrapjs@2.0.0 
+  │     └── reduce-flatten@1.0.1 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── once@1.4.0 
+  │ └── path-is-absolute@1.0.1 
+  ├─┬ ts-node@1.7.3 
+  │ ├── arrify@1.0.1 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ ├── diff@3.3.1 
+  │ ├── make-error@1.3.0 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── pinkie@2.0.4 
+  │ ├─┬ source-map-support@0.4.18 
+  │ │ └── source-map@0.5.7 
+  │ ├─┬ tsconfig@5.0.3 
+  │ │ ├── any-promise@1.3.0 
+  │ │ ├─┬ parse-json@2.2.0 
+  │ │ │ └─┬ error-ex@1.3.1 
+  │ │ │   └── is-arrayish@0.2.1 
+  │ │ ├─┬ strip-bom@2.0.0 
+  │ │ │ └── is-utf8@0.2.1 
+  │ │ └── strip-json-comments@2.0.1 
+  │ ├─┬ v8flags@2.1.1 
+  │ │ └── user-home@1.1.1 
+  │ ├── xtend@4.0.1 
+  │ └─┬ yn@1.3.0 
+  │   └── object-assign@4.1.1 
+  ├── typescript@2.5.3 
+  └── xmldom@0.1.27 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/attyc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0386 took 2.2116s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'attyc'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

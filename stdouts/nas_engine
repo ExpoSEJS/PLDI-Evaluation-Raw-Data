@@ -1,0 +1,191 @@
+/root/Targets/nas_engine
+└─┬ nas_engine@1.0.19 
+  ├─┬ handlebars@4.0.10 
+  │ ├── async@1.5.2 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ ├─┬ source-map@0.4.4 
+  │ │ └── amdefine@1.0.1 
+  │ └─┬ uglify-js@2.8.29 
+  │   ├── source-map@0.5.7 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.10.0 
+  │     ├── camelcase@1.2.1 
+  │     ├─┬ cliui@2.1.0 
+  │     │ ├─┬ center-align@0.1.3 
+  │     │ │ ├─┬ align-text@0.1.4 
+  │     │ │ │ ├─┬ kind-of@3.2.2 
+  │     │ │ │ │ └── is-buffer@1.1.5 
+  │     │ │ │ ├── longest@1.0.1 
+  │     │ │ │ └── repeat-string@1.6.1 
+  │     │ │ └── lazy-cache@1.0.4 
+  │     │ ├── right-align@0.1.3 
+  │     │ └── wordwrap@0.0.2 
+  │     ├── decamelize@1.2.0 
+  │     └── window-size@0.1.0 
+  ├─┬ react@0.14.9 
+  │ ├─┬ envify@3.4.1 
+  │ │ ├─┬ jstransform@11.0.3 
+  │ │ │ ├── base62@1.2.0 
+  │ │ │ ├─┬ commoner@0.10.8 
+  │ │ │ │ ├── commander@2.11.0 
+  │ │ │ │ ├─┬ detective@4.5.0 
+  │ │ │ │ │ ├── acorn@4.0.13 
+  │ │ │ │ │ └── defined@1.0.0 
+  │ │ │ │ ├─┬ glob@5.0.15 
+  │ │ │ │ │ ├─┬ inflight@1.0.6 
+  │ │ │ │ │ │ └── wrappy@1.0.2 
+  │ │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │ │ │ │   ├── balanced-match@1.0.0 
+  │ │ │ │ │ │   └── concat-map@0.0.1 
+  │ │ │ │ │ ├── once@1.4.0 
+  │ │ │ │ │ └── path-is-absolute@1.0.1 
+  │ │ │ │ ├── graceful-fs@4.1.11 
+  │ │ │ │ ├── iconv-lite@0.4.19 
+  │ │ │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ │ │ └── minimist@0.0.8 
+  │ │ │ │ ├── private@0.1.7 
+  │ │ │ │ ├── q@1.5.0 
+  │ │ │ │ └─┬ recast@0.11.23 
+  │ │ │ │   ├── ast-types@0.9.6 
+  │ │ │ │   ├── esprima@3.1.3 
+  │ │ │ │   └── source-map@0.5.7 
+  │ │ │ ├── esprima-fb@15001.1.0-dev-harmony-fb 
+  │ │ │ └── object-assign@2.1.1 
+  │ │ └── through@2.3.8 
+  │ └─┬ fbjs@0.6.1 
+  │   ├── core-js@1.2.7 
+  │   ├─┬ loose-envify@1.3.1 
+  │   │ └── js-tokens@3.0.2 
+  │   ├─┬ promise@7.3.1 
+  │   │ └── asap@2.0.6 
+  │   ├── ua-parser-js@0.7.14 
+  │   └── whatwg-fetch@0.9.0 
+  ├── react-dom@0.14.9 
+  ├── underscore@1.8.3 
+  └─┬ underscore.string@3.3.4 
+    ├── sprintf-js@1.1.1 
+    └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nas_engine/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 40% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","toUpperCase","create","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0608 took 15.2039s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (2:0) on program (function(obj, _) { var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+with(obj||{}){
+__p+='rgba('+
+((__t=(r))==null?'':__t)+
+','+
+((__t=(g))==null?'':__t)+
+','+
+((__t=(b))==null?'':__t)+
+','+
+((__t=(a))==null?'':__t)+
+')';
+}
+return __p;
+ }) at SyntaxError: 'with' in strict mode (2:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nas_engine/node_modules/nas_engine/lib/index.js. Coverage (Term): 41% Coverage (LOC): 57%
+*- File /root/Targets/nas_engine/node_modules/nas_engine/lib/core/engine.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/nas_engine/node_modules/nas_engine/lib/component/index.js. Coverage (Term): 29% Coverage (LOC): 31%
+*- File /root/Targets/nas_engine/node_modules/underscore/underscore.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/index.js. Coverage (Term): 83% Coverage (LOC): 91%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/isBlank.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/makeString.js. Coverage (Term): 46% Coverage (LOC): 57%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/stripTags.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/capitalize.js. Coverage (Term): 37% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/decapitalize.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/chop.js. Coverage (Term): 27% Coverage (LOC): 44%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/trim.js. Coverage (Term): 42% Coverage (LOC): 58%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/defaultToWhiteSpace.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/escapeRegExp.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/clean.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/cleanDiacritics.js. Coverage (Term): 60% Coverage (LOC): 73%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/count.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/chars.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/swapCase.js. Coverage (Term): 39% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/escapeHTML.js. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/escapeChars.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/unescapeHTML.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/htmlEntities.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/splice.js. Coverage (Term): 41% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/insert.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/replaceAll.js. Coverage (Term): 39% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/include.js. Coverage (Term): 46% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/join.js. Coverage (Term): 51% Coverage (LOC): 75%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/lines.js. Coverage (Term): 43% Coverage (LOC): 57%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/dedent.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/reverse.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/startsWith.js. Coverage (Term): 40% Coverage (LOC): 60%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/toPositive.js. Coverage (Term): 47% Coverage (LOC): 80%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/endsWith.js. Coverage (Term): 33% Coverage (LOC): 46%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/pred.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/adjacent.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/succ.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/titleize.js. Coverage (Term): 45% Coverage (LOC): 63%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/camelize.js. Coverage (Term): 39% Coverage (LOC): 46%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/underscored.js. Coverage (Term): 51% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/dasherize.js. Coverage (Term): 51% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/classify.js. Coverage (Term): 56% Coverage (LOC): 78%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/humanize.js. Coverage (Term): 59% Coverage (LOC): 88%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/ltrim.js. Coverage (Term): 45% Coverage (LOC): 58%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/rtrim.js. Coverage (Term): 46% Coverage (LOC): 58%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/truncate.js. Coverage (Term): 37% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/prune.js. Coverage (Term): 19% Coverage (LOC): 35%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/words.js. Coverage (Term): 52% Coverage (LOC): 67%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/pad.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/helper/strRepeat.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/lpad.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/rpad.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/lrpad.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/sprintf.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/nas_engine/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/nas_engine/node_modules/sprintf-js/src/sprintf.js. Coverage (Term): 8% Coverage (LOC): 20%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/vsprintf.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/toNumber.js. Coverage (Term): 30% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/numberFormat.js. Coverage (Term): 18% Coverage (LOC): 40%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/strRight.js. Coverage (Term): 33% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/strRightBack.js. Coverage (Term): 33% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/strLeft.js. Coverage (Term): 35% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/strLeftBack.js. Coverage (Term): 38% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/toSentence.js. Coverage (Term): 27% Coverage (LOC): 45%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/toSentenceSerial.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/slugify.js. Coverage (Term): 60% Coverage (LOC): 88%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/surround.js. Coverage (Term): 50% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/quote.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/unquote.js. Coverage (Term): 29% Coverage (LOC): 50%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/repeat.js. Coverage (Term): 36% Coverage (LOC): 46%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/naturalCmp.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/levenshtein.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/toBoolean.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/exports.js. Coverage (Term): 75% Coverage (LOC): 91%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/wrap.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/nas_engine/node_modules/underscore.string/map.js. Coverage (Term): 41% Coverage (LOC): 56%
+*- File /root/Targets/nas_engine/node_modules/nas_engine/lib/component/AnchorR1/data.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/nas_engine/node_modules/nas_engine/lib/util/htmlUtil.js. Coverage (Term): 34% Coverage (LOC): 26%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

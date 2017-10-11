@@ -1,0 +1,51 @@
+/root/Targets/string-tokenizer
+└─┬ string-tokenizer@0.0.8 
+  ├─┬ array-last@1.2.0 
+  │ └─┬ is-number@3.0.0 
+  │   └─┬ kind-of@3.2.2 
+  │     └── is-buffer@1.1.5 
+  ├── object-assign@2.1.1 
+  ├── object-keys@1.0.11 
+  ├── object-values@1.0.0 
+  ├─┬ re-define-include-external@0.4.1 
+  │ ├── async@0.9.2 
+  │ ├─┬ debug@1.0.5 
+  │ │ └── ms@2.0.0 
+  │ ├── lodash@2.4.2 
+  │ ├─┬ re-define-module@0.1.2 
+  │ │ └─┬ vinyl@0.3.2 
+  │ │   └── clone-stats@0.0.1 
+  │ └─┬ through2@0.6.5 
+  │   ├─┬ readable-stream@1.0.34 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── inherits@2.0.3 
+  │   │ ├── isarray@0.0.1 
+  │   │ └── string_decoder@0.10.31 
+  │   └── xtend@4.0.1 
+  └── uniq@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/string-tokenizer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.053 took 5.594s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 40% Coverage (LOC): 43%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/string-tokenizer/node_modules/string-tokenizer/src/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/string-tokenizer/node_modules/object-keys/index.js. Coverage (Term): 26% Coverage (LOC): 43%
+*- File /root/Targets/string-tokenizer/node_modules/object-keys/isArguments.js. Coverage (Term): 29% Coverage (LOC): 50%
+*- File /root/Targets/string-tokenizer/node_modules/object-values/index.js. Coverage (Term): 30% Coverage (LOC): 45%
+*- File /root/Targets/string-tokenizer/node_modules/object-assign/index.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/string-tokenizer/node_modules/uniq/uniq.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/string-tokenizer/node_modules/array-last/index.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/string-tokenizer/node_modules/is-number/index.js. Coverage (Term): 36% Coverage (LOC): 43%
+*- File /root/Targets/string-tokenizer/node_modules/kind-of/index.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /root/Targets/string-tokenizer/node_modules/is-buffer/index.js. Coverage (Term): 22% Coverage (LOC): 67%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 0 errors **

@@ -1,0 +1,268 @@
+
+> webiny@0.8.33 postinstall /root/Targets/webiny/node_modules/webiny
+> ./postinstall.js
+
+✘ Could not export PATH!
+{ Error: ENOENT: no such file or directory, open '/home/root/.profile'
+    at Object.fs.openSync (fs.js:558:18)
+    at Object.fs.readFileSync (fs.js:468:33)
+    at Webiny.readFile (/root/Targets/webiny/node_modules/webiny/lib/webiny.js:313:19)
+    at Object.<anonymous> (/root/Targets/webiny/node_modules/webiny/postinstall.js:10:25)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.runMain (module.js:605:10)
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/root/.profile' }
+/root/Targets/webiny
+└─┬ webiny@0.8.33 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── commander@2.11.0 
+  ├─┬ console-stamp@0.2.5 
+  │ ├─┬ dateformat@1.0.12 
+  │ │ ├── get-stdin@4.0.1 
+  │ │ └─┬ meow@3.7.0 
+  │ │   ├─┬ camelcase-keys@2.1.0 
+  │ │   │ └── camelcase@2.1.1 
+  │ │   ├── decamelize@1.2.0 
+  │ │   ├─┬ loud-rejection@1.6.0 
+  │ │   │ └─┬ currently-unhandled@0.4.1 
+  │ │   │   └── array-find-index@1.0.2 
+  │ │   ├── map-obj@1.0.1 
+  │ │   ├── minimist@1.2.0 
+  │ │   ├─┬ normalize-package-data@2.4.0 
+  │ │   │ ├── hosted-git-info@2.5.0 
+  │ │   │ ├─┬ is-builtin-module@1.0.0 
+  │ │   │ │ └── builtin-modules@1.1.1 
+  │ │   │ ├── semver@5.4.1 
+  │ │   │ └─┬ validate-npm-package-license@3.0.1 
+  │ │   │   ├─┬ spdx-correct@1.0.2 
+  │ │   │   │ └── spdx-license-ids@1.2.2 
+  │ │   │   └── spdx-expression-parse@1.0.4 
+  │ │   ├── object-assign@4.1.1 
+  │ │   ├─┬ read-pkg-up@1.0.1 
+  │ │   │ ├─┬ find-up@1.1.2 
+  │ │   │ │ ├── path-exists@2.1.0 
+  │ │   │ │ └─┬ pinkie-promise@2.0.1 
+  │ │   │ │   └── pinkie@2.0.4 
+  │ │   │ └─┬ read-pkg@1.1.0 
+  │ │   │   ├─┬ load-json-file@1.1.0 
+  │ │   │   │ ├─┬ parse-json@2.2.0 
+  │ │   │   │ │ └─┬ error-ex@1.3.1 
+  │ │   │   │ │   └── is-arrayish@0.2.1 
+  │ │   │   │ ├── pify@2.3.0 
+  │ │   │   │ └─┬ strip-bom@2.0.0 
+  │ │   │   │   └── is-utf8@0.2.1 
+  │ │   │   └── path-type@1.1.0 
+  │ │   ├─┬ redent@1.0.0 
+  │ │   │ ├─┬ indent-string@2.1.0 
+  │ │   │ │ └─┬ repeating@2.0.1 
+  │ │   │ │   └─┬ is-finite@1.0.2 
+  │ │   │ │     └── number-is-nan@1.0.1 
+  │ │   │ └── strip-indent@1.0.1 
+  │ │   └── trim-newlines@1.0.0 
+  │ └── merge@1.2.0 
+  ├─┬ fs-extra@0.30.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ ├── klaw@1.3.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├─┬ inflight@1.0.6 
+  │     │ └── wrappy@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     └── once@1.4.0 
+  ├─┬ inquirer@3.3.0 
+  │ ├── ansi-escapes@3.0.0 
+  │ ├─┬ chalk@2.1.0 
+  │ │ ├─┬ ansi-styles@3.2.0 
+  │ │ │ └─┬ color-convert@1.9.0 
+  │ │ │   └── color-name@1.1.3 
+  │ │ └─┬ supports-color@4.4.0 
+  │ │   └── has-flag@2.0.0 
+  │ ├─┬ cli-cursor@2.1.0 
+  │ │ └─┬ restore-cursor@2.0.0 
+  │ │   └── onetime@2.0.1 
+  │ ├── cli-width@2.2.0 
+  │ ├─┬ external-editor@2.0.5 
+  │ │ ├── iconv-lite@0.4.19 
+  │ │ ├── jschardet@1.5.1 
+  │ │ └─┬ tmp@0.0.33 
+  │ │   └── os-tmpdir@1.0.2 
+  │ ├── figures@2.0.0 
+  │ ├── mute-stream@0.0.7 
+  │ ├─┬ run-async@2.3.0 
+  │ │ └── is-promise@2.1.0 
+  │ ├── rx-lite@4.0.8 
+  │ ├── rx-lite-aggregates@4.0.8 
+  │ ├─┬ string-width@2.1.1 
+  │ │ ├── is-fullwidth-code-point@2.0.0 
+  │ │ └─┬ strip-ansi@4.0.0 
+  │ │   └── ansi-regex@3.0.0 
+  │ ├─┬ strip-ansi@4.0.0 
+  │ │ └── ansi-regex@3.0.0 
+  │ └── through@2.3.8 
+  ├─┬ js-yaml@3.10.0 
+  │ ├─┬ argparse@1.0.9 
+  │ │ └── sprintf-js@1.0.3 
+  │ └── esprima@4.0.0 
+  ├── lodash@4.17.4 
+  ├─┬ node-fetch@1.7.3 
+  │ ├── encoding@0.1.12 
+  │ └── is-stream@1.1.0 
+  └─┬ username@3.0.0 
+    ├─┬ execa@0.7.0 
+    │ ├─┬ cross-spawn@5.1.0 
+    │ │ ├─┬ lru-cache@4.1.1 
+    │ │ │ ├── pseudomap@1.0.2 
+    │ │ │ └── yallist@2.1.2 
+    │ │ ├─┬ shebang-command@1.2.0 
+    │ │ │ └── shebang-regex@1.0.0 
+    │ │ └─┬ which@1.3.0 
+    │ │   └── isexe@2.0.0 
+    │ ├── get-stream@3.0.0 
+    │ ├─┬ npm-run-path@2.0.2 
+    │ │ └── path-key@2.0.1 
+    │ ├── p-finally@1.0.0 
+    │ ├── signal-exit@3.0.2 
+    │ └── strip-eof@1.0.0 
+    └─┬ mem@1.1.0 
+      └── mimic-fn@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/webiny/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0659 took 5.1794s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+const program = require('commander');
+const _ = require('lodash');
+const chalk = require('chalk');
+const checkUpdates = require('./lib/boot/checkUpdates');
+const setup = require('./lib/boot/setup');
+const Menu = require('./lib/navigation');
+const Webiny = require('./lib/webiny');
+
+class WebinyCli {
+    constructor() {
+        this.version = JSON.parse(Webiny.readFile(__dirname + '/package.json')).version;
+
+        program
+            .version(this.version)
+            .arguments('<cmd>')
+            .option('-t, --task [name]', 'Task to execute (renders menu if not specified).', 'menu')
+            .option('-a, --app [name]', 'App to execute task on (specify multiple times for multiple apps).', this.collectApps, [])
+            .option('--all', 'Select all apps.')
+            .option('--show-timestamps [format]', 'Show timestamps next to each console message')
+            .action(function (cmd = 'menu') {
+                program.task = cmd;
+            });
+
+        const stdin = process.stdin;
+        stdin.setRawMode(true);
+        stdin.resume();
+        process.stdin.write('Loading plugins...');
+        Webiny.getPlugins();
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+
+        program.parse(process.argv);
+    }
+
+    collectApps(val, collection) {
+        collection.push(val);
+        return collection;
+    }
+
+    run() {
+        if (program.showTimestamps) {
+            require('console-stamp')(console, _.isString(program.showTimestamps) ? program.showTimestamps : 'HH:MM:ss.l');
+        }
+
+        if (program.task === 'menu') {
+            checkUpdates(this.version).then(() => {
+                Webiny.log('---------------------------------------------');
+                Webiny.info('Webiny CLI ' + chalk.cyan('v' + this.version));
+                Webiny.log('---------------------------------------------');
+                const checkRequirements = require('./lib/boot/checkRequirements');
+                if (!checkRequirements.firstRun()) {
+                    const menu = new Menu();
+                    return menu.render();
+                }
+
+                try {
+                    // First run will check the system requirements and setup the platform
+                    Webiny.log('Checking requirements...');
+                    checkRequirements.requirements();
+                    Webiny.success("Great, all the requirements are in order!");
+                    Webiny.log("\nSetting up the platform...");
+                    setup().then(answers => {
+                        Webiny.log(`\n-------------------------------------`);
+                        Webiny.success('Platform setup is now completed!');
+                        Webiny.info(`You are now ready to run your first development build! Select "Develop!" from the menu and hit ENTER.\nAfter the development build is completed, navigate to ` + chalk.magenta(answers.domain + '/admin') + ` to see your brand new administration system!`);
+                        Webiny.log('-------------------------------------');
+                        const menu = new Menu();
+                        return menu.render();
+                    });
+                } catch (err) {
+                    Webiny.exclamation('Setup failed with the following problem:', err);
+                    process.exit(1);
+                }
+            });
+        } else {
+            const apps = Webiny.getApps();
+            program.apps = program.all ? apps : _.filter(apps, a => program.app.indexOf(a.getName()) > -1);
+            this.runTask(program.task, program);
+        }
+    }
+
+    runTask(task, config) {
+        const plugin = Webiny.getPlugins()[task];
+        if (plugin) {
+            return plugin.runTask(config, (res = 0) => process.exit(res), (task, config) => this.runTask(task, config));
+        }
+
+        Webiny.failure(`Plugin "${task}" was not found!`);
+        process.exit(1);
+    }
+}
+
+module.exports = WebinyCli; at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

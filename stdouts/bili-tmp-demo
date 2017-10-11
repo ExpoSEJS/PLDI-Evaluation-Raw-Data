@@ -1,0 +1,341 @@
+/root/Targets/bili-tmp-demo
+└─┬ bili-tmp-demo@0.0.4 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── commander@2.11.0 
+  └─┬ download-git-repo@0.2.2 
+    ├─┬ download@4.4.3 
+    │ ├─┬ caw@1.2.0 
+    │ │ ├─┬ get-proxy@1.1.0 
+    │ │ │ └─┬ rc@1.2.1 
+    │ │ │   ├── deep-extend@0.4.2 
+    │ │ │   ├── ini@1.3.4 
+    │ │ │   └── strip-json-comments@2.0.1 
+    │ │ ├── is-obj@1.0.1 
+    │ │ ├── object-assign@3.0.0 
+    │ │ └── tunnel-agent@0.4.3 
+    │ ├─┬ concat-stream@1.6.0 
+    │ │ ├── inherits@2.0.3 
+    │ │ └── typedarray@0.0.6 
+    │ ├─┬ each-async@1.1.1 
+    │ │ ├── onetime@1.1.0 
+    │ │ └── set-immediate-shim@1.0.1 
+    │ ├─┬ filenamify@1.2.1 
+    │ │ ├── filename-reserved-regex@1.0.0 
+    │ │ ├── strip-outer@1.0.0 
+    │ │ └── trim-repeated@1.0.0 
+    │ ├─┬ got@5.7.1 
+    │ │ ├─┬ create-error-class@3.0.2 
+    │ │ │ └── capture-stack-trace@1.0.0 
+    │ │ ├── duplexer2@0.1.4 
+    │ │ ├── is-redirect@1.0.0 
+    │ │ ├── is-retry-allowed@1.1.0 
+    │ │ ├── is-stream@1.1.0 
+    │ │ ├── lowercase-keys@1.0.0 
+    │ │ ├── node-status-codes@1.0.0 
+    │ │ ├─┬ parse-json@2.2.0 
+    │ │ │ └─┬ error-ex@1.3.1 
+    │ │ │   └── is-arrayish@0.2.1 
+    │ │ ├─┬ pinkie-promise@2.0.1 
+    │ │ │ └── pinkie@2.0.4 
+    │ │ ├── timed-out@3.1.3 
+    │ │ ├── unzip-response@1.0.2 
+    │ │ └─┬ url-parse-lax@1.0.0 
+    │ │   └── prepend-http@1.0.4 
+    │ ├─┬ gulp-decompress@1.2.0 
+    │ │ ├─┬ archive-type@3.2.0 
+    │ │ │ └── file-type@3.9.0 
+    │ │ ├─┬ decompress@3.0.0 
+    │ │ │ ├─┬ buffer-to-vinyl@1.1.0 
+    │ │ │ │ └── uuid@2.0.3 
+    │ │ │ ├─┬ decompress-tar@3.1.0 
+    │ │ │ │ ├── is-tar@1.0.0 
+    │ │ │ │ ├── object-assign@2.1.1 
+    │ │ │ │ ├─┬ strip-dirs@1.1.1 
+    │ │ │ │ │ ├── get-stdin@4.0.1 
+    │ │ │ │ │ ├─┬ is-absolute@0.1.7 
+    │ │ │ │ │ │ └── is-relative@0.1.3 
+    │ │ │ │ │ ├── is-natural-number@2.1.1 
+    │ │ │ │ │ └── sum-up@1.0.3 
+    │ │ │ │ ├─┬ tar-stream@1.5.4 
+    │ │ │ │ │ └── bl@1.2.1 
+    │ │ │ │ └─┬ vinyl@0.4.6 
+    │ │ │ │   └── clone@0.2.0 
+    │ │ │ ├─┬ decompress-tarbz2@3.1.0 
+    │ │ │ │ ├── is-bzip2@1.0.0 
+    │ │ │ │ ├── object-assign@2.1.1 
+    │ │ │ │ ├─┬ seek-bzip@1.0.5 
+    │ │ │ │ │ └─┬ commander@2.8.1 
+    │ │ │ │ │   └── graceful-readlink@1.0.1 
+    │ │ │ │ └─┬ vinyl@0.4.6 
+    │ │ │ │   └── clone@0.2.0 
+    │ │ │ ├─┬ decompress-targz@3.1.0 
+    │ │ │ │ ├── is-gzip@1.0.0 
+    │ │ │ │ ├── object-assign@2.1.1 
+    │ │ │ │ └─┬ vinyl@0.4.6 
+    │ │ │ │   └── clone@0.2.0 
+    │ │ │ ├─┬ decompress-unzip@3.4.0 
+    │ │ │ │ ├── is-zip@1.0.0 
+    │ │ │ │ ├── stat-mode@0.2.2 
+    │ │ │ │ ├── through2@2.0.3 
+    │ │ │ │ └─┬ yauzl@2.8.0 
+    │ │ │ │   ├── buffer-crc32@0.2.13 
+    │ │ │ │   └─┬ fd-slicer@1.0.1 
+    │ │ │ │     └── pend@1.2.0 
+    │ │ │ └── vinyl-assign@1.2.1 
+    │ │ └─┬ gulp-util@3.0.8 
+    │ │   ├── array-differ@1.0.0 
+    │ │   ├── array-uniq@1.0.3 
+    │ │   ├── beeper@1.1.1 
+    │ │   ├── dateformat@2.2.0 
+    │ │   ├─┬ fancy-log@1.3.0 
+    │ │   │ └── time-stamp@1.1.0 
+    │ │   ├─┬ gulplog@1.0.0 
+    │ │   │ └── glogg@1.0.0 
+    │ │   ├─┬ has-gulplog@0.1.0 
+    │ │   │ └── sparkles@1.0.0 
+    │ │   ├── lodash._reescape@3.0.0 
+    │ │   ├── lodash._reevaluate@3.0.0 
+    │ │   ├── lodash._reinterpolate@3.0.0 
+    │ │   ├─┬ lodash.template@3.6.2 
+    │ │   │ ├── lodash._basecopy@3.0.1 
+    │ │   │ ├── lodash._basetostring@3.0.1 
+    │ │   │ ├── lodash._basevalues@3.0.0 
+    │ │   │ ├── lodash._isiterateecall@3.0.9 
+    │ │   │ ├─┬ lodash.escape@3.2.0 
+    │ │   │ │ └── lodash._root@3.0.1 
+    │ │   │ ├─┬ lodash.keys@3.1.2 
+    │ │   │ │ ├── lodash._getnative@3.9.1 
+    │ │   │ │ ├── lodash.isarguments@3.1.0 
+    │ │   │ │ └── lodash.isarray@3.0.4 
+    │ │   │ ├── lodash.restparam@3.6.1 
+    │ │   │ └── lodash.templatesettings@3.1.1 
+    │ │   ├── minimist@1.2.0 
+    │ │   ├─┬ multipipe@0.1.2 
+    │ │   │ └─┬ duplexer2@0.0.2 
+    │ │   │   └─┬ readable-stream@1.1.14 
+    │ │   │     ├── isarray@0.0.1 
+    │ │   │     └── string_decoder@0.10.31 
+    │ │   ├── object-assign@3.0.0 
+    │ │   ├── through2@2.0.3 
+    │ │   └── vinyl@0.5.3 
+    │ ├── gulp-rename@1.2.2 
+    │ ├── is-url@1.2.2 
+    │ ├── object-assign@4.1.1 
+    │ ├── read-all-stream@3.1.0 
+    │ ├─┬ readable-stream@2.3.3 
+    │ │ ├── core-util-is@1.0.2 
+    │ │ ├── isarray@1.0.0 
+    │ │ ├── process-nextick-args@1.0.7 
+    │ │ ├── safe-buffer@5.1.1 
+    │ │ ├── string_decoder@1.0.3 
+    │ │ └── util-deprecate@1.0.2 
+    │ ├── stream-combiner2@1.1.1 
+    │ ├─┬ vinyl@1.2.0 
+    │ │ ├── clone@1.0.2 
+    │ │ ├── clone-stats@0.0.1 
+    │ │ └── replace-ext@0.0.1 
+    │ ├─┬ vinyl-fs@2.4.4 
+    │ │ ├─┬ duplexify@3.5.1 
+    │ │ │ ├── end-of-stream@1.4.0 
+    │ │ │ └── stream-shift@1.0.0 
+    │ │ ├─┬ glob-stream@5.3.5 
+    │ │ │ ├── extend@3.0.1 
+    │ │ │ ├── glob@5.0.15 
+    │ │ │ ├─┬ glob-parent@3.1.0 
+    │ │ │ │ ├─┬ is-glob@3.1.0 
+    │ │ │ │ │ └── is-extglob@2.1.1 
+    │ │ │ │ └── path-dirname@1.0.2 
+    │ │ │ ├─┬ micromatch@2.3.11 
+    │ │ │ │ ├─┬ arr-diff@2.0.0 
+    │ │ │ │ │ └── arr-flatten@1.1.0 
+    │ │ │ │ ├── array-unique@0.2.1 
+    │ │ │ │ ├─┬ braces@1.8.5 
+    │ │ │ │ │ ├─┬ expand-range@1.8.2 
+    │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+    │ │ │ │ │ │   ├── is-number@2.1.0 
+    │ │ │ │ │ │   ├── isobject@2.1.0 
+    │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+    │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+    │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+    │ │ │ │ │ │   │ └── kind-of@4.0.0 
+    │ │ │ │ │ │   └── repeat-string@1.6.1 
+    │ │ │ │ │ ├── preserve@0.2.0 
+    │ │ │ │ │ └── repeat-element@1.1.2 
+    │ │ │ │ ├─┬ expand-brackets@0.1.5 
+    │ │ │ │ │ └── is-posix-bracket@0.1.1 
+    │ │ │ │ ├─┬ extglob@0.3.2 
+    │ │ │ │ │ └── is-extglob@1.0.0 
+    │ │ │ │ ├── filename-regex@2.0.1 
+    │ │ │ │ ├── is-extglob@1.0.0 
+    │ │ │ │ ├── is-glob@2.0.1 
+    │ │ │ │ ├─┬ kind-of@3.2.2 
+    │ │ │ │ │ └── is-buffer@1.1.5 
+    │ │ │ │ ├─┬ normalize-path@2.1.1 
+    │ │ │ │ │ └── remove-trailing-separator@1.1.0 
+    │ │ │ │ ├─┬ object.omit@2.0.1 
+    │ │ │ │ │ ├─┬ for-own@0.1.5 
+    │ │ │ │ │ │ └── for-in@1.0.2 
+    │ │ │ │ │ └── is-extendable@0.1.1 
+    │ │ │ │ ├─┬ parse-glob@3.0.4 
+    │ │ │ │ │ ├─┬ glob-base@0.3.0 
+    │ │ │ │ │ │ ├── glob-parent@2.0.0 
+    │ │ │ │ │ │ └─┬ is-glob@2.0.1 
+    │ │ │ │ │ │   └── is-extglob@1.0.0 
+    │ │ │ │ │ ├── is-dotfile@1.0.3 
+    │ │ │ │ │ ├── is-extglob@1.0.0 
+    │ │ │ │ │ └── is-glob@2.0.1 
+    │ │ │ │ └─┬ regex-cache@0.4.4 
+    │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+    │ │ │ │     └── is-primitive@2.0.0 
+    │ │ │ ├── ordered-read-streams@0.3.0 
+    │ │ │ ├─┬ through2@0.6.5 
+    │ │ │ │ └─┬ readable-stream@1.0.34 
+    │ │ │ │   ├── isarray@0.0.1 
+    │ │ │ │   └── string_decoder@0.10.31 
+    │ │ │ ├─┬ to-absolute-glob@0.1.1 
+    │ │ │ │ └── extend-shallow@2.0.1 
+    │ │ │ └─┬ unique-stream@2.2.1 
+    │ │ │   └─┬ json-stable-stringify@1.0.1 
+    │ │ │     └── jsonify@0.0.0 
+    │ │ ├── graceful-fs@4.1.11 
+    │ │ ├─┬ gulp-sourcemaps@1.6.0 
+    │ │ │ ├── convert-source-map@1.5.0 
+    │ │ │ └── through2@2.0.3 
+    │ │ ├── is-valid-glob@0.3.0 
+    │ │ ├── lazystream@1.0.0 
+    │ │ ├── lodash.isequal@4.5.0 
+    │ │ ├── merge-stream@1.0.1 
+    │ │ ├─┬ mkdirp@0.5.1 
+    │ │ │ └── minimist@0.0.8 
+    │ │ ├─┬ strip-bom@2.0.0 
+    │ │ │ └── is-utf8@0.2.1 
+    │ │ ├─┬ strip-bom-stream@1.0.0 
+    │ │ │ └── first-chunk-stream@1.0.0 
+    │ │ ├── through2@2.0.3 
+    │ │ ├─┬ through2-filter@2.0.0 
+    │ │ │ ├── through2@2.0.3 
+    │ │ │ └── xtend@4.0.1 
+    │ │ └── vali-date@1.0.0 
+    │ └─┬ ware@1.3.0 
+    │   └─┬ wrap-fn@0.1.5 
+    │     └── co@3.1.0 
+    ├── git-clone@0.1.0 
+    └─┬ rimraf@2.6.2 
+      └─┬ glob@7.1.2 
+        ├── fs.realpath@1.0.0 
+        ├─┬ inflight@1.0.6 
+        │ └── wrappy@1.0.2 
+        ├─┬ minimatch@3.0.4 
+        │ └─┬ brace-expansion@1.1.8 
+        │   ├── balanced-match@1.0.0 
+        │   └── concat-map@0.0.1 
+        ├── once@1.4.0 
+        └── path-is-absolute@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bili-tmp-demo/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","bind","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0539 took 10.4417s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+var cc   = require('./lib/utils')
+var join = require('path').join
+var deepExtend = require('deep-extend')
+var etc = '/etc'
+var win = process.platform === "win32"
+var home = win
+           ? process.env.USERPROFILE
+           : process.env.HOME
+
+module.exports = function (name, defaults, argv, parse) {
+  if('string' !== typeof name)
+    throw new Error('rc(name): name *must* be string')
+  if(!argv)
+    argv = require('minimist')(process.argv.slice(2))
+  defaults = (
+      'string' === typeof defaults
+    ? cc.json(defaults) : defaults
+    ) || {}
+
+  parse = parse || cc.parse
+
+  var env = cc.env(name + '_')
+
+  var configs = [defaults]
+  var configFiles = []
+  function addConfigFile (file) {
+    if (configFiles.indexOf(file) >= 0) return
+    var fileConfig = cc.file(file)
+    if (fileConfig) {
+      configs.push(parse(fileConfig))
+      configFiles.push(file)
+    }
+  }
+
+  // which files do we look at?
+  if (!win)
+   [join(etc, name, 'config'),
+    join(etc, name + 'rc')].forEach(addConfigFile)
+  if (home)
+   [join(home, '.config', name, 'config'),
+    join(home, '.config', name),
+    join(home, '.' + name, 'config'),
+    join(home, '.' + name + 'rc')].forEach(addConfigFile)
+  addConfigFile(cc.find('.'+name+'rc'))
+  if (env.config) addConfigFile(env.config)
+  if (argv.config) addConfigFile(argv.config)
+
+  return deepExtend.apply(null, configs.concat([
+    env,
+    argv,
+    configFiles.length ? {configs: configFiles, config: configFiles[configFiles.length - 1]} : undefined,
+  ]))
+}
+
+if(!module.parent) {
+  console.log(
+    JSON.stringify(module.exports(process.argv[2]), false, 2)
+  )
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/bili-tmp-demo/node_modules/bili-tmp-demo/bili.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/bili-tmp-demo/node_modules/chalk/index.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/bili-tmp-demo/node_modules/escape-string-regexp/index.js. Coverage (Term): 85% Coverage (LOC): 90%
+*- File /root/Targets/bili-tmp-demo/node_modules/ansi-styles/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/bili-tmp-demo/node_modules/strip-ansi/index.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/bili-tmp-demo/node_modules/ansi-regex/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/bili-tmp-demo/node_modules/has-ansi/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/bili-tmp-demo/node_modules/supports-color/index.js. Coverage (Term): 63% Coverage (LOC): 56%
+*- File /root/Targets/bili-tmp-demo/node_modules/commander/index.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/bili-tmp-demo/node_modules/download-git-repo/index.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/bili-tmp-demo/node_modules/download/index.js. Coverage (Term): 8% Coverage (LOC): 6%
+*- File /root/Targets/bili-tmp-demo/node_modules/caw/index.js. Coverage (Term): 17% Coverage (LOC): 18%
+*- File /root/Targets/bili-tmp-demo/node_modules/get-proxy/index.js. Coverage (Term): 29% Coverage (LOC): 71%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

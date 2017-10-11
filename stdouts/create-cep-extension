@@ -1,0 +1,196 @@
+/root/Targets/create-cep-extension
+└─┬ create-cep-extension@1.0.0-beta.13 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── commander@2.11.0 
+  ├─┬ cross-spawn@4.0.2 
+  │ ├─┬ lru-cache@4.1.1 
+  │ │ ├── pseudomap@1.0.2 
+  │ │ └── yallist@2.1.2 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ fs-extra@1.0.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ └── klaw@1.3.1 
+  ├─┬ hyperquest@2.1.2 
+  │ ├─┬ buffer-from@0.1.1 
+  │ │ └─┬ is-array-buffer-x@1.7.0 
+  │ │   ├── attempt-x@1.1.1 
+  │ │   ├─┬ has-to-string-tag-x@1.4.1 
+  │ │   │ └── has-symbol-support-x@1.4.1 
+  │ │   ├─┬ is-object-like-x@1.5.1 
+  │ │   │ ├─┬ is-function-x@3.2.0 
+  │ │   │ │ ├─┬ normalize-space-x@2.0.0 
+  │ │   │ │ │ ├─┬ trim-x@2.0.2 
+  │ │   │ │ │ │ ├── trim-left-x@2.0.1 
+  │ │   │ │ │ │ └── trim-right-x@2.0.1 
+  │ │   │ │ │ └── white-space-x@2.0.3 
+  │ │   │ │ ├─┬ replace-comments-x@2.0.0 
+  │ │   │ │ │ └── require-coercible-to-string-x@1.0.0 
+  │ │   │ │ └── to-boolean-x@1.0.1 
+  │ │   │ └── is-primitive@2.0.0 
+  │ │   ├─┬ object-get-own-property-descriptor-x@3.2.0 
+  │ │   │ ├── has-own-property-x@3.1.1 
+  │ │   │ ├── is-falsey-x@1.0.1 
+  │ │   │ ├─┬ is-index-x@1.0.0 
+  │ │   │ │ ├── math-clamp-x@1.1.0 
+  │ │   │ │ ├── max-safe-integer@1.0.1 
+  │ │   │ │ ├─┬ safe-to-string-x@2.0.3 
+  │ │   │ │ │ └── to-string-symbols-supported-x@1.0.0 
+  │ │   │ │ ├─┬ to-integer-x@2.1.0 
+  │ │   │ │ │ ├─┬ is-finite-x@3.0.2 
+  │ │   │ │ │ │ └── infinity-x@1.0.0 
+  │ │   │ │ │ ├── is-nan-x@1.0.1 
+  │ │   │ │ │ └── math-sign-x@2.1.0 
+  │ │   │ │ └─┬ to-number-x@1.2.0 
+  │ │   │ │   ├── nan-x@1.0.0 
+  │ │   │ │   └── parse-int-x@1.1.0 
+  │ │   │ ├── is-string@1.0.4 
+  │ │   │ ├── property-is-enumerable-x@1.1.0 
+  │ │   │ ├─┬ to-object-x@1.5.0 
+  │ │   │ │ ├── cached-constructors-x@1.0.0 
+  │ │   │ │ └─┬ require-object-coercible-x@1.4.1 
+  │ │   │ │   └── is-nil-x@1.4.1 
+  │ │   │ └─┬ to-property-key-x@2.0.2 
+  │ │   │   ├─┬ to-primitive-x@1.1.0 
+  │ │   │   │ ├── is-date-object@1.0.1 
+  │ │   │   │ └── is-symbol@1.0.1 
+  │ │   │   └── to-string-x@1.4.2 
+  │ │   └─┬ to-string-tag-x@1.4.2 
+  │ │     ├── lodash.isnull@3.0.0 
+  │ │     └── validate.io-undefined@1.0.3 
+  │ ├─┬ duplexer2@0.0.2 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ └─┬ through2@0.6.5 
+  │   ├── readable-stream@1.0.34 
+  │   └── xtend@4.0.1 
+  ├── semver@5.4.1 
+  ├─┬ tar-pack@3.4.0 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├─┬ fstream@1.0.11 
+  │ │ ├── inherits@2.0.3 
+  │ │ └─┬ mkdirp@0.5.1 
+  │ │   └── minimist@0.0.8 
+  │ ├─┬ fstream-ignore@1.0.5 
+  │ │ └─┬ minimatch@3.0.4 
+  │ │   └─┬ brace-expansion@1.1.8 
+  │ │     ├── balanced-match@1.0.0 
+  │ │     └── concat-map@0.0.1 
+  │ ├─┬ once@1.4.0 
+  │ │ └── wrappy@1.0.2 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ ├─┬ rimraf@2.6.2 
+  │ │ └─┬ glob@7.1.2 
+  │ │   ├── fs.realpath@1.0.0 
+  │ │   ├── inflight@1.0.6 
+  │ │   └── path-is-absolute@1.0.1 
+  │ ├─┬ tar@2.2.1 
+  │ │ └── block-stream@0.0.9 
+  │ └── uid-number@0.0.6 
+  ├─┬ tmp@0.0.31 
+  │ └── os-tmpdir@1.0.2 
+  └─┬ validate-npm-package-name@3.0.0 
+    └── builtins@1.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/create-cep-extension/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0909 took 5.5822s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//   /!\ DO NOT MODIFY THIS FILE /!\
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// create-react-app is installed globally on people's computers. This means
+// that it is extremely difficult to have them upgrade the version and
+// because there's only one global version installed, it is very prone to
+// breaking changes.
+//
+// The only job of create-react-app is to init the repository and then
+// forward all the commands to the local version of create-react-app.
+//
+// If you need to add a new command, please add it to the scripts/ folder.
+//
+// The only reason to modify this file is to add more warnings and
+// troubleshooting information for the `create-react-app` command.
+//
+// Do not make breaking changes! We absolutely don't want to have to
+// tell people to update their global version of create-react-app.
+//
+// Also be careful with new language features.
+// This file must work on Node 0.10+.
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//   /!\ DO NOT MODIFY THIS FILE /!\
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+'use strict'
+
+var chalk = require('chalk')
+
+var currentNodeVersion = process.versions.node
+if (currentNodeVersion.split('.')[0] < 4) {
+  console.error(
+    chalk.red(
+      'You are running Node ' +
+        currentNodeVersion +
+        '.\n' +
+        'Create CEP Extension requires Node 4 or higher. \n' +
+        'Please update your version of Node.'
+    )
+  )
+  process.exit(1)
+}
+
+console.log(__dirname)
+
+require('./createCEPExtension')
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

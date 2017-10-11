@@ -1,0 +1,49 @@
+/root/Targets/botpress-rpc
+└─┬ botpress-rpc@1.0.0 
+  ├─┬ axios@0.15.3 
+  │ └─┬ follow-redirects@1.0.0 
+  │   └─┬ debug@2.6.9 
+  │     └── ms@2.0.0 
+  ├─┬ botpress-version-manager@1.0.4 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ └── semver@5.4.1 
+  ├── json-loader@0.5.7 
+  └─┬ node-fetch@1.7.3 
+    ├─┬ encoding@0.1.12 
+    │ └── iconv-lite@0.4.19 
+    └── is-stream@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/botpress-rpc/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 36% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","bind","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0516 took 14.4235s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'fs-extra'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/botpress-rpc/node_modules/botpress-rpc/bin/node.bundle.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/botpress-rpc/node_modules/botpress-version-manager/lib/index.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/botpress-rpc/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- File /root/Targets/botpress-rpc/node_modules/chalk/index.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/botpress-rpc/node_modules/escape-string-regexp/index.js. Coverage (Term): 85% Coverage (LOC): 90%
+*- File /root/Targets/botpress-rpc/node_modules/ansi-styles/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botpress-rpc/node_modules/strip-ansi/index.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/botpress-rpc/node_modules/ansi-regex/index.js. Coverage (Term): 93% Coverage (LOC): 100%
+*- File /root/Targets/botpress-rpc/node_modules/has-ansi/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botpress-rpc/node_modules/supports-color/index.js. Coverage (Term): 63% Coverage (LOC): 56%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

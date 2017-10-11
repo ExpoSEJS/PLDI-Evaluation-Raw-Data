@@ -1,0 +1,63 @@
+/root/Targets/snabbdom-template
+└─┬ snabbdom-template@0.1.2 
+  ├── snabbdom@0.5.4 
+  ├─┬ snabbdom-selector@0.4.0 
+  │ ├── browser-split@0.0.1 
+  │ └─┬ cssauron@1.4.0 
+  │   └── through@2.3.8 
+  ├─┬ snabbdom-to-html@2.1.3 
+  │ ├─┬ lodash.escape@3.2.0 
+  │ │ └── lodash._root@3.0.1 
+  │ ├─┬ lodash.forown@3.0.2 
+  │ │ ├── lodash._basefor@3.0.3 
+  │ │ ├── lodash._bindcallback@3.0.1 
+  │ │ └─┬ lodash.keys@3.1.2 
+  │ │   ├── lodash._getnative@3.9.1 
+  │ │   ├── lodash.isarguments@3.1.0 
+  │ │   └── lodash.isarray@3.0.4 
+  │ ├─┬ lodash.kebabcase@3.1.1 
+  │ │ ├── lodash.deburr@3.2.0 
+  │ │ └── lodash.words@3.2.0 
+  │ └─┬ lodash.union@3.1.0 
+  │   ├── lodash._baseflatten@3.1.4 
+  │   ├─┬ lodash._baseuniq@3.0.3 
+  │   │ ├── lodash._baseindexof@3.1.0 
+  │   │ ├── lodash._cacheindexof@3.0.2 
+  │   │ └── lodash._createcache@3.1.2 
+  │   └── lodash.restparam@3.6.1 
+  └─┬ snabbdom-virtualize@0.5.4 
+    └─┬ html-parse-stringify2@1.2.1 
+      └── void-elements@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/snabbdom-template/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0643 took 6.687s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token .
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-template/index.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-selector/lib/index.js. Coverage (Term): 21% Coverage (LOC): 25%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-selector/lib/language.js. Coverage (Term): 41% Coverage (LOC): 55%
+*- File /root/Targets/snabbdom-template/node_modules/cssauron/index.js. Coverage (Term): 5% Coverage (LOC): 12%
+*- File /root/Targets/snabbdom-template/node_modules/cssauron/tokenizer.js. Coverage (Term): 9% Coverage (LOC): 3%
+*- File /root/Targets/snabbdom-template/node_modules/through/index.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-selector/lib/selectorParser.js. Coverage (Term): 31% Coverage (LOC): 30%
+*- File /root/Targets/snabbdom-template/node_modules/browser-split/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-selector/lib/classNameFromVNode.js. Coverage (Term): 35% Coverage (LOC): 36%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-to-html/src/index.js. Coverage (Term): 72% Coverage (LOC): 86%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-to-html/src/init.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-to-html/src/parse-selector.js. Coverage (Term): 19% Coverage (LOC): 23%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-to-html/src/void-elements.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/snabbdom-template/node_modules/snabbdom-to-html/src/container-elements.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

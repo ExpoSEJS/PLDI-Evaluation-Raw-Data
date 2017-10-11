@@ -1,0 +1,98 @@
+/root/Targets/jm-sso
+└── jm-sso@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jm-sso/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 15% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0497 took 10.4092s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program 'use strict';
+
+var util = require('util');
+var assert = require('assert');
+var RedisError = require('redis-parser').RedisError;
+var ADD_STACKTRACE = false;
+
+function AbortError (obj, stack) {
+    assert(obj, 'The options argument is required');
+    assert.strictEqual(typeof obj, 'object', 'The options argument has to be of type object');
+
+    RedisError.call(this, obj.message, ADD_STACKTRACE);
+    Object.defineProperty(this, 'message', {
+        value: obj.message || '',
+        configurable: true,
+        writable: true
+    });
+    if (stack || stack === undefined) {
+        Error.captureStackTrace(this, AbortError);
+    }
+    for (var keys = Object.keys(obj), key = keys.pop(); key; key = keys.pop()) {
+        this[key] = obj[key];
+    }
+}
+
+function AggregateError (obj) {
+    assert(obj, 'The options argument is required');
+    assert.strictEqual(typeof obj, 'object', 'The options argument has to be of type object');
+
+    AbortError.call(this, obj, ADD_STACKTRACE);
+    Object.defineProperty(this, 'message', {
+        value: obj.message || '',
+        configurable: true,
+        writable: true
+    });
+    Error.captureStackTrace(this, AggregateError);
+    for (var keys = Object.keys(obj), key = keys.pop(); key; key = keys.pop()) {
+        this[key] = obj[key];
+    }
+}
+
+util.inherits(AbortError, RedisError);
+util.inherits(AggregateError, AbortError);
+
+Object.defineProperty(AbortError.prototype, 'name', {
+    value: 'AbortError',
+    configurable: true,
+    writable: true
+});
+Object.defineProperty(AggregateError.prototype, 'name', {
+    value: 'AggregateError',
+    configurable: true,
+    writable: true
+});
+
+module.exports = {
+    AbortError: AbortError,
+    AggregateError: AggregateError
+};
+ at SyntaxError: Unexpected token (4:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/jm-sso/node_modules/jm-sso/lib/index.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/jm-sso/node_modules/jm-sso/lib/service/index.js. Coverage (Term): 15% Coverage (LOC): 16%
+*- File /root/Targets/jm-sso/node_modules/jm-event/lib/index.js. Coverage (Term): 30% Coverage (LOC): 43%
+*- File /root/Targets/jm-sso/node_modules/jm-sso/lib/service/tokenMan.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/jm-sso/node_modules/redis/index.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/jm-sso/node_modules/redis/lib/utils.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/jm-sso/node_modules/redis/lib/command.js. Coverage (Term): 50% Coverage (LOC): 43%
+*- File /root/Targets/jm-sso/node_modules/double-ended-queue/js/deque.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

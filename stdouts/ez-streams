@@ -1,0 +1,128 @@
+
+> fibers@1.0.15 install /root/Targets/ez-streams/node_modules/fibers
+> node build.js || nodejs build.js
+
+make: Entering directory '/root/Targets/ez-streams/node_modules/fibers/build'
+  CXX(target) Release/obj.target/fibers/src/fibers.o
+  CXX(target) Release/obj.target/fibers/src/coroutine.o
+  CC(target) Release/obj.target/fibers/src/libcoro/coro.o
+  SOLINK_MODULE(target) Release/obj.target/fibers.node
+  COPY Release/fibers.node
+make: Leaving directory '/root/Targets/ez-streams/node_modules/fibers/build'
+Installed in `/root/Targets/ez-streams/node_modules/fibers/bin/linux-x64-51/fibers.node`
+/root/Targets/ez-streams
+└─┬ ez-streams@3.2.9 
+  ├── @types/node@6.0.88 
+  ├── streamline-node@2.0.2 
+  └─┬ streamline-runtime@1.1.13 
+    ├── colors@1.1.2 
+    ├── fibers@1.0.15 
+    └── regenerator-runtime@0.10.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ez-streams/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","defineProperties","reduce","toString","Error","getOwnPropertyDescriptor"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0401 took 11.0884s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to arguments in strict mode (6:28) on program (function(fn, options){
+                jalangiLabel373:
+                    while (true) {
+                        try {
+                            J$.Fe(5201, arguments.callee, this, arguments);
+                            arguments = J$.N(5209, 'arguments', arguments, 4);
+                            fn = J$.N(5217, 'fn', fn, 4);
+                            options = J$.N(5225, 'options', options, 4);
+                            J$.N(5233, 'index', index, 0);
+                            J$.N(5241, 'F', F, 0);
+                            var index = J$.X1(4609, J$.W(4601, 'index', J$.X1(9897, J$.C(312, J$.C(304, J$.R(4553, 'options', options, 0)) ? J$.B(154, '===', J$.U(146, 'typeof', J$.R(4561, 'options', options, 0)), J$.T(4569, 'object', 21, false), 0) : J$._())) ? J$.G(4585, J$.R(4577, 'options', options, 0), 'callbackIndex', 0) : J$.R(4593, 'options', options, 0), index, 1));
+                            if (J$.X1(9905, J$.C(320, J$.B(162, '==', J$.R(4617, 'index', index, 0), J$.T(4625, null, 25, false), 0))))
+                                J$.X1(4657, index = J$.W(4649, 'index', J$.G(4641, J$.R(4633, 'fn', fn, 0), 'length', 0), index, 0));
+                            var F = J$.X1(5129, J$.W(5121, 'F', J$.T(5113, function F(a1, a2, a3, a4) {
+                                jalangiLabel372:
+                                    while (true) {
+                                        try {
+                                            J$.Fe(5073, arguments.callee, this, arguments);
+                                            arguments = J$.N(5081, 'arguments', arguments, 4);
+                                            F = J$.N(5089, 'F', F, 0);
+                                            J$.N(5097, 'cb', cb, 0);
+                                            J$.N(5105, 'g', g, 0);
+                                            var cb = J$.X1(4697, J$.W(4689, 'cb', J$.G(4681, J$.R(4665, 'arguments', arguments, 2), J$.R(4673, 'index', index, 0), 4), cb, 1));
+                                            if (J$.X1(9929, J$.C(352, J$.B(178, '!==', J$.U(170, 'typeof', J$.R(4705, 'cb', cb, 0)), J$.T(4713, 'function', 21, false), 0)))) {
+                                                if (J$.X1(9921, J$.C(344, J$.C(328, J$.G(4729, J$.R(4721, 'glob', glob, 1), 'allowBooleanPlaceholders', 0)) ? J$.B(194, '===', J$.U(186, 'typeof', J$.R(4737, 'cb', cb, 0)), J$.T(4745, 'boolean', 21, false), 0) : J$._()))) {
+                                                    if (J$.X1(9913, J$.C(336, J$.R(4753, 'cb', cb, 0))))
+                                                        J$.X1(4785, cb = J$.W(4777, 'cb', J$.G(4769, J$.R(4761, 'util', util, 1), 'defaultCallback', 0), cb, 0));
+                                                    else
+                                                        return J$.X1(4889, J$.Rt(4881, J$.F(4873, J$.M(4857, J$.R(4793, 'exports', exports, 2), 'future', 0)(J$.T(4801, '', 21, false), J$.T(4809, 0, 22, false), J$.T(4817, null, 25, false), J$.M(4841, J$.R(4825, 'wrapper', wrapper, 2), 'bind', 0)(J$.R(4833, 'this', this, 0)), J$.R(4849, 'index', index, 0)), 0)(J$.R(4865, 'arguments', arguments, 2))));
+                                                } else
+                                                    throw J$.X1(4961, J$.Th(4953, J$.M(4945, J$.R(4897, 'util', util, 1), 'argError', 0)(J$.G(4913, J$.R(4905, 'fn', fn, 0), 'name', 0), J$.R(4921, 'index', index, 0), J$.T(4929, 'function', 21, false), J$.U(202, 'typeof', J$.R(4937, 'cb', cb, 0)))));
+                                            }
+                                            var g = J$.X1(5009, J$.W(5001, 'g', J$.M(4993, J$.R(4969, 'fn', fn, 0), 'apply', 0)(J$.R(4977, 'this', this, 0), J$.R(4985, 'arguments', arguments, 2)), g, 1));
+                                            J$.X1(5065, J$.M(5057, J$.R(5017, 'run', run, 1), 'call', 0)(J$.R(5025, 'this', this, 0), J$.R(5033, 'fn', fn, 0), J$.R(5041, 'g', g, 0), J$.R(5049, 'cb', cb, 0)));
+                                        } catch (J$e) {
+                                            J$.Ex(9937, J$e);
+                                        } finally {
+                                            if (J$.Fr(9945))
+                                                continue jalangiLabel372;
+                                            else
+                                                return J$.Ra();
+                                        }
+                                    }
+                            }, 12, false, 5073), F, 1));
+                            J$.X1(5169, J$.P(5161, J$.R(5137, 'F', F, 0), '__name__', J$.G(5153, J$.R(5145, 'fn', fn, 0), 'name', 0), 0));
+                            return J$.X1(5193, J$.Rt(5185, J$.R(5177, 'F', F, 0)));
+                        } catch (J$e) {
+                            J$.Ex(9953, J$e);
+                        } finally {
+                            if (J$.Fr(9961))
+                                continue jalangiLabel373;
+                            else
+                                return J$.Ra();
+                        }
+                    }
+            }) at SyntaxError: Assigning to arguments in strict mode (6:28)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1472:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1606:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseTryStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:897:23)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:702:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/index.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/Targets/ez-streams/node_modules/streamline-runtime/index.js. Coverage (Term): 43% Coverage (LOC): 75%
+*- File /root/Targets/ez-streams/node_modules/streamline-runtime/lib/future.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/ez-streams/node_modules/streamline-runtime/lib/util.js. Coverage (Term): 39% Coverage (LOC): 63%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/index.js. Coverage (Term): 90% Coverage (LOC): 100%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/colors.js. Coverage (Term): 41% Coverage (LOC): 51%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/styles.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/system/supports-colors.js. Coverage (Term): 62% Coverage (LOC): 44%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/custom/trap.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/custom/zalgo.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/maps/america.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/maps/zebra.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/maps/rainbow.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/maps/random.js. Coverage (Term): 57% Coverage (LOC): 94%
+*- File /root/Targets/ez-streams/node_modules/colors/lib/extendStringPrototype.js. Coverage (Term): 12% Coverage (LOC): 11%
+*- File eval. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/ez.js. Coverage (Term): 13% Coverage (LOC): 13%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/devices/index.js. Coverage (Term): 24% Coverage (LOC): 13%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/devices/array.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/reader.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/ez-streams/node_modules/ez-streams/lib/generators/predicate.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/ez-streams/node_modules/streamline-runtime/lib/generators/runtime.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/ez-streams/node_modules/streamline-runtime/lib/generators/builtins.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

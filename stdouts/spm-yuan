@@ -1,0 +1,101 @@
+
+> spm-yuan@0.0.5 postinstall /root/Targets/spm-yuan/node_modules/spm-yuan
+> node scripts/postinstall.js
+
+Cannot find module 'spm'
+  you need install spm to register the program
+
+    [31m$ npm install spm -g[0m
+
+  if you have installed spm, it maybe you haven't set a NODE_PATH environment variable
+
+/root/Targets/spm-yuan
+└─┬ spm-yuan@0.0.5 
+  ├── async@0.2.10 
+  ├─┬ commander@1.1.1 
+  │ └── keypress@0.1.0 
+  ├── ejs@0.8.8 
+  ├─┬ express@3.0.6 
+  │ ├── buffer-crc32@0.1.1 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.2 
+  │ │ ├── bytes@0.1.0 
+  │ │ ├── formidable@1.0.11 
+  │ │ ├── pause@0.0.1 
+  │ │ └── qs@0.5.1 
+  │ ├── cookie@0.0.5 
+  │ ├── cookie-signature@0.0.1 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.3 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├── mkdirp@0.3.5 
+  ├─┬ request@2.21.0 
+  │ ├── aws-sign@0.3.0 
+  │ ├── cookie-jar@0.3.0 
+  │ ├── forever-agent@0.5.2 
+  │ ├─┬ form-data@0.0.8 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├─┬ hawk@0.13.1 
+  │ │ ├─┬ boom@0.4.2 
+  │ │ │ └── hoek@0.9.1 
+  │ │ ├── cryptiles@0.2.2 
+  │ │ ├── hoek@0.8.5 
+  │ │ └─┬ sntp@0.2.4 
+  │ │   └── hoek@0.9.1 
+  │ ├─┬ http-signature@0.9.11 
+  │ │ ├── asn1@0.1.11 
+  │ │ ├── assert-plus@0.1.2 
+  │ │ └── ctype@0.5.2 
+  │ ├── json-stringify-safe@4.0.0 
+  │ ├── mime@1.2.11 
+  │ ├── node-uuid@1.4.8 
+  │ ├── oauth-sign@0.3.0 
+  │ ├── qs@0.6.6 
+  │ └── tunnel-agent@0.3.0 
+  ├─┬ rimraf@2.1.4 
+  │ └── graceful-fs@1.2.3 
+  ├── semver@1.1.4 
+  ├── spmrc@0.1.3 
+  └── underscore@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/spm-yuan/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0319 took 9.3809s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/spm-yuan/node_modules/spm-yuan/index.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/spm-yuan/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/spm-yuan/node_modules/spm-yuan/app.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/spm-yuan/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/spm-yuan/node_modules/express/lib/express.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/spm-yuan/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/spm-yuan/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/spm-yuan/node_modules/connect/lib/proto.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/spm-yuan/node_modules/connect/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 40%
+*- File /root/Targets/spm-yuan/node_modules/cookie-signature/index.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/spm-yuan/node_modules/pause/index.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/spm-yuan/node_modules/bytes/index.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/spm-yuan/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/spm-yuan/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- File /root/Targets/spm-yuan/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/spm-yuan/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/spm-yuan/node_modules/connect/lib/patch.js. Coverage (Term): 26% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

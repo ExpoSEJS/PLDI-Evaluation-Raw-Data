@@ -1,0 +1,301 @@
+/root/Targets/cucumber-redbox
+└── cucumber-redbox@0.7.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cucumber-redbox/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pow","join","RegExp","sort","defineProperties","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0629 took 29.8121s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'return' outside of function (43:4) on program 
+// use a already existing formater or fallback to the default v8 formater
+var defaultFormater = require('./format.js');
+
+// public define API
+function stackChain() {
+  this.extend = new TraceModifier();
+  this.filter = new TraceModifier();
+  this.format = new StackFormater();
+  this.version = require('./package.json').version;
+}
+
+var SHORTCUT_CALLSITE = false;
+stackChain.prototype.callSite = function collectCallSites(options) {
+  if (!options) options = {};
+
+  // Get CallSites
+  SHORTCUT_CALLSITE = true;
+  var obj = {};
+  Error.captureStackTrace(obj, collectCallSites);
+  var callSites = obj.stack;
+  SHORTCUT_CALLSITE = false;
+
+  // Slice
+  callSites = callSites.slice(options.slice || 0);
+
+  // Modify CallSites
+  if (options.extend) callSites = this.extend._modify(obj, callSites);
+  if (options.filter) callSites = this.filter._modify(obj, callSites);
+
+  // Done
+  return callSites;
+};
+
+var chain = new stackChain();
+
+// If a another copy (same version or not) of stack-chain exists it will result
+// in wrong stack traces (most likely dublicate callSites).
+if (global._stackChain) {
+  // In case the version match, we can simply return the first initialized copy
+  if (global._stackChain.version === chain.version) {
+    module.exports = global._stackChain;
+    return; // Prevents V8 and Error extentions from being set again
+  }
+  // The version don't match, this is really bad. Lets just throw
+  else {
+    throw new Error('Conflicting version of stack-chain found');
+  }
+}
+// Yay, no other stack-chain copy exists, yet :/
+else {
+  module.exports = global._stackChain = chain;
+}
+
+function TraceModifier() {
+  this._modifiers = [];
+}
+
+TraceModifier.prototype._modify = function (error, frames) {
+  for (var i = 0, l = this._modifiers.length; i < l; i++) {
+    frames = this._modifiers[i](error, frames);
+  }
+
+  return frames;
+};
+
+TraceModifier.prototype.attach = function (modifier) {
+  this._modifiers.push(modifier);
+};
+
+TraceModifier.prototype.deattach = function (modifier) {
+  var index = this._modifiers.indexOf(modifier);
+
+  if (index === -1) return false;
+
+  this._modifiers.splice(index, 1);
+  return true;
+};
+
+function StackFormater() {
+  this._formater = defaultFormater;
+  this._previous = undefined;
+}
+
+StackFormater.prototype.replace = function (formater) {
+  if (formater) {
+    this._formater = formater;
+  } else {
+    this.restore();
+  }
+};
+
+StackFormater.prototype.restore  = function () {
+  this._formater = defaultFormater;
+};
+
+StackFormater.prototype._backup = function () {
+  if (this._formater === defaultFormater) {
+    this._previous = undefined;
+  } else {
+    this._previous = this._formater;
+  }
+};
+
+StackFormater.prototype._roolback = function () {
+  this.replace(this._previous);
+  this._previous = undefined;
+};
+
+
+//
+// Set Error.prepareStackTrace thus allowing stack-chain
+// to take control of the Error().stack formating.
+//
+
+// If there already is a custom stack formater, then set
+// that as the stack-chain formater.
+if (Error.prepareStackTrace) {
+    chain.format.replace(Error.prepareStackTrace);
+}
+
+function prepareStackTrace(error, originalFrames) {
+  if (SHORTCUT_CALLSITE) return originalFrames;
+
+  // Make a loss copy of originalFrames
+  var frames = originalFrames.concat();
+
+  // extend frames
+  frames = chain.extend._modify(error, frames);
+
+  // filter frames
+  frames = chain.filter._modify(error, frames);
+
+  // reduce frames to match Error.stackTraceLimit
+  frames = frames.slice(0, Error.stackTraceLimit);
+
+  // Set the callSite property
+  // But only if it havn't been explicitly set, otherwise
+  // error.stack would have unintended side effects
+  if (Object.getOwnPropertyDescriptor(error, "callSite") === undefined) {
+    error.callSite = {
+      original: originalFrames,
+      mutated: frames
+    };
+  }
+
+  // format frames
+  return chain.format._formater(error, frames);
+}
+
+// Replace the v8 stack trace creator
+Object.defineProperty(Error, 'prepareStackTrace', {
+  'get': function () {
+    return prepareStackTrace;
+  },
+
+  'set': function (formater) {
+    // If formater is prepareStackTrace it means that someone ran
+    // var old = Error.prepareStackTrace;
+    // Error.prepareStackTrace = custom
+    // new Error().stack
+    // Error.prepareStackTrace = old;
+    // The effect of this, should be that the old behaviour is restored.
+    if (formater === prepareStackTrace) {
+      chain.format._roolback();
+    }
+    // Error.prepareStackTrace was set, this means that someone is
+    // trying to take control of the Error().stack format. Make
+    // them belive they succeeded by setting them up as the stack-chain
+    // formater.
+    else {
+      chain.format._backup();
+      chain.format.replace(formater);
+    }
+  }
+});
+
+//
+// Manage call site storeage
+//
+function callSiteGetter() {
+  // calculate call site object
+  this.stack;
+
+  // return call site object
+  return this.callSite;
+}
+
+Object.defineProperty(Error.prototype, 'callSite', {
+  'get': callSiteGetter,
+
+  'set': function (frames) {
+    // In case callSite was set before [[getter]], just set
+    // the value
+    Object.defineProperty(this, 'callSite', {
+        value: frames,
+        writable: true,
+        configurable: true
+    });
+  },
+
+  configurable: true
+});
+ at SyntaxError: 'return' outside of function (43:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:831:12)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:709:33)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseIfStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:824:28)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:698:30)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber.js. Coverage (Term): 44% Coverage (LOC): 55%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/api.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/api/scenario.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/assembler.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/background.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/data_table.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/data_table/row.js. Coverage (Term): 35% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/doc_string.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/feature.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/features.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/filter.js. Coverage (Term): 51% Coverage (LOC): 53%
+*- File /root/Targets/cucumber-redbox/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/filter/any_of_tags_rule.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/filter/element_matching_tag_spec.js. Coverage (Term): 21% Coverage (LOC): 24%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/filter/scenario_at_line_rule.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/scenario.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/scenario_outline.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/outline_step.js. Coverage (Term): 22% Coverage (LOC): 25%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/examples.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/step.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/hook_step.js. Coverage (Term): 28% Coverage (LOC): 32%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/ast/tag.js. Coverage (Term): 31% Coverage (LOC): 33%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli.js. Coverage (Term): 25% Coverage (LOC): 28%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/argument_parser.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/argument_parser/feature_path_expander.js. Coverage (Term): 45% Coverage (LOC): 60%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/argument_parser/path_expander.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /root/Targets/cucumber-redbox/node_modules/walkdir/walkdir.js. Coverage (Term): 6% Coverage (LOC): 4%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/argument_parser/profile_definition_loader.js. Coverage (Term): 42% Coverage (LOC): 44%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/argument_parser/support_code_path_expander.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/configuration.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/feature_source_loader.js. Coverage (Term): 25% Coverage (LOC): 24%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/cli/support_code_loader.js. Coverage (Term): 18% Coverage (LOC): 15%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/debug.js. Coverage (Term): 19% Coverage (LOC): 43%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/debug/simple_ast_listener.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener.js. Coverage (Term): 36% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/events.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/formatter.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/pretty_formatter.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/progress_formatter.js. Coverage (Term): 20% Coverage (LOC): 17%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/util/colors.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/safe.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/colors.js. Coverage (Term): 69% Coverage (LOC): 78%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/styles.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/system/supports-colors.js. Coverage (Term): 62% Coverage (LOC): 44%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/custom/trap.js. Coverage (Term): 8% Coverage (LOC): 3%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/custom/zalgo.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/maps/america.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/maps/zebra.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/maps/rainbow.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/cucumber-redbox/node_modules/colors/lib/maps/random.js. Coverage (Term): 57% Coverage (LOC): 94%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/json_formatter.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/stats_journal.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/summary_formatter.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/listener/rerun_formatter.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/parser.js. Coverage (Term): 5% Coverage (LOC): 8%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime.js. Coverage (Term): 27% Coverage (LOC): 31%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/ast_tree_walker.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/ast_tree_walker/event.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/step_result.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/successful_step_result.js. Coverage (Term): 35% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/pending_step_result.js. Coverage (Term): 35% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/failed_step_result.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/skipped_step_result.js. Coverage (Term): 35% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/undefined_step_result.js. Coverage (Term): 35% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/attachment.js. Coverage (Term): 37% Coverage (LOC): 40%
+*- File /root/Targets/cucumber-redbox/node_modules/cucumber-redbox/lib/cucumber/runtime/stack_trace_filter.js. Coverage (Term): 26% Coverage (LOC): 37%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

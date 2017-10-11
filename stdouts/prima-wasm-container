@@ -1,0 +1,109 @@
+/root/Targets/prima-wasm-container
+└── prima-wasm-container@0.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/prima-wasm-container/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0403 took 2.3167s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (16:8) on program module.exports = class WasmContainer {
+  /**
+   * The interface API is the api the exposed to interfaces. All queries about
+   * the enviroment and call to the kernel go through this API
+   */
+  constructor (code) {
+    this._module = WebAssembly.Module(code)
+  }
+
+  static get name () {
+    return 'wasm'
+  }
+  /**
+   * Runs the core VM with a given environment and imports
+   */
+  async run (message, kernel, imports = []) {
+    const responses = {}
+    /**
+     * Builds a import map with an array of given interfaces
+     */
+    function buildImports (opts, imports) {
+      const importMap = {}
+      for (const Import of imports) {
+        const name = Import.name
+        opts.response = responses[name] = {}
+        const newInterface = new Import(opts)
+        const props = Object.getOwnPropertyNames(Import.prototype)
+
+        // bind the methods to the correct 'this'
+        importMap[name] = {}
+        for (const prop of props) {
+          importMap[name][prop] = newInterface[prop].bind(newInterface)
+        }
+      }
+      return importMap
+    }
+
+    let instance
+
+    const opts = {
+      vm: {
+        /**
+         * adds an aync operation to the operations queue
+         */
+        pushOpsQueue: (promise, callbackIndex) => {
+          this._opsQueue = Promise.all([this._opsQueue, promise]).then(values => {
+            const result = values.pop()
+            instance.exports.callback.get(callbackIndex)(result)
+          })
+        },
+        memory: () => {
+          return instance.exports.memory.buffer
+        }
+      },
+      kernel: kernel,
+      message: message
+    }
+    const initializedImports = buildImports(opts, imports)
+    instance = WebAssembly.Instance(this._module, initializedImports)
+
+    if (instance.exports.main) {
+      instance.exports.main()
+    }
+    await this.onDone()
+    return responses
+  }
+
+  /**
+   * returns a promise that resolves when the wasm instance is done running
+   */
+  async onDone () {
+    let prevOps
+    while (prevOps !== this._opsQueue) {
+      prevOps = this._opsQueue
+      await this._opsQueue
+    }
+  }
+}
+ at SyntaxError: Unexpected token (16:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1813:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

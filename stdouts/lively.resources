@@ -1,0 +1,151 @@
+/root/Targets/lively.resources
+└─┬ lively.resources@0.1.31 
+  └─┬ fetch-ponyfill@3.0.2 
+    └─┬ node-fetch@1.6.3 
+      ├─┬ encoding@0.1.12 
+      │ └── iconv-lite@0.4.19 
+      └── is-stream@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/lively.resources/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0742 took 4.0306s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (24:7) on program /*global System*/
+export { default as Resource } from "./src/resource.js";
+export { parseQuery } from "./src/helpers.js";
+import { resourceExtension as httpResourceExtension } from "./src/http-resource.js";
+import { resourceExtension as fileResourceExtension } from "./src/fs-resource.js";
+import { resourceExtension as localResourceExtension } from "./src/local-resource.js";
+
+var extensions = extensions || []; // [{name, matches, resourceClass}]
+
+registerExtension(localResourceExtension);
+registerExtension(httpResourceExtension);
+registerExtension(fileResourceExtension);
+
+export function resource(url, opts) {
+  if (!url) throw new Error("lively.resource resource constructor: expects url but got " + url);
+  if (url.isResource) return url;
+  url = String(url);
+  for (var i = 0; i < extensions.length; i++)
+    if (extensions[i].matches(url))
+      return new extensions[i].resourceClass(url, opts);
+  throw new Error(`Cannot find resource type for url ${url}`);
+}
+
+export async function createFiles(baseDir, fileSpec, opts) {
+  // creates resources as specified in fileSpec, e.g.
+  // {"foo.txt": "hello world", "sub-dir/bar.js": "23 + 19"}
+  // supports both sync and async resources
+  let base = resource(baseDir, opts).asDirectory();
+  await base.ensureExistance();
+  for (let name in fileSpec) {
+    if (!fileSpec.hasOwnProperty(name)) continue;
+    let resource = base.join(name);
+    typeof fileSpec[name] === "object" ?
+      await createFiles(resource, fileSpec[name], opts) :
+      await resource.write(fileSpec[name]);
+  }
+  return base;
+}
+
+export function loadViaScript(url, onLoadCb) {
+  // load JS code by inserting a <script src="..." /> tag into the
+  // DOM. This allows cross domain script loading and JSONP
+
+    var parentNode = document.head,
+        xmlNamespace = parentNode.namespaceURI,
+        useBabelJsForScriptLoad = false,
+        SVGNamespace = "http://www.w3.org/2000/svg",
+        XLINKNamespace = "http://www.w3.org/1999/xlink";
+
+  return new Promise((resolve, reject) => {
+    var script = document.createElementNS(xmlNamespace, 'script');
+
+    if (useBabelJsForScriptLoad && typeof babel !== "undefined") {
+      script.setAttribute('type', "text/babel");
+    } else {
+      script.setAttribute('type', 'text/ecmascript');
+    }
+
+    parentNode.appendChild(script);
+    script.setAttributeNS(null, 'id', url);
+
+    script.namespaceURI === SVGNamespace ?
+      script.setAttributeNS(XLINKNamespace, 'href', url) :
+      script.setAttribute('src', url);
+
+    script.onload = resolve;
+    script.onerror = reject;
+    script.setAttributeNS(null, 'async', true);
+  });
+}
+
+export async function ensureFetch() {
+  /*  
+    Usage like
+  
+    if (typeof fetch === "undefined" && typeof lively !== "undefined" && lively.resources) {
+      console.log("Installing fetch polyfill...")
+      lively.resources.ensureFetch().then(function() {
+        console.log("fetch polyfill installed")
+      }).catch(function(err) {
+        console.error("Error installing fetch:");
+        console.error(err);
+      });
+    }
+  */
+
+  if ("fetch" in System.global) return Promise.resolve();
+  var thisModuleId = System.decanonicalize("lively.resources"),
+      fetchInterface;
+  if (System.get("@system-env").node) {
+    try {
+      fetchInterface = System._nodeRequire("fetch-ponyfill");
+    } catch (err) {
+      var moduleId = (await System.normalize("fetch-ponyfill", thisModuleId)).replace("file://", "")
+      fetchInterface = System._nodeRequire(moduleId)
+    }
+  } else {
+    fetchInterface = await System.import("fetch-ponyfill", thisModuleId)
+  } 
+  Object.assign(System.global, fetchInterface())
+}
+
+export function registerExtension(extension) {
+  // extension = {name: STRING, matches: FUNCTION, resourceClass: RESOURCE}
+  // name: uniquely identifying this extension
+  // predicate matches gets a resource url (string) passed and decides if the
+  // extension handles it
+  // resourceClass needs to implement the Resource interface
+  var {name} = extension;
+  extensions = extensions.filter(ea => ea.name !== name).concat(extension);
+}
+
+export function unregisterExtension(extension) {
+  var name = typeof extension === "string" ? extension : extension.name;
+  extensions = extensions.filter(ea => ea.name !== name);
+} at SyntaxError: Unexpected token (24:7)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$1.parseExportSpecifiers (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1215:10)
+    at Parser.pp$1.parseExport (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1186:30)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:719:71)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

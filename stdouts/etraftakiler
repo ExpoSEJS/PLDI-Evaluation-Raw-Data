@@ -1,0 +1,125 @@
+/root/Targets/etraftakiler
+└── etraftakiler@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/etraftakiler/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0331 took 4.9859s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:79) on program ﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="Content/themes/default/jquery.mobile-1.4.1.css" rel="stylesheet" />
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery.mobile-1.4.1.min.js"></script>
+    <link href="Content/etraftakiler.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script src="js/etraftakiler.js"></script>
+
+</head>
+<body>
+
+
+    <div id="etraftakiler" data-role="page" data-title="etraftakiler">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="../" data-ajax="false" class="ui-btn ui-btn-icon-left ui-icon-home  ui-btn-icon-notext">Ana sayfa</a>
+            <h1>Etraftakiler</h1>
+            <a href="#info" data-transition="pop" class="ui-btn ui-btn-icon-right ui-icon-info  ui-btn-icon-notext">Bilgi</a>
+        </div>
+        <!-- **************** BASLIK ************ -->
+
+        <div role="main" class="ui-content">
+
+
+
+
+
+
+            <div id="gmap_canvas"></div>
+            <div class="actions">
+                <div class="button">
+                    <label for="gmap_where">Nerede:</label>
+                    <input id="gmap_where" type="text" name="gmap_where" />
+                </div>
+                <div id="button2" class="ui-btn" onclick="findAddress(); return false;">Adresi Belirle</div>
+                <!--<div class="button">
+                    <label for="gmap_keyword">Anahtar Kelimeler (zorunlu değil):</label>
+                    <input id="gmap_keyword" type="text" name="gmap_keyword" />
+                </div>-->
+                <div class="button">
+                    <label for="gmap_type">Tip:</label>
+                    <select id="gmap_type">
+                        <option value="art_gallery">Müze</option>
+                        <option value="atm">atm</option>
+                        <option value="bank">banka</option>
+                        <option value="bar">bar</option>
+                        <option value="cafe">cafe</option>
+                        <option value="food">Yiyecek</option>
+                        <option value="hospital">Hastane</option>
+                        <option value="police">polis</option>
+                        <option value="store">Mağza</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <label for="gmap_radius">Yarıçap:</label>
+                    <select id="gmap_radius">
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="1500">1500</option>
+                        <option value="5000">5000</option>
+                    </select>
+                </div>
+                <input type="hidden" id="lat" name="lat" value="40.7143528" />
+                <input type="hidden" id="lng" name="lng" value="-74.0059731" />
+                <div id="button1" class="ui-btn" onclick="findPlaces(); return false;">Etraftakileri sorgula</div>
+            </div>
+        </div><!-- /content -->
+        <!--içerik -->
+
+
+
+
+        <div data-role="footer" data-position="fixed" data-id="vs_footer" data-theme="a">
+            <!--data-fullscreen="true" -->
+            <div data-role="navbar" class="nav-glyphish-example">
+                <!--data-type=" horizontal"-->
+                <ul>
+                    <li> <a href="index.html" data-ajax="false" class="ui-btn    ui-btn-icon-top  ui-icon-home">Anasayfa</a></li>
+
+                    <!--<li><a href="#resimler" class="ui-btn  ui-btn-active  ui-state-persist   ui-btn-icon-top  ui-icon-eye">Resimler</a></li>-->
+                    <li><a href="etraftakiler.html" class="ui-btn ui-btn-active  ui-state-persist" id="etraftakiler" data-ajax="false" data-icon="custom"> Etraftakiler</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- **************** lİNKLER ************ -->
+    </div>
+</body>
+</html>
+ at SyntaxError: Unexpected token (1:79)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

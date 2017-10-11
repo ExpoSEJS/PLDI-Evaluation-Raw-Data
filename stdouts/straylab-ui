@@ -1,0 +1,24 @@
+/root/Targets/straylab-ui
+├── UNMET PEER DEPENDENCY react@^0.14 || ^15.0.0-rc || ^15.0
+├── UNMET PEER DEPENDENCY react-dom@^0.14 || ^15.0.0-rc || ^15.0
+├── UNMET PEER DEPENDENCY react-select@^1.0.0-rc.3
+└── straylab-ui@0.1.23 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/straylab-ui/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0531 took 43.0211s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Identifier 'i' has already been declared
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

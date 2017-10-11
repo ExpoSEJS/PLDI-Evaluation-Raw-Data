@@ -1,0 +1,425 @@
+/root/Targets/lam
+└─┬ lam@0.0.4 
+  ├─┬ mingy@0.2.7 
+  │ └─┬ connect@2.13.1 
+  │   ├── batch@0.5.0 
+  │   ├── buffer-crc32@0.2.1 
+  │   ├── bytes@0.2.1 
+  │   ├── compressible@1.0.0 
+  │   ├── cookie@0.1.0 
+  │   ├── cookie-signature@1.0.1 
+  │   ├── debug@0.8.1 
+  │   ├── fresh@0.2.0 
+  │   ├── methods@0.1.0 
+  │   ├─┬ multiparty@2.2.0 
+  │   │ ├─┬ readable-stream@1.1.14 
+  │   │ │ ├── core-util-is@1.0.2 
+  │   │ │ ├── inherits@2.0.3 
+  │   │ │ ├── isarray@0.0.1 
+  │   │ │ └── string_decoder@0.10.31 
+  │   │ └── stream-counter@0.2.0 
+  │   ├── negotiator@0.3.0 
+  │   ├── pause@0.0.1 
+  │   ├── qs@0.6.6 
+  │   ├── raw-body@1.1.3 
+  │   ├─┬ send@0.1.4 
+  │   │ ├── mime@1.2.11 
+  │   │ └── range-parser@0.0.4 
+  │   └── uid2@0.0.3 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └── verror@1.10.0 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/lam/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0723 took 3.5012s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'package' is reserved (32:27) on program /*!
+ * lam
+ * Copyright(c) 2011 Mike Cantelon <mcantelon@gmail.com>
+ * MIT Licensed
+ */
+
+/**
+ * Library version.
+ */
+
+var fs = require('fs')
+  , path = require('path')
+  , exec = require('child_process').exec
+  , helpers = require('./helpers')
+  , _ = require('underscore');
+
+exports.usage = function(commands) {
+
+  var syntax;
+
+  console.log('Usage:');
+  console.log('  lam <package>');
+
+  for(var command in commands) {
+    syntax = commands[command].syntax;
+    for(var index in syntax) {
+      console.log('  lam ' + syntax[index]);
+    }
+  }
+}
+
+exports.install = function(package) {
+
+  exports.loadRegistry(function(err, registry) {
+    if (err) throw err;
+    if (registry[package] != undefined) {
+      console.log('found');
+      var run = exec('sudo npm install -g ' + package, {env: process.env})
+
+      run.stdout.on('data', function(data) {
+        console.log(data.toString());
+      });
+
+      run.stderr.on('data', function(data) {
+        console.log(data.toString());
+      });
+
+      run.on('exit', function(code) {
+        console.log('Adding to local app inventory...');
+        exports.getRegistry(function(err, userRegistry) {
+          if (err) throw err;
+          userRegistry[package] = registry[package];
+          fs.writeFile(
+            process.env.HOME + '/.lam',
+            JSON.stringify(userRegistry),
+            'utf8',
+            function(err) {
+              if (err) throw err;
+              console.log('Installation complete.');
+              exports.run(package);
+            }
+          );
+        });
+      });
+
+    } else {
+      console.log('Package not found.');
+    }
+  });
+}
+
+exports.getRegistry = function(cb) {
+
+  var home = process.env.HOME
+    , registryFile;
+
+  if (home === undefined) {
+    helpers.die('HOME environmental variable not defined.')
+  }
+
+  registryFile = home + '/.lam';
+
+  path.exists(registryFile, function(exists) {
+    if (!exists) {
+      cb(false, {});
+    } else {
+      fs.readFile(registryFile, function(err, registryData) {
+        cb(err, JSON.parse(registryData));
+      });
+    }
+  });
+}
+
+exports.searchData = function(registryData, pattern) {
+  var found = {};
+  for(var package in registryData) {
+    if (package.indexOf(pattern) != -1) {
+      found[package] = true;
+    }
+  }
+  return found;
+}
+
+exports.search = function(pattern) {
+
+  exports.loadRegistry(function(err, registry) {
+    if (err) throw err;
+    exports.lsOrSearchOutput(registry, pattern);
+  });
+}
+
+exports.ls = function(pattern) {
+
+  exports.getRegistry(function(err, registry) {
+    if (err) throw err;
+    exports.lsOrSearchOutput(registry, pattern);
+  });
+}
+
+exports.lsOrSearchOutput = function(registry, pattern) {
+
+  // so a search if applicable
+  if (pattern != undefined) {
+    registry = exports.searchData(registry, pattern);
+  }
+
+  for(var package in registry) {
+    console.log(package);
+  }
+}
+
+exports.run = function(package) {
+
+  var port
+    , package;
+
+  exports.getRegistry(function(err, registry) {
+
+    if (registry != undefined
+      && registry[package] != undefined
+      && registry[package].start != undefined
+    ) {
+
+      package = registry[package];
+
+      port = (package.port != undefined)
+        ? package.port
+        : helpers.getFreePort();
+
+      exports.runPackage(package, port);
+
+    } else {
+
+      helpers.die("Can't find that package in registry.");
+    }
+  });
+}
+
+exports.runPackage = function(package, port) {
+
+  var command = package.start.replace(
+    '{port}', port
+  );
+
+  var run = exec(command, {env: process.env})
+    , running = false
+    , openCommand;
+
+  // open browser when local web application outputs text
+  run.stdout.on('data', function(data) {
+
+    console.log(data.toString());
+
+    if (!running) {
+      running = true;
+      openCommand = (process.platform == 'darwin') ? 'open' : 'gnome-open';
+      exec('open http://127.0.0.1:' + port, {env: process.env});
+    }
+  });
+
+  run.stderr.on('data', function(data) {
+    console.log(data.toString());
+  });
+}
+
+exports.loadRegistry = function(cb) {
+
+  var tempFile = '/tmp/lam.json';
+
+  // download lam npm registry and parse
+  exports.downloadNpmData(tempFile, function() {
+    fs.readFile(tempFile, function(err, fullRegistryData) {
+      cb(err, JSON.parse(fullRegistryData));
+    });
+  });
+}
+
+exports.update = function(cb) {
+
+  var tempFile = '/tmp/npm.json';
+
+  // download lam npm registry and store it
+  exports.downloadNpmData(tempFile, function() {
+    fs.readFile(tempFile, function(err, data) {
+      if (err) throw err;
+      fs.writeFile(
+        process.env.HOME + '/.lam',
+        data.toString(),
+        'utf8',
+        function(err) {
+          if (err) throw err;
+          if (cb != undefined) {
+            cb();
+          }
+        }
+      );
+    });
+  });
+}
+
+exports.download = function() {
+
+  var tempFile = '/tmp/npm.json';
+
+   // download npm registry parse out local web app data
+  helpers.downloadFile('http://isaacs.iriscouch.com/registry/_all_docs?include_docs=true', '/tmp/npm.json', function() {
+    fs.readFile(tempFile, function(err, data) {
+      if (err) throw err;
+      console.log(JSON.stringify(exports.parseNpmData(data)));
+    });
+  });
+}
+
+exports.test = function() {
+
+  fs.readFile('/tmp/npm.json', function(err, data) {
+    if (err) throw err;
+    fs.writeFile(
+      process.env.HOME + '/.lam',
+      exports.parseNpmData(data),
+      'utf8',
+      function(err) {
+        if (err) throw err;
+        console.log('Updated.');
+      }
+    );
+  });
+}
+
+exports.downloadNpmData = function(file, cb) {
+
+  helpers.downloadFile('http://mikecantelon.com/lam.json', file, cb);
+}
+
+exports.parseNpmData = function(data) {
+
+  var registry = JSON.parse(data)
+    , localRegistry = {}
+    , rows = registry.rows
+    , package
+    , localData
+
+  // look for packages that have "local" set in their package.json
+  for(var index in rows) {
+    package = rows[index];
+
+    // if a package has versions, check if the latest version has local
+    // web app metadata
+    if (
+      package.id != ''
+      && package.doc != undefined
+      && package.doc['dist-tags'] != undefined
+    ) {
+      localData = exports.parsePackageLocalData(package);
+
+      // add local web app metadata to local registry
+      if (localData) {
+        localRegistry[package.id] = localData;
+      }
+    }
+  }
+
+  return localRegistry;
+}
+
+exports.parsePackageLocalData = function(package) {
+
+  var latestVersionNum
+    , latestVersion;
+
+  latestVersionNum = package.doc['dist-tags'].latest;
+
+  // if versions exist, look for local web app data in latest version
+  if (!_.isEmpty(package.doc.versions)) {
+    latestVersion = package.doc.versions[latestVersionNum];
+
+    if (latestVersion.local != undefined) {
+      return latestVersion.local;
+    }
+  }
+
+  return false;
+}
+
+exports.version = function() {
+
+  var package_json = fs.readFileSync(__dirname + '/../package.json')
+  var package_data = JSON.parse(package_json)
+
+  console.log('lam version ' + package_data.version);
+}
+ at SyntaxError: The keyword 'package' is reserved (32:27)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/lam/node_modules/lam/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

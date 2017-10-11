@@ -1,0 +1,42 @@
+/root/Targets/apollo-passport
+├─┬ apollo-passport@0.0.7 
+│ ├─┬ jsonwebtoken@7.4.3 
+│ │ ├─┬ joi@6.10.1 
+│ │ │ ├── hoek@2.16.3 
+│ │ │ ├── isemail@1.2.0 
+│ │ │ ├── moment@2.18.1 
+│ │ │ └── topo@1.1.0 
+│ │ ├─┬ jws@3.1.4 
+│ │ │ ├── base64url@2.0.0 
+│ │ │ ├─┬ jwa@1.1.5 
+│ │ │ │ ├── buffer-equal-constant-time@1.0.1 
+│ │ │ │ └── ecdsa-sig-formatter@1.0.9 
+│ │ │ └── safe-buffer@5.1.1 
+│ │ ├── lodash.once@4.1.1 
+│ │ ├── ms@2.0.0 
+│ │ └── xtend@4.0.1 
+│ └── jwt-decode@2.2.0 
+├── UNMET PEER DEPENDENCY graphql-tag@^0.1.7
+├── UNMET PEER DEPENDENCY lodash@^4.0.0
+├── UNMET PEER DEPENDENCY regenerator-runtime@^0.9.5
+└── UNMET PEER DEPENDENCY winston@^2.2.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/apollo-passport/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0345 took 2.4549s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'passport'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/apollo-passport/node_modules/apollo-passport/lib/index.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

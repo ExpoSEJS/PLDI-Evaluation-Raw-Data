@@ -1,0 +1,31 @@
+/root/Targets/cratedigger
+└─┬ cratedigger@0.2.0 
+  ├── dat-gui@0.5.0 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├── stats-js@1.0.0-alpha1 
+  ├─┬ three.js@0.73.2 
+  │ └── three@0.73.0 
+  └── tween.js@16.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cratedigger/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","now","Float32Array","Array","create","defineProperties","Uint16Array","random","join","floor","isArray","sin","cos","sqrt","isFinite","bound warn"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 1.183 took 417.9446s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cratedigger/node_modules/cratedigger/lib/index.js. Coverage (Term): 2% Coverage (LOC): 6%
+*- File /root/Targets/cratedigger/node_modules/three.js/shim.js. Coverage (Term): 89% Coverage (LOC): 91%
+*- File /root/Targets/cratedigger/node_modules/three/three.js. Coverage (Term): 12% Coverage (LOC): 21%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

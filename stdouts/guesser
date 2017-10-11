@@ -1,0 +1,196 @@
+/root/Targets/guesser
+└─┬ guesser@1.5.3 
+  ├─┬ arangojs@3.9.1 
+  │ ├── extend@3.0.1 
+  │ └── linkedlist@1.0.1 
+  ├── bower@1.8.2 
+  ├─┬ concat-stream@1.6.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └── typedarray@0.0.6 
+  ├─┬ express@4.15.4 
+  │ ├─┬ accepts@1.3.4 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.0.5 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── qs@6.5.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.15.4 
+  │ │ ├── destroy@1.0.4 
+  │ │ ├── http-errors@1.6.2 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.12.4 
+  │ ├── setprototypeof@1.0.3 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.1 
+  └─┬ promise@7.3.1 
+    └── asap@2.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/guesser/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.08 took 3.138s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env nodejs
+
+////////////////////////////////////////////////////////////////////////////////
+/// Libraries and database driver
+////////////////////////////////////////////////////////////////////////////////
+
+var fs = require("fs");
+var Promise = require("promise");
+var concat = require("concat-stream");
+
+var server_addr = process.env.ARANGODB_SERVER ? process.env.ARANGODB_SERVER : "http://localhost:8529";
+var ignore = console.log("Using DB-Server " + server_addr);
+
+var Database = require("arangojs");
+
+if (server_addr !== "none") {
+  var db = new Database(server_addr);          // configure server
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// An express app:
+////////////////////////////////////////////////////////////////////////////////
+
+var express = require('express');
+var app = express();
+
+// leverage NODE_ENV to determine collectionName
+var collectionName = "guesser_questions";            // configure collection
+var putRoute = "guesser";
+if (app.get('env') == "development") {
+    putRoute = "dev/" + putRoute;
+    collectionName = "dev_" + collectionName;
+}
+
+var collectionPromise = new Promise(function(resolve, reject) {
+    db.collection(collectionName, false, function(err, res) {
+        if (err) {
+            reject(err);
+        }
+        else {
+            resolve(res);
+        }
+    });
+});
+
+if (server_addr !== "none") {
+  collectionPromise.then(null, function(err) {
+      console.log("Cannot contact the database! Terminating...");
+      process.exit(1);
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// Static content:
+////////////////////////////////////////////////////////////////////////////////
+
+app.use(express.static(__dirname + "/static"));
+
+////////////////////////////////////////////////////////////////////////////////
+/// AJAX services:
+////////////////////////////////////////////////////////////////////////////////
+
+app.get("/get/:key", function (req, res) {
+  var key = req.params["key"];
+  collectionPromise.then(function(collection) {
+      collection.document(key, function(err, x) {
+          if (err) {
+              // for production we should implement more sophisticated handling here. Like logging where appropriate etc.
+              res.status(err.code);
+              delete err.response
+              res.json(err);
+          }
+          else {
+              res.json(x);
+          }
+      });
+  }, null);  // if this were rejected, we would be out already
+});
+
+// This is just a trampoline to the Foxx app:
+var ep = (server_addr !== "none") ? db.route(putRoute) : undefined;
+
+app.put("/put", function (req, res) {
+  req.pipe(concat( function(body) {
+    // check out body-parser for a express middleware which handles json automatically
+    ep.put("put", JSON.parse(body.toString()),
+      function(err, x) {
+        if (err) {
+          err.error = true;
+          delete err.response;
+          res.send(err);
+        }
+        else {
+          res.send(x.body);
+        }
+      });
+  } ));
+});
+
+////////////////////////////////////////////////////////////////////////////////
+/// Now finally make the server:
+////////////////////////////////////////////////////////////////////////////////
+
+var server = app.listen(8000, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log('Guesser app server listening at http://%s:%s', host, port)
+});
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

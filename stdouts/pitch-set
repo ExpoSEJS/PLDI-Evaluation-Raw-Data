@@ -1,0 +1,80 @@
+/root/Targets/pitch-set
+└─┬ pitch-set@1.1.0 
+  ├─┬ music-gamut@0.9.2 
+  │ └── music-notation@1.0.1 
+  └── pitch-sort@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pitch-set/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 50% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 50% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 55.00000000000001% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 55.00000000000001% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 55.00000000000001% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 55.00000000000001% coverage ] ****** [4 done /0 queued / 1 running / 1 errors / 56.00000000000001% coverage ] ****** [4 done /0 queued / 1 running / 1 errors / 56.00000000000001% coverage ] ****** [5 done /1 queued / 1 running / 2 errors / 59% coverage ] ****** [5 done /0 queued / 2 running / 2 errors / 59% coverage ] ****** [5 done /0 queued / 2 running / 2 errors / 59% coverage ] ****** [6 done /1 queued / 2 running / 2 errors / 63% coverage ] ****** [6 done /0 queued / 3 running / 2 errors / 63% coverage ] ****** [6 done /0 queued / 3 running / 2 errors / 63% coverage ] ****** [7 done /1 queued / 3 running / 3 errors / 63% coverage ] ****** [7 done /0 queued / 4 running / 3 errors / 63% coverage ] ****** [7 done /0 queued / 4 running / 3 errors / 63% coverage ] ****** [8 done /0 queued / 3 running / 4 errors / 63% coverage ] ****** [9 done /2 queued / 3 running / 5 errors / 63% coverage ] ****** [9 done /1 queued / 4 running / 5 errors / 63% coverage ] ****** [9 done /0 queued / 5 running / 5 errors / 63% coverage ] ****** [9 done /0 queued / 5 running / 5 errors / 63% coverage ] ****** [10 done /1 queued / 5 running / 6 errors / 63% coverage ] ****** [10 done /0 queued / 6 running / 6 errors / 63% coverage ] ****** [10 done /0 queued / 6 running / 6 errors / 63% coverage ] ****** [11 done /0 queued / 6 running / 7 errors / 63% coverage ] ****** [11 done /0 queued / 6 running / 7 errors / 63% coverage ] ****** [12 done /1 queued / 6 running / 8 errors / 63% coverage ] ****** [12 done /0 queued / 7 running / 8 errors / 63% coverage ] ****** [12 done /0 queued / 7 running / 8 errors / 63% coverage ] ****** [13 done /1 queued / 7 running / 9 errors / 63% coverage ] ****** [13 done /0 queued / 8 running / 9 errors / 63% coverage ] ****** [13 done /0 queued / 8 running / 9 errors / 63% coverage ] ****** [14 done /1 queued / 8 running / 10 errors / 63% coverage ] ****** [14 done /0 queued / 9 running / 10 errors / 63% coverage ] ****** [14 done /0 queued / 9 running / 10 errors / 63% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","toString","apply","bound set","isArray"]
+*-- regex: 4
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0314 took 4.3522s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"Target_Switcher":0} start 4.4461 took 4.7053s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2} start 9.2057 took 4.6299s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0} start 13.8562 took 4.7973s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"} start 18.6672 took 854.0689s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":5,"ExpansionArg_array_length":0,"Target_Switcher":0} start 872.8138 took 6.4068s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"Target_Switcher":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 879.2437 took 5.9761s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"Target_Switcher":0,"_bound":7,"ExpansionArg_array_element_0_type":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"Target_Switcher":0,"_bound":7}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"Target_Switcher":0,"_bound":6,"ExpansionArg_bool":false} start 879.2739 took 6.4026s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"Target_Switcher":0,"_bound":6,"ExpansionArg_bool":false}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"Target_Switcher":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":8,"ExpansionArg_array_element_0_int":0} start 885.2819 took 5.6961s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":8,"ExpansionArg_array_element_0_int":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":8}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":9,"ExpansionArg_array_element_1_type":0} start 885.258 took 6.0144s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":9,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":9} start 891.0259 took 5.5161s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":9}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":9}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 891.0526 took 6.3236s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":11}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":10} start 891.3537 took 6.8027s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":10}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":10}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":11,"ExpansionArg_array_element_2_type":0} start 891.33 took 7.0921s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":11,"ExpansionArg_array_element_2_type":0}
+* Error: TypeError: Cannot read property 'length' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":11}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 70% Coverage (LOC): 70%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 41% Coverage (LOC): 60%
+*- File /root/Targets/pitch-set/node_modules/pitch-set/index.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- File /root/Targets/pitch-set/node_modules/music-gamut/index.js. Coverage (Term): 40% Coverage (LOC): 60%
+*- File /root/Targets/pitch-set/node_modules/music-notation/pitch/parse.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pitch-set/node_modules/music-notation/note/parse.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/pitch-set/node_modules/music-notation/memoize.js. Coverage (Term): 90% Coverage (LOC): 100%
+*- File /root/Targets/pitch-set/node_modules/music-notation/note/regex.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pitch-set/node_modules/music-notation/interval/parse.js. Coverage (Term): 44% Coverage (LOC): 62%
+*- File /root/Targets/pitch-set/node_modules/music-notation/array/from-props.js. Coverage (Term): 42% Coverage (LOC): 66%
+*- File /root/Targets/pitch-set/node_modules/music-notation/interval/regex.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pitch-set/node_modules/music-notation/pitch/str.js. Coverage (Term): 66% Coverage (LOC): 86%
+*- File /root/Targets/pitch-set/node_modules/music-notation/note/str.js. Coverage (Term): 30% Coverage (LOC): 74%
+*- File /root/Targets/pitch-set/node_modules/music-notation/array/to-props.js. Coverage (Term): 36% Coverage (LOC): 68%
+*- File /root/Targets/pitch-set/node_modules/music-notation/accidentals/str.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/pitch-set/node_modules/music-notation/interval/str.js. Coverage (Term): 28% Coverage (LOC): 65%
+*- File /root/Targets/pitch-set/node_modules/pitch-sort/index.js. Coverage (Term): 19% Coverage (LOC): 36%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 14 paths with 10 errors **

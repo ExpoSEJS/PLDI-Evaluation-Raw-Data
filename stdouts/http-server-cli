@@ -1,0 +1,436 @@
+/root/Targets/http-server-cli
+└─┬ http-server-cli@0.2.1 
+  ├── colors@1.0.3 
+  ├── corser@2.0.1 
+  ├── director@1.2.8 
+  ├─┬ ecstatic@0.7.6 
+  │ ├── he@0.5.0 
+  │ ├── mime@1.4.1 
+  │ └── url-join@0.0.1 
+  ├─┬ http-proxy@1.16.2 
+  │ ├── eventemitter3@1.2.0 
+  │ └── requires-port@1.0.0 
+  ├── minimist@1.2.0 
+  ├── opener@1.4.3 
+  ├─┬ portfinder@0.4.0 
+  │ ├── async@0.9.0 
+  │ └─┬ mkdirp@0.5.1 
+  │   └── minimist@0.0.8 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── core-util-is@1.0.2 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  ├─┬ restful@0.4.5 
+  │ ├─┬ director-explorer@0.2.0 
+  │ │ ├── director@1.1.10 
+  │ │ └── traverse@0.6.1 
+  │ ├─┬ resourceful@0.3.5 
+  │ │ ├─┬ cradle@0.6.9 
+  │ │ │ ├─┬ follow@0.11.4 
+  │ │ │ │ ├── browser-request@0.3.3 
+  │ │ │ │ └── debug@0.7.4 
+  │ │ │ └── vargs@0.1.0 
+  │ │ ├── i@0.3.5 
+  │ │ ├── node-uuid@1.4.8 
+  │ │ ├── redis@0.12.1 
+  │ │ ├── revalidator@0.3.1 
+  │ │ └─┬ utile@0.3.0 
+  │ │   ├── ncp@1.0.1 
+  │ │   └─┬ rimraf@2.6.2 
+  │ │     └─┬ glob@7.1.2 
+  │ │       ├── fs.realpath@1.0.0 
+  │ │       ├─┬ inflight@1.0.6 
+  │ │       │ └── wrappy@1.0.2 
+  │ │       ├── inherits@2.0.3 
+  │ │       ├─┬ minimatch@3.0.4 
+  │ │       │ └─┬ brace-expansion@1.1.8 
+  │ │       │   ├── balanced-match@1.0.0 
+  │ │       │   └── concat-map@0.0.1 
+  │ │       ├── once@1.4.0 
+  │ │       └── path-is-absolute@1.0.1 
+  │ └─┬ utile@0.1.7 
+  │   ├── async@0.1.22 
+  │   ├── deep-equal@0.2.2 
+  │   ├── ncp@0.2.7 
+  │   └── rimraf@1.0.9 
+  └─┬ union@0.4.6 
+    └── qs@2.3.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/http-server-cli/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0474 took 8.5946s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+
+var path = require('path'),
+    fs = require('fs'),
+    url = require('url'),
+    mime = require('mime'),
+    urlJoin = require('url-join'),
+    showDir = require('./ecstatic/showdir'),
+    version = JSON.parse(
+      fs.readFileSync(__dirname + '/../package.json').toString()
+    ).version,
+    status = require('./ecstatic/status-handlers'),
+    etag = require('./ecstatic/etag'),
+    optsParser = require('./ecstatic/opts');
+
+var ecstatic = module.exports = function (dir, options) {
+  if (typeof dir !== 'string') {
+    options = dir;
+    dir = options.root;
+  }
+
+  var root = path.join(path.resolve(dir), '/'),
+      opts = optsParser(options),
+      cache = opts.cache,
+      autoIndex = opts.autoIndex,
+      baseDir = opts.baseDir,
+      defaultExt = opts.defaultExt,
+      handleError = opts.handleError,
+      serverHeader = opts.serverHeader;
+
+  opts.root = dir;
+  if (defaultExt && /^\./.test(defaultExt)) defaultExt = defaultExt.replace(/^\./, '');
+
+  return function middleware (req, res, next) {
+
+    // Strip any null bytes from the url
+    while(req.url.indexOf('%00') !== -1) {
+      req.url = req.url.replace(/\%00/g, '');
+    }
+    // Figure out the path for the file from the given url
+    var parsed = url.parse(req.url);
+    try {
+      decodeURIComponent(req.url); // check validity of url
+      var pathname = decodePathname(parsed.pathname);
+    }
+    catch (err) {
+      return status[400](res, next, { error: err });
+    }
+
+    var file = path.normalize(
+          path.join(root,
+            path.relative(
+              path.join('/', baseDir),
+              pathname
+            )
+          )
+        ),
+        gzipped = file + '.gz';
+
+    if(serverHeader !== false) {
+      // Set common headers.
+      res.setHeader('server', 'ecstatic-'+version);
+    }
+
+    // TODO: This check is broken, which causes the 403 on the
+    // expected 404.
+    if (file.slice(0, root.length) !== root) {
+      return status[403](res, next);
+    }
+
+    if (req.method && (req.method !== 'GET' && req.method !== 'HEAD' )) {
+      return status[405](res, next);
+    }
+
+    function statFile() {
+      fs.stat(file, function (err, stat) {
+        if (err && (err.code === 'ENOENT' || err.code === 'ENOTDIR')) {
+          if (req.statusCode == 404) {
+            // This means we're already trying ./404.html and can not find it.
+            // So send plain text response with 404 status code
+            status[404](res, next);
+          }
+          else if (!path.extname(parsed.pathname).length && defaultExt) {
+            // If there is no file extension in the path and we have a default
+            // extension try filename and default extension combination before rendering 404.html.
+            middleware({
+              url: parsed.pathname + '.' + defaultExt + ((parsed.search)? parsed.search:'')
+            }, res, next);
+          }
+          else {
+            // Try to serve default ./404.html
+            middleware({
+              url: (handleError ? ('/' + path.join(baseDir, '404.' + defaultExt)) : req.url),
+              statusCode: 404
+            }, res, next);
+          }
+        }
+        else if (err) {
+          status[500](res, next, { error: err });
+        }
+        else if (stat.isDirectory()) {
+          // 302 to / if necessary
+          if (!parsed.pathname.match(/\/$/)) {
+            res.statusCode = 302;
+            res.setHeader('location', parsed.pathname + '/' +
+              (parsed.query? ('?' + parsed.query):'')
+            );
+            return res.end();
+          }
+
+          if (autoIndex) {
+            return middleware({
+              url: urlJoin(encodeURIComponent(pathname), '/index.' + defaultExt)
+            }, res, function (err) {
+              if (err) {
+                return status[500](res, next, { error: err });
+              }
+              if (opts.showDir) {
+                return showDir(opts, stat)(req, res);
+              }
+
+              return status[403](res, next);
+            });
+          }
+
+          if (opts.showDir) {
+            return showDir(opts, stat)(req, res);
+          }
+
+          status[404](res, next);
+
+        }
+        else {
+          serve(stat);
+        }
+      });
+    }
+
+    // Look for a gzipped file if this is turned on
+    if (opts.gzip && shouldCompress(req)) {
+      fs.stat(gzipped, function (err, stat) {
+        if (!err && stat.isFile()) {
+          file = gzipped;
+          return serve(stat);
+        } else {
+          statFile();
+        }
+      });
+    } else {
+      statFile();
+    }
+
+    function serve(stat) {
+      // Do a MIME lookup, fall back to octet-stream and handle gzip
+      // special case.
+      var defaultType = opts.contentType || 'application/octet-stream',
+          contentType = mime.lookup(file, defaultType),
+          charSet;
+
+      if (contentType) {
+        charSet = mime.charsets.lookup(contentType, 'utf-8');
+        if (charSet) {
+          contentType += '; charset=' + charSet;
+        }
+      }
+
+      if (path.extname(file) === '.gz') {
+        res.setHeader('Content-Encoding', 'gzip');
+
+        // strip gz ending and lookup mime type
+        contentType = mime.lookup(path.basename(file, ".gz"), defaultType);
+      }
+
+      var range = (req.headers && req.headers['range']);
+      if (range) {
+        var total = stat.size;
+        var parts = range.replace(/bytes=/, "").split("-");
+        var partialstart = parts[0];
+        var partialend = parts[1];
+        var start = parseInt(partialstart, 10);
+        var end = Math.min(total-1, partialend ? parseInt(partialend, 10) : total-1);
+        var chunksize = (end-start)+1;
+        if (start > end || isNaN(start) || isNaN(end)) {
+          return status['416'](res, next);
+        }
+        var fstream = fs.createReadStream(file, {start: start, end: end});
+        fstream.on('error', function (err) {
+          status['500'](res, next, { error: err });
+        });
+        res.on('close', function () {
+           fstream.destroy(); 
+        });
+        res.writeHead(206, {
+          'Content-Range': 'bytes ' + start + '-' + end + '/' + total,
+          'Accept-Ranges': 'bytes',
+          'Content-Length': chunksize,
+          'Content-Type': contentType
+        });
+        fstream.pipe(res);
+        return;
+      }
+
+      // TODO: Helper for this, with default headers.
+      res.setHeader('etag', etag(stat));
+      res.setHeader('last-modified', (new Date(stat.mtime)).toUTCString());
+      res.setHeader('cache-control', cache);
+
+      // Return a 304 if necessary
+      if ( req.headers
+        && (
+          (req.headers['if-none-match'] === etag(stat))
+          || (new Date(Date.parse(req.headers['if-modified-since'])) >= stat.mtime)
+        )
+      ) {
+        return status[304](res, next);
+      }
+
+      res.setHeader('content-length', stat.size);
+      res.setHeader('content-type', contentType);
+
+      // set the response statusCode if we have a request statusCode.
+      // This only can happen if we have a 404 with some kind of 404.html
+      // In all other cases where we have a file we serve the 200
+      res.statusCode = req.statusCode || 200;
+
+      if (req.method === "HEAD") {
+        return res.end();
+      }
+
+      var stream = fs.createReadStream(file);
+
+      stream.pipe(res);
+      stream.on('error', function (err) {
+        status['500'](res, next, { error: err });
+      });
+    }
+  };
+};
+
+ecstatic.version = version;
+ecstatic.showDir = showDir;
+
+// Check to see if we should try to compress a file with gzip.
+function shouldCompress(req) {
+  var headers = req.headers;
+
+  return headers && headers['accept-encoding'] &&
+    headers['accept-encoding']
+      .split(",")
+      .some(function (el) {
+        return ['*','compress', 'gzip', 'deflate'].indexOf(el) != -1;
+      })
+    ;
+}
+
+// See: https://github.com/jesusabdullah/node-ecstatic/issues/109
+function decodePathname(pathname) {
+  var pieces = pathname.replace(/\\/g,"/").split('/');
+
+  return pieces.map(function (piece) {
+    piece = decodeURIComponent(piece);
+
+    if (process.platform === 'win32' && /\\/.test(piece)) {
+      throw new Error('Invalid forward slash character');
+    }
+
+    return piece;
+  }).join('/');
+}
+
+if (!module.parent) {
+  var http = require('http'),
+      opts = require('minimist')(process.argv.slice(2)),
+      port = opts.port || opts.p || 8000,
+      dir = opts.root || opts._[0] || process.cwd();
+
+  if (opts.help || opts.h) {
+    var u = console.error;
+    u('usage: ecstatic [dir] {options} --port PORT');
+    u('see https://npm.im/ecstatic for more docs');
+    return;
+  }
+
+  http.createServer(ecstatic(dir, opts))
+    .listen(port, function () {
+      console.log('ecstatic serving ' + dir + ' at http://0.0.0.0:' + port);
+    });
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/http-server-cli/node_modules/http-server-cli/lib/http-server-cli.js. Coverage (Term): 6% Coverage (LOC): 3%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/buffered-stream.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/http-stream.js. Coverage (Term): 35% Coverage (LOC): 32%
+*- File /root/Targets/http-server-cli/node_modules/union/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/http-server-cli/node_modules/union/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/http-server-cli/node_modules/union/node_modules/qs/lib/stringify.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/http-server-cli/node_modules/union/node_modules/qs/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/http-server-cli/node_modules/union/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/response-stream.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/routing-stream.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/request-stream.js. Coverage (Term): 36% Coverage (LOC): 41%
+*- File /root/Targets/http-server-cli/node_modules/union/lib/core.js. Coverage (Term): 17% Coverage (LOC): 13%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

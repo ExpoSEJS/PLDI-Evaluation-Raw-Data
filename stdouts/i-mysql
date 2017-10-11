@@ -1,0 +1,42 @@
+/root/Targets/i-mysql
+└─┬ i-mysql@0.2.13 
+  ├── big-integer@1.6.25 
+  ├── moment@2.18.1 
+  └─┬ mysql@2.14.1 
+    ├── bignumber.js@4.0.2 
+    ├─┬ readable-stream@2.3.3 
+    │ ├── core-util-is@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ ├── isarray@1.0.0 
+    │ ├── process-nextick-args@1.0.7 
+    │ ├── string_decoder@1.0.3 
+    │ └── util-deprecate@1.0.2 
+    ├── safe-buffer@5.1.1 
+    └── sqlstring@2.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/i-mysql/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","bind","call","RegExp","floor","log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1556 took 51.667s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on #<Object>, which is a object and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/i-mysql/node_modules/i-mysql/index.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File /root/Targets/i-mysql/node_modules/i-mysql/Controller.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/i-mysql/node_modules/mysql/index.js. Coverage (Term): 20% Coverage (LOC): 33%
+*- File /root/Targets/i-mysql/node_modules/i-mysql/Table.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File /root/Targets/i-mysql/node_modules/i-mysql/FieldType.js. Coverage (Term): 28% Coverage (LOC): 61%
+*- File /root/Targets/i-mysql/node_modules/i-mysql/Validator.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/i-mysql/node_modules/moment/moment.js. Coverage (Term): 21% Coverage (LOC): 37%
+*- File /root/Targets/i-mysql/node_modules/big-integer/BigInteger.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

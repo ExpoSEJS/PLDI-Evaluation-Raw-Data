@@ -1,0 +1,280 @@
+/root/Targets/retrotext
+└─┬ retrotext@2.1.0 
+  ├─┬ cheerio@1.0.0-rc.2 
+  │ ├─┬ css-select@1.2.0 
+  │ │ ├── boolbase@1.0.0 
+  │ │ ├── css-what@2.1.0 
+  │ │ ├── domutils@1.5.1 
+  │ │ └── nth-check@1.0.1 
+  │ ├─┬ dom-serializer@0.1.0 
+  │ │ └── domelementtype@1.1.3 
+  │ ├── entities@1.1.1 
+  │ ├─┬ htmlparser2@3.9.2 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.4.1 
+  │ │ └── inherits@2.0.3 
+  │ ├── lodash@4.17.4 
+  │ └─┬ parse5@3.0.2 
+  │   └── @types/node@6.0.88 
+  └─┬ superagent@3.6.1 
+    ├── component-emitter@1.2.1 
+    ├── cookiejar@2.1.1 
+    ├─┬ debug@3.1.0 
+    │ └── ms@2.0.0 
+    ├── extend@3.0.1 
+    ├─┬ form-data@2.3.1 
+    │ ├── asynckit@0.4.0 
+    │ ├─┬ combined-stream@1.0.5 
+    │ │ └── delayed-stream@1.0.0 
+    │ └─┬ mime-types@2.1.17 
+    │   └── mime-db@1.30.0 
+    ├── formidable@1.1.1 
+    ├── methods@1.1.2 
+    ├── mime@2.0.3 
+    ├── qs@6.5.1 
+    └─┬ readable-stream@2.3.3 
+      ├── core-util-is@1.0.2 
+      ├── isarray@1.0.0 
+      ├── process-nextick-args@1.0.7 
+      ├── safe-buffer@5.1.1 
+      ├── string_decoder@1.0.3 
+      └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/retrotext/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0291 took 3.6829s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (180:8) on program // Type Definitions
+
+/**
+ * @typedef {Object} TextObject
+ * @property {string} line1
+ * @property {string} line2
+ * @property {string} line3
+ */
+
+/**
+ * @typedef {Object} RetroTextProperties
+ * @property {TextObject} text
+ * @property {number} backgroundStyle
+ * @property {number} textStyle
+ */
+
+/**
+ * @typedef {Object} ParsedOptions
+ * @property {number} bcg
+ * @property {number} txt
+ * @property {string} text1
+ * @property {string} text2
+ * @property {string} text3
+ */
+
+// Package Dependencies
+const superagent = require('superagent')
+const cheerio = require('cheerio')
+
+/**
+ * Retro Text Generator
+ */
+class RetroText {
+  /**
+   * @param {RetroTextProperties} data Default Properties
+   */
+  constructor (data = {
+    text: { line1: '', line2: '', line3: '' },
+    backgroundStyle: 3,
+    textStyle: 4,
+  }) {
+    this.setup(data)
+  }
+
+  /**
+   * Setup Class Variables
+   * @param {RetroTextProperties} data Default Properties
+   */
+  setup (data) {
+    /**
+     * @type {?TextObject}
+     */
+    this.text = data.text
+
+    /**
+     * @type {?number}
+     */
+    this.backgroundStyle = data.backgroundStyle
+
+    /**
+     * @type {?number}
+     */
+    this.textStyle = data.textStyle
+  }
+
+  /**
+   * Set Text for Generation
+   * @param {TextObject} text Text Object
+   * @returns {RetroText}
+   */
+  setText (text) {
+    this.text = text
+    return this
+  }
+
+  /**
+   * Set Line 1 Text for Generation
+   * @param {string} line Line 1 Text
+   * @returns {RetroText}
+   */
+  setLine1 (line) {
+    this.text.line1 = line.toString()
+    return this
+  }
+
+  /**
+   * Set Line 2 Text for Generation
+   * @param {string} line Line 2 Text
+   * @returns {RetroText}
+   */
+  setLine2 (line) {
+    this.text.line2 = line.toString()
+    return this
+  }
+
+  /**
+   * Set Line 3 Text for Generation
+   * @param {string} line Line 3 Text
+   * @returns {RetroText}
+   */
+  setLine3 (line) {
+    this.text.line3 = line.toString()
+    return this
+  }
+
+  /**
+   * Set a Line's Text for Generation
+   * @param {number|string} number Line Number (1 - 3)
+   * @param {string} line Line Text
+   * @returns {RetroText}
+   */
+  setLine (number, line) {
+    // Error Checks
+    if (Number.isNaN(number)) throw new Error('Line Number is not a Number')
+    if (number < 1 || number > 3) throw new Error('Invalid Line Number')
+    // Enforce Integer Line Numbers
+    if (typeof number === 'string') number = parseInt(number)
+
+    line = line.toString()
+    switch (number) {
+      case 1:
+        this.text.line1 = line
+        break
+      case 2:
+        this.text.line2 = line
+        break
+      case 3:
+        this.text.line3 = line
+        break
+    }
+    return this
+  }
+
+  /**
+   * Set the Background Style for the Image
+   * @param {number} style Background Style (1 - 5)
+   * @returns {RetroText}
+   */
+  setBackgroundStyle (style) {
+    // Error Checks
+    if (Number.isNaN(style)) throw new Error('Style is not a Number')
+    if (style < 1 || style > 5) throw new Error('Invalid Style Number')
+
+    this.backgroundStyle = style
+    return this
+  }
+
+  /**
+   * Set the Text Style for the Image
+   * @param {number} style Text Style (1 - 4)
+   * @returns {RetroText}
+   */
+  setTextStyle (style) {
+    // Error Checks
+    if (Number.isNaN(style)) throw new Error('Style is not a Number')
+    if (style < 1 || style > 4) throw new Error('Invalid Style Number')
+
+    this.textStyle = style
+    return this
+  }
+
+  /**
+   * @private
+   * @returns {ParsedOptions}
+   */
+  get _parsedOptions () {
+    return {
+      bcg: this.backgroundStyle || 3,
+      txt: this.textStyle || 4,
+      text1: this.text.line1 || '',
+      text2: this.text.line2 || '',
+      text3: this.text.line3 || '',
+    }
+  }
+
+  /**
+   * Fetch the URL to the Generated Image
+   * @returns {Promise.<string>}
+   */
+  async fetchURL () {
+    let { bcg, txt, text1, text2, text3 } = this._parsedOptions
+    let server = Math.floor(Math.random() * 10)
+    let data = await superagent.post(`http://photofunia.com/categories/all_effects/retro-wave?server=${server}`)
+      .field({ bcg })
+      .field({ txt })
+      .field({ text1 })
+      .field({ text2 })
+      .field({ text3 })
+
+    let body = cheerio.load(data.text)
+    let url = body('a').filter(function filter () {
+      return body(this).text().includes('Large') // eslint-disable-line
+    }).attr('href')
+
+    url = url.split('?')[0]
+    return url
+  }
+
+  /**
+   * Fetch the Generated Image as a Buffer Object
+   * @returns {Promise.<Buffer>}
+   */
+  async fetchBuffer () {
+    let url = await this.fetchURL()
+    let res = await superagent.get(url)
+    return res.body
+  }
+}
+
+module.exports = RetroText
+ at SyntaxError: Unexpected token (180:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:697:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

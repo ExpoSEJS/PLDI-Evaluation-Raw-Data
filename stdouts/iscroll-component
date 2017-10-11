@@ -1,0 +1,49 @@
+/root/Targets/iscroll-component
+└─┬ iscroll-component@3.2.0 
+  ├── component-emitter@1.2.1 
+  ├─┬ component-events@1.0.10 
+  │ ├─┬ component-delegate@0.2.4 
+  │ │ └─┬ component-closest@1.0.1 
+  │ │   └─┬ component-matches-selector@0.1.6 
+  │ │     └── component-query@0.0.3 
+  │ └── component-event@0.1.4 
+  ├── component-raf@1.2.0 
+  ├─┬ component-tween@1.2.0 
+  │ ├── component-clone@0.2.2 
+  │ ├── component-emitter@1.2.0 
+  │ ├── component-type@1.1.0 
+  │ └── ease-component@1.0.0 
+  ├── computed-style@0.3.0 
+  ├── custom-event@1.0.1 
+  ├── debounce@1.0.2 
+  ├── has-touch@1.0.1 
+  ├── mouse-wheel-event@1.2.3 
+  ├─┬ prop-detect@1.1.0 
+  │ ├─┬ has-translate3d@0.0.3 
+  │ │ └── transform-property@0.0.1 
+  │ ├── touchaction-property@0.0.1 
+  │ └── transition-property@1.0.1 
+  ├── resizelistener@1.1.0 
+  └── throttleit@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/iscroll-component/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0539 took 4.8895s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/iscroll-component/node_modules/iscroll-component/dest/index.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/iscroll-component/node_modules/custom-event/index.js. Coverage (Term): 29% Coverage (LOC): 32%
+*- File /root/Targets/iscroll-component/node_modules/prop-detect/index.js. Coverage (Term): 23% Coverage (LOC): 31%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

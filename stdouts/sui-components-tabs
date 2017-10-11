@@ -1,0 +1,103 @@
+/root/Targets/sui-components-tabs
+└─┬ sui-components-tabs@2.3.1 
+  ├── sui-main@0.3.1 
+  ├── sui-reset@1.3.2 
+  ├── sui-settings@2.8.0 
+  └── sui-typography@1.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sui-components-tabs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0226 took 3.0969s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '@' (3:0) on program 
+// Dependencies from other packages --------------------------------------------
+@import '~sui-settings/src/settings';
+
+@if $is-theme == false {
+  @import '~sui-reset/src/reset';
+  @import '~sui-typography/src/typography';
+  @import '~sui-main/src/main';
+}
+
+/*
+Tabs
+
+Use class `.Tabs` to create a structure of tabs inline.
+<br>
+Use class `.Tabs-item` in descendent tag `<a>`.
+<br>
+Use class `.is-active` for active tab.
+
+Markup:
+<!-- Tabs -->
+<ul class="Tabs">
+	<li><a class="Tabs-item is-active" href="#">Tab 1</a></li>
+	<li><a href="#" class="Tabs-item">Tab 2</a></li>
+</ul>
+
+Styleguide Tabs
+*/
+
+.Tabs {
+  border-bottom: 1px solid $c-dark-soft;
+
+  > li {
+    display: inline-block;
+    padding-bottom: $gap-medium;
+
+    &:not(:last-child) {
+      margin-right: $gap-medium;
+    }
+  }
+
+  .Tabs-item {
+    color: $c-text;
+    font-family: $ff-base-bold;
+    font-size: $fz-base;
+    padding-bottom: $gap-medium;
+    text-decoration: none;
+
+    @include mediaquery($mq-desktop) {
+      font-size: $fz-medium;
+    }
+
+    &.is-active {
+      color: $c-primary;
+      position: relative;
+
+      &::after {
+        background: $c-primary;
+        bottom: 0;
+        content: '';
+        height: 4px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}
+ at SyntaxError: Unexpected character '@' (3:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

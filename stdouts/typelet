@@ -1,0 +1,28 @@
+/root/Targets/typelet
+└── typelet@0.3.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/typelet/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 36% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","create","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0342 took 4.3567s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/typelet/node_modules/typelet/lib/index.js. Coverage (Term): 30% Coverage (LOC): 25%
+*- File /root/Targets/typelet/node_modules/typelet/lib/type.js. Coverage (Term): 31% Coverage (LOC): 43%
+*- File /root/Targets/typelet/node_modules/typelet/lib/util.js. Coverage (Term): 63% Coverage (LOC): 72%
+*- File /root/Targets/typelet/node_modules/typelet/lib/error.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/typelet/node_modules/typelet/lib/type-env.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/typelet/node_modules/typelet/lib/type-dispatcher.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/typelet/node_modules/typelet/lib/primitive-type.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

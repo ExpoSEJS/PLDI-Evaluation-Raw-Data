@@ -1,0 +1,163 @@
+/root/Targets/nodeunit-medium-fork
+└─┬ nodeunit-medium-fork@0.9.2 
+  └─┬ tap@0.7.1 
+    ├── buffer-equal@0.0.2 
+    ├── deep-equal@1.0.1 
+    ├─┬ difflet@0.2.6 
+    │ ├── charm@0.1.2 
+    │ ├── deep-is@0.1.3 
+    │ └── traverse@0.6.6 
+    ├─┬ glob@4.5.3 
+    │ ├─┬ inflight@1.0.6 
+    │ │ └── wrappy@1.0.2 
+    │ ├─┬ minimatch@2.0.10 
+    │ │ └─┬ brace-expansion@1.1.8 
+    │ │   ├── balanced-match@1.0.0 
+    │ │   └── concat-map@0.0.1 
+    │ └── once@1.4.0 
+    ├── inherits@2.0.3 
+    ├─┬ mkdirp@0.5.1 
+    │ └── minimist@0.0.8 
+    ├─┬ nopt@3.0.6 
+    │ └── abbrev@1.1.1 
+    ├─┬ runforcover@0.0.2 
+    │ └─┬ bunker@0.1.2 
+    │   └─┬ burrito@0.2.12 
+    │     ├── traverse@0.5.2 
+    │     └── uglify-js@1.1.1 
+    ├── slide@1.1.6 
+    └── yamlish@0.0.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nodeunit-medium-fork/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0372 took 4.0266s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (16:4) on program /*!
+ * Nodeunit
+ * Copyright (c) 2010 Caolan McMahon
+ * MIT Licensed
+ */
+
+/**
+ * Module dependencies
+ */
+
+var async = require('../deps/async'),
+    types = require('./types'),
+    utils = require('./utils'),
+    core = require('./core'),
+    reporters = require('./reporters'),
+    assert = require('./assert'),
+    path = require('path'),
+    events = require('events');
+
+
+/**
+ * Export sub-modules.
+ */
+
+exports.types = types;
+exports.utils = utils;
+exports.reporters = reporters;
+exports.assert = assert;
+
+// backwards compatibility
+exports.testrunner = {
+    run: function () {
+        console.log(
+            'WARNING: nodeunit.testrunner is going to be deprecated, please ' +
+            'use nodeunit.reporters.default instead!'
+        );
+        return reporters['default'].run.apply(this, arguments);
+    }
+};
+
+
+/**
+ * Export all core functions
+ */
+
+for (var k in core) {
+    exports[k] = core[k];
+};
+
+
+/**
+ * Load modules from paths array and run all exported tests in series. If a path
+ * is a directory, load all supported file types inside it as modules. This only
+ * reads 1 level deep in the directory and does not recurse through
+ * sub-directories.
+ *
+ * @param {Array} paths
+ * @param {Object} opt
+ * @api public
+ */
+
+exports.runFiles = function (paths, opt) {
+    var all_assertions = [];
+    var options = types.options(opt);
+    var start = new Date().getTime();
+
+    if (!paths.length) {
+        return options.done(types.assertionList(all_assertions));
+    }
+
+    utils.modulePaths(paths, function (err, files) {
+        if (err) throw err;
+        async.concatSeries(files, function (file, cb) {
+            var name = path.basename(file);
+            exports.runModule(name, require(file), options, cb);
+        },
+        function (err, all_assertions) {
+            var end = new Date().getTime();
+            exports.done()
+            options.done(types.assertionList(all_assertions, end - start));
+        });
+    });
+
+};
+
+/* Export all prototypes from events.EventEmitter */
+var label;
+for (label in events.EventEmitter.prototype) {
+  exports[label] = events.EventEmitter.prototype[label];
+}
+
+/* Emit event 'complete' on completion of a test suite. */
+exports.complete = function(name, assertions)
+{
+    exports.emit('complete', name, assertions);
+};
+
+/* Emit event 'complete' on completion of all tests. */
+exports.done = function()
+{
+    exports.emit('done');
+};
+
+module.exports = exports;
+ at SyntaxError: Unexpected token (16:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nodeunit-medium-fork/node_modules/nodeunit-medium-fork/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

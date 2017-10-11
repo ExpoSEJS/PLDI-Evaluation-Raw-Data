@@ -1,0 +1,434 @@
+
+> bson@0.2.22 install /root/Targets/fluxdrive/node_modules/tingodb/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/fluxdrive/node_modules/tingodb/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:92: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/fluxdrive/node_modules/tingodb/node_modules/bson/build'
+
+> bcrypt@0.8.7 install /root/Targets/fluxdrive/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/fluxdrive/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/bcrypt_lib.node
+  COPY Release/bcrypt_lib.node
+make: Leaving directory '/root/Targets/fluxdrive/node_modules/bcrypt/build'
+/root/Targets/fluxdrive
+└─┬ fluxdrive@0.0.11 
+  ├─┬ aws-sdk@2.6.15 
+  │ ├─┬ buffer@4.9.1 
+  │ │ ├── base64-js@1.2.1 
+  │ │ ├── ieee754@1.1.8 
+  │ │ └── isarray@1.0.0 
+  │ ├── crypto-browserify@1.0.9 
+  │ ├── jmespath@0.15.0 
+  │ ├── querystring@0.2.0 
+  │ ├── sax@1.1.5 
+  │ ├─┬ url@0.10.3 
+  │ │ └── punycode@1.3.2 
+  │ ├── xml2js@0.4.15 
+  │ └─┬ xmlbuilder@2.6.2 
+  │   └── lodash@3.5.0 
+  ├─┬ bcrypt@0.8.7 
+  │ ├── bindings@1.2.1 
+  │ └── nan@2.3.5 
+  ├─┬ body-parser@1.15.2 
+  │ ├── bytes@2.4.0 
+  │ ├── content-type@1.0.4 
+  │ ├─┬ debug@2.2.0 
+  │ │ └── ms@0.7.1 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.5.1 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── setprototypeof@1.0.2 
+  │ │ └── statuses@1.3.1 
+  │ ├── iconv-lite@0.4.13 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.2.0 
+  │ ├─┬ raw-body@2.1.7 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├── classnames@2.2.3 
+  ├─┬ connect-mongo@1.3.2 
+  │ └── bluebird@3.5.0 
+  ├─┬ express@4.14.0 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.1 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.7.0 
+  │ ├── finalhandler@0.5.0 
+  │ ├── fresh@0.3.0 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@1.1.5 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.4.0 
+  │ ├── range-parser@1.2.0 
+  │ ├─┬ send@0.14.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.3.4 
+  │ ├─┬ serve-static@1.11.2 
+  │ │ └─┬ send@0.14.2 
+  │ │   └── ms@0.7.2 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.1.2 
+  ├─┬ express-session@1.14.2 
+  │ ├── crc@3.4.1 
+  │ ├── on-headers@1.0.1 
+  │ └─┬ uid-safe@2.1.5 
+  │   └── random-bytes@1.0.0 
+  ├── formidable@1.0.17 
+  ├─┬ fs-finder@1.8.1 
+  │ ├── async@0.2.10 
+  │ ├── escape-regexp@0.0.1 
+  │ ├── moment@2.5.1 
+  │ ├── operator-compare@1.0.3 
+  │ └── q@1.0.1 
+  ├─┬ history@2.0.1 
+  │ ├── deep-equal@1.0.1 
+  │ ├── invariant@2.2.2 
+  │ ├─┬ query-string@3.0.3 
+  │ │ └── strict-uri-encode@1.1.0 
+  │ └── warning@2.1.0 
+  ├─┬ isomorphic-fetch@2.2.1 
+  │ ├─┬ node-fetch@1.7.3 
+  │ │ ├── encoding@0.1.12 
+  │ │ └── is-stream@1.1.0 
+  │ └── whatwg-fetch@2.0.3 
+  ├─┬ MD5@1.3.0 
+  │ ├── charenc@0.0.2 
+  │ └── crypt@0.0.2 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├─┬ mongodb@2.2.11 
+  │ ├── es6-promise@3.2.1 
+  │ ├─┬ mongodb-core@2.0.13 
+  │ │ ├── bson@0.5.7 
+  │ │ └─┬ require_optional@1.0.1 
+  │ │   ├── resolve-from@2.0.0 
+  │ │   └── semver@5.4.1 
+  │ └─┬ readable-stream@2.1.5 
+  │   ├── buffer-shims@1.0.0 
+  │   ├── core-util-is@1.0.2 
+  │   ├── process-nextick-args@1.0.7 
+  │   ├── string_decoder@0.10.31 
+  │   └── util-deprecate@1.0.2 
+  ├── object-assign@4.0.1 
+  ├─┬ path@0.12.7 
+  │ ├── process@0.11.10 
+  │ └─┬ util@0.10.3 
+  │   └── inherits@2.0.1 
+  ├─┬ react@15.2.0 
+  │ ├─┬ fbjs@0.8.16 
+  │ │ ├── core-js@1.2.7 
+  │ │ ├── object-assign@4.1.1 
+  │ │ ├─┬ promise@7.3.1 
+  │ │ │ └── asap@2.0.6 
+  │ │ ├── setimmediate@1.0.5 
+  │ │ └── ua-parser-js@0.7.14 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ └── object-assign@4.1.1 
+  ├── react-dom@15.2.0 
+  ├─┬ react-redux@4.4.5 
+  │ ├── hoist-non-react-statics@1.2.0 
+  │ └── lodash@4.17.4 
+  ├── react-router@2.5.2 
+  ├── react-router-redux@4.0.5 
+  ├─┬ react-router-scroll@0.2.1 
+  │ └── history@2.1.2 
+  ├─┬ redux@3.5.2 
+  │ ├── lodash@4.17.4 
+  │ ├── lodash-es@4.17.4 
+  │ └── symbol-observable@0.2.4 
+  ├─┬ redux-form@5.3.2 
+  │ ├── is-promise@2.1.0 
+  │ └── react-lazy-cache@3.0.1 
+  ├── redux-thunk@2.2.0 
+  ├── require-dir@0.3.0 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├─┬ inflight@1.0.6 
+  │   │ └── wrappy@1.0.2 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├── once@1.4.0 
+  │   └── path-is-absolute@1.0.1 
+  ├─┬ scroll-behavior@0.7.0 
+  │ └── dom-helpers@2.4.0 
+  └─┬ tingodb@0.4.2 
+    ├─┬ bson@0.2.22 
+    │ └── nan@1.8.4 
+    ├── lodash@3.10.1 
+    └── safe@0.3.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/fluxdrive/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","call","pow","RegExp","WeakMap","isArray","sort","apply","create","reduce","fromCharCode","parseInt","Date","getTime","Error","captureStackTrace","getFileName","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0467 took 127.3279s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Could not locate the bindings file. Tried:
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/default/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/compiled/7.5.0/linux/x64/bcrypt_lib.node
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/fluxdrive/node_modules/fluxdrive/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/fluxdrive/dist/private/server.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/fluxdrive/node_modules/MD5/md5.js. Coverage (Term): 5% Coverage (LOC): 14%
+*- File /root/Targets/fluxdrive/node_modules/crypt/crypt.js. Coverage (Term): 7% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/charenc/charenc.js. Coverage (Term): 20% Coverage (LOC): 56%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/aws.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/node_loader.js. Coverage (Term): 76% Coverage (LOC): 87%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/util.js. Coverage (Term): 27% Coverage (LOC): 55%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/core.js. Coverage (Term): 94% Coverage (LOC): 98%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/protocol/json.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/json/builder.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/json/parser.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/protocol/query.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/query/query_param_serializer.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/shape.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/collection.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/protocol/rest.js. Coverage (Term): 5% Coverage (LOC): 13%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/protocol/rest_json.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/protocol/rest_xml.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/xml/builder.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/index.js. Coverage (Term): 59% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/lodash/object/assign.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseAssign.js. Coverage (Term): 24% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseCopy.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/lodash/object/keys.js. Coverage (Term): 50% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isLength.js. Coverage (Term): 52% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isNative.js. Coverage (Term): 88% Coverage (LOC): 94%
+*- File /root/Targets/fluxdrive/node_modules/lodash/string/escapeRegExp.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseToString.js. Coverage (Term): 87% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isObjectLike.js. Coverage (Term): 54% Coverage (LOC): 80%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isObject.js. Coverage (Term): 44% Coverage (LOC): 67%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/shimKeys.js. Coverage (Term): 43% Coverage (LOC): 41%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isArguments.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isArray.js. Coverage (Term): 71% Coverage (LOC): 91%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isIndex.js. Coverage (Term): 45% Coverage (LOC): 63%
+*- File /root/Targets/fluxdrive/node_modules/lodash/object/keysIn.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/fluxdrive/node_modules/lodash/support.js. Coverage (Term): 80% Coverage (LOC): 85%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/createAssigner.js. Coverage (Term): 20% Coverage (LOC): 21%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/bindCallback.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/lodash/utility/identity.js. Coverage (Term): 68% Coverage (LOC): 80%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isIterateeCall.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLBuilder.js. Coverage (Term): 23% Coverage (LOC): 31%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLStringifier.js. Coverage (Term): 26% Coverage (LOC): 46%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDeclaration.js. Coverage (Term): 28% Coverage (LOC): 34%
+*- File /root/Targets/fluxdrive/node_modules/lodash/object/create.js. Coverage (Term): 52% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseCreate.js. Coverage (Term): 50% Coverage (LOC): 54%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLNode.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isFunction.js. Coverage (Term): 82% Coverage (LOC): 91%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseIsFunction.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isEmpty.js. Coverage (Term): 52% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isString.js. Coverage (Term): 61% Coverage (LOC): 89%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDocType.js. Coverage (Term): 23% Coverage (LOC): 41%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLCData.js. Coverage (Term): 36% Coverage (LOC): 48%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLComment.js. Coverage (Term): 36% Coverage (LOC): 48%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDTDAttList.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDTDEntity.js. Coverage (Term): 14% Coverage (LOC): 17%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDTDElement.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLDTDNotation.js. Coverage (Term): 16% Coverage (LOC): 24%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLProcessingInstruction.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLElement.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/fluxdrive/node_modules/lodash/collection/every.js. Coverage (Term): 51% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/arrayEvery.js. Coverage (Term): 32% Coverage (LOC): 36%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseCallback.js. Coverage (Term): 43% Coverage (LOC): 31%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseMatches.js. Coverage (Term): 29% Coverage (LOC): 30%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseIsMatch.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseIsEqual.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseIsEqualDeep.js. Coverage (Term): 24% Coverage (LOC): 18%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/equalArrays.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/equalByTag.js. Coverage (Term): 33% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/equalObjects.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/lodash/lang/isTypedArray.js. Coverage (Term): 89% Coverage (LOC): 92%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isStrictComparable.js. Coverage (Term): 49% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseMatchesProperty.js. Coverage (Term): 37% Coverage (LOC): 45%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseProperty.js. Coverage (Term): 43% Coverage (LOC): 67%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/isBindable.js. Coverage (Term): 45% Coverage (LOC): 40%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseSetData.js. Coverage (Term): 69% Coverage (LOC): 75%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/metaMap.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseEvery.js. Coverage (Term): 40% Coverage (LOC): 45%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseEach.js. Coverage (Term): 38% Coverage (LOC): 33%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseForOwn.js. Coverage (Term): 69% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/baseFor.js. Coverage (Term): 30% Coverage (LOC): 42%
+*- File /root/Targets/fluxdrive/node_modules/lodash/internal/toObject.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/xmlbuilder/lib/XMLAttribute.js. Coverage (Term): 36% Coverage (LOC): 52%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/api.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/operation.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/paginator.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/model/resource_waiter.js. Coverage (Term): 27% Coverage (LOC): 24%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/service.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/region_config.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/credential_provider_chain.js. Coverage (Term): 85% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/temporary_credentials.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/sts.js. Coverage (Term): 83% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/api_loader.js. Coverage (Term): 51% Coverage (LOC): 64%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/sts.js. Coverage (Term): 27% Coverage (LOC): 40%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/web_identity_credentials.js. Coverage (Term): 25% Coverage (LOC): 31%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cognitoidentity.js. Coverage (Term): 83% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/cognitoidentity.js. Coverage (Term): 40% Coverage (LOC): 73%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/saml_credentials.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/config.js. Coverage (Term): 30% Coverage (LOC): 46%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/http.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/sequential_executor.js. Coverage (Term): 32% Coverage (LOC): 37%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/event_listeners.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/request.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/state_machine.js. Coverage (Term): 38% Coverage (LOC): 44%
+*- File /root/Targets/fluxdrive/node_modules/jmespath/jmespath.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/resource_waiter.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/request_signer.js. Coverage (Term): 43% Coverage (LOC): 53%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/v2.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/v3.js. Coverage (Term): 14% Coverage (LOC): 30%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/v3https.js. Coverage (Term): 55% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/v4.js. Coverage (Term): 8% Coverage (LOC): 20%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/s3.js. Coverage (Term): 14% Coverage (LOC): 36%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/signers/presign.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/param_validator.js. Coverage (Term): 4% Coverage (LOC): 10%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/xml/node_parser.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/xml2js/lib/xml2js.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/fluxdrive/node_modules/sax/lib/sax.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/fluxdrive/node_modules/xml2js/lib/bom.js. Coverage (Term): 59% Coverage (LOC): 64%
+*- File /root/Targets/fluxdrive/node_modules/xml2js/lib/processors.js. Coverage (Term): 35% Coverage (LOC): 58%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/http/node.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.js. Coverage (Term): 20% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/metadata_service.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/ecs_credentials.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/environment_credentials.js. Coverage (Term): 75% Coverage (LOC): 81%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/file_system_credentials.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.js. Coverage (Term): 35% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/all.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/acm.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/apigateway.js. Coverage (Term): 77% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/apigateway.js. Coverage (Term): 26% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/applicationautoscaling.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/autoscaling.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/budgets.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudformation.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudfront.js. Coverage (Term): 75% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/cloudfront.js. Coverage (Term): 69% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/cloudfront/signer.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudhsm.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudsearch.js. Coverage (Term): 66% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudsearchdomain.js. Coverage (Term): 83% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/cloudsearchdomain.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudtrail.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudwatch.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudwatchevents.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cloudwatchlogs.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/codecommit.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/codedeploy.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/codepipeline.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cognitoidentityserviceprovider.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/cognitosync.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/configservice.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/datapipeline.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/devicefarm.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/directconnect.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/directoryservice.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/discovery.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/dms.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/dynamodb.js. Coverage (Term): 60% Coverage (LOC): 74%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/dynamodb.js. Coverage (Term): 20% Coverage (LOC): 34%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/dynamodb/document_client.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/dynamodb/translator.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/dynamodb/converter.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/dynamodb/types.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/dynamodb/set.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/dynamodbstreams.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/ec2.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/ec2.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/ecr.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/ecs.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/efs.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/elasticache.js. Coverage (Term): 71% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/elasticbeanstalk.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/elb.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/elbv2.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/emr.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/es.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/elastictranscoder.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/firehose.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/gamelift.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/glacier.js. Coverage (Term): 71% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/glacier.js. Coverage (Term): 9% Coverage (LOC): 19%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/iam.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/importexport.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/inspector.js. Coverage (Term): 82% Coverage (LOC): 89%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/iot.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/iotdata.js. Coverage (Term): 83% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/iotdata.js. Coverage (Term): 26% Coverage (LOC): 38%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/kinesis.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/kinesisanalytics.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/kms.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/lambda.js. Coverage (Term): 66% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/machinelearning.js. Coverage (Term): 71% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/machinelearning.js. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/marketplacecommerceanalytics.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/marketplacemetering.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/mobileanalytics.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/opsworks.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/rds.js. Coverage (Term): 53% Coverage (LOC): 71%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/redshift.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/route53.js. Coverage (Term): 71% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/route53.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/route53domains.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/s3.js. Coverage (Term): 71% Coverage (LOC): 79%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/s3.js. Coverage (Term): 3% Coverage (LOC): 12%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/s3/managed_upload.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/servicecatalog.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/ses.js. Coverage (Term): 70% Coverage (LOC): 78%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/simpledb.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/sms.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/snowball.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/sns.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/sqs.js. Coverage (Term): 77% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/sqs.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/ssm.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/storagegateway.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/support.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/swf.js. Coverage (Term): 77% Coverage (LOC): 83%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/lib/services/swf.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/waf.js. Coverage (Term): 82% Coverage (LOC): 88%
+*- File /root/Targets/fluxdrive/node_modules/aws-sdk/clients/workspaces.js. Coverage (Term): 76% Coverage (LOC): 82%
+*- File /root/Targets/fluxdrive/node_modules/bcrypt/bcrypt.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/fluxdrive/node_modules/bindings/bindings.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

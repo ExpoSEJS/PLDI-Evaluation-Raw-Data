@@ -1,0 +1,140 @@
+/root/Targets/n42
+└── n42@0.0.12 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/n42/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","sqrt"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0478 took 20.6449s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (14:4) on program /*
+ *   Denoised Auto encoder
+ *
+ *   @module n42
+ *   @class  dA
+ *   @author Kai Sasaki
+ *   @since  2014/01/25
+ *
+ */
+
+var Matrix = require('sylvester').Matrix;
+var Vector = require('sylvester').Vector;
+var utils  = require('./utils.js');
+var assert = require('assert');
+var generator = require('box-muller');
+
+function dA(input, nVisible, nHidden, W, hBias, vBias) {
+    var self = this;
+    self.input    = input;
+    self.nVisible = nVisible;
+    self.nHidden  = nHidden;
+    // Initialize weight parameter
+    self.W     = (W != undefined)? W : Matrix.Random(nVisible, nHidden);
+
+    // Initialize hidden bias parameters
+    self.hBias = (hBias != undefined)? hBias : Vector.Zero(nHidden);
+
+    // Initialize visual bias parameters
+    self.vBias = (vBias != undefined)? vBias : Vector.Zero(nVisible);
+
+    self.wPrime = self.W.transpose();
+}
+
+dA.prototype.getCorruptedInput = function(input, corruptionLevel) {
+    assert.ok(corruptionLevel < 1);
+    noised = [];
+    for (var i = 0; i < input.rows(); i++) {
+        noised.push([]);
+        for (var j = 0; j < input.cols(); j++) {
+            noised[i].push((generator() * corruptionLevel + 1.0) * input.e(i+1, j+1));;
+        }
+    }
+    return $M(noised);
+}
+
+dA.prototype.getHiddenValues = function(input) {
+    var self = this;
+    // Calculate plus weight
+    var rowValues = input.x(self.W);
+    return utils.sigmoid(utils.plusBias(rowValues, self.hBias));
+}
+
+dA.prototype.getReconstructedInput = function(hidden) {
+    var self = this;
+    var rowValues = hidden.x(self.W.transpose());
+    return utils.sigmoid(utils.plusBias(rowValues, self.vBias));
+}
+
+dA.prototype.train = function(lr, corruptionLevel, input) {
+    var self = this;
+    self.x = (input != undefined)? input : self.input;
+    
+    var x = self.x;
+    var tildeX = self.getCorruptedInput(x, corruptionLevel);
+    var y = self.getHiddenValues(tildeX);
+    var z = self.getReconstructedInput(y);
+    
+    var lH2 = x.subtract(z);
+    var sigma = lH2.x(self.W);
+    var lH1 = [];
+    for (var i = 0; i < sigma.rows(); i++) {
+        lH1.push([]);
+        for (var j = 0; j < sigma.cols(); j++) {
+            lH1[i].push(sigma.e(i+1, j+1) * y.e(i+1, j+1) * (1 - y.e(i+1, j+1)));
+        }
+    }
+    lH1 = $M(lH1);
+
+
+    var lW = tildeX.transpose().x(lH1).add(lH2.transpose().x(y));
+
+    self.W = self.W.add(lW.x(lr));
+
+
+    self.vBias = self.vBias.add(utils.mean(lH2, 0).x(lr));
+    self.hBias = self.hBias.add(utils.mean(lH1, 0).x(lr));
+}
+
+
+dA.prototype.reconstruct = function(x) {
+    var self = this;
+    var y = self.getHiddenValues(x);
+    var z = self.getReconstructedInput(y);
+    return z
+}
+
+
+module.exports = dA; at SyntaxError: Unexpected token (14:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/n42/node_modules/n42/lib/index.js. Coverage (Term): 37% Coverage (LOC): 45%
+*- File /root/Targets/n42/node_modules/n42/lib/LogisticsRegression.js. Coverage (Term): 24% Coverage (LOC): 42%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/index.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/vector.js. Coverage (Term): 14% Coverage (LOC): 29%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/sylvester.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/matrix.js. Coverage (Term): 4% Coverage (LOC): 14%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/line.js. Coverage (Term): 11% Coverage (LOC): 25%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/plane.js. Coverage (Term): 13% Coverage (LOC): 24%
+*- File /root/Targets/n42/node_modules/sylvester/lib/node-sylvester/line.segment.js. Coverage (Term): 8% Coverage (LOC): 23%
+*- File /root/Targets/n42/node_modules/n42/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/n42/node_modules/n42/lib/SdA.js. Coverage (Term): 11% Coverage (LOC): 14%
+*- File /root/Targets/n42/node_modules/n42/lib/HiddenLayer.js. Coverage (Term): 29% Coverage (LOC): 48%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

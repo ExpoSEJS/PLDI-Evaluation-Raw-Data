@@ -1,0 +1,102 @@
+/root/Targets/bluewhale
+└── bluewhale@0.6.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bluewhale/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0721 took 3.8677s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <!DOCTYPE html>
+<html lang="en" ng-app="dockerboard" ng-strict-di class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Dockerboard | Simple dashboards, visualizations, managements for your dockers</title>
+    <meta name="description" content="Simple dashboards, visualizations, managements for your dockers.">
+    <meta name="keywords" content="docker, dockers, docker dashboards, docker visualizations, docer managements">
+    <base href="/">
+    <script>
+      if (window.nwDispatcher) {
+        require('./koa');
+        window.moment = require('moment');
+        window.location.assign('http://localhost:3000/#/');
+        window.node_require = window.require;
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/dockerboard-f688b430.css">
+    <link rel="stylesheet" href="css/dockerboard-app-58c1792b.css">
+  </head>
+  <body md-theme="default" layout="row" ng-controller="SidenavCtrl">
+    <md-sidenav layout="column" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left md-whiteframe-z2">
+      <md-toolbar>
+        <h1 class="md-toolbar-tools"><a href="" ng-click="goHome()">Dockerboard</a></h1>
+      </md-toolbar>
+      <md-content flex>
+        <div ng-repeat="section in menu.sections">
+          <button ng-if="!section.url" ng-click="menu.toggleSelectSection(section)" ng-href="#{{ section.url }}" md-highlight="menu.isSectionSelected(section)" md-ink-ripple="#bbb" ng-bind="section.name" class="menu-item menu-title md-menu-item"></button><a ng-if="section.url" ng-click="menu.toggleSelectSection(section)" ng-href="#{{ section.url }}" md-highlight="menu.isSectionSelected(section)" md-ink-ripple="#bbb" class="menu-item menu-title md-menu-item"><span ng-bind="section.name">
+              <md-tooltip ng-if="section.tooltip"><span ng-bind="section.tooltip"></span></md-tooltip></span></a>
+        </div>
+        <nav class="app-footer">
+          <div><a href="https://github.com/dockerboard"><img src="images/github.svg" width="16"></a></div>
+          <div>Created and maintained by <a href="http://dockerpool.com" target="_blank">DockerPool</a> Team</div>
+          <div>© DockerBoard 2014</div>
+        </nav>
+      </md-content>
+    </md-sidenav>
+    <div layout="column" tabindex="-1" role="main" flex>
+      <md-toolbar layout="column" ng-click="openMenu()" flex class="md-default-theme md-toolbar-tools">
+        <md-list layout="row" layout-align="left center" flex>
+          <md-item style="position: absolute; right: 26px;" hide-sm>
+            <md-item-content>
+              <div>Host: {{ host || 'Local' }}</div>
+            </md-item-content>
+          </md-item>
+          <md-item>
+            <md-item-content>
+              <md-button hide-gt-sm aria-label="Toggle Menu" class="menu-icon">
+                <div class="icon svg-ic_menu_24px"></div>
+              </md-button>
+            </md-item-content>
+          </md-item>
+          <md-item ng-repeat="breadcrumb in menu.breadcrumbs" layout="column">
+            <md-item-content layout-align="left center" flex>
+              <div><a ng-href="#{{menu.breadcrumbUrl($index)}}">{{ (breadcrumb.name || breadcrumb) | unescape }}</a></div>
+              <div ng-if="$index &lt; menu.breadcrumbs.length - 1" style="padding-right: 3px; padding-left: 3px;" class="menu-separator-icon">
+                <div aria-hidden="true" hide-sm class="icon svg-ic_chevron_right_24px"></div>
+              </div>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-toolbar>
+      <md-content layout="column" ui-view flex class="md-padding"></md-content>
+    </div>
+    <script src="js/dockerboard-c7864534.js"></script>
+    <script src="js/dockerboard-app-52740db3.js"></script>
+  </body>
+</html> at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,89 @@
+/root/Targets/socksv5
+└─┬ socksv5@0.0.6 
+  └─┬ ipv6@3.1.1 
+    ├─┬ cli@0.4.5 
+    │ └─┬ glob@7.1.2 
+    │   ├── fs.realpath@1.0.0 
+    │   ├─┬ inflight@1.0.6 
+    │   │ └── wrappy@1.0.2 
+    │   ├── inherits@2.0.3 
+    │   ├─┬ minimatch@3.0.4 
+    │   │ └─┬ brace-expansion@1.1.8 
+    │   │   ├── balanced-match@1.0.0 
+    │   │   └── concat-map@0.0.1 
+    │   ├── once@1.4.0 
+    │   └── path-is-absolute@1.0.1 
+    ├─┬ cliff@0.1.10 
+    │ ├── colors@1.0.3 
+    │ ├── eyes@0.1.8 
+    │ └─┬ winston@0.8.3 
+    │   ├── async@0.2.10 
+    │   ├── colors@0.6.2 
+    │   ├── cycle@1.0.3 
+    │   ├── isstream@0.1.2 
+    │   ├── pkginfo@0.3.1 
+    │   └── stack-trace@0.0.10 
+    └── sprintf@0.1.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/socksv5/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /4 queued / 1 running / 1 errors / 25% coverage ] ****** [1 done /3 queued / 2 running / 1 errors / 25% coverage ] ****** [1 done /2 queued / 3 running / 1 errors / 25% coverage ] ****** [1 done /1 queued / 4 running / 1 errors / 25% coverage ] ****** [1 done /0 queued / 5 running / 1 errors / 25% coverage ] ****** [1 done /0 queued / 5 running / 1 errors / 25% coverage ] ****** [2 done /0 queued / 4 running / 2 errors / 25% coverage ] ****** [3 done /0 queued / 3 running / 3 errors / 25% coverage ] ****** [4 done /0 queued / 2 running / 4 errors / 25% coverage ] ****** [5 done /0 queued / 1 running / 5 errors / 25% coverage ] ****** [6 done /0 queued / 0 running / 6 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","pow","Array","charCodeAt","RegExp","toString","apply","bound Server","call","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0} start 0.1264 took 10.3971s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0}
+* Error: TypeError: Cannot read property 'on' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":1,"ExpansionArg_type_3":0,"_bound":4} start 10.7061 took 10.3983s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":1,"ExpansionArg_type_3":0,"_bound":4}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":1,"ExpansionArg_type_3":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":1,"_bound":5} start 10.9718 took 14.3367s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":1,"_bound":5}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":1,"_bound":5}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":1} start 10.8622 took 14.6942s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":1}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":2} start 10.7937 took 17.0631s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":2}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":3} start 10.9128 took 19.6453s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":3}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpandedSwitcher":0,"ExpansionArg_type_3":0,"_bound":3}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 84% Coverage (LOC): 89%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
+*- File /root/Targets/socksv5/node_modules/socksv5/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/server.js. Coverage (Term): 24% Coverage (LOC): 33%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/server.parser.js. Coverage (Term): 21% Coverage (LOC): 21%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/constants.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/utils.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/socksv5/node_modules/socksv5/node_modules/ipv6/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/socksv5/node_modules/socksv5/node_modules/ipv6/ipv6.js. Coverage (Term): 13% Coverage (LOC): 22%
+*- File /root/Targets/socksv5/node_modules/socksv5/node_modules/ipv6/node_modules/sprintf/lib/sprintf.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/socksv5/node_modules/socksv5/node_modules/ipv6/lib/node/bigint.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/client.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/client.parser.js. Coverage (Term): 23% Coverage (LOC): 30%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/Agents.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/auth/None.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/socksv5/node_modules/socksv5/lib/auth/UserPassword.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 6 paths with 6 errors **

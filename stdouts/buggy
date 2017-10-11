@@ -1,0 +1,99 @@
+/root/Targets/buggy
+└─┬ buggy@0.1.1 
+  ├─┬ glue@2.4.0 
+  │ ├── boom@2.10.1 
+  │ ├─┬ hapi@11.1.4 
+  │ │ ├── accept@2.0.0 
+  │ │ ├── ammo@2.0.0 
+  │ │ ├── boom@3.0.0 
+  │ │ ├── call@3.0.0 
+  │ │ ├── catbox@7.0.0 
+  │ │ ├── catbox-memory@2.0.1 
+  │ │ ├── cryptiles@3.0.0 
+  │ │ ├── heavy@4.0.0 
+  │ │ ├── hoek@3.0.0 
+  │ │ ├── iron@3.0.1 
+  │ │ ├── items@2.0.0 
+  │ │ ├─┬ joi@7.0.0 
+  │ │ │ ├── isemail@2.0.0 
+  │ │ │ └── moment@2.10.6 
+  │ │ ├── kilt@2.0.0 
+  │ │ ├─┬ mimos@3.0.0 
+  │ │ │ └── mime-db@1.19.0 
+  │ │ ├── peekaboo@2.0.0 
+  │ │ ├── qs@6.0.0 
+  │ │ ├── shot@2.0.1 
+  │ │ ├── statehood@3.0.0 
+  │ │ ├─┬ subtext@3.0.1 
+  │ │ │ ├── content@3.0.0 
+  │ │ │ ├─┬ pez@2.0.1 
+  │ │ │ │ ├── b64@3.0.0 
+  │ │ │ │ └─┬ nigel@2.0.0 
+  │ │ │ │   └── vise@2.0.0 
+  │ │ │ └── wreck@7.0.0 
+  │ │ └── topo@2.0.0 
+  │ ├── hoek@2.16.3 
+  │ └── items@1.1.1 
+  ├─┬ hapi-status@1.1.0 
+  │ ├── camelcase@1.2.1 
+  │ ├─┬ http-status-code@1.1.0 
+  │ │ └── strip-json-comments@1.0.4 
+  │ └── submerge@1.1.3 
+  ├─┬ joi@6.10.1 
+  │ ├── isemail@1.2.0 
+  │ ├── moment@2.18.1 
+  │ └── topo@1.1.0 
+  ├── lodash@3.10.1 
+  └─┬ mongoose@4.11.12 
+    ├─┬ async@2.1.4 
+    │ └── lodash@4.17.4 
+    ├── bson@1.0.4 
+    ├── hooks-fixed@2.0.0 
+    ├── kareem@1.5.0 
+    ├─┬ mongodb@2.2.31 
+    │ ├── es6-promise@3.2.1 
+    │ ├─┬ mongodb-core@2.1.15 
+    │ │ └─┬ require_optional@1.0.1 
+    │ │   ├── resolve-from@2.0.0 
+    │ │   └── semver@5.4.1 
+    │ └─┬ readable-stream@2.2.7 
+    │   ├── buffer-shims@1.0.0 
+    │   ├── core-util-is@1.0.2 
+    │   ├── inherits@2.0.3 
+    │   ├── isarray@1.0.0 
+    │   ├── process-nextick-args@1.0.7 
+    │   ├─┬ string_decoder@1.0.3 
+    │   │ └── safe-buffer@5.1.1 
+    │   └── util-deprecate@1.0.2 
+    ├── mpath@0.3.0 
+    ├── mpromise@0.5.5 
+    ├─┬ mquery@2.3.1 
+    │ ├── bluebird@2.10.2 
+    │ ├── debug@2.6.8 
+    │ └── sliced@0.0.5 
+    ├── ms@2.0.0 
+    ├── muri@1.2.2 
+    ├── regexp-clone@0.0.1 
+    └── sliced@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/buggy/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0487 took 4.4556s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: Server is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/buggy/node_modules/buggy/index.js. Coverage (Term): 16% Coverage (LOC): 24%
+*- File /root/Targets/buggy/node_modules/glue/lib/index.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/buggy/node_modules/hapi/lib/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

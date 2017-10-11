@@ -1,0 +1,128 @@
+/root/Targets/miso.dataset
+└── miso.dataset@0.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/miso.dataset/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 9% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","call","Object","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0371 took 9.5093s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (5:0) on program (function(_) { return function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+
+ if (obj.useStrict) { ;
+__p += '\'use strict\';\n';
+ } ;
+__p += 'var index, value, iteratee = ' +
+((__t = ( firstArg )) == null ? '' : __t) +
+', result = ' +
+((__t = ( firstArg )) == null ? '' : __t) +
+';\nif (!' +
+((__t = ( firstArg )) == null ? '' : __t) +
+') return result;\n' +
+((__t = ( top )) == null ? '' : __t) +
+';\n';
+ if (arrayLoop) { ;
+__p += 'var length = iteratee.length; index = -1;\nif (typeof length == \'number\') {  ';
+ if (noCharByIndex) { ;
+__p += '\n  if (toString.call(iteratee) == stringClass) {\n    iteratee = iteratee.split(\'\')\n  }  ';
+ } ;
+__p += '\n  while (++index < length) {\n    value = iteratee[index];\n    ' +
+((__t = ( arrayLoop )) == null ? '' : __t) +
+'\n  }\n}\nelse {  ';
+  } else if (noArgsEnum) { ;
+__p += '\n  var length = iteratee.length; index = -1;\n  if (length && isArguments(iteratee)) {\n    while (++index < length) {\n      value = iteratee[index += \'\'];\n      ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n    }\n  } else {  ';
+ } ;
+__p += '  ';
+ if (!hasDontEnumBug) { ;
+__p += '\n  var skipProto = typeof iteratee == \'function\' && \n    propertyIsEnumerable.call(iteratee, \'prototype\');\n  ';
+ } ;
+__p += '  ';
+ if (isKeysFast && useHas) { ;
+__p += '\n  var ownIndex = -1,\n      ownProps = objectTypes[typeof iteratee] ? nativeKeys(iteratee) : [],\n      length = ownProps.length;\n\n  while (++ownIndex < length) {\n    index = ownProps[ownIndex];\n    ';
+ if (!hasDontEnumBug) { ;
+__p += 'if (!(skipProto && index == \'prototype\')) {\n  ';
+ } ;
+__p += '    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n    ';
+ if (!hasDontEnumBug) { ;
+__p += '}\n';
+ } ;
+__p += '  }  ';
+ } else { ;
+__p += '\n  for (index in iteratee) {';
+    if (!hasDontEnumBug || useHas) { ;
+__p += '\n    if (';
+      if (!hasDontEnumBug) { ;
+__p += '!(skipProto && index == \'prototype\')';
+ }      if (!hasDontEnumBug && useHas) { ;
+__p += ' && ';
+ }      if (useHas) { ;
+__p += 'hasOwnProperty.call(iteratee, index)';
+ }    ;
+__p += ') {    ';
+ } ;
+__p += '\n    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+';    ';
+ if (!hasDontEnumBug || useHas) { ;
+__p += '\n    }';
+ } ;
+__p += '\n  }  ';
+ } ;
+__p += '  ';
+ if (hasDontEnumBug) { ;
+__p += '\n\n  var ctor = iteratee.constructor;\n    ';
+ for (var k = 0; k < 7; k++) { ;
+__p += '\n  index = \'' +
+((__t = ( shadowed[k] )) == null ? '' : __t) +
+'\';\n  if (';
+      if (shadowed[k] == 'constructor') {        ;
+__p += '!(ctor && ctor.prototype === iteratee) && ';
+      } ;
+__p += 'hasOwnProperty.call(iteratee, index)) {\n    value = iteratee[index];\n    ' +
+((__t = ( objectLoop )) == null ? '' : __t) +
+'\n  }    ';
+ } ;
+__p += '  ';
+ } ;
+__p += '  ';
+ if (arrayLoop || noArgsEnum) { ;
+__p += '\n}';
+ } ;
+__p += '\n' +
+((__t = ( bottom )) == null ? '' : __t) +
+';\nreturn result';
+
+}
+return __p
+} }) at SyntaxError: 'with' in strict mode (5:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/miso.dataset/node_modules/miso.dataset/dist/node/miso.ds.deps.0.4.1.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/miso.dataset/node_modules/lodash/lodash.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

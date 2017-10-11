@@ -1,0 +1,122 @@
+/root/Targets/mockservice
+└─┬ mockservice@0.1.14 
+  └── beef@0.0.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mockservice/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","pop","cwd"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0411 took 4.4058s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (28:21) on program /**
+ * @file 扩展文件
+ * - 所有的全局函数支持用户自定义重写
+ *
+ * @author Liandong Liu (liuliandong01@baidu.com)
+ */
+
+/**
+ * 错误日志处理
+ *
+ * @public
+ * @param {Object|string} 异常信息
+ * @param {string} 异常信息标题
+ */
+exports.printError = function (exception, msg) {
+    // 如果全局没有指定错误处理方法；默认不输出
+    if (!process._logError) {
+        return;
+    }
+
+    // 描述信息直接打印
+    if (msg) {
+        console.log(msg);
+    }
+
+    // 错误信息高亮显示在console中
+    if ('object' == typeof exception) {
+        console.log('\033[31m \033[05m ', exception.message, '\033[0m');
+
+        var logFile =  process._logError.logFile;
+
+        // 如果指定了logFile 错误日志打印到日志文件，否则直接输出
+        if (logFile) {
+            logFile = require('path').join(process.cwd(), logFile);
+
+            var errorMSG = [msg, exception.stack].join('\n');
+
+            // 追加方式写入文件
+            require('fs').appendFile(
+                logFile,
+                errorMSG,
+                function (err) {
+                    err && console.log(err);
+                }
+            );
+        } else {
+            console.log(exception.stack);
+        }
+    }
+};
+
+/**
+ * 格式化输出数据
+ * 
+ * @param  {Object} data 输出数据对象
+ * @return {string}     输出文本
+ * @private
+ */
+exports.packJSON = function (data) {
+    return JSON.stringify(data, '\t', 4);
+};
+
+/**
+ * 设置cookie内容
+ * 
+ * @param {Object|Array|string} cookies
+ * @param {Object} context
+ */
+exports.setCookie = function(cookies, context) {
+    context = context || this;
+    var arr = [];
+    var tp = typeof cookies;
+    if (tp == 'object') {
+        for (var item in cookies) {
+            arr.push(item + '=' + cookies[item]);
+        }
+    } else if (tp == 'array'){
+        arr = cookies;
+    } else {
+        arr.push(cookies);
+    }
+    context.headers['Set-Cookie'] = arr;
+}; at SyntaxError: Octal literal in strict mode (28:21)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parseSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1738:37)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mockservice/node_modules/mockservice/src/index.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/mockservice/node_modules/mockservice/src/core.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/mockservice/node_modules/mockservice/src/scan.js. Coverage (Term): 17% Coverage (LOC): 23%
+*- File /root/Targets/mockservice/node_modules/beef/src/require.js. Coverage (Term): 35% Coverage (LOC): 39%
+*- File /root/Targets/mockservice/node_modules/beef/src/plugin.js. Coverage (Term): 28% Coverage (LOC): 48%
+*- File /root/Targets/mockservice/node_modules/beef/src/define.js. Coverage (Term): 31% Coverage (LOC): 27%
+*- File /root/Targets/mockservice/node_modules/beef/src/brow.js. Coverage (Term): 71% Coverage (LOC): 100%
+*- File /root/Targets/mockservice/node_modules/beef/src/config.js. Coverage (Term): 17% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

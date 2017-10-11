@@ -1,18 +1,16 @@
-/home/blake/ExpoSE/Targets/ember-component-css-withbp
+/root/Targets/ember-component-css-withbp
 └── ember-component-css-withbp@0.1.9 
 
 Setup Done exists, not setting up
-:../FeatureTester/libs/:/home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules
+:../FeatureTester/libs/:/root/Targets/ember-component-css-withbp/node_modules
 Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-Number of CPU cores: 16
-Defaulting to 16 concurrent test cases
-ExpoSE Master: /home/blake/ExpoSE/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 100000
-Setting timeout to 600000
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
 *** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 21% coverage ] ***
 *-- Stat Module Output --*
 *-- concretizations: ["defineProperty","bound log","parseInt","random","reduce","freeze","create","Date","charCodeAt","abs"]
 *-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0051 took 1.7657s
+*-- Test Case {"_bound":0} start 0.0073 took 3.288s
 *-- Errors occured in test {"_bound":0}
 * Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program module.exports = rimraf
 rimraf.sync = rimrafSync
@@ -379,46 +377,44 @@ function rmkidsSync (p, options) {
   } while (true)
 }
  at SyntaxError: Unexpected token (4:4)
-    at Parser.pp$4.raise (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
-    at Parser.pp.unexpected (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
-    at Parser.pp$2.parseBindingAtom (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
-    at Parser.parseBindingAtom (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
-    at Parser.pp$1.parseVarId (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
-    at Parser.pp$1.parseVar (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
-    at Parser.pp$1.parseVarStatement (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
-    at Parser.pp$1.parseStatement (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
-    at Parser.parseStatement (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
-    at Parser.pp$1.parseTopLevel (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
-    at Parser.parse (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
-    at Object.parse (/home/blake/ExpoSE/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
-*-- Replay with NO_COMPILE=1 expoSE replay '/home/blake/ExpoSE/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
 *-- Coverage Data
-*- File /home/blake/ExpoSE/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /home/blake/ExpoSE/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/ember-component-css-withbp/index.js. Coverage (Term): 5% Coverage (LOC): 6%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/broccoli-funnel/index.js. Coverage (Term): 6% Coverage (LOC): 7%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/path-posix/index.js. Coverage (Term): 10% Coverage (LOC): 21%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/broccoli-funnel/node_modules/walk-sync/index.js. Coverage (Term): 13% Coverage (LOC): 21%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/matcher-collection/index.js. Coverage (Term): 22% Coverage (LOC): 34%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/matcher-collection/node_modules/minimatch/minimatch.js. Coverage (Term): 8% Coverage (LOC): 13%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 15%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/ensure-posix-path/index.js. Coverage (Term): 47% Coverage (LOC): 56%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/minimatch/minimatch.js. Coverage (Term): 7% Coverage (LOC): 10%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/array-equal/index.js. Coverage (Term): 25% Coverage (LOC): 36%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/broccoli-plugin/index.js. Coverage (Term): 15% Coverage (LOC): 28%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/symlink-or-copy/index.js. Coverage (Term): 25% Coverage (LOC): 34%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/index.js. Coverage (Term): 16% Coverage (LOC): 27%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/fast-ordered-set/index.js. Coverage (Term): 21% Coverage (LOC): 34%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/blank-object/index.js. Coverage (Term): 71% Coverage (LOC): 100%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/tree.js. Coverage (Term): 15% Coverage (LOC): 24%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/entry.js. Coverage (Term): 37% Coverage (LOC): 57%
-*- File /home/blake/ExpoSE/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/util.js. Coverage (Term): 42% Coverage (LOC): 58%
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ember-component-css-withbp/node_modules/ember-component-css-withbp/index.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/ember-component-css-withbp/node_modules/broccoli-funnel/index.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/ember-component-css-withbp/node_modules/path-posix/index.js. Coverage (Term): 10% Coverage (LOC): 21%
+*- File /root/Targets/ember-component-css-withbp/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File /root/Targets/ember-component-css-withbp/node_modules/broccoli-funnel/node_modules/walk-sync/index.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/ember-component-css-withbp/node_modules/matcher-collection/index.js. Coverage (Term): 22% Coverage (LOC): 34%
+*- File /root/Targets/ember-component-css-withbp/node_modules/matcher-collection/node_modules/minimatch/minimatch.js. Coverage (Term): 8% Coverage (LOC): 13%
+*- File /root/Targets/ember-component-css-withbp/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/ember-component-css-withbp/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
+*- File /root/Targets/ember-component-css-withbp/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/ember-component-css-withbp/node_modules/ensure-posix-path/index.js. Coverage (Term): 47% Coverage (LOC): 56%
+*- File /root/Targets/ember-component-css-withbp/node_modules/minimatch/minimatch.js. Coverage (Term): 7% Coverage (LOC): 10%
+*- File /root/Targets/ember-component-css-withbp/node_modules/array-equal/index.js. Coverage (Term): 25% Coverage (LOC): 36%
+*- File /root/Targets/ember-component-css-withbp/node_modules/broccoli-plugin/index.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/ember-component-css-withbp/node_modules/symlink-or-copy/index.js. Coverage (Term): 25% Coverage (LOC): 34%
+*- File /root/Targets/ember-component-css-withbp/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/ember-component-css-withbp/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/ember-component-css-withbp/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/ember-component-css-withbp/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/index.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/ember-component-css-withbp/node_modules/fast-ordered-set/index.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- File /root/Targets/ember-component-css-withbp/node_modules/blank-object/index.js. Coverage (Term): 71% Coverage (LOC): 100%
+*- File /root/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/tree.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/entry.js. Coverage (Term): 37% Coverage (LOC): 57%
+*- File /root/Targets/ember-component-css-withbp/node_modules/fs-tree-diff/lib/util.js. Coverage (Term): 42% Coverage (LOC): 58%
 *- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
 ** ExpoSE Finished. 1 paths with 1 errors **

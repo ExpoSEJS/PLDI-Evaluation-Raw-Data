@@ -1,0 +1,475 @@
+
+> @uirouter/core@5.0.6 install /root/Targets/web-server-database/node_modules/@uirouter/core
+> node migrate/migratewarn.js
+
+
+> @uirouter/angularjs@1.0.6 install /root/Targets/web-server-database/node_modules/@uirouter/angularjs
+> node migrate/migratewarn.js
+
+/root/Targets/web-server-database
+└─┬ web-server-database@2.0.49 
+  ├─┬ @types/express@4.0.37 
+  │ ├─┬ @types/express-serve-static-core@4.0.53 
+  │ │ └── @types/node@8.0.31 
+  │ └─┬ @types/serve-static@1.7.32 
+  │   └── @types/mime@2.0.0 
+  ├─┬ @types/sequelize@4.0.75 
+  │ ├── @types/bluebird@3.5.12 
+  │ ├── @types/lodash@4.14.76 
+  │ └── @types/validator@6.3.0 
+  ├─┬ @uirouter/angularjs@1.0.6 
+  │ └── @uirouter/core@5.0.6 
+  ├── UNMET PEER DEPENDENCY angular@>=1.2.0
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ cross-env@4.0.0 
+  │ ├─┬ cross-spawn@5.1.0 
+  │ │ ├─┬ lru-cache@4.1.1 
+  │ │ │ ├── pseudomap@1.0.2 
+  │ │ │ └── yallist@2.1.2 
+  │ │ ├─┬ shebang-command@1.2.0 
+  │ │ │ └── shebang-regex@1.0.0 
+  │ │ └─┬ which@1.3.0 
+  │ │   └── isexe@2.0.0 
+  │ └── is-windows@1.0.1 
+  ├─┬ debug@2.6.9 
+  │ └── ms@2.0.0 
+  ├── ejs@2.5.7 
+  ├─┬ express@4.16.0 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.1.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.0 
+  │ │ └── destroy@1.0.4 
+  │ ├── serve-static@1.13.0 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ helmet@3.8.2 
+  │ ├─┬ connect@3.6.5 
+  │ │ └── finalhandler@1.0.6 
+  │ ├── dns-prefetch-control@0.1.0 
+  │ ├── dont-sniff-mimetype@1.0.0 
+  │ ├── expect-ct@0.1.0 
+  │ ├── frameguard@3.0.0 
+  │ ├─┬ helmet-csp@2.5.1 
+  │ │ ├── camelize@1.0.0 
+  │ │ ├─┬ content-security-policy-builder@1.1.0 
+  │ │ │ └── dashify@0.2.2 
+  │ │ ├── dasherize@2.0.0 
+  │ │ ├── lodash.reduce@4.6.0 
+  │ │ └── platform@1.3.4 
+  │ ├── hide-powered-by@1.0.0 
+  │ ├── hpkp@2.0.0 
+  │ ├── hsts@2.1.0 
+  │ ├── ienoopen@1.0.0 
+  │ ├── nocache@2.0.0 
+  │ ├── referrer-policy@1.1.0 
+  │ └── x-xss-protection@1.0.0 
+  ├─┬ mocha-typescript@1.1.9 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ └─┬ yargs@6.6.0 
+  │   ├── camelcase@3.0.0 
+  │   ├─┬ cliui@3.2.0 
+  │   │ └── wrap-ansi@2.1.0 
+  │   ├── decamelize@1.2.0 
+  │   ├── get-caller-file@1.0.2 
+  │   ├─┬ os-locale@1.4.0 
+  │   │ └─┬ lcid@1.0.0 
+  │   │   └── invert-kv@1.0.0 
+  │   ├─┬ read-pkg-up@1.0.1 
+  │   │ ├─┬ find-up@1.1.2 
+  │   │ │ ├── path-exists@2.1.0 
+  │   │ │ └─┬ pinkie-promise@2.0.1 
+  │   │ │   └── pinkie@2.0.4 
+  │   │ └─┬ read-pkg@1.1.0 
+  │   │   ├─┬ load-json-file@1.1.0 
+  │   │   │ ├─┬ parse-json@2.2.0 
+  │   │   │ │ └─┬ error-ex@1.3.1 
+  │   │   │ │   └── is-arrayish@0.2.1 
+  │   │   │ ├── pify@2.3.0 
+  │   │   │ └─┬ strip-bom@2.0.0 
+  │   │   │   └── is-utf8@0.2.1 
+  │   │   ├─┬ normalize-package-data@2.4.0 
+  │   │   │ ├── hosted-git-info@2.5.0 
+  │   │   │ ├─┬ is-builtin-module@1.0.0 
+  │   │   │ │ └── builtin-modules@1.1.1 
+  │   │   │ └─┬ validate-npm-package-license@3.0.1 
+  │   │   │   ├─┬ spdx-correct@1.0.2 
+  │   │   │   │ └── spdx-license-ids@1.2.2 
+  │   │   │   └── spdx-expression-parse@1.0.4 
+  │   │   └── path-type@1.1.0 
+  │   ├── require-directory@2.1.1 
+  │   ├── require-main-filename@1.0.1 
+  │   ├── set-blocking@2.0.0 
+  │   ├─┬ string-width@1.0.2 
+  │   │ ├── code-point-at@1.1.0 
+  │   │ └─┬ is-fullwidth-code-point@1.0.0 
+  │   │   └── number-is-nan@1.0.1 
+  │   ├── which-module@1.0.0 
+  │   ├── y18n@3.2.1 
+  │   └── yargs-parser@4.2.1 
+  ├── moment@2.18.1 
+  ├─┬ path@0.12.7 
+  │ └─┬ util@0.10.3 
+  │   └── inherits@2.0.1 
+  ├── process@0.11.10 
+  ├─┬ sequelize@3.30.4 
+  │ ├── bluebird@3.5.0 
+  │ ├── dottie@1.1.1 
+  │ ├── generic-pool@2.4.2 
+  │ ├── inflection@1.12.0 
+  │ ├── lodash@4.12.0 
+  │ ├── moment-timezone@0.5.13 
+  │ ├── retry-as-promised@2.3.1 
+  │ ├── semver@5.4.1 
+  │ ├── shimmer@1.1.0 
+  │ ├─┬ terraformer-wkt-parser@1.1.2 
+  │ │ └─┬ terraformer@1.0.8 
+  │ │   └── @types/geojson@1.0.4 
+  │ ├── toposort-class@1.0.1 
+  │ ├── uuid@3.1.0 
+  │ ├── validator@5.7.0 
+  │ └── wkx@0.2.0 
+  ├── web-base-model@1.0.4 
+  ├── web-base-server-model@1.0.1 
+  ├─┬ web-encryption-wrapper@1.0.3 
+  │ └── bcryptjs@2.4.3 
+  ├─┬ webpack@2.7.0 
+  │ ├── acorn@5.1.2 
+  │ ├─┬ acorn-dynamic-import@2.0.2 
+  │ │ └── acorn@4.0.13 
+  │ ├─┬ ajv@4.11.8 
+  │ │ ├── co@4.6.0 
+  │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │   └── jsonify@0.0.0 
+  │ ├── ajv-keywords@1.5.1 
+  │ ├─┬ async@2.5.0 
+  │ │ └── lodash@4.17.4 
+  │ ├─┬ enhanced-resolve@3.4.1 
+  │ │ ├── graceful-fs@4.1.11 
+  │ │ └── object-assign@4.1.1 
+  │ ├── interpret@1.0.4 
+  │ ├── json-loader@0.5.7 
+  │ ├── json5@0.5.1 
+  │ ├── loader-runner@2.3.0 
+  │ ├─┬ loader-utils@0.2.17 
+  │ │ ├── big.js@3.2.0 
+  │ │ └── emojis-list@2.1.0 
+  │ ├─┬ memory-fs@0.4.1 
+  │ │ ├─┬ errno@0.1.4 
+  │ │ │ └── prr@0.0.0 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ node-libs-browser@2.0.0 
+  │ │ ├── assert@1.4.1 
+  │ │ ├─┬ browserify-zlib@0.1.4 
+  │ │ │ └── pako@0.2.9 
+  │ │ ├─┬ buffer@4.9.1 
+  │ │ │ ├── base64-js@1.2.1 
+  │ │ │ └── ieee754@1.1.8 
+  │ │ ├─┬ console-browserify@1.1.0 
+  │ │ │ └── date-now@0.1.4 
+  │ │ ├── constants-browserify@1.0.0 
+  │ │ ├─┬ crypto-browserify@3.11.1 
+  │ │ │ ├─┬ browserify-cipher@1.0.0 
+  │ │ │ │ ├─┬ browserify-aes@1.0.8 
+  │ │ │ │ │ └── buffer-xor@1.0.3 
+  │ │ │ │ ├─┬ browserify-des@1.0.0 
+  │ │ │ │ │ └── des.js@1.0.0 
+  │ │ │ │ └─┬ evp_bytestokey@1.0.3 
+  │ │ │ │   └─┬ md5.js@1.3.4 
+  │ │ │ │     └── hash-base@3.0.4 
+  │ │ │ ├─┬ browserify-sign@4.0.4 
+  │ │ │ │ ├── bn.js@4.11.8 
+  │ │ │ │ ├── browserify-rsa@4.0.1 
+  │ │ │ │ ├─┬ elliptic@6.4.0 
+  │ │ │ │ │ ├── brorand@1.1.0 
+  │ │ │ │ │ ├── hash.js@1.1.3 
+  │ │ │ │ │ ├── hmac-drbg@1.0.1 
+  │ │ │ │ │ ├── minimalistic-assert@1.0.0 
+  │ │ │ │ │ └── minimalistic-crypto-utils@1.0.1 
+  │ │ │ │ └─┬ parse-asn1@5.1.0 
+  │ │ │ │   └── asn1.js@4.9.1 
+  │ │ │ ├── create-ecdh@4.0.0 
+  │ │ │ ├─┬ create-hash@1.1.3 
+  │ │ │ │ ├── cipher-base@1.0.4 
+  │ │ │ │ ├─┬ ripemd160@2.0.1 
+  │ │ │ │ │ └── hash-base@2.0.2 
+  │ │ │ │ └── sha.js@2.4.9 
+  │ │ │ ├── create-hmac@1.1.6 
+  │ │ │ ├─┬ diffie-hellman@5.0.2 
+  │ │ │ │ └── miller-rabin@4.0.1 
+  │ │ │ ├── pbkdf2@3.0.14 
+  │ │ │ ├── public-encrypt@4.0.0 
+  │ │ │ └── randombytes@2.0.5 
+  │ │ ├── domain-browser@1.1.7 
+  │ │ ├── events@1.1.1 
+  │ │ ├── https-browserify@0.0.1 
+  │ │ ├── os-browserify@0.2.1 
+  │ │ ├── path-browserify@0.0.0 
+  │ │ ├── punycode@1.4.1 
+  │ │ ├── querystring-es3@0.2.1 
+  │ │ ├── stream-browserify@2.0.1 
+  │ │ ├─┬ stream-http@2.7.2 
+  │ │ │ ├── builtin-status-codes@3.0.0 
+  │ │ │ ├── to-arraybuffer@1.0.1 
+  │ │ │ └── xtend@4.0.1 
+  │ │ ├── string_decoder@0.10.31 
+  │ │ ├─┬ timers-browserify@2.0.4 
+  │ │ │ └── setimmediate@1.0.5 
+  │ │ ├── tty-browserify@0.0.0 
+  │ │ ├─┬ url@0.11.0 
+  │ │ │ ├── punycode@1.3.2 
+  │ │ │ └── querystring@0.2.0 
+  │ │ └─┬ vm-browserify@0.0.4 
+  │ │   └── indexof@0.0.1 
+  │ ├── source-map@0.5.7 
+  │ ├─┬ supports-color@3.2.3 
+  │ │ └── has-flag@1.0.0 
+  │ ├── tapable@0.2.8 
+  │ ├─┬ uglify-js@2.8.29 
+  │ │ ├── uglify-to-browserify@1.0.2 
+  │ │ └─┬ yargs@3.10.0 
+  │ │   ├── camelcase@1.2.1 
+  │ │   ├─┬ cliui@2.1.0 
+  │ │   │ ├─┬ center-align@0.1.3 
+  │ │   │ │ ├─┬ align-text@0.1.4 
+  │ │   │ │ │ ├── longest@1.0.1 
+  │ │   │ │ │ └── repeat-string@1.6.1 
+  │ │   │ │ └── lazy-cache@1.0.4 
+  │ │   │ ├── right-align@0.1.3 
+  │ │   │ └── wordwrap@0.0.2 
+  │ │   └── window-size@0.1.0 
+  │ ├─┬ watchpack@1.4.0 
+  │ │ └─┬ chokidar@1.7.0 
+  │ │   ├─┬ anymatch@1.3.2 
+  │ │   │ ├─┬ micromatch@2.3.11 
+  │ │   │ │ ├─┬ arr-diff@2.0.0 
+  │ │   │ │ │ └── arr-flatten@1.1.0 
+  │ │   │ │ ├── array-unique@0.2.1 
+  │ │   │ │ ├─┬ braces@1.8.5 
+  │ │   │ │ │ ├─┬ expand-range@1.8.2 
+  │ │   │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │   │ │ │ │   ├── is-number@2.1.0 
+  │ │   │ │ │ │   ├── isobject@2.1.0 
+  │ │   │ │ │ │   └─┬ randomatic@1.1.7 
+  │ │   │ │ │ │     ├─┬ is-number@3.0.0 
+  │ │   │ │ │ │     │ └── kind-of@3.2.2 
+  │ │   │ │ │ │     └── kind-of@4.0.0 
+  │ │   │ │ │ ├── preserve@0.2.0 
+  │ │   │ │ │ └── repeat-element@1.1.2 
+  │ │   │ │ ├─┬ expand-brackets@0.1.5 
+  │ │   │ │ │ └── is-posix-bracket@0.1.1 
+  │ │   │ │ ├── extglob@0.3.2 
+  │ │   │ │ ├── filename-regex@2.0.1 
+  │ │   │ │ ├─┬ kind-of@3.2.2 
+  │ │   │ │ │ └── is-buffer@1.1.5 
+  │ │   │ │ ├─┬ object.omit@2.0.1 
+  │ │   │ │ │ ├─┬ for-own@0.1.5 
+  │ │   │ │ │ │ └── for-in@1.0.2 
+  │ │   │ │ │ └── is-extendable@0.1.1 
+  │ │   │ │ ├─┬ parse-glob@3.0.4 
+  │ │   │ │ │ ├── glob-base@0.3.0 
+  │ │   │ │ │ └── is-dotfile@1.0.3 
+  │ │   │ │ └─┬ regex-cache@0.4.4 
+  │ │   │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │   │ │     └── is-primitive@2.0.0 
+  │ │   │ └─┬ normalize-path@2.1.1 
+  │ │   │   └── remove-trailing-separator@1.1.0 
+  │ │   ├── async-each@1.0.1 
+  │ │   ├── glob-parent@2.0.0 
+  │ │   ├─┬ is-binary-path@1.0.1 
+  │ │   │ └── binary-extensions@1.10.0 
+  │ │   ├─┬ is-glob@2.0.1 
+  │ │   │ └── is-extglob@1.0.0 
+  │ │   └─┬ readdirp@2.1.0 
+  │ │     ├─┬ minimatch@3.0.4 
+  │ │     │ └─┬ brace-expansion@1.1.8 
+  │ │     │   ├── balanced-match@1.0.0 
+  │ │     │   └── concat-map@0.0.1 
+  │ │     └── set-immediate-shim@1.0.1 
+  │ └─┬ webpack-sources@1.0.1 
+  │   └── source-list-map@2.0.0 
+  └─┬ webpack-dev-middleware@1.12.0 
+    ├── mime@1.4.1 
+    ├── path-is-absolute@1.0.1 
+    └── time-stamp@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/web-server-database/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","reduce","parseInt","charCodeAt","abs","Number","toString","toUpperCase","join","call","RegExp","pow","binding","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0534 took 41.0096s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/web-server-database/node_modules/web-server-database/index.js. Coverage (Term): 67% Coverage (LOC): 100%
+*- File /root/Targets/web-server-database/node_modules/web-server-database/server/module.js. Coverage (Term): 31% Coverage (LOC): 26%
+*- File /root/Targets/web-server-database/node_modules/web-server-database/server/App.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/web-server-database/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/web-server-database/node_modules/express/lib/express.js. Coverage (Term): 64% Coverage (LOC): 68%
+*- File /root/Targets/web-server-database/node_modules/body-parser/index.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/web-server-database/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/web-server-database/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File eval. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/web-server-database/node_modules/merge-descriptors/index.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/web-server-database/node_modules/express/lib/application.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/web-server-database/node_modules/finalhandler/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/web-server-database/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/web-server-database/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/web-server-database/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/web-server-database/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/web-server-database/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/web-server-database/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/web-server-database/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/web-server-database/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/web-server-database/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/web-server-database/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/web-server-database/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/web-server-database/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/web-server-database/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/web-server-database/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/web-server-database/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/express/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/web-server-database/node_modules/express/lib/middleware/init.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/web-server-database/node_modules/express/lib/middleware/query.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/web-server-database/node_modules/qs/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/web-server-database/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/qs/lib/utils.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/qs/lib/formats.js. Coverage (Term): 61% Coverage (LOC): 87%
+*- File /root/Targets/web-server-database/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/web-server-database/node_modules/express/lib/view.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/web-server-database/node_modules/express/lib/utils.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/web-server-database/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/web-server-database/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/web-server-database/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/send/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/web-server-database/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/web-server-database/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/web-server-database/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/web-server-database/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/web-server-database/node_modules/fresh/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/web-server-database/node_modules/mime/mime.js. Coverage (Term): 55% Coverage (LOC): 75%
+*- File /root/Targets/web-server-database/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/web-server-database/node_modules/proxy-addr/index.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/web-server-database/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 25% Coverage (LOC): 47%
+*- File /root/Targets/web-server-database/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/web-server-database/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/web-server-database/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/web-server-database/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/web-server-database/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/web-server-database/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/web-server-database/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/web-server-database/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/web-server-database/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/web-server-database/node_modules/body-parser/lib/types/json.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/web-server-database/node_modules/bytes/index.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/web-server-database/node_modules/body-parser/lib/read.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/web-server-database/node_modules/raw-body/index.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/web-server-database/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/web-server-database/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/web-server-database/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/web-server-database/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/web-server-database/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/web-server-database/node_modules/body-parser/lib/types/urlencoded.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/web-server-database/node_modules/web-server-database/server/logs.js. Coverage (Term): 48% Coverage (LOC): 67%
+*- File /root/Targets/web-server-database/node_modules/web-server-database/webpack.config.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/web-server-database/node_modules/helmet/index.js. Coverage (Term): 53% Coverage (LOC): 55%
+*- File /root/Targets/web-server-database/node_modules/connect/index.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/web-server-database/node_modules/connect/node_modules/finalhandler/index.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/index.js. Coverage (Term): 23% Coverage (LOC): 20%
+*- File /root/Targets/web-server-database/node_modules/camelize/index.js. Coverage (Term): 15% Coverage (LOC): 28%
+*- File /root/Targets/web-server-database/node_modules/content-security-policy-builder/index.js. Coverage (Term): 18% Coverage (LOC): 21%
+*- File /root/Targets/web-server-database/node_modules/dashify/index.js. Coverage (Term): 30% Coverage (LOC): 42%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/is-function.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/web-server-database/node_modules/platform/platform.js. Coverage (Term): 40% Coverage (LOC): 65%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/index.js. Coverage (Term): 29% Coverage (LOC): 35%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/index.js. Coverage (Term): 47% Coverage (LOC): 58%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/source-list.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/plugin-types.js. Coverage (Term): 20% Coverage (LOC): 27%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/sandbox.js. Coverage (Term): 22% Coverage (LOC): 23%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/report-uri.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/is-string.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/check-options/check-directive/boolean.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/is-boolean.js. Coverage (Term): 50% Coverage (LOC): 80%
+*- File /root/Targets/web-server-database/node_modules/dasherize/index.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/contains-function.js. Coverage (Term): 32% Coverage (LOC): 29%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/get-header-keys-for-browser.js. Coverage (Term): 13% Coverage (LOC): 25%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/transform-directives-for-browser.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/web-server-database/node_modules/lodash.reduce/index.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/web-server-database/node_modules/helmet-csp/lib/parse-dynamic-directives.js. Coverage (Term): 26% Coverage (LOC): 29%
+*- File /root/Targets/web-server-database/node_modules/dns-prefetch-control/index.js. Coverage (Term): 24% Coverage (LOC): 33%
+*- File /root/Targets/web-server-database/node_modules/expect-ct/index.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/web-server-database/node_modules/frameguard/index.js. Coverage (Term): 16% Coverage (LOC): 14%
+*- File /root/Targets/web-server-database/node_modules/frameguard/lib/isstring.js. Coverage (Term): 52% Coverage (LOC): 80%
+*- File /root/Targets/web-server-database/node_modules/hide-powered-by/index.js. Coverage (Term): 23% Coverage (LOC): 31%
+*- File /root/Targets/web-server-database/node_modules/hpkp/index.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/web-server-database/node_modules/hsts/index.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/web-server-database/node_modules/ienoopen/index.js. Coverage (Term): 40% Coverage (LOC): 57%
+*- File /root/Targets/web-server-database/node_modules/nocache/index.js. Coverage (Term): 28% Coverage (LOC): 40%
+*- File /root/Targets/web-server-database/node_modules/dont-sniff-mimetype/index.js. Coverage (Term): 40% Coverage (LOC): 57%
+*- File /root/Targets/web-server-database/node_modules/referrer-policy/index.js. Coverage (Term): 48% Coverage (LOC): 66%
+*- File /root/Targets/web-server-database/node_modules/x-xss-protection/index.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

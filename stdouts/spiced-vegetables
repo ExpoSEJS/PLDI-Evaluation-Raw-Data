@@ -1,0 +1,109 @@
+/root/Targets/spiced-vegetables
+└── spiced-vegetables@1.1.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/spiced-vegetables/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0659 took 4.7015s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+'use strict';
+
+function main() {
+	var pkg = require('./package');
+	var logger = require('./lib/logger');
+
+	var yargs = require('yargs')
+	.usage(pkg.name + ' [options] <command>')  // pkg.name may be replaced with '$0'
+	.command('generate', 'Generate static Web pages from current folder Markdown documents')
+	.command('serve', 'Serve and watch the generated static Web pages')
+	.command('deploy', 'Generate pages and deploy it to your project GitHub pages')
+	.example(pkg.name + ' generate -t ../my-template', 'Use the provided template folder')
+	.example(pkg.name + ' serve -p 8989', 'Serve the static pages at http://localhost:8989')
+	.example(pkg.name + ' deploy', 'Generate pages and deploy it to your project GitHub pages')
+	.epilog(pkg.name + ' v' + pkg.version + ' - For more informations, check out our site: https://partageit.github.io/vegetables')
+	.alias({
+		't': 'template',
+		'h': 'help',
+		'v': 'verbose',
+		'p': 'port'
+	})
+	.describe({
+		'globaltitle': 'Generated Web site title',
+		'template': 'Path to the template',
+		'host': 'Host for the serve command. Set to * to allow access from your local network',
+		'port': 'Access port. Default: 8888',
+		'help': 'This screen',
+		'version': 'Display the... version',
+		'verbose': 'Enable verbose mode',
+		'silent': 'Disable every outputs',
+		'config': 'Configuration file. If not set, and if present, vegetables.json is used.'
+	})
+	.boolean('version')
+	.boolean('help')
+	.boolean('silent')
+	.count('verbose')
+	.string('_')
+	.string('config')
+	.default({
+		'config': '' // should not begin with .
+	});
+	var argv = yargs.argv;
+	logger.init(argv.silent ? -1 : argv.verbose);
+
+	if (argv.version) {
+		console.log(pkg.name + ' v' + pkg.version);
+	} else if (argv.h) {
+
+		console.log(yargs.help());
+	} else if (argv._[0] === 'serve') {
+		require('./lib/serve')(argv);
+	} else if (argv._[0] === 'generate') {
+		require('./lib/generate')(argv, true, function(err) {
+			if (err) {
+				logger.error('Generation failed: %s', err);
+				return;
+			}
+			logger.success('Finished!');
+		});
+	} else if (argv._[0] === 'deploy') {
+		require('./lib/deploy')(argv);
+	} else {
+		console.log(yargs.help());
+	}
+}
+
+if (require.main === module) {
+	main()
+} else {
+	module.exports = {
+		compile: require('./lib/compile'),
+		generate: require('./lib/generate'),
+		serve: require('./lib/serve'),
+		readConfig: require('./lib/read-config'),
+		templatesManager: require('./lib/templates-manager')
+	}
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

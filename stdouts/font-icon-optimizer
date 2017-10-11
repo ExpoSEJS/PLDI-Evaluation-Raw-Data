@@ -1,0 +1,97 @@
+/root/Targets/font-icon-optimizer
+└─┬ font-icon-optimizer@1.0.10 
+  ├── sax@1.2.4 
+  ├─┬ svg2ttf@4.1.0 
+  │ ├─┬ argparse@1.0.9 
+  │ │ └── sprintf-js@1.0.3 
+  │ ├── cubic2quad@1.1.1 
+  │ ├── lodash@4.17.4 
+  │ ├── microbuffer@1.0.0 
+  │ ├── svgpath@2.2.1 
+  │ └── xmldom@0.1.27 
+  ├── ttf2eot@2.0.0 
+  └─┬ ttf2woff@2.0.1 
+    └── pako@1.0.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/font-icon-optimizer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0454 took 3.4534s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+'use strict';
+
+var fs = require('fs');
+var html = require('./src/html.js');
+var css = require('./src/css.js');
+var font = require('./src/font.js');
+var path = require('./src/path.js');
+
+
+function help_out(){
+    console.log('-h(--help)\t\t\t-help');
+    console.log('\nexample:\nnode font-minificator -o ./path/to/new/font -i ./path/to/project/ -s 1024');
+    console.log('\n-i\t\t\tpath to project');
+    console.log('\n-o\t\t\tpath to new font file (without extension)');
+    console.log('\n-s\t\t\tvalue for "units-per-em" element in svg file');
+    process.abort();
+}
+
+function error_out(message){
+    console.error(message);
+    process.abort();
+}
+
+if (module.parent) {
+    module.exports.modify_font = function (new_path, path_to_project, scale) {
+        font.build(new_path, css.fromHtml(html.fromPath(path_to_project)), scale);
+    };
+}
+else {
+    var params = {'-i':'./',
+                  '-o': './new_fonts/all_fonts',
+                  '-s': 1024};
+
+    process.argv.forEach(function(val, index){
+        if(val == '-h')help_out();
+
+        if(val in params){
+            if(!process.argv[index + 1]){
+                error_out('The ${val} parameter has no value!');
+            }
+            params[val] = process.argv[index + 1];
+        }
+    });
+
+    var html_files =html.fromPath(params['-i']) ;
+
+    if(!html_files.length){
+        console.log('No html files found!');
+        process.abort();
+    }
+    font.build(params['-o'],css.fromHtml(html_files), params['-s']);
+
+} at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

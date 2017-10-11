@@ -1,0 +1,71 @@
+/root/Targets/shshifter
+└── shshifter@0.5.6 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/shshifter/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1455 took 7.8189s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (35:17) on program // ANSI color code outputs for strings
+
+var ANSI_CODES = {
+  "off": 0,
+  "bold": 1,
+  "italic": 3,
+  "underline": 4,
+  "blink": 5,
+  "inverse": 7,
+  "hidden": 8,
+  "black": 30,
+  "red": 31,
+  "green": 32,
+  "yellow": 33,
+  "blue": 34,
+  "magenta": 35,
+  "cyan": 36,
+  "white": 37,
+  "black_bg": 40,
+  "red_bg": 41,
+  "green_bg": 42,
+  "yellow_bg": 43,
+  "blue_bg": 44,
+  "magenta_bg": 45,
+  "cyan_bg": 46,
+  "white_bg": 47
+};
+
+exports.set = function(str, color) {
+  if(!color) return str;
+
+  var color_attrs = color.split("+");
+  var ansi_str = "";
+  for(var i=0, attr; attr = color_attrs[i]; i++) {
+    ansi_str += "\033[" + ANSI_CODES[attr] + "m";
+  }
+  ansi_str += str + "\033[" + ANSI_CODES["off"] + "m";
+  return ansi_str;
+}; at SyntaxError: Octal literal in strict mode (35:17)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1607:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/shshifter/node_modules/shshifter/lib/index.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/shshifter/node_modules/shshifter/lib/log.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,111 @@
+/root/Targets/react-as-textarea
+└── react-as-textarea@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-as-textarea/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0634 took 4.3397s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (39:6) on program import React from 'react';
+import ReactDOM from 'react-dom';
+import calHeight from './calHeight.jsx';
+
+class Textarea extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.value,
+      height: null
+    };
+    this._handleChange = this._handleChange.bind(this);
+    this._resize = this._resize.bind(this);
+  }
+  componentDidMount() {
+    this._resize();
+  }
+  componentWillReceiveProps(nextProps) {
+    'value' in nextProps && this.setState({value: nextProps.value});
+  }
+  componentDidUpdate(prevProps, prevState) {
+    this.state.height !== prevState.height && this.props.onHeightChange(this.state.height, prevState.height);
+  }
+  _resize() {
+    this.setState({
+      height: calHeight.bind(ReactDOM.findDOMNode(this))(this.props.minRows, this.props.maxRows)
+    });
+  }
+  _handleChange(e) {
+    this._resize();
+    const value = e.target.value;
+    this.setState({value});
+    this.props.onChange(value);
+  }
+  render() {
+    let {
+      onChange,
+      value,
+      ...props
+    } = this.props;
+    props = {
+      ...props
+    };
+    props.style = {
+      ...props.style,
+      height: this.state.height
+    };
+    return (<textarea onChange={this._handleChange} value={this.state.value} {...props}/>);
+  }
+}
+Textarea.displayName = 'Textarea';
+Textarea.propTypes = {
+  /**
+   * the maximum number of rows
+   */
+  maxRows: React.PropTypes.number,
+  /**
+   * the minimum number of rows
+   */
+  minRows: React.PropTypes.number,
+  /**
+   * callback when text changes
+   */
+  onChange: React.PropTypes.func,
+  /**
+   * callback when height changes
+   */
+  onHeightChange: React.PropTypes.func,
+  /**
+   * current value of textarea
+   */
+  value: React.PropTypes.string
+};
+Textarea.defaultProps = {
+  minRows: 3,
+  maxRows: 5,
+  onChange: () => {},
+  onHeightChange: () => {}
+};
+export default Textarea;
+ at SyntaxError: Unexpected token (39:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2189:12)
+    at Parser.pp$3.parsePropertyName (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2052:101)
+    at Parser.pp$3.parseObj (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1988:14)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1414:19)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

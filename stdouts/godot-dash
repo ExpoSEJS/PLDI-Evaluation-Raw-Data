@@ -1,0 +1,178 @@
+
+> ws@0.4.25 install /root/Targets/godot-dash/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/godot-dash/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:94: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/godot-dash/node_modules/ws/build'
+/root/Targets/godot-dash
+└─┬ godot-dash@0.0.1 
+  ├─┬ ecstatic@0.4.13 
+  │ ├── ent@0.0.7 
+  │ ├── mime@1.2.11 
+  │ └─┬ optimist@0.3.7 
+  │   └── wordwrap@0.0.3 
+  ├─┬ engine.io@0.6.2 
+  │ ├── base64id@0.1.0 
+  │ ├── debug@0.6.0 
+  │ ├── engine.io-parser@0.3.0 
+  │ └─┬ ws@0.4.25 
+  │   ├── commander@0.6.1 
+  │   ├── options@0.0.6 
+  │   └── tinycolor@0.0.1 
+  └─┬ godot@0.5.3 
+    ├── backoff@2.1.0 
+    ├─┬ graphite@0.0.6 
+    │ ├── lazy-socket@0.0.3 
+    │ └── request@2.1.1 
+    ├── ip@0.0.5 
+    ├── json-stream@0.1.2 
+    ├── node-uuid@1.4.0 
+    ├── redis@0.8.2 
+    ├─┬ sendgrid-web@0.0.4 
+    │ └── request@2.9.100 
+    ├── telenode@0.0.3 
+    ├─┬ utile@0.1.7 
+    │ ├── async@0.1.22 
+    │ ├── deep-equal@1.0.1 
+    │ ├── i@0.3.5 
+    │ ├─┬ mkdirp@0.5.1 
+    │ │ └── minimist@0.0.8 
+    │ ├── ncp@0.2.7 
+    │ └── rimraf@1.0.9 
+    └── window-stream@0.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/godot-dash/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0576 took 5.8413s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'static' is reserved (22:6) on program var path = require('path');
+
+var ecstatic = require('ecstatic');
+
+module.exports = function createMiddleware(options) {
+
+  options = options || {};
+
+  var mount = options.mount || '/',
+      root = options.root || path.resolve(__dirname, '../public'),
+      cFile = options.config || path.resolve(__dirname, '../config.json');
+
+  if (mount.slice(-1) !== '/') {
+    mount += '/';
+  }
+  if (mount.slice(0, 1) !== '/') {
+    mount = '/' + mount;
+  }
+
+  var configRoute = new RegExp('^' + mount + 'config'),
+      config = require('./config')(cFile),
+      static = ecstatic({ root: root, mount: mount });
+
+  return function middleware(req, res, next) {
+    next = next || function (err) {
+      //
+      // Very basic error handling
+      //
+      res.setHeader('content-type', 'text/plain');
+      if (err) {
+        res.statusCode = 500;
+        res.end(err.stack);
+      }
+      else {
+        res.statusCode = 404;
+        res.end('404 Not Found');
+      }
+    };
+
+    var conf = '';
+
+    if (req.url.match(configRoute)) {
+      switch (req.method) {
+        case 'GET':
+          config.load(function (err, conf) {
+            if (err) {
+              if (err.code == 'ENOENT') {
+                return json(res, {});
+              }
+              return next(err);
+            }
+            json(res, conf);
+          });
+        break;
+        case 'POST':
+          if (req.body) {
+            conf = req.body;
+            save();
+          }
+          else {
+            req.on('data', function (d) {
+              conf += d.toString();
+            });
+            req.on('end', function () {
+              try {
+                conf = JSON.parse(conf);
+              }
+              catch (err) {
+                return next(err);
+              }
+              save();
+            });
+          }
+
+          function save() {
+            config.save(conf, function (err, conf) {
+              if (err) {
+                return next(err);
+              }
+              json(res, conf);
+            });
+          }
+        break;
+        default:
+          next();
+        break;
+      }
+
+      return;
+    }
+
+    static(req, res, next);
+  };
+
+  function json(res, obj) {
+    res.setHeader('content-type', 'application/json');
+    try {
+      res.end(JSON.stringify(obj, true, 2));
+    }
+    catch (err) {
+      next(err);
+    }
+  }
+};
+ at SyntaxError: The keyword 'static' is reserved (22:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/godot-dash/node_modules/godot-dash/index.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

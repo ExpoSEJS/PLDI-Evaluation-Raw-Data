@@ -1,0 +1,76 @@
+/root/Targets/crass
+└─┬ crass@0.10.4 
+  ├─┬ color-convert@1.9.0 
+  │ └── color-name@1.1.3 
+  ├─┬ strong-data-uri@1.0.4 
+  │ └── truncate@1.0.5 
+  └─┬ svgo@0.7.2 
+    ├─┬ coa@1.0.4 
+    │ └── q@1.5.0 
+    ├── colors@1.1.2 
+    ├─┬ csso@2.3.2 
+    │ ├─┬ clap@1.2.3 
+    │ │ └─┬ chalk@1.1.3 
+    │ │   ├── ansi-styles@2.2.1 
+    │ │   ├── escape-string-regexp@1.0.5 
+    │ │   ├─┬ has-ansi@2.0.0 
+    │ │   │ └── ansi-regex@2.1.1 
+    │ │   ├── strip-ansi@3.0.1 
+    │ │   └── supports-color@2.0.0 
+    │ └── source-map@0.5.7 
+    ├─┬ js-yaml@3.7.0 
+    │ ├─┬ argparse@1.0.9 
+    │ │ └── sprintf-js@1.0.3 
+    │ └── esprima@2.7.3 
+    ├─┬ mkdirp@0.5.1 
+    │ └── minimist@0.0.8 
+    ├── sax@1.2.4 
+    └── whet.extend@0.9.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/crass/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 72% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","pop"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0347 took 32.4693s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'distance' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/crass/node_modules/crass/dist/index.js. Coverage (Term): 36% Coverage (LOC): 50%
+*- File /root/Targets/crass/node_modules/crass/dist/grammar.js. Coverage (Term): 59% Coverage (LOC): 86%
+*- File /root/Targets/crass/node_modules/crass/dist/objects.js. Coverage (Term): 28% Coverage (LOC): 27%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/AdjacentSelector.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/helpers/chainedSelectorFactory.js. Coverage (Term): 53% Coverage (LOC): 72%
+*- File /root/Targets/crass/node_modules/crass/dist/optimization.js. Coverage (Term): 17% Coverage (LOC): 42%
+*- File /root/Targets/crass/node_modules/crass/dist/colors.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/crass/node_modules/crass/dist/utils.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/crass/node_modules/crass/dist/optimizations/mergeRulesets.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/AttributeSelector.js. Coverage (Term): 25% Coverage (LOC): 36%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/Charset.js. Coverage (Term): 44% Coverage (LOC): 73%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/ClassSelector.js. Coverage (Term): 48% Coverage (LOC): 73%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/CounterStyle.js. Coverage (Term): 25% Coverage (LOC): 42%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/CustomIdent.js. Coverage (Term): 45% Coverage (LOC): 73%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/Declaration.js. Coverage (Term): 14% Coverage (LOC): 28%
+*- File /root/Targets/crass/node_modules/crass/dist/browser_support.js. Coverage (Term): 71% Coverage (LOC): 81%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/DescendantSelector.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/Dimension.js. Coverage (Term): 30% Coverage (LOC): 56%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/DirectDescendantSelector.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/ElementSelector.js. Coverage (Term): 30% Coverage (LOC): 44%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/Expression.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/FontFace.js. Coverage (Term): 28% Coverage (LOC): 48%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/FontFeatureValues.js. Coverage (Term): 26% Coverage (LOC): 46%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/FontFeatureValuesBlock.js. Coverage (Term): 28% Coverage (LOC): 52%
+*- File /root/Targets/crass/node_modules/crass/dist/nodes/Func.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/crass/node_modules/color-convert/index.js. Coverage (Term): 29% Coverage (LOC): 29%
+*- File /root/Targets/crass/node_modules/color-convert/conversions.js. Coverage (Term): 8% Coverage (LOC): 19%
+*- File /root/Targets/crass/node_modules/color-name/index.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/crass/node_modules/color-convert/route.js. Coverage (Term): 46% Coverage (LOC): 52%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

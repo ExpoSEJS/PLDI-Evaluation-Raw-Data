@@ -1,0 +1,82 @@
+
+> bcrypt@0.8.7 install /root/Targets/geddy-passport/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/geddy-passport/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/bcrypt_lib.node
+  COPY Release/bcrypt_lib.node
+make: Leaving directory '/root/Targets/geddy-passport/node_modules/bcrypt/build'
+/root/Targets/geddy-passport
+└─┬ geddy-passport@0.1.8 
+  ├─┬ bcrypt@0.8.7 
+  │ ├── bindings@1.2.1 
+  │ └── nan@2.3.5 
+  ├─┬ jake@0.5.18 
+  │ ├─┬ minimatch@0.2.14 
+  │ │ ├── lru-cache@2.7.3 
+  │ │ └── sigmund@1.0.1 
+  │ └── utilities@0.0.40 
+  ├─┬ nodemailer@0.6.5 
+  │ ├── directmail@0.1.8 
+  │ ├── he@0.3.6 
+  │ ├─┬ mailcomposer@0.2.12 
+  │ │ ├─┬ dkim-signer@0.1.2 
+  │ │ │ └── punycode@1.2.4 
+  │ │ ├─┬ follow-redirects@0.0.3 
+  │ │ │ └── underscore@1.8.3 
+  │ │ ├── mime@1.2.11 
+  │ │ └─┬ mimelib@0.2.19 
+  │ │   ├── addressparser@0.3.2 
+  │ │   └─┬ encoding@0.1.12 
+  │ │     └── iconv-lite@0.4.19 
+  │ ├── public-address@0.1.2 
+  │ ├─┬ readable-stream@1.1.14 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ └─┬ simplesmtp@0.3.35 
+  │   ├── rai@0.1.12 
+  │   └── xoauth2@0.1.8 
+  ├─┬ passport@0.1.18 
+  │ ├── pause@0.0.1 
+  │ └── pkginfo@0.2.3 
+  ├── passport-facebook@0.1.6 
+  ├─┬ passport-oauth@0.1.15 
+  │ └── oauth@0.9.15 
+  ├── passport-twitter@0.1.5 
+  └── passport-yammer@0.1.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/geddy-passport/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 41% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","getFileName","apply","join","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0494 took 3.985s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Could not locate the bindings file. Tried:
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Debug/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/out/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/Release/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/build/default/bcrypt_lib.node
+ → /root/ExpoSE/Analyser/node_modules/jalangi2/compiled/7.5.0/linux/x64/bcrypt_lib.node
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/geddy-passport/node_modules/geddy-passport/lib/passport/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/geddy-passport/node_modules/bcrypt/bcrypt.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/geddy-passport/node_modules/bindings/bindings.js. Coverage (Term): 86% Coverage (LOC): 91%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

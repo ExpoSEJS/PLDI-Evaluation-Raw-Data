@@ -1,0 +1,43 @@
+/root/Targets/silkyjs
+└─┬ silkyjs@0.1.0 
+  ├── html2template-hs@0.4.5 
+  ├── object.observe@0.2.6 
+  ├─┬ observe-deep@0.1.0 
+  │ └─┬ debug@2.6.9 
+  │   └── ms@2.0.0 
+  └─┬ virtual-dom@2.1.1 
+    ├── browser-split@0.0.1 
+    ├─┬ error@4.4.0 
+    │ ├── camelize@1.0.0 
+    │ ├── string-template@0.2.1 
+    │ └── xtend@4.0.1 
+    ├─┬ ev-store@7.0.0 
+    │ └── individual@3.0.0 
+    ├─┬ global@4.3.2 
+    │ ├─┬ min-document@2.19.0 
+    │ │ └── dom-walk@0.1.1 
+    │ └── process@0.5.2 
+    ├── is-object@1.0.1 
+    ├── next-tick@0.2.2 
+    ├── x-is-array@0.1.0 
+    └── x-is-string@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/silkyjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 39% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Date","bind"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0359 took 13.1252s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: document is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/silkyjs/node_modules/silkyjs/dist/Silky.min.js. Coverage (Term): 21% Coverage (LOC): 40%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

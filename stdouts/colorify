@@ -1,0 +1,48 @@
+/root/Targets/colorify
+└─┬ colorify@0.2.0 
+  ├─┬ color@0.10.1 
+  │ ├── color-convert@0.5.3 
+  │ └─┬ color-string@0.3.0 
+  │   └── color-name@1.1.3 
+  ├── color-blind@0.1.1 
+  ├── color-harmony@0.3.0 
+  ├── color-quantize@0.1.1 
+  ├── color-scheme@0.0.5 
+  ├─┬ color-stats@0.5.0 
+  │ └── color-convert@0.6.0 
+  ├── colorconverter@0.1.1 
+  ├─┬ colorname@1.2.0 
+  │ ├─┬ color@0.5.0 
+  │ │ ├── color-convert@0.2.1 
+  │ │ └── color-string@0.1.3 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ variable-name@0.0.1 
+  │   └── anglicize@0.0.5 
+  ├── commander@2.11.0 
+  ├── cycle@1.0.3 
+  ├── jsonfn@0.31.0 
+  ├── object-path-get@0.0.2 
+  ├── onecolor@2.5.0 
+  └── random-seed@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/colorify/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.072 took 4.2939s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: lib is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/colorify/node_modules/colorify/lib/colorify.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

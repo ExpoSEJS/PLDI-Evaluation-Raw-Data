@@ -1,0 +1,68 @@
+/root/Targets/webmaker
+└─┬ webmaker@0.1.8 
+  ├── clone@0.1.18 
+  ├─┬ event-emitter@0.3.1 
+  │ ├── d@0.1.1 
+  │ └─┬ es5-ext@0.10.30 
+  │   ├─┬ es6-iterator@2.0.1 
+  │   │ └── d@1.0.0 
+  │   └─┬ es6-symbol@3.1.1 
+  │     └── d@1.0.0 
+  ├── fastclick@1.0.3 
+  ├─┬ firebase@2.0.4 
+  │ └─┬ faye-websocket@0.11.1 
+  │   └─┬ websocket-driver@0.7.0 
+  │     ├── http-parser-js@0.4.7 
+  │     └── websocket-extensions@0.1.2 
+  ├── langmap@0.0.9 
+  ├─┬ localforage@1.1.1 
+  │ └─┬ promise@5.0.0 
+  │   └── asap@1.0.0 
+  ├─┬ lodash.throttle@2.4.1 
+  │ ├─┬ lodash.debounce@2.4.1 
+  │ │ └─┬ lodash.now@2.4.1 
+  │ │   └── lodash._isnative@2.4.1 
+  │ ├── lodash.isfunction@2.4.1 
+  │ └─┬ lodash.isobject@2.4.1 
+  │   └── lodash._objecttypes@2.4.1 
+  ├── moment@2.9.0 
+  ├─┬ page@1.5.0 
+  │ └─┬ path-to-regexp@1.0.3 
+  │   └── isarray@0.0.1 
+  ├── sortable@0.5.2  (git://github.com/k88hudson/Sortable.git#5e983264d1d9c0784a3560e5fcb7ad9439e6d24b)
+  ├─┬ vue@0.10.6  (git://github.com/k88hudson/vue.git#d7c0e1aba4bb988b8faa76fe82c953f39de4ce51)
+  │ └─┬ notevil@0.8.1 
+  │   ├── esprima@1.0.4 
+  │   └── hoister@0.0.2 
+  ├── watchjs@0.0.0 
+  ├── webmaker-app-icons@1.5.2  (git://github.com/k88hudson/ionicons.git#1101204fe122bb37908573d10811dfe6b80cbea3)
+  └─┬ xhr@1.16.1 
+    ├─┬ global@4.3.2 
+    │ ├─┬ min-document@2.19.0 
+    │ │ └── dom-walk@0.1.1 
+    │ └── process@0.5.2 
+    ├── once@1.1.1 
+    └─┬ parse-headers@2.0.1 
+      ├─┬ for-each@0.3.2 
+      │ └── is-function@1.0.1 
+      └── trim@0.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/webmaker/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0339 took 4.0697s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'gulp'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/webmaker/node_modules/webmaker/export.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

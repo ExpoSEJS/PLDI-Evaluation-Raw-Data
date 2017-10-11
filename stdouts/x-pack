@@ -1,0 +1,634 @@
+/root/Targets/x-pack
+└── x-pack@0.0.27 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/x-pack/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0238 took 4.5549s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (247:11) on program 
+
+module.exports = (function() {
+	var Davis = function() { return new Davis.fn.ctor(arguments); };
+
+    //**************************
+    // hiddens
+    //
+    //**************************
+    var x = {};
+    x.typeof = function(o) {
+        if(o === undefined) {
+            return 'undefined';
+        }
+        else if(o === null) {
+            return 'null';
+        }
+        else if(o === true || o === false || o instanceof Boolean) {
+            return 'boolean';
+        }
+        else if('string' === typeof o || o instanceof String) {
+            return 'string';
+        }
+        else if('number' === typeof o || o instanceof Number) {
+            return 'number';
+        }
+        else if('function' === typeof o || o instanceof Function) {
+            return 'function';
+        }
+        else if(o instanceof Date) {
+            return 'date';
+        }
+        else if(o instanceof RegExp) {
+            return 'regexp';
+        }
+        else {
+            return Object.prototype.toString.call(o).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+        }
+    };
+    x.typeis = function(o, type) {
+        return x.typeof(o) === type;
+    };
+    x.ctorof = function(o) {
+        var m;
+        if(o === undefined || o === null || !o.constructor) {
+            return undefined;
+        }
+        else if((m = o.constructor.toString().match(/function(.?)\(/)) !== null) {
+            m = m[1].trim();
+            if(m.length > 0) {
+                return m;
+            }
+        }
+        return undefined;
+    };
+    x.ctoris = function(o, name) {
+        return x.ctorof(o) === name;
+    };
+
+
+    //**************************
+    // public statics
+    //
+    //**************************
+    Davis.ctorof = function(o) {
+        return x.ctorof(o);
+    };
+    Davis.ctoris = function(o, name) {
+        return x.ctoris(o, name);
+    };
+    Davis.typeof = function(o) {
+        return x.typeof(o);
+    };
+    Davis.typeis = function(o, type) {
+        return x.typeis(o, type);
+    };
+    Davis.isArguments = function(o) {
+        return x.typeis(o, 'arguments');
+    };
+    Davis.isArray = function(o) {
+        return x.typeis(o, 'array');
+    };
+    Davis.isBoolean = function(o) {
+        return x.typeis(o, 'boolean');
+    };
+    Davis.isBuffer = function(o) {
+        return x.typeis(o, 'uint');
+    };
+    Davis.isDate = function(o) {
+        return x.typeis(o, 'date');
+    };
+    Davis.isDefined = function(o) {
+        return !x.typeis(o, 'undefined');
+    };
+    Davis.isError = function(o) {
+        return x.typeis(o, 'error');
+    };
+    Davis.isFunction = function(o) {
+        return x.typeis(o, 'function');
+    };
+    Davis.isNull = function(o) {
+        return x.typeis(o, 'null');
+    };
+    Davis.isNullOrUndefined = function(o) {
+        return x.typeis(o, 'null') || x.typeis(o, 'undefined');
+    };
+    Davis.isNumber = function(o) {
+        return x.typeis(o, 'number');
+    };
+    Davis.isNumeric = function(o) {
+        return x.typeis(o, 'number') || (x.typeis(o, 'string') && /^-?\d+\.?\d*$/.test(o));
+    };
+    Davis.isObject = function(o) {
+        return x.typeis(o, 'object');
+    };
+    Davis.isObjectOrArray = function(o) {
+        return x.typeis(o, 'object') || x.typeis(o, 'array');
+    };
+    Davis.isPrimitive = function(o) {
+        return x.typeis(o, 'undefined') || x.typeis(o, 'null') || 
+            x.typeis(o, 'string') || x.typeis(o, 'number') || x.typeis(o, 'boolean');
+    };
+    Davis.isRegexp = function(o) {
+        return x.typeis(o, 'regexp');
+    };
+    Davis.isString = function(o) {
+        return x.typeis(o, 'string');
+    };
+    Davis.isStringOrNumber = function(o) {
+        return x.typeis(o, 'string') || x.typeis(o, 'number');
+    };
+    Davis.isSymbol = function(o) {
+        return x.typeis(o, 'symbol');
+    };
+    Davis.isUndefined = function(o) {
+        return x.typeis(o, 'undefined');
+    };
+	Davis.isArrayLike = function(o) {
+        if(Davis.isPrimitive(o)) return false;
+	    else if(Davis.isArray(o)) return true;
+	    else if(Davis.isArguments(o)) return true;
+		else if(Davis.isNumber(o.length) && !Davis.isUndefined(o[o.length - 1])) return true;
+		else return false;
+	};	
+	Davis.has = function(o, checker) {
+	    if(Davis.isDefined(o[checker])) {
+	        return true;
+	    }
+	    return false;
+	};
+	Davis.slice = function(o, from, to) {
+	    var sliced = [];
+	    if(Davis.isArrayLike(o)) {
+	        sliced = Array.prototype.slice.call(o, from, to);
+	    }
+	    return sliced;
+	};
+	Davis.assert = function(o, checkers, nameOfObject) {
+	    if(Davis.isString(checkers)) {
+            checkers = checkers.split(',');
+            checkers = checkers.map((checker)=> {
+                return checker.trim();
+            });
+	        try {
+	            checkers.forEach((checker)=> {
+	                if(x.typeis(o, checker.trim())) {
+	                    throw true;
+	                }
+	            });
+	        }
+	        catch(quite) {
+	            return o;
+	        }
+            var msg = Davis.isString(nameOfObject)? nameOfObject + ' ': 'value ';
+            if(checkers.length === 1) {
+                msg += 'must be a/an ' + checkers[0];
+            }
+            else {
+                msg += 'must be a/an ' + checkers.join(', ');
+                msg = msg.replace(/, [\w|^,]+$/, ' or ' + checkers[checkers.length - 1]);
+            }
+                msg += ': ' + x.typeof(o);
+            throw Error(msg);
+	    }
+	    else if(Davis.isBoolean(checkers)) {
+	        if(checkers === false) {
+	            let msgs = Davis.slice(arguments, 2);
+	            let msg = msgs.join(' ');
+                    msg += ': ' + x.typeof(o);
+                throw Error(msg);
+	        }
+	    }
+	    return o;
+	};
+	Davis.indexOf = function(o, checker) {
+	    if(o && Davis.isFunction(o.indexOf)) {
+	        return o.indexOf(checker);
+	    }
+	    else if(Davis.isArrayLike(o)) {
+	        for(let i=0; i<o.length; i++) {
+	            if(o[i] === checker) {
+	                return i;
+	            }
+	        }
+	    }
+	    return -1;
+	};
+	Davis.lastIndexOf = function(o, checker) {
+	    if(Davis.isFunction(o.lastIndexOf)) {
+	        return o.lastIndexOf(checker);
+	    }
+	    else if(Davis.isArrayLike(o)) {
+	        for(let i=o.length -1; i<= 0; i--) {
+	            if(o[i] === checker) {
+	                return i;
+	            }
+	        }
+	    }
+	    return -1;
+	};
+	Davis.contains = function(o, checker) {
+	    return Davis.indexOf(o, checker) > -1;
+	};
+	Davis.containsAny = function(o, checker) {
+	    if(Davis.isArrayLike(checker)) {
+	        for(let i=0; i<checker.length; i++) {
+	            if(Davis.contains(o, checker[i])) {
+	                return true;
+	            }
+	        }
+	    }
+	    return Davis.contains(o, checker);
+	};
+	Davis.startsWith = function(o, checker) {
+	    return Davis.indexOf(o, checker) === 0;
+	};
+	Davis.endsWith = function(o, checker) {
+	    if(Davis.isArrayLike(o)) {
+	        return Davis.lastIndexOf(o, checker) === (o.length -1);
+	    }
+	    else if(Davis.isString(o) && Davis.isString(checker)) {
+	        return Davis.lastIndexOf(o, checker) === (o.length - checker.length -1);
+	    }
+	    return false;
+	};
+	Davis.equal = function(o, checker) {
+	    const assert = require('assert');
+	    try {
+	        assert.deepStrictEquel(o, checker);
+	        return true;
+	    }
+	    catch(err) {
+	        return false;
+	    }
+	};
+    Davis.clone = function(o) {
+        var cloned;
+        if('object' !== typeof o || null === o) {
+            cloned = o;
+        }
+        else {
+            cloned = Object.create(Object.getPrototypeOf(o));
+            Object.getOwnPropertyNames(o).forEach(function (prop) {
+                Object.defineProperty(
+                    cloned, 
+                    prop, 
+                    Object.getOwnPropertyDescriptor(o, prop)
+                );
+            });
+        }
+        return cloned;
+    };
+	Davis.merge = function() {
+		var args= arguments, opts= {}, opt, alts, alt;
+		for(var i=0, len=args.length; i<len; i++) {
+			alts = args[i];
+			if(Davis.isObject(alts)) {
+    			for(var prop in alts) {
+    				opt = opts[prop];
+    				alt = alts[prop];
+    				// just copy
+    				if(Davis.isNullOrUndefined(opt)) {
+    					opts[prop] = Davis.clone(alt);
+    				} 
+    				// deep copy
+    				else if(Davis.isObject(opt) && Davis.isObject(alt)) {
+				        opts[prop] = Davis.merge(opt, alt);
+    				} 
+    				// typed copy
+    				else if(typeof opt === typeof alt) {
+				        opts[prop] = Davis.clone(alt);
+    				} 
+    			}	
+			}
+		}
+		return opts;
+	};
+	Davis.mergeForce = function() {
+		var args= arguments, opts= {}, opt, alts, alt;
+		for(var i=0, len=args.length; i<len; i++) {
+			alts = args[i];
+			if(Davis.isObject(alts)) {
+    			for(var prop in alts) {
+    				opt = opts[prop];
+    				alt = alts[prop];
+    				// deep copy
+    				if(Davis.isObject(opt) && Davis.isObject(alt)) {
+				        opts[prop] = Davis.mergeForce(opt, alt);
+    				} 
+    				// just copy
+    				else {
+				        opts[prop] = Davis.clone(alt);
+    				} 
+   			    }	
+			}
+		}
+		return opts;
+	};
+	Davis.lookup = function(o, depth) {
+	    var report= {
+    	        type: Davis.typeof(o)
+	        };
+	    depth = Davis.isNumber(depth)? depth: 2;
+        
+        if(Davis.isPrimitive(o)) {
+	        report.value = o;
+	    }
+	    else if(Davis.isArray(o)) {
+	        report.value = o;
+	    }
+	    else if(Davis.isDate(o)) {
+	        report.value = o.toString();
+	    }
+	    else if(Davis.isRegexp(o)) {
+	        report.value = o.toString();
+	    }
+	    else if(depth > 0) {
+	        report.constructor = Davis.ctorof(o);
+	        report.lookup = {};
+	        Object.getOwnPropertyNames(o).forEach((name) => {
+	            report.lookup[name] = Davis.lookup(o[name], depth -1);
+	        });
+	    }
+	    return report;
+	};
+
+
+    //**************************
+    // for instantiation
+    //
+    //**************************
+    Davis.fn = Davis.prototype;
+    Davis.fn.constructor = Davis;
+    Davis.fn.ctor = function(args) {
+        var t = this;
+        t.obj = args[0];
+        t.options = Davis.isObject(args[1])? args[1]: {};
+        return t;
+    };
+    Davis.fn.ctor.prototype = Davis.fn;
+    //**************************
+    // public prototypes
+    //
+    //**************************
+    Davis.fn.ctoris = function(name, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.ctoris(this.obj, name));
+            return this;
+        }
+        return Davis.constis(this.obj, name);
+    };
+    Davis.fn.typeis = function(type, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.typeis(this.obj, type));
+            return this;
+        }
+        return Davis.typeis(this.obj, type);
+    };
+    Davis.fn.isArray = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isArray(this.obj));
+            return this;
+        }
+        return Davis.isArray(this.obj);
+    };
+    Davis.fn.isBoolean = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isBoolean(this.obj));
+            return this;
+        }
+        return Davis.isBoolean(this.obj);
+    };
+    Davis.fn.isBuffer = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isBuffer(this.obj));
+            return this;
+        }
+        return Davis.isBuffer(this.obj);
+    };
+    Davis.fn.isDate = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isDate(this.obj));
+            return this;
+        }
+        return Davis.isDate(this.obj);
+    };
+    Davis.fn.isDefined = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isDefined(this.obj));
+            return this;
+        }
+        return Davis.isDefined(this.obj);
+    };
+    Davis.fn.isError = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isError(this.obj));
+            return this;
+        }
+        return Davis.isError(this.obj);
+    };
+    Davis.fn.isFunction = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isFunction(this.obj));
+            return this;
+        }
+        return Davis.isFunction(this.obj);
+    };
+    Davis.fn.isNull = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isNull(this.obj));
+            return this;
+        }
+        return Davis.isNull(this.obj);
+    };
+    Davis.fn.isNullOrUndefined = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isNullOrUndefined(this.obj));
+            return this;
+        }
+        return Davis.isNullOrUndefined(this.obj);
+    };
+    Davis.fn.isNumber = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isNumber(this.obj));
+            return this;
+        }
+        return Davis.isNumber(this.obj);
+    };
+    Davis.fn.isObject = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isObject(this.obj));
+            return this;
+        }
+        return Davis.isObject(this.obj);
+    };
+    Davis.fn.isObjectOrArray = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isObjectOrArray(this.obj));
+            return this;
+        }
+        return Davis.isObjectOrArray(this.obj);
+    };
+    Davis.fn.isPrimitive = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isPrimitive(this.obj));
+            return this;
+        }
+        return Davis.isPrimitive(this.obj);
+    };
+    Davis.fn.isRegexp = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isRegexp(this.obj));
+            return this;
+        }
+        return Davis.isRegexp(this.obj);
+    };
+    Davis.fn.isString = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isString(this.obj));
+            return this;
+        }
+        return Davis.isString(this.obj);
+    };
+    Davis.fn.isStringOrNumber = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isStringOrNumber(this.obj));
+            return this;
+        }
+        return Davis.isStringOrNumber(this.obj);
+    };
+    Davis.fn.isSymbol = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isSymbol(this.obj));
+            return this;
+        }
+        return Davis.isSymbol(this.obj);
+    };
+    Davis.fn.isUndefined = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isUndefined(this.obj));
+            return this;
+        }
+        return Davis.isUndefined(this.obj);
+    };
+	Davis.fn.isArrayLike = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.isArrayLike(this.obj));
+            return this;
+        }
+        return Davis.isArrayLike(this.obj);
+	};	
+	Davis.fn.has = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.has(this.obj, checker));
+            return this;
+        }
+        return Davis.has(this.obj, checker);
+	};	
+	Davis.fn.indexOf = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.indexOf(this.obj, checker));
+            return this;
+        }
+        return Davis.indexOf(this.obj, checker);
+	};	
+	Davis.fn.lastIndexOf = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.lastIndexOf(this.obj, checker));
+            return this;
+        }
+        return Davis.lastIndexOf(this.obj, checker);
+	};	
+	Davis.fn.contains = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.contains(this.obj, checker));
+            return this;
+        }
+        return Davis.contains(this.obj, checker);
+	};	
+	Davis.fn.containsAny = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.containsAny(this.obj, checker));
+            return this;
+        }
+        return Davis.containsAny(this.obj, checker);
+	};	
+	Davis.fn.startsWith = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.startsWith(this.obj, checker));
+            return this;
+        }
+        return Davis.startsWith(this.obj, checker);
+	};	
+	Davis.fn.endsWith = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.endsWith(this.obj, checker));
+            return this;
+        }
+        return Davis.endsWith(this.obj, checker);
+	};	
+	Davis.fn.equal = function(checker, callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.equal(this.obj, checker));
+            return this;
+        }
+        return Davis.equal(this.obj, checker);
+	};	
+	Davis.fn.clone = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.clone(this.obj));
+            return this;
+        }
+        return Davis.clone(this.obj);
+	};	
+	Davis.fn.merge = function() {
+	    var args= Davis.slice(arguments), callback= args[args.length -1];
+		args.unshift(this.obj);
+		this.obj = Davis.merge.apply(this, args);
+        if(Davis.isFunction(callback)) {
+            callback.call(this, this.obj);
+            return this;
+        }
+        return this.obj;
+	};	
+	Davis.fn.mergeForce = function() {
+	    var args= Davis.slice(arguments), callback= args[args.length -1];
+		args.unshift(this.obj);
+		this.obj = Davis.mergeForce.apply(this, args);
+        if(Davis.isFunction(callback)) {
+            callback.call(this, this.obj);
+            return this;
+        }
+        return this.obj;
+	};	
+	Davis.fn.lookup = function(callback) {
+        if(Davis.isFunction(callback)) {
+            callback.call(this, Davis.lookup(this.obj));
+            return this;
+        }
+        return Davis.lookup(this.obj);
+	};	
+    return Davis;
+})(); at SyntaxError: Unexpected token (247:11)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/x-pack/node_modules/x-pack/index.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

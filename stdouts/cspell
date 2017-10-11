@@ -1,0 +1,76 @@
+/root/Targets/cspell
+└─┬ cspell@1.10.3 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── commander@2.11.0 
+  ├─┬ comment-json@1.1.3 
+  │ └─┬ json-parser@1.1.5 
+  │   └── esprima@2.7.3 
+  ├─┬ configstore@3.1.3  (git+https://github.com/Jason3S/configstore.git#101c774d74ad458618ee26a9825bc1da1b958154)
+  │ ├─┬ dot-prop@4.2.0 
+  │ │ └── is-obj@1.0.1 
+  │ ├── graceful-fs@4.1.11 
+  │ ├─┬ make-dir@1.0.0 
+  │ │ └── pify@2.3.0 
+  │ ├─┬ unique-string@1.0.0 
+  │ │ └── crypto-random-string@1.0.0 
+  │ ├─┬ write-file-atomic@2.3.0 
+  │ │ ├── imurmurhash@0.1.4 
+  │ │ └── signal-exit@3.0.2 
+  │ └── xdg-basedir@3.0.0 
+  ├── cspell-dict-django@1.0.2 
+  ├── cspell-dict-en-gb@1.0.4 
+  ├── cspell-dict-en_us@1.1.4 
+  ├── cspell-dict-golang@1.1.2 
+  ├── cspell-dict-python@1.0.2 
+  ├─┬ cspell-lib@1.0.2 
+  │ ├── iconv-lite@0.4.19 
+  │ └── rxjs-stream@1.0.4 
+  ├─┬ cspell-trie@1.6.7 
+  │ └─┬ fs-extra@4.0.2 
+  │   └── jsonfile@4.0.0 
+  ├─┬ fs-extra@3.0.1 
+  │ ├── jsonfile@3.0.1 
+  │ └── universalify@0.1.1 
+  ├── gensequence@2.1.1 
+  ├─┬ glob@7.1.2 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├── once@1.4.0 
+  │ └── path-is-absolute@1.0.1 
+  ├─┬ minimatch@3.0.4 
+  │ └─┬ brace-expansion@1.1.8 
+  │   ├── balanced-match@1.0.0 
+  │   └── concat-map@0.0.1 
+  ├─┬ rxjs@5.4.3 
+  │ └── symbol-observable@1.0.4 
+  ├── rxjs-from-iterable@1.0.5 
+  ├── vscode-uri@1.0.1 
+  └── xregexp@3.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cspell/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0933 took 5.4518s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: Text is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/cspell/node_modules/cspell/dist/index.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

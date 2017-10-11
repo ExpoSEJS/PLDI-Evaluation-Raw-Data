@@ -1,0 +1,67 @@
+lodash@4.17.4 node_modules/testfauxton/node_modules/babel-cli/node_modules/lodash -> node_modules/babel-cli/node_modules/lodash
+babel-cli@6.26.0 node_modules/testfauxton/node_modules/babel-cli -> node_modules/babel-cli
+babel@6.23.0 node_modules/babel -> node_modules/testfauxton/node_modules/babel
+/root/Targets/testfauxton
+└─┬ testfauxton@1.1.9 
+  ├─┬ css-loader@0.23.1
+  │ └─┬ cssnano@3.10.0
+  │   └─┬ postcss-svgo@2.1.6
+  │     └─┬ svgo@0.7.2
+  │       └─┬ csso@2.3.2
+  │         └── clap@1.2.3 
+  ├── UNMET PEER DEPENDENCY react@15.0.2
+  ├── UNMET PEER DEPENDENCY react-dom@15.0.2
+  └── visualizeRevTree@0.0.1  (git+https://github.com/neojski/visualizeRevTree.git#e90e372f381508c9d2c305bd74b84a032005c77d)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/testfauxton/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 30% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 30% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 30% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 30% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 30% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","join","parseInt","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","call","RegExp","WeakMap","Array","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0568 took 26.8925s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 27.3365 took 29.8896s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
+* Error: TypeError: Cannot read property 'contentSecurityPolicy' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 57.4759 took 37.8606s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
+* Error: TypeError: Cannot read property 'contentSecurityPolicy' of null
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
+*- File /root/Targets/testfauxton/node_modules/testfauxton/index.js. Coverage (Term): 19% Coverage (LOC): 17%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy/index.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/testfauxton/node_modules/eventemitter3/index.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy/passes/web-incoming.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy/passes/web-outgoing.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy/common.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/testfauxton/node_modules/requires-port/index.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/testfauxton/node_modules/http-proxy/lib/http-proxy/passes/ws-incoming.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/testfauxton/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/http-errors/index.js. Coverage (Term): 42% Coverage (LOC): 37%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
+*- File /root/Targets/testfauxton/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/testfauxton/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/testfauxton/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/testfauxton/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/testfauxton/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/fresh/index.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/testfauxton/node_modules/send/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 34%
+*- File /root/Targets/testfauxton/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/testfauxton/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/testfauxton/node_modules/lodash/index.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 2 errors **

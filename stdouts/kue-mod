@@ -1,0 +1,61 @@
+
+> hiredis@0.5.0 install /root/Targets/kue-mod/node_modules/hiredis
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/kue-mod/node_modules/hiredis/build'
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/sds.o
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/read.o
+  AR(target) Release/obj.target/deps/hiredis-c.a
+  COPY Release/hiredis-c.a
+  CXX(target) Release/obj.target/hiredis/src/hiredis.o
+  CXX(target) Release/obj.target/hiredis/src/reader.o
+  SOLINK_MODULE(target) Release/obj.target/hiredis.node
+  COPY Release/hiredis.node
+make: Leaving directory '/root/Targets/kue-mod/node_modules/hiredis/build'
+/root/Targets/kue-mod
+└─┬ kue-mod@0.6.3 
+  ├─┬ express@3.1.2 
+  │ ├── buffer-crc32@0.2.13 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.5 
+  │ │ ├── buffer-crc32@0.1.1 
+  │ │ ├── bytes@0.2.0 
+  │ │ ├── formidable@1.0.11 
+  │ │ ├── pause@0.0.1 
+  │ │ └── qs@0.5.1 
+  │ ├── cookie@0.0.5 
+  │ ├── cookie-signature@1.0.0 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.5 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├─┬ jade@0.26.3 
+  │ └── mkdirp@0.3.0 
+  ├── nib@0.5.0 
+  ├─┬ redis@0.7.2 
+  │ └─┬ hiredis@0.5.0 
+  │   ├── bindings@1.3.0 
+  │   └── nan@2.7.0 
+  ├─┬ reds@0.1.4 
+  │ └─┬ natural@0.0.69 
+  │   ├── apparatus@0.0.9 
+  │   ├── sylvester@0.0.21 
+  │   └── underscore@1.8.3 
+  └─┬ stylus@0.27.2 
+    └── cssom@0.2.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/kue-mod/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ***
+*-- Stat Module Output --*
+*-- Stat Module Done --*
+*-- Coverage Data
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 0 paths with 0 errors **

@@ -1,0 +1,37 @@
+/root/Targets/mfetch
+└─┬ mfetch@0.2.10 
+  ├── fetch-jsonp@1.1.3 
+  ├─┬ query-string@4.3.4 
+  │ ├── object-assign@4.1.1 
+  │ └── strict-uri-encode@1.1.0 
+  ├── recursive-iterator@2.0.3 
+  ├── super-plugin@0.1.4 
+  └── uri-templates@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mfetch/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","fromCharCode","join","assign","call","defineProperties"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0374 took 9.7755s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mfetch/node_modules/mfetch/lib/index.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/mfetch/node_modules/super-plugin/lib/index.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/mfetch/node_modules/super-plugin/lib/types.js. Coverage (Term): 73% Coverage (LOC): 92%
+*- File /root/Targets/mfetch/node_modules/super-plugin/lib/utils.js. Coverage (Term): 35% Coverage (LOC): 50%
+*- File /root/Targets/mfetch/node_modules/mfetch/lib/lang.js. Coverage (Term): 17% Coverage (LOC): 14%
+*- File /root/Targets/mfetch/node_modules/query-string/index.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/mfetch/node_modules/strict-uri-encode/index.js. Coverage (Term): 37% Coverage (LOC): 63%
+*- File /root/Targets/mfetch/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/mfetch/node_modules/recursive-iterator/dist/recursive-iterator.js. Coverage (Term): 32% Coverage (LOC): 49%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,376 @@
+
+> uws@0.14.5 install /root/Targets/hopjs/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+/root/Targets/hopjs
+└─┬ hopjs@0.0.43 
+  ├── colors@1.1.2 
+  ├─┬ fire-ts@0.0.7 
+  │ ├── async@0.2.10 
+  │ ├── optimist@0.3.7 
+  │ ├── pegjs@0.7.0 
+  │ └─┬ uglify-js@2.2.5 
+  │   ├── optimist@0.3.7 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├── hopjs-common@0.0.9 
+  ├── node-uuid@1.4.8 
+  ├─┬ optimist@0.6.1 
+  │ ├── minimist@0.0.10 
+  │ └── wordwrap@0.0.3 
+  ├── querystring@0.2.0 
+  ├─┬ redis@2.8.0 
+  │ ├── double-ended-queue@2.1.0-0 
+  │ ├── redis-commands@1.3.1 
+  │ └── redis-parser@2.6.0 
+  └─┬ socket.io@2.0.3 
+    ├─┬ debug@2.6.8 
+    │ └── ms@2.0.0 
+    ├─┬ engine.io@3.1.1 
+    │ ├─┬ accepts@1.3.3 
+    │ │ ├─┬ mime-types@2.1.17 
+    │ │ │ └── mime-db@1.30.0 
+    │ │ └── negotiator@0.6.1 
+    │ ├── base64id@1.0.0 
+    │ ├── cookie@0.3.1 
+    │ ├─┬ engine.io-parser@2.1.1 
+    │ │ ├── after@0.8.2 
+    │ │ ├── arraybuffer.slice@0.0.6 
+    │ │ └── blob@0.0.4 
+    │ ├── uws@0.14.5 
+    │ └─┬ ws@2.3.1 
+    │   ├── safe-buffer@5.0.1 
+    │   └── ultron@1.1.0 
+    ├── object-assign@4.1.1 
+    ├── socket.io-adapter@1.1.1 
+    ├─┬ socket.io-client@2.0.3 
+    │ ├── backo2@1.0.2 
+    │ ├── base64-arraybuffer@0.1.5 
+    │ ├── component-bind@1.0.0 
+    │ ├── component-emitter@1.2.1 
+    │ ├─┬ engine.io-client@3.1.1 
+    │ │ ├── component-inherit@0.0.3 
+    │ │ ├── parsejson@0.0.3 
+    │ │ ├── xmlhttprequest-ssl@1.5.3 
+    │ │ └── yeast@0.1.2 
+    │ ├── has-cors@1.1.0 
+    │ ├── indexof@0.0.1 
+    │ ├── object-component@0.0.3 
+    │ ├─┬ parseqs@0.0.5 
+    │ │ └─┬ better-assert@1.0.2 
+    │ │   └── callsite@1.0.0 
+    │ ├── parseuri@0.0.5 
+    │ └── to-array@0.1.4 
+    └─┬ socket.io-parser@3.1.2 
+      ├── has-binary2@1.0.2 
+      └── isarray@2.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/hopjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 8% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0708 took 9.2075s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (6:4) on program var path = require('path');
+var Stream = require('stream');
+var cp = require('child_process');
+var net = require('net');
+var fs = require('fs');
+var assert = require('assert');
+
+var webpath = {};
+
+//joining process for URL's, on windows will replace backslashes with forward.
+webpath.join = function(){
+	var pathArgs = [];
+	
+	for(var i in arguments){
+		pathArgs.push(arguments[i]);		
+	}
+	var ret = path.join.apply(null,pathArgs);
+	if(path.sep == "\\"){
+		ret=ret.replace(/\\/g, "/");
+	}
+	return ret;
+};
+exports.webpath = webpath;
+
+
+exports.DataEncoder=function(form){ 
+	var self=this;
+		
+	var qs=[];
+
+	var urlEncoder={
+		append:function(name,value){
+			qs.push([encodeURIComponent(name)+"="+encodeURIComponent(value)]);
+		}
+	};
+
+	form=form||urlEncoder;
+
+	this._json=true;
+	this._form=true;
+	this._hasData=false;
+	this.encode=function(object){
+		var encodeFunc=function(object,path){
+			if(object===null){
+				return "";
+			} else if(object instanceof Date){
+				return object.toString();
+			} else if(typeof Stream!="undefined" && object instanceof Stream){
+				self._json=false;	
+				return object;
+			} else if(typeof Buffer!="undefined" && object instanceof Buffer){
+				console.log("BBB");
+				self._json=false;	
+				return object;
+			} else if(typeof Blob!="undefined" && object instanceof Blob){
+				self._json=false;	
+				return object;
+			} else if(typeof File!="undefined" && object instanceof File){
+				self._json=false;	
+				return object;
+			} else if(object instanceof Array){
+				for(var i in object){
+					var value = object[i];
+					var pp=null;
+					if(path==undefined){
+						pp="";
+					} else {
+						pp=path+"[]";
+						var ret = encodeFunc(value,pp);
+						if(ret!=undefined){
+							form.append(pp,ret);
+							self._hasData=true;
+						} else {
+							self._form=false;
+						}
+					}	
+				}
+				return undefined;
+			} else if(object instanceof Object){
+				for(var i in object){
+					var value = object[i];	
+					var pp=(path==undefined?i:path+"["+i+"]");
+					var ret = encodeFunc(value,pp);
+					if(ret!=undefined){
+						form.append(pp,ret);
+						self._hasData=true;
+					}
+				}
+				return undefined;
+			} else if(typeof object=="string" || typeof object=="number" || typeof object=="boolean") {
+				return object.toString();
+			}
+		}
+		encodeFunc(object);
+		return self._hasData;
+	}
+	this.toJSON=function(object){
+		return JSON.stringify(object);
+	}
+	this.hasData=function(){
+		return self._hasData;
+	}
+	this.canEncodeAsForm=function(){
+		return self._form;
+	}
+	this.canEncodeAsJSON=function(){
+		return self._json;
+	}
+	this.toQueryString=function(){
+		return qs.join("&");
+	}	
+	
+}
+
+
+
+var testForm = function(){
+	var TestForm = function(){
+	}
+	TestForm.prototype.append=function(p,v){
+		if(typeof this[p]!="undefined"){
+			if(this[p] instanceof Array){
+				this[p].push(v);
+			} else {
+				var t=this[p];
+				this[p]=[];
+				this[p].push(t);
+				this[p].push(v);
+			}
+		} else {
+			this[p]=v;
+		}
+	}
+	
+
+	var d = new Date();
+	
+	var values = [ 
+	{"input":{"a":false,"b":"hello"},"expected":{"a":"false","b":"hello"},"form":true,"json":true,"qs":"a=false&b=hello"},
+	{"input":{"array":[1,2,3],"obj":{"a":1,"b":"2","c":false}},"expected":{"array[]":["1","2","3"],"obj[a]":"1","obj[b]":"2","obj[c]":"false"},"form":true,"json":true,"qs":"array%5B%5D=1&array%5B%5D=2&array%5B%5D=3&obj%5Ba%5D=1&obj%5Bb%5D=2&obj%5Bc%5D=false"},
+  //FIXME this should properly try to encode it so that it would work with the body parser for express
+	{"input":{"array":[{"a":[1]},[2],[3]]},"expected":{"array[][a][]":"1","array[][]":["2","3"]},"form":false,"json":true,"qs":"array%5B%5D%5Ba%5D%5B%5D=1&array%5B%5D%5B%5D=2&array%5B%5D%5B%5D=3"},
+	{"input":{"float":3.43},"expected":{"float":"3.43"},"form":true,"json":true,"qs":"float=3.43"},
+	{"input":{"a":{"b":{"a":1,"b":"1","c":{"d":"X"}}}},"expected":{"a[b][a]":"1","a[b][b]":"1","a[b][c][d]":"X"},"form":true,"json":true,"qs":"a%5Bb%5D%5Ba%5D=1&a%5Bb%5D%5Bb%5D=1&a%5Bb%5D%5Bc%5D%5Bd%5D=X"},
+	];
+
+	values.map(function(inputs){
+		var tf = new TestForm();
+
+		var f = new exports.DataEncoder();
+		f.encode(inputs.input);
+		var qs = f.toQueryString();
+
+		var f = new exports.DataEncoder(tf);
+		f.encode(inputs.input);
+		assert.deepEqual(tf,inputs.expected);
+		assert.equal(f.canEncodeAsJSON(),inputs.json);
+		assert.equal(f.canEncodeAsForm(),inputs.form);
+		assert.equal(qs,inputs.qs);
+	});
+
+};
+
+testForm();
+delete testForm;
+
+
+exports.requireOnDemand=function(packages,onComplete){
+	var installed=0;
+	var failed=0;
+	packages.map(function(pkg){
+		if(!fs.existsSync(path.join("node_modules",pkg))){
+			var proc = cp.exec("npm install "+pkg);
+			proc.on('exit',function(errCode){
+				if(errCode==0){
+					installed++;
+				} else {
+					console.warn("Failed to install package ",pkg);
+					failed++;
+				}
+				if((installed+failed)==packages.length){
+					if(failed==0)
+						return onComplete(null,true);
+					else return onComplete("Failed to install packages");
+				}
+			});
+		} else {
+			installed++;
+			if((installed+failed)==packages.length){
+				if(failed==0)
+					return onComplete(null,true);
+				else return onComplete("Failed to install packages");
+			}
+		}	
+	});
+
+
+}
+
+exports.startExample=function(exampleName,options,onComplete){
+	if(typeof options=="function"){
+		onComplete=options;
+		options=null;
+	}
+
+	options=options||{};
+	var port = options.port || 3000;
+	var sslport = options.sslport || 3443;
+
+	var env = JSON.parse(JSON.stringify(process.env));
+	
+	
+	if(port!=null)
+		env.PORT=port;
+	if(sslport!=null)
+		env.SSLPORT=port;
+
+	
+	var dir = exampleName;
+
+	var proc=cp.exec("(cd "+dir+" && npm install .)");
+	//proc.stdout.on("data",console.log);
+	//proc.stderr.on("data",console.log);
+	
+	proc.on("exit",function(errCode){
+		if(errCode==0){
+			var startTime = Date.now();
+			proc = cp.execFile("node",["app.js"],{ cwd:dir, env: env });
+	
+			proc.stop=function(onComplete){
+				onComplete=onComplete||function(){};
+				proc.on('exit',function(){
+					onComplete();
+				});
+				proc.kill();	
+				setTimeout(function(){
+					proc.kill('SIGKILL');
+				},200);
+			}
+	
+			if(options.port!=null){	
+				var waitForStart=function(onDone){
+					try {
+						var client = net.connect({ port: port});
+						if((Date.now()-startTime) > 10*1000){
+							return onDone(null,false);
+						}
+						client.on("timeout",function(){
+							setTimeout(function(){ waitForStart(onDone); },500);
+							client.end();
+						});
+						client.on("error",function(){
+							setTimeout(function(){ waitForStart(onDone); },500);
+							client.end();
+						});
+						client.on("connect",function(){
+							client.end();	
+							return onDone(null,true);
+						});
+					} catch (e){
+						onDone(null,false);
+					}
+				}
+				waitForStart(function(err,res){
+					onComplete(null,proc);
+				});
+			} else {
+				onComplete(null,proc);
+			}
+		} else { 
+			return onComplete("Failed to install example dependencies");
+		}
+	});
+
+}
+
+
+
+ at SyntaxError: Unexpected token (6:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/hopjs/node_modules/hopjs/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/hopjs/node_modules/hopjs/lib/api.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/hopjs/node_modules/hopjs-common/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

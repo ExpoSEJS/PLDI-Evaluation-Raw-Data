@@ -1,0 +1,29 @@
+/root/Targets/mixpanel-common
+└─┬ mixpanel-common@0.147.1 
+  └── pikaday@1.5.1  (git://github.com/dbushell/Pikaday.git#a1704adef06e985a448cd8ab313dee5a5787a228)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mixpanel-common/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","pow"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0487 took 4.6164s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'prototype' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/mixpanel-common/node_modules/mixpanel-common/build/index.js. Coverage (Term): 53% Coverage (LOC): 71%
+*- File /root/Targets/mixpanel-common/node_modules/mixpanel-common/build/components/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/mixpanel-common/node_modules/mixpanel-common/build/components/alert/index.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- File /root/Targets/mixpanel-common/node_modules/panel/build/index.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/mixpanel-common/node_modules/panel/build/component.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/mixpanel-common/node_modules/cuid/dist/node-cuid.js. Coverage (Term): 24% Coverage (LOC): 49%
+*- File /root/Targets/mixpanel-common/node_modules/webcomponent/build/index.js. Coverage (Term): 14% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

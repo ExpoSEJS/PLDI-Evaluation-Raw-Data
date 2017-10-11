@@ -1,0 +1,32 @@
+/root/Targets/prong
+└─┬ prong@0.1.7 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├── d3-prong@0.1.0  (git://github.com/lukebarlow/d3-prong.git#6d14565ffa259f6ee91d289121966bb11a601bb6)
+  ├─┬ d3-time-format@0.3.2 
+  │ └── d3-time@0.2.6 
+  ├── fft@0.2.1 
+  └─┬ omniscience@1.2.1 
+    └── d3-dispatch@0.5.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/prong/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0473 took 1.7359s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: alert is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/prong/node_modules/prong/lib/prong/index.js. Coverage (Term): 18% Coverage (LOC): 11%
+*- File /root/Targets/prong/node_modules/prong/lib/prong/sound.js. Coverage (Term): 12% Coverage (LOC): 9%
+*- File /root/Targets/prong/node_modules/prong/lib/prong/audioContext.js. Coverage (Term): 61% Coverage (LOC): 67%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

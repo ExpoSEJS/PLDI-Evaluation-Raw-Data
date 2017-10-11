@@ -1,0 +1,73 @@
+/root/Targets/r6rs
+└── r6rs@0.1.19 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/r6rs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 46% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 46% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 46% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 46% coverage ] ****** [3 done /0 queued / 0 running / 3 errors / 46% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Symbol","RegExp","create","setPrototypeOf","getPrototypeOf","call","toString","apply","bound tokenize"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.0282 took 16.6333s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2} start 16.9274 took 11.1733s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1} start 16.953 took 11.9405s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 78% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/tokenizer.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/parser.js. Coverage (Term): 31% Coverage (LOC): 25%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/boolean.js. Coverage (Term): 83% Coverage (LOC): 89%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/type.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/character.js. Coverage (Term): 59% Coverage (LOC): 64%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/number.js. Coverage (Term): 56% Coverage (LOC): 65%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/pair.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/string.js. Coverage (Term): 58% Coverage (LOC): 68%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/symbol.js. Coverage (Term): 72% Coverage (LOC): 81%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/expander.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/lambda.js. Coverage (Term): 30% Coverage (LOC): 35%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/procedure.js. Coverage (Term): 66% Coverage (LOC): 82%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/nativeProcedure.js. Coverage (Term): 61% Coverage (LOC): 63%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/value/nativeSyntax.js. Coverage (Term): 73% Coverage (LOC): 81%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/transformer/syntaxRules.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/machine.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/primitive.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/primitive.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/pair.js. Coverage (Term): 23% Coverage (LOC): 28%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/pair.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/util/assert.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/boolean.js. Coverage (Term): 64% Coverage (LOC): 84%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/util/createComparator.js. Coverage (Term): 55% Coverage (LOC): 61%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/symbol.js. Coverage (Term): 53% Coverage (LOC): 71%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/character.js. Coverage (Term): 59% Coverage (LOC): 79%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/string.js. Coverage (Term): 33% Coverage (LOC): 51%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/number.js. Coverage (Term): 30% Coverage (LOC): 57%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs/number.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/unicode.js. Coverage (Term): 39% Coverage (LOC): 66%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/unicode.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/list.js. Coverage (Term): 40% Coverage (LOC): 49%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/list.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/control.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/port.js. Coverage (Term): 59% Coverage (LOC): 74%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/function/r6rs-lib/port.scm. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/r6rs/node_modules/r6rs/lib/util/toObject.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 3 errors **

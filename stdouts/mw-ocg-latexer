@@ -1,0 +1,1383 @@
+
+> icu-bidi@0.1.6 install /root/Targets/mw-ocg-latexer/node_modules/icu-bidi
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build'
+  ACTION deps_libicu_gyp_action_before_build_target_unpack_libicu_dep Release/obj/gen/icu/source/configure
+Extracting /root/Targets/mw-ocg-latexer/node_modules/icu-bidi/deps/icu4c-55_1-src.tgz to /root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen
+  ACTION deps_libicu_gyp_action_before_build_target_configure_libicu Release/obj/gen/icu/source/Makefile
+Changing to /root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/
+/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/configure --enable-static --disable-shared --disable-extras --disable-icuio --disable-layout --disable-tests --disable-samples --with-data-packaging=static CFLAGS=-fPIC CXXFLAGS=-fPIC
+checking for ICU version numbers... release 55.1, library 55.1, unicode version 7.0
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking whether to build debug libraries... no
+checking whether to build release libraries... yes
+checking for clang... clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether clang accepts -g... yes
+checking for clang option to accept ISO C89... none needed
+checking for clang++... clang++
+checking whether we are using the GNU C++ compiler... yes
+checking whether clang++ accepts -g... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.20... yes
+checking for ICULEHB... no
+checking how to run the C preprocessor... clang -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for gmake... no
+checking for gnumake... no
+checking for doxygen... no
+checking checking for executable suffix... 
+checking whether strict compiling is on... yes
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking size of void *... 8
+checking whether runnable 64 bit binaries are built by default... yes
+checking which Makefile fragment to use for x86_64-unknown-linux-gnu... mh-linux
+checking for floor in -lm... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether we can use static library optimization option... yes
+checking whether to enable auto cleanup of libraries... no
+checking whether to enable draft APIs... yes
+checking for ranlib... ranlib
+checking for ar... ar
+checking whether to enable renaming of symbols... yes
+checking whether to enable function and data tracing... no
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking whether to enable dynamic loading of plugins... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for library containing dlopen... -ldl
+checking for dlopen... yes
+checking for gettimeofday... yes
+checking if we have a C++ compiler... Good
+checking if we have a C++11 compiler... yes
+configure: Adding CXXFLAGS option --std=c++0x
+checking if #include <string> works... yes
+checking if #include <atomic> works... yes
+checking for pthread_attr_init in -lpthread... yes
+checking for mmap... yes
+checking for genccode assembly... -a gcc
+checking for inttypes.h... (cached) yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking whether byte ordering is bigendian... no
+checking for nl_langinfo... yes
+checking for nl_langinfo's argument to obtain the codeset... CODESET
+checking for namespace support... yes
+checking for properly overriding new and delete... yes
+checking for placement new and delete... yes
+checking for popen... yes
+checking for tzset... yes
+checking for tzname... yes
+checking for timezone... no
+checking for __timezone... yes
+checking for int8_t... yes
+checking for uint8_t... yes
+checking for int16_t... yes
+checking for uint16_t... yes
+checking for int32_t... yes
+checking for uint32_t... yes
+checking for int64_t... yes
+checking for uint64_t... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for library containing wcscpy... none required
+checking size of wchar_t... 4
+checking for UTF-16 string literal support... C++ only
+checking for a library suffix to use... none
+CPPFLAGS= -ffunction-sections -fdata-sections $(THREADSCPPFLAGS)  -DU_HAVE_ELF_H=1 -DU_HAVE_ATOMIC=1 
+CFLAGS=-fPIC -std=c99 -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings $(THREADSCFLAGS) -Qunused-arguments -Wno-parentheses-equality
+CXXFLAGS=-fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x $(THREADSCXXFLAGS) -Qunused-arguments -Wno-parentheses-equality
+configure: creating ./config.status
+config.status: creating icudefs.mk
+config.status: creating Makefile
+config.status: creating data/pkgdataMakefile
+config.status: creating config/Makefile.inc
+config.status: creating config/icu.pc
+config.status: creating config/pkgdataMakefile
+config.status: creating data/Makefile
+config.status: creating stubdata/Makefile
+config.status: creating common/Makefile
+config.status: creating i18n/Makefile
+config.status: creating layout/Makefile
+config.status: creating layoutex/Makefile
+config.status: creating io/Makefile
+config.status: creating extra/Makefile
+config.status: creating extra/uconv/Makefile
+config.status: creating extra/uconv/pkgdataMakefile
+config.status: creating extra/scrptrun/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/ctestfw/Makefile
+config.status: creating tools/toolutil/Makefile
+config.status: creating tools/makeconv/Makefile
+config.status: creating tools/genrb/Makefile
+config.status: creating tools/genccode/Makefile
+config.status: creating tools/gencmn/Makefile
+config.status: creating tools/gencnval/Makefile
+config.status: creating tools/gendict/Makefile
+config.status: creating tools/gentest/Makefile
+config.status: creating tools/gennorm2/Makefile
+config.status: creating tools/genbrk/Makefile
+config.status: creating tools/gensprep/Makefile
+config.status: creating tools/icuinfo/Makefile
+config.status: creating tools/icupkg/Makefile
+config.status: creating tools/icuswap/Makefile
+config.status: creating tools/pkgdata/Makefile
+config.status: creating tools/tzcode/Makefile
+config.status: creating tools/gencfu/Makefile
+config.status: creating test/Makefile
+config.status: creating test/compat/Makefile
+config.status: creating test/testdata/Makefile
+config.status: creating test/testdata/pkgdataMakefile
+config.status: creating test/hdrtst/Makefile
+config.status: creating test/intltest/Makefile
+config.status: creating test/cintltst/Makefile
+config.status: creating test/iotest/Makefile
+config.status: creating test/letest/Makefile
+config.status: creating test/perf/Makefile
+config.status: creating test/perf/collationperf/Makefile
+config.status: creating test/perf/collperf/Makefile
+config.status: creating test/perf/collperf2/Makefile
+config.status: creating test/perf/dicttrieperf/Makefile
+config.status: creating test/perf/ubrkperf/Makefile
+config.status: creating test/perf/charperf/Makefile
+config.status: creating test/perf/convperf/Makefile
+config.status: creating test/perf/normperf/Makefile
+config.status: creating test/perf/DateFmtPerf/Makefile
+config.status: creating test/perf/howExpensiveIs/Makefile
+config.status: creating test/perf/strsrchperf/Makefile
+config.status: creating test/perf/unisetperf/Makefile
+config.status: creating test/perf/usetperf/Makefile
+config.status: creating test/perf/ustrperf/Makefile
+config.status: creating test/perf/utfperf/Makefile
+config.status: creating test/perf/utrie2perf/Makefile
+config.status: creating test/perf/leperf/Makefile
+config.status: creating samples/Makefile
+config.status: creating samples/date/Makefile
+config.status: creating samples/cal/Makefile
+config.status: creating samples/layout/Makefile
+
+ICU for C/C++ 55.1 is ready to be built.
+=== Important Notes: ===
+Data Packaging: static
+ This means: ICU data will be stored in a static library.
+ To locate data: ICU will use the linked data library. If linked with the stub library located in stubdata/, the application can use udata_setCommonData() or set a data path to override.
+Building ICU: Use a GNU make such as make to build ICU.
+checking the version of "make"... make[1]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+4.1 (we wanted at least 3.80)
+make[1]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+ok
+C++ apps may want to build with CXXFLAGS =  --std=c++0x
+  TOUCH Release/obj.target/deps/action_before_build.stamp
+  TOUCH deps_libicu_gyp_build_target_build_libicu.intermediate
+  ACTION deps_libicu_gyp_build_target_build_libicu deps_libicu_gyp_build_target_build_libicu.intermediate
+make[1]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+rebuilding config/icucross.inc
+rebuilding config/icucross.mk
+cd ./config; \
+	make -f pkgdataMakefile
+rm -rf config/icu-config
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/config'
+rm -rf pkgdata.inc
+/usr/bin/install -c ./config/icu-config-top config/icu-config
+chmod u+w config/icu-config
+LC_ALL=C sed -f ./config/make2sh.sed < ./config/Makefile.inc | grep -v '#M#' | uniq >> config/icu-config
+LC_ALL=C sed -f ./config/make2sh.sed < ./config/mh-linux | grep -v '#M#' | uniq >> config/icu-config
+cat ./config/icu-config-bottom >> config/icu-config
+echo "# Rebuilt on "`date` >> config/icu-config
+chmod u-w config/icu-config
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/config'
+config/icu-uc.pc updated.
+/bin/bash ./mkinstalldirs bin
+mkdir bin
+config/icu-i18n.pc updated.
+Note: rebuild with "make VERBOSE=1 " to show all compiler parameters.
+make[1]: Making `all' in `stubdata'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/stubdata'
+   (deps)	 stubdata.c
+   clang	 ...  stubdata.c
+ar r libicudata.a stubdata.ao
+ranlib libicudata.a
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/stubdata'
+make[1]: Making `all' in `common'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/common'
+   (deps)	 uloc_keytype.cpp
+   (deps)	 unifiedcache.cpp
+   (deps)	 simplepatternformatter.cpp
+   (deps)	 sharedobject.cpp
+   (deps)	 ulistformatter.cpp
+   (deps)	 listformatter.cpp
+   (deps)	 icuplug.cpp
+   (deps)	 icudataver.c
+   (deps)	 uloc_tag.c
+   (deps)	 ulist.c
+   (deps)	 propsvec.c
+   (deps)	 ucnvsel.cpp
+   (deps)	 dtintrv.cpp
+   (deps)	 wintz.c
+   (deps)	 cwchar.c
+   (deps)	 locbased.cpp
+   (deps)	 parsepos.cpp
+   (deps)	 util_props.cpp
+   (deps)	 util.cpp
+   (deps)	 punycode.cpp
+   (deps)	 uts46.cpp
+   (deps)	 usprep.cpp
+   (deps)	 uidna.cpp
+   (deps)	 servslkf.cpp
+   (deps)	 servrbf.cpp
+   (deps)	 servlkf.cpp
+   (deps)	 servlk.cpp
+   (deps)	 servls.cpp
+   (deps)	 servnotf.cpp
+   (deps)	 serv.cpp
+   (deps)	 rbbitblb.cpp
+   (deps)	 rbbistbl.cpp
+   (deps)	 rbbisetb.cpp
+   (deps)	 rbbiscan.cpp
+   (deps)	 rbbirb.cpp
+   (deps)	 rbbinode.cpp
+   (deps)	 rbbidata.cpp
+   (deps)	 rbbi.cpp
+   (deps)	 dictbe.cpp
+   (deps)	 ubrk.cpp
+   (deps)	 brkeng.cpp
+   (deps)	 brkiter.cpp
+   (deps)	 uarrsort.c
+   (deps)	 unifunct.cpp
+   (deps)	 unifilt.cpp
+   (deps)	 caniter.cpp
+   (deps)	 ruleiter.cpp
+   (deps)	 usetiter.cpp
+   (deps)	 uniset.cpp
+   (deps)	 uset.cpp
+   (deps)	 uniset_closure.cpp
+   (deps)	 uniset_props.cpp
+   (deps)	 uset_props.cpp
+   (deps)	 unisetspan.cpp
+   (deps)	 bmpset.cpp
+   (deps)	 utrie2_builder.cpp
+   (deps)	 utrie2.cpp
+   (deps)	 utrie.cpp
+   (deps)	 unames.cpp
+   (deps)	 usc_impl.c
+   (deps)	 uscript_props.cpp
+   (deps)	 uscript.c
+   (deps)	 ushape.cpp
+   (deps)	 ubidiln.c
+   (deps)	 ubidiwrt.c
+   (deps)	 ubidi.c
+   (deps)	 ubidi_props.c
+   (deps)	 propname.cpp
+   (deps)	 ucase.cpp
+   (deps)	 uprops.cpp
+   (deps)	 uchar.c
+   (deps)	 patternprops.cpp
+   (deps)	 uiter.cpp
+   (deps)	 uchriter.cpp
+   (deps)	 schriter.cpp
+   (deps)	 chariter.cpp
+   (deps)	 loadednormalizer2impl.cpp
+   (deps)	 unormcmp.cpp
+   (deps)	 unorm.cpp
+   (deps)	 normlzr.cpp
+   (deps)	 filterednormalizer2.cpp
+   (deps)	 normalizer2.cpp
+   (deps)	 normalizer2impl.cpp
+   (deps)	 ustr_titlecase_brkiter.cpp
+   (deps)	 unistr_titlecase_brkiter.cpp
+   (deps)	 ustrcase_locale.cpp
+   (deps)	 unistr_case_locale.cpp
+   (deps)	 utext.cpp
+   (deps)	 ustr_wcs.cpp
+   (deps)	 ustrtrns.cpp
+   (deps)	 ustrfmt.c
+   (deps)	 cstring.c
+   (deps)	 ucasemap_titlecase_brkiter.cpp
+   (deps)	 ucasemap.cpp
+   (deps)	 ustrcase.cpp
+   (deps)	 ustring.cpp
+   (deps)	 utf_impl.c
+   (deps)	 unistr_props.cpp
+   (deps)	 unistr_case.cpp
+   (deps)	 unistr.cpp
+   (deps)	 unistr_cnv.cpp
+   (deps)	 ustr_cnv.cpp
+   (deps)	 appendable.cpp
+   (deps)	 dictionarydata.cpp
+   (deps)	 ucharstrieiterator.cpp
+   (deps)	 ucharstrie.cpp
+   (deps)	 ucharstriebuilder.cpp
+   (deps)	 bytestrieiterator.cpp
+   (deps)	 bytestrie.cpp
+   (deps)	 bytestriebuilder.cpp
+   (deps)	 stringtriebuilder.cpp
+   (deps)	 stringpiece.cpp
+   (deps)	 bytestream.cpp
+   (deps)	 locresdata.cpp
+   (deps)	 loclikely.cpp
+   (deps)	 locdispnames.cpp
+   (deps)	 locavailable.cpp
+   (deps)	 locutil.cpp
+   (deps)	 locid.cpp
+   (deps)	 uloc.cpp
+   (deps)	 locmap.c
+   (deps)	 ucat.c
+   (deps)	 messagepattern.cpp
+   (deps)	 resbund_cnv.cpp
+   (deps)	 resbund.cpp
+   (deps)	 uresdata.c
+   (deps)	 ures_cnv.c
+   (deps)	 uresbund.cpp
+   (deps)	 ucnv_ct.c
+   (deps)	 ucnv_set.c
+   (deps)	 ucnvdisp.c
+   (deps)	 ucnvisci.c
+   (deps)	 ucnv_lmb.c
+   (deps)	 ucnvhz.c
+   (deps)	 ucnv2022.cpp
+   (deps)	 ucnvmbcs.cpp
+   (deps)	 ucnv_ext.cpp
+   (deps)	 ucnvbocu.cpp
+   (deps)	 ucnvscsu.c
+   (deps)	 ucnv_u32.c
+   (deps)	 ucnv_u16.c
+   (deps)	 ucnv_u8.c
+   (deps)	 ucnv_u7.c
+   (deps)	 ucnvlat1.c
+   (deps)	 ucnv_err.c
+   (deps)	 ucnv_cb.c
+   (deps)	 ucnv_io.cpp
+   (deps)	 ucnv_cnv.c
+   (deps)	 ucnv_bld.cpp
+   (deps)	 ucnv.c
+   (deps)	 uvectr64.cpp
+   (deps)	 uvectr32.cpp
+   (deps)	 ustack.cpp
+   (deps)	 uvector.cpp
+   (deps)	 ustrenum.cpp
+   (deps)	 uenum.c
+   (deps)	 uhash_us.cpp
+   (deps)	 uhash.c
+   (deps)	 utrace.c
+   (deps)	 ucol_swp.cpp
+   (deps)	 udataswp.c
+   (deps)	 umapfile.c
+   (deps)	 udatamem.c
+   (deps)	 ucmndata.c
+   (deps)	 udata.cpp
+   (deps)	 charstr.cpp
+   (deps)	 cmemory.c
+   (deps)	 uobject.cpp
+   (deps)	 uinit.cpp
+   (deps)	 ucln_cmn.cpp
+   (deps)	 umutex.cpp
+   (deps)	 uinvchar.c
+   (deps)	 utypes.c
+   (deps)	 umath.c
+   (deps)	 putil.cpp
+   (deps)	 errorcode.cpp
+generating ../common/svchook.mk
+cd .. \
+ && CONFIG_FILES=common/Makefile CONFIG_HEADERS= /bin/bash ./config.status
+config.status: creating common/Makefile
+   clang++	 ...  errorcode.cpp
+   clang++	 ...  putil.cpp
+   clang	 ...  umath.c
+   clang	 ...  utypes.c
+   clang	 ...  uinvchar.c
+   clang++	 ...  umutex.cpp
+   clang++	 ...  ucln_cmn.cpp
+   clang++	 ...  uinit.cpp
+   clang++	 ...  uobject.cpp
+   clang	 ...  cmemory.c
+   clang++	 ...  charstr.cpp
+   clang++	 ...  udata.cpp
+   clang	 ...  ucmndata.c
+   clang	 ...  udatamem.c
+   clang	 ...  umapfile.c
+   clang	 ...  udataswp.c
+   clang	 ...  utrace.c
+   clang++	 ...  ucol_swp.cpp
+   clang	 ...  uhash.c
+   clang++	 ...  uhash_us.cpp
+   clang	 ...  uenum.c
+   clang++	 ...  ustrenum.cpp
+   clang++	 ...  uvector.cpp
+   clang++	 ...  ustack.cpp
+   clang++	 ...  uvectr32.cpp
+   clang++	 ...  uvectr64.cpp
+   clang	 ...  ucnv.c
+   clang++	 ...  ucnv_bld.cpp
+   clang	 ...  ucnv_cnv.c
+   clang++	 ...  ucnv_io.cpp
+   clang	 ...  ucnv_cb.c
+   clang	 ...  ucnv_err.c
+   clang	 ...  ucnvlat1.c
+   clang	 ...  ucnv_u7.c
+   clang	 ...  ucnv_u8.c
+   clang	 ...  ucnv_u16.c
+   clang	 ...  ucnv_u32.c
+   clang	 ...  ucnvscsu.c
+   clang++	 ...  ucnvbocu.cpp
+   clang++	 ...  ucnv_ext.cpp
+   clang++	 ...  ucnvmbcs.cpp
+   clang++	 ...  ucnv2022.cpp
+   clang	 ...  ucnvhz.c
+   clang	 ...  ucnv_lmb.c
+   clang	 ...  ucnvisci.c
+   clang	 ...  ucnvdisp.c
+   clang	 ...  ucnv_set.c
+   clang	 ...  ucnv_ct.c
+   clang++	 ...  uresbund.cpp
+   clang	 ...  ures_cnv.c
+   clang	 ...  uresdata.c
+   clang++	 ...  resbund.cpp
+   clang++	 ...  resbund_cnv.cpp
+   clang++	 ...  messagepattern.cpp
+   clang	 ...  ucat.c
+   clang	 ...  locmap.c
+   clang++	 ...  uloc.cpp
+   clang++	 ...  locid.cpp
+   clang++	 ...  locutil.cpp
+   clang++	 ...  locavailable.cpp
+   clang++	 ...  locdispnames.cpp
+   clang++	 ...  loclikely.cpp
+   clang++	 ...  locresdata.cpp
+   clang++	 ...  bytestream.cpp
+   clang++	 ...  stringpiece.cpp
+   clang++	 ...  stringtriebuilder.cpp
+   clang++	 ...  bytestriebuilder.cpp
+   clang++	 ...  bytestrie.cpp
+   clang++	 ...  bytestrieiterator.cpp
+   clang++	 ...  ucharstrie.cpp
+   clang++	 ...  ucharstriebuilder.cpp
+   clang++	 ...  ucharstrieiterator.cpp
+   clang++	 ...  dictionarydata.cpp
+   clang++	 ...  appendable.cpp
+   clang++	 ...  ustr_cnv.cpp
+   clang++	 ...  unistr_cnv.cpp
+   clang++	 ...  unistr.cpp
+   clang++	 ...  unistr_case.cpp
+   clang++	 ...  unistr_props.cpp
+   clang	 ...  utf_impl.c
+   clang++	 ...  ustring.cpp
+   clang++	 ...  ustrcase.cpp
+   clang++	 ...  ucasemap.cpp
+   clang++	 ...  ucasemap_titlecase_brkiter.cpp
+   clang	 ...  cstring.c
+   clang	 ...  ustrfmt.c
+   clang++	 ...  ustrtrns.cpp
+   clang++	 ...  ustr_wcs.cpp
+   clang++	 ...  utext.cpp
+   clang++	 ...  unistr_case_locale.cpp
+   clang++	 ...  ustrcase_locale.cpp
+   clang++	 ...  unistr_titlecase_brkiter.cpp
+   clang++	 ...  ustr_titlecase_brkiter.cpp
+   clang++	 ...  normalizer2impl.cpp
+   clang++	 ...  normalizer2.cpp
+   clang++	 ...  filterednormalizer2.cpp
+   clang++	 ...  normlzr.cpp
+   clang++	 ...  unorm.cpp
+   clang++	 ...  unormcmp.cpp
+   clang++	 ...  loadednormalizer2impl.cpp
+   clang++	 ...  chariter.cpp
+   clang++	 ...  schriter.cpp
+   clang++	 ...  uchriter.cpp
+   clang++	 ...  uiter.cpp
+   clang++	 ...  patternprops.cpp
+   clang	 ...  uchar.c
+   clang++	 ...  uprops.cpp
+   clang++	 ...  ucase.cpp
+   clang++	 ...  propname.cpp
+   clang	 ...  ubidi_props.c
+   clang	 ...  ubidi.c
+   clang	 ...  ubidiwrt.c
+   clang	 ...  ubidiln.c
+   clang++	 ...  ushape.cpp
+   clang	 ...  uscript.c
+   clang++	 ...  uscript_props.cpp
+   clang	 ...  usc_impl.c
+   clang++	 ...  unames.cpp
+   clang++	 ...  utrie.cpp
+   clang++	 ...  utrie2.cpp
+   clang++	 ...  utrie2_builder.cpp
+   clang++	 ...  bmpset.cpp
+   clang++	 ...  unisetspan.cpp
+   clang++	 ...  uset_props.cpp
+   clang++	 ...  uniset_props.cpp
+   clang++	 ...  uniset_closure.cpp
+   clang++	 ...  uset.cpp
+   clang++	 ...  uniset.cpp
+   clang++	 ...  usetiter.cpp
+   clang++	 ...  ruleiter.cpp
+   clang++	 ...  caniter.cpp
+   clang++	 ...  unifilt.cpp
+   clang++	 ...  unifunct.cpp
+   clang	 ...  uarrsort.c
+   clang++	 ...  brkiter.cpp
+   clang++	 ...  ubrk.cpp
+   clang++	 ...  brkeng.cpp
+   clang++	 ...  dictbe.cpp
+   clang++	 ...  rbbi.cpp
+   clang++	 ...  rbbidata.cpp
+   clang++	 ...  rbbinode.cpp
+   clang++	 ...  rbbirb.cpp
+   clang++	 ...  rbbiscan.cpp
+   clang++	 ...  rbbisetb.cpp
+   clang++	 ...  rbbistbl.cpp
+   clang++	 ...  rbbitblb.cpp
+   clang++	 ...  serv.cpp
+   clang++	 ...  servnotf.cpp
+   clang++	 ...  servls.cpp
+   clang++	 ...  servlk.cpp
+   clang++	 ...  servlkf.cpp
+   clang++	 ...  servrbf.cpp
+   clang++	 ...  servslkf.cpp
+   clang++	 ...  uidna.cpp
+   clang++	 ...  usprep.cpp
+   clang++	 ...  uts46.cpp
+   clang++	 ...  punycode.cpp
+   clang++	 ...  util.cpp
+   clang++	 ...  util_props.cpp
+   clang++	 ...  parsepos.cpp
+   clang++	 ...  locbased.cpp
+   clang	 ...  cwchar.c
+   clang	 ...  wintz.c
+   clang++	 ...  dtintrv.cpp
+   clang++	 ...  ucnvsel.cpp
+   clang	 ...  propsvec.c
+   clang	 ...  ulist.c
+   clang	 ...  uloc_tag.c
+   clang	 ...  icudataver.c
+   clang++	 ...  icuplug.cpp
+   clang++	 ...  listformatter.cpp
+   clang++	 ...  ulistformatter.cpp
+   clang++	 ...  sharedobject.cpp
+   clang++	 ...  simplepatternformatter.cpp
+   clang++	 ...  unifiedcache.cpp
+   clang++	 ...  uloc_keytype.cpp
+ar r ../lib/libicuuc.a errorcode.ao putil.ao umath.ao utypes.ao uinvchar.ao umutex.ao ucln_cmn.ao uinit.ao uobject.ao cmemory.ao charstr.ao udata.ao ucmndata.ao udatamem.ao umapfile.ao udataswp.ao ucol_swp.ao utrace.ao uhash.ao uhash_us.ao uenum.ao ustrenum.ao uvector.ao ustack.ao uvectr32.ao uvectr64.ao ucnv.ao ucnv_bld.ao ucnv_cnv.ao ucnv_io.ao ucnv_cb.ao ucnv_err.ao ucnvlat1.ao ucnv_u7.ao ucnv_u8.ao ucnv_u16.ao ucnv_u32.ao ucnvscsu.ao ucnvbocu.ao ucnv_ext.ao ucnvmbcs.ao ucnv2022.ao ucnvhz.ao ucnv_lmb.ao ucnvisci.ao ucnvdisp.ao ucnv_set.ao ucnv_ct.ao uresbund.ao ures_cnv.ao uresdata.ao resbund.ao resbund_cnv.ao messagepattern.ao ucat.ao locmap.ao uloc.ao locid.ao locutil.ao locavailable.ao locdispnames.ao loclikely.ao locresdata.ao bytestream.ao stringpiece.ao stringtriebuilder.ao bytestriebuilder.ao bytestrie.ao bytestrieiterator.ao ucharstrie.ao ucharstriebuilder.ao ucharstrieiterator.ao dictionarydata.ao appendable.ao ustr_cnv.ao unistr_cnv.ao unistr.ao unistr_case.ao unistr_props.ao utf_impl.ao ustring.ao ustrcase.ao ucasemap.ao ucasemap_titlecase_brkiter.ao cstring.ao ustrfmt.ao ustrtrns.ao ustr_wcs.ao utext.ao unistr_case_locale.ao ustrcase_locale.ao unistr_titlecase_brkiter.ao ustr_titlecase_brkiter.ao normalizer2impl.ao normalizer2.ao filterednormalizer2.ao normlzr.ao unorm.ao unormcmp.ao loadednormalizer2impl.ao chariter.ao schriter.ao uchriter.ao uiter.ao patternprops.ao uchar.ao uprops.ao ucase.ao propname.ao ubidi_props.ao ubidi.ao ubidiwrt.ao ubidiln.ao ushape.ao uscript.ao uscript_props.ao usc_impl.ao unames.ao utrie.ao utrie2.ao utrie2_builder.ao bmpset.ao unisetspan.ao uset_props.ao uniset_props.ao uniset_closure.ao uset.ao uniset.ao usetiter.ao ruleiter.ao caniter.ao unifilt.ao unifunct.ao uarrsort.ao brkiter.ao ubrk.ao brkeng.ao dictbe.ao rbbi.ao rbbidata.ao rbbinode.ao rbbirb.ao rbbiscan.ao rbbisetb.ao rbbistbl.ao rbbitblb.ao serv.ao servnotf.ao servls.ao servlk.ao servlkf.ao servrbf.ao servslkf.ao uidna.ao usprep.ao uts46.ao punycode.ao util.ao util_props.ao parsepos.ao locbased.ao cwchar.ao wintz.ao dtintrv.ao ucnvsel.ao propsvec.ao ulist.ao uloc_tag.ao icudataver.ao icuplug.ao listformatter.ao ulistformatter.ao sharedobject.ao simplepatternformatter.ao unifiedcache.ao uloc_keytype.ao
+ranlib ../lib/libicuuc.a
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/common'
+make[1]: Making `all' in `i18n'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/i18n'
+   (deps)	 scientificnumberformatter.cpp
+   (deps)	 sharedbreakiterator.cpp
+   (deps)	 measunit.cpp
+   (deps)	 filteredbrk.cpp
+   (deps)	 quantityformatter.cpp
+   (deps)	 reldatefmt.cpp
+   (deps)	 uregion.cpp
+   (deps)	 identifier_info.cpp
+   (deps)	 scriptset.cpp
+   (deps)	 region.cpp
+   (deps)	 gender.cpp
+   (deps)	 compactdecimalformat.cpp
+   (deps)	 tzfmt.cpp
+   (deps)	 tzgnames.cpp
+   (deps)	 tznames_impl.cpp
+   (deps)	 tznames.cpp
+   (deps)	 alphaindex.cpp
+   (deps)	 decContext.c
+   (deps)	 decNumber.c
+   (deps)	 locdspnm.cpp
+   (deps)	 ufieldpositer.cpp
+   (deps)	 fpositer.cpp
+   (deps)	 fphdlimp.cpp
+   (deps)	 vzone.cpp
+   (deps)	 zrule.cpp
+   (deps)	 ztrans.cpp
+   (deps)	 smpdtfst.cpp
+   (deps)	 decfmtst.cpp
+   (deps)	 uspoof_wsconf.cpp
+   (deps)	 uspoof_conf.cpp
+   (deps)	 uspoof_impl.cpp
+   (deps)	 uspoof_build.cpp
+   (deps)	 uspoof.cpp
+   (deps)	 currpinf.cpp
+   (deps)	 tmutfmt.cpp
+   (deps)	 tmutamt.cpp
+   (deps)	 tmunit.cpp
+   (deps)	 udateintervalformat.cpp
+   (deps)	 dtitvinf.cpp
+   (deps)	 dtitvfmt.cpp
+   (deps)	 selfmt.cpp
+   (deps)	 plurfmt.cpp
+   (deps)	 plurrule.cpp
+   (deps)	 upluralrules.cpp
+   (deps)	 zonemeta.cpp
+   (deps)	 vtzone.cpp
+   (deps)	 tztrans.cpp
+   (deps)	 tzrule.cpp
+   (deps)	 rbtz.cpp
+   (deps)	 dtrule.cpp
+   (deps)	 basictz.cpp
+   (deps)	 winnmfmt.cpp
+   (deps)	 windtfmt.cpp
+   (deps)	 wintzimpl.cpp
+   (deps)	 inputext.cpp
+   (deps)	 csrutf8.cpp
+   (deps)	 csrucode.cpp
+   (deps)	 csrsbcs.cpp
+   (deps)	 csrmbcs.cpp
+   (deps)	 csrecog.cpp
+   (deps)	 csr2022.cpp
+   (deps)	 csmatch.cpp
+   (deps)	 csdetect.cpp
+   (deps)	 utmscale.c
+   (deps)	 measure.cpp
+   (deps)	 currunit.cpp
+   (deps)	 curramt.cpp
+   (deps)	 currfmt.cpp
+   (deps)	 measfmt.cpp
+   (deps)	 ulocdata.c
+   (deps)	 uregexc.cpp
+   (deps)	 uregex.cpp
+   (deps)	 regeximp.cpp
+   (deps)	 regextxt.cpp
+   (deps)	 regexst.cpp
+   (deps)	 repattrn.cpp
+   (deps)	 rematch.cpp
+   (deps)	 regexcmp.cpp
+   (deps)	 brktrans.cpp
+   (deps)	 transreg.cpp
+   (deps)	 quant.cpp
+   (deps)	 nortrans.cpp
+   (deps)	 uni2name.cpp
+   (deps)	 name2uni.cpp
+   (deps)	 anytrans.cpp
+   (deps)	 toupptrn.cpp
+   (deps)	 tolowtrn.cpp
+   (deps)	 titletrn.cpp
+   (deps)	 casetrn.cpp
+   (deps)	 remtrans.cpp
+   (deps)	 nultrans.cpp
+   (deps)	 rbt_set.cpp
+   (deps)	 rbt_rule.cpp
+   (deps)	 rbt_pars.cpp
+   (deps)	 rbt_data.cpp
+   (deps)	 rbt.cpp
+   (deps)	 cpdtrans.cpp
+   (deps)	 tridpars.cpp
+   (deps)	 strrepl.cpp
+   (deps)	 funcrepl.cpp
+   (deps)	 unesctrn.cpp
+   (deps)	 esctrn.cpp
+   (deps)	 utrans.cpp
+   (deps)	 translit.cpp
+   (deps)	 stsearch.cpp
+   (deps)	 search.cpp
+   (deps)	 usearch.cpp
+   (deps)	 strmatch.cpp
+   (deps)	 collationfastlatinbuilder.cpp
+   (deps)	 collationbuilder.cpp
+   (deps)	 collationruleparser.cpp
+   (deps)	 collationweights.cpp
+   (deps)	 collationdatabuilder.cpp
+   (deps)	 collationrootelements.cpp
+   (deps)	 collationroot.cpp
+   (deps)	 rulebasedcollator.cpp
+   (deps)	 collationkeys.cpp
+   (deps)	 collationfastlatin.cpp
+   (deps)	 collationcompare.cpp
+   (deps)	 collationsets.cpp
+   (deps)	 uitercollationiterator.cpp
+   (deps)	 utf8collationiterator.cpp
+   (deps)	 utf16collationiterator.cpp
+   (deps)	 collationiterator.cpp
+   (deps)	 collationfcd.cpp
+   (deps)	 collationdatawriter.cpp
+   (deps)	 collationdatareader.cpp
+   (deps)	 collationtailoring.cpp
+   (deps)	 collationdata.cpp
+   (deps)	 collationsettings.cpp
+   (deps)	 collation.cpp
+   (deps)	 ucol_sit.cpp
+   (deps)	 ucol_res.cpp
+   (deps)	 ucol.cpp
+   (deps)	 ucoleitr.cpp
+   (deps)	 bocsu.cpp
+   (deps)	 sortkey.cpp
+   (deps)	 coll.cpp
+   (deps)	 coleitr.cpp
+   (deps)	 ethpccal.cpp
+   (deps)	 dangical.cpp
+   (deps)	 coptccal.cpp
+   (deps)	 cecal.cpp
+   (deps)	 chnsecal.cpp
+   (deps)	 indiancal.cpp
+   (deps)	 hebrwcal.cpp
+   (deps)	 gregoimp.cpp
+   (deps)	 japancal.cpp
+   (deps)	 islamcal.cpp
+   (deps)	 persncal.cpp
+   (deps)	 buddhcal.cpp
+   (deps)	 taiwncal.cpp
+   (deps)	 astro.cpp
+   (deps)	 olsontz.cpp
+   (deps)	 simpletz.cpp
+   (deps)	 timezone.cpp
+   (deps)	 gregocal.cpp
+   (deps)	 calendar.cpp
+   (deps)	 ucal.cpp
+   (deps)	 ucsdet.cpp
+   (deps)	 numsys.cpp
+   (deps)	 unumsys.cpp
+   (deps)	 rbnf.cpp
+   (deps)	 nfsubs.cpp
+   (deps)	 nfrule.cpp
+   (deps)	 nfrs.cpp
+   (deps)	 udatpg.cpp
+   (deps)	 dtptngen.cpp
+   (deps)	 udat.cpp
+   (deps)	 dtfmtsym.cpp
+   (deps)	 reldtfmt.cpp
+   (deps)	 smpdtfmt.cpp
+   (deps)	 datefmt.cpp
+   (deps)	 choicfmt.cpp
+   (deps)	 fmtable_cnv.cpp
+   (deps)	 digitlst.cpp
+   (deps)	 ucurr.cpp
+   (deps)	 dcfmtsym.cpp
+   (deps)	 decimalformatpattern.cpp
+   (deps)	 decimfmt.cpp
+   (deps)	 unum.cpp
+   (deps)	 numfmt.cpp
+   (deps)	 umsg.cpp
+   (deps)	 msgfmt.cpp
+   (deps)	 format.cpp
+   (deps)	 fmtable.cpp
+   (deps)	 ucln_in.cpp
+   clang++	 ...  ucln_in.cpp
+   clang++	 ...  fmtable.cpp
+   clang++	 ...  format.cpp
+   clang++	 ...  msgfmt.cpp
+   clang++	 ...  umsg.cpp
+   clang++	 ...  numfmt.cpp
+   clang++	 ...  unum.cpp
+   clang++	 ...  decimfmt.cpp
+   clang++	 ...  decimalformatpattern.cpp
+   clang++	 ...  dcfmtsym.cpp
+   clang++	 ...  ucurr.cpp
+   clang++	 ...  digitlst.cpp
+   clang++	 ...  fmtable_cnv.cpp
+   clang++	 ...  choicfmt.cpp
+   clang++	 ...  datefmt.cpp
+   clang++	 ...  smpdtfmt.cpp
+   clang++	 ...  reldtfmt.cpp
+   clang++	 ...  dtfmtsym.cpp
+   clang++	 ...  udat.cpp
+   clang++	 ...  dtptngen.cpp
+   clang++	 ...  udatpg.cpp
+   clang++	 ...  nfrs.cpp
+   clang++	 ...  nfrule.cpp
+   clang++	 ...  nfsubs.cpp
+   clang++	 ...  rbnf.cpp
+   clang++	 ...  numsys.cpp
+   clang++	 ...  unumsys.cpp
+   clang++	 ...  ucsdet.cpp
+   clang++	 ...  ucal.cpp
+   clang++	 ...  calendar.cpp
+   clang++	 ...  gregocal.cpp
+   clang++	 ...  timezone.cpp
+   clang++	 ...  simpletz.cpp
+   clang++	 ...  olsontz.cpp
+   clang++	 ...  astro.cpp
+   clang++	 ...  taiwncal.cpp
+   clang++	 ...  buddhcal.cpp
+   clang++	 ...  persncal.cpp
+   clang++	 ...  islamcal.cpp
+   clang++	 ...  japancal.cpp
+   clang++	 ...  gregoimp.cpp
+   clang++	 ...  indiancal.cpp
+   clang++	 ...  hebrwcal.cpp
+   clang++	 ...  chnsecal.cpp
+   clang++	 ...  cecal.cpp
+   clang++	 ...  coptccal.cpp
+   clang++	 ...  dangical.cpp
+   clang++	 ...  ethpccal.cpp
+   clang++	 ...  coleitr.cpp
+   clang++	 ...  coll.cpp
+   clang++	 ...  sortkey.cpp
+   clang++	 ...  bocsu.cpp
+   clang++	 ...  ucoleitr.cpp
+   clang++	 ...  ucol.cpp
+   clang++	 ...  ucol_res.cpp
+   clang++	 ...  ucol_sit.cpp
+   clang++	 ...  collation.cpp
+   clang++	 ...  collationsettings.cpp
+   clang++	 ...  collationdata.cpp
+   clang++	 ...  collationtailoring.cpp
+   clang++	 ...  collationdatareader.cpp
+   clang++	 ...  collationdatawriter.cpp
+   clang++	 ...  collationfcd.cpp
+   clang++	 ...  collationiterator.cpp
+   clang++	 ...  utf16collationiterator.cpp
+   clang++	 ...  utf8collationiterator.cpp
+   clang++	 ...  uitercollationiterator.cpp
+   clang++	 ...  collationsets.cpp
+   clang++	 ...  collationcompare.cpp
+   clang++	 ...  collationfastlatin.cpp
+   clang++	 ...  collationkeys.cpp
+   clang++	 ...  rulebasedcollator.cpp
+   clang++	 ...  collationroot.cpp
+   clang++	 ...  collationrootelements.cpp
+   clang++	 ...  collationdatabuilder.cpp
+   clang++	 ...  collationweights.cpp
+   clang++	 ...  collationruleparser.cpp
+   clang++	 ...  collationbuilder.cpp
+   clang++	 ...  collationfastlatinbuilder.cpp
+   clang++	 ...  strmatch.cpp
+   clang++	 ...  usearch.cpp
+   clang++	 ...  search.cpp
+   clang++	 ...  stsearch.cpp
+   clang++	 ...  translit.cpp
+   clang++	 ...  utrans.cpp
+   clang++	 ...  esctrn.cpp
+   clang++	 ...  unesctrn.cpp
+   clang++	 ...  funcrepl.cpp
+   clang++	 ...  strrepl.cpp
+   clang++	 ...  tridpars.cpp
+   clang++	 ...  cpdtrans.cpp
+   clang++	 ...  rbt.cpp
+   clang++	 ...  rbt_data.cpp
+   clang++	 ...  rbt_pars.cpp
+   clang++	 ...  rbt_rule.cpp
+   clang++	 ...  rbt_set.cpp
+   clang++	 ...  nultrans.cpp
+   clang++	 ...  remtrans.cpp
+   clang++	 ...  casetrn.cpp
+   clang++	 ...  titletrn.cpp
+   clang++	 ...  tolowtrn.cpp
+   clang++	 ...  toupptrn.cpp
+   clang++	 ...  anytrans.cpp
+   clang++	 ...  name2uni.cpp
+   clang++	 ...  uni2name.cpp
+   clang++	 ...  nortrans.cpp
+   clang++	 ...  quant.cpp
+   clang++	 ...  transreg.cpp
+   clang++	 ...  brktrans.cpp
+   clang++	 ...  regexcmp.cpp
+   clang++	 ...  rematch.cpp
+   clang++	 ...  repattrn.cpp
+   clang++	 ...  regexst.cpp
+   clang++	 ...  regextxt.cpp
+   clang++	 ...  regeximp.cpp
+   clang++	 ...  uregex.cpp
+   clang++	 ...  uregexc.cpp
+   clang	 ...  ulocdata.c
+   clang++	 ...  measfmt.cpp
+   clang++	 ...  currfmt.cpp
+   clang++	 ...  curramt.cpp
+   clang++	 ...  currunit.cpp
+   clang++	 ...  measure.cpp
+   clang	 ...  utmscale.c
+   clang++	 ...  csdetect.cpp
+   clang++	 ...  csmatch.cpp
+   clang++	 ...  csr2022.cpp
+   clang++	 ...  csrecog.cpp
+   clang++	 ...  csrmbcs.cpp
+   clang++	 ...  csrsbcs.cpp
+   clang++	 ...  csrucode.cpp
+   clang++	 ...  csrutf8.cpp
+   clang++	 ...  inputext.cpp
+   clang++	 ...  wintzimpl.cpp
+   clang++	 ...  windtfmt.cpp
+   clang++	 ...  winnmfmt.cpp
+   clang++	 ...  basictz.cpp
+   clang++	 ...  dtrule.cpp
+   clang++	 ...  rbtz.cpp
+   clang++	 ...  tzrule.cpp
+   clang++	 ...  tztrans.cpp
+   clang++	 ...  vtzone.cpp
+   clang++	 ...  zonemeta.cpp
+   clang++	 ...  upluralrules.cpp
+   clang++	 ...  plurrule.cpp
+   clang++	 ...  plurfmt.cpp
+   clang++	 ...  selfmt.cpp
+   clang++	 ...  dtitvfmt.cpp
+   clang++	 ...  dtitvinf.cpp
+   clang++	 ...  udateintervalformat.cpp
+   clang++	 ...  tmunit.cpp
+   clang++	 ...  tmutamt.cpp
+   clang++	 ...  tmutfmt.cpp
+   clang++	 ...  currpinf.cpp
+   clang++	 ...  uspoof.cpp
+   clang++	 ...  uspoof_impl.cpp
+   clang++	 ...  uspoof_build.cpp
+   clang++	 ...  uspoof_conf.cpp
+   clang++	 ...  uspoof_wsconf.cpp
+   clang++	 ...  decfmtst.cpp
+   clang++	 ...  smpdtfst.cpp
+   clang++	 ...  ztrans.cpp
+   clang++	 ...  zrule.cpp
+   clang++	 ...  vzone.cpp
+   clang++	 ...  fphdlimp.cpp
+   clang++	 ...  fpositer.cpp
+   clang++	 ...  ufieldpositer.cpp
+   clang++	 ...  locdspnm.cpp
+   clang	 ...  decNumber.c
+   clang	 ...  decContext.c
+   clang++	 ...  alphaindex.cpp
+   clang++	 ...  tznames.cpp
+   clang++	 ...  tznames_impl.cpp
+   clang++	 ...  tzgnames.cpp
+   clang++	 ...  tzfmt.cpp
+   clang++	 ...  compactdecimalformat.cpp
+   clang++	 ...  gender.cpp
+   clang++	 ...  region.cpp
+   clang++	 ...  scriptset.cpp
+   clang++	 ...  identifier_info.cpp
+   clang++	 ...  uregion.cpp
+   clang++	 ...  reldatefmt.cpp
+   clang++	 ...  quantityformatter.cpp
+   clang++	 ...  measunit.cpp
+   clang++	 ...  filteredbrk.cpp
+   clang++	 ...  sharedbreakiterator.cpp
+   clang++	 ...  scientificnumberformatter.cpp
+ar r ../lib/libicui18n.a ucln_in.ao fmtable.ao format.ao msgfmt.ao umsg.ao numfmt.ao unum.ao decimfmt.ao decimalformatpattern.ao dcfmtsym.ao ucurr.ao digitlst.ao fmtable_cnv.ao choicfmt.ao datefmt.ao smpdtfmt.ao reldtfmt.ao dtfmtsym.ao udat.ao dtptngen.ao udatpg.ao nfrs.ao nfrule.ao nfsubs.ao rbnf.ao numsys.ao unumsys.ao ucsdet.ao ucal.ao calendar.ao gregocal.ao timezone.ao simpletz.ao olsontz.ao astro.ao taiwncal.ao buddhcal.ao persncal.ao islamcal.ao japancal.ao gregoimp.ao hebrwcal.ao indiancal.ao chnsecal.ao cecal.ao coptccal.ao dangical.ao ethpccal.ao coleitr.ao coll.ao sortkey.ao bocsu.ao ucoleitr.ao ucol.ao ucol_res.ao ucol_sit.ao collation.ao collationsettings.ao collationdata.ao collationtailoring.ao collationdatareader.ao collationdatawriter.ao collationfcd.ao collationiterator.ao utf16collationiterator.ao utf8collationiterator.ao uitercollationiterator.ao collationsets.ao collationcompare.ao collationfastlatin.ao collationkeys.ao rulebasedcollator.ao collationroot.ao collationrootelements.ao collationdatabuilder.ao collationweights.ao collationruleparser.ao collationbuilder.ao collationfastlatinbuilder.ao strmatch.ao usearch.ao search.ao stsearch.ao translit.ao utrans.ao esctrn.ao unesctrn.ao funcrepl.ao strrepl.ao tridpars.ao cpdtrans.ao rbt.ao rbt_data.ao rbt_pars.ao rbt_rule.ao rbt_set.ao nultrans.ao remtrans.ao casetrn.ao titletrn.ao tolowtrn.ao toupptrn.ao anytrans.ao name2uni.ao uni2name.ao nortrans.ao quant.ao transreg.ao brktrans.ao regexcmp.ao rematch.ao repattrn.ao regexst.ao regextxt.ao regeximp.ao uregex.ao uregexc.ao ulocdata.ao measfmt.ao currfmt.ao curramt.ao currunit.ao measure.ao utmscale.ao csdetect.ao csmatch.ao csr2022.ao csrecog.ao csrmbcs.ao csrsbcs.ao csrucode.ao csrutf8.ao inputext.ao wintzimpl.ao windtfmt.ao winnmfmt.ao basictz.ao dtrule.ao rbtz.ao tzrule.ao tztrans.ao vtzone.ao zonemeta.ao upluralrules.ao plurrule.ao plurfmt.ao selfmt.ao dtitvfmt.ao dtitvinf.ao udateintervalformat.ao tmunit.ao tmutamt.ao tmutfmt.ao currpinf.ao uspoof.ao uspoof_impl.ao uspoof_build.ao uspoof_conf.ao uspoof_wsconf.ao decfmtst.ao smpdtfst.ao ztrans.ao zrule.ao vzone.ao fphdlimp.ao fpositer.ao ufieldpositer.ao locdspnm.ao decNumber.ao decContext.ao alphaindex.ao tznames.ao tznames_impl.ao tzgnames.ao tzfmt.ao compactdecimalformat.ao gender.ao region.ao scriptset.ao identifier_info.ao uregion.ao reldatefmt.ao quantityformatter.ao measunit.ao filteredbrk.ao sharedbreakiterator.ao scientificnumberformatter.ao
+ranlib ../lib/libicui18n.a
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/i18n'
+make[1]: Making `all' in `tools'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools'
+make[2]: Making `all' in `toolutil'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/toolutil'
+   (deps)	 ucln_tu.cpp
+   (deps)	 dbgutil.cpp
+   (deps)	 udbgutil.cpp
+   (deps)	 filetools.cpp
+   (deps)	 flagparser.c
+   (deps)	 ppucd.cpp
+   (deps)	 pkg_gencmn.c
+   (deps)	 pkg_genc.c
+   (deps)	 pkg_icu.cpp
+   (deps)	 writesrc.c
+   (deps)	 xmlparser.cpp
+   (deps)	 ucbuf.c
+   (deps)	 uparse.c
+   (deps)	 uoptions.c
+   (deps)	 ucmstate.c
+   (deps)	 ucm.c
+   (deps)	 denseranges.cpp
+   (deps)	 collationinfo.cpp
+   (deps)	 unewdata.c
+   (deps)	 toolutil.cpp
+   (deps)	 swapimpl.cpp
+   (deps)	 pkgitems.cpp
+   (deps)	 package.cpp
+   (deps)	 filestrm.c
+   clang	 ...  filestrm.c
+   clang++	 ...  package.cpp
+   clang++	 ...  pkgitems.cpp
+   clang++	 ...  swapimpl.cpp
+   clang++	 ...  toolutil.cpp
+   clang	 ...  unewdata.c
+   clang++	 ...  collationinfo.cpp
+   clang++	 ...  denseranges.cpp
+   clang	 ...  ucm.c
+   clang	 ...  ucmstate.c
+   clang	 ...  uoptions.c
+   clang	 ...  uparse.c
+   clang	 ...  ucbuf.c
+   clang++	 ...  xmlparser.cpp
+   clang	 ...  writesrc.c
+   clang++	 ...  pkg_icu.cpp
+   clang	 ...  pkg_genc.c
+   clang	 ...  pkg_gencmn.c
+   clang++	 ...  ppucd.cpp
+   clang	 ...  flagparser.c
+   clang++	 ...  filetools.cpp
+   clang++	 ...  udbgutil.cpp
+   clang++	 ...  dbgutil.cpp
+   clang++	 ...  ucln_tu.cpp
+ar r ../../lib/libicutu.a filestrm.ao package.ao pkgitems.ao swapimpl.ao toolutil.ao unewdata.ao collationinfo.ao denseranges.ao ucm.ao ucmstate.ao uoptions.ao uparse.ao ucbuf.ao xmlparser.ao writesrc.ao pkg_icu.ao pkg_genc.ao pkg_gencmn.ao ppucd.ao flagparser.ao filetools.ao udbgutil.ao dbgutil.ao ucln_tu.ao
+ranlib ../../lib/libicutu.a
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/toolutil'
+make[2]: Making `all' in `ctestfw'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/ctestfw'
+   (deps)	 ucln_ct.c
+   (deps)	 uperf.cpp
+   (deps)	 datamap.cpp
+   (deps)	 testdata.cpp
+   (deps)	 tstdtmod.cpp
+   (deps)	 ctest.c
+   clang++	 ...  tstdtmod.cpp
+   clang	 ...  ctest.c
+   clang++	 ...  testdata.cpp
+   clang++	 ...  datamap.cpp
+   clang++	 ...  uperf.cpp
+   clang	 ...  ucln_ct.c
+ar r libicutest.a ctest.ao tstdtmod.ao testdata.ao datamap.ao uperf.ao ucln_ct.ao
+ranlib libicutest.a
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/ctestfw'
+make[2]: Making `all' in `makeconv'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/makeconv'
+   (deps)	 genmbcs.cpp
+   (deps)	 gencnvex.c
+   (deps)	 ucnvstat.c
+   (deps)	 makeconv.c
+   clang	 ...  makeconv.c
+   clang	 ...  ucnvstat.c
+   clang++	 ...  genmbcs.cpp
+   clang	 ...  gencnvex.c
+cd ../.. \
+ && CONFIG_FILES=tools/makeconv/makeconv.1 CONFIG_HEADERS= /bin/bash ./config.status
+config.status: creating tools/makeconv/makeconv.1
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/makeconv makeconv.o ucnvstat.o genmbcs.o gencnvex.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/makeconv'
+make[2]: Making `all' in `genrb'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genrb'
+   (deps)	 prscmnts.cpp
+   (deps)	 wrtxml.cpp
+   (deps)	 wrtjava.c
+   (deps)	 rle.c
+   (deps)	 rbutil.c
+   (deps)	 ustr.c
+   (deps)	 reslist.c
+   (deps)	 read.c
+   (deps)	 parse.cpp
+   (deps)	 genrb.c
+   (deps)	 errmsg.c
+   clang	 ...  genrb.c
+   clang	 ...  errmsg.c
+   clang++	 ...  parse.cpp
+   clang	 ...  read.c
+   clang	 ...  reslist.c
+   clang	 ...  ustr.c
+   clang	 ...  rbutil.c
+   clang	 ...  wrtjava.c
+   clang	 ...  rle.c
+   clang++	 ...  wrtxml.cpp
+   clang++	 ...  prscmnts.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/genrb/derb.1 CONFIG_HEADERS= /bin/bash ./config.status
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/genrb errmsg.o genrb.o parse.o read.o reslist.o ustr.o rbutil.o wrtjava.o rle.o wrtxml.o prscmnts.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/genrb/derb.1
+cd ../.. \
+ && CONFIG_FILES=tools/genrb/genrb.1 CONFIG_HEADERS= /bin/bash ./config.status
+config.status: creating tools/genrb/genrb.1
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genrb'
+make[2]: Making `all' in `genbrk'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genbrk'
+   (deps)	 genbrk.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/genbrk/genbrk.1 CONFIG_HEADERS= /bin/bash ./config.status
+   clang++	 ...  genbrk.cpp
+config.status: creating tools/genbrk/genbrk.1
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/genbrk genbrk.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genbrk'
+make[2]: Making `all' in `gencnval'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencnval'
+   (deps)	 gencnval.c
+cd ../.. \
+ && CONFIG_FILES=tools/gencnval/gencnval.1 CONFIG_HEADERS= /bin/bash ./config.status
+   clang	 ...  gencnval.c
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gencnval gencnval.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/gencnval/gencnval.1
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencnval'
+make[2]: Making `all' in `gensprep'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gensprep'
+   (deps)	 store.c
+   (deps)	 gensprep.c
+   clang	 ...  store.c
+   clang	 ...  gensprep.c
+cd ../.. \
+ && CONFIG_FILES=tools/gensprep/gensprep.8 CONFIG_HEADERS= /bin/bash ./config.status
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gensprep gensprep.o store.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm   
+config.status: creating tools/gensprep/gensprep.8
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gensprep'
+make[2]: Making `all' in `icuinfo'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/icuinfo'
+   (deps)	 icuinfo.cpp
+   clang++	 ...  icuinfo.cpp
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o icuinfo icuinfo.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm   
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/icuinfo'
+make[2]: Making `all' in `genccode'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genccode'
+   (deps)	 genccode.c
+cd ../.. \
+ && CONFIG_FILES=tools/genccode/genccode.8 CONFIG_HEADERS= /bin/bash ./config.status
+   clang	 ...  genccode.c
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/genccode genccode.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/genccode/genccode.8
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/genccode'
+make[2]: Making `all' in `gencmn'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencmn'
+   (deps)	 gencmn.c
+cd ../.. \
+ && CONFIG_FILES=tools/gencmn/gencmn.8 CONFIG_HEADERS= /bin/bash ./config.status
+   clang	 ...  gencmn.c
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gencmn gencmn.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/gencmn/gencmn.8
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencmn'
+make[2]: Making `all' in `icupkg'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/icupkg'
+   (deps)	 icupkg.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/icupkg/icupkg.8 CONFIG_HEADERS= /bin/bash ./config.status
+   clang++	 ...  icupkg.cpp
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/icupkg icupkg.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/icupkg/icupkg.8
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/icupkg'
+make[2]: Making `all' in `pkgdata'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/pkgdata'
+   (deps)	 pkgdata.cpp
+   (deps)	 pkgtypes.c
+   clang	 ...  pkgtypes.c
+   clang++	 ...  pkgdata.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/pkgdata/pkgdata.1 CONFIG_HEADERS= /bin/bash ./config.status
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/pkgdata pkgdata.o pkgtypes.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+config.status: creating tools/pkgdata/pkgdata.1
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/pkgdata'
+make[2]: Making `all' in `gentest'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gentest'
+   (deps)	 gentest.c
+   (deps)	 genres32.c
+   clang	 ...  genres32.c
+   clang	 ...  gentest.c
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o gentest gentest.o genres32.o -L../../tools/ctestfw -licutest -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm   
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gentest'
+make[2]: Making `all' in `gennorm2'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gennorm2'
+   (deps)	 gennorm2.cpp
+   (deps)	 n2builder.cpp
+   clang++	 ...  n2builder.cpp
+   clang++	 ...  gennorm2.cpp
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gennorm2 gennorm2.o n2builder.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gennorm2'
+make[2]: Making `all' in `gencfu'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencfu'
+   (deps)	 gencfu.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/gencfu/gencfu.1 CONFIG_HEADERS= /bin/bash ./config.status
+   clang++	 ...  gencfu.cpp
+config.status: creating tools/gencfu/gencfu.1
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gencfu gencfu.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gencfu'
+make[2]: Making `all' in `gendict'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gendict'
+   (deps)	 gendict.cpp
+cd ../.. \
+ && CONFIG_FILES=tools/gendict/gendict.1 CONFIG_HEADERS= /bin/bash ./config.status
+   clang++	 ...  gendict.cpp
+config.status: creating tools/gendict/gendict.1
+clang++ -fPIC -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long --std=c++0x  -Qunused-arguments -Wno-parentheses-equality -Wl,--gc-sections  -o ../../bin/gendict gendict.o -L../../lib -licutu -L../../lib -licui18n -L../../lib -licuuc -L../../stubdata -licudata -lpthread -ldl -lm  
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools/gendict'
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools'
+make[3]: Nothing to be done for 'all-local'.
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools'
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/tools'
+make[1]: Making `all' in `data'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/data'
+make -f pkgdataMakefile
+echo timestamp > build-dir.tmp
+make[3]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/data'
+rm -rf icupkg.inc
+/bin/bash ../mkinstalldirs ./out ./out/build ./out/build/icudt55l ./out/build/icudt55l/curr ./out/build/icudt55l/lang ./out/build/icudt55l/region ./out/build/icudt55l/zone ./out/build/icudt55l/unit ./out/build/icudt55l/brkitr ./out/build/icudt55l/coll ./out/build/icudt55l/rbnf ./out/build/icudt55l/translit ./out/tmp ./out/tmp/curr ./out/tmp/lang ./out/tmp/region ./out/tmp/zone ./out/tmp/unit ./out/tmp/coll ./out/tmp/rbnf ./out/tmp/translit ./out/tmp/brkitr
+mkdir ./out
+mkdir ./out/build
+mkdir ./out/build/icudt55l
+mkdir ./out/build/icudt55l/curr
+make[3]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/data'
+mkdir ./out/build/icudt55l/lang
+mkdir ./out/build/icudt55l/region
+mkdir ./out/build/icudt55l/zone
+mkdir ./out/build/icudt55l/unit
+mkdir ./out/build/icudt55l/brkitr
+mkdir ./out/build/icudt55l/coll
+mkdir ./out/build/icudt55l/rbnf
+mkdir ./out/build/icudt55l/translit
+mkdir ./out/tmp
+mkdir ./out/tmp/curr
+mkdir ./out/tmp/lang
+mkdir ./out/tmp/region
+mkdir ./out/tmp/zone
+mkdir ./out/tmp/unit
+mkdir ./out/tmp/coll
+mkdir ./out/tmp/rbnf
+mkdir ./out/tmp/translit
+mkdir ./out/tmp/brkitr
+mv build-dir.tmp build-dir
+Unpacking ./in/icudt55l.dat and generating out/tmp/icudata.lst (list of data files)
+LD_LIBRARY_PATH=../lib:../stubdata:../tools/ctestfw:$LD_LIBRARY_PATH  ../bin/icupkg -d ./out/build/icudt55l --list -x \* ./in/icudt55l.dat -o out/tmp/icudata.lst
+echo timestamp > build-local
+LD_LIBRARY_PATH=../stubdata:../tools/ctestfw:../lib:$LD_LIBRARY_PATH  ../bin/pkgdata -O ../data/icupkg.inc -q -c -s /root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/data/out/build/icudt55l -d ../lib -e icudt55  -T ./out/tmp -p icudt55l -m static -r 55.1 -L icudata ./out/tmp/icudata.lst
+pkgdata: clang -ffunction-sections -fdata-sections -D_REENTRANT  -DU_HAVE_ELF_H=1 -DU_HAVE_ATOMIC=1  -DU_ATTRIBUTE_DEPRECATED= -fPIC -std=c99 -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings  -Qunused-arguments -Wno-parentheses-equality -c -I../common -I../common -DPIC -fPIC -o ./out/tmp/icudt55l_dat.o ./out/tmp/icudt55l_dat.S
+pkgdata: ar r ../lib/libicudata.a ./out/tmp/icudt55l_dat.o
+pkgdata: ranlib ../lib/libicudata.a
+echo timestamp > packagedata
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source/data'
+make[2]: Entering directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+Note: rebuild with "make VERBOSE=1 all-local" to show all compiler parameters.
+make[2]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+make[1]: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build/Release/obj/gen/icu/source'
+  SOLINK_MODULE(target) Release/obj.target/deps/build.node
+  COPY Release/build.node
+  TOUCH Release/obj.target/deps/libicu.stamp
+  CXX(target) Release/obj.target/icu_bidi/src/node_icu_bidi.o
+  SOLINK_MODULE(target) Release/obj.target/icu_bidi.node
+  COPY Release/icu_bidi.node
+  COPY /root/Targets/mw-ocg-latexer/node_modules/icu-bidi/lib/binding/node-v51-linux-x64/icu_bidi.node
+  TOUCH Release/obj.target/action_after_build.stamp
+rm deps_libicu_gyp_build_target_build_libicu.intermediate
+make: Leaving directory '/root/Targets/mw-ocg-latexer/node_modules/icu-bidi/build'
+
+> sqlite3@3.0.10 install /root/Targets/mw-ocg-latexer/node_modules/sqlite3
+> node-pre-gyp install --fallback-to-build
+
+/root/Targets/mw-ocg-latexer
+├── commander@2.5.1 
+├── core-js@0.9.18 
+├── domino@1.0.29 
+├─┬ gammalatex@0.0.8 
+│ └── rimraf@2.2.8 
+├─┬ icu-bidi@0.1.6 
+│ ├── nan@2.3.5 
+│ └─┬ node-pre-gyp@0.6.38 
+│   ├─┬ hawk@3.1.3 
+│   │ ├── boom@2.10.1 
+│   │ ├── cryptiles@2.0.5 
+│   │ ├── hoek@2.16.3 
+│   │ └── sntp@1.0.9 
+│   ├─┬ mkdirp@0.5.1 
+│   │ └── minimist@0.0.8 
+│   ├─┬ nopt@4.0.1 
+│   │ ├── abbrev@1.1.1 
+│   │ └─┬ osenv@0.1.4 
+│   │   └── os-homedir@1.0.2 
+│   ├─┬ npmlog@4.1.2 
+│   │ ├─┬ are-we-there-yet@1.1.4 
+│   │ │ ├── delegates@1.0.0 
+│   │ │ └── readable-stream@2.3.3 
+│   │ ├── console-control-strings@1.1.0 
+│   │ ├─┬ gauge@2.7.4 
+│   │ │ ├── aproba@1.2.0 
+│   │ │ ├── has-unicode@2.0.1 
+│   │ │ ├── object-assign@4.1.1 
+│   │ │ ├── signal-exit@3.0.2 
+│   │ │ ├─┬ string-width@1.0.2 
+│   │ │ │ ├── code-point-at@1.1.0 
+│   │ │ │ └─┬ is-fullwidth-code-point@1.0.0 
+│   │ │ │   └── number-is-nan@1.0.1 
+│   │ │ ├─┬ strip-ansi@3.0.1 
+│   │ │ │ └── ansi-regex@2.1.1 
+│   │ │ └── wide-align@1.1.2 
+│   │ └── set-blocking@2.0.0 
+│   ├─┬ rc@1.2.1 
+│   │ ├── deep-extend@0.4.2 
+│   │ ├── ini@1.3.4 
+│   │ ├── minimist@1.2.0 
+│   │ └── strip-json-comments@2.0.1 
+│   ├─┬ request@2.81.0 
+│   │ ├── aws-sign2@0.6.0 
+│   │ ├── aws4@1.6.0 
+│   │ ├── caseless@0.12.0 
+│   │ ├─┬ combined-stream@1.0.5 
+│   │ │ └── delayed-stream@1.0.0 
+│   │ ├── extend@3.0.1 
+│   │ ├── forever-agent@0.6.1 
+│   │ ├─┬ form-data@2.1.4 
+│   │ │ └── asynckit@0.4.0 
+│   │ ├─┬ har-validator@4.2.1 
+│   │ │ ├─┬ ajv@4.11.8 
+│   │ │ │ ├── co@4.6.0 
+│   │ │ │ └─┬ json-stable-stringify@1.0.1 
+│   │ │ │   └── jsonify@0.0.0 
+│   │ │ └── har-schema@1.0.5 
+│   │ ├─┬ http-signature@1.1.1 
+│   │ │ ├── assert-plus@0.2.0 
+│   │ │ ├─┬ jsprim@1.4.1 
+│   │ │ │ ├── assert-plus@1.0.0 
+│   │ │ │ ├── extsprintf@1.3.0 
+│   │ │ │ ├── json-schema@0.2.3 
+│   │ │ │ └─┬ verror@1.10.0 
+│   │ │ │   └── assert-plus@1.0.0 
+│   │ │ └─┬ sshpk@1.13.1 
+│   │ │   ├── asn1@0.2.3 
+│   │ │   ├── assert-plus@1.0.0 
+│   │ │   ├── bcrypt-pbkdf@1.0.1 
+│   │ │   ├─┬ dashdash@1.14.1 
+│   │ │   │ └── assert-plus@1.0.0 
+│   │ │   ├── ecc-jsbn@0.1.1 
+│   │ │   ├─┬ getpass@0.1.7 
+│   │ │   │ └── assert-plus@1.0.0 
+│   │ │   ├── jsbn@0.1.1 
+│   │ │   └── tweetnacl@0.14.5 
+│   │ ├── is-typedarray@1.0.0 
+│   │ ├── isstream@0.1.2 
+│   │ ├── json-stringify-safe@5.0.1 
+│   │ ├─┬ mime-types@2.1.17 
+│   │ │ └── mime-db@1.30.0 
+│   │ ├── oauth-sign@0.8.2 
+│   │ ├── performance-now@0.2.0 
+│   │ ├── qs@6.4.0 
+│   │ ├── safe-buffer@5.1.1 
+│   │ ├── stringstream@0.0.5 
+│   │ ├─┬ tough-cookie@2.3.3 
+│   │ │ └── punycode@1.4.1 
+│   │ ├── tunnel-agent@0.6.0 
+│   │ └── uuid@3.1.0 
+│   ├─┬ rimraf@2.6.2 
+│   │ └─┬ glob@7.1.2 
+│   │   ├── fs.realpath@1.0.0 
+│   │   ├── inflight@1.0.6 
+│   │   ├─┬ minimatch@3.0.4 
+│   │   │ └─┬ brace-expansion@1.1.8 
+│   │   │   ├── balanced-match@1.0.0 
+│   │   │   └── concat-map@0.0.1 
+│   │   └── path-is-absolute@1.0.1 
+│   ├── semver@5.4.1 
+│   ├─┬ tar@2.2.1 
+│   │ ├── block-stream@0.0.9 
+│   │ └─┬ fstream@1.0.11 
+│   │   └── graceful-fs@4.1.11 
+│   └─┬ tar-pack@3.4.0 
+│     ├─┬ debug@2.6.9 
+│     │ └── ms@2.0.0 
+│     ├── fstream-ignore@1.0.5 
+│     ├─┬ once@1.4.0 
+│     │ └── wrappy@1.0.2 
+│     ├─┬ readable-stream@2.3.3 
+│     │ ├── isarray@1.0.0 
+│     │ ├── process-nextick-args@1.0.7 
+│     │ ├── string_decoder@1.0.3 
+│     │ └── util-deprecate@1.0.2 
+│     ├── rimraf@2.6.2 
+│     └── uid-number@0.0.6 
+├─┬ prfun@2.1.4 
+│ └── core-js@2.5.1 
+├─┬ readable-stream@1.0.34 
+│ ├── core-util-is@1.0.2 
+│ ├── inherits@2.0.3 
+│ ├── isarray@0.0.1 
+│ └── string_decoder@0.10.31 
+├─┬ texvcjs@0.3.1 
+│ └── commander@2.3.0 
+└─┬ tmp@0.0.33 
+  └── os-tmpdir@1.0.2 
+

@@ -1,0 +1,49 @@
+/root/Targets/divine
+└── divine@0.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/divine/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 17% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 17% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound ","cwd","parseInt","RegExp","some"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0475 took 18.5755s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 18.7589 took 4.5766s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/divine/node_modules/divine/root.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/divine/node_modules/ws/index.js. Coverage (Term): 48% Coverage (LOC): 50%
+*- File /root/Targets/divine/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/divine/node_modules/options/lib/options.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/divine/node_modules/ws/lib/Sender.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/divine/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
+*- File /root/Targets/divine/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/divine/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 7% Coverage (LOC): 15%
+*- File /root/Targets/divine/node_modules/ws/lib/Receiver.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/divine/node_modules/ws/lib/Validation.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/divine/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/divine/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/divine/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/divine/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/divine/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/divine/node_modules/divine/lib/fileSystem.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/divine/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/divine/node_modules/express/lib/express.js. Coverage (Term): 16% Coverage (LOC): 17%
+*- File /root/Targets/divine/node_modules/merge-descriptors/index.js. Coverage (Term): 31% Coverage (LOC): 44%
+*- File /root/Targets/divine/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/divine/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/divine/node_modules/connect/lib/proto.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/divine/node_modules/connect/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 38%
+*- File /root/Targets/divine/node_modules/cookie-signature/index.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/divine/node_modules/bytes/index.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/divine/node_modules/debug/lib/debug.js. Coverage (Term): 39% Coverage (LOC): 61%
+*- File /root/Targets/divine/node_modules/connect/lib/patch.js. Coverage (Term): 20% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

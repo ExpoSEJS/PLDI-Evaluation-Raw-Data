@@ -1,0 +1,204 @@
+/root/Targets/humanjs
+└─┬ humanjs@1.0.1 
+  ├── colors@0.6.0-1 
+  ├─┬ commander@1.1.1 
+  │ └── keypress@0.1.0 
+  ├─┬ jade@1.0.2 
+  │ ├── character-parser@1.2.0 
+  │ ├── commander@2.0.0 
+  │ ├─┬ constantinople@1.0.2 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├── async@0.2.10 
+  │ │   ├─┬ source-map@0.1.34 
+  │ │   │ └── amdefine@1.0.1 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     ├── window-size@0.1.0 
+  │ │     └── wordwrap@0.0.2 
+  │ ├── mkdirp@0.3.5 
+  │ ├─┬ monocle@1.1.50 
+  │ │ └─┬ readdirp@0.2.5 
+  │ │   └─┬ minimatch@3.0.4 
+  │ │     └─┬ brace-expansion@1.1.8 
+  │ │       ├── balanced-match@1.0.0 
+  │ │       └── concat-map@0.0.1 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   └── optimist@0.3.7 
+  │ └─┬ with@2.0.0 
+  │   └── uglify-js@2.4.0 
+  ├── ncp@0.4.2 
+  ├── readable-stream@1.0.2 
+  ├── rimraf@2.2.8 
+  ├── slugger@0.0.3 
+  └── underscore@1.5.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/humanjs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0692 took 5.4174s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var fs = require('fs');
+var commander = require('commander');
+var colors = require('colors');
+var _ = require('underscore');
+var generateApp = require('../lib/generateApp');
+var homeDir = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+var config = {};
+
+// look for a settings file
+try {
+    config = JSON.parse(fs.readFileSync(homeDir + '/.humanjsrc'));
+} catch (e) {}
+
+// look for name
+if (!config.name) {
+    config.name = process.env.USER;
+}
+
+var appName = function () {
+    if (!config.name) return 'My Amazing App';
+    var name = config.name.split(' ')[0];
+    name = name.slice(0, 1).toUpperCase() + name.slice(1);
+    return name + '\'s Amazing App'
+}();
+
+var progress = 0;
+var result = {};
+
+var schema = [
+    {
+        name: 'projectFolder',
+        question: [
+            'Human JavaScript'.bold + ' - app generator',
+            '',
+            'This will make a new directory for your app in:',
+            process.cwd().green,
+            '',
+            'What do you want to call the folder?'
+        ].join('\n'),
+        prompt: 'folder name',
+        test: function (answer) {
+            if (answer) {
+                return answer;
+            }
+        }
+    },
+    {
+        name: 'title',
+        question: 'What is the human friendly title of your app? (i.e. ' + appName + ')',
+        prompt: 'app title',
+        test: function (answer) {
+            if (answer) {
+                return answer;
+            }
+        },
+        message: 'Required'
+    },
+    {
+        name: 'framework',
+        question: [
+            'Do you want to use hapi or express as a server framework?'
+        ].join('\n'),
+        prefill: config.framework || 'hapi',
+        prompt: 'hapi or express',
+        test: function (answer) {
+            var answer = (answer || '').toLowerCase().trim();
+            // set our default if not defined
+            if (!answer) answer = 'hapi';
+            if (['hapi', 'express'].indexOf(answer) !== -1) {
+                return answer;
+            }
+        },
+        message: 'Must be \'hapi\' or \'express\''
+    },
+    {
+        name: 'author',
+        question: 'What\'s your name? Used to populate "author" field of "package.json"' + '\n\n{\n  "name": "app",\n  "version": "0.0.1",\n  "author": "'.blue + 'Your answer'.white + '",\n  "dependencies": ...\n}\n'.blue,
+        prompt: 'Author Name',
+        prefill: config.name,
+        test: function (answer) {
+            // try to see if we've got one
+            if (!answer) answer = config.name;
+            if (answer) {
+                return answer;
+            }
+        },
+        message: 'Required'
+    }
+];
+
+
+function buildQuestion(index) {
+    var desc = schema[index];
+    var prefill;
+    var str;
+
+    // if normal prompt
+    if (desc) {
+        prefill = (desc.prefill ? '(' + desc.prefill + ')' : '');
+        str = '\n' + desc.question + '\n' + (desc.prompt + ': ').grey + prefill + ' ';
+        commander.prompt(str, function (answer) {
+            var testedAnswer = desc.test(answer);
+            if (typeof testedAnswer === 'string') {
+                result[desc.name] = testedAnswer;
+                progress++
+            } else {
+                console.log(("\nerror: " + desc.message).red);
+            }
+            buildQuestion(progress);
+        });
+    } else {
+        // manually remove double quotes from the title since they get templated into code directly
+        result.title = result.title.replace('"', '');
+        generateApp(result, function (err) {
+            if (!err) {
+                console.log('\n\n' + (result.title.bold + ' was created!\n').green);
+                console.log([
+                    '',
+                    'now cd to it, install dependencies, and run it:',
+                    '',
+                    ('    $ cd ' + result.projectFolder + ' && npm i && npm start').grey,
+                    ''
+                ].join('\n'));
+                process.stdin.destroy();
+            } else {
+                console.log('error:'.red, err);
+            }
+        });
+    }
+}
+
+buildQuestion(progress);
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

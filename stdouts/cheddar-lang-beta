@@ -1,0 +1,253 @@
+/root/Targets/cheddar-lang-beta
+└─┬ cheddar-lang-beta@1.0.5 
+  ├── atob@2.0.3 
+  ├─┬ babel-generator@6.26.0 
+  │ ├── babel-messages@6.23.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├─┬ babel-types@6.26.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ └── to-fast-properties@1.0.3 
+  │ ├─┬ detect-indent@4.0.0 
+  │ │ └─┬ repeating@2.0.1 
+  │ │   └─┬ is-finite@1.0.2 
+  │ │     └── number-is-nan@1.0.1 
+  │ ├── jsesc@1.3.0 
+  │ ├── lodash@4.17.4 
+  │ ├── source-map@0.5.7 
+  │ └── trim-right@1.0.1 
+  ├── babel-plugin-compile-cheddar@2.0.2 
+  ├── bases@0.2.1 
+  ├── btoa@1.1.2 
+  ├── cheddar-parser@0.3.2 
+  ├── colors@1.1.2 
+  ├── commander@2.11.0 
+  ├── crypto@0.0.3 
+  ├─┬ msgpack5@3.5.1 
+  │ ├── bl@1.2.1 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ └── safe-buffer@5.1.1 
+  ├── readline@1.3.0 
+  └── xregexp@3.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cheddar-lang-beta/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0485 took 2.9057s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var pjson = require('../../package.json');
+var child_process = require('child_process');
+var tty = require('tty');
+var fs = require('fs');
+
+function launch(dorepl, prog, encoding, compiledFile) {
+    process.title = "cheddar";
+    if (prog) {
+        var c = require('./prog');
+        try {
+            var input = fs.readFileSync(prog, { encoding: 'utf8' });
+        } catch(e) {
+            throw e;
+        }
+        if (compiledFile) {
+            fs.writeFileSync(compiledFile, preCompile(input));
+        } else {
+            c(input, {
+                PRINT: process.stdout.write.bind(process.stdout)
+            });
+        }
+    } else if ((tty.isatty(0) || dorepl) & !compiledFile) {
+        child_process.fork(__dirname + '/repl.js', process.argv.slice(2));
+    } else {
+        var c = require('./prog');
+        var STDIN = "";
+        var chunk;
+        process.stdin.setEncoding('utf8');
+        process.stdin.on('readable', function() {
+            chunk = process.stdin.read();
+            if (chunk !== null)
+                STDIN += chunk;
+        });
+        process.stdin.on('end', function() {
+            if (compiledFile) {
+                fs.writeFileSync(compiledFile, preCompile(STDIN));
+            } else {
+                c(STDIN, {
+                    PRINT: process.stdout.write.bind(process.stdout)
+                });
+            }
+        });
+    }
+}
+
+var _ = {
+    version: [["v", "version"], " Prints Cheddar version"],
+    exec:    [["x", "exec"], "    Executes a Cheddar file."],
+    compile: [["o", "out"], "     Outputs a compiled cdr file"],
+    encode:  [["g", "encoding"], "Encoding to read program as."],
+    repl:    [["i", "repl"], "    Enters the Cheddar REPL"],
+    safe:    [["s", "safe"], "    Disables unsafe libraries"],
+    nocolor: [["no-color"],  "    Removed ANSI colors from output"],
+    help:    [["h", "help"], "    Prints this help dialouge"],
+};
+
+var prettyPrint = [
+    'version',
+    'help', '',
+
+    'exec',
+    'repl',
+    'compile', '',
+
+    'encode',
+    'safe', '',
+
+    'nocolor'
+];
+
+var unaryArg = [ 'compile', 'encode', 'exec' ];
+
+function isUnaryArg(a) {
+    for (var i = 0; i < unaryArg.length; i++) {
+        var j = _[unaryArg[i]][0];
+        if (a === '--' + (j[1] || j[0]) || (j[1] ? a === '-' + j[0] : false)) return true;
+    }
+    return false;
+}
+
+// Handle argument
+function $(args) { args = _[args][0];
+    return ((args[1] && process.argv.indexOf("-"+args[0]) > -1)) || (process.argv.indexOf("--"+(args[1]||args[0])) > -1);
+}
+
+function nextArg(flag, def) {
+    var f = _[flag][0];
+    for (var index = 2; index < process.argv.length; index++) {
+        if (process.argv[index] === '--' + (f[1] || f[0]) || (f[1] ? process.argv[index] === '-' + f[0] : false)) {
+            if (!process.argv[index + 1]) {
+                console.error("No value provided for `" + process.argv[index] + "` flag");
+                process.exit(1);
+            } else {
+                return process.argv[index + 1];
+            }
+        }
+    }
+    return def;
+}
+
+function stripansi(text) {
+    return text.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, "");
+}
+
+function error(text, data) {
+    if (global.CHEDDAR_CLI_COLOR) {
+        console.error(text + (data || ""));
+    } else {
+        console.error(stripansi(text) + (data || ""));
+    }
+}
+
+function preCompile(code) {
+    var tokenizer = require('cheddar-parser/dist/tok');
+    var msgpack = require('msgpack5')();
+
+    var tok = new tokenizer(code, 0);
+    var ast = tok.exec();
+    if (!(ast instanceof tokenizer)) {
+        error("Syntax Error: ".red, Result);
+        // Draw error pointer
+        error(HelperCaret(code, tok.Index, global.CHEDDAR_CLI_COLOR));
+        process.exit(1);
+    }
+    return msgpack.encode(
+        JSON.parse(require('babel-generator').default(require('babel-plugin-compile-cheddar/lib/valueToNode').default(ast), { compact: true }).code)
+    );
+}
+
+function execCompile(str) {
+}
+
+if (!module.parent) {
+
+    if ($('help')) {
+        var args = [];
+        prettyPrint.map(function(i) {
+            args.push( i ? _[i] : i )
+        });
+        console.log("Usage: cheddar [options] [file.cheddar | -x file.cdr] [arguments]\n\n" +
+"Options:\n" +
+args.map(function(arg) {
+    if (!arg) return "  ";
+    return "  " + (
+        arg[0][1] ? "-" + arg[0][0] + ", --" + arg[0][1] :
+        "--" + arg[0][0]
+    ) + " " + arg[1];
+}).join("\n"));
+        process.exit(0);
+    }
+
+    if ($('version')) {
+        console.log("v" + pjson.version);
+        process.exit(0);
+    }
+
+    if ($('safe')) {
+        global.SAFE_MODE = true;
+    }
+
+    if (!$('nocolor')) {
+        global.CHEDDAR_CLI_COLOR = true;
+    }
+
+    // Filter arguments out
+    var encoding = nextArg('encode', 'UTF-8');
+    var file = nextArg('exec', undefined);
+
+    if (file === undefined) {
+        for (var i = 2; i < process.argv.length; i++) {
+            if (process.argv[i][0] != '-') {
+                file = process.argv[i];
+                break;
+            }
+
+            if (isUnaryArg(process.argv[i])) i++;
+        }
+    }
+
+    launch($('repl'), file, encoding, nextArg('compile', undefined));
+}
+else {
+    module.exports = require('./prog');
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

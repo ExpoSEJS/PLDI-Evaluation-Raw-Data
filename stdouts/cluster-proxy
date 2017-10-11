@@ -1,0 +1,414 @@
+/root/Targets/cluster-proxy
+└── cluster-proxy@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/cluster-proxy/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0505 took 3.3602s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (19:4) on program /*
+ Copyright 2014-2015 Bazaarvoice, Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+var defaultMsgType = 'clusterproxy';
+
+var assert = require('assert');
+
+/**
+ * The interface for the master process.
+ * @alias clusterproxy.master
+ * @constructor
+ * @param {Object} [options] The options hash.
+ * @param {Logger} [options.logger] A logger object (conforms to log4js logger interface) to be used on the master.
+ * @param {String} [options.msgType] The value of the `type` field of the messages, it has to match the workers'; so multiple types can be used to support various delegate objects.
+ * @param {Object} [options.delegate={}] The delegate object.
+ */
+var Master = function (options) {
+    if (!(this instanceof Master)) {
+        return new Master(options);
+    }
+
+    options = options || {};
+    this._logger = options.logger || require('./helpers/dummy-logger');
+    this._msgType = options.msgType || defaultMsgType;
+    this._delegate = options.delegate || {};
+};
+
+/**
+ * Makes the master listen on worker messages.
+ *
+ * @param {cluster.worker} worker A cluster worker (the result of a `cluster.fork()`).
+ * @returns an object with a `disconnectWorker` method.
+ */
+Master.prototype.connectWorker = function (worker) {
+    var listener = this._messageListener.bind(this, worker);
+    worker.on('message', listener);
+
+    return {
+        disconnect: function () {
+            worker.removeListener('message', listener);
+        }
+    };
+};
+
+Master.prototype._messageListener = function (worker, msgText) {
+    var msg = JSON.parse(msgText);
+    if (msg.type !== this._msgType) {
+        this._logger.warn('unrecognized message');
+        return; //not for us
+    }
+
+    var reply = (function (msg) {
+        this._logger.trace('reply', msg);
+        worker.send(JSON.stringify(msg));
+    }).bind(this);
+
+    if (msg.get) {
+        this._logger.trace('get', msg.get);
+        try {
+            msg.result = this._delegate[msg.get];
+        } catch (ex) {
+            msg.error = ex.toString();
+        }
+        reply(msg);
+    } else if (msg.set) {
+        this._logger.trace('set', msg.set);
+        try {
+            msg.result = this._delegate[msg.set];
+            this._delegate[msg.set] = msg.args;
+        } catch (ex) {
+            msg.error = ex.toString();
+        }
+        reply(msg);
+    } else if (msg.del) {
+        this._logger.trace('del', msg.del);
+        try {
+            msg.result = this._delegate[msg.del];
+            delete this._delegate[msg.del];
+        } catch (ex) {
+            msg.error = ex.toString();
+        }
+        reply(msg);
+    } else if (msg.invoke) {
+        this._logger.trace('invoke', msg.invoke);
+        try {
+            msg.result = this._delegate[msg.invoke].apply(this._delegate, msg.args);
+        } catch (ex) {
+            msg.error = ex.toString();
+        }
+        reply(msg);
+    } else if (msg.invokeAsync) {
+        this._logger.trace('invokeAsync', msg.invokeAsync);
+        try {
+            msg.args[msg.callbackIndex] = function () {
+                msg.result = new Array(arguments.length);
+                for (var i = 0; i < arguments.length; i++) {
+                    msg.result[i] = arguments[i];
+                }
+                reply(msg);
+            };
+            this._delegate[msg.invokeAsync].apply(this._delegate, msg.args);
+        } catch (ex) {
+            msg.error = ex.toString();
+            reply(msg);
+        }
+    } else {
+        this._logger.warn('no command field');
+    }
+};
+
+/**
+ * The interface for the worker processes.
+ * @alias clusterproxy.worker
+ * @constructor
+ * @param {Object} [options] The options hash.
+ * @param {Logger} [options.logger] A logger object (conforms to log4js logger interface) to be used on the master.
+ * @param {String} [options.msgType] The value of the `type` field of the messages, it has to match the master's; so multiple types can be used to support various delegate objects.
+ * @param {Object} [options.timeout=1000] The timeout
+ */
+var Worker = function (options) {
+    if (!(this instanceof Worker)) {
+        return new Worker(options);
+    }
+
+    options = options || {};
+    this._logger = options.logger || require('./helpers/dummy-logger');
+    this._msgType = options.msgType || defaultMsgType;
+    this._timeout = options.timeout || 1000;
+
+    this._callCounter = 0;
+    this._pendingRequests = {};
+
+    this._send = Worker.prototype._send.bind(this);
+    this._messageListener = Worker.prototype._messageListener.bind(this);
+    this.get = Worker.prototype.get.bind(this);
+    this.set = Worker.prototype.set.bind(this);
+    this.invoke = Worker.prototype.invoke.bind(this);
+    this.invokeAsync = Worker.prototype.invokeAsync.bind(this);
+    this.del = Worker.prototype.del.bind(this);
+
+    //start listening for responses
+    process.on('message', this._messageListener);
+};
+
+Worker.prototype._send = function (msg, callback) {
+    msg.type = this._msgType;
+    msg.id = this._callCounter++;
+    this._pendingRequests[msg.id] = callback;
+    this._logger.trace('send %j', msg);
+    process.send(JSON.stringify(msg));
+    if (this._timeout && callback) {
+        setTimeout((function () {
+            if (this._pendingRequests[msg.id]) {
+                var err = 'timeout exceeded waiting for master reply for ' + JSON.stringify(msg);
+                this._logger.warn(err);
+                delete this._pendingRequests[msg.id];
+                callback(err);
+            }
+        }).bind(this), this._timeout);
+    }
+};
+
+Worker.prototype._messageListener = function (msgText) {
+    try {
+        this._logger.trace('received %s', msgText);
+        var msg = JSON.parse(msgText);
+
+        if (msg.type === this._msgType) {
+            var callback = this._pendingRequests[msg.id];
+            if (callback) {
+                delete this._pendingRequests[msg.id];
+                callback.apply(null, [msg.error].concat(msg.result));
+            } else if (!this._pendingRequests.hasOwnProperty(msg.id)) {
+                this._logger.warn('no callback for message %j (called twice/timed out already?)', msg);
+            }
+        } else {
+            this._logger.warn('unkown message type', msg.type);
+        }
+    } catch (ex) {
+        this._logger.warn('worker on message', ex);
+    }
+};
+
+/**
+ * Gets a property of the delegate on master.
+ *
+ * @param {String} property The name of the property to get.
+ * @param {clusterproxy.worker~getCallback} callback The function that will be called with the value of the property.
+ * @returns {undefined}
+ */
+Worker.prototype.get = function (property, callback) {
+    /**
+     * @callback clusterproxy.worker~getCallback
+     * @param {*} proxyError Any error coming from clusterproxy itself, or exceptions thrown getting the property.
+     * @param {*} value The value of the property.
+     */
+    assert(typeof property === 'string');
+    assert(!callback || (typeof callback === 'function'));
+
+    this._send({
+        get: property
+    }, callback);
+};
+
+/**
+ * Sets a property of the delegate on mater.
+ * @param {String} property The name of the property to set.
+ * @param {*} value The value of the property to set.
+ * @param {clusterproxy.worker~setCallback} [callback] The function that will be called after the property is set, with the old value.
+ * @returns {undefined}
+ */
+Worker.prototype.set = function (property, value, callback) {
+    /**
+     * @callback clusterproxy.worker~setCallback
+     * @param {*} proxyError Any error coming from clusterproxy itself, or exceptions thrown setting the property.
+     * @param {*} oldValue The old value of the set property.
+     */
+
+    assert(typeof property === 'string');
+    assert(!callback || (typeof callback === 'function'));
+
+    this._send({
+        set: property,
+        args: value
+    }, callback);
+};
+
+
+/**
+ * Deletes a property of the delegate on master.
+ * @param {String} property The name of the property to delete.
+ * @param {clusterproxy.worker~delCallback} [callback] The function that will be called after the property is deleted, with the old value.
+ * @returns {undefined}
+ */
+Worker.prototype.del = function (property, callback) {
+    /**
+     * @callback clusterproxy.worker~delCallback
+     * @param {*} proxyError Any error coming from clusterproxy itself, or exceptions thrown deleting the property.
+     * @param {*} oldValue The old value of the deleted property.
+     */
+
+    assert(typeof property === 'string');
+    assert(!callback || (typeof callback === 'function'));
+
+    this._send({
+        del: property
+    }, callback);
+};
+
+/**
+ * Calls a method of the delegate on master.
+ * @param {String} method the name of the method to invoke on the delegate.
+ * @param {...*} [args] Arguments for the invoked method.
+ * @param {clusterproxy.worker~invokeCallback} [callback] The function that will be called with the error code and the result of the method call.
+ * @returns {undefined}
+ */
+Worker.prototype.invoke = function (method, callback) {
+    /**
+     * @callback clusterproxy.worker~invokeCallback
+     * @param {*} proxyError Any error coming from clusterproxy itself, or exceptions thrown by the invoked method.
+     * @param {*} [result] The return value of the invoked method.
+     */
+
+    var delegateArgs = new Array(arguments.length - 2);
+    for (var i = 1; i < arguments.length - 1; i++) {
+        delegateArgs[i-1] = arguments[i];
+    }
+    callback = arguments[arguments.length - 1];
+
+    assert(typeof method === 'string');
+    assert(!callback || (typeof callback === 'function'));
+
+    this._send({
+        invoke: method,
+        args: delegateArgs
+    }, callback);
+};
+
+/**
+ * Calls a method of the delegate on master, with 'continuation passing style', assuming the last argument is the callback.
+ * @param {String} method the name of the method to invoke on the delegate.
+ * @param {...*} [args] Arguments for the invoked method, in the same order as in the invoked method.
+ * @param {clusterproxy.worker~invokeAsyncCallback} callback The function that will be called with the error code and rest of the arguments that the invoked callback received.
+ * @returns {undefined}
+ */
+Worker.prototype.invokeAsync = function (method, args, callback) {
+    var callbackIndex = arguments.length-2;
+    var argumentsWithCallbackIndex = [method, callbackIndex];
+    for (var i = 1; i < arguments.length; i++) {
+        argumentsWithCallbackIndex.push(arguments[i]);
+    }
+    this.invokeAsyncWithCallbackIndex.apply(this, argumentsWithCallbackIndex);
+};
+
+/**
+ * Calls a method of the delegate on master, with 'continuation passing style'.
+ * @param {String} method the name of the method to invoke on the delegate.
+ * @param {Number} callbackIndex The index of the callback method on the invoked method arguments.
+ * @param {...*} [args] Arguments for the invoked method, in the same order as in the invoked method (that is, the callback is in `callbackIndex+2` position; taking into account the two first arguments).
+ * @param {clusterproxy.worker~invokeAsyncCallback} callback The function that will be called with the error code and rest of the arguments that the invokee callback received.
+ * @returns {undefined}
+ */
+Worker.prototype.invokeAsyncWithCallbackIndex = function (method, callbackIndex, args, callback) {
+    /**
+     * @callback clusterproxy.worker~invokeAsyncCallback
+     * @param {*} proxyError Any error coming from clusterproxy itself, or exceptions thrown by the invoked method.
+     * @param {...*} [results] Any arguments that the invokee callback received. For node/async style that means that the two first arguments might be error codes, but cluster proxy is agnostic to that.
+     */
+
+    assert(typeof method === 'string');
+    assert(typeof callbackIndex === 'number');
+
+    var delegateArgs = new Array(arguments.length - 2);
+    for (var i = 2; i < arguments.length; i++) {
+        delegateArgs[i-2] = arguments[i];
+    }
+
+    callback = delegateArgs[callbackIndex];
+
+    assert(!callback || (typeof callback === 'function'));
+
+    delete delegateArgs[callbackIndex]; //do not try to serialize the client callback
+    this._send({
+        invokeAsync: method,
+        args: delegateArgs,
+        callbackIndex: callbackIndex
+    }, callback);
+};
+
+
+/**
+ * @namespace clusterproxy
+ * @description This module allows to use a proxy object that abstracts all the
+ * message passing required to communicate between worker processes and master in
+ * a cluster app.
+ *
+ * @example
+ *  var cluster = require('cluster');
+ *  var clusterproxy = require('cluster-proxy');
+ *  if (cluster.isMaster) {
+ *    var delegate = {
+ *      a : 42,
+ *      f : function(a, b) {
+ *        return a + b;
+ *      },
+ *      g : function(a, cb) {
+ *        cb(null, a*2, a*a);
+ *      }
+ *    };
+ *    var master = clusterproxy.master({delegate: delegate});
+ *    master.connectWorker(cluster.fork());
+ *  } else {
+ *    var proxy = clusterproxy.worker();
+ *    proxy.get('a', console.log);
+ *    proxy.invoke('f', 1, 2, console.log);
+ *    proxy.invokeAsync('g',//method name
+ *                       1, //callback index in the invoked method
+ *                       21,//argument for the invoked method
+ *                       function(proxyErr, delegateErr, double, square) {//callback
+ *      if(!proxyErr && !delegateErr) {
+ *        console.log('double:', double, 'square:', square);
+ *      } else {
+ *        console.log('error:', proxyErr || delegateErr);
+ *      }
+ *    });
+ *  }
+ */
+module.exports = {
+    Master: Master,
+    Worker: Worker
+}; at SyntaxError: Unexpected token (19:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

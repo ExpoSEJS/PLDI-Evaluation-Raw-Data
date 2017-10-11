@@ -1,0 +1,171 @@
+/root/Targets/typeahead-addresspicker
+└── typeahead-addresspicker@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/typeahead-addresspicker/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0802 took 3.095s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:84) on program (($) ->
+  class @AddressPickerResult
+    constructor: (@placeResult, @fromReverseGeocoding = false) ->
+      @latitude = @placeResult.geometry.location.lat()
+      @longitude = @placeResult.geometry.location.lng()
+
+    addressTypes: ->
+      types = []
+      for component in @addressComponents()
+        for type in component.types
+          types.push(type) if types.indexOf(type) == -1
+      types
+
+    addressComponents: ->
+      @placeResult.address_components || []
+
+    address: ->
+      @placeResult.formatted_address
+
+    nameForType: (type, shortName = false) ->
+      for component in @addressComponents()
+        return (if shortName then component.short_name else component.long_name) if component.types.indexOf(type) != -1
+      null
+
+    lat: ->
+      @latitude
+
+    lng: ->
+      @longitude
+
+    setLatLng: (@latitude, @longitude) ->
+
+
+    isAccurate: ->
+      ! @placeResult.geometry.viewport
+
+    isReverseGeocoding: ->
+      @fromReverseGeocoding
+
+  class @AddressPicker extends Bloodhound
+    constructor: (options = {})->
+      @options = $.extend
+        local: []
+        datumTokenizer: (d) -> Bloodhound.tokenizers.whitespace(d.num)
+        queryTokenizer: Bloodhound.tokenizers.whitespace
+        autocompleteService: {types: ["geocode"]}
+        zoomForLocation: 16
+        reverseGeocoding: false
+        placeDetails: true
+      , options
+      super(@options)
+
+      if @options.map
+        @initMap()
+
+      # Create a PlacesService on a fake DOM element
+      @placeService = new google.maps.places.PlacesService(document.createElement('div'))
+
+    # Binds typeahead:selected and typeahead:cursorchanged event to @updateMap
+    bindDefaultTypeaheadEvent: (typeahead) ->
+      typeahead.bind("typeahead:selected", @updateMap)
+      typeahead.bind("typeahead:cursorchanged", @updateMap)
+
+    # Inits google map to display selected address from autocomplete
+    initMap: ->
+      if @options?.map?.gmap
+        @map = @options.map.gmap
+      else
+        @mapOptions = $.extend
+          zoom: 3
+          center: new google.maps.LatLng(0, 0)
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+          boundsForLocation: @updateBoundsForPlace
+        , @options.map
+        @map = new google.maps.Map($(@mapOptions.id)[0], @mapOptions)
+      @lastResult = null
+
+      # Create a hidden marker to display selected address
+      markerOptions = $.extend
+        draggable: true
+        visible: false
+        position: @map.getCenter()
+        map: @map
+      , @options.marker || {}
+      @marker = new google.maps.Marker(markerOptions)
+      if markerOptions.draggable
+        google.maps.event.addListener(@marker, 'dragend', @markerDragged)
+
+    # Overrides Bloodhound#get  to send request to google maps autocomplete service
+    get: (query, cb) ->
+      service = new google.maps.places.AutocompleteService()
+      @options.autocompleteService.input = query
+      service.getPlacePredictions @options.autocompleteService, (predictions) =>
+        $(this).trigger('addresspicker:predictions', [predictions])
+        cb(predictions)
+
+    # Callback for typeahead events like typeahead:selected or typeahead:cursorchanged
+    # to update marker position and map center/zoom for a specific Google Map place
+    updateMap: (event, place) =>
+      # Send place reference to place service to get geographic information
+      if @options.placeDetails
+        @placeService.getDetails place, (response) =>
+          @lastResult = new AddressPickerResult(response)
+          if @marker
+            @marker.setPosition(response.geometry.location)
+            @marker.setVisible(true)
+          if @map
+            @mapOptions?.boundsForLocation(response)
+          $(this).trigger('addresspicker:selected', @lastResult)
+      else
+        $(this).trigger('addresspicker:selected', place)
+
+    updateBoundsForPlace: (response) =>
+      if response.geometry.viewport
+        @map.fitBounds(response.geometry.viewport)
+      else
+        @map.setCenter(response.geometry.location)
+        @map.setZoom(@options.zoomForLocation)
+
+    markerDragged: () =>
+      if @options.reverseGeocoding
+        @reverseGeocode(@marker.getPosition())
+      else
+        if @lastResult
+          @lastResult.setLatLng(@marker.getPosition().lat(), @marker.getPosition().lng())
+        else
+          @lastResult = new AddressPickerResult(geometry: {location: @marker.getPosition()})
+        $(this).trigger('addresspicker:selected', @lastResult)
+
+    reverseGeocode: (position) ->
+      @geocoder ?= new google.maps.Geocoder()
+      @geocoder.geocode location: position, (results) =>
+        if results && results.length > 0
+          @lastResult = new AddressPickerResult(results[0], true)
+          $(this).trigger('addresspicker:selected', @lastResult)
+
+    # Attr accessor
+    getGMap: -> @map
+    getGMarker: -> @marker
+)(jQuery)
+ at SyntaxError: Unexpected token (1:84)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOp (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1656:43)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1639:17)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

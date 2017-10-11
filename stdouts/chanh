@@ -1,0 +1,139 @@
+
+> bufferutil@1.2.1 install /root/Targets/chanh/node_modules/bufferutil
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/chanh/node_modules/bufferutil/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+make: Leaving directory '/root/Targets/chanh/node_modules/bufferutil/build'
+
+> heapdump@0.3.7 install /root/Targets/chanh/node_modules/heapdump
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/chanh/node_modules/heapdump/build'
+  CXX(target) Release/obj.target/addon/src/heapdump.o
+  SOLINK_MODULE(target) Release/obj.target/addon.node
+  COPY Release/addon.node
+make: Leaving directory '/root/Targets/chanh/node_modules/heapdump/build'
+
+> ws@0.4.32 install /root/Targets/chanh/node_modules/socket.io-client/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/chanh/node_modules/socket.io-client/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/chanh/node_modules/socket.io-client/node_modules/ws/build'
+
+> utf-8-validate@1.2.2 install /root/Targets/chanh/node_modules/utf-8-validate
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/chanh/node_modules/utf-8-validate/build'
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/root/Targets/chanh/node_modules/utf-8-validate/build'
+/root/Targets/chanh
+└─┬ chanh@1.3.14 
+  ├── async@0.2.5 
+  ├─┬ chanh-admin@0.4.8 
+  │ ├── chanh-monitor@0.3.7 
+  │ ├── heapdump@0.3.7 
+  │ └─┬ socket.io-client@0.9.16 
+  │   ├─┬ active-x-obfuscator@0.0.1 
+  │   │ └── zeparser@0.0.5 
+  │   ├── uglify-js@1.2.5 
+  │   ├─┬ ws@0.4.32 
+  │   │ ├── commander@2.1.0 
+  │   │ ├── nan@1.0.0 
+  │   │ └── tinycolor@0.0.1 
+  │   └── xmlhttprequest@1.4.2 
+  ├── chanh-loader@0.0.6 
+  ├─┬ chanh-logger@0.1.9 
+  │ └─┬ log4js@0.6.21 
+  │   └── semver@1.1.4 
+  ├── chanh-protobuf@0.4.2 
+  ├── chanh-protocol@0.1.6 
+  ├─┬ chanh-rpc@0.4.14 
+  │ ├── async@0.2.10 
+  │ ├── bson@0.5.7 
+  │ ├── node-uuid@1.4.0 
+  │ └── stream-pkg@0.0.5 
+  ├─┬ chanh-scheduler@0.3.8 
+  │ └─┬ log4js@0.6.7 
+  │   ├── async@0.1.15 
+  │   └── dequeue@1.0.3 
+  ├─┬ cliff@0.1.8 
+  │ ├── colors@0.6.2 
+  │ ├── eyes@0.1.8 
+  │ └─┬ winston@0.6.2 
+  │   ├── async@0.1.22 
+  │   ├── cycle@1.0.3 
+  │   ├── pkginfo@0.2.3 
+  │   ├── request@2.9.203 
+  │   └── stack-trace@0.0.10 
+  ├── commander@2.0.0 
+  ├── crc@0.2.0 
+  ├── mkdirp@0.3.3 
+  ├─┬ mqtt@0.3.9 
+  │ ├─┬ bops@0.1.1 
+  │ │ ├── base64-js@0.0.2 
+  │ │ └── to-utf8@0.0.1 
+  │ └─┬ readable-stream@1.0.34 
+  │   ├── core-util-is@1.0.2 
+  │   ├── inherits@2.0.3 
+  │   ├── isarray@0.0.1 
+  │   └── string_decoder@0.10.31 
+  ├── node-bignumber@1.2.1 
+  ├── seq-queue@0.0.5 
+  ├─┬ socket.io@0.9.16 
+  │ ├── base64id@0.1.0 
+  │ ├── policyfile@0.0.4 
+  │ └── redis@0.7.3 
+  └─┬ ws@0.8.0 
+    ├─┬ bufferutil@1.2.1 
+    │ ├── bindings@1.2.1 
+    │ └── nan@2.7.0 
+    ├── options@0.0.6 
+    ├── ultron@1.0.2 
+    └─┬ utf-8-validate@1.2.2 
+      └── nan@2.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/chanh/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","decodeURIComponent","charCodeAt","fromCharCode","toUpperCase","bind","bound configure","call","isArray","cwd","apply","getInterfaceAddresses"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.092 took 32.7622s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/chanh/node_modules/chanh/index.js. Coverage (Term): 46% Coverage (LOC): 79%
+*- File /root/Targets/chanh/node_modules/chanh/lib/chanh.js. Coverage (Term): 32% Coverage (LOC): 57%
+*- File /root/Targets/chanh/node_modules/chanh/lib/application.js. Coverage (Term): 17% Coverage (LOC): 38%
+*- File /root/Targets/chanh/node_modules/chanh/lib/util/utils.js. Coverage (Term): 18% Coverage (LOC): 36%
+*- File /root/Targets/chanh/node_modules/chanh-logger/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/chanh/node_modules/chanh-logger/lib/logger.js. Coverage (Term): 26% Coverage (LOC): 47%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/log4js.js. Coverage (Term): 48% Coverage (LOC): 52%
+*- File /root/Targets/chanh/node_modules/async/lib/async.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/layouts.js. Coverage (Term): 15% Coverage (LOC): 37%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/date_format.js. Coverage (Term): 13% Coverage (LOC): 27%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/levels.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/logger.js. Coverage (Term): 47% Coverage (LOC): 65%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/connect-logger.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/chanh/node_modules/chanh-logger/node_modules/log4js/lib/appenders/console.js. Coverage (Term): 74% Coverage (LOC): 87%
+*- File /root/Targets/chanh/node_modules/chanh/lib/util/constants.js. Coverage (Term): 70% Coverage (LOC): 95%
+*- File /root/Targets/chanh/node_modules/chanh/lib/util/events.js. Coverage (Term): 40% Coverage (LOC): 80%
+*- File /root/Targets/chanh/node_modules/chanh/lib/util/appUtil.js. Coverage (Term): 14% Coverage (LOC): 32%
+*- File /root/Targets/chanh/node_modules/chanh/lib/util/log.js. Coverage (Term): 44% Coverage (LOC): 67%
+*- File /root/Targets/chanh/node_modules/chanh/lib/master/starter.js. Coverage (Term): 15% Coverage (LOC): 36%
+*- File /root/Targets/chanh/node_modules/chanh/lib/common/manager/appManager.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

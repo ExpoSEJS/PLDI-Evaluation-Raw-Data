@@ -1,0 +1,111 @@
+
+> bson@0.2.5 install /root/Targets/abaaso/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/abaaso/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:90: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/abaaso/node_modules/bson/build'
+
+> kerberos@0.0.3 install /root/Targets/abaaso/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/abaaso/node_modules/kerberos/build'
+  SOLINK_MODULE(target) Release/obj.target/kerberos.node
+  COPY Release/kerberos.node
+make: Leaving directory '/root/Targets/abaaso/node_modules/kerberos/build'
+/root/Targets/abaaso
+└─┬ abaaso@3.11.12 
+  ├── localStorage@1.0.3 
+  └─┬ mongodb@1.3.23 
+    ├── bson@0.2.5 
+    └── kerberos@0.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/abaaso/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 12% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","pow","random","parseInt","RegExp","isNaN","isFinite","bound warn","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0803 took 130.7627s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/abaaso/node_modules/abaaso/lib/abaaso.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/index.js. Coverage (Term): 95% Coverage (LOC): 96%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/index.js. Coverage (Term): 40% Coverage (LOC): 38%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/bson.js. Coverage (Term): 9% Coverage (LOC): 33%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/double.js. Coverage (Term): 41% Coverage (LOC): 57%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/objectid.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/binary_parser.js. Coverage (Term): 8% Coverage (LOC): 30%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/symbol.js. Coverage (Term): 41% Coverage (LOC): 60%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/code.js. Coverage (Term): 33% Coverage (LOC): 43%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/min_key.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/max_key.js. Coverage (Term): 50% Coverage (LOC): 57%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/db_ref.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/binary.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/abaaso/node_modules/bson/lib/bson/float_parser.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/bson/ext/index.js. Coverage (Term): 87% Coverage (LOC): 93%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/base_command.js. Coverage (Term): 60% Coverage (LOC): 80%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/admin.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection.js. Coverage (Term): 65% Coverage (LOC): 82%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/insert_command.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/query_command.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/delete_command.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/update_command.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/db_command.js. Coverage (Term): 13% Coverage (LOC): 31%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/utils.js. Coverage (Term): 14% Coverage (LOC): 31%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/cursor.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/get_more_command.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/commands/kill_cursor_command.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/read_preference.js. Coverage (Term): 32% Coverage (LOC): 54%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/cursorstream.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/shared.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/core.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/query.js. Coverage (Term): 11% Coverage (LOC): 27%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/scope.js. Coverage (Term): 8% Coverage (LOC): 5%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/index.js. Coverage (Term): 18% Coverage (LOC): 26%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/geo.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/commands.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/collection/aggregation.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/aggregation_cursor.js. Coverage (Term): 11% Coverage (LOC): 7%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/command_cursor.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/connection.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/connection_utils.js. Coverage (Term): 14% Coverage (LOC): 35%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/server.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/responses/mongo_reply.js. Coverage (Term): 10% Coverage (LOC): 27%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/connection_pool.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/server_capabilities.js. Coverage (Term): 15% Coverage (LOC): 13%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/base.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/auth/mongodb_cr.js. Coverage (Term): 14% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/auth/mongodb_gssapi.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/abaaso/node_modules/kerberos/index.js. Coverage (Term): 53% Coverage (LOC): 100%
+*- File /root/Targets/abaaso/node_modules/kerberos/lib/kerberos.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/auth/mongodb_sspi.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/auth/mongodb_plain.js. Coverage (Term): 19% Coverage (LOC): 13%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/auth/mongodb_x509.js. Coverage (Term): 20% Coverage (LOC): 14%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/mongos.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/ping_strategy.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/strategies/statistics_strategy.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/options.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/repl_set_state.js. Coverage (Term): 16% Coverage (LOC): 27%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/repl_set/ha.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/mongo_client.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/db.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/connection/url_parser.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/gridfs/grid.js. Coverage (Term): 14% Coverage (LOC): 22%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/gridfs/gridstore.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/gridfs/chunk.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /root/Targets/abaaso/node_modules/mongodb/lib/mongodb/gridfs/readstream.js. Coverage (Term): 15% Coverage (LOC): 15%
+*- File /root/Targets/abaaso/node_modules/localStorage/lib/localStorage.js. Coverage (Term): 31% Coverage (LOC): 50%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,25 @@
+/root/Targets/node-module-with-unittests-template
+└── node-module-with-unittests-template@0.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/node-module-with-unittests-template/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 40% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 40% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 48% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 48% coverage ] ****** [3 done /0 queued / 0 running / 1 errors / 48% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound NodeModuleWithUnittestsTemplate","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0616 took 3.3549s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0} start 3.4629 took 3.4481s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0}
+* Error: TypeError: Cannot read property 'sayhello' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"_bound":2} start 6.9568 took 3.1601s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 85% Coverage (LOC): 92%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/node-module-with-unittests-template/node_modules/node-module-with-unittests-template/src/node-module-with-unittests-template.js. Coverage (Term): 86% Coverage (LOC): 100%
+*- File /root/Targets/node-module-with-unittests-template/node_modules/node-module-with-unittests-template/src/dummy.js. Coverage (Term): 76% Coverage (LOC): 86%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 1 errors **

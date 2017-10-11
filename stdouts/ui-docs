@@ -1,0 +1,97 @@
+/root/Targets/ui-docs
+└─┬ ui-docs@0.0.1 
+  ├── cssom@0.3.2 
+  ├── dotaccess@1.0.5 
+  ├─┬ fs-extra@0.12.0 
+  │ ├─┬ jsonfile@2.4.0 
+  │ │ └── graceful-fs@4.1.11 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── ncp@0.6.0 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├── minimatch@3.0.4 
+  │     └── path-is-absolute@1.0.1 
+  ├─┬ glob@4.5.3 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@2.0.10 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ └── once@1.4.0 
+  ├─┬ handlebars@2.0.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ uglify-js@2.3.6 
+  │   ├── async@0.2.10 
+  │   └─┬ source-map@0.1.43 
+  │     └── amdefine@1.0.1 
+  ├─┬ handlebars-helper-repeat@0.2.0 
+  │ └── digits@0.1.4 
+  ├── highlight.js@8.9.1 
+  ├─┬ js-beautify@1.7.3 
+  │ ├─┬ config-chain@1.1.11 
+  │ │ ├── ini@1.3.4 
+  │ │ └── proto-list@1.2.4 
+  │ ├─┬ editorconfig@0.13.3 
+  │ │ ├── bluebird@3.5.0 
+  │ │ ├── commander@2.11.0 
+  │ │ ├─┬ lru-cache@3.2.0 
+  │ │ │ └── pseudomap@1.0.2 
+  │ │ ├── semver@5.4.1 
+  │ │ └── sigmund@1.0.1 
+  │ └─┬ nopt@3.0.6 
+  │   └── abbrev@1.1.1 
+  ├── lodash@2.4.2 
+  ├── marked@0.3.2  (git+https://github.com/chester1000/marked.git#cb6aecd3f87d961903e0c98c1059e97e53dec885)
+  ├─┬ multimatch@1.0.1 
+  │ ├── array-differ@1.0.0 
+  │ ├─┬ array-union@1.0.2 
+  │ │ └── array-uniq@1.0.3 
+  │ └─┬ minimatch@1.0.0 
+  │   └── lru-cache@2.7.3 
+  ├── scrawl@0.0.5  (git+https://github.com/vieron/scrawl.git#34885e326fdb86db4d497c70c1953e3a3fb55b78)
+  ├─┬ stylus@0.45.1 
+  │ ├── css-parse@1.7.0 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├─┬ glob@3.2.11 
+  │ │ └─┬ minimatch@0.3.0 
+  │ │   └── lru-cache@2.7.3 
+  │ ├── mkdirp@0.3.5 
+  │ └── sax@0.5.8 
+  └── underscore.string@2.4.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ui-docs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","getOwnPropertyDescriptor","call","create","apply","parseInt"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0677 took 7.0177s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: modern is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ui-docs/node_modules/ui-docs/lib/ui-docs.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/ui-docs/node_modules/fs-extra/lib/index.js. Coverage (Term): 21% Coverage (LOC): 16%
+*- File /root/Targets/ui-docs/node_modules/jsonfile/index.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/ui-docs/node_modules/graceful-fs/graceful-fs.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/ui-docs/node_modules/graceful-fs/polyfills.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/ui-docs/node_modules/graceful-fs/fs.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/ui-docs/node_modules/graceful-fs/legacy-streams.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/ui-docs/node_modules/fs-extra/lib/json.js. Coverage (Term): 36% Coverage (LOC): 39%
+*- File /root/Targets/ui-docs/node_modules/fs-extra/lib/mkdir.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/ui-docs/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File /root/Targets/ui-docs/node_modules/fs-extra/lib/copy.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/ui-docs/node_modules/ncp/lib/ncp.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

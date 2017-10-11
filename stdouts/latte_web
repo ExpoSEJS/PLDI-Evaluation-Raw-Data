@@ -1,0 +1,306 @@
+/root/Targets/latte_web
+└─┬ latte_web@0.1.2 
+  ├── latte_lib@1.0.4 
+  ├── latte_load@0.0.2 
+  ├── latte_require@0.0.5 
+  ├── latte_verify@0.0.3 
+  ├─┬ latte_watch@0.0.4 
+  │ └─┬ chokidar@1.7.0 
+  │   ├─┬ anymatch@1.3.2 
+  │   │ ├─┬ micromatch@2.3.11 
+  │   │ │ ├─┬ arr-diff@2.0.0 
+  │   │ │ │ └── arr-flatten@1.1.0 
+  │   │ │ ├── array-unique@0.2.1 
+  │   │ │ ├─┬ braces@1.8.5 
+  │   │ │ │ ├─┬ expand-range@1.8.2 
+  │   │ │ │ │ └─┬ fill-range@2.2.3 
+  │   │ │ │ │   ├── is-number@2.1.0 
+  │   │ │ │ │   ├── isobject@2.1.0 
+  │   │ │ │ │   ├─┬ randomatic@1.1.7 
+  │   │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │   │ │ │ │   │ │ └── kind-of@3.2.2 
+  │   │ │ │ │   │ └── kind-of@4.0.0 
+  │   │ │ │ │   └── repeat-string@1.6.1 
+  │   │ │ │ ├── preserve@0.2.0 
+  │   │ │ │ └── repeat-element@1.1.2 
+  │   │ │ ├─┬ expand-brackets@0.1.5 
+  │   │ │ │ └── is-posix-bracket@0.1.1 
+  │   │ │ ├── extglob@0.3.2 
+  │   │ │ ├── filename-regex@2.0.1 
+  │   │ │ ├─┬ kind-of@3.2.2 
+  │   │ │ │ └── is-buffer@1.1.5 
+  │   │ │ ├─┬ object.omit@2.0.1 
+  │   │ │ │ ├─┬ for-own@0.1.5 
+  │   │ │ │ │ └── for-in@1.0.2 
+  │   │ │ │ └── is-extendable@0.1.1 
+  │   │ │ ├─┬ parse-glob@3.0.4 
+  │   │ │ │ ├── glob-base@0.3.0 
+  │   │ │ │ └── is-dotfile@1.0.3 
+  │   │ │ └─┬ regex-cache@0.4.4 
+  │   │ │   └─┬ is-equal-shallow@0.1.3 
+  │   │ │     └── is-primitive@2.0.0 
+  │   │ └─┬ normalize-path@2.1.1 
+  │   │   └── remove-trailing-separator@1.1.0 
+  │   ├── async-each@1.0.1 
+  │   ├── glob-parent@2.0.0 
+  │   ├── inherits@2.0.3 
+  │   ├─┬ is-binary-path@1.0.1 
+  │   │ └── binary-extensions@1.10.0 
+  │   ├─┬ is-glob@2.0.1 
+  │   │ └── is-extglob@1.0.0 
+  │   ├── path-is-absolute@1.0.1 
+  │   └─┬ readdirp@2.1.0 
+  │     ├── graceful-fs@4.1.11 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     ├─┬ readable-stream@2.3.3 
+  │     │ ├── core-util-is@1.0.2 
+  │     │ ├── isarray@1.0.0 
+  │     │ ├── process-nextick-args@1.0.7 
+  │     │ ├── safe-buffer@5.1.1 
+  │     │ ├── string_decoder@1.0.3 
+  │     │ └── util-deprecate@1.0.2 
+  │     └── set-immediate-shim@1.0.1 
+  ├── latte_web_post@1.0.2 
+  └─┬ ws@1.1.1 
+    ├── options@0.0.6 
+    └── ultron@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/latte_web/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","create","toLocaleLowerCase"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0311 took 14.5025s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (8:12) on program (function(define) { 'use strict';
+	define("latte_require", ["require", "exports", "module", "window"],
+	function(require, exports, module, window) {
+        /**
+          @namespace latte_require
+          @class Modules
+        */
+        var assert = require('assert').ok;
+        var Path = require("path");
+        var Fs = require("fs");
+        var R = require;
+        var Module = require("module");
+        var R = Module._load;
+        (function() {
+          /**
+            是否兼容nodejs 暂时不知道
+          */
+            R.resolve = function(request) {
+                var filename = Module._resolveFilename(request,  process.mainModule);
+                return filename;
+            }
+            R.cache = Module._cache;
+        }).call(R);
+
+        var RunInThisContext = require('vm').runInThisContext;
+        function stripBOM(content) {
+          if(content.charCodeAt(0) === 0xFEFF) {
+            content = content.slice(1);
+          }
+          return content;
+        }
+        var Modules = function( filename) {
+          var _self = this;
+          this.dirname = Path.dirname(filename);
+          this._cache = {};
+          var Module = function(filename) {
+              this.filename = filename;
+              this.dirname = Path.dirname(filename);
+              this.exports = {};
+          };
+          (function() {
+              this.require = function(path) {
+                  assert(path, "missing path");
+                  assert(typeof path === "string", "path must be a string");
+                  return _self._load(path, this);
+              }
+              this.load = function(filename) {
+                this.filename = filename;
+                this.dirname = Path.dirname(filename);
+                this.paths = [Path.dirname(filename)];
+                var extension = Path.extname(filename) || ".js";
+                if (!_self._extensions[extension]) extension = '.js';
+                _self._extensions[extension](this, filename);
+                this.loaded = true;
+              }
+              this._compile = function(content, filename) {
+                var self = this;
+                content = content.replace(/^\#\!.*/, "");
+                function require(path) {
+                  return self.require(path);
+                }
+                require.resolve = function(request) {
+                  return _self._resolveFilename(request, self);
+                }
+                require.extension = _self.extension;
+                require.main = _self.rootModule;
+                require.cache = _self._cache;
+                var wrapper = _self.wrap(content);
+                var compiledWrapper = RunInThisContext(wrapper, {filename: filename});
+                var dirname = Path.dirname(filename);
+                var args = [self.exports, require, self, filename, dirname];
+                return compiledWrapper.apply(self.exports, args);
+              }
+          }).call(Module.prototype);
+          this.Module = Module;
+          this.rootModule = new Module(filename);
+
+        };
+        (function() {
+            this.require = function(request) {
+                return this.rootModule.require(request);
+            }
+            this._resolveFilename = function(request, parent) {
+              var start = request.substring(0,2);
+              if(start !== "./" && start !== ".." ) {
+        					R(request, process.mainModule);
+                  return R.resolve(request);
+              }else{
+									//console.log(parent.filename + "/"+ request);
+									//console.log("parent.dirname:", Path.normalize(parent.dirname +"/" + request));
+                  return Path.normalize(parent.dirname + "/" + request);
+              }
+            }
+            this._load = function(request, parent) {
+              var filename = this._resolveFilename(request, parent);
+							if(process.moduleLoadList.indexOf("Binding " + request) != -1
+								|| process.moduleLoadList.indexOf("NativeModule " + request) != -1) {
+										return require(request);
+							}
+              if(R.cache[filename]) {
+                return R(filename, process.mainModule);
+              }
+              var cachedModule = this._cache[filename];
+              if(cachedModule) {
+                return cachedModule.exports;
+              }
+              var Module = this.Module;
+              var module = new Module(filename, parent);
+              this._cache[filename] = module;
+              var hadException = true;
+              try {
+                module.load(filename);
+                hadException = false;
+              } finally {
+                if(hadException) {
+                  delete this._cache[filename];
+                }
+              }
+              return module.exports;
+            }
+            this._extensions = {};
+            (function() {
+                this[".js"] = function(module, filename) {
+									//console.log(filename);
+									try {
+
+										var content = Fs.readFileSync(filename, "utf8");
+                  
+										module._compile(stripBOM(content), filename);
+									}catch(e) {
+										console.log("loadFile error:",filename);
+										throw e;
+									}
+
+                }
+                this[".json"] = function(module, filename) {
+									var content;
+									try {
+	                  	content =  Fs.readFileSync(filename, "utf8");
+									}catch(e) {
+											console.log("loadFile error:",filename);
+											throw e;
+									}
+                  try {
+                    module.exports = JSON.parse(stripBOM(content));
+                  }catch(err) {
+                    err.message = filename + ": " +err.message;
+                    throw err;
+                  }
+                }
+                this[".node"] = process.dlopen;
+            }).call(this._extensions);
+            this.wrap = function(script) {
+              return this.wrapper[0] + script + this.wrapper[1];
+            };
+            this.wrapper = [
+              '(function (exports, require, module, __filename, __dirname) { ',
+              '\n});'
+            ];
+        }).call(Modules.prototype);
+        (function() {
+          /**
+            @method create
+            @static
+            @public
+            @example
+              var module = new Module();
+          */
+          this.create = function(filename) {
+              var modules = new Modules(filename);
+              return modules;
+          }
+        }).call(Modules);
+        module.exports = Modules;
+  });
+})(typeof define === "function"? define: function(name, reqs, factory) { factory(require, exports, module); });
+ at SyntaxError: Unexpected token (8:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/latte_web/node_modules/latte_web/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/latte_web/node_modules/latte_web/lib/index.js. Coverage (Term): 59% Coverage (LOC): 100%
+*- File /root/Targets/latte_web/node_modules/latte_web/lib/server/index.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/latte_web/node_modules/latte_web/lib/server/master/index.js. Coverage (Term): 13% Coverage (LOC): 11%
+*- File /root/Targets/latte_web/node_modules/latte_verify/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/verify.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/basic/lib.js. Coverage (Term): 17% Coverage (LOC): 30%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/basic/async.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/basic/object.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/basic/events.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/basic/format.js. Coverage (Term): 14% Coverage (LOC): 40%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/test/xhr.js. Coverage (Term): 9% Coverage (LOC): 20%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/test/fs.js. Coverage (Term): 22% Coverage (LOC): 46%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/test/promise.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- File /root/Targets/latte_web/node_modules/latte_lib/lib/test/debug.js. Coverage (Term): 35% Coverage (LOC): 48%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/string.js. Coverage (Term): 22% Coverage (LOC): 22%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/errors/index.js. Coverage (Term): 61% Coverage (LOC): 63%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/errors/configException.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/errors/dataException.js. Coverage (Term): 29% Coverage (LOC): 30%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/errors/codeException.js. Coverage (Term): 39% Coverage (LOC): 41%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/utils.js. Coverage (Term): 27% Coverage (LOC): 25%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/boolean.js. Coverage (Term): 39% Coverage (LOC): 42%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/integer.js. Coverage (Term): 29% Coverage (LOC): 27%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/null.js. Coverage (Term): 59% Coverage (LOC): 75%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/number.js. Coverage (Term): 56% Coverage (LOC): 64%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/object.js. Coverage (Term): 36% Coverage (LOC): 37%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/array.js. Coverage (Term): 16% Coverage (LOC): 16%
+*- File /root/Targets/latte_web/node_modules/latte_verify/lib/types/date.js. Coverage (Term): 23% Coverage (LOC): 24%
+*- File /root/Targets/latte_web/node_modules/latte_web/lib/server/master/rpc.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/latte_web/node_modules/latte_web/lib/server/utils/rpc.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/latte_web/node_modules/latte_load/index.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

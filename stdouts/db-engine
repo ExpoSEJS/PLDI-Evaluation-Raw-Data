@@ -1,0 +1,27 @@
+/root/Targets/db-engine
+└─┬ db-engine@0.5.1 
+  └── terraformer-geostore-index-btree@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/db-engine/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 21% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 21% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toString","apply","bound Database","call","pop"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0787 took 8.1372s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1} start 8.3038 took 7.433s
+*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1}
+* Error: TypeError: Cannot read property 'createReadStream' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 57% Coverage (LOC): 62%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/db-engine/node_modules/db-engine/index.js. Coverage (Term): 31% Coverage (LOC): 37%
+*- File /root/Targets/db-engine/node_modules/db-engine/lib/index.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/db-engine/node_modules/db-engine/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/db-engine/node_modules/db-engine/lib/query.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

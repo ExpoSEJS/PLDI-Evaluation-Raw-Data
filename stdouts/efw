@@ -1,0 +1,31 @@
+/root/Targets/efw
+└── efw@0.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/efw/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0465 took 3.5466s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:78) on program <html lang="en"><head><title>Element</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1"/><link rel="stylesheet" href="./styles/element.io.min.css"/><link rel="stylesheet" href="./styles/element.main.min.css"/></head><body><div class="io-header"><a class="title">Element<em> / </em></a><div class="meta"><span class="sr">Version:</span> v0.1.0</div><div target="#navigationDrop" class="io-trigger"><i></i><i></i><i></i></div></div><nav id="navigationDrop" class="io-navigation"><dl><dt><a href="/structure.html">Structure</a></dt><dd><a href="#">Baseline</a></dd><dd><a href="#">Breakpoints</a></dd><dd><a href="#">Containers</a></dd><dd><a href="#">Covers</a></dd><dd><a href="#">Grids</a></dd></dl><dl><dt><a href="/typography.html">Typography</a></dt><dd><a href="#">Fonts</a></dd><dd><a href="#">Formatting</a></dd><dd><a href="#">Lists</a></dd><dd><a href="#">Keys</a></dd></dl><dl><dt><a href="/content.html">Content</a></dt><dd><a href="/content.html#heroes">Heroes</a></dd><dd><a href="/content.html#tables">Tables</a></dd><dd><a href="/content.html#tabs">Tabs<small> JS</small></a></dd><dd><a href="/content.html#tooltips">Tooltips</a></dd><dd><a href="/content.html#video">Videos<small> JS</small></a></dd></dl><dl><dt><a href="/actions.html">Actions</a></dt><dd><a href="/actions.html#buttons">Buttons</a></dd><dd><a href="/actions.html#forms">Forms</a></dd></dl><dl><dt><a href="/navigation.html">Navigation</a></dt><dd><a href="/navigation.html#breadcrumbs">Breadcrumbs</a></dd><dd><a href="/navigation.html#progress">Progress &#10008;<small> JS</small></a></dd></dl><dl><dt><a href="/prompts.html">Prompts</a></dt><dd><a href="/prompts.html#alerts">Alerts<small> JS</small></a></dd><dd><a href="/prompts.html#callouts">Callouts</a></dd><dd><a href="/prompts.html#toasts">Toasts<small> JS</small></a></dd></dl><dl><dt><a href="/helpers.html">Helpers</a></dt><dd><a href="#">Accessibility</a></dd><dd><a href="#">Utilities<small> JS</small></a></dd></dl><dl><dt><a href="/scripts.html">Scripts</a></dt><dd><a href="#">Lifespan<small> JS</small></a></dd><dd><a href="#">Identify<small> JS</small></a></dd><dd><a href="#">Target<small> JS</small></a></dd><dd><a href="#">Validate<small> JS</small></a></dd><dd><a href="#">Video<small> JS</small></a></dd></dl></nav></body></html><div class="cover bordered"><div class="container"><div class="row"><div class="col"><h1 class="title"></h1></div></div></div></div><span>foo</span><script src="./scripts/element.main.min.js"></script><script src="./scripts/element.io.min.js"></script><script>hljs.initHighlightingOnLoad();</script><div id="grid"></div><div class="tell"></div> at SyntaxError: Unexpected token (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,217 @@
+/root/Targets/bbs_api
+└─┬ bbs_api@1.0.17 
+  ├── basic-auth@0.0.1 
+  ├─┬ express@4.16.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├─┬ body-parser@1.18.2 
+  │ │ ├── bytes@3.0.0 
+  │ │ ├─┬ http-errors@1.6.2 
+  │ │ │ └── setprototypeof@1.0.3 
+  │ │ ├── iconv-lite@0.4.19 
+  │ │ └── raw-body@2.3.2 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.1.0 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── qs@6.5.1 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ glob@4.0.3 
+  │ ├─┬ graceful-fs@3.0.11 
+  │ │ └── natives@1.1.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@0.3.0 
+  │ │ ├── lru-cache@2.7.3 
+  │ │ └── sigmund@1.0.1 
+  │ └─┬ once@1.4.0 
+  │   └── wrappy@1.0.2 
+  ├── shelljs@0.3.0 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bbs_api/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0513 took 2.9735s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'interface' is reserved (17:44) on program ///<reference path='../DefinitelyTyped/node/node.d.ts' />
+///<reference path='../Utils/Utils.ts' />
+var Utils = require("../Utils/Utils");
+
+var Mock = (function () {
+    function Mock(api_path) {
+        this.api_path = null;
+        this.api_path = api_path;
+
+        if (Mock.global_schema == null) {
+            var fs = require('fs'), path = require('path');
+
+            var stdout = fs.readFileSync(path.join(this.api_path, "json-schema", "global.json"));
+            Mock.global_schema = JSON.parse(stdout);
+        }
+    }
+    Mock.prototype.getInterface = function (interface) {
+        return Mock.global_schema[interface];
+    };
+
+    Mock.prototype.create = function (interface) {
+        var fs = require("fs");
+
+        if (!Utils.isPrimitive(interface)) {
+            if (interface.slice(-2) == "[]") {
+                return this.createArray(interface.substring(0, interface.length - 2));
+            } else {
+                return this.makeObject(this.getInterface(interface));
+            }
+        } else {
+            return this.getMockByType(interface);
+        }
+    };
+
+    Mock.prototype.makeObject = function (data) {
+        if (data != undefined) {
+            return this.createObject(data.properties);
+        } else {
+            return null;
+        }
+    };
+
+    Mock.prototype.createArray = function (interface) {
+        var obj = [];
+        var max_items = Math.floor(Math.random() * 20) + 10;
+        for (var i = 0; i < max_items; i++) {
+            obj.push(this.makeObject(this.getInterface(interface)));
+        }
+        return obj;
+    };
+
+    Mock.prototype.createObject = function (properties) {
+        var obj = {};
+        for (var i in properties) {
+            var property = properties[i];
+            if (property.enum == undefined) {
+                switch (property.type) {
+                    case "array":
+                        if (property.items['$ref'] == undefined) {
+                            obj[i] = [];
+                            var max_items = Math.floor(Math.random() * 20) + 10;
+                            for (var j = 0; j < max_items; j++) {
+                                obj[i].push(this.getMock(property.items['type'], property));
+                            }
+                        } else
+                            obj[i] = this.createArray(property.items['$ref']);
+                        break;
+                    default:
+                        if (property.type != undefined) {
+                            obj[i] = this.getMock(property.type, property);
+                        } else {
+                            if (property['$ref'] != "Date") {
+                                obj[i] = this.create(property['$ref']);
+                            } else {
+                                obj[i] = this.getMock(property['$ref'], property);
+                            }
+                        }
+                        break;
+                }
+            } else {
+                obj[i] = properties[i].enum[Math.floor(Math.random() * properties[i].enum.length)];
+            }
+        }
+        return obj;
+    };
+
+    Mock.prototype.getMock = function (type, property) {
+        if (property.description == undefined) {
+            return this.getMockByType(type);
+        } else {
+            var pattern = new RegExp('\[MockType=(\w)+\]', "g");
+            var matches = property.description.match(/\[MockType=(\w)+\]/g);
+            if (matches != null && matches.length > 0) {
+                var match = matches[0];
+                var mockType = match.split("[MockType=").join("").split("]").join("");
+                return this.getMockByType(mockType);
+            } else {
+                return this.getMockByType(type);
+            }
+        }
+    };
+
+    Mock.prototype.getMockByType = function (type) {
+        var fs = require("fs"), path = require("path");
+        if (fs.existsSync(path.join(__dirname, "Type", Utils.UcFirst(type) + '.js'))) {
+            var classObj = require(path.join(__dirname, "Type", Utils.UcFirst(type)));
+            var instance = new classObj();
+            return instance.Generate();
+        } else {
+            if (fs.existsSync(path.join(this.api_path, "mock", Utils.UcFirst(type) + '.js'))) {
+                var classObj = require(path.join(this.api_path, "mock", Utils.UcFirst(type)));
+                var instance = new classObj();
+                return instance.Generate();
+            } else {
+                return "Mock type : " + Utils.UcFirst(type) + " not found";
+            }
+        }
+    };
+    Mock.global_schema = null;
+    return Mock;
+})();
+module.exports = Mock;
+//# sourceMappingURL=Mock.js.map
+ at SyntaxError: The keyword 'interface' is reserved (17:44)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/bbs_api/node_modules/bbs_api/bbs_api.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/bbs_api/node_modules/bbs_api/lib/Routing/Route.js. Coverage (Term): 2% Coverage (LOC): 2%
+*- File /root/Targets/bbs_api/node_modules/bbs_api/lib/Utils/Utils.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- File /root/Targets/bbs_api/node_modules/bbs_api/lib/Routing/VO.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

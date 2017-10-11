@@ -1,0 +1,266 @@
+/root/Targets/mdview
+└─┬ mdview@0.0.6 
+  ├── commander@2.0.0 
+  ├─┬ express@3.4.8 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├─┬ commander@1.3.2 
+  │ │ └── keypress@0.1.0 
+  │ ├─┬ connect@2.12.0 
+  │ │ ├── batch@0.5.0 
+  │ │ ├── bytes@0.2.1 
+  │ │ ├─┬ multiparty@2.2.0 
+  │ │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ └── stream-counter@0.2.0 
+  │ │ ├── negotiator@0.3.0 
+  │ │ ├── pause@0.0.1 
+  │ │ ├── qs@0.6.6 
+  │ │ ├── raw-body@1.1.2 
+  │ │ └── uid2@0.0.3 
+  │ ├── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.1 
+  │ ├── debug@0.8.1 
+  │ ├── fresh@0.2.0 
+  │ ├── merge-descriptors@0.0.1 
+  │ ├── methods@0.1.0 
+  │ ├── mkdirp@0.3.5 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.4 
+  │   └── mime@1.2.11 
+  ├── highlight.js@7.5.0 
+  ├─┬ jade@0.35.0 
+  │ ├── character-parser@1.2.0 
+  │ ├─┬ constantinople@1.0.2 
+  │ │ └─┬ uglify-js@2.4.24 
+  │ │   ├── async@0.2.10 
+  │ │   ├─┬ source-map@0.1.34 
+  │ │   │ └── amdefine@1.0.1 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.5.4 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├── decamelize@1.2.0 
+  │ │     ├── window-size@0.1.0 
+  │ │     └── wordwrap@0.0.2 
+  │ ├─┬ monocle@1.1.50 
+  │ │ └─┬ readdirp@0.2.5 
+  │ │   └─┬ minimatch@3.0.4 
+  │ │     └─┬ brace-expansion@1.1.8 
+  │ │       ├── balanced-match@1.0.0 
+  │ │       └── concat-map@0.0.1 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   └── optimist@0.3.7 
+  │ └─┬ with@1.1.1 
+  │   └── uglify-js@2.4.0 
+  ├── marked@0.2.10 
+  ├─┬ npmlog@0.0.6 
+  │ └── ansi@0.2.1 
+  └── open@0.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/mdview/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0665 took 2.6444s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var marked  = require('marked')
+  , express = require('express')
+  , program = require('commander')
+  , fs      = require('fs')
+  , hljs    = require('highlight.js')
+  , path    = require('path')
+  , pkg     = require('./package')
+  , log     = require('npmlog')
+  , open    = require('open')
+  , cwd     = process.cwd()
+
+process.title = 'mdview'
+
+program
+  .version(pkg.version)
+  .option('-v, --verbose', 'Increase verbosity')
+  .option('-p, --port <port>', 'Port on which to run the server')
+  .option('-c, --css <style>', 'Customize css')
+  .option('-o, --open', 'Open in default browser')
+  .parse(process.argv)
+
+function switchTheme(currentTheme) {
+  var html = '<ul class="theme">'
+  var themes = ['default', 'github', 'npm', 'gitlab']
+  themes.forEach(function(theme) {
+    if (currentTheme.toLowerCase() === theme) {
+      html += '<li class="theme-'+theme+'">'+theme+'</li>'
+    } else {
+      html += '<li class="theme-'+theme+'"><a href="#'+theme+'">'+theme+'</a></li>'
+    }
+  })
+  html += '</ul>'
+  return html
+}
+
+var markedOpts = {
+  gfm: true,
+  highlight: function(code, lang) {
+    if (lang === 'js') lang = 'javascript'
+    if (hljs.LANGUAGES[lang]) {
+      return hljs.highlight(lang, code).value
+    }
+  },
+  tables: true
+}
+
+var serveDir = process.env.MDVIEW_ENV_DIR || program.args.shift() || cwd
+
+log.heading = 'mdview'
+if (program.verbose) log.level = 'verbose'
+
+var port = +program.port || 3000
+
+var app = express()
+
+log.info('serve', 'serving from', serveDir)
+
+var exts = ['.md', '.markdown']
+var styles = ['default', 'github', 'npm', 'gitlab']
+
+var stylesheet = ''
+  , theme = 'default'
+if (program.css) {
+  if (~styles.indexOf(program.css)) {
+    switch(program.css) {
+      case 'default':
+        stylesheet = '/css/style.css'
+        break
+      case 'npm':
+        theme = 'npm'
+        stylesheet = '/css/npm.css'
+        break
+      case 'github':
+        theme = 'github'
+        stylesheet = '/css/github.css'
+        break
+      case 'gitlab':
+        theme = 'gitlab'
+        stylesheet = '/css/gitlab.css'
+        break
+    }
+  } else {
+    theme = 'custom'
+    stylesheet = program.css
+  }
+} else {
+  stylesheet = '/css/style.css'
+}
+
+log.verbose('load', 'theme', theme)
+log.verbose('load', 'stylesheet', stylesheet)
+
+
+app.use(express.static(__dirname + '/public'))
+if (theme === 'custom') {
+  app.use(express.static('/'))
+}
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
+app.set('view options', { doctype: 'html', pretty: false })
+
+if (program.verbose)
+  app.use(express.logger('dev'))
+
+app.use(function(req, res, next) {
+  res.locals.cwd = serveDir
+  res.locals.stylesheet = stylesheet
+  res.locals.theme = theme
+  res.locals.switchTheme = switchTheme(theme)
+  fs.readdir(serveDir, function(err, files) {
+    if (err) return next(err)
+    files = files.filter(function(file) {
+      return ~exts.indexOf(path.extname(file))
+    })
+    res.locals.files = files
+    next()
+  })
+})
+
+app.get('/', function(req, res) {
+  res.render('files')
+})
+
+app.get('/:filename', function(req, res, next) {
+  var pathname = req.params.filename
+  req.filepath = pathname
+  var fullPath = path.join(serveDir, pathname)
+  fs.exists(fullPath, function(e) {
+    res.locals.path = path.basename(pathname)
+    res.locals.title = path.basename(pathname)
+    if (!e) {
+      res.status(404).render('404')
+    } else {
+      next()
+    }
+  })
+})
+
+app.get('/:filename', function(req, res) {
+  var pathname = req.filepath
+  var fullPath = path.join(serveDir, pathname)
+  if (!(~exts.indexOf(path.extname(pathname)))) {
+    res.status(500).render('invalid')
+  } else {
+    fs.readFile(fullPath, 'utf8', function(err, doc) {
+      if (err) {
+        res.status(500).render('invalid')
+      } else {
+        marked(doc, markedOpts, function(err, contents) {
+          if (err) {
+            res.status(500).render('invalid')
+          } else {
+            res.render('file', {
+              content: contents
+            })
+          }
+        })
+      }
+    })
+  }
+})
+
+app.listen(port)
+log.info('listen', port)
+log.info('listen', 'To view the page,', 'open http://localhost:'+port)
+
+if (program.open) {
+  open('http://localhost:'+port)
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

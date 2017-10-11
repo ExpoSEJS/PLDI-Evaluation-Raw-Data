@@ -1,0 +1,74 @@
+/root/Targets/stats-collector
+└─┬ stats-collector@0.0.9 
+  └── commander@2.11.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/stats-collector/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 70% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 70% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 71% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 71% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 71% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 71% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 72% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 72% coverage ] ****** [5 done /0 queued / 0 running / 3 errors / 72% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","setPrototypeOf","toString","apply","bound BaseStats","bound BasicNumberStats","getPrototypeOf","call","Error","bound NumberStats","bound AdvancedNumberStats"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0512 took 14.9428s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 15.2782 took 13.4808s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1}
+* Error: Error: Collectors have names, initialValues, and requirements
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 28.8391 took 12.3239s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"_bound":2}
+* Error: Error: Collectors have names, initialValues, and requirements
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"_bound":2}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"_bound":3} start 41.2484 took 12.0739s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"_bound":3}
+* Error: Error: Collectors have names, initialValues, and requirements
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"_bound":4} start 53.397 took 12.0295s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/index.js. Coverage (Term): 81% Coverage (LOC): 76%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/helpers/collectors.js. Coverage (Term): 70% Coverage (LOC): 65%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/Collector.js. Coverage (Term): 83% Coverage (LOC): 93%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/helpers/collectors.number.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/ArithmeticMean.js. Coverage (Term): 66% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Count.js. Coverage (Term): 81% Coverage (LOC): 93%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/FilteredCount.js. Coverage (Term): 63% Coverage (LOC): 78%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/GeometricMean.js. Coverage (Term): 64% Coverage (LOC): 77%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/HarmonicMean.js. Coverage (Term): 65% Coverage (LOC): 77%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Max.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Mean.js. Coverage (Term): 65% Coverage (LOC): 77%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Median.js. Coverage (Term): 59% Coverage (LOC): 75%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/MidRange.js. Coverage (Term): 65% Coverage (LOC): 77%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Min.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/PowerSumAvgRunning.js. Coverage (Term): 63% Coverage (LOC): 78%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Product.js. Coverage (Term): 66% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Range.js. Coverage (Term): 65% Coverage (LOC): 77%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/StandardDeviationRunning.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/StandardDeviationStable.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Sum.js. Coverage (Term): 66% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/SumOfRecipricals.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/SumOfSquaredDeviationsStable.js. Coverage (Term): 58% Coverage (LOC): 69%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/Values.js. Coverage (Term): 64% Coverage (LOC): 78%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/ValuesSorted.js. Coverage (Term): 65% Coverage (LOC): 81%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/VarianceRunning.js. Coverage (Term): 61% Coverage (LOC): 75%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/collectors/number/VarianceStable.js. Coverage (Term): 63% Coverage (LOC): 76%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/helpers/filters.js. Coverage (Term): 62% Coverage (LOC): 57%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/helpers/filters.number.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/even.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/float.js. Coverage (Term): 68% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/integer.js. Coverage (Term): 68% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/negative.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/nonZero.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/odd.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/positive.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/prime.js. Coverage (Term): 59% Coverage (LOC): 59%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/helpers/leastFactor.js. Coverage (Term): 13% Coverage (LOC): 12%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/filters/number/zero.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/stats/BaseStats.js. Coverage (Term): 33% Coverage (LOC): 45%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/stats/number/BasicNumberStats.js. Coverage (Term): 76% Coverage (LOC): 85%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/stats/number/NumberStats.js. Coverage (Term): 68% Coverage (LOC): 78%
+*- File /root/Targets/stats-collector/node_modules/stats-collector/lib/stats/number/AdvancedNumberStats.js. Coverage (Term): 59% Coverage (LOC): 64%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 5 paths with 3 errors **

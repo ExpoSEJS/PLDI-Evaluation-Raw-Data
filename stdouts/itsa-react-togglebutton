@@ -1,0 +1,326 @@
+/root/Targets/itsa-react-togglebutton
+├─┬ itsa-react-togglebutton@16.0.2 
+│ ├─┬ itsa-react-button@16.0.2 
+│ │ ├─┬ itsa-dom@1.2.0 
+│ │ │ └── itsa-jsext@1.4.0 
+│ │ └── itsa-utils@1.4.0 
+│ ├─┬ prop-types@15.6.0 
+│ │ ├─┬ fbjs@0.8.16 
+│ │ │ ├── core-js@1.2.7 
+│ │ │ ├─┬ isomorphic-fetch@2.2.1 
+│ │ │ │ ├─┬ node-fetch@1.7.3 
+│ │ │ │ │ ├─┬ encoding@0.1.12 
+│ │ │ │ │ │ └── iconv-lite@0.4.19 
+│ │ │ │ │ └── is-stream@1.1.0 
+│ │ │ │ └── whatwg-fetch@2.0.3 
+│ │ │ ├─┬ promise@7.3.1 
+│ │ │ │ └── asap@2.0.6 
+│ │ │ ├── setimmediate@1.0.5 
+│ │ │ └── ua-parser-js@0.7.14 
+│ │ ├─┬ loose-envify@1.3.1 
+│ │ │ └── js-tokens@3.0.2 
+│ │ └── object-assign@4.1.1 
+│ └── UNMET PEER DEPENDENCY react@>=15
+└── UNMET PEER DEPENDENCY react@>=15
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/itsa-react-togglebutton/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0258 took 1.3993s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (93:12) on program "use strict";
+
+/**
+ * Description here
+ *
+ *
+ *
+ * <i>Copyright (c) 2016 ItsAsbreuk - http://itsasbreuk.nl</i><br>
+ * New BSD License - http://choosealicense.com/licenses/bsd-3-clause/
+ *
+ *
+ * @module component.jsx
+ * @class Component
+ * @since 2.0.0
+*/
+
+const React = require("react"),
+    PropTypes = require("prop-types"),
+    Button = require("itsa-react-button");
+
+const ITSA_TOGGLE_EXPANDER_DIV = "<div style=\"position:relative!important;"+
+                                              "z-index:-1!important;"+
+                                              "margin-top:-1.1em!important;"+
+                                              "display:block!important;"+
+                                              "visibility:hidden!important;\">",
+      END_DIV = "</div>",
+      ARIA_LABEL = "aria-label",
+      WHITE_SPACE = "&#160;"; // white-space
+
+class Component extends React.Component {
+    constructor(props) {
+        super(props);
+        const instance = this;
+        instance.focus = instance.focus.bind(instance);
+        instance._saveHTML = instance._saveHTML.bind(instance);
+    }
+
+    /**
+     * Sets the focus on the Component.
+     *
+     * @method focus
+     * @param [transitionTime] {Number} transition-time to focus the element into the view
+     * @chainable
+     * @since 0.0.1
+     */
+    focus(transitionTime) {
+        return this._buttonElement.focus(transitionTime);
+    }
+
+    /**
+     * React render-method --> renderes the Component.
+     *
+     * @method render
+     * @return ReactComponent
+     * @since 2.0.0
+     */
+    render() {
+        let ariaLabel, buttonHTML, buttonHTMLPressed, buttonHTMLReleased;
+        const instance = this,
+              props = instance.props,
+              buttonTextPressed = props.buttonTextPressed || props.buttonText,
+              buttonTextReleased = props.buttonTextReleased || props.buttonText,
+              saveButtonTextPressed = instance._saveHTML(buttonTextPressed),
+              saveButtonTextReleased = instance._saveHTML(buttonTextReleased);
+
+        buttonHTMLPressed = props.buttonHTMLPressed || props.buttonHTML;
+        buttonHTMLReleased = props.buttonHTMLReleased || props.buttonHTML;
+
+        if (!buttonHTMLPressed && !buttonTextPressed) {
+            buttonHTMLPressed = WHITE_SPACE;
+        }
+
+        if (!buttonHTMLReleased && !buttonTextReleased) {
+            buttonHTMLReleased = WHITE_SPACE;
+        }
+
+        if (props.pressed) {
+            buttonHTML = (buttonHTMLPressed || saveButtonTextPressed) +
+                         ITSA_TOGGLE_EXPANDER_DIV +
+                             (buttonHTMLReleased || saveButtonTextReleased) +
+                         END_DIV;
+            ariaLabel = props[ARIA_LABEL] || saveButtonTextPressed || instance._saveHTML(buttonHTMLPressed);
+        }
+        else {
+            buttonHTML = (buttonHTMLReleased || saveButtonTextReleased) +
+                         ITSA_TOGGLE_EXPANDER_DIV +
+                             (buttonHTMLPressed || saveButtonTextPressed) +
+                         END_DIV;
+            ariaLabel = props[ARIA_LABEL] || saveButtonTextReleased || instance._saveHTML(buttonHTMLReleased);
+        }
+
+        return (
+            <Button
+                {...props}
+                aria-label={ariaLabel}
+                buttonHTML={buttonHTML}
+                onClick={props.onChange}
+                ref={inst => instance._buttonElement = inst}
+                toggled={props.pressed}
+                type="button" />
+        );
+    }
+
+    /**
+     * Returns a save string
+     *
+     * @method _saveHTML
+     * @private
+     * @param String html the text that should be removed from any html-entities
+     * @return String
+     * @since 0.0.1
+     */
+    _saveHTML(html) {
+        return html && html.replace(/<[^>]*>/g, '');
+    }
+
+}
+
+Component.propTypes = {
+    /**
+     * Array with the keys that can press the button when focussed.
+     * Default: [13, 32]
+     *
+     * @property activatedBy
+     * @type Array
+     * @since 0.0.1
+    */
+    activatedBy: PropTypes.array,
+
+    /**
+     * The aria-label. When not set, it will equal the buttonText
+     *
+     * @property aria-label
+     * @type String
+     * @since 0.0.1
+    */
+    "aria-label": PropTypes.string,
+
+    /**
+     * Whether to autofocus the Component.
+     *
+     * @property autoFocus
+     * @type Boolean
+     * @since 0.0.1
+    */
+    autoFocus: PropTypes.bool,
+
+    /**
+     * The Button-text. Will be escaped. If you need HTML, then use `buttonHTML` instead.
+     * If you need different buttonText for the `pressed` and `release`-state, then use
+     * `buttonTextPressed` and `buttonTextReleased`
+     *
+     * @property buttonText
+     * @type String
+     * @since 0.0.1
+    */
+    buttonText: PropTypes.string,
+
+    /**
+     * The Button-text when pressed. Will be escaped. If you need HTML, then use `buttonHTML` instead.
+     *
+     * @property buttonTextPressed
+     * @type String
+     * @since 0.0.1
+    */
+    buttonTextPressed: PropTypes.string,
+
+    /**
+     * The Button-text. Will be escaped. If you need HTML, then use `buttonHTML` instead.
+     *
+     * @property buttonTextReleased
+     * @type String
+     * @since 0.0.1
+    */
+    buttonTextReleased: PropTypes.string,
+
+    /**
+     * The Button-text, retaining html-code. If you don't need HTML, then `buttonText` is preferred.
+     * If you need different buttonText for the `pressed` and `release`-state, then use
+     * `buttonHTMLPressed` and `buttonHTMLReleased`
+     *
+     * @property buttonHTML
+     * @type String
+     * @since 0.0.1
+    */
+    buttonHTML: PropTypes.string,
+
+    /**
+     * The Button-text, retaining html-code. If you don't need HTML,
+     * then `buttonText` is preferred.
+     *
+     * @property buttonHTMLPressed
+     * @type String
+     * @since 0.0.1
+    */
+    buttonHTMLPressed: PropTypes.string,
+
+    /**
+     * The Button-text, retaining html-code. If you don't need HTML,
+     * then `buttonText` is preferred.
+     *
+     * @property buttonHTMLReleased
+     * @type String
+     * @since 0.0.1
+    */
+    buttonHTMLReleased: PropTypes.string,
+
+    /**
+     * The class that should be set on the element
+     *
+     * @property className
+     * @type String
+     * @since 0.0.1
+    */
+    className: PropTypes.string,
+
+    /**
+     * Whether the button is disabled
+     *
+     * @property disabled
+     * @type Boolean
+     * @since 0.0.1
+    */
+    disabled: PropTypes.bool,
+
+    /**
+     * The name-attribute of the button
+     *
+     * @property name
+     * @type String
+     * @since 0.0.1
+    */
+    name: PropTypes.string,
+
+    /**
+     * Callback wheneveer the button gets clicked.
+     *
+     * @property onClick
+     * @type Function
+     * @since 0.0.1
+    */
+    onChange: PropTypes.func.isRequired,
+
+    /**
+     * The Component its children
+     *
+     * @property pressed
+     * @type Object
+     * @since 2.0.0
+    */
+    pressed: PropTypes.bool.isRequired,
+
+    /**
+     * Inline style
+     *
+     * @property object
+     * @type String
+     * @since 0.0.1
+    */
+    style: PropTypes.object,
+
+    /**
+     * The tabIndex
+     * Default: 1
+     *
+     * @property tabIndex
+     * @type Number
+     * @since 0.0.1
+    */
+    tabIndex: PropTypes.number
+};
+
+module.exports = Component;
+ at SyntaxError: Unexpected token (93:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

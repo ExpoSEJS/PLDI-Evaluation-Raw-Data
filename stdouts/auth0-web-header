@@ -1,0 +1,33 @@
+/root/Targets/auth0-web-header
+├─┬ auth0-web-header@3.2.7 
+│ ├─┬ auth0-styleguide-core@0.0.3  (git://github.com/auth0/styleguide.git#59c26f8acfaf4be5d3b239e6657007eb18c0f201)
+│ │ └─┬ normalize-css@2.3.1 
+│ │   └── insert-css@0.0.0 
+│ ├─┬ axios@0.16.2 
+│ │ ├─┬ follow-redirects@1.2.4 
+│ │ │ └─┬ debug@2.6.9 
+│ │ │   └── ms@2.0.0 
+│ │ └── is-buffer@1.1.5 
+│ ├── classnames@2.2.5 
+│ └── lodash@4.17.4 
+└── UNMET PEER DEPENDENCY react@^15.0.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/auth0-web-header/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.057 took 40.4275s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/auth0-web-header/node_modules/auth0-web-header/build/web-header.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,253 @@
+/root/Targets/restler-jad
+└─┬ restler-jad@3.3.1 
+  ├── iconv-lite@0.2.11 
+  ├── qs@1.2.0 
+  ├─┬ xml2js@0.4.0 
+  │ ├── sax@0.5.8 
+  │ └── xmlbuilder@9.0.4 
+  └── yaml@0.2.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/restler-jad/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 17% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0467 took 6.8111s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Invalid number (112:35) on program var fs = require('fs');
+var sys = require('util')
+exports.defaultBoundary = '48940923NODERESLTER3890457293';
+
+
+// This little object allows us hijack the write method via duck-typing
+// and write to strings or regular streams that support the write method.
+function Stream(stream) {
+	//If the user pases a string for stream,we initalize one to write to
+	if (this._isString(stream)) {
+		this.string = "";
+	}
+	this.stream = stream;
+	
+}
+
+Stream.prototype = {
+  //write to an internal String or to the Stream
+  write: function(data) {
+	if (this.string != undefined) {
+		this.string += data;
+	} else {
+		this.stream.write(data, "binary");
+	}
+  },
+
+  //stolen from underscore.js
+  _isString: function(obj) {
+    return !!(obj === '' || (obj && obj.charCodeAt && obj.substr));
+  }
+}
+
+function File(path, filename, fileSize, encoding, contentType) {
+  this.path = path;
+  this.filename = filename || this._basename(path);
+  this.fileSize = fileSize;
+  this.encoding = encoding || "binary";
+  this.contentType = contentType || 'application/octet-stream';
+}
+
+File.prototype = {
+  _basename: function(path) {
+    var parts = path.split(/\/|\\/);
+    return parts[parts.length - 1];
+  }
+};
+
+function Data(filename, contentType, data) {
+  this.filename = filename;
+  this.contentType = contentType || 'application/octet-stream';
+  this.data = data;
+}
+
+function Part(name, value, boundary) {
+  this.name = name;
+  this.value = value;
+  this.boundary = boundary;
+}
+
+
+Part.prototype = {
+	
+  //returns the Content-Disposition header		
+  header: function() {
+	  var header;
+	  
+    if (this.value.data) {
+	    header = "Content-Disposition: form-data; name=\"" + this.name + 
+  	            "\"; filename=\"" + this.value.filename + "\"\r\n" +
+  	            "Content-Length: " + this.value.data.length + "\r\n" +	
+  	            "Content-Type: " + this.value.contentType;
+ 	  } else if (this.value instanceof File) {
+  	  header = "Content-Disposition: form-data; name=\"" + this.name + 
+  	            "\"; filename=\"" + this.value.filename + "\"\r\n" +
+  	            "Content-Length: " + this.value.fileSize + "\r\n" +	
+  	            "Content-Type: " + this.value.contentType;	
+  	} else {
+      header = "Content-Disposition: form-data; name=\"" + this.name + "\"";
+  	}
+  	
+	  return "--" + this.boundary + "\r\n" + header + "\r\n\r\n";
+  },
+
+  //calculates the size of the Part
+  sizeOf: function() {
+	  var valueSize;
+  	if (this.value instanceof File) {
+  	  valueSize = this.value.fileSize;
+  	} else if (this.value.data) {
+  	  valueSize = this.value.data.length;
+        } else if (typeof this.value === 'number') {
+          valueSize = this.value.toString().length;
+  	} else {
+  	  valueSize = this.value.length;
+  	}
+  	return valueSize + this.header().length + 2; 
+  },
+
+  // Writes the Part out to a writable stream that supports the write(data) method
+  // You can also pass in a String and a String will be returned to the callback
+  // with the whole Part
+  // Calls the callback when complete
+  write: function(stream, callback) {
+	
+    var self = this;
+	
+	  //first write the Content-Disposition
+	  stream.write(this.header());
+	
+  	//Now write out the body of the Part
+    if (this.value instanceof File) {
+  	  fs.open(this.value.path, "r", 0666, function (err, fd) { 
+    	  if (err) throw err; 
+    	  
+  		  var position = 0;
+  		  
+  	    (function reader () {
+  	      fs.read(fd, 1024 * 4, position, "binary", function (er, chunk) {
+  	        if (er) callback(err);
+  	        stream.write(chunk); 
+  	        position += 1024 * 4;
+  	        if (chunk) reader();
+  	        else {
+  			      stream.write("\r\n")
+      			  callback();
+      			  fs.close(fd);
+      			}
+  	      }); 
+  	    })(); // reader() 
+  	  });
+     } else if (this.value instanceof Data) {
+  	  stream.write(this.value.data);
+  	  stream.write("\r\n");
+  	  callback();
+     } else {
+  	  stream.write(this.value + "\r\n");
+  	  callback();
+  	}
+  }
+}
+
+//Renamed to MultiPartRequest from Request
+function MultiPartRequest(data, boundary) {
+  this.encoding = 'binary';
+  this.boundary = boundary || exports.defaultBoundary;
+  this.data = data;
+  this.partNames = this._partNames();
+}
+
+MultiPartRequest.prototype = {
+  _partNames: function() {
+    var partNames = [];
+    for (var name in this.data) {
+      partNames.push(name)
+  	}
+  	return partNames;
+  },
+  
+  write: function(stream, callback) {
+    var partCount = 0, self = this;
+    
+	  // wrap the stream in our own Stream object
+  	// See the Stream function above for the benefits of this
+  	var stream = new Stream(stream);
+  	
+  	// Let each part write itself out to the stream
+  	(function writePart() {
+  	  var partName = self.partNames[partCount];
+  	  var part = new Part(partName, self.data[partName], self.boundary);
+  	  part.write(stream, function (err) {
+  		  if (err) {
+    			callback(err);
+    			return;
+    		}
+     		partCount += 1;
+    	  if (partCount < self.partNames.length)
+    	    writePart();
+    		else {
+    		  stream.write('--' + self.boundary + '--' + "\r\n");
+
+          if (callback) callback(stream.string || "");
+    		}
+  	  });
+    })(); 
+  }
+}
+
+var exportMethods = {
+  file: function(path, filename, fileSize, encoding, contentType) { 
+    return new File(path, filename, fileSize, encoding, contentType)
+  },
+  data: function(filename, contentType, data) {
+    return new Data(filename, contentType, data);
+  },
+  sizeOf: function(parts, boundary) {
+    var totalSize = 0;
+	  boundary = boundary || exports.defaultBoundary;
+  	for (var name in parts) totalSize += new Part(name, parts[name], boundary).sizeOf();
+  	return totalSize + boundary.length + 6;
+  },
+  write: function(stream, data, callback, boundary) {
+    var r = new MultiPartRequest(data, boundary);
+    r.write(stream, callback);
+    return r;
+  }
+}
+
+Object.keys(exportMethods).forEach(function(exportMethod) {
+  exports[exportMethod] = exportMethods[exportMethod]
+})
+ at SyntaxError: Invalid number (112:35)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readNumber (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2896:52)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2720:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:10)
+    at Parser.pp$3.parseExprList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2152:16)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/restler-jad/node_modules/restler-jad/lib/restler.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/restler-jad/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/restler-jad/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/restler-jad/node_modules/qs/lib/stringify.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/restler-jad/node_modules/qs/lib/parse.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/restler-jad/node_modules/qs/lib/utils.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

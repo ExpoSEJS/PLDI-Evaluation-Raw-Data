@@ -1,0 +1,79 @@
+
+> bson@0.2.5 install /root/Targets/sumeru/node_modules/bson
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/sumeru/node_modules/bson/build'
+  CXX(target) Release/obj.target/bson/ext/bson.o
+bson.target.mk:90: recipe for target 'Release/obj.target/bson/ext/bson.o' failed
+make: Leaving directory '/root/Targets/sumeru/node_modules/bson/build'
+
+> kerberos@0.0.3 install /root/Targets/sumeru/node_modules/kerberos
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/sumeru/node_modules/kerberos/build'
+  SOLINK_MODULE(target) Release/obj.target/kerberos.node
+  COPY Release/kerberos.node
+make: Leaving directory '/root/Targets/sumeru/node_modules/kerberos/build'
+/root/Targets/sumeru
+└─┬ sumeru@0.10.4 
+  ├─┬ clean-css@2.1.8 
+  │ └── commander@2.1.0 
+  ├── mkdirp@0.3.5 
+  ├─┬ mongodb@1.3.23 
+  │ ├── bson@0.2.5 
+  │ └── kerberos@0.0.3 
+  ├── redis@0.10.3 
+  ├── shelljs@0.2.6 
+  ├─┬ sockjs@0.3.18 
+  │ ├─┬ faye-websocket@0.10.0 
+  │ │ └─┬ websocket-driver@0.7.0 
+  │ │   ├── http-parser-js@0.4.7 
+  │ │   └── websocket-extensions@0.1.2 
+  │ └── uuid@2.0.3 
+  └─┬ uglify-js@2.4.24 
+    ├── async@0.2.10 
+    ├─┬ source-map@0.1.34 
+    │ └── amdefine@1.0.1 
+    ├── uglify-to-browserify@1.0.2 
+    └─┬ yargs@3.5.4 
+      ├── camelcase@1.2.1 
+      ├── decamelize@1.2.0 
+      ├── window-size@0.1.0 
+      └── wordwrap@0.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sumeru/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","create","Error","call","apply","isArray","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0594 took 19.7176s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sumeru/node_modules/sumeru/app.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/server/run.js. Coverage (Term): 1% Coverage (LOC): 0%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/build/build.js. Coverage (Term): 17% Coverage (LOC): 15%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/src/newPkg.js. Coverage (Term): 28% Coverage (LOC): 38%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/src/log.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/build/buildServer.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/sumeru/node_modules/sumeru/sumeru/build/buildJavascript.js. Coverage (Term): 77% Coverage (LOC): 74%
+*- File /root/Targets/sumeru/node_modules/uglify-js/tools/node.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/source-map-generator.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/sumeru/node_modules/amdefine/amdefine.js. Coverage (Term): 49% Coverage (LOC): 54%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/base64-vlq.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/base64.js. Coverage (Term): 61% Coverage (LOC): 68%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/util.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/array-set.js. Coverage (Term): 29% Coverage (LOC): 47%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/source-map-consumer.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/binary-search.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/sumeru/node_modules/source-map/lib/source-map/source-node.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

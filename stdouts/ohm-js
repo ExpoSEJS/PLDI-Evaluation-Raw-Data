@@ -1,0 +1,116 @@
+
+> ohm-js@0.13.1 postinstall /root/Targets/ohm-js/node_modules/ohm-js
+> bash bin/postinstall
+
+/root/Targets/ohm-js
+└── ohm-js@0.13.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ohm-js/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 12% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0897 took 7.6492s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (9:4) on program 'use strict';
+
+// --------------------------------------------------------------------
+// Imports
+// --------------------------------------------------------------------
+
+var Failure = require('./Failure');
+var TerminalNode = require('./nodes').TerminalNode;
+var assert = require('./common').assert;
+var inherits = require('inherits');
+var pexprs = require('./pexprs');
+
+function CaseInsensitiveTerminal(param) {
+  this.obj = param;
+}
+inherits(CaseInsensitiveTerminal, pexprs.PExpr);
+
+CaseInsensitiveTerminal.prototype = {
+  _getString: function(state) {
+    var terminal = state.currentApplication().args[this.obj.index];
+    assert(terminal instanceof pexprs.Terminal, 'expected a Terminal expression');
+    return terminal.obj;
+  },
+
+  // Implementation of the PExpr API
+
+  allowsSkippingPrecedingSpace: function() {
+    return true;
+  },
+
+  eval: function(state) {
+    var inputStream = state.inputStream;
+    var origPos = inputStream.pos;
+    var matchStr = this._getString(state);
+    if (!inputStream.matchString(matchStr, true)) {
+      state.processFailure(origPos, this);
+      return false;
+    } else {
+      state.pushBinding(new TerminalNode(state.grammar, matchStr), origPos);
+      return true;
+    }
+  },
+
+  generateExample: function(grammar, examples, inSyntacticContext, actuals) {
+    // Start with a example generated from the Terminal...
+    var str = this.obj.generateExample(grammar, examples, inSyntacticContext, actuals).value;
+
+    // ...and randomly switch characters to uppercase/lowercase.
+    var value = '';
+    for (var i = 0; i < str.length; ++i) {
+      value += Math.random() < 0.5 ? str[i].toLocaleLowerCase() : str[i].toLocaleUpperCase();
+    }
+    return {value: value};
+  },
+
+  getArity: function() {
+    return 1;
+  },
+
+  substituteParams: function(actuals) {
+    return new CaseInsensitiveTerminal(this.obj.substituteParams(actuals));
+  },
+
+  toDisplayString: function() {
+    return this.obj.toDisplayString() + ' (case-insensitive)';
+  },
+
+  toFailure: function() {
+    return new Failure(this, this.obj.toFailure() + ' (case-insensitive)', 'description');
+  },
+
+  _isNullable: function(grammar, memo) {
+    return this.obj._isNullable(grammar, memo);
+  }
+};
+
+module.exports = CaseInsensitiveTerminal;
+ at SyntaxError: Unexpected token (9:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ohm-js/node_modules/ohm-js/src/main.js. Coverage (Term): 3% Coverage (LOC): 7%
+*- File /root/Targets/ohm-js/node_modules/ohm-js/src/Builder.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/ohm-js/node_modules/ohm-js/src/GrammarDecl.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/ohm-js/node_modules/ohm-js/src/Grammar.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

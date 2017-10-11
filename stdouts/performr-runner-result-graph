@@ -1,0 +1,179 @@
+/root/Targets/performr-runner-result-graph
+├─┬ performr-runner-result-graph@3.2.0 
+│ ├── immutable@3.8.1 
+│ ├── moment@2.18.1 
+│ ├─┬ prop-types@15.5.10 
+│ │ ├─┬ fbjs@0.8.15 
+│ │ │ ├── core-js@1.2.7 
+│ │ │ ├─┬ isomorphic-fetch@2.2.1 
+│ │ │ │ ├─┬ node-fetch@1.7.3 
+│ │ │ │ │ ├─┬ encoding@0.1.12 
+│ │ │ │ │ │ └── iconv-lite@0.4.19 
+│ │ │ │ │ └── is-stream@1.1.0 
+│ │ │ │ └── whatwg-fetch@2.0.3 
+│ │ │ ├── object-assign@4.1.1 
+│ │ │ ├─┬ promise@7.3.1 
+│ │ │ │ └── asap@2.0.6 
+│ │ │ ├── setimmediate@1.0.5 
+│ │ │ └── ua-parser-js@0.7.14 
+│ │ └─┬ loose-envify@1.3.1 
+│ │   └── js-tokens@3.0.2 
+│ ├── UNMET PEER DEPENDENCY react@^0.14.0 || ^15.0.0-0 || ^16.0.0-0
+│ ├── react-immutable-proptypes@2.1.0 
+│ ├─┬ react-redux@5.0.6 
+│ │ ├── hoist-non-react-statics@2.3.1 
+│ │ ├── invariant@2.2.2 
+│ │ ├── lodash@4.17.4 
+│ │ └── lodash-es@4.17.4 
+│ └─┬ redux@3.7.2 
+│   └── symbol-observable@1.0.4 
+└── UNMET PEER DEPENDENCY react@^15.3.2
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/performr-runner-result-graph/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0662 took 4.4842s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (90:12) on program import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {createStore} from 'redux';
+import Immutable from 'immutable';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+
+import style from './PerformrRunnerResultGraph.scss';
+import ResultGraph from './components/ResultGraph';
+import createReducer from './reducers';
+import Config from './Config';
+
+// this module is the main export for this package
+
+export {createReducer};
+
+const buildEventLookupMap = (mapArg, events) => {
+    let map = mapArg;
+
+    // eslint-disable-next-line prefer-const
+    for (let event of events) {
+        map = map.set(event.get('id'), event);
+        map = buildEventLookupMap(map, event.get('children'));
+    }
+
+    return map;
+};
+
+export const parseResultObject = resultObject => {
+    // quick check to detect most invalid objects
+    if (typeof resultObject !== 'object' ||
+        typeof resultObject.timing !== 'object' ||
+        typeof resultObject.timing.begin !== 'object' ||
+        !Array.isArray(resultObject.transactions) ||
+        !Array.isArray(resultObject.events)
+    ) {
+        throw Error('PerformrRunnerResultGraph.parseResultObject: Invalid argument');
+    }
+
+    const result = Immutable.fromJS(resultObject);
+
+    const eventMap = new Immutable.Map().withMutations(map => {
+        buildEventLookupMap(map, result.get('events'));
+    });
+
+    const transactionMap = new Immutable.Map().withMutations(map => {
+        // eslint-disable-next-line prefer-const
+        for (let transaction of result.get('transactions')) {
+            map.set(transaction.get('id'), transaction);
+        }
+    });
+
+    return result
+    .set('eventMap', eventMap)
+    .set('transactionMap', transactionMap);
+};
+
+export default class PerformrRunnerResultGraph extends Component {
+    constructor(props) {
+        super(props);
+
+        this._configCached = new Config();
+        this._defaultStoreCached = null;
+    }
+
+    componentWillMount() {
+        if (style.ref) { // in case "style-loader/useable" is used
+            style.ref();
+        }
+    }
+
+    componentWillUnmount() {
+        if (style.unref) {
+            style.unref();
+        }
+    }
+
+    render() {
+        if (!this.props.store && !this._defaultStoreCached) {
+            this._defaultStoreCached = createStore(createReducer(this.props.instanceKey), new Immutable.Map());
+        }
+
+        // Immutable.js returns the same object in set() if the value has not changed,
+        // so caching the config here makes sure our pure components do not have to re-render
+        this._configCached = this._configCached
+        .set('instanceKey', this.props.instanceKey)
+        .set('resultObject', this.props.resultObject)
+        .set('store', this.props.store || this._defaultStoreCached);
+
+        return (
+            <div className="PerformrRunnerResultGraph">
+                <ResultGraph
+                    config={this._configCached}
+                    pixelsPerMillisecond={this.props.pixelsPerMillisecond}
+                />
+            </div>
+        );
+    }
+}
+
+PerformrRunnerResultGraph.defaultProps = {
+    instanceKey: 'default',
+    pixelsPerMillisecond: 1 / 5, // 1s = 200px
+    store: null,
+};
+
+PerformrRunnerResultGraph.propTypes = {
+    // The instanceKey us used as a key for Immutable.Map, but also in strict equality checks
+    // (e.g. foo.instanceKey === bar.instanceKey)
+    instanceKey: PropTypes.any.isRequired,
+    pixelsPerMillisecond: PropTypes.number.isRequired,
+
+    // not an exhaustive check, but it should catch most mistakes:
+    resultObject: ImmutablePropTypes.mapContains({
+        events: ImmutablePropTypes.list.isRequired,
+        timing: ImmutablePropTypes.map.isRequired,
+        transactions: ImmutablePropTypes.list.isRequired,
+    }).isRequired,
+
+    store: PropTypes.object,
+};
+ at SyntaxError: Unexpected token (90:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

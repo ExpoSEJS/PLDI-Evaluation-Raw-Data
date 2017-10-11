@@ -1,0 +1,43 @@
+/root/Targets/specky-src
+└─┬ specky-src@0.0.21 
+  ├─┬ get-function-name-x@1.2.0 
+  │ ├─┬ is-function-x@1.4.0 
+  │ │ ├─┬ has-to-string-tag-x@1.4.1 
+  │ │ │ └── has-symbol-support-x@1.4.1 
+  │ │ ├── is-primitive@2.0.0 
+  │ │ └─┬ to-string-tag-x@1.4.1 
+  │ │   ├── lodash.isnull@3.0.0 
+  │ │   └── validate.io-undefined@1.0.3 
+  │ └─┬ white-space-x@1.2.0 
+  │   ├─┬ define-properties-x@1.4.0 
+  │   │ ├─┬ for-each@0.3.2 
+  │   │ │ └── is-function@1.0.1 
+  │   │ └─┬ object-keys-x@1.3.0 
+  │   │   ├── is-arguments@1.0.2 
+  │   │   ├── object-keys@1.0.11 
+  │   │   └─┬ to-object-x@1.4.1 
+  │   │     └─┬ require-object-coercible-x@1.4.1 
+  │   │       └── is-nil-x@1.4.1 
+  │   └── foreach@2.0.5 
+  └── object-assign@4.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/specky-src/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 12% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","getOwnPropertyNames","fromCharCode","join","assign","create","Symbol","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0844 took 21.1255s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/specky-src/node_modules/specky-src/packages/specky/dist/specky.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File evalIndirect. Coverage (Term): 18% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

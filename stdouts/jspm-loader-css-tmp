@@ -1,0 +1,57 @@
+/root/Targets/jspm-loader-css-tmp
+└─┬ jspm-loader-css-tmp@0.1.14 
+  ├─┬ css-modules-loader-core@0.0.10 
+  │ ├── postcss-modules-extract-imports@0.0.5 
+  │ ├─┬ postcss-modules-local-by-default@0.0.9 
+  │ │ └─┬ css-selector-tokenizer@0.4.1 
+  │ │   └── fastparse@1.1.1 
+  │ └─┬ postcss-modules-scope@0.0.7 
+  │   └─┬ css-selector-tokenizer@0.5.4 
+  │     └── cssesc@0.1.0 
+  ├── path@0.11.14 
+  ├─┬ postcss@4.1.16 
+  │ ├── es6-promise@2.3.0 
+  │ ├── js-base64@2.1.9 
+  │ └─┬ source-map@0.4.4 
+  │   └── amdefine@1.0.1 
+  └─┬ postcss-url@4.0.1 
+    ├─┬ directory-encoder@0.6.1 
+    │ ├─┬ fs-extra@0.8.1 
+    │ │ ├── jsonfile@1.1.1 
+    │ │ ├── mkdirp@0.3.5 
+    │ │ ├── ncp@0.4.2 
+    │ │ └── rimraf@2.2.8 
+    │ ├─┬ handlebars@1.1.2 
+    │ │ ├─┬ optimist@0.3.7 
+    │ │ │ └── wordwrap@0.0.3 
+    │ │ └─┬ uglify-js@2.3.6 
+    │ │   ├── async@0.2.10 
+    │ │   └── source-map@0.1.43 
+    │ ├─┬ img-stats@0.4.2 
+    │ │ └── xmldom@0.1.16 
+    │ └── lodash@2.4.0 
+    ├── mime@1.4.1 
+    ├─┬ mkdirp@0.5.1 
+    │ └── minimist@0.0.8 
+    ├── path-is-absolute@1.0.1 
+    └─┬ reduce-function-call@1.0.2 
+      └── balanced-match@0.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jspm-loader-css-tmp/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0269 took 1.3537s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (3:0)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

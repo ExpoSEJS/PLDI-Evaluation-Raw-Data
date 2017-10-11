@@ -1,0 +1,43 @@
+/root/Targets/httpbug
+└── httpbug@0.2.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/httpbug/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Array","toString","randomBytes","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0218 took 7.8631s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/httpbug/node_modules/httpbug/server/server.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/httpbug/node_modules/steve/index.js. Coverage (Term): 59% Coverage (LOC): 55%
+*- File /root/Targets/httpbug/node_modules/steve/lib/stack.js. Coverage (Term): 28% Coverage (LOC): 34%
+*- File /root/Targets/httpbug/node_modules/express-chromeframe/index.js. Coverage (Term): 37% Coverage (LOC): 57%
+*- File /root/Targets/httpbug/node_modules/steve/lib/steve-res-json.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/httpbug/node_modules/steve/lib/connect-cors-session.js. Coverage (Term): 24% Coverage (LOC): 20%
+*- File /root/Targets/httpbug/node_modules/steve/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 35%
+*- File /root/Targets/httpbug/node_modules/steve/lib/memory-store.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/httpbug/node_modules/steve/lib/cors-session.js. Coverage (Term): 48% Coverage (LOC): 58%
+*- File /root/Targets/httpbug/node_modules/nowww/index.js. Coverage (Term): 19% Coverage (LOC): 44%
+*- File /root/Targets/httpbug/node_modules/steve/lib/connect-pathname.js. Coverage (Term): 47% Coverage (LOC): 62%
+*- File /root/Targets/httpbug/node_modules/connect-xcors/connect-cors.js. Coverage (Term): 14% Coverage (LOC): 23%
+*- File /root/Targets/httpbug/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/httpbug/node_modules/connect/lib/connect.js. Coverage (Term): 26% Coverage (LOC): 19%
+*- File /root/Targets/httpbug/node_modules/connect/lib/proto.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/httpbug/node_modules/connect/lib/utils.js. Coverage (Term): 16% Coverage (LOC): 33%
+*- File /root/Targets/httpbug/node_modules/bytes/index.js. Coverage (Term): 27% Coverage (LOC): 40%
+*- File /root/Targets/httpbug/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/httpbug/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- File /root/Targets/httpbug/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/httpbug/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/httpbug/node_modules/connect/lib/patch.js. Coverage (Term): 26% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

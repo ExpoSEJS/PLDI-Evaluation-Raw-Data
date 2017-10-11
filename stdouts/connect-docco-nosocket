@@ -1,0 +1,36 @@
+/root/Targets/connect-docco-nosocket
+└─┬ connect-docco-nosocket@0.0.7 
+  └── markdown@0.3.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/connect-docco-nosocket/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","join","charCodeAt","max","min","sort","apply","fromCharCode","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.064 took 16.4002s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (1:149) on program (function(obj) { var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('<!DOCTYPE html>  <html> <head>   <title>', title ,'</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>     '); if (sources.length > 1) { p.push('       <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">             '); for (var i=0, l=sources.length; i<l; i++) { p.push('               '); var source = sources[i]; p.push('               <a class="source" href="', path.basename(destination(source)) ,'">                 ', path.basename(source) ,'               </a>             '); } p.push('           </div>         </div>       </div>     '); } p.push('     <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               ', title ,'             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>         '); for (var i=0, l=sections.length; i<l; i++) { p.push('           '); var section = sections[i]; p.push('           <tr id="section-', i + 1 ,'">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-', i + 1 ,'">&#182;</a>               </div>               ', section.docs_html ,'             </td>             <td class="code">               ', section.code_html ,'             </td>           </tr>         '); } p.push('       </tbody>     </table>   </div>    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>   <script src="/socket.io/socket.io.js"></script>    <script>     (function() {       var url = \'http://localhost:', port ,'\',         socket = io.connect(url),         container = $(\'#container\'),         notif = $(\'#notif\'),         notifUrl = \'<a href=":url">:text</a>\';        socket.on(\'changed\', function(file, path, content) {         if(location.pathname === path) {           container.html(content);         } else {           location.assign(url + path);         }       });     })();   </script> </body> </html> ');}return p.join(''); }) at SyntaxError: 'with' in strict mode (1:149)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/connect-docco-nosocket/node_modules/connect-docco-nosocket/lib/connect-docco.js. Coverage (Term): 13% Coverage (LOC): 3%
+*- File /root/Targets/connect-docco-nosocket/node_modules/markdown/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/connect-docco-nosocket/node_modules/markdown/lib/markdown.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/connect-docco-nosocket/node_modules/connect-docco-nosocket/support/prettify.js. Coverage (Term): 49% Coverage (LOC): 61%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

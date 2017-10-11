@@ -1,0 +1,393 @@
+/root/Targets/bearcat
+└─┬ bearcat@0.4.29 
+  ├─┬ chokidar@1.0.6 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├─┬ isobject@2.1.0 
+  │ │ │ │ │   │ └── isarray@1.0.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ ├── is-glob@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ │ │ └── is-glob@2.0.1 
+  │ │ │ │ ├── is-dotfile@1.0.3 
+  │ │ │ │ └── is-glob@2.0.1 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── arrify@1.0.1 
+  │ ├── async-each@0.1.6 
+  │ ├─┬ glob-parent@1.3.0 
+  │ │ └── is-glob@2.0.1 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├── is-glob@1.1.3 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@1.4.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ minimatch@0.2.14 
+  │   │ ├── lru-cache@2.7.3 
+  │   │ └── sigmund@1.0.1 
+  │   └─┬ readable-stream@1.0.34 
+  │     ├── core-util-is@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├── isarray@0.0.1 
+  │     └── string_decoder@0.10.31 
+  ├── commander@2.11.0 
+  └─┬ pomelo-logger@0.1.7 
+    └─┬ log4js@0.6.21 
+      ├── async@0.2.10 
+      └── semver@1.1.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bearcat/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","toUpperCase","bind","bound configure","call","isArray","cwd"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1097 took 33.6899s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'interface' is reserved (44:12) on program /*!
+ * .______    _______     ___      .______       ______     ___   .__________.
+ * (   _  )  (   ____)   /   \     (   _  )     (      )   /   \  (          )
+ * |  |_)  ) |  |__     /  ^  \    |  |_)  )   |  ,----'  /  ^  \ `---|  |---`
+ * |   _  <  |   __)   /  /_\  \   |      )    |  |      /  /_\  \    |  |
+ * |  |_)  ) |  |____ /  _____  \  |  |)  ----.|  `----./  _____  \   |  |
+ * (______)  (_______/__/     \__\ ( _| `.____) (______)__/     \__\  |__|
+ *
+ * Bearcat DynamicAopProxy
+ * Copyright(c) 2015 fantasyni <fantasyni@163.com>
+ * MIT Licensed
+ */
+
+var logger = require('pomelo-logger').getLogger('bearcat', 'DynamicAopProxy');
+var Constant = require('../../util/constant');
+var Utils = require('../../util/utils');
+
+/**
+ * DynamicAopProxy constructor function.
+ *
+ * @param  {Object} advised advisedSupport object
+ * @api public
+ */
+var DynamicAopProxy = function(advised) {
+	this.advised = advised;
+	this.dyInit();
+}
+
+/**
+ * DynamicAopProxy init function.
+ * it will add proxy interfaces to DynamicAopProxy prototype, and proxy to invoke function
+ *
+ * @api public
+ */
+DynamicAopProxy.prototype.dyInit = function() {
+	if (!this.advised) {
+		logger.error('DynamicAopProxy init error no advised');
+		return;
+	}
+
+	var interfaces = this.advised.getInterfaces();
+	var self = this;
+	for (var i = 0; i < interfaces.length; i++) {
+		(function(interface) {
+			if (checkFuncName(interface)) {
+				logger.error('init error proxy method interface %j the same as DynamicAopProxy, rename this name to another.', interface)
+				return;
+			};
+
+			self[interface] = function() {
+				arguments = Array.prototype.slice.apply(arguments);
+				return self.dyInvoke(interface, arguments);
+			}
+		})(interfaces[i]);
+	}
+}
+
+/**
+ * DynamicAopProxy proxy invoke function.
+ * all target proxy function invoke will delegate to this function
+ *
+ * @param  {String} method proxy method name
+ * @param  {Array}  args proxy method invoke arguments
+ *
+ * @api private
+ */
+DynamicAopProxy.prototype.dyInvoke = function(method, args) {
+	var self = this;
+	var invokeCb = args.pop();
+	var flag = false;
+	if (!Utils.checkFunction(invokeCb)) {
+		// aop target args last must be next function
+		// if (invokeCb) {
+		args.push(invokeCb);
+		// }
+		invokeCb = function() {};
+		flag = true;
+	}
+
+	var targetSource = this.advised.getTargetSource();
+	var beanName = targetSource.getBeanName();
+	var target = targetSource.getTarget();
+
+	var adviseType = Constant.AOP_ADVICE_BEFORE;
+	var beforeAdvisors = this.advised.getInterceptionAdvice(method, beanName, adviseType);
+
+	adviseType = Constant.AOP_ADVICE_AROUND;
+	var aroundAdvisors = this.advised.getInterceptionAdvice(method, beanName, adviseType);
+
+	var needAround = false;
+	if (Utils.checkArray(aroundAdvisors) && aroundAdvisors.length) {
+		needAround = true;
+	}
+
+	adviseType = Constant.AOP_ADVICE_AFTER;
+	var afterAdvisors = this.advised.getInterceptionAdvice(method, beanName, adviseType);
+
+	var needAfter = false;
+	if (Utils.checkArray(afterAdvisors) && afterAdvisors.length) {
+		needAfter = true;
+	}
+
+	return this.doInvokeAdvisorsBefore(method, args, beforeAdvisors, function(err) {
+		if (err) {
+			return invokeCb(err);
+		}
+
+		if (needAround) {
+			return self.doInvokeAdvisorsAround(target, method, args, aroundAdvisors, function() {
+				arguments = Array.prototype.slice.apply(arguments);
+				invokeCb.apply(null, arguments);
+				self.doInvokeAdvisorsAfter(method, arguments, afterAdvisors, function() {});
+			});
+		} else {
+			var next = function() {
+				arguments = Array.prototype.slice.apply(arguments);
+				invokeCb.apply(null, arguments);
+				self.doInvokeAdvisorsAfter(method, arguments, afterAdvisors, function() {});
+			}
+
+			if (!flag) {
+				args.push(next);
+				return target[method].apply(target, args);
+			} else {
+				var r = target[method].apply(target, args);
+				if (needAfter) {
+					self.doInvokeAdvisorsAfter(method, r, afterAdvisors, function() {});
+				}
+
+				return r;
+			}
+		}
+	});
+}
+
+/**
+ * DynamicAopProxy do invoke before advisors chain.
+ *
+ * @param  {String}   method proxy method name
+ * @param  {Array}    args proxy method invoke arguments
+ * @param  {Object}   advisors target advisors
+ * @param  {Function} cb callback function
+ *
+ * @api private
+ */
+DynamicAopProxy.prototype.doInvokeAdvisorsBefore = function(method, args, advisors, cb) {
+	var index = 0;
+
+	args = Array.prototype.slice.apply(args);
+
+	if (!advisors || !Utils.checkArray(advisors) || !advisors.length) {
+		return cb();
+	}
+
+	var next = function(err) {
+		if (err || index >= advisors.length) {
+			return cb(err);
+		}
+
+		var advisor = advisors[index++];
+		var advise = advisor.getAdvice();
+		var aspectBean = advisor.getBean();
+
+		var _next = function(err) {
+			next(err);
+		};
+
+		if (advisor.isRuntime()) {
+			args.push(_next);
+			aspectBean[advise].apply(aspectBean, args);
+		} else {
+			aspectBean[advise](_next);
+		}
+	}
+
+	next();
+}
+
+/**
+ * DynamicAopProxy do invoke around advisors chain.
+ *
+ * @param  {Object}   target target object
+ * @param  {String}   method proxy method name
+ * @param  {Array}    args proxy method invoke arguments
+ * @param  {Object}   advisors target advisors
+ * @param  {Function} cb callback function
+ *
+ * @api private
+ */
+DynamicAopProxy.prototype.doInvokeAdvisorsAround = function(target, method, args, advisors, cb) {
+	var advisor = advisors[0];
+	var advise = advisor.getAdvice();
+	var aspectBean = advisor.getBean();
+
+	// if (Utils.checkObject(args)) {
+	// 	args = Array.prototype.slice.apply(args);
+	// }
+
+	if (advisor.isRuntime()) {
+		args.unshift(method);
+		args.unshift(target);
+		args.push(cb);
+		return aspectBean[advise].apply(aspectBean, args);
+	} else {
+		return aspectBean[advise](target, method, cb);
+	}
+}
+
+/**
+ * DynamicAopProxy do invoke after advisors chain.
+ *
+ * @param  {String}   method proxy method name
+ * @param  {Array}    args proxy method invoke arguments
+ * @param  {Object}   advisors target advisors
+ * @param  {Function} cb callback function
+ *
+ * @api private
+ */
+DynamicAopProxy.prototype.doInvokeAdvisorsAfter = function(method, args, advisors, cb) {
+	var index = 0;
+
+	if (!advisors || !Utils.checkArray(advisors) || !advisors.length) {
+		return cb();
+	}
+
+	// if (Utils.checkObject(args)) {
+	// 	args = Array.prototype.slice.apply(args);
+	// } else 
+	if (!Utils.checkArray(args)) {
+		args = [args];
+	}
+
+	var next = function(err) {
+		if (err || index >= advisors.length) {
+			return cb(err);
+		}
+
+		var advisor = advisors[index++];
+		var advise = advisor.getAdvice();
+		var aspectBean = advisor.getBean();
+
+		var _next = function(err) {
+			next(err);
+		};
+
+		args.push(_next);
+		aspectBean[advise].apply(aspectBean, args);
+	}
+
+	next();
+}
+
+var names = ["dyInit", "dyInvoke", "doInvokeAdvisorsBefore",
+	"doInvokeAdvisorsAround", "doInvokeAdvisorsAfter"
+];
+
+var checkFuncName = function(name) {
+	for (var i = 0; i < names.length; i++) {
+		if (name === names[i]) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+module.exports = DynamicAopProxy; at SyntaxError: The keyword 'interface' is reserved (44:12)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/bearcat/node_modules/bearcat/index.js. Coverage (Term): 83% Coverage (LOC): 100%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/util/requireUtil.js. Coverage (Term): 57% Coverage (LOC): 61%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/builtins.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/process.js. Coverage (Term): 38% Coverage (LOC): 51%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/path.js. Coverage (Term): 9% Coverage (LOC): 20%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/util.js. Coverage (Term): 11% Coverage (LOC): 29%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/support/isBuffer.js. Coverage (Term): 34% Coverage (LOC): 80%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/support/inherits.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/modules/os.js. Coverage (Term): 39% Coverage (LOC): 62%
+*- File /root/Targets/bearcat/node_modules/bearcat/shim/object.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/bearcat.js. Coverage (Term): 4% Coverage (LOC): 2%
+*- File /root/Targets/bearcat/node_modules/pomelo-logger/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/bearcat/node_modules/pomelo-logger/lib/logger.js. Coverage (Term): 26% Coverage (LOC): 48%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/log4js.js. Coverage (Term): 48% Coverage (LOC): 52%
+*- File /root/Targets/bearcat/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/layouts.js. Coverage (Term): 15% Coverage (LOC): 37%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/date_format.js. Coverage (Term): 13% Coverage (LOC): 27%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/levels.js. Coverage (Term): 57% Coverage (LOC): 68%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/logger.js. Coverage (Term): 47% Coverage (LOC): 65%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/connect-logger.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/bearcat/node_modules/log4js/lib/appenders/console.js. Coverage (Term): 74% Coverage (LOC): 87%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/context/applicationContext.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/beans/support/placeHolderConfigurer.js. Coverage (Term): 36% Coverage (LOC): 51%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/resource/propertiesLoader.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/util/fileUtil.js. Coverage (Term): 74% Coverage (LOC): 95%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/util/utils.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/util/constant.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/beans/support/beanDefinitionVisitor.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/beans/support/placeHolderResolver.js. Coverage (Term): 23% Coverage (LOC): 28%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/aop/autoproxy/autoProxyCreator.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/bearcat/node_modules/bearcat/lib/aop/framework/proxyFactory.js. Coverage (Term): 22% Coverage (LOC): 22%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

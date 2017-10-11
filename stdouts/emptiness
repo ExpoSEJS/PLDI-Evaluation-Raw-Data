@@ -1,0 +1,150 @@
+/root/Targets/emptiness
+└── emptiness@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/emptiness/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0671 took 6.346s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (28:19) on program 'use strict';
+
+var util = require('./util.js'),
+	Is = util.Is,
+
+	proto = {
+		alias: function alias (name) {
+			if (name) {
+				this._alias = name;
+				return this;
+			}
+			return this._alias ? this._alias : this.class_.name;
+			// return this._alias ? this._alias : this.class_.name.toLowerCase();
+		},
+		is: function is (clsObj) {	// has the nature of something.  // class level proto only
+			if (Is.type(clsObj))
+				clsObj = clsObj.class_;
+			return typedef(
+					this.class_.has({attr: {name: clsObj.name}, proto: clsObj})
+				).alias(this.alias());
+		},
+		has: function has (attr) {		// note: attr could be anything
+			var class_ = this.class_.has(attr);		// which will let the class to handle it.
+			if (this.class_ !== class_)
+				return typedef(class_);
+			return this;
+		},
+		assume: function assume (value, attr) {	// set default value
+			this.class_.getDefault = function getDefault (attr) {
+				return value;
+			};
+			return this;
+		},
+		getClass: function getClass () {
+			return this.class_;
+		},
+		objProto: function objProto (obj) {
+			var class_ = this.class_;
+			if (Is.func(obj))
+				class_.objProto[obj.name] = obj;
+			else {
+				Object.keys(obj).forEach(function (key) {
+					class_.objProto[key] = obj[key];
+				});
+			}
+			return this;
+		},
+		objProp: function objProto (obj) {
+			var class_ = this.class_;
+			Object.keys(obj).forEach(function (key) {
+				class_.objProp[key] = obj[key];
+			});
+			return this;
+		}
+	};
+
+function typedef (clsObj, attr) {
+	if (clsObj || Is.num(clsObj)) {		// also needs to trap 0 value
+		if (Is.type(clsObj))
+			return clsObj;
+
+		if (Is.str(clsObj) && Is.undef(attr)) {
+			attr = clsObj;
+			clsObj = null;
+		} else {
+			if (!Is.clsObj(clsObj)) {
+				switch(typeof clsObj) {
+					case 'object':
+						if (Is.date(clsObj)) {
+							clsObj = exports.datetimeFactory ? exports.datetimeFactory() : require('../factory/datetime.js')();
+							break;
+						}
+						if (Is.regex(clsObj)) {
+							clsObj = exports.regexFactory ? exports.regexFactory() : require('../factory/regex.js')();
+							break;
+						}
+						clsObj = Array.isArray(clsObj) ?
+							exports.listFactory ? exports.listFactory() : require('../factory/list.js')() :
+							exports.dictFactory ? exports.dictFactory() : require('../factory/dict.js')();
+						break;
+					case 'string':
+						clsObj = exports.stringFactory ? exports.stringFactory() : require('../factory/string.js')();
+						break;
+					case 'number':
+						clsObj = exports.numberFactory ? exports.numberFactory() : require('../factory/number.js')();
+						break;
+					case 'boolean':
+						clsObj = exports.booleanFactory ? exports.booleanFactory() : require('../factory/bool.js')();
+						break;
+					default:
+						clsObj = null;
+						break;
+				}
+			}
+		}
+	}
+	clsObj || (clsObj = exports.entityFactory ? exports.entityFactory() : require('../factory/entity.js')());
+
+	attr && (clsObj = clsObj.has(attr));
+
+	var enType = clsObj.create.bind(clsObj);	// <== key definition of enType
+
+	enType.class_ = clsObj;
+	enType.value = clsObj.name;
+	enType.nature = {attr: {name:clsObj.name}, proto: clsObj};
+	enType.__proto__ = proto;
+	enType.__proto__.__proto__ = clsObj.objProto;
+
+	enType.IsTypeOf = function IsTypeOf (className) {
+		return this.class_.classOf(className) !== null;
+	}
+
+	return enType;
+}
+
+exports = module.exports = typedef;
+ at SyntaxError: Unexpected token (28:19)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1071:10)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/emptiness/node_modules/emptiness/index.js. Coverage (Term): 82% Coverage (LOC): 100%
+*- File /root/Targets/emptiness/node_modules/emptiness/lib/spawn.js. Coverage (Term): 15% Coverage (LOC): 13%
+*- File /root/Targets/emptiness/node_modules/emptiness/lib/util.js. Coverage (Term): 10% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

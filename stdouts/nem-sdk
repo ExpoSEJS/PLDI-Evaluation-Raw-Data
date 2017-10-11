@@ -1,0 +1,320 @@
+
+> nem-sdk@1.5.0 postinstall /root/Targets/nem-sdk/node_modules/nem-sdk
+> npm run build
+
+
+> nem-sdk@1.5.0 build /root/Targets/nem-sdk/node_modules/nem-sdk
+> babel src --presets babel-preset-es2015 --out-dir build --source-maps
+
+src/com/requests/account.js -> build/com/requests/account.js
+src/com/requests/apostille.js -> build/com/requests/apostille.js
+src/com/requests/chain.js -> build/com/requests/chain.js
+src/com/requests/endpoint.js -> build/com/requests/endpoint.js
+src/com/requests/headers.js -> build/com/requests/headers.js
+src/com/requests/index.js -> build/com/requests/index.js
+src/com/requests/market.js -> build/com/requests/market.js
+src/com/requests/namespace.js -> build/com/requests/namespace.js
+src/com/requests/send.js -> build/com/requests/send.js
+src/com/requests/supernodes.js -> build/com/requests/supernodes.js
+src/com/requests/transaction.js -> build/com/requests/transaction.js
+src/com/websockets/account.js -> build/com/websockets/account.js
+src/com/websockets/chain.js -> build/com/websockets/chain.js
+src/com/websockets/connector.js -> build/com/websockets/connector.js
+src/com/websockets/errors.js -> build/com/websockets/errors.js
+src/com/websockets/index.js -> build/com/websockets/index.js
+src/crypto/cryptoHelpers.js -> build/crypto/cryptoHelpers.js
+src/crypto/keyPair.js -> build/crypto/keyPair.js
+src/external/nacl-fast.js -> build/external/nacl-fast.js
+src/external/sockjs-0.3.4.js -> build/external/sockjs-0.3.4.js
+src/external/stomp.js -> build/external/stomp.js
+src/index.js -> build/index.js
+src/model/address.js -> build/model/address.js
+src/model/apostille.js -> build/model/apostille.js
+src/model/fees.js -> build/model/fees.js
+src/model/network.js -> build/model/network.js
+src/model/nodes.js -> build/model/nodes.js
+src/model/objects/account.js -> build/model/objects/account.js
+src/model/objects/miscellaneous.js -> build/model/objects/miscellaneous.js
+src/model/objects/mosaic.js -> build/model/objects/mosaic.js
+src/model/objects/qr.js -> build/model/objects/qr.js
+src/model/objects/transactions.js -> build/model/objects/transactions.js
+src/model/objects/wallet.js -> build/model/objects/wallet.js
+src/model/objects.js -> build/model/objects.js
+src/model/sinks.js -> build/model/sinks.js
+src/model/transactionTypes.js -> build/model/transactionTypes.js
+src/model/transactions/importanceTransferTransaction.js -> build/model/transactions/importanceTransferTransaction.js
+src/model/transactions/message.js -> build/model/transactions/message.js
+src/model/transactions/mosaicDefinitionTransaction.js -> build/model/transactions/mosaicDefinitionTransaction.js
+src/model/transactions/mosaicSupplyChange.js -> build/model/transactions/mosaicSupplyChange.js
+src/model/transactions/multisigAggregateModificationTransaction.js -> build/model/transactions/multisigAggregateModificationTransaction.js
+src/model/transactions/multisigWrapper.js -> build/model/transactions/multisigWrapper.js
+src/model/transactions/namespaceProvisionTransaction.js -> build/model/transactions/namespaceProvisionTransaction.js
+src/model/transactions/send.js -> build/model/transactions/send.js
+src/model/transactions/signatureTransaction.js -> build/model/transactions/signatureTransaction.js
+src/model/transactions/transferTransaction.js -> build/model/transactions/transferTransaction.js
+src/model/transactions.js -> build/model/transactions.js
+src/model/wallet.js -> build/model/wallet.js
+src/utils/convert.js -> build/utils/convert.js
+src/utils/format.js -> build/utils/format.js
+src/utils/helpers.js -> build/utils/helpers.js
+src/utils/nty.js -> build/utils/nty.js
+src/utils/serialization.js -> build/utils/serialization.js
+/root/Targets/nem-sdk
+└─┬ nem-sdk@1.5.0 
+  ├─┬ babel-cli@6.26.0 
+  │ ├─┬ babel-polyfill@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.10.5 
+  │ ├─┬ babel-register@6.26.0 
+  │ │ ├─┬ home-or-tmp@2.0.0 
+  │ │ │ ├── os-homedir@1.0.2 
+  │ │ │ └── os-tmpdir@1.0.2 
+  │ │ ├─┬ mkdirp@0.5.1 
+  │ │ │ └── minimist@0.0.8 
+  │ │ └── source-map-support@0.4.18 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├─┬ chokidar@1.7.0 
+  │ │ ├─┬ anymatch@1.3.2 
+  │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ ├── extglob@0.3.2 
+  │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ └─┬ normalize-path@2.1.1 
+  │ │ │   └── remove-trailing-separator@1.1.0 
+  │ │ ├── async-each@1.0.1 
+  │ │ ├── glob-parent@2.0.0 
+  │ │ ├─┬ is-binary-path@1.0.1 
+  │ │ │ └── binary-extensions@1.10.0 
+  │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ └── is-extglob@1.0.0 
+  │ │ └─┬ readdirp@2.1.0 
+  │ │   ├─┬ readable-stream@2.3.3 
+  │ │   │ ├── core-util-is@1.0.2 
+  │ │   │ ├── isarray@1.0.0 
+  │ │   │ ├── process-nextick-args@1.0.7 
+  │ │   │ ├── string_decoder@1.0.3 
+  │ │   │ └── util-deprecate@1.0.2 
+  │ │   └── set-immediate-shim@1.0.1 
+  │ ├── commander@2.11.0 
+  │ ├── convert-source-map@1.5.0 
+  │ ├── fs-readdir-recursive@1.0.0 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ └── once@1.4.0 
+  │ ├── lodash@4.17.4 
+  │ ├─┬ output-file-sync@1.1.2 
+  │ │ ├── graceful-fs@4.1.11 
+  │ │ └── object-assign@4.1.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├── slash@1.0.0 
+  │ ├── source-map@0.5.7 
+  │ └─┬ v8flags@2.1.1 
+  │   └── user-home@1.1.1 
+  ├─┬ babel-core@6.26.0 
+  │ ├─┬ babel-code-frame@6.26.0 
+  │ │ ├─┬ chalk@1.1.3 
+  │ │ │ ├── ansi-styles@2.2.1 
+  │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ ├── strip-ansi@3.0.1 
+  │ │ │ └── supports-color@2.0.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ └── js-tokens@3.0.2 
+  │ ├─┬ babel-generator@6.26.0 
+  │ │ ├─┬ detect-indent@4.0.0 
+  │ │ │ └─┬ repeating@2.0.1 
+  │ │ │   └─┬ is-finite@1.0.2 
+  │ │ │     └── number-is-nan@1.0.1 
+  │ │ ├── jsesc@1.3.0 
+  │ │ └── trim-right@1.0.1 
+  │ ├── babel-helpers@6.24.1 
+  │ ├── babel-messages@6.23.0 
+  │ ├── babel-template@6.26.0 
+  │ ├─┬ babel-traverse@6.26.0 
+  │ │ ├── globals@9.18.0 
+  │ │ └─┬ invariant@2.2.2 
+  │ │   └── loose-envify@1.3.1 
+  │ ├─┬ babel-types@6.26.0 
+  │ │ └── to-fast-properties@1.0.3 
+  │ ├── babylon@6.18.0 
+  │ ├─┬ debug@2.6.8 
+  │ │ └── ms@2.0.0 
+  │ ├── json5@0.5.1 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ └── private@0.1.7 
+  ├── babel-plugin-transform-inline-environment-variables@6.8.0 
+  ├─┬ babel-preset-es2015@6.24.1 
+  │ ├── babel-plugin-check-es2015-constants@6.22.0 
+  │ ├── babel-plugin-transform-es2015-arrow-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoped-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoping@6.26.0 
+  │ ├─┬ babel-plugin-transform-es2015-classes@6.24.1 
+  │ │ ├── babel-helper-define-map@6.26.0 
+  │ │ ├── babel-helper-function-name@6.24.1 
+  │ │ ├── babel-helper-optimise-call-expression@6.24.1 
+  │ │ └── babel-helper-replace-supers@6.24.1 
+  │ ├── babel-plugin-transform-es2015-computed-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-destructuring@6.23.0 
+  │ ├── babel-plugin-transform-es2015-duplicate-keys@6.24.1 
+  │ ├── babel-plugin-transform-es2015-for-of@6.23.0 
+  │ ├── babel-plugin-transform-es2015-function-name@6.24.1 
+  │ ├── babel-plugin-transform-es2015-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-modules-amd@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-commonjs@6.26.0 
+  │ │ └── babel-plugin-transform-strict-mode@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-systemjs@6.24.1 
+  │ │ └── babel-helper-hoist-variables@6.24.1 
+  │ ├── babel-plugin-transform-es2015-modules-umd@6.24.1 
+  │ ├── babel-plugin-transform-es2015-object-super@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-parameters@6.24.1 
+  │ │ ├── babel-helper-call-delegate@6.24.1 
+  │ │ └── babel-helper-get-function-arity@6.24.1 
+  │ ├── babel-plugin-transform-es2015-shorthand-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-spread@6.22.0 
+  │ ├─┬ babel-plugin-transform-es2015-sticky-regex@6.24.1 
+  │ │ └── babel-helper-regex@6.26.0 
+  │ ├── babel-plugin-transform-es2015-template-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-typeof-symbol@6.23.0 
+  │ ├─┬ babel-plugin-transform-es2015-unicode-regex@6.24.1 
+  │ │ └─┬ regexpu-core@2.0.0 
+  │ │   ├── regenerate@1.3.3 
+  │ │   ├── regjsgen@0.2.0 
+  │ │   └─┬ regjsparser@0.1.5 
+  │ │     └── jsesc@0.5.0 
+  │ └─┬ babel-plugin-transform-regenerator@6.26.0 
+  │   └── regenerator-transform@0.10.1 
+  ├── crypto-js@3.1.9-1 
+  ├── jquery@3.0.0 
+  ├─┬ request@2.81.0 
+  │ ├── aws-sign2@0.6.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.1.4 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@4.2.1 
+  │ │ ├─┬ ajv@4.11.8 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@1.0.5 
+  │ ├─┬ hawk@3.1.3 
+  │ │ ├── boom@2.10.1 
+  │ │ ├── cryptiles@2.0.5 
+  │ │ ├── hoek@2.16.3 
+  │ │ └── sntp@1.0.9 
+  │ ├─┬ http-signature@1.1.1 
+  │ │ ├── assert-plus@0.2.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └─┬ verror@1.10.0 
+  │ │ │   └── assert-plus@1.0.0 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── assert-plus@1.0.0 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├─┬ dashdash@1.14.1 
+  │ │   │ └── assert-plus@1.0.0 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├─┬ getpass@0.1.7 
+  │ │   │ └── assert-plus@1.0.0 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@0.2.0 
+  │ ├── qs@6.4.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.2 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  └─┬ sockjs-client@1.1.4 
+    ├─┬ eventsource@0.1.6 
+    │ └─┬ original@1.0.0 
+    │   └─┬ url-parse@1.0.5 
+    │     └── querystringify@0.0.4 
+    ├─┬ faye-websocket@0.11.1 
+    │ └─┬ websocket-driver@0.7.0 
+    │   ├── http-parser-js@0.4.7 
+    │   └── websocket-extensions@0.1.2 
+    ├── inherits@2.0.3 
+    ├── json3@3.3.2 
+    └─┬ url-parse@1.1.9 
+      ├── querystringify@1.0.0 
+      └── requires-port@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nem-sdk/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Uint8Array","Float64Array","create","sin","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0696 took 19.9562s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nem-sdk/node_modules/nem-sdk/build/index.js. Coverage (Term): 20% Coverage (LOC): 9%
+*- File /root/Targets/nem-sdk/node_modules/nem-sdk/build/crypto/keyPair.js. Coverage (Term): 9% Coverage (LOC): 8%
+*- File /root/Targets/nem-sdk/node_modules/nem-sdk/build/external/nacl-fast.js. Coverage (Term): 7% Coverage (LOC): 20%
+*- File /root/Targets/nem-sdk/node_modules/nem-sdk/build/utils/convert.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/index.js. Coverage (Term): 24% Coverage (LOC): 16%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/core.js. Coverage (Term): 18% Coverage (LOC): 36%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/x64-core.js. Coverage (Term): 36% Coverage (LOC): 46%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/lib-typedarrays.js. Coverage (Term): 37% Coverage (LOC): 49%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/enc-utf16.js. Coverage (Term): 24% Coverage (LOC): 41%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/enc-base64.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/nem-sdk/node_modules/crypto-js/md5.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

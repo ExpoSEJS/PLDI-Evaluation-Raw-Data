@@ -1,0 +1,51 @@
+/root/Targets/angular-new-router-latest
+└─┬ angular-new-router-latest@0.6.0 
+  ├── requirejs@2.3.5 
+  ├── route-recognizer@0.1.4  (git://github.com/btford/route-recognizer.git#24bde1b66fb8868f2b37c1d9d13ac70152198eaf)
+  └─┬ traceur@0.0.72 
+    ├── commander@2.11.0 
+    ├─┬ glob@4.5.3 
+    │ ├─┬ inflight@1.0.6 
+    │ │ └── wrappy@1.0.2 
+    │ ├── inherits@2.0.3 
+    │ ├─┬ minimatch@2.0.10 
+    │ │ └─┬ brace-expansion@1.1.8 
+    │ │   ├── balanced-match@1.0.0 
+    │ │   └── concat-map@0.0.1 
+    │ └── once@1.4.0 
+    ├─┬ regexpu@0.3.0 
+    │ ├─┬ recast@0.8.8 
+    │ │ ├── ast-types@0.5.7 
+    │ │ ├── cls@0.1.5 
+    │ │ ├── depd@1.0.1 
+    │ │ ├── esprima-fb@7001.1.0-dev-harmony-fb 
+    │ │ ├── private@0.1.7 
+    │ │ └─┬ source-map@0.1.32 
+    │ │   └── amdefine@1.0.1 
+    │ ├── regenerate@1.3.3 
+    │ ├── regjsgen@0.2.0 
+    │ └─┬ regjsparser@0.1.5 
+    │   └── jsesc@0.5.0 
+    ├── rsvp@3.6.2 
+    └── semver@2.3.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/angular-new-router-latest/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 7.000000000000001% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0447 took 9.6305s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: angular is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/angular-new-router-latest/node_modules/angular-new-router-latest/index.js. Coverage (Term): 68% Coverage (LOC): 100%
+*- File /root/Targets/angular-new-router-latest/node_modules/angular-new-router-latest/dist/router.es5.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

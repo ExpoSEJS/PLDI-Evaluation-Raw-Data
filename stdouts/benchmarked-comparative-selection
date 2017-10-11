@@ -1,0 +1,46 @@
+/root/Targets/benchmarked-comparative-selection
+└─┬ benchmarked-comparative-selection@2.0.1 
+  ├─┬ d-pac.plugins-spec@0.4.1 
+  │ ├── deepmerge@0.2.10 
+  │ ├─┬ is-my-json-valid@2.16.1 
+  │ │ ├── generate-function@2.0.0 
+  │ │ ├─┬ generate-object-property@1.2.0 
+  │ │ │ └── is-property@1.0.2 
+  │ │ ├── jsonpointer@4.0.1 
+  │ │ └── xtend@4.0.1 
+  │ ├── require-directory@2.1.1 
+  │ └── semver@5.4.1 
+  ├── lodash@3.10.1 
+  └── math@0.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/benchmarked-comparative-selection/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","WeakMap","max","Array","join","lastIndexOf","isArray","toUpperCase","apply","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 2.5488 took 148.1694s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Unknown type: object
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/benchmarked-comparative-selection/lib/select.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/lodash/index.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/d-pac.plugins-spec/index.js. Coverage (Term): 50% Coverage (LOC): 49%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/is-my-json-valid/index.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/generate-object-property/index.js. Coverage (Term): 43% Coverage (LOC): 80%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/is-property/is-property.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/generate-function/index.js. Coverage (Term): 59% Coverage (LOC): 71%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/jsonpointer/jsonpointer.js. Coverage (Term): 11% Coverage (LOC): 18%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/xtend/immutable.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/is-my-json-valid/formats.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/deepmerge/index.js. Coverage (Term): 81% Coverage (LOC): 86%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/require-directory/index.js. Coverage (Term): 76% Coverage (LOC): 87%
+*- File /root/Targets/benchmarked-comparative-selection/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

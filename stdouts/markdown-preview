@@ -1,0 +1,114 @@
+/root/Targets/markdown-preview
+└── markdown-preview@0.4.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/markdown-preview/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0741 took 2.8726s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var open = require('open');
+var program = require('commander');
+var watch  = require('node-watch');
+var server = require('../lib/server');
+var check  = require('../lib/check');
+var R = require('../lib/global');
+var parser = require('../lib/parser');
+var template = require('../lib/template');
+var getTheme = require('../lib/getTheme');
+var read = require('../lib/read');
+
+var options = [
+  'parser',
+  'port',
+  'browser',
+  'css',
+  'highlight',
+  'output'
+];
+
+program
+  .version(require('../package.json').version)
+  .option('-P, --parser <parser>', 'use markdown parser, remark | marked | showdown')
+  .option('-p, --port <port>', 'server port (defaults to 3333)')
+  .option('-b, --browser <browser>', 'browser name to open')
+  .option('-c, --css <name>', 'use customize css file for styling')
+  .option('-i, --highlight <highlight>', 'set highlight style')
+  .option('-o, --output <filename>', 'write to file');
+
+program
+  .arguments('<filename>')
+  .action(function(filename) {
+    options.forEach(function(option) {
+      if (program[option]) {
+        R.set(option, program[option]);
+      }
+    });
+
+    check(filename)
+      .accept(['md', 'mkd', 'markdown'])
+      .pass(function(name) {
+        if(program.output){
+          var out = template.render({
+            highlight: R.get('highlight') || 'default',
+            theme: getTheme(R.get('css')),
+            body: parser.parse(read(path.resolve(filename)))
+          });
+          fs.writeFileSync(program.output, out, 'utf8');
+          return
+        }
+        watch(name, function() {
+          R.set('stamp', +new Date());
+          console.log('%s changed.', name);
+        });
+
+        var port = R.get('port');
+        var browser = R.get('browser');
+
+        server.startAt(port, function(res) {
+          var url = 'http://localhost:' + port + '/' + name
+          open(url, browser, function(err) {
+            if (err) {
+              console.log(err.message);
+            }
+            console.log('If the browser fails to launch, please open this url to preview:\n%s\n', url);
+          });
+          res && process.exit();
+        });
+      })
+      .fail(function(name) {
+        console.log('Error: Please open a valid markdown file.');
+      });
+  });
+
+program.parse(process.argv);
+
+if (!program.args.length) {
+  program.outputHelp();
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

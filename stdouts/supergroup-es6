@@ -1,0 +1,54 @@
+/root/Targets/supergroup-es6
+└─┬ supergroup-es6@0.1.5 
+  ├─┬ assert@1.4.1 
+  │ └─┬ util@0.10.3 
+  │   └── inherits@2.0.1 
+  ├─┬ babel-plugin-transform-builtin-extend@1.1.2 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ └─┬ babel-template@6.26.0 
+  │   ├─┬ babel-traverse@6.26.0 
+  │   │ ├─┬ babel-code-frame@6.26.0 
+  │   │ │ ├─┬ chalk@1.1.3 
+  │   │ │ │ ├── ansi-styles@2.2.1 
+  │   │ │ │ ├── escape-string-regexp@1.0.5 
+  │   │ │ │ ├─┬ has-ansi@2.0.0 
+  │   │ │ │ │ └── ansi-regex@2.1.1 
+  │   │ │ │ ├── strip-ansi@3.0.1 
+  │   │ │ │ └── supports-color@2.0.0 
+  │   │ │ └── js-tokens@3.0.2 
+  │   │ ├── babel-messages@6.23.0 
+  │   │ ├─┬ debug@2.6.9 
+  │   │ │ └── ms@2.0.0 
+  │   │ ├── globals@9.18.0 
+  │   │ ├─┬ invariant@2.2.2 
+  │   │ │ └── loose-envify@1.3.1 
+  │   │ └── lodash@4.17.4 
+  │   ├─┬ babel-types@6.26.0 
+  │   │ ├── esutils@2.0.2 
+  │   │ ├── lodash@4.17.4 
+  │   │ └── to-fast-properties@1.0.3 
+  │   ├── babylon@6.18.0 
+  │   └── lodash@4.17.4 
+  ├── lodash@3.10.1 
+  └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/supergroup-es6/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0472 took 5.5562s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Unexpected token (913:16)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

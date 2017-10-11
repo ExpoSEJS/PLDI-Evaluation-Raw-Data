@@ -1,0 +1,115 @@
+/root/Targets/file-gen-demo
+└─┬ file-gen-demo@1.0.0 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ chai@3.5.0 
+  │ ├── assertion-error@1.0.2 
+  │ ├─┬ deep-eql@0.1.3 
+  │ │ └── type-detect@0.1.1 
+  │ └── type-detect@1.0.0 
+  ├─┬ fs-extra@2.1.2 
+  │ ├── graceful-fs@4.1.11 
+  │ └── jsonfile@2.4.0 
+  ├─┬ glob-all@3.1.0 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ ├── once@1.4.0 
+  │ │ └── path-is-absolute@1.0.1 
+  │ └─┬ yargs@1.2.6 
+  │   └── minimist@0.1.0 
+  ├─┬ jsdoc@3.5.5 
+  │ ├── babylon@7.0.0-beta.19 
+  │ ├── bluebird@3.5.0 
+  │ ├─┬ catharsis@0.8.9 
+  │ │ └─┬ underscore-contrib@0.3.0 
+  │ │   └── underscore@1.6.0 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ js2xmlparser@3.0.0 
+  │ │ └── xmlcreate@1.0.2 
+  │ ├── klaw@2.0.0 
+  │ ├── marked@0.3.6 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ requizzle@0.2.1 
+  │ │ └── underscore@1.6.0 
+  │ ├── strip-json-comments@2.0.1 
+  │ ├── taffydb@2.6.2 
+  │ └── underscore@1.8.3 
+  ├── pluralize@3.1.0 
+  └── readline@1.3.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/file-gen-demo/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0675 took 3.5377s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+// Module dependencies.
+var glob = require('glob-all');
+
+if(process.argv[2]){
+    var fileGen = require('./file-gen');
+    //Instance of fileGen
+    var gen = new fileGen(process.argv[2], process.argv[3]);
+
+    gen.shouldCopy(function (reply) {
+        if(reply){
+            //call copy() to copy the templates for 'module_name'
+            gen.copy(function (err) {
+                if(err) return console.error('errMsg : Please Enter proper option ie.(controller, route, or view)');
+                //call replaceTag() to remplace the tags from the files.
+                gen.replaceTag(function (err) {
+                    if(err) return console.log(err);
+                    //call renameJS() to rename all the '.txt' files to '.js'
+                    gen.renameJS(function (err) {
+                        if(err) return console.log(err);
+                        var files = glob.sync([gen.moduleName +'/**']);
+                        // console.log('Created : ');
+                        console.log(reply);
+                        files.forEach(function (file) {
+                            console.log('./'+file);
+                        });
+                        return;
+                    });
+                });
+            });
+        } else {
+            return console.info('msgInfo: Command Terminated.....!!!');
+        }
+    });
+} else {
+    console.info('msgInfo: Please enter enter the module name.');
+}
+
+
+
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,620 @@
+/root/Targets/explorer-lego
+└─┬ explorer-lego@0.1.4 
+  ├─┬ babel-core@6.26.0 
+  │ ├─┬ babel-code-frame@6.26.0 
+  │ │ ├─┬ chalk@1.1.3 
+  │ │ │ ├── ansi-styles@2.2.1 
+  │ │ │ ├── escape-string-regexp@1.0.5 
+  │ │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ │ └── ansi-regex@2.1.1 
+  │ │ │ ├── strip-ansi@3.0.1 
+  │ │ │ └── supports-color@2.0.0 
+  │ │ ├── esutils@2.0.2 
+  │ │ └── js-tokens@3.0.2 
+  │ ├─┬ babel-generator@6.26.0 
+  │ │ ├─┬ detect-indent@4.0.0 
+  │ │ │ └─┬ repeating@2.0.1 
+  │ │ │   └─┬ is-finite@1.0.2 
+  │ │ │     └── number-is-nan@1.0.1 
+  │ │ ├── jsesc@1.3.0 
+  │ │ └── trim-right@1.0.1 
+  │ ├── babel-helpers@6.24.1 
+  │ ├── babel-messages@6.23.0 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├── babel-template@6.26.0 
+  │ ├─┬ babel-traverse@6.26.0 
+  │ │ ├── globals@9.18.0 
+  │ │ └── invariant@2.2.2 
+  │ ├─┬ babel-types@6.26.0 
+  │ │ └── to-fast-properties@1.0.3 
+  │ ├── babylon@6.18.0 
+  │ ├── convert-source-map@1.5.0 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── json5@0.5.1 
+  │ ├── lodash@4.17.4 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├── private@0.1.7 
+  │ ├── slash@1.0.0 
+  │ └── source-map@0.5.7 
+  ├─┬ babel-preset-es2015@6.24.1 
+  │ ├── babel-plugin-check-es2015-constants@6.22.0 
+  │ ├── babel-plugin-transform-es2015-arrow-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoped-functions@6.22.0 
+  │ ├── babel-plugin-transform-es2015-block-scoping@6.26.0 
+  │ ├─┬ babel-plugin-transform-es2015-classes@6.24.1 
+  │ │ ├── babel-helper-define-map@6.26.0 
+  │ │ ├── babel-helper-function-name@6.24.1 
+  │ │ ├── babel-helper-optimise-call-expression@6.24.1 
+  │ │ └── babel-helper-replace-supers@6.24.1 
+  │ ├── babel-plugin-transform-es2015-computed-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-destructuring@6.23.0 
+  │ ├── babel-plugin-transform-es2015-duplicate-keys@6.24.1 
+  │ ├── babel-plugin-transform-es2015-for-of@6.23.0 
+  │ ├── babel-plugin-transform-es2015-function-name@6.24.1 
+  │ ├── babel-plugin-transform-es2015-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-modules-amd@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-commonjs@6.26.0 
+  │ │ └── babel-plugin-transform-strict-mode@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-modules-systemjs@6.24.1 
+  │ │ └── babel-helper-hoist-variables@6.24.1 
+  │ ├── babel-plugin-transform-es2015-modules-umd@6.24.1 
+  │ ├── babel-plugin-transform-es2015-object-super@6.24.1 
+  │ ├─┬ babel-plugin-transform-es2015-parameters@6.24.1 
+  │ │ ├── babel-helper-call-delegate@6.24.1 
+  │ │ └── babel-helper-get-function-arity@6.24.1 
+  │ ├── babel-plugin-transform-es2015-shorthand-properties@6.24.1 
+  │ ├── babel-plugin-transform-es2015-spread@6.22.0 
+  │ ├─┬ babel-plugin-transform-es2015-sticky-regex@6.24.1 
+  │ │ └── babel-helper-regex@6.26.0 
+  │ ├── babel-plugin-transform-es2015-template-literals@6.22.0 
+  │ ├── babel-plugin-transform-es2015-typeof-symbol@6.23.0 
+  │ ├─┬ babel-plugin-transform-es2015-unicode-regex@6.24.1 
+  │ │ └─┬ regexpu-core@2.0.0 
+  │ │   ├── regenerate@1.3.3 
+  │ │   ├── regjsgen@0.2.0 
+  │ │   └─┬ regjsparser@0.1.5 
+  │ │     └── jsesc@0.5.0 
+  │ └─┬ babel-plugin-transform-regenerator@6.26.0 
+  │   └── regenerator-transform@0.10.1 
+  ├─┬ babel-preset-react@6.24.1 
+  │ ├── babel-plugin-syntax-jsx@6.18.0 
+  │ ├── babel-plugin-transform-react-display-name@6.25.0 
+  │ ├─┬ babel-plugin-transform-react-jsx@6.24.1 
+  │ │ └── babel-helper-builder-react-jsx@6.26.0 
+  │ ├── babel-plugin-transform-react-jsx-self@6.22.0 
+  │ ├── babel-plugin-transform-react-jsx-source@6.22.0 
+  │ └─┬ babel-preset-flow@6.23.0 
+  │   └─┬ babel-plugin-transform-flow-strip-types@6.22.0 
+  │     └── babel-plugin-syntax-flow@6.18.0 
+  ├─┬ babel-register@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ ├─┬ home-or-tmp@2.0.0 
+  │ │ ├── os-homedir@1.0.2 
+  │ │ └── os-tmpdir@1.0.2 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ └── source-map-support@0.4.18 
+  ├── bluebird@3.5.0 
+  ├─┬ body-parser@1.18.2 
+  │ ├── bytes@3.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── depd@1.1.1 
+  │ ├─┬ http-errors@1.6.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── setprototypeof@1.0.3 
+  │ ├── iconv-lite@0.4.19 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── qs@6.5.1 
+  │ ├─┬ raw-body@2.3.2 
+  │ │ └── unpipe@1.0.0 
+  │ └─┬ type-is@1.6.15 
+  │   ├── media-typer@0.3.0 
+  │   └─┬ mime-types@2.1.17 
+  │     └── mime-db@1.30.0 
+  ├─┬ express@4.16.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├── content-disposition@0.5.2 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├── finalhandler@1.1.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ marko@2.11.1 
+  │ ├── app-module-path@1.1.0 
+  │ ├── async-writer@1.4.5 
+  │ ├── browser-refresh-client@1.1.4 
+  │ ├── char-props@0.1.5 
+  │ ├── events@1.1.1 
+  │ ├─┬ htmlparser2@3.9.2 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.4.1 
+  │ │ ├─┬ domutils@1.6.2 
+  │ │ │ └─┬ dom-serializer@0.1.0 
+  │ │ │   └── domelementtype@1.1.3 
+  │ │ ├── entities@1.1.1 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── isarray@1.0.0 
+  │ │   ├── process-nextick-args@1.0.7 
+  │ │   ├── string_decoder@1.0.3 
+  │ │   └── util-deprecate@1.0.2 
+  │ ├── jsonminify@0.2.3 
+  │ ├─┬ marko-async@2.2.2 
+  │ │ ├── raptor-async@1.1.3 
+  │ │ └── raptor-dust@1.1.12 
+  │ ├── marko-layout@2.0.2 
+  │ ├─┬ minimatch@0.2.14 
+  │ │ ├── lru-cache@2.7.3 
+  │ │ └── sigmund@1.0.1 
+  │ ├── property-handlers@1.1.1 
+  │ ├── raptor-args@1.0.3 
+  │ ├── raptor-json@1.1.0 
+  │ ├─┬ raptor-logging@1.1.3 
+  │ │ └── raptor-stacktraces@1.0.1 
+  │ ├─┬ raptor-modules@1.3.3 
+  │ │ ├── app-root-dir@1.0.2 
+  │ │ └── through@2.3.8 
+  │ ├── raptor-polyfill@1.0.2 
+  │ ├─┬ raptor-promises@1.0.3 
+  │ │ └── q@1.5.0 
+  │ ├── raptor-regexp@1.0.1 
+  │ ├── raptor-strings@1.0.2 
+  │ ├── raptor-util@1.1.2 
+  │ ├── resolve-from@1.0.1 
+  │ ├── sax@0.6.1 
+  │ └── try-require@1.2.1 
+  ├─┬ react@0.14.9 
+  │ ├─┬ envify@3.4.1 
+  │ │ └─┬ jstransform@11.0.3 
+  │ │   ├── base62@1.2.0 
+  │ │   ├─┬ commoner@0.10.8 
+  │ │   │ ├── commander@2.11.0 
+  │ │   │ ├─┬ detective@4.5.0 
+  │ │   │ │ ├── acorn@4.0.13 
+  │ │   │ │ └── defined@1.0.0 
+  │ │   │ ├─┬ glob@5.0.15 
+  │ │   │ │ ├─┬ inflight@1.0.6 
+  │ │   │ │ │ └── wrappy@1.0.2 
+  │ │   │ │ └── once@1.4.0 
+  │ │   │ ├── graceful-fs@4.1.11 
+  │ │   │ └─┬ recast@0.11.23 
+  │ │   │   ├── ast-types@0.9.6 
+  │ │   │   └── esprima@3.1.3 
+  │ │   ├── esprima-fb@15001.1.0-dev-harmony-fb 
+  │ │   ├── object-assign@2.1.1 
+  │ │   └─┬ source-map@0.4.4 
+  │ │     └── amdefine@1.0.1 
+  │ └─┬ fbjs@0.6.1 
+  │   ├── core-js@1.2.7 
+  │   ├── loose-envify@1.3.1 
+  │   ├─┬ promise@7.3.1 
+  │   │ └── asap@2.0.6 
+  │   ├── ua-parser-js@0.7.14 
+  │   └── whatwg-fetch@0.9.0 
+  ├── react-dom@0.14.9 
+  └─┬ superagent@1.8.5 
+    ├── component-emitter@1.2.1 
+    ├── cookiejar@2.0.6 
+    ├── extend@3.0.0 
+    ├─┬ form-data@1.0.0-rc3 
+    │ ├── async@1.5.2 
+    │ └─┬ combined-stream@1.0.5 
+    │   └── delayed-stream@1.0.0 
+    ├── formidable@1.0.17 
+    ├── mime@1.3.4 
+    ├── qs@2.3.3 
+    ├─┬ readable-stream@1.0.27-1 
+    │ ├── core-util-is@1.0.2 
+    │ ├── isarray@0.0.1 
+    │ └── string_decoder@0.10.31 
+    └── reduce-component@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/explorer-lego/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","reduce","parseInt","charCodeAt","abs","Number","toString","toUpperCase","join","call","RegExp","getOwnPropertyNames","getOwnPropertyDescriptor","isArray","Array","sort","fromCharCode"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0638 took 34.6676s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (17:4) on program /*
+* Copyright 2011 eBay Software Foundation
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+* 
+*    http://www.apache.org/licenses/LICENSE-2.0
+* 
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+var assert = require('assert');
+var raptorRegexp = require('raptor-regexp');
+var propertyHandlers = require('property-handlers');
+var Taglib = require('../Taglib');
+
+function AttrHandlers(attr){
+    assert.ok(attr);
+    assert.equal(typeof attr, 'object');
+    this.attr = attr;
+}
+
+AttrHandlers.prototype = {
+    /**
+     * The attribute type. One of the following:
+     * - string (the default)
+     * - expression (a JavaScript expression)
+     * - number
+     * - integer
+     * - int
+     * - boolean
+     * - float
+     * - double
+     * - object
+     * - array
+     *
+     */
+    type: function(value) {
+        var attr = this.attr;
+        attr.type = value;
+    },
+
+    /**
+     * The name of the target property to use when mapping
+     * the attribute to a property on the target object.
+     */
+    targetProperty: function(value) {
+        var attr = this.attr;
+        attr.targetProperty = value;
+    },
+    /**
+     * The "default-value" property allows a default value
+     * to be provided when the attribute is not declared
+     * on the custom tag.
+     */
+    defaultValue: function(value) {
+        var attr = this.attr;
+        attr.defaultValue = value;
+    },
+    /**
+     * The "pattern" property allows the attribute
+     * to be matched based on a simplified regular expression.
+     *
+     * Example:
+     *
+     * "pattern": "myprefix-*"
+     */
+    pattern: function(value) {
+        var attr = this.attr;
+        if (value === true) {
+            var patternRegExp = raptorRegexp.simple(attr.name);
+            attr.pattern = patternRegExp;
+        }
+    },
+
+    /**
+     * If "allow-expressions" is set to true (the default) then
+     * the the attribute value will be parsed to find any dynamic
+     * parts.
+     */
+    allowExpressions: function(value) {
+        var attr = this.attr;
+        attr.allowExpressions = value;
+    },
+
+    /**
+     * By default, the Marko compiler maps an attribute
+     * to a property by removing all dashes from the attribute
+     * name and converting each character after a dash to
+     * an uppercase character (e.g. "my-attr" --> "myAttr").
+     *
+     * Setting "preserve-name" to true will prevent this from
+     * happening for the attribute.
+     */
+    preserveName: function(value) {
+        var attr = this.attr;
+        attr.preserveName = value;
+    },
+    /**
+     * Declares an attribute as required. Currently, this is
+     * not enforced and is only used for documentation purposes.
+     *
+     * Example:
+     * "required": true
+     */
+    required: function(value) {
+        var attr = this.attr;
+        attr.required = value === true;
+    },
+    /**
+     * This is the opposite of "preserve-name" and will result
+     * in dashes being removed from the attribute if set to true.
+     */
+    removeDashes: function(value) {
+        var attr = this.attr;
+        attr.removeDashes = value === true;
+    },
+    /**
+     * The description of the attribute. Only used for documentation.
+     */
+    description: function() {
+
+    },
+
+    /**
+     * The "set-flag" property allows a "flag" to be added to a Node instance
+     * at compile time if the attribute is found on the node. This is helpful
+     * if an attribute uses a pattern and a transformer wants to have a simple
+     * check to see if the Node has an attribute that matched the pattern.
+     *
+     * Example:
+     *
+     * "set-flag": "myCustomFlag"
+     *
+     * A Node instance can be checked if it has a flag set as shown below:
+     *
+     * if (node.hasFlag('myCustomFlag')) { ... }
+     *
+     *
+     */
+    setFlag: function(value) {
+        var attr = this.attr;
+        attr.setFlag = value;
+    },
+    /**
+     * An attribute can be marked for ignore. Ignored attributes
+     * will be ignored during compilation.
+     */
+    ignore: function(value) {
+        var attr = this.attr;
+        if (value === true) {
+            attr.ignore = true;
+        }
+    }
+};
+
+exports.isSupportedProperty = function(name) {
+    return AttrHandlers.prototype.hasOwnProperty(name);
+};
+
+exports.loadAttribute = function loadAttribute(attrName, attrProps, path) {
+    var attr = new Taglib.Attribute(attrName);
+
+    if (attrProps == null) {
+        attrProps = {
+            type: 'string'
+        };
+    } else if (typeof attrProps === 'string') {
+        attrProps = {
+            type: attrProps
+        };
+    }
+
+    var attrHandlers = new AttrHandlers(attr);
+    propertyHandlers(attrProps, attrHandlers, path);
+    return attr;
+}; at SyntaxError: Unexpected token (17:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/explorer-lego/node_modules/explorer-lego/index.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/explorer-lego/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/express.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File /root/Targets/explorer-lego/node_modules/body-parser/index.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/explorer-lego/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/explorer-lego/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File eval. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/explorer-lego/node_modules/merge-descriptors/index.js. Coverage (Term): 83% Coverage (LOC): 83%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/application.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/explorer-lego/node_modules/finalhandler/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/explorer-lego/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/explorer-lego/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/explorer-lego/node_modules/debug/src/debug.js. Coverage (Term): 47% Coverage (LOC): 51%
+*- File /root/Targets/explorer-lego/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/explorer-lego/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/explorer-lego/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/explorer-lego/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/explorer-lego/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/explorer-lego/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/explorer-lego/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/explorer-lego/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/explorer-lego/node_modules/express/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/middleware/init.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/middleware/query.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/explorer-lego/node_modules/qs/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/qs/lib/utils.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/qs/lib/formats.js. Coverage (Term): 61% Coverage (LOC): 87%
+*- File /root/Targets/explorer-lego/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/view.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/utils.js. Coverage (Term): 42% Coverage (LOC): 53%
+*- File /root/Targets/explorer-lego/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/explorer-lego/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/explorer-lego/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/send/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/explorer-lego/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/explorer-lego/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/explorer-lego/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/explorer-lego/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/explorer-lego/node_modules/fresh/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/explorer-lego/node_modules/mime/mime.js. Coverage (Term): 55% Coverage (LOC): 75%
+*- File /root/Targets/explorer-lego/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/explorer-lego/node_modules/proxy-addr/index.js. Coverage (Term): 22% Coverage (LOC): 32%
+*- File /root/Targets/explorer-lego/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 25% Coverage (LOC): 47%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/explorer-lego/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/explorer-lego/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/explorer-lego/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/explorer-lego/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/explorer-lego/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/explorer-lego/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/explorer-lego/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/explorer-lego/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/explorer-lego/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/explorer-lego/node_modules/body-parser/lib/types/json.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/explorer-lego/node_modules/bytes/index.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/body-parser/lib/read.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/explorer-lego/node_modules/raw-body/index.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/explorer-lego/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/explorer-lego/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/explorer-lego/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/explorer-lego/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/explorer-lego/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/body-parser/lib/types/urlencoded.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/explorer-lego/node_modules/marko/runtime/marko-runtime.js. Coverage (Term): 18% Coverage (LOC): 29%
+*- File /root/Targets/explorer-lego/node_modules/async-writer/src/index.js. Coverage (Term): 43% Coverage (LOC): 56%
+*- File /root/Targets/explorer-lego/node_modules/async-writer/src/AsyncWriter.js. Coverage (Term): 9% Coverage (LOC): 20%
+*- File /root/Targets/explorer-lego/node_modules/marko/runtime/helpers.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/escapeXml.js. Coverage (Term): 34% Coverage (LOC): 55%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/extend.js. Coverage (Term): 79% Coverage (LOC): 87%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/attr.js. Coverage (Term): 31% Coverage (LOC): 42%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/attrs.js. Coverage (Term): 40% Coverage (LOC): 42%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/forEach.js. Coverage (Term): 40% Coverage (LOC): 57%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/arrayFromArguments.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/index.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/raptor-logging.js. Coverage (Term): 88% Coverage (LOC): 94%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/raptor-logging-impl.js. Coverage (Term): 60% Coverage (LOC): 72%
+*- File /root/Targets/explorer-lego/node_modules/raptor-polyfill/string/startsWith.js. Coverage (Term): 30% Coverage (LOC): 29%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/Logger.js. Coverage (Term): 15% Coverage (LOC): 37%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/ConsoleAppender.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/explorer-lego/node_modules/raptor-logging/lib/resolveLoggerName.js. Coverage (Term): 18% Coverage (LOC): 22%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/inherit.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/marko/runtime/loader.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/marko-compiler.js. Coverage (Term): 30% Coverage (LOC): 52%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/Node.js. Coverage (Term): 6% Coverage (LOC): 16%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/raptor-util.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/tryRequire.js. Coverage (Term): 43% Coverage (LOC): 44%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/makeClass.js. Coverage (Term): 82% Coverage (LOC): 90%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/makeEnum.js. Coverage (Term): 18% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/forEachEntry.js. Coverage (Term): 38% Coverage (LOC): 44%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/createError.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/isObjectEmpty.js. Coverage (Term): 35% Coverage (LOC): 31%
+*- File /root/Targets/explorer-lego/node_modules/raptor-util/toArray.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/EscapeXmlContext.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/ElementNode.js. Coverage (Term): 9% Coverage (LOC): 21%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/TextNode.js. Coverage (Term): 13% Coverage (LOC): 22%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/expression-parser.js. Coverage (Term): 10% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/Expression.js. Coverage (Term): 39% Coverage (LOC): 64%
+*- File /root/Targets/explorer-lego/node_modules/raptor-strings/lib/raptor-strings.js. Coverage (Term): 16% Coverage (LOC): 48%
+*- File /root/Targets/explorer-lego/node_modules/raptor-polyfill/string/endsWith.js. Coverage (Term): 29% Coverage (LOC): 29%
+*- File /root/Targets/explorer-lego/node_modules/raptor-strings/lib/StringBuilder.js. Coverage (Term): 32% Coverage (LOC): 45%
+*- File /root/Targets/explorer-lego/node_modules/raptor-json/stringify.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/raptor-regexp/lib/raptor-regexp.js. Coverage (Term): 48% Coverage (LOC): 71%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/TypeConverter.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/TemplateCompiler.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/TemplateBuilder.js. Coverage (Term): 6% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/parser.js. Coverage (Term): 52% Coverage (LOC): 70%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/ParseTreeBuilderHtml.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/htmlparser2/lib/index.js. Coverage (Term): 24% Coverage (LOC): 52%
+*- File /root/Targets/explorer-lego/node_modules/htmlparser2/lib/Parser.js. Coverage (Term): 22% Coverage (LOC): 46%
+*- File /root/Targets/explorer-lego/node_modules/htmlparser2/lib/Tokenizer.js. Coverage (Term): 24% Coverage (LOC): 21%
+*- File /root/Targets/explorer-lego/node_modules/entities/lib/decode_codepoint.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/domhandler/index.js. Coverage (Term): 16% Coverage (LOC): 25%
+*- File /root/Targets/explorer-lego/node_modules/domelementtype/index.js. Coverage (Term): 54% Coverage (LOC): 93%
+*- File /root/Targets/explorer-lego/node_modules/domhandler/lib/node.js. Coverage (Term): 45% Coverage (LOC): 68%
+*- File /root/Targets/explorer-lego/node_modules/domhandler/lib/element.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/ParseTreeBuilder.js. Coverage (Term): 11% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/CommentNode.js. Coverage (Term): 34% Coverage (LOC): 57%
+*- File /root/Targets/explorer-lego/node_modules/char-props/lib/charProps.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/ParseTreeBuilderXml.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/sax/lib/sax.js. Coverage (Term): 16% Coverage (LOC): 35%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/index.js. Coverage (Term): 21% Coverage (LOC): 31%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/index.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/Tag.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/Attribute.js. Coverage (Term): 47% Coverage (LOC): 50%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/Property.js. Coverage (Term): 61% Coverage (LOC): 67%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/NestedVariable.js. Coverage (Term): 75% Coverage (LOC): 86%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/ImportedVariable.js. Coverage (Term): 68% Coverage (LOC): 75%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/Taglib/Transformer.js. Coverage (Term): 20% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/loader.js. Coverage (Term): 88% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/loader-taglib.js. Coverage (Term): 13% Coverage (LOC): 18%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/handleAttributes.js. Coverage (Term): 45% Coverage (LOC): 58%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/scanTagsDir.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/explorer-lego/node_modules/jsonminify/minify.json.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/tag-def-from-code.js. Coverage (Term): 19% Coverage (LOC): 21%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/util/resolve.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/resolver/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/resolver/lib/search-path.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/index.js. Coverage (Term): 72% Coverage (LOC): 72%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/caching-fs.js. Coverage (Term): 23% Coverage (LOC): 40%
+*- File /root/Targets/explorer-lego/node_modules/raptor-async/DataHolder.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/explorer-lego/node_modules/raptor-async/AsyncValue.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/package-reader.js. Coverage (Term): 27% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/findMain.js. Coverage (Term): 22% Coverage (LOC): 23%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/getProjectRootDir.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/explorer-lego/node_modules/app-root-dir/lib/index.js. Coverage (Term): 17% Coverage (LOC): 23%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/getModuleRootPackage.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/getModuleRootDir.js. Coverage (Term): 27% Coverage (LOC): 26%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/browser-overrides.js. Coverage (Term): 19% Coverage (LOC): 19%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/getPathInfo.js. Coverage (Term): 11% Coverage (LOC): 11%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/util/lib/path.js. Coverage (Term): 29% Coverage (LOC): 55%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/resolver/lib/resolveRequire.js. Coverage (Term): 11% Coverage (LOC): 10%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/resolver/lib/serverResolveRequire.js. Coverage (Term): 23% Coverage (LOC): 22%
+*- File /root/Targets/explorer-lego/node_modules/raptor-modules/resolver/lib/deresolve.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/explorer-lego/node_modules/resolve-from/index.js. Coverage (Term): 38% Coverage (LOC): 41%
+*- File /root/Targets/explorer-lego/node_modules/property-handlers/lib/index.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/taglib-reader.js. Coverage (Term): 47% Coverage (LOC): 58%
+*- File /root/Targets/explorer-lego/node_modules/try-require/index.js. Coverage (Term): 59% Coverage (LOC): 62%
+*- File /root/Targets/explorer-lego/node_modules/marko/compiler/taglibs/taglib-loader/loader-tag.js. Coverage (Term): 9% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

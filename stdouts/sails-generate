@@ -1,0 +1,161 @@
+/root/Targets/sails-generate
+└─┬ sails-generate@1.10.21 
+  ├─┬ async@2.0.1 
+  │ └── lodash@4.17.4 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├─┬ has-ansi@2.0.0 
+  │ │ └── ansi-regex@2.1.1 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├─┬ cross-spawn@4.0.2 
+  │ ├─┬ lru-cache@4.1.1 
+  │ │ ├── pseudomap@1.0.2 
+  │ │ └── yallist@2.1.2 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ flaverr@1.2.4 
+  │ └── @sailshq/lodash@3.10.2 
+  ├─┬ fs-extra@0.30.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── jsonfile@2.4.0 
+  │ ├── klaw@1.3.1 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ rimraf@2.6.2 
+  │   └─┬ glob@7.1.2 
+  │     ├── fs.realpath@1.0.0 
+  │     ├─┬ inflight@1.0.6 
+  │     │ └── wrappy@1.0.2 
+  │     ├── inherits@2.0.3 
+  │     ├─┬ minimatch@3.0.4 
+  │     │ └─┬ brace-expansion@1.1.8 
+  │     │   ├── balanced-match@1.0.0 
+  │     │   └── concat-map@0.0.1 
+  │     └── once@1.4.0 
+  ├── lodash@3.10.1 
+  ├─┬ machinepack-process@2.0.2 
+  │ ├── lodash.isfunction@3.0.8 
+  │ ├── lodash.isobject@3.0.2 
+  │ ├── lodash.isstring@4.0.1 
+  │ ├── lodash.isundefined@3.0.1 
+  │ ├─┬ machine@12.1.0 
+  │ │ ├── convert-to-ecmascript-compatible-varname@0.1.4 
+  │ │ ├─┬ debug@2.2.0 
+  │ │ │ └── ms@0.7.1 
+  │ │ ├── object-hash@0.3.0 
+  │ │ ├─┬ rttc@9.3.4 
+  │ │ │ └── lodash@3.8.0 
+  │ │ └─┬ switchback@2.0.0 
+  │ │   └── lodash@2.4.2 
+  │ ├─┬ machinepack-json@2.0.1 
+  │ │ ├── lodash.iserror@3.1.1 
+  │ │ └── lodash.isregexp@3.0.5 
+  │ └── open@0.0.5 
+  ├─┬ reportback@2.0.1 
+  │ ├─┬ captains-log@1.0.2 
+  │ │ └─┬ rc@1.0.1 
+  │ │   ├── deep-extend@0.2.11 
+  │ │   ├── ini@1.3.4 
+  │ │   ├── minimist@0.0.10 
+  │ │   └── strip-json-comments@0.1.3 
+  │ └── switchback@2.0.2 
+  └── sails.io.js-dist@1.1.12 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sails-generate/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","RegExp","WeakMap","max","Array","Object"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0267 took 55.3446s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #! /usr/bin/env node
+var cc   = require('./lib/utils')
+var join = require('path').join
+var deepExtend = require('deep-extend')
+var etc = '/etc'
+var win = process.platform === "win32"
+var home = win
+           ? process.env.USERPROFILE
+           : process.env.HOME
+
+module.exports = function (name, defaults, argv, parse) {
+  if('string' !== typeof name)
+    throw new Error('rc(name): name *must* be string')
+  if(!argv)
+    argv = require('minimist')(process.argv.slice(2))
+  defaults = (
+      'string' === typeof defaults
+    ? cc.json(defaults) : defaults
+    ) || {}
+
+  parse = parse || cc.parse
+
+  var env = cc.env(name + '_')
+
+  var configs = [defaults]
+  var configFiles = []
+  function addConfigFile (file) {
+    if (configFiles.indexOf(file) >= 0) return
+    var fileConfig = cc.file(file)
+    if (fileConfig) {
+      configs.push(parse(fileConfig))
+      configFiles.push(file)
+    }
+  }
+
+  // which files do we look at?
+  if (!win)
+   [join(etc, name, 'config'),
+    join(etc, name + 'rc')].forEach(addConfigFile)
+  if (home)
+   [join(home, '.config', name, 'config'),
+    join(home, '.config', name),
+    join(home, '.' + name, 'config'),
+    join(home, '.' + name + 'rc')].forEach(addConfigFile)
+  addConfigFile(cc.find('.'+name+'rc'))
+  if (env.config) addConfigFile(env.config)
+  if (argv.config) addConfigFile(argv.config)
+
+  return deepExtend.apply(null, configs.concat([
+    env,
+    argv,
+    configFiles.length ? {configs: configFiles, config: configFiles[configFiles.length - 1]} : null,
+  ]))
+}
+
+if(!module.parent) {
+  console.log(
+    JSON.stringify(module.exports(process.argv[2]), false, 2)
+  )
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/sails-generate/node_modules/sails-generate/lib/index.js. Coverage (Term): 13% Coverage (LOC): 13%
+*- File /root/Targets/sails-generate/node_modules/lodash/index.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/sails-generate/node_modules/reportback/index.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /root/Targets/sails-generate/node_modules/reportback/node_modules/switchback/lib/index.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/sails-generate/node_modules/reportback/node_modules/switchback/lib/factory.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/sails-generate/node_modules/reportback/node_modules/switchback/lib/constants.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/sails-generate/node_modules/reportback/node_modules/switchback/lib/normalize.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- File /root/Targets/sails-generate/node_modules/captains-log/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/sails-generate/node_modules/@sailshq/lodash/lib/index.js. Coverage (Term): 21% Coverage (LOC): 32%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

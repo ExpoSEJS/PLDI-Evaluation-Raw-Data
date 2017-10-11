@@ -1,0 +1,23 @@
+/root/Targets/silk-gui
+└─┬ silk-gui@0.5.3 
+  ├── silk-electron@0.0.2  (git://github.com/silk-gui/silk-electron.git#04e04bf7c0ad2c839a8e65e23dc2b6002cf36689)
+  └── tty.js@0.2.15  (git://github.com/silk-gui/tty.js.git#b5ab41998bc9850fdba40ec73fec24ef6019ed63)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/silk-gui/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.068 took 4.2608s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'silk-gui'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

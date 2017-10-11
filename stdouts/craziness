@@ -1,0 +1,39 @@
+
+> ref@1.3.5 install /root/Targets/craziness/node_modules/ref
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/craziness/node_modules/ref/build'
+  CXX(target) Release/obj.target/binding/src/binding.o
+  SOLINK_MODULE(target) Release/obj.target/binding.node
+  COPY Release/binding.node
+make: Leaving directory '/root/Targets/craziness/node_modules/ref/build'
+
+> ffi@2.2.0 install /root/Targets/craziness/node_modules/ffi
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/craziness/node_modules/ffi/build'
+  CC(target) Release/obj.target/ffi/deps/libffi/src/prep_cif.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/types.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/raw_api.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/java_raw_api.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/closures.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/ffi.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/ffi64.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/unix64.o
+  CC(target) Release/obj.target/ffi/deps/libffi/src/x86/sysv.o
+  AR(target) Release/obj.target/deps/libffi/libffi.a
+  COPY Release/libffi.a
+  CXX(target) Release/obj.target/ffi_bindings/src/ffi.o
+  CXX(target) Release/obj.target/ffi_bindings/src/callback_info.o
+  CXX(target) Release/obj.target/ffi_bindings/src/threaded_callback_invokation.o
+  SOLINK_MODULE(target) Release/obj.target/ffi_bindings.node
+  COPY Release/ffi_bindings.node
+make: Leaving directory '/root/Targets/craziness/node_modules/ffi/build'
+
+> craziness@0.0.1 install /root/Targets/craziness/node_modules/craziness
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/craziness/node_modules/craziness/build'
+  CXX(target) Release/obj.target/helpers/helpers.o
+helpers.target.mk:92: recipe for target 'Release/obj.target/helpers/helpers.o' failed
+make: Leaving directory '/root/Targets/craziness/node_modules/craziness/build'

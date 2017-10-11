@@ -1,0 +1,98 @@
+/root/Targets/huepi
+└─┬ huepi@1.2.2 
+  ├── domino@1.0.29 
+  ├── jquery@2.2.4 
+  └── xmlhttprequest@1.8.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/huepi/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","create","RegExp","isArray","defineProperties","getOwnPropertyDescriptor","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0415 took 70.1183s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (10:4) on program /* Domino uses sloppy-mode features (in particular, `with`) for a few
+ * minor things.  This file encapsulates all the sloppiness; every
+ * other module should be strict. */
+/* jshint strict: false */
+/* jshint evil: true */
+/* jshint -W085 */
+module.exports = {
+  Window_run: function _run(code, file) {
+    if (file) code += '\n//@ sourceURL=' + file;
+    with(this) eval(code);
+  },
+  EventHandlerBuilder_build: function build() {
+    try {
+      with(this.document.defaultView || Object.create(null))
+        with(this.document)
+          with(this.form)
+            with(this.element)
+              return eval("(function(event){" + this.body + "})");
+    }
+    catch (err) {
+      return function() { throw err; };
+    }
+  }
+};
+ at SyntaxError: 'with' in strict mode (10:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/huepi/node_modules/huepi/huepi.js. Coverage (Term): 1% Coverage (LOC): 1%
+*- File /root/Targets/huepi/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- File /root/Targets/huepi/node_modules/domino/lib/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/huepi/node_modules/domino/lib/DOMImplementation.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/huepi/node_modules/domino/lib/Document.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/huepi/node_modules/domino/lib/Node.js. Coverage (Term): 11% Coverage (LOC): 24%
+*- File /root/Targets/huepi/node_modules/domino/lib/EventTarget.js. Coverage (Term): 6% Coverage (LOC): 11%
+*- File /root/Targets/huepi/node_modules/domino/lib/Event.js. Coverage (Term): 24% Coverage (LOC): 35%
+*- File /root/Targets/huepi/node_modules/domino/lib/MouseEvent.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/huepi/node_modules/domino/lib/UIEvent.js. Coverage (Term): 49% Coverage (LOC): 65%
+*- File /root/Targets/huepi/node_modules/domino/lib/utils.js. Coverage (Term): 32% Coverage (LOC): 64%
+*- File /root/Targets/huepi/node_modules/domino/lib/DOMException.js. Coverage (Term): 87% Coverage (LOC): 96%
+*- File /root/Targets/huepi/node_modules/domino/lib/config.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/huepi/node_modules/domino/lib/NodeList.js. Coverage (Term): 43% Coverage (LOC): 55%
+*- File /root/Targets/huepi/node_modules/domino/lib/Element.js. Coverage (Term): 8% Coverage (LOC): 24%
+*- File /root/Targets/huepi/node_modules/domino/lib/xmlnames.js. Coverage (Term): 56% Coverage (LOC): 57%
+*- File /root/Targets/huepi/node_modules/domino/lib/attributes.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /root/Targets/huepi/node_modules/domino/lib/FilteredElementList.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/huepi/node_modules/domino/lib/DOMTokenList.js. Coverage (Term): 13% Coverage (LOC): 26%
+*- File /root/Targets/huepi/node_modules/domino/lib/select.js. Coverage (Term): 13% Coverage (LOC): 24%
+*- File /root/Targets/huepi/node_modules/domino/lib/ChildNode.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/huepi/node_modules/domino/lib/NonDocumentTypeChildNode.js. Coverage (Term): 24% Coverage (LOC): 38%
+*- File /root/Targets/huepi/node_modules/domino/lib/Text.js. Coverage (Term): 31% Coverage (LOC): 52%
+*- File /root/Targets/huepi/node_modules/domino/lib/CharacterData.js. Coverage (Term): 24% Coverage (LOC): 52%
+*- File /root/Targets/huepi/node_modules/domino/lib/Leaf.js. Coverage (Term): 44% Coverage (LOC): 64%
+*- File /root/Targets/huepi/node_modules/domino/lib/Comment.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/huepi/node_modules/domino/lib/DocumentFragment.js. Coverage (Term): 38% Coverage (LOC): 66%
+*- File /root/Targets/huepi/node_modules/domino/lib/ProcessingInstruction.js. Coverage (Term): 38% Coverage (LOC): 66%
+*- File /root/Targets/huepi/node_modules/domino/lib/TreeWalker.js. Coverage (Term): 9% Coverage (LOC): 17%
+*- File /root/Targets/huepi/node_modules/domino/lib/NodeFilter.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/huepi/node_modules/domino/lib/NodeTraversal.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/huepi/node_modules/domino/lib/NodeIterator.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/huepi/node_modules/domino/lib/URL.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/huepi/node_modules/domino/lib/events.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/huepi/node_modules/domino/lib/CustomEvent.js. Coverage (Term): 73% Coverage (LOC): 88%
+*- File /root/Targets/huepi/node_modules/domino/lib/htmlelts.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/huepi/node_modules/domino/lib/CSSStyleDeclaration.js. Coverage (Term): 26% Coverage (LOC): 58%
+*- File /root/Targets/huepi/node_modules/domino/lib/cssparser.js. Coverage (Term): 12% Coverage (LOC): 36%
+*- File /root/Targets/huepi/node_modules/domino/lib/URLUtils.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/huepi/node_modules/domino/lib/defineElement.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

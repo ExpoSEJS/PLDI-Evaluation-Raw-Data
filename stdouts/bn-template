@@ -1,0 +1,291 @@
+/root/Targets/bn-template
+└── bn-template@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bn-template/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1597 took 3.1137s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (136:1) on program /**
+* @class TextNode
+*/
+
+var TextNode = function(){this.init.apply(this, arguments);};
+exports.TextNode = TextNode;
+
+TextNode.prototype.init = function(_text) {
+
+	this.text = _text;
+};
+
+TextNode.prototype.render = function() {
+
+	return this.text;
+};
+var Hash = require("bn-lang").Hash;
+var StringBuilder = require("bn-lang-util").StringBuilder;
+
+/**
+* @class Node
+*/
+
+var Node = function(){this.init.apply(this, arguments);};
+exports.Node = Node;
+
+Node.prototype.init = function(_tag) {
+
+	this.tag = _tag;
+	this.attributes = new Hash();
+	this.children = [];	
+};
+
+Node.prototype.setAttributes = function(_attrs) {
+
+	for (var _key in _attrs) {
+
+		var mappedKey = _key == 'cls' ? 'class' : _key;
+
+		this.attributes.put(mappedKey, _attrs[_key]);
+	}
+};
+
+Node.prototype.addChild = function(_childText) {
+
+	this.children.add(_childText);
+};
+
+Node.prototype.render = function(_lpad) {
+
+	var lpad = _lpad || 0;
+
+	var output = new StringBuilder();
+
+	output.append(Node.getPadding(lpad));
+
+	output.append("<" + this.tag);
+
+	this.attributes.each(function(_value, _key){
+
+		output.append(" " + _key + "=\"" + _value + "\"");
+	});
+
+	if(Node.isSelfClosingTag(this.tag)) {
+
+		output.append(" />\n");
+
+	} else {
+
+		output.append(">");
+
+		var multiline = Node.isMultiLineTag(this.children);
+
+		if (multiline) { output.append("\n"); }
+
+		this.children.each(function(_child){
+
+			output.append(_child.render(lpad + 2));
+		});
+
+		if (multiline) output.append(Node.getPadding(lpad));
+
+		output.append("</" + this.tag + ">\n");
+	}
+
+	return output.toString();
+};
+
+Node.getPadding = function(_amount) {
+
+	return new Array(_amount + 1).join(" ");
+};
+
+Node.isMultiLineTag = function(_childern) {
+
+	var childSize = _childern.size();
+	var isMultiLine = childSize > 0;
+
+	if (childSize == 1 && _childern.get(0).constructor == TextNode) isMultiLine = false;
+
+	return isMultiLine;
+};
+
+Node.isSelfClosingTag = function(_tag) {
+
+	return Node.SELF_CLOSING_TAGS.include(_tag);
+};
+
+Node.SELF_CLOSING_TAGS = [];
+Node.setSelfClosingTags = function(_tags) {
+
+	Node.SELF_CLOSING_TAGS = _tags;
+};
+Node.HTML_SELF_CLOSING_TAGS = ["img", "meta", "br", "hr", "input"];
+/**
+* @class Template
+*/
+var Template = function(){this.init.apply(this, arguments);};
+exports.Template = Template;
+
+Template.prototype.init = function(_template) {
+
+	this.template = _template;
+	this.nodes = [];
+};
+
+Template.prototype.render = function(_data) {
+
+	var data = _data || {};
+
+	if(!data.constructor || data.constructor != Array) { 
+
+		data = [data];
+	}
+
+	with(this) {
+
+		for (var i=0; i < data.length; i++) {
+
+			eval("(" + this.template.toString() + ")(data[i])");
+		};
+	}
+
+	var tops  = Template.getTopNodes(this.nodes);
+
+	var output = "";
+
+	tops.each(function(_node){
+
+		output += _node.render();
+	});
+
+	return output;
+};
+
+//---------------------
+// Add Class Fields/Methods
+
+Template.TAGS_SET = false;
+
+Template.TAGS = [];
+Template.setTags = function(_tags) {
+
+	Template.TAGS = _tags;
+};
+Template.HTML_TAGS = [
+	"html", "head", "body", "script", "meta", "title", "link",
+	"div", "p", "span", "a", "img", "br", "hr",
+	"table", "tr", "th", "td", "thead", "tbody",
+	"ul", "ol", "li", 
+	"dl", "dt", "dd",
+	"h1", "h2", "h3", "h4", "h5", "h6", "h7",
+	"form", "input", "label",
+	"iframe", "select", "optgroup", "option", "textarea"
+];
+
+Template.getTopNodes = function(_nodes) {
+
+	var tops = [];
+
+	_nodes.each(function(_node){
+
+		if (!_node.parent) tops.add(_node);
+	});
+
+	return tops;
+};
+
+Template.initTemplate = function() {
+
+	if(Template.TAGS_SET) { return; }
+
+	Template.TAGS_SET = true;
+
+	var tags = Template.TAGS;
+
+	tags.each(function(_tag){
+
+		var fn = function(_tag) {
+
+			return function(_attrs) {
+
+				var node = new Node(_tag);
+
+				var firstArgIsAttributes = typeof(_attrs) == "object" && _attrs.constructor != Node && _attrs.constructor != TextNode;
+
+				if (firstArgIsAttributes) node.setAttributes(_attrs);
+
+				var startIndex = firstArgIsAttributes ? 1 : 0;
+
+				for (var i=startIndex; i < arguments.length; i++) {
+
+					var arg = arguments[i];
+
+					if (typeof(arg) == "string" || !arg) {
+
+						arg = new TextNode(arg || "");
+					}
+
+					if (arg.constructor == Node || arg.constructor == TextNode) {
+
+						arg.parent = node;
+					}
+
+					node.addChild(arg);
+				};
+
+				this.nodes.add(node);
+
+				return node;
+			};
+		};
+
+		Template.prototype[_tag] = fn(_tag);
+	});
+};
+var Hash = require("bn-lang").Hash;
+
+/**
+* @class Templates
+*/
+
+var Templates = function(){this.init.apply(this, arguments);};
+exports.Templates = Templates;
+
+Templates.prototype.init = function() {
+
+	this.templates = new Hash();
+	Template.initTemplate();
+};
+
+Templates.prototype.register = function(_name, _template) {
+
+	this.templates.put(_name, _template);
+};
+
+Templates.prototype.render = function(_name, _data) {
+
+	return new Template(this.templates.get(_name)).render(_data);
+};
+ at SyntaxError: 'with' in strict mode (136:1)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

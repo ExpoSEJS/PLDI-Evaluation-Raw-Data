@@ -1,0 +1,64 @@
+/root/Targets/ilmenite
+└─┬ ilmenite@0.0.1 
+  ├─┬ lodash.every@3.2.3 
+  │ ├── lodash._arrayevery@3.0.0 
+  │ ├─┬ lodash._basecallback@3.3.1 
+  │ │ ├── lodash._baseisequal@3.0.7 
+  │ │ └── lodash.pairs@3.0.1 
+  │ ├── lodash._baseeach@3.0.4 
+  │ ├── lodash._isiterateecall@3.0.9 
+  │ └── lodash.keys@3.1.2 
+  ├─┬ lodash.flatten@3.0.2 
+  │ └── lodash._baseflatten@3.1.4 
+  ├─┬ lodash.foreach@3.0.3 
+  │ ├── lodash._arrayeach@3.0.0 
+  │ └── lodash._bindcallback@3.0.1 
+  ├─┬ lodash.invoke@3.2.3 
+  │ ├─┬ lodash._invokepath@3.7.2 
+  │ │ ├── lodash._baseget@3.7.2 
+  │ │ ├── lodash._baseslice@3.0.3 
+  │ │ └── lodash._topath@3.8.1 
+  │ └── lodash.restparam@3.6.1 
+  ├── lodash.isarray@3.0.4 
+  ├── lodash.isobject@3.0.2 
+  ├─┬ lodash.map@3.1.4 
+  │ └── lodash._arraymap@3.0.0 
+  ├─┬ lodash.merge@3.3.2 
+  │ ├── lodash._arraycopy@3.0.0 
+  │ ├── lodash._createassigner@3.1.1 
+  │ ├── lodash._getnative@3.9.1 
+  │ ├── lodash.isarguments@3.1.0 
+  │ ├─┬ lodash.isplainobject@3.2.0 
+  │ │ └── lodash._basefor@3.0.3 
+  │ ├── lodash.istypedarray@3.0.6 
+  │ ├── lodash.keysin@3.0.8 
+  │ └─┬ lodash.toplainobject@3.0.0 
+  │   └── lodash._basecopy@3.0.1 
+  └─┬ lodash.omit@3.1.0 
+    ├─┬ lodash._basedifference@3.0.3 
+    │ ├── lodash._baseindexof@3.1.0 
+    │ ├── lodash._cacheindexof@3.0.2 
+    │ └── lodash._createcache@3.1.2 
+    ├── lodash._pickbyarray@3.0.2 
+    └── lodash._pickbycallback@3.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ilmenite/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.056 took 6.7105s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: Ti is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/ilmenite/node_modules/ilmenite/index.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/ilmenite/node_modules/ilmenite/lib/platform.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,191 @@
+/root/Targets/layer-control
+└─┬ layer-control@0.0.2 
+  ├─┬ cheerio@0.13.1 
+  │ ├─┬ CSSselect@0.4.1 
+  │ │ ├── CSSwhat@0.4.7 
+  │ │ └── domutils@1.4.3 
+  │ ├── entities@0.5.0 
+  │ ├─┬ htmlparser2@3.4.0 
+  │ │ ├── domelementtype@1.3.0 
+  │ │ ├── domhandler@2.2.1 
+  │ │ ├── domutils@1.3.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── inherits@2.0.3 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ └── underscore@1.5.2 
+  ├── es6-promise@0.1.2 
+  ├── eventemitter2@0.4.14 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └── verror@1.10.0 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├─┬ mime-types@2.1.17 
+  │ │ └── mime-db@1.30.0 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── safe-buffer@5.1.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  └── xmlhttprequest@1.6.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/layer-control/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0076 took 0.9242s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (7:0) on program fs = require("fs")
+path = require("path")
+url = require("url")
+cheerio = require('cheerio')
+cheerio.prototype.getAttribute = cheerio.prototype.attr
+cheerio.prototype.setAttribute = cheerio.prototype.attr
+#cheerio.prototype.appendChild = cheerio.prototype.append
+cheerio.prototype.appendChild = (node) ->
+  cheerio(@).append('<'+node.tag+' name="'+node.name+'" content="'+node.content+'"')
+
+cheerio.prototype.removeChild = (node) ->
+  if (node and node.length)
+    parent = @
+    node.remove()
+
+load = require('./load.coffee')
+
+module.exports = (options) ->
+  functions = require(options.functions)
+  LayerControl = functions(require(__dirname+'/../src/cache.coffee'))
+  index = JSON.parse(fs.readFileSync(options.publicDir + options.layers, 'utf-8'))
+  main = fs.readFileSync(options.index, 'utf-8')
+
+  # Возвращает массив true/false для соответсвующих показанных/непоказанных слоев
+  getVisibleLayers = (layers) ->
+    visibleLayers = []
+    i = layers.length
+    while --i >= 0
+      visibleLayers[i] = layers[i].show
+    visibleLayers
+
+  createElement = (tag) ->
+    {
+      tag: tag,
+      setAttribute: (name, val) ->
+        @[name] = val
+    }
+
+  getHtml = (options, state, req, cb) ->
+    $ = cheerio.load(main, {
+      ignoreWhitespace: false
+      xmlMode: false
+      lowerCaseTags: true
+    })
+    controller = new LayerControl({
+      load: load
+      logger: options.logger
+      index: index
+      tplRender: options.tplRender
+      $: $
+      links: false
+      addressBar: false
+      cache: false
+    })
+    controller.document =
+      createElement: createElement
+      title: $('title').html()
+    controller.load.headers = req.headers
+    controller.once 'end', ->
+      $('title').html(controller.document.title)
+      # TODO проверить как вставляется meta
+      if not controller.statusCode then controller.statusCode = 200
+      controller.load.cache.data[options.layers] = index
+      controller.load.clearCache() if controller.statusCode isnt 200 # если 404 то после страницы ошибки пусть будет возможность на клиенте попробовать загрузить недостающие данные второй раз при переходе на эту страницу
+      serverCache = JSON.stringify(controller.load.cache).replace(/\//gim, "\\/")
+      #serverCache = serverCache.replace(/\\\//gim, '/')
+      raw = 'if (window.LayerControl) { LayerControl.server = {}; LayerControl.server.visibleLayers = ' + JSON.stringify(getVisibleLayers(controller.layers)) + ';LayerControl.server.cache = '+serverCache + ';LayerControl.server.state = "'+state+'" }'
+      script = '<script id="controller_server_cache" type="text/javascript">'+raw+'</script>'
+      $('body').append(script)
+      cb(controller.statusCode, $.html())
+    controller.state(state)
+
+  _controller = new LayerControl({
+    index: index
+    logger: options.logger
+    links: false
+    addressBar: false
+    cache: false
+  }) # этот контроллер нужен для проверки адресов, чтобы зря не грузилось все
+  (req, res, next) ->
+      state = decodeURI(req.originalUrl)
+      unless url.parse(state).search # если есть ? значит это не сюда
+        if _controller.checkExists(state)
+          getHtml options, state, req, (statusCode, html) ->
+            res.writeHead statusCode,
+              "Content-Type": "text/html"
+            res.end(html)
+        else next()
+      else next()
+
+ at SyntaxError: Unexpected character '#' (7:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2191:10)
+    at Parser.pp$3.parseSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1728:32)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1718:17)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

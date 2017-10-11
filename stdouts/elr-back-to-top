@@ -1,0 +1,32 @@
+/root/Targets/elr-back-to-top
+└─┬ elr-back-to-top@1.1.0 
+  ├─┬ babel-runtime@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.11.0 
+  ├─┬ elr-ui@0.1.2 
+  │ └── elr-utility-lib@2.0.1 
+  └── jquery@3.2.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/elr-back-to-top/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 4% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 4% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 4% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","RegExp","toString","apply","bound elrBackToTop","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0679 took 31.2025s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
+* Error: Error: jQuery requires a window with a document
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 31.5639 took 33.4854s
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
+*- File /root/Targets/elr-back-to-top/node_modules/elr-back-to-top/dist/main.js. Coverage (Term): 69% Coverage (LOC): 76%
+*- File /root/Targets/elr-back-to-top/node_modules/elr-ui/dist/main.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/elr-back-to-top/node_modules/elr-utility-lib/dist/main.js. Coverage (Term): 9% Coverage (LOC): 34%
+*- File /root/Targets/elr-back-to-top/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 2 paths with 1 errors **

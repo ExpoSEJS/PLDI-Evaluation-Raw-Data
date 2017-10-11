@@ -1,0 +1,911 @@
+
+> fibers@2.0.0 install /root/Targets/rinco/node_modules/fibers
+> node build.js || nodejs build.js
+
+make: Entering directory '/root/Targets/rinco/node_modules/fibers/build'
+  CXX(target) Release/obj.target/fibers/src/fibers.o
+  CXX(target) Release/obj.target/fibers/src/coroutine.o
+  CC(target) Release/obj.target/fibers/src/libcoro/coro.o
+  SOLINK_MODULE(target) Release/obj.target/fibers.node
+  COPY Release/fibers.node
+make: Leaving directory '/root/Targets/rinco/node_modules/fibers/build'
+Installed in `/root/Targets/rinco/node_modules/fibers/bin/linux-x64-51/fibers.node`
+
+> ws@0.4.32 install /root/Targets/rinco/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/rinco/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/rinco/node_modules/ws/build'
+
+> deasync@0.1.10 install /root/Targets/rinco/node_modules/deasync
+> node ./build.js
+
+`linux-x64-node-7` exists; testing
+Binary is fine; exiting
+
+> node-sass@3.13.1 install /root/Targets/rinco/node_modules/node-sass
+> node scripts/install.js
+
+Cached binary found at /root/.npm/node-sass/3.13.1/linux-x64-51_binding.node
+
+> gifsicle@3.0.4 postinstall /root/Targets/rinco/node_modules/gifsicle
+> node lib/install.js
+
+
+> jpegtran-bin@3.2.0 postinstall /root/Targets/rinco/node_modules/jpegtran-bin
+> node lib/install.js
+
+
+> optipng-bin@3.1.4 postinstall /root/Targets/rinco/node_modules/optipng-bin
+> node lib/install.js
+
+
+> node-sass@3.13.1 postinstall /root/Targets/rinco/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /root/Targets/rinco/node_modules/node-sass/vendor/linux-x64-51/binding.node
+Testing binary
+Binary is fine
+/root/Targets/rinco
+└─┬ rinco@0.2.3 
+  ├─┬ babel-core@5.8.38 
+  │ ├── babel-plugin-constant-folding@1.0.1 
+  │ ├── babel-plugin-dead-code-elimination@1.0.2 
+  │ ├── babel-plugin-eval@1.0.1 
+  │ ├── babel-plugin-inline-environment-variables@1.0.1 
+  │ ├── babel-plugin-jscript@1.0.4 
+  │ ├── babel-plugin-member-expression-literals@1.0.1 
+  │ ├── babel-plugin-property-literals@1.0.1 
+  │ ├── babel-plugin-proto-to-assign@1.0.4 
+  │ ├── babel-plugin-react-constant-elements@1.0.3 
+  │ ├── babel-plugin-react-display-name@1.0.3 
+  │ ├── babel-plugin-remove-console@1.0.1 
+  │ ├── babel-plugin-remove-debugger@1.0.1 
+  │ ├── babel-plugin-runtime@1.0.7 
+  │ ├─┬ babel-plugin-undeclared-variables-check@1.0.2 
+  │ │ └── leven@1.0.2 
+  │ ├── babel-plugin-undefined-to-void@1.1.6 
+  │ ├── babylon@5.8.38 
+  │ ├── bluebird@2.11.0 
+  │ ├─┬ chalk@1.1.3 
+  │ │ ├── ansi-styles@2.2.1 
+  │ │ ├── escape-string-regexp@1.0.5 
+  │ │ ├─┬ has-ansi@2.0.0 
+  │ │ │ └── ansi-regex@2.1.1 
+  │ │ ├── strip-ansi@3.0.1 
+  │ │ └── supports-color@2.0.0 
+  │ ├── convert-source-map@1.5.0 
+  │ ├── core-js@1.2.7 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├─┬ detect-indent@3.0.1 
+  │ │ └── minimist@1.2.0 
+  │ ├── esutils@2.0.2 
+  │ ├── fs-readdir-recursive@0.1.2 
+  │ ├── globals@6.4.1 
+  │ ├─┬ home-or-tmp@1.0.0 
+  │ │ ├── os-tmpdir@1.0.2 
+  │ │ └── user-home@1.1.1 
+  │ ├─┬ is-integer@1.0.7 
+  │ │ └─┬ is-finite@1.0.2 
+  │ │   └── number-is-nan@1.0.1 
+  │ ├── js-tokens@1.0.1 
+  │ ├── json5@0.4.0 
+  │ ├── lodash@3.10.1 
+  │ ├─┬ minimatch@2.0.10 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├─┬ output-file-sync@1.1.2 
+  │ │ ├── graceful-fs@4.1.11 
+  │ │ └── object-assign@4.1.1 
+  │ ├── path-exists@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├── private@0.1.7 
+  │ ├─┬ regenerator@0.8.40 
+  │ │ ├─┬ commoner@0.10.8 
+  │ │ │ ├── commander@2.11.0 
+  │ │ │ ├─┬ detective@4.5.0 
+  │ │ │ │ ├── acorn@4.0.13 
+  │ │ │ │ └── defined@1.0.0 
+  │ │ │ ├── glob@5.0.15 
+  │ │ │ ├── iconv-lite@0.4.19 
+  │ │ │ ├── q@1.5.0 
+  │ │ │ └─┬ recast@0.11.23 
+  │ │ │   ├── ast-types@0.9.6 
+  │ │ │   └── esprima@3.1.3 
+  │ │ ├─┬ defs@1.1.1 
+  │ │ │ ├─┬ alter@0.2.0 
+  │ │ │ │ └── stable@0.1.6 
+  │ │ │ ├── ast-traverse@0.1.1 
+  │ │ │ ├── breakable@1.0.0 
+  │ │ │ ├── simple-fmt@0.1.0 
+  │ │ │ ├── simple-is@0.2.0 
+  │ │ │ ├── stringmap@0.2.2 
+  │ │ │ ├── stringset@0.2.1 
+  │ │ │ ├── tryor@0.1.2 
+  │ │ │ └─┬ yargs@3.27.0 
+  │ │ │   └── window-size@0.1.4 
+  │ │ ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │ └─┬ recast@0.10.33 
+  │ │   └── ast-types@0.8.12 
+  │ ├─┬ regexpu@1.3.0 
+  │ │ ├── esprima@2.7.3 
+  │ │ ├── regenerate@1.3.3 
+  │ │ ├── regjsgen@0.2.0 
+  │ │ └─┬ regjsparser@0.1.5 
+  │ │   └── jsesc@0.5.0 
+  │ ├── repeating@1.1.3 
+  │ ├─┬ resolve@1.4.0 
+  │ │ └── path-parse@1.0.5 
+  │ ├── shebang-regex@1.0.0 
+  │ ├── slash@1.0.0 
+  │ ├── source-map@0.5.7 
+  │ ├─┬ source-map-support@0.2.10 
+  │ │ └── source-map@0.1.32 
+  │ ├── to-fast-properties@1.0.3 
+  │ ├── trim-right@1.0.1 
+  │ └── try-resolve@1.0.1 
+  ├─┬ clean-css@3.4.28 
+  │ ├─┬ commander@2.8.1 
+  │ │ └── graceful-readlink@1.0.1 
+  │ └─┬ source-map@0.4.4 
+  │   └── amdefine@1.0.1 
+  ├── coffee-script@1.12.7 
+  ├── colors@0.6.2 
+  ├─┬ connect@2.14.4 
+  │ ├── basic-auth-connect@1.0.0 
+  │ ├── bytes@0.3.0 
+  │ ├─┬ compression@1.0.0 
+  │ │ ├── bytes@0.2.1 
+  │ │ ├── compressible@1.0.0 
+  │ │ └── negotiator@0.3.0 
+  │ ├── connect-timeout@1.0.0 
+  │ ├─┬ cookie-parser@1.0.1 
+  │ │ └── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.3 
+  │ ├─┬ csurf@1.1.0 
+  │ │ ├── scmp@0.0.3 
+  │ │ └── uid2@0.0.3 
+  │ ├── debug@0.8.1 
+  │ ├── errorhandler@1.0.0 
+  │ ├─┬ express-session@1.0.2 
+  │ │ ├── buffer-crc32@0.2.1 
+  │ │ ├── debug@0.7.4 
+  │ │ └── utils-merge@1.0.0 
+  │ ├── fresh@0.2.2 
+  │ ├─┬ method-override@1.0.0 
+  │ │ └── methods@1.1.2 
+  │ ├─┬ morgan@1.0.0 
+  │ │ └── bytes@0.2.1 
+  │ ├─┬ multiparty@2.2.0 
+  │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ ├── isarray@0.0.1 
+  │ │ │ └── string_decoder@0.10.31 
+  │ │ └── stream-counter@0.2.0 
+  │ ├── pause@0.0.1 
+  │ ├── qs@0.6.6 
+  │ ├─┬ raw-body@1.1.3 
+  │ │ └── bytes@0.2.1 
+  │ ├── response-time@1.0.0 
+  │ ├─┬ serve-index@1.0.1 
+  │ │ ├── batch@0.5.0 
+  │ │ └── negotiator@0.4.2 
+  │ ├─┬ serve-static@1.0.4 
+  │ │ ├── parseurl@1.0.1 
+  │ │ └─┬ send@0.2.0 
+  │ │   └── range-parser@1.0.3 
+  │ ├── setimmediate@1.0.1 
+  │ ├── static-favicon@1.0.2 
+  │ └── vhost@1.0.0 
+  ├─┬ deasync@0.1.10 
+  │ ├── bindings@1.2.1 
+  │ └── nan@2.7.0 
+  ├─┬ handlebars@2.0.0 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.2 
+  │ └─┬ uglify-js@2.3.6 
+  │   └── source-map@0.1.43 
+  ├─┬ html-minifier@0.7.2 
+  │ ├─┬ change-case@2.3.1 
+  │ │ ├── camel-case@1.2.2 
+  │ │ ├── constant-case@1.1.2 
+  │ │ ├── dot-case@1.1.2 
+  │ │ ├── is-lower-case@1.1.3 
+  │ │ ├── is-upper-case@1.1.2 
+  │ │ ├── lower-case@1.1.4 
+  │ │ ├── lower-case-first@1.0.2 
+  │ │ ├── param-case@1.1.2 
+  │ │ ├── pascal-case@1.1.2 
+  │ │ ├── path-case@1.1.2 
+  │ │ ├── sentence-case@1.1.3 
+  │ │ ├── snake-case@1.1.2 
+  │ │ ├── swap-case@1.1.2 
+  │ │ ├── title-case@1.1.2 
+  │ │ ├── upper-case@1.1.3 
+  │ │ └── upper-case-first@1.1.2 
+  │ ├─┬ clean-css@3.1.9 
+  │ │ ├── commander@2.6.0 
+  │ │ └── source-map@0.1.43 
+  │ ├─┬ cli@0.6.6 
+  │ │ ├── exit@0.1.2 
+  │ │ └─┬ glob@3.2.11 
+  │ │   └── minimatch@0.3.0 
+  │ ├─┬ concat-stream@1.4.10 
+  │ │ ├── inherits@2.0.3 
+  │ │ └── typedarray@0.0.6 
+  │ ├── relateurl@0.2.7 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── source-map@0.1.34 
+  │   └─┬ yargs@3.5.4 
+  │     └── window-size@0.1.0 
+  ├─┬ imagemin@3.2.2 
+  │ ├─┬ buffer-to-vinyl@1.1.0 
+  │ │ ├── file-type@3.9.0 
+  │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ └── string_decoder@1.0.3 
+  │ │ ├── uuid@2.0.3 
+  │ │ └─┬ vinyl@1.2.0 
+  │ │   ├── clone@1.0.2 
+  │ │   ├── clone-stats@0.0.1 
+  │ │   └── replace-ext@0.0.1 
+  │ ├── get-stdin@4.0.1 
+  │ ├─┬ imagemin-gifsicle@4.2.0 
+  │ │ ├─┬ gifsicle@3.0.4 
+  │ │ │ ├─┬ bin-build@2.2.0 
+  │ │ │ │ ├── archive-type@3.2.0 
+  │ │ │ │ ├─┬ decompress@3.0.0 
+  │ │ │ │ │ ├─┬ decompress-tar@3.1.0 
+  │ │ │ │ │ │ ├── is-tar@1.0.0 
+  │ │ │ │ │ │ ├── object-assign@2.1.1 
+  │ │ │ │ │ │ ├─┬ strip-dirs@1.1.1 
+  │ │ │ │ │ │ │ ├─┬ is-absolute@0.1.7 
+  │ │ │ │ │ │ │ │ └── is-relative@0.1.3 
+  │ │ │ │ │ │ │ ├── is-natural-number@2.1.1 
+  │ │ │ │ │ │ │ └── sum-up@1.0.3 
+  │ │ │ │ │ │ ├─┬ tar-stream@1.5.4 
+  │ │ │ │ │ │ │ ├─┬ bl@1.2.1 
+  │ │ │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ │ ├─┬ decompress-tarbz2@3.1.0 
+  │ │ │ │ │ │ ├── is-bzip2@1.0.0 
+  │ │ │ │ │ │ ├── object-assign@2.1.1 
+  │ │ │ │ │ │ ├─┬ seek-bzip@1.0.5 
+  │ │ │ │ │ │ │ └── commander@2.8.1 
+  │ │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ │ ├─┬ decompress-targz@3.1.0 
+  │ │ │ │ │ │ ├── is-gzip@1.0.0 
+  │ │ │ │ │ │ ├── object-assign@2.1.1 
+  │ │ │ │ │ │ └─┬ vinyl@0.4.6 
+  │ │ │ │ │ │   └── clone@0.2.0 
+  │ │ │ │ │ ├─┬ decompress-unzip@3.4.0 
+  │ │ │ │ │ │ ├── is-zip@1.0.0 
+  │ │ │ │ │ │ ├── stat-mode@0.2.2 
+  │ │ │ │ │ │ ├─┬ through2@2.0.3 
+  │ │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ │ └─┬ yauzl@2.8.0 
+  │ │ │ │ │ │   ├── buffer-crc32@0.2.13 
+  │ │ │ │ │ │   └─┬ fd-slicer@1.0.1 
+  │ │ │ │ │ │     └── pend@1.2.0 
+  │ │ │ │ │ ├─┬ vinyl-assign@1.2.1 
+  │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ └─┬ vinyl-fs@2.4.4 
+  │ │ │ │ │   ├─┬ glob-stream@5.3.5 
+  │ │ │ │ │   │ ├─┬ glob-parent@3.1.0 
+  │ │ │ │ │   │ │ ├─┬ is-glob@3.1.0 
+  │ │ │ │ │   │ │ │ └── is-extglob@2.1.1 
+  │ │ │ │ │   │ │ └── path-dirname@1.0.2 
+  │ │ │ │ │   │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ │   │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │   │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ │   │ │ ├── array-unique@0.2.1 
+  │ │ │ │ │   │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │   │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │   │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   │ │ │ │   ├─┬ isobject@2.1.0 
+  │ │ │ │ │   │ │ │ │   │ └── isarray@1.0.0 
+  │ │ │ │ │   │ │ │ │   └─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ │ │ │     ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ │ │     │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ │ │ │     └── kind-of@4.0.0 
+  │ │ │ │ │   │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │   │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ │   │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │   │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ │   │ │ ├─┬ extglob@0.3.2 
+  │ │ │ │ │   │ │ │ └── is-extglob@1.0.0 
+  │ │ │ │ │   │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ │   │ │ ├── is-extglob@1.0.0 
+  │ │ │ │ │   │ │ ├── is-glob@2.0.1 
+  │ │ │ │ │   │ │ ├─┬ normalize-path@2.1.1 
+  │ │ │ │ │   │ │ │ └── remove-trailing-separator@1.1.0 
+  │ │ │ │ │   │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │   │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │   │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │   │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ │   │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │   │ │ │ ├─┬ glob-base@0.3.0 
+  │ │ │ │ │   │ │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ │ │   │ │ │ │ └─┬ is-glob@2.0.1 
+  │ │ │ │ │   │ │ │ │   └── is-extglob@1.0.0 
+  │ │ │ │ │   │ │ │ ├── is-dotfile@1.0.3 
+  │ │ │ │ │   │ │ │ ├── is-extglob@1.0.0 
+  │ │ │ │ │   │ │ │ └── is-glob@2.0.1 
+  │ │ │ │ │   │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │ │   │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │ │   │ │     └── is-primitive@2.0.0 
+  │ │ │ │ │   │ ├─┬ ordered-read-streams@0.3.0 
+  │ │ │ │ │   │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │   │ │   ├── isarray@1.0.0 
+  │ │ │ │ │   │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │   │ └─┬ to-absolute-glob@0.1.1 
+  │ │ │ │ │   │   └── extend-shallow@2.0.1 
+  │ │ │ │ │   ├─┬ gulp-sourcemaps@1.6.0 
+  │ │ │ │ │   │ └─┬ through2@2.0.3 
+  │ │ │ │ │   │   └─┬ readable-stream@2.3.3 
+  │ │ │ │ │   │     ├── isarray@1.0.0 
+  │ │ │ │ │   │     └── string_decoder@1.0.3 
+  │ │ │ │ │   ├── is-valid-glob@0.3.0 
+  │ │ │ │ │   ├─┬ lazystream@1.0.0 
+  │ │ │ │ │   │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │   │   ├── isarray@1.0.0 
+  │ │ │ │ │   │   └── string_decoder@1.0.3 
+  │ │ │ │ │   ├── lodash.isequal@4.5.0 
+  │ │ │ │ │   ├─┬ merge-stream@1.0.1 
+  │ │ │ │ │   │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │   │   ├── isarray@1.0.0 
+  │ │ │ │ │   │   └── string_decoder@1.0.3 
+  │ │ │ │ │   ├─┬ readable-stream@2.3.3 
+  │ │ │ │ │   │ ├── isarray@1.0.0 
+  │ │ │ │ │   │ └── string_decoder@1.0.3 
+  │ │ │ │ │   ├── strip-bom-stream@1.0.0 
+  │ │ │ │ │   ├── through2@2.0.3 
+  │ │ │ │ │   └── vali-date@1.0.0 
+  │ │ │ │ ├─┬ download@4.4.3 
+  │ │ │ │ │ ├─┬ caw@1.2.0 
+  │ │ │ │ │ │ ├─┬ get-proxy@1.1.0 
+  │ │ │ │ │ │ │ └─┬ rc@1.2.1 
+  │ │ │ │ │ │ │   ├── deep-extend@0.4.2 
+  │ │ │ │ │ │ │   ├── ini@1.3.4 
+  │ │ │ │ │ │ │   └── strip-json-comments@2.0.1 
+  │ │ │ │ │ │ ├── is-obj@1.0.1 
+  │ │ │ │ │ │ └── object-assign@3.0.0 
+  │ │ │ │ │ ├─┬ filenamify@1.2.1 
+  │ │ │ │ │ │ ├── filename-reserved-regex@1.0.0 
+  │ │ │ │ │ │ ├── strip-outer@1.0.0 
+  │ │ │ │ │ │ └── trim-repeated@1.0.0 
+  │ │ │ │ │ ├─┬ got@5.7.1 
+  │ │ │ │ │ │ ├─┬ create-error-class@3.0.2 
+  │ │ │ │ │ │ │ └── capture-stack-trace@1.0.0 
+  │ │ │ │ │ │ ├── is-redirect@1.0.0 
+  │ │ │ │ │ │ ├── is-retry-allowed@1.1.0 
+  │ │ │ │ │ │ ├── is-stream@1.1.0 
+  │ │ │ │ │ │ ├── lowercase-keys@1.0.0 
+  │ │ │ │ │ │ ├── node-status-codes@1.0.0 
+  │ │ │ │ │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ │ ├── isarray@1.0.0 
+  │ │ │ │ │ │ │ └── string_decoder@1.0.3 
+  │ │ │ │ │ │ ├── timed-out@3.1.3 
+  │ │ │ │ │ │ ├── unzip-response@1.0.2 
+  │ │ │ │ │ │ └─┬ url-parse-lax@1.0.0 
+  │ │ │ │ │ │   └── prepend-http@1.0.4 
+  │ │ │ │ │ ├─┬ gulp-decompress@1.2.0 
+  │ │ │ │ │ │ ├─┬ gulp-util@3.0.8 
+  │ │ │ │ │ │ │ ├── array-differ@1.0.0 
+  │ │ │ │ │ │ │ ├── array-uniq@1.0.3 
+  │ │ │ │ │ │ │ ├── beeper@1.1.1 
+  │ │ │ │ │ │ │ ├── dateformat@2.2.0 
+  │ │ │ │ │ │ │ ├─┬ fancy-log@1.3.0 
+  │ │ │ │ │ │ │ │ └── time-stamp@1.1.0 
+  │ │ │ │ │ │ │ ├─┬ gulplog@1.0.0 
+  │ │ │ │ │ │ │ │ └── glogg@1.0.0 
+  │ │ │ │ │ │ │ ├─┬ has-gulplog@0.1.0 
+  │ │ │ │ │ │ │ │ └── sparkles@1.0.0 
+  │ │ │ │ │ │ │ ├── lodash._reescape@3.0.0 
+  │ │ │ │ │ │ │ ├── lodash._reevaluate@3.0.0 
+  │ │ │ │ │ │ │ ├── lodash._reinterpolate@3.0.0 
+  │ │ │ │ │ │ │ ├─┬ lodash.template@3.6.2 
+  │ │ │ │ │ │ │ │ ├── lodash._basecopy@3.0.1 
+  │ │ │ │ │ │ │ │ ├── lodash._basetostring@3.0.1 
+  │ │ │ │ │ │ │ │ ├── lodash._basevalues@3.0.0 
+  │ │ │ │ │ │ │ │ ├── lodash._isiterateecall@3.0.9 
+  │ │ │ │ │ │ │ │ ├─┬ lodash.escape@3.2.0 
+  │ │ │ │ │ │ │ │ │ └── lodash._root@3.0.1 
+  │ │ │ │ │ │ │ │ ├─┬ lodash.keys@3.1.2 
+  │ │ │ │ │ │ │ │ │ ├── lodash._getnative@3.9.1 
+  │ │ │ │ │ │ │ │ │ ├── lodash.isarguments@3.1.0 
+  │ │ │ │ │ │ │ │ │ └── lodash.isarray@3.0.4 
+  │ │ │ │ │ │ │ │ ├── lodash.restparam@3.6.1 
+  │ │ │ │ │ │ │ │ └── lodash.templatesettings@3.1.1 
+  │ │ │ │ │ │ │ ├─┬ multipipe@0.1.2 
+  │ │ │ │ │ │ │ │ └── duplexer2@0.0.2 
+  │ │ │ │ │ │ │ ├── object-assign@3.0.0 
+  │ │ │ │ │ │ │ ├─┬ through2@2.0.3 
+  │ │ │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ │ │ └── vinyl@0.5.3 
+  │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ ├── gulp-rename@1.2.2 
+  │ │ │ │ │ ├── is-url@1.2.2 
+  │ │ │ │ │ ├─┬ read-all-stream@3.1.0 
+  │ │ │ │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │   ├── isarray@1.0.0 
+  │ │ │ │ │ │   └── string_decoder@1.0.3 
+  │ │ │ │ │ ├─┬ readable-stream@2.3.3 
+  │ │ │ │ │ │ ├── isarray@1.0.0 
+  │ │ │ │ │ │ └── string_decoder@1.0.3 
+  │ │ │ │ │ ├─┬ vinyl-fs@2.4.4 
+  │ │ │ │ │ │ └── through2@2.0.3 
+  │ │ │ │ │ └─┬ ware@1.3.0 
+  │ │ │ │ │   └─┬ wrap-fn@0.1.5 
+  │ │ │ │ │     └── co@3.1.0 
+  │ │ │ │ ├─┬ exec-series@1.0.3 
+  │ │ │ │ │ └── async-each-series@1.1.0 
+  │ │ │ │ └─┬ url-regex@3.2.0 
+  │ │ │ │   └── ip-regex@1.0.3 
+  │ │ │ ├─┬ bin-wrapper@3.0.2 
+  │ │ │ │ ├─┬ bin-check@2.0.0 
+  │ │ │ │ │ └── executable@1.1.0 
+  │ │ │ │ ├─┬ bin-version-check@2.1.0 
+  │ │ │ │ │ ├─┬ bin-version@1.0.4 
+  │ │ │ │ │ │ └─┬ find-versions@1.2.1 
+  │ │ │ │ │ │   └── semver-regex@1.0.0 
+  │ │ │ │ │ ├── semver@4.3.6 
+  │ │ │ │ │ └── semver-truncate@1.1.2 
+  │ │ │ │ ├─┬ each-async@1.1.1 
+  │ │ │ │ │ ├── onetime@1.1.0 
+  │ │ │ │ │ └── set-immediate-shim@1.0.1 
+  │ │ │ │ ├── lazy-req@1.1.0 
+  │ │ │ │ └── os-filter-obj@1.0.3 
+  │ │ │ └─┬ logalot@2.1.0 
+  │ │ │   ├── figures@1.7.0 
+  │ │ │   └─┬ squeak@1.3.0 
+  │ │ │     ├── console-stream@0.1.1 
+  │ │ │     └── lpad-align@1.1.2 
+  │ │ ├── is-gif@1.0.0 
+  │ │ └─┬ through2@0.6.5 
+  │ │   ├── readable-stream@1.0.34 
+  │ │   └── xtend@4.0.1 
+  │ ├─┬ imagemin-jpegtran@4.3.2 
+  │ │ ├── is-jpg@1.0.0 
+  │ │ ├── jpegtran-bin@3.2.0 
+  │ │ └─┬ through2@2.0.3 
+  │ │   └─┬ readable-stream@2.3.3 
+  │ │     ├── isarray@1.0.0 
+  │ │     └── string_decoder@1.0.3 
+  │ ├─┬ imagemin-optipng@4.3.0 
+  │ │ ├─┬ exec-buffer@2.0.1 
+  │ │ │ └── tempfile@1.1.1 
+  │ │ ├── is-png@1.1.0 
+  │ │ └── optipng-bin@3.1.4 
+  │ ├─┬ imagemin-svgo@4.2.1 
+  │ │ ├── is-svg@1.1.1 
+  │ │ ├─┬ svgo@0.6.6 
+  │ │ │ ├── coa@1.0.4 
+  │ │ │ ├── colors@1.1.2 
+  │ │ │ ├─┬ csso@2.0.0 
+  │ │ │ │ └── clap@1.2.3 
+  │ │ │ ├─┬ js-yaml@3.6.1 
+  │ │ │ │ └── esprima@2.7.3 
+  │ │ │ ├── sax@1.2.4 
+  │ │ │ └── whet.extend@0.9.9 
+  │ │ └─┬ through2@2.0.3 
+  │ │   └─┬ readable-stream@2.3.3 
+  │ │     ├── isarray@1.0.0 
+  │ │     └── string_decoder@1.0.3 
+  │ ├─┬ meow@3.7.0 
+  │ │ ├─┬ camelcase-keys@2.1.0 
+  │ │ │ └── camelcase@2.1.1 
+  │ │ ├── decamelize@1.2.0 
+  │ │ ├─┬ loud-rejection@1.6.0 
+  │ │ │ ├─┬ currently-unhandled@0.4.1 
+  │ │ │ │ └── array-find-index@1.0.2 
+  │ │ │ └── signal-exit@3.0.2 
+  │ │ ├── map-obj@1.0.1 
+  │ │ ├─┬ normalize-package-data@2.4.0 
+  │ │ │ ├── hosted-git-info@2.5.0 
+  │ │ │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ │ └── builtin-modules@1.1.1 
+  │ │ │ ├── semver@5.4.1 
+  │ │ │ └─┬ validate-npm-package-license@3.0.1 
+  │ │ │   ├─┬ spdx-correct@1.0.2 
+  │ │ │   │ └── spdx-license-ids@1.2.2 
+  │ │ │   └── spdx-expression-parse@1.0.4 
+  │ │ ├─┬ read-pkg-up@1.0.1 
+  │ │ │ ├─┬ find-up@1.1.2 
+  │ │ │ │ ├── path-exists@2.1.0 
+  │ │ │ │ └─┬ pinkie-promise@2.0.1 
+  │ │ │ │   └── pinkie@2.0.4 
+  │ │ │ └─┬ read-pkg@1.1.0 
+  │ │ │   ├─┬ load-json-file@1.1.0 
+  │ │ │   │ ├─┬ parse-json@2.2.0 
+  │ │ │   │ │ └─┬ error-ex@1.3.1 
+  │ │ │   │ │   └── is-arrayish@0.2.1 
+  │ │ │   │ ├── pify@2.3.0 
+  │ │ │   │ └── strip-bom@2.0.0 
+  │ │ │   └── path-type@1.1.0 
+  │ │ ├─┬ redent@1.0.0 
+  │ │ │ ├─┬ indent-string@2.1.0 
+  │ │ │ │ └── repeating@2.0.1 
+  │ │ │ └── strip-indent@1.0.1 
+  │ │ └── trim-newlines@1.0.0 
+  │ ├── optional@0.1.4 
+  │ ├─┬ readable-stream@2.3.3 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── safe-buffer@5.1.1 
+  │ │ ├── string_decoder@1.0.3 
+  │ │ └── util-deprecate@1.0.2 
+  │ ├─┬ stream-combiner2@1.1.1 
+  │ │ ├─┬ duplexer2@0.1.4 
+  │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │   ├── isarray@1.0.0 
+  │ │ │   └── string_decoder@1.0.3 
+  │ │ └─┬ readable-stream@2.3.3 
+  │ │   ├── isarray@1.0.0 
+  │ │   └── string_decoder@1.0.3 
+  │ └─┬ vinyl-fs@1.0.0 
+  │   ├─┬ duplexify@3.5.1 
+  │   │ ├── end-of-stream@1.4.0 
+  │   │ ├─┬ readable-stream@2.3.3 
+  │   │ │ ├── isarray@1.0.0 
+  │   │ │ └── string_decoder@1.0.3 
+  │   │ └── stream-shift@1.0.0 
+  │   ├─┬ glob-stream@4.1.1 
+  │   │ ├── glob@4.5.3 
+  │   │ ├─┬ glob2base@0.0.12 
+  │   │ │ └── find-index@0.1.1 
+  │   │ ├── ordered-read-streams@0.1.0 
+  │   │ └─┬ unique-stream@2.2.1 
+  │   │   ├─┬ json-stable-stringify@1.0.1 
+  │   │   │ └── jsonify@0.0.0 
+  │   │   └─┬ through2-filter@2.0.0 
+  │   │     └─┬ through2@2.0.3 
+  │   │       └─┬ readable-stream@2.3.3 
+  │   │         ├── isarray@1.0.0 
+  │   │         └── string_decoder@1.0.3 
+  │   ├─┬ glob-watcher@0.0.8 
+  │   │ └─┬ gaze@0.5.2 
+  │   │   └─┬ globule@0.1.0 
+  │   │     ├─┬ glob@3.1.21 
+  │   │     │ ├── graceful-fs@1.2.3 
+  │   │     │ └── inherits@1.0.2 
+  │   │     ├── lodash@1.0.2 
+  │   │     └── minimatch@0.2.14 
+  │   ├── graceful-fs@3.0.11 
+  │   ├── merge-stream@0.1.8 
+  │   ├── object-assign@2.1.1 
+  │   ├─┬ strip-bom@1.0.0 
+  │   │ ├── first-chunk-stream@1.0.0 
+  │   │ └── is-utf8@0.2.1 
+  │   └─┬ vinyl@0.4.6 
+  │     └── clone@0.2.0 
+  ├─┬ inquirer@0.4.1 
+  │ ├── async@0.2.10 
+  │ ├─┬ cli-color@0.2.3 
+  │ │ ├── es5-ext@0.9.2 
+  │ │ └─┬ memoizee@0.2.6 
+  │ │   ├── event-emitter@0.2.2 
+  │ │   └── next-tick@0.1.0 
+  │ ├── lodash@2.4.2 
+  │ ├── mute-stream@0.0.4 
+  │ ├─┬ readline2@0.1.1 
+  │ │ └─┬ strip-ansi@2.0.1 
+  │ │   └── ansi-regex@1.1.1 
+  │ └── through@2.3.8 
+  ├─┬ less@1.7.5 
+  │ ├─┬ clean-css@2.2.23 
+  │ │ └── commander@2.2.0 
+  │ ├─┬ graceful-fs@3.0.11 
+  │ │ └── natives@1.1.0 
+  │ ├── mime@1.2.11 
+  │ ├─┬ request@2.40.0 
+  │ │ ├── aws-sign2@0.5.0 
+  │ │ ├── forever-agent@0.5.2 
+  │ │ ├─┬ form-data@0.1.4 
+  │ │ │ ├── async@0.9.2 
+  │ │ │ └─┬ combined-stream@0.0.7 
+  │ │ │   └── delayed-stream@0.0.5 
+  │ │ ├─┬ hawk@1.1.1 
+  │ │ │ ├── boom@0.4.2 
+  │ │ │ ├── cryptiles@0.2.2 
+  │ │ │ ├── hoek@0.9.1 
+  │ │ │ └── sntp@0.2.4 
+  │ │ ├─┬ http-signature@0.10.1 
+  │ │ │ ├── asn1@0.1.11 
+  │ │ │ ├── assert-plus@0.1.5 
+  │ │ │ └── ctype@0.5.3 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├── mime-types@1.0.2 
+  │ │ ├── node-uuid@1.4.8 
+  │ │ ├── oauth-sign@0.3.0 
+  │ │ ├── qs@1.0.2 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├─┬ tough-cookie@2.3.3 
+  │ │ │ └── punycode@1.4.1 
+  │ │ └── tunnel-agent@0.4.3 
+  │ └── source-map@0.1.43 
+  ├─┬ markdown@0.5.0 
+  │ └─┬ nopt@2.1.2 
+  │   └── abbrev@1.1.0 
+  ├─┬ markdown-it@4.4.0 
+  │ ├─┬ argparse@1.0.9 
+  │ │ └── sprintf-js@1.0.3 
+  │ ├── entities@1.1.1 
+  │ ├── linkify-it@1.2.4 
+  │ ├── mdurl@1.0.1 
+  │ └── uc.micro@1.0.3 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├── mustache@2.3.0 
+  ├─┬ node-sass@3.13.1 
+  │ ├── async-foreach@0.1.3 
+  │ ├─┬ cross-spawn@3.0.1 
+  │ │ ├─┬ lru-cache@4.1.1 
+  │ │ │ ├── pseudomap@1.0.2 
+  │ │ │ └── yallist@2.1.2 
+  │ │ └─┬ which@1.3.0 
+  │ │   └── isexe@2.0.0 
+  │ ├─┬ gaze@1.1.2 
+  │ │ └─┬ globule@1.2.0 
+  │ │   └── lodash@4.17.4 
+  │ ├─┬ glob@7.1.2 
+  │ │ ├── fs.realpath@1.0.0 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── minimatch@3.0.4 
+  │ │ └── once@1.4.0 
+  │ ├── in-publish@2.0.0 
+  │ ├── lodash.assign@4.2.0 
+  │ ├── lodash.clonedeep@4.5.0 
+  │ ├─┬ node-gyp@3.6.2 
+  │ │ ├── fstream@1.0.11 
+  │ │ ├── glob@7.1.2 
+  │ │ ├── minimatch@3.0.4 
+  │ │ ├─┬ osenv@0.1.4 
+  │ │ │ └── os-homedir@1.0.2 
+  │ │ ├─┬ rimraf@2.6.2 
+  │ │ │ └─┬ glob@7.1.2 
+  │ │ │   └── minimatch@3.0.4 
+  │ │ ├── semver@5.3.0 
+  │ │ └─┬ tar@2.2.1 
+  │ │   └── block-stream@0.0.9 
+  │ ├─┬ npmlog@4.1.2 
+  │ │ ├─┬ are-we-there-yet@1.1.4 
+  │ │ │ ├── delegates@1.0.0 
+  │ │ │ └─┬ readable-stream@2.3.3 
+  │ │ │   ├── isarray@1.0.0 
+  │ │ │   └── string_decoder@1.0.3 
+  │ │ ├── console-control-strings@1.1.0 
+  │ │ ├─┬ gauge@2.7.4 
+  │ │ │ ├── aproba@1.2.0 
+  │ │ │ ├── has-unicode@2.0.1 
+  │ │ │ ├─┬ string-width@1.0.2 
+  │ │ │ │ ├── code-point-at@1.1.0 
+  │ │ │ │ └── is-fullwidth-code-point@1.0.0 
+  │ │ │ └── wide-align@1.1.2 
+  │ │ └── set-blocking@2.0.0 
+  │ ├─┬ request@2.82.0 
+  │ │ ├── aws-sign2@0.7.0 
+  │ │ ├── aws4@1.6.0 
+  │ │ ├── caseless@0.12.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.1 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.3.1 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@5.0.3 
+  │ │ │ ├─┬ ajv@5.2.3 
+  │ │ │ │ ├── co@4.6.0 
+  │ │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ │ └── json-schema-traverse@0.3.1 
+  │ │ │ └── har-schema@2.0.0 
+  │ │ ├─┬ hawk@6.0.2 
+  │ │ │ ├── boom@4.3.1 
+  │ │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ │ └── boom@5.2.0 
+  │ │ │ ├── hoek@4.2.0 
+  │ │ │ └── sntp@2.0.2 
+  │ │ ├─┬ http-signature@1.2.0 
+  │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ │ ├── assert-plus@1.0.0 
+  │ │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └─┬ verror@1.10.0 
+  │ │ │ │   └── assert-plus@1.0.0 
+  │ │ │ └─┬ sshpk@1.13.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── assert-plus@1.0.0 
+  │ │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │ │   ├─┬ dashdash@1.14.1 
+  │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├─┬ getpass@0.1.7 
+  │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │   ├── jsbn@0.1.1 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── performance-now@2.1.0 
+  │ │ ├── qs@6.5.1 
+  │ │ ├── tunnel-agent@0.6.0 
+  │ │ └── uuid@3.1.0 
+  │ └─┬ sass-graph@2.2.4 
+  │   ├─┬ glob@7.1.2 
+  │   │ └── minimatch@3.0.4 
+  │   ├── lodash@4.17.4 
+  │   ├─┬ scss-tokenizer@0.2.3 
+  │   │ ├── js-base64@2.3.2 
+  │   │ └── source-map@0.4.4 
+  │   └─┬ yargs@7.1.0 
+  │     ├── camelcase@3.0.0 
+  │     ├─┬ cliui@3.2.0 
+  │     │ └── wrap-ansi@2.1.0 
+  │     ├── get-caller-file@1.0.2 
+  │     ├─┬ os-locale@1.4.0 
+  │     │ └─┬ lcid@1.0.0 
+  │     │   └── invert-kv@1.0.0 
+  │     ├── require-directory@2.1.1 
+  │     ├── require-main-filename@1.0.1 
+  │     ├── which-module@1.0.0 
+  │     ├── y18n@3.2.1 
+  │     └─┬ yargs-parser@5.0.0 
+  │       └── camelcase@3.0.0 
+  ├── node-watch@0.3.5 
+  ├── open@0.0.5 
+  ├── shelljs@0.2.6 
+  ├─┬ socket.io@0.9.19 
+  │ ├── base64id@0.1.0 
+  │ ├── policyfile@0.0.4 
+  │ ├── redis@0.7.3 
+  │ └─┬ socket.io-client@0.9.16 
+  │   ├─┬ active-x-obfuscator@0.0.1 
+  │   │ └── zeparser@0.0.5 
+  │   ├── uglify-js@1.2.5 
+  │   ├─┬ ws@0.4.32 
+  │   │ ├── commander@2.1.0 
+  │   │ ├── nan@1.0.0 
+  │   │ ├── options@0.0.6 
+  │   │ └── tinycolor@0.0.1 
+  │   └── xmlhttprequest@1.4.2 
+  ├─┬ stylus@0.52.4 
+  │ ├── css-parse@1.7.0 
+  │ ├─┬ glob@3.2.11 
+  │ │ └─┬ minimatch@0.3.0 
+  │ │   ├── lru-cache@2.7.3 
+  │ │   └── sigmund@1.0.1 
+  │ ├── sax@0.5.8 
+  │ └── source-map@0.1.43 
+  ├─┬ sync@0.2.5 
+  │ └── fibers@2.0.0 
+  └─┬ uglify-js@2.8.29 
+    ├── uglify-to-browserify@1.0.2 
+    └─┬ yargs@3.10.0 
+      ├── camelcase@1.2.1 
+      ├─┬ cliui@2.1.0 
+      │ ├─┬ center-align@0.1.3 
+      │ │ ├─┬ align-text@0.1.4 
+      │ │ │ ├─┬ kind-of@3.2.2 
+      │ │ │ │ └── is-buffer@1.1.5 
+      │ │ │ ├── longest@1.0.1 
+      │ │ │ └── repeat-string@1.6.1 
+      │ │ └── lazy-cache@1.0.4 
+      │ └── right-align@0.1.3 
+      └── window-size@0.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/rinco/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","getOSType","cwd","call","Date","RegExp","join","sort","bind","toString","create","defineProperties","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0653 took 30.6809s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/rinco/node_modules/rinco/index.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/rinco/node_modules/rinco/lib/rinco.js. Coverage (Term): 19% Coverage (LOC): 16%
+*- File /root/Targets/rinco/node_modules/rinco/lib/prompt.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/rinco/node_modules/rinco/lib/fs.js. Coverage (Term): 16% Coverage (LOC): 28%
+*- File /root/Targets/rinco/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
+*- File /root/Targets/rinco/node_modules/shelljs/shell.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/rinco/node_modules/shelljs/src/common.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/rinco/node_modules/shelljs/src/ls.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/rinco/node_modules/shelljs/src/cd.js. Coverage (Term): 38% Coverage (LOC): 46%
+*- File /root/Targets/rinco/node_modules/shelljs/src/pwd.js. Coverage (Term): 60% Coverage (LOC): 75%
+*- File /root/Targets/rinco/node_modules/shelljs/src/find.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File /root/Targets/rinco/node_modules/shelljs/src/cp.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/rinco/node_modules/shelljs/src/rm.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/rinco/node_modules/shelljs/src/mv.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/rinco/node_modules/shelljs/src/mkdir.js. Coverage (Term): 20% Coverage (LOC): 23%
+*- File /root/Targets/rinco/node_modules/shelljs/src/test.js. Coverage (Term): 17% Coverage (LOC): 13%
+*- File /root/Targets/rinco/node_modules/shelljs/src/cat.js. Coverage (Term): 23% Coverage (LOC): 30%
+*- File /root/Targets/rinco/node_modules/shelljs/src/to.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/shelljs/src/toEnd.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/shelljs/src/sed.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- File /root/Targets/rinco/node_modules/shelljs/src/grep.js. Coverage (Term): 19% Coverage (LOC): 23%
+*- File /root/Targets/rinco/node_modules/shelljs/src/which.js. Coverage (Term): 15% Coverage (LOC): 16%
+*- File /root/Targets/rinco/node_modules/shelljs/src/echo.js. Coverage (Term): 45% Coverage (LOC): 63%
+*- File /root/Targets/rinco/node_modules/shelljs/src/dirs.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/rinco/node_modules/shelljs/src/exec.js. Coverage (Term): 10% Coverage (LOC): 12%
+*- File /root/Targets/rinco/node_modules/shelljs/src/tempdir.js. Coverage (Term): 21% Coverage (LOC): 35%
+*- File /root/Targets/rinco/node_modules/shelljs/src/chmod.js. Coverage (Term): 14% Coverage (LOC): 21%
+*- File /root/Targets/rinco/node_modules/shelljs/src/error.js. Coverage (Term): 71% Coverage (LOC): 83%
+*- File /root/Targets/rinco/node_modules/rinco/lib/constants.js. Coverage (Term): 93% Coverage (LOC): 95%
+*- File /root/Targets/rinco/node_modules/inquirer/lib/inquirer.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /root/Targets/rinco/node_modules/inquirer/lib/prompts/list.js. Coverage (Term): 6% Coverage (LOC): 7%
+*- File /root/Targets/rinco/node_modules/inquirer/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/rinco/node_modules/cli-color/lib/index.js. Coverage (Term): 8% Coverage (LOC): 4%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/descriptor.js. Coverage (Term): 39% Coverage (LOC): 39%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/is-callable.js. Coverage (Term): 35% Coverage (LOC): 26%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/valid-callable.js. Coverage (Term): 53% Coverage (LOC): 60%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/valid-value.js. Coverage (Term): 50% Coverage (LOC): 56%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/copy.js. Coverage (Term): 29% Coverage (LOC): 26%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/is-plain-object.js. Coverage (Term): 49% Coverage (LOC): 55%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/for-each.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/_iterate.js. Coverage (Term): 41% Coverage (LOC): 41%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/extend.js. Coverage (Term): 47% Coverage (LOC): 54%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/map.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/String/is-string.js. Coverage (Term): 50% Coverage (LOC): 86%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/String/prototype/contains.js. Coverage (Term): 57% Coverage (LOC): 86%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/reduce.js. Coverage (Term): 29% Coverage (LOC): 27%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/String/prototype/repeat.js. Coverage (Term): 53% Coverage (LOC): 86%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Number/to-uint.js. Coverage (Term): 68% Coverage (LOC): 86%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Number/to-int.js. Coverage (Term): 45% Coverage (LOC): 43%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Math/sign.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/index.js. Coverage (Term): 55% Coverage (LOC): 67%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/regular.js. Coverage (Term): 4% Coverage (LOC): 3%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Error/custom.js. Coverage (Term): 52% Coverage (LOC): 56%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Array/prototype/e-index-of.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Number/is-nan.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/is.js. Coverage (Term): 37% Coverage (LOC): 83%
+*- File /root/Targets/rinco/node_modules/event-emitter/lib/has-listeners.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Object/is-empty.js. Coverage (Term): 48% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/event-emitter/lib/_id.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/_base.js. Coverage (Term): 23% Coverage (LOC): 18%
+*- File /root/Targets/rinco/node_modules/event-emitter/lib/core.js. Coverage (Term): 23% Coverage (LOC): 26%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/primitive.js. Coverage (Term): 13% Coverage (LOC): 10%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/ext/dispose.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/ext/resolvers.js. Coverage (Term): 25% Coverage (LOC): 26%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Array/from.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Function/is-arguments.js. Coverage (Term): 72% Coverage (LOC): 89%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/ext/async.js. Coverage (Term): 15% Coverage (LOC): 7%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Array/prototype/last.js. Coverage (Term): 52% Coverage (LOC): 60%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/Array/prototype/last-index.js. Coverage (Term): 35% Coverage (LOC): 38%
+*- File /root/Targets/rinco/node_modules/next-tick/lib/next-tick.js. Coverage (Term): 50% Coverage (LOC): 46%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/ext/ref-counter.js. Coverage (Term): 14% Coverage (LOC): 17%
+*- File /root/Targets/rinco/node_modules/memoizee/lib/ext/method.js. Coverage (Term): 15% Coverage (LOC): 16%
+*- File /root/Targets/rinco/node_modules/es5-ext/lib/global.js. Coverage (Term): 78% Coverage (LOC): 100%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

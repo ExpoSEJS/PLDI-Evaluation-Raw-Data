@@ -1,0 +1,41 @@
+
+> fs-ext@1.0.0 install /root/Targets/ipfs/node_modules/fs-ext
+> node-gyp configure build
+
+make: Entering directory '/root/Targets/ipfs/node_modules/fs-ext/build'
+  CXX(target) Release/obj.target/fs-ext/fs-ext.o
+  SOLINK_MODULE(target) Release/obj.target/fs-ext.node
+  COPY Release/fs-ext.node
+make: Leaving directory '/root/Targets/ipfs/node_modules/fs-ext/build'
+/root/Targets/ipfs
+└─┬ ipfs@0.26.0 
+  ├─┬ ipfs-repo@0.17.0
+  │ ├── level-js@2.2.3  (git://github.com/timkuijsten/level.js.git#18e03adab34c49523be7d3d58fafb0c632f61303)
+  │ └─┬ lock-me@1.0.2
+  │   └── fs-ext@1.0.0  (git://github.com/baudehlo/node-fs-ext.git#500be8514729c194ac7ca2b30b5bc7eaf812670d)
+  ├─┬ libp2p-floodsub@0.11.1
+  │ └─┬ libp2p-crypto@0.10.3
+  │   └── webcrypto-shim@0.1.1  (git://github.com/dignifiedquire/webcrypto-shim.git#effe03d3401ccbfb4837191bc393bb347e0c0f0a)
+  ├─┬ libp2p-multiplex@0.5.0
+  │ └── multiplex@6.7.0  (git://github.com/dignifiedquire/multiplex.git#b5d5edd30454e2c978ee8c52df86f5f4840d2eab)
+  └─┬ libp2p-webrtc-star@0.13.2
+    └── webrtcsupport@2.2.0  (git://github.com/ipfs/webrtcsupport.git#0669f576582c53a3a42aa5ac014fcc5966809615)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ipfs/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0608 took 5.6301s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Cannot read property 'length' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

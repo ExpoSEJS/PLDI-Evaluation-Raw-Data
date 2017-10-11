@@ -1,0 +1,145 @@
+/root/Targets/we-plugin-passport-oauth2
+└─┬ we-plugin-passport-oauth2@1.2.0 
+  └─┬ oauth20-provider@0.6.0 
+    └─┬ async@2.5.0 
+      └── lodash@4.17.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/we-plugin-passport-oauth2/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Object","call","binding","RegExp","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0696 took 14.1521s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (60:24) on program /**
+ * Used log levels, from low priority to high
+ */
+var levels = [
+    'debug',
+    'info',
+    'warn',
+    'error'
+];
+
+/**
+ * Colors for log levels.
+ */
+var colors = [
+    90,
+    36,
+    33,
+    31
+];
+
+/**
+ * Pads the nice output to the longest log level.
+ */
+function pad (str) {
+    var max = 0;
+
+    for (var i = 0, l = levels.length; i < l; i++)
+        max = Math.max(max, levels[i].length);
+
+    if (str.length < max)
+        return str + new Array(max - str.length + 1).join(' ');
+
+    return str;
+};
+
+/**
+ * Console logging class
+ *
+ * @param options
+ * @constructor
+ */
+var Logger = function(options) {
+    // Force options or die
+    this.colors = false !== options.colors;
+    this.level = options.level || 0;
+};
+
+/**
+ * Log method
+ *
+ * @api public
+ */
+Logger.prototype.log = function (type) {
+    var typeLevel = levels.indexOf(type);
+
+    if (typeLevel < this.level) return;
+
+    console.log.apply(
+        console,
+        [this.colors ? '\033[' + colors[typeLevel] + 'm' + pad(type) + ':\033[39m' : type + ':']
+            .concat(Array.prototype.slice.call(arguments, 1))
+    );
+};
+
+/**
+ * Generate methods for each level
+ */
+levels.forEach(function (name) {
+    Logger.prototype[name] = function () {
+        this.log.apply(this, [name].concat(Array.prototype.slice.call(arguments)));
+    };
+});
+
+
+module.exports = Logger; at SyntaxError: Octal literal in strict mode (60:24)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1622:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/we-plugin-passport-oauth2/plugin.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/index.js. Coverage (Term): 29% Coverage (LOC): 17%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/accessToken.js. Coverage (Term): 44% Coverage (LOC): 74%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/accessDenied.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/oauth2.js. Coverage (Term): 55% Coverage (LOC): 62%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/forbidden.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/invalidClient.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/invalidGrant.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/invalidRequest.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/invalidScope.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/serverError.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/unauthorizedClient.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/unsupportedGrantType.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/error/unsupportedResponseType.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/client.js. Coverage (Term): 38% Coverage (LOC): 66%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/code.js. Coverage (Term): 43% Coverage (LOC): 73%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/refreshToken.js. Coverage (Term): 40% Coverage (LOC): 71%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/model/user.js. Coverage (Term): 42% Coverage (LOC): 72%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/authorization.js. Coverage (Term): 8% Coverage (LOC): 6%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/async/dist/async.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/authorization/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/authorization/code.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/util/response.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/authorization/implicit.js. Coverage (Term): 18% Coverage (LOC): 16%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token.js. Coverage (Term): 9% Coverage (LOC): 7%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token/authorizationCode.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token/clientCredentials.js. Coverage (Term): 20% Coverage (LOC): 16%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token/password.js. Coverage (Term): 7% Coverage (LOC): 6%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/token/refreshToken.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/middleware/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/middleware/bearer.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/we-plugin-passport-oauth2/node_modules/oauth20-provider/lib/controller/authorization/decision.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

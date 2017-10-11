@@ -1,0 +1,38 @@
+/root/Targets/child-process-data
+└─┬ child-process-data@0.5.5 
+  ├─┬ deepkill@0.1.0 
+  │ └─┬ ps-tree@1.1.0 
+  │   └─┬ event-stream@3.3.4 
+  │     ├── duplexer@0.1.1 
+  │     ├── from@0.1.7 
+  │     ├── map-stream@0.1.0 
+  │     ├── pause-stream@0.0.11 
+  │     ├── split@0.3.3 
+  │     ├── stream-combiner@0.0.4 
+  │     └── through@2.3.8 
+  └─┬ strip-ansi@3.0.1 
+    └── ansi-regex@2.1.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/child-process-data/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0597 took 7.355s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'chalk'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/child-process-data/node_modules/child-process-data/lib/index.js. Coverage (Term): 33% Coverage (LOC): 36%
+*- File /root/Targets/child-process-data/node_modules/child-process-data/lib/make-single-test.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/child-process-data/node_modules/child-process-data/lib/child-process-data.js. Coverage (Term): 26% Coverage (LOC): 35%
+*- File /root/Targets/child-process-data/node_modules/child-process-data/lib/check-child-process.js. Coverage (Term): 55% Coverage (LOC): 47%
+*- File /root/Targets/child-process-data/node_modules/child-process-data/lib/make-options.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

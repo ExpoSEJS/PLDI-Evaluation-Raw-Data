@@ -1,0 +1,213 @@
+/root/Targets/sourcemap-validator
+└─┬ sourcemap-validator@1.0.5 
+  ├── jsesc@0.3.0 
+  ├─┬ lodash.foreach@2.3.0 
+  │ ├─┬ lodash._basecreatecallback@2.3.0 
+  │ │ ├─┬ lodash._setbinddata@2.3.0 
+  │ │ │ └── lodash.noop@2.3.0 
+  │ │ ├─┬ lodash.bind@2.3.0 
+  │ │ │ ├─┬ lodash._createwrapper@2.3.0 
+  │ │ │ │ ├─┬ lodash._basebind@2.3.0 
+  │ │ │ │ │ └── lodash._basecreate@2.3.0 
+  │ │ │ │ ├── lodash._basecreatewrapper@2.3.0 
+  │ │ │ │ └── lodash.isfunction@2.3.0 
+  │ │ │ └── lodash._slice@2.3.0 
+  │ │ ├── lodash.identity@2.3.0 
+  │ │ └── lodash.support@2.3.0 
+  │ └─┬ lodash.forown@2.3.0 
+  │   └── lodash._objecttypes@2.3.0 
+  ├─┬ lodash.template@2.3.0 
+  │ ├── lodash._escapestringchar@2.3.0 
+  │ ├── lodash._reinterpolate@2.3.0 
+  │ ├── lodash.defaults@2.3.0 
+  │ ├─┬ lodash.escape@2.3.0 
+  │ │ ├─┬ lodash._escapehtmlchar@2.3.0 
+  │ │ │ └── lodash._htmlescapes@2.3.0 
+  │ │ └── lodash._reunescapedhtml@2.3.0 
+  │ ├─┬ lodash.keys@2.3.0 
+  │ │ ├── lodash._renative@2.3.0 
+  │ │ ├── lodash._shimkeys@2.3.0 
+  │ │ └── lodash.isobject@2.3.0 
+  │ ├── lodash.templatesettings@2.3.0 
+  │ └── lodash.values@2.3.0 
+  └─┬ source-map@0.1.43 
+    └── amdefine@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sourcemap-validator/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0549 took 4.4035s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (4:4) on program var validate
+  , validateMapping
+  , toAscii
+  , assert = require('assert')
+  , SMConsumer = require('source-map').SourceMapConsumer
+  , each = require('lodash.foreach')
+  , template = require('lodash.template')
+  , jsesc = require('jsesc');
+
+// Lifted from UglifyJS
+toAscii = function (str, identifier) {
+    return str.replace(/[\u0080-\uffff]/g, function(ch) {
+        var code = ch.charCodeAt(0).toString(16);
+        if (code.length <= 2 && !identifier) {
+            while (code.length < 2) code = "0" + code;
+            return "\\x" + code;
+        } else {
+            while (code.length < 4) code = "0" + code;
+            return "\\u" + code;
+        }
+    }).replace(/\x0B/g, "\\x0B");
+};
+
+// Performs simple validation of a mapping
+validateMapping = function (mapping) {
+  var prettyMapping = JSON.stringify(mapping, null, 2);
+
+  assert.ok(mapping.generatedColumn!=null, 'missing generated column, mapping: ' + prettyMapping);
+  assert.ok(mapping.generatedLine!=null, 'missing generated line, mapping: ' + prettyMapping);
+  assert.ok(mapping.generatedColumn >= 0, 'generated column must be greater or equal to zero, mapping: ' + prettyMapping);
+  assert.ok(mapping.generatedLine >= 0, 'generated line must be greater or equal to zero: ' + prettyMapping);
+
+  assert.ok(mapping.originalColumn!=null, 'missing original column, mapping: ' + prettyMapping);
+  assert.ok(mapping.originalLine!=null, 'missing original line, mapping: ' + prettyMapping);
+  assert.ok(mapping.originalColumn >= 0, 'original column must be greater or equal to zero, mapping: ' + prettyMapping);
+  assert.ok(mapping.originalLine >= 0, 'original line must be greater or equal to zero, mapping: ' + prettyMapping);
+
+  assert.notEqual(mapping.source, null, 'source is missing');
+};
+
+// Validates an entire sourcemap
+validate = function (min, map, srcs) {
+  var consumer
+    , mappingCount = 0
+    , splitSrcs = {};
+
+  srcs = srcs || {};
+
+  // If no map was given, try to extract it from min
+  if(map == null) {
+    try {
+      var re = /\s*\/\/(?:@|#) sourceMappingURL=data:application\/json;base64,(\S*)$/m
+        , map = min.match(re);
+
+      map = (new Buffer(map[1], 'base64')).toString();
+      min = min.replace(re, '');
+    }
+    catch (e) {
+      throw new Error('No map argument provided, and no inline sourcemap found');
+    }
+  }
+
+  try {
+    consumer = new SMConsumer(map);
+  }
+  catch (e) {
+    throw new Error('The map is not valid JSON');
+  }
+
+  each(consumer.sources, function (src) {
+    var content = consumer.sourceContentFor(src);
+    if(content)
+      srcs[src] = content;
+  });
+
+  each(srcs, function (src, file) {
+    return splitSrcs[file] = src.split('\n'); // Split sources by line
+  });
+
+  consumer.eachMapping(function (mapping) {
+    mappingCount++;
+
+    validateMapping(mapping);
+
+    // These validations can't be performed with just the mapping
+    var originalLine
+      , errMsg
+      , mapRef = template('<%=generatedLine%>:<%=generatedColumn%>'
+          + String.fromCharCode(parseInt(2192,16)) // Fancy arrow!
+          + '<%=originalLine%>:<%=originalColumn%> "<%=name%>" in <%=source%>')(mapping)
+      , expected
+      , actuals = []
+      , success = false;
+
+    if(mapping.name) {
+      if(!splitSrcs[mapping.source])
+        throw new Error(mapping.source + ' not found in ' + Object.keys(splitSrcs).join(', '));
+
+      originalLine = splitSrcs[mapping.source][mapping.originalLine - 1];
+
+      expected = [
+        mapping.name
+      , '\'' + jsesc(mapping.name) + '\''
+      , '\'' + toAscii(mapping.name) + '\''
+      , '"' + jsesc(mapping.name, {quotes: 'double'}) + '"'
+      , '"' + toAscii(mapping.name) + '"'
+      ];
+
+      // An exact match
+      for(var i=0, ii=expected.length; i<ii; i++) {
+        // It's possible to go out of bounds on some stupid cases
+        try {
+          var actual = originalLine.split('').splice(mapping.originalColumn, expected[i].length).join('');
+        }
+        catch (e) {
+          return;
+        }
+
+        actuals.push(actual);
+
+        if(expected[i] === actual) {
+          success = true;
+          break;
+        }
+      };
+
+      if(!success) {
+        errMsg = template(''
+          + 'Warning: mismatched names\n'
+          + 'Expected: <%=expected%>\n'
+          + 'Got: <%=actual%>\n'
+          + 'Original Line: <%=original%>\n'
+          + 'Mapping: <%=mapRef%>'
+          , {
+            expected: expected.join(' || ')
+          , actual: actuals.join(' || ')
+          , original: originalLine
+          , mapRef: mapRef
+          });
+
+          throw new Error(errMsg);
+      }
+    }
+  });
+
+  assert.ok(JSON.parse(map).sources && JSON.parse(map).sources.length, 'There were no sources in the file');
+  assert.ok(mappingCount > 0, 'There were no mappings in the file');
+};
+
+module.exports = validate;
+ at SyntaxError: Unexpected token (4:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,207 @@
+/root/Targets/jsfix
+└── jsfix@0.1.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/jsfix/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0612 took 4.7917s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+var fs = require('fs'),
+	puts = require('util').puts,
+	map = require('./map.js'),
+	config,
+	JSHINT;
+try {
+	config = require('\\\\u\\f2ehint\\lib\\jshint-config.js');
+	JSHINT = require('\\\\u\\f2ehint\\packages\\jshint\\jshint.js').JSHINT;
+} catch(e) {
+	config = require('./jshint-config.js');
+	JSHINT = require('./jshint.js').JSHINT;
+}
+
+var	counts_all = 0,
+	fixeds = [],
+	unfixs = [],
+	root = '',
+	filter = {
+		'.svn': true
+	};
+
+var lint = function(code) {
+		var results = [];
+
+		try {
+			JSHINT(code, config);
+		} catch (e) {
+			results.push({
+				line: 0,
+				character: 0,
+				reason: e.message
+			});
+		} finally {
+			results = JSHINT.errors;
+		}
+		return results;
+	};
+
+var indexs = function (arr) {
+	arr.forEach(function(v, i) {
+		filter[v] = true;
+	});
+};
+
+var report = function () {
+	var outputs = [];
+
+	if (fixeds.length > 0) {
+		outputs.push('----------The Fixed List---------\n');
+		fixeds.forEach(function(fixed) {
+			outputs.push('oo [File: ' + fixed.file.replace(root, '') + ']');
+			outputs.push('   [Line: ' + fixed.line + ', Character: ' + fixed.character + ']');
+			outputs.push('\tReason: ' + fixed.reason);
+		});
+		outputs.push('\n---------------End---------------');
+	}
+
+	if (unfixs.length > 0) {
+		outputs.push('\n---------The UnFixed List--------\n');
+		unfixs.forEach(function(unfix) {
+			outputs.push('xx [File: ' + unfix.file.replace(root, '') + ']');
+			outputs.push('   [Line: ' + unfix.line + ', Character: ' + unfix.character + ']');
+			outputs.push('\tReason: ' + unfix.reason);
+		});
+		outputs.push('\n---------------End---------------');
+	}
+
+	outputs.push('\n-- All errors: ' + counts_all + ', Fixed: ' + fixeds.length + ', Unfixed: ' +  unfixs.length + '\n');
+
+	puts(outputs.join('\n'));
+	fs.writeFileSync(root + '/jsfix-report.log', outputs.join('\n'), 'utf-8');
+	puts('\nMore info on [' + root + '/jsfix-report.log]');
+};
+
+var fixCode = function(code, results, file) {
+		var codes = code.split('\n');
+		
+		results.reverse().forEach(function(result, i) {
+			var ch = result.character,
+				idx = result.line - 1,
+				evi = result.evidence,
+				reason = result.reason,
+				raw = result.raw,
+				func = reason && (map[reason] || map[raw]),
+				args = [
+					codes[idx], ch, result.a, result.b, result.c, result.d, evi
+				],
+				fixedResult;
+
+			if (func) {
+				fixedResult = func.apply(JSHINT, args);
+				if (fixedResult !== false) {
+					codes[idx] = fixedResult;
+					fixeds.push({file: file, line: idx + 1, character: ch, reason: reason});
+				} else {
+					unfixs.push({file: file, line: idx + 1, character: ch, reason: reason});
+				}
+			} else {
+				unfixs.push({file: file, line: idx + 1, character: ch, reason: reason});
+			}
+		});
+
+		counts_all += results.length;
+
+		return codes.join('\n');
+	};
+
+var fixFile = function(file) {
+		if (file && (/.js$/.test(file))) {
+			code = fs.readFileSync(file, 'utf-8');
+			results = lint(code);
+			if (results.length > 0) {
+				puts('\nfixing ' + file);
+				newCode = fixCode(code, results, file);
+				fs.writeFileSync(file, newCode, 'utf-8');
+				puts('errors:' + results.length);
+			}
+		}
+	};
+
+var doFix = function (path) {
+	var	stat = path && fs.statSync(path),
+		files = [];
+
+	if (stat && stat.isFile()) {
+		if (!root) {
+			root = path.slice(0, path.lastIndexOf('/'));
+		}
+		fixFile(path);
+	} else if (stat && stat.isDirectory()) {
+		if (!root) {
+			root = path;
+		}
+		files = fs.readdirSync(path);
+
+		files.forEach(function(file) {
+			var hasReplace = false;
+			file = file.replace(/.seed$/, function (k) {
+				var stat = fs.statSync(path + '/' + file),
+					ret = k;
+
+				if (stat.isFile()) {
+					hasReplace = true;
+					ret = '';
+				}
+
+				return ret;
+			});
+
+			if (hasReplace) {
+				filter[path + '/' + file] = true;
+			}
+		});
+
+		files.forEach(function(file) {
+			if (!filter[file] && !filter[path + '/' + file]) {
+				doFix(path + '/' + file);
+			}
+		});
+	}
+};
+
+(function run() {
+	var path = (process.argv[2] || '').replace(/\/$/, ''),
+		filterArray = [].concat((process.argv[3] && process.argv[3].split(',')) || []);
+	if (path) {
+		indexs(filterArray);
+		doFix(path);
+		report();
+	} else {
+		puts('Usage: fix Path [Filter]');
+		puts('  Path      File or Folder path to fix.');	
+		puts('  Filter    Exclude FileName or FilePath or FolderName or FolderPath.');	
+	}
+})(); at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,62 @@
+/root/Targets/logcast
+└─┬ logcast@0.0.1 
+  ├── ejs@2.5.7 
+  └─┬ express@3.4.0 
+    ├── buffer-crc32@0.2.1 
+    ├─┬ commander@1.2.0 
+    │ └── keypress@0.1.0 
+    ├─┬ connect@2.9.0 
+    │ ├── bytes@0.2.0 
+    │ ├─┬ multiparty@2.1.8 
+    │ │ ├─┬ readable-stream@1.0.34 
+    │ │ │ ├── core-util-is@1.0.2 
+    │ │ │ ├── inherits@2.0.3 
+    │ │ │ ├── isarray@0.0.1 
+    │ │ │ └── string_decoder@0.10.31 
+    │ │ └── stream-counter@0.1.0 
+    │ ├── pause@0.0.1 
+    │ ├── qs@0.6.5 
+    │ └── uid2@0.0.2 
+    ├── cookie@0.1.0 
+    ├── cookie-signature@1.0.1 
+    ├─┬ debug@3.0.1 
+    │ └── ms@2.0.0 
+    ├── fresh@0.2.0 
+    ├── methods@0.0.1 
+    ├── mkdirp@0.3.5 
+    ├── range-parser@0.0.4 
+    └─┬ send@0.1.4 
+      └── mime@1.2.11 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/logcast/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.04 took 6.3486s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/logcast/node_modules/logcast/app.js. Coverage (Term): 11% Coverage (LOC): 12%
+*- File /root/Targets/logcast/node_modules/express/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/logcast/node_modules/express/lib/express.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/logcast/node_modules/connect/index.js. Coverage (Term): 75% Coverage (LOC): 100%
+*- File /root/Targets/logcast/node_modules/connect/lib/connect.js. Coverage (Term): 25% Coverage (LOC): 19%
+*- File /root/Targets/logcast/node_modules/connect/lib/proto.js. Coverage (Term): 10% Coverage (LOC): 11%
+*- File /root/Targets/logcast/node_modules/connect/lib/utils.js. Coverage (Term): 20% Coverage (LOC): 39%
+*- File /root/Targets/logcast/node_modules/cookie-signature/index.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /root/Targets/logcast/node_modules/bytes/index.js. Coverage (Term): 12% Coverage (LOC): 24%
+*- File /root/Targets/logcast/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/logcast/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 29%
+*- File /root/Targets/logcast/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/logcast/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/logcast/node_modules/connect/lib/patch.js. Coverage (Term): 26% Coverage (LOC): 20%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

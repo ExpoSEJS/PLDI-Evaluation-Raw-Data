@@ -1,0 +1,131 @@
+/root/Targets/grunt-init-phonegap
+├── UNMET PEER DEPENDENCY grunt@~0.4.2
+└─┬ grunt-init-phonegap@0.1.0 
+  └── lodash@2.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/grunt-init-phonegap/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Date","RegExp","Object","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0695 took 16.4407s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: 'with' in strict mode (5:0) on program (function(_) { return function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += 'var index, iterable = ' +
+((__t = ( firstArg )) == null ? '' : __t) +
+', result = ' +
+((__t = ( init )) == null ? '' : __t) +
+';\nif (!iterable) return result;\n' +
+((__t = ( top )) == null ? '' : __t) +
+';';
+ if (array) { ;
+__p += '\nvar length = iterable.length; index = -1;\nif (' +
+((__t = ( array )) == null ? '' : __t) +
+') {  ';
+ if (support.unindexedChars) { ;
+__p += '\n  if (isString(iterable)) {\n    iterable = iterable.split(\'\')\n  }  ';
+ } ;
+__p += '\n  while (++index < length) {\n    ' +
+((__t = ( loop )) == null ? '' : __t) +
+';\n  }\n}\nelse {  ';
+ } else if (support.nonEnumArgs) { ;
+__p += '\n  var length = iterable.length; index = -1;\n  if (length && isArguments(iterable)) {\n    while (++index < length) {\n      index += \'\';\n      ' +
+((__t = ( loop )) == null ? '' : __t) +
+';\n    }\n  } else {  ';
+ } ;
+__p += '  ';
+ if (support.enumPrototypes) { ;
+__p += '\n  var skipProto = typeof iterable == \'function\';\n  ';
+ } ;
+__p += '  ';
+ if (support.enumErrorProps) { ;
+__p += '\n  var skipErrorProps = iterable === errorProto || iterable instanceof Error;\n  ';
+ } ;
+__p += '  ';
+    var conditions = [];    if (support.enumPrototypes) { conditions.push('!(skipProto && index == "prototype")'); }    if (support.enumErrorProps)  { conditions.push('!(skipErrorProps && (index == "message" || index == "name"))'); }  ;
+__p += '  ';
+ if (useHas && keys) { ;
+__p += '\n  var ownIndex = -1,\n      ownProps = objectTypes[typeof iterable] && keys(iterable),\n      length = ownProps ? ownProps.length : 0;\n\n  while (++ownIndex < length) {\n    index = ownProps[ownIndex];\n';
+    if (conditions.length) { ;
+__p += '    if (' +
+((__t = ( conditions.join(' && ') )) == null ? '' : __t) +
+') {\n  ';
+ } ;
+__p += '    ' +
+((__t = ( loop )) == null ? '' : __t) +
+';    ';
+ if (conditions.length) { ;
+__p += '\n    }';
+ } ;
+__p += '\n  }  ';
+ } else { ;
+__p += '\n  for (index in iterable) {\n';
+    if (useHas) { conditions.push("hasOwnProperty.call(iterable, index)"); }    if (conditions.length) { ;
+__p += '    if (' +
+((__t = ( conditions.join(' && ') )) == null ? '' : __t) +
+') {\n  ';
+ } ;
+__p += '    ' +
+((__t = ( loop )) == null ? '' : __t) +
+';    ';
+ if (conditions.length) { ;
+__p += '\n    }';
+ } ;
+__p += '\n  }    ';
+ if (support.nonEnumShadows) { ;
+__p += '\n\n  if (iterable !== objectProto) {\n    var ctor = iterable.constructor,\n        isProto = iterable === (ctor && ctor.prototype),\n        className = iterable === stringProto ? stringClass : iterable === errorProto ? errorClass : toString.call(iterable),\n        nonEnum = nonEnumProps[className];\n      ';
+ for (k = 0; k < 7; k++) { ;
+__p += '\n    index = \'' +
+((__t = ( shadowedProps[k] )) == null ? '' : __t) +
+'\';\n    if ((!(isProto && nonEnum[index]) && hasOwnProperty.call(iterable, index))';
+        if (!useHas) { ;
+__p += ' || (!nonEnum[index] && iterable[index] !== objectProto[index])';
+ }      ;
+__p += ') {\n      ' +
+((__t = ( loop )) == null ? '' : __t) +
+';\n    }      ';
+ } ;
+__p += '\n  }    ';
+ } ;
+__p += '  ';
+ } ;
+__p += '  ';
+ if (array || support.nonEnumArgs) { ;
+__p += '\n}';
+ } ;
+__p += '\n' +
+((__t = ( bottom )) == null ? '' : __t) +
+';\nreturn result';
+
+}
+return __p
+}
+/*
+//# sourceURL=/lodash/template/source[0]
+*/ }) at SyntaxError: 'with' in strict mode (5:0)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/grunt-init-phonegap/node_modules/grunt-init-phonegap/template.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/grunt-init-phonegap/node_modules/grunt-init-phonegap/lib/lodash.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

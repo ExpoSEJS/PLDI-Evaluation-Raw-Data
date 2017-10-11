@@ -1,0 +1,228 @@
+/root/Targets/messageformat
+└─┬ messageformat@1.0.2 
+  ├─┬ glob@7.0.6 
+  │ ├── fs.realpath@1.0.0 
+  │ ├─┬ inflight@1.0.6 
+  │ │ └── wrappy@1.0.2 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── once@1.4.0 
+  │ └── path-is-absolute@1.0.1 
+  ├─┬ make-plural@3.0.6 
+  │ └── minimist@1.2.0 
+  ├── messageformat-parser@1.1.0 
+  ├─┬ nopt@3.0.6 
+  │ └── abbrev@1.1.0 
+  └── reserved-words@0.1.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/messageformat/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0838 took 7.4437s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (1:82) on program var assert = require('assert');
+
+/**
+ * Structure for storing keywords.
+ *
+ * @typedef {Object.<String,Boolean>} KeywordsHash
+ */
+
+/**
+ * ECMAScript dialects.
+ *
+ * @const
+ * @type {Object.<String,Number|String>} - keys as readable names and values as versions
+ */
+var DIALECTS = {
+    es3: 3,
+    es5: 5,
+    es2015: 6,
+    es7: 7,
+
+    // aliases
+    es6: 6,
+    'default': 5,
+    next: 6
+};
+
+/**
+ * ECMAScript reserved words.
+ *
+ * @type {Object.<String,KeywordsHash>}
+ */
+var KEYWORDS = exports.KEYWORDS = {};
+
+/**
+ * Check word for being an reserved word.
+ *
+ * @param {String} word - word to check
+ * @param {String|Number} [dialect] - dialect or version
+ * @param {Boolean} [strict] - strict mode
+ * @returns {?Boolean}
+ */
+exports.check = function check(word, dialect, strict) {
+    dialect = dialect || DIALECTS.default;
+    var version = DIALECTS[dialect] || dialect;
+
+    if (strict && version >= 5) {
+        version += '-strict';
+    }
+
+    assert(KEYWORDS[version], 'Unknown dialect');
+
+    return KEYWORDS[version].hasOwnProperty(word);
+};
+
+/**
+ * Reserved Words for ES3
+ *
+ * ECMA-262 3rd: 7.5.1
+ * http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf
+ *
+ * @type {KeywordsHash}
+ */
+KEYWORDS['3'] = _hash(
+    // Keyword, ECMA-262 3rd: 7.5.2
+    'break    else       new     var',
+    'case     finally    return  void',
+    'catch    for        switch  while',
+    'continue function   this    with',
+    'default  if         throw',
+    'delete   in         try',
+    'do       instanceof typeof',
+    // FutureReservedWord, ECMA-262 3rd 7.5.3
+    'abstract enum       int        short',
+    'boolean  export     interface  static',
+    'byte     extends    long       super',
+    'char     final      native     synchronized',
+    'class    float      package    throws',
+    'const    goto       private    transient',
+    'debugger implements protected  volatile',
+    'double   import     public',
+    // NullLiteral & BooleanLiteral
+    'null true false'
+);
+
+/**
+ * Reserved Words for ES5.
+ *
+ * http://es5.github.io/#x7.6.1
+ *
+ * @type {KeywordsHash}
+ */
+KEYWORDS['5'] = _hash(
+    // Keyword
+    'break    do       instanceof typeof',
+    'case     else     new        var',
+    'catch    finally  return     void',
+    'continue for      switch     while',
+    'debugger function this       with',
+    'default  if       throw',
+    'delete   in       try',
+    // FutureReservedWord
+    'class enum extends super',
+    'const export import',
+    // NullLiteral & BooleanLiteral
+    'null true false'
+);
+
+/**
+ * Reserved Words for ES5 in strict mode.
+ *
+ * @type {KeywordsHash}
+ */
+KEYWORDS['5-strict'] = _hash(
+    KEYWORDS['5'],
+    // FutureReservedWord, strict mode. http://es5.github.io/#x7.6.1.2
+    'implements let     private   public yield',
+    'interface  package protected static'
+);
+
+/**
+ * Reserved Words for ES6.
+ *
+ * 11.6.2
+ * http://www.ecma-international.org/ecma-262/6.0/index.html#sec-reserved-words
+ *
+ * @type {KeywordsHash}
+ */
+KEYWORDS['6'] = _hash(
+    // Keywords, ES6 11.6.2.1, http://www.ecma-international.org/ecma-262/6.0/index.html#sec-keywords
+    'break    do       in         typeof',
+    'case     else     instanceof var',
+    'catch    export   new        void',
+    'class    extends  return     while',
+    'const    finally  super      with',
+    'continue for      switch     yield',
+    'debugger function this',
+    'default  if       throw',
+    'delete   import   try',
+    // Future Reserved Words, ES6 11.6.2.2
+    // http://www.ecma-international.org/ecma-262/6.0/index.html#sec-future-reserved-words
+    'enum await',
+    // NullLiteral & BooleanLiteral
+    'null true false'
+);
+
+/**
+ * Reserved Words for ES6 in strict mode.
+ *
+ * @type {KeywordsHash}
+ */
+KEYWORDS['6-strict'] = _hash(
+    KEYWORDS['6'],
+    // Keywords, ES6 11.6.2.1
+    'let static',
+    // Future Reserved Words, ES6 11.6.2.2
+    'implements package protected',
+    'interface private public'
+);
+
+/**
+ * Generates hash from strings
+ *
+ * @private
+ * @param {...String|KeywordsHash} keywords - Space-delimited string or previous result of _hash
+ * @return {KeywordsHash} - Object with keywords in keys and true in values
+ */
+function _hash() {
+    var set = Array.prototype.map.call(arguments, function(v) {
+        return typeof v === 'string' ? v : Object.keys(v).join(' ');
+    }).join(' ');
+
+    return set.split(/\s+/)
+        .reduce(function(res, keyword) {
+            res[keyword] = true;
+            return res;
+        }, {});
+}
+ at SyntaxError: Unexpected token (1:82)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/messageformat/node_modules/messageformat/lib/index.js. Coverage (Term): 2% Coverage (LOC): 4%
+*- File /root/Targets/messageformat/node_modules/messageformat/lib/compiler.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/messageformat/node_modules/reserved-words/lib/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

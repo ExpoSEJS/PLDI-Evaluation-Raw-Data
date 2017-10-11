@@ -1,0 +1,129 @@
+
+> spawn-sync@1.0.15 postinstall /root/Targets/vuegen/node_modules/spawn-sync
+> node postinstall
+
+/root/Targets/vuegen
+└─┬ vuegen@0.2.2 
+  └─┬ inquirer@1.2.3 
+    ├── ansi-escapes@1.4.0 
+    ├─┬ chalk@1.1.3 
+    │ ├── ansi-styles@2.2.1 
+    │ ├── escape-string-regexp@1.0.5 
+    │ ├── has-ansi@2.0.0 
+    │ └── supports-color@2.0.0 
+    ├─┬ cli-cursor@1.0.2 
+    │ └─┬ restore-cursor@1.0.1 
+    │   ├── exit-hook@1.1.1 
+    │   └── onetime@1.1.0 
+    ├── cli-width@2.2.0 
+    ├─┬ external-editor@1.1.1 
+    │ ├── extend@3.0.1 
+    │ ├─┬ spawn-sync@1.0.15 
+    │ │ ├─┬ concat-stream@1.6.0 
+    │ │ │ ├── inherits@2.0.3 
+    │ │ │ ├─┬ readable-stream@2.3.3 
+    │ │ │ │ ├── core-util-is@1.0.2 
+    │ │ │ │ ├── isarray@1.0.0 
+    │ │ │ │ ├── process-nextick-args@1.0.7 
+    │ │ │ │ ├── safe-buffer@5.1.1 
+    │ │ │ │ ├── string_decoder@1.0.3 
+    │ │ │ │ └── util-deprecate@1.0.2 
+    │ │ │ └── typedarray@0.0.6 
+    │ │ └── os-shim@0.1.3 
+    │ └─┬ tmp@0.0.29 
+    │   └── os-tmpdir@1.0.2 
+    ├─┬ figures@1.7.0 
+    │ └── object-assign@4.1.1 
+    ├── lodash@4.17.4 
+    ├── mute-stream@0.0.6 
+    ├─┬ pinkie-promise@2.0.1 
+    │ └── pinkie@2.0.4 
+    ├─┬ run-async@2.3.0 
+    │ └── is-promise@2.1.0 
+    ├── rx@4.1.0 
+    ├─┬ string-width@1.0.2 
+    │ ├── code-point-at@1.1.0 
+    │ └─┬ is-fullwidth-code-point@1.0.0 
+    │   └── number-is-nan@1.0.1 
+    ├─┬ strip-ansi@3.0.1 
+    │ └── ansi-regex@2.1.1 
+    └── through@2.3.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/vuegen/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.06 took 3.5048s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected character '#' (1:78) on program #!/usr/bin/env node
+
+const fs = require( "fs" );
+const inquirer = require( "inquirer" );
+
+const buildComponent = require( "./src/buildComponent" );
+const questions = require( "./src/questions" );
+
+function buildWithOptions( options ) {
+
+	const template = buildComponent( options );
+	const path = `${ options.outDir || "./" }${ options.componentName }.vue`;
+
+	try {
+		fs.writeFile( path, template );
+		console.log( `Created ${ path }` );
+	} catch ( err ) {
+		console.error( `There was an error creating the file: ${ err }` );
+	}
+}
+
+try {
+	const options = require( `${ process.cwd() }/.vuegen.js` );
+
+	if ( process.argv[ 2 ] ) {
+		options.componentName = process.argv[ 2 ];
+		buildWithOptions( options );
+	} else {
+		inquirer
+			.prompt( [ questions.componentName ] )
+			.then( answers => {
+				options.componentName = answers.componentName;
+				buildWithOptions( options );
+			} );
+	}
+
+} catch ( err ) {
+	console.log( ".vuegen.js not found, prompting." );
+	inquirer
+		.prompt( Object.keys( questions ).map( q => questions[ q ] ) )
+		.then( answers => {
+			const path = process.argv[ 2 ] ? `${ process.argv[ 2 ] }${ answers.componentName }.vue` : `${ answers.componentName }.vue`;
+			try {
+				fs.writeFile( path, buildComponent( answers ) );
+				console.log( `Created ${ path }` );
+			} catch ( err ) {
+				console.error( `There was an error creating the file: ${ err }` );
+			}
+		} );
+}
+ at SyntaxError: Unexpected character '#' (1:78)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2756:10)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:15)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:918:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

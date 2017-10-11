@@ -1,0 +1,45 @@
+
+> ws@0.4.31 install /root/Targets/brainfock/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/root/Targets/brainfock/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+bufferutil.target.mk:96: recipe for target 'Release/obj.target/bufferutil/src/bufferutil.o' failed
+make: Leaving directory '/root/Targets/brainfock/node_modules/ws/build'
+
+> bcrypt@0.8.7 install /root/Targets/brainfock/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/brainfock/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/bcrypt_lib.node
+  COPY Release/bcrypt_lib.node
+make: Leaving directory '/root/Targets/brainfock/node_modules/bcrypt/build'
+
+> node-sass@3.13.1 install /root/Targets/brainfock/node_modules/node-sass
+> node scripts/install.js
+
+Cached binary found at /root/.npm/node-sass/3.13.1/linux-x64-51_binding.node
+
+> history@1.17.0 postinstall /root/Targets/brainfock/node_modules/history
+> node ./npm-scripts/postinstall.js
+
+
+> node-sass@3.13.1 postinstall /root/Targets/brainfock/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /root/Targets/brainfock/node_modules/node-sass/vendor/linux-x64-51/binding.node
+Testing binary
+Binary is fine
+
+> react-router@1.0.3 postinstall /root/Targets/brainfock/node_modules/react-router
+> node ./npm-scripts/postinstall.js
+
+
+> brainfock@0.27.1-alpha.1 postinstall /root/Targets/brainfock/node_modules/brainfock
+> gulp build --production
+
+[11:41:30] Failed to load external module babel-register
+[11:41:30] Requiring external module babel-core/register

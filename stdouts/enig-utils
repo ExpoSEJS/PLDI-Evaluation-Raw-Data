@@ -1,0 +1,150 @@
+/root/Targets/enig-utils
+└─┬ enig-utils@0.0.5 
+  ├── async@1.5.2 
+  ├── jquery@2.2.0 
+  ├── lodash.isempty@4.4.0 
+  └── swiper@3.4.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/enig-utils/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.04 took 2.9652s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (56:44) on program import isEmpty from '../node_modules/lodash.isempty';
+import $ from '../node_modules/jquery/dist/jquery';
+import Swiper from '../node_modules/swiper/dist/js/swiper.min';
+
+export default class utils
+{
+    constructor( ){
+        this.windowWidth = $(window).width();
+    }
+
+    getSize(){
+        if( this.windowWidth < 767 ) return "isMobile"
+        else if( this.windowWidth > 767 && this.windowWidth < 1024 ) return "isTablet"
+        else return "isDesktop"
+    }
+
+    // getProperty( property ){
+    //     console.log(Modernizr.property)
+    //     return Modernizr.property;
+    //     console.log(Modernizr.property)
+    //     return Modernizr.property;
+    // }
+
+    positionRelative( $item, $container, values, typePosition ){
+        if( isEmpty(values) ) return console.info("Parametros insuficientes");
+
+        let top = typeof values.top == 'undefined' ? '' : parseFloat(values.top),
+            left = typeof values.left == 'undefined' ? '' : parseFloat(values.left),
+            bottom = typeof values.bottom == 'undefined' ? '' : parseFloat(values.bottom),
+            right = typeof values.right == 'undefined' ? '' : parseFloat(values.right);
+
+        $container.css({
+            position: 'relative'
+        });
+
+        $item.css({
+            position : typePosition,
+            left     : left,
+            top      : top,
+            right    : right,
+            bottom   : bottom,
+            opacity  : 1
+        });
+    }
+
+    generateSlide( item, options ){
+
+        let swiper = new Swiper(item, options);
+
+        return swiper;
+    }
+
+    loadResources( modules ){
+        let paths = [];
+
+        addPaths( module, paths, callback ) =>
+        {
+            let basePath = module.folder;
+
+            paths[module.name] = [];
+
+            for(var i = 0; i < module.steps; i++)
+            {
+                posImage = i < 10 ? '00' + i + '.png' : i < 100 ?  posImage = '0' + i + '.png' :  posImage = '0' + i + '.png';
+                paths[module.name].push( basePath + posImage );
+                pathAdd();
+            };
+
+            pathAdd() =>{
+                if( paths[module.name].length === module.steps ){
+                  if( typeof callback === 'function' ) callback();
+                }
+            }
+        }
+
+        load( moduleToLoad, callback ) =>
+        {
+            let newImages = [],
+                loadedimages = 0,
+                errorimages = 0,
+                moduleToLoad = ( typeof moduleToLoad!="object" ) ? [moduleToLoad] : moduleToLoad;
+
+            for ( let i = 0; i < moduleToLoad.length; i++ )
+            {
+                newImages[i]= new Image();
+                newImages[i].src = moduleToLoad[i];
+
+                newImages[i].onload = () =>
+                {
+                  imageLoaded();
+                }
+
+                newImages[i].onerror = () =>
+                {
+                    imageError();
+                }
+
+                imageLoaded() =>
+                {
+                  loadedimages++;
+                  if( loadedimages >= moduleToLoad.length )
+                  {
+                    if( typeof callback === 'function') callback();
+                  }
+                };
+
+                imageError() =>
+                {
+                  loadedimages++;
+                  console.log("Error al cargar imagen")
+                };
+            }
+        };
+    }
+}
+ at SyntaxError: Unexpected token (56:44)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2075:10)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

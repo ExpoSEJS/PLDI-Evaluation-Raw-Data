@@ -1,0 +1,141 @@
+/root/Targets/amdify
+└─┬ amdify@0.0.26 
+  ├── async@0.2.10 
+  ├── asyngleton@0.0.2 
+  ├── crc32@0.2.2 
+  ├── ejs@0.8.8 
+  ├── flatten@0.0.1 
+  ├── mkdirp@0.3.5 
+  ├── outcome@0.0.18 
+  ├── resolve@0.3.1 
+  ├── stepc@0.0.3 
+  ├── structr@0.2.4 
+  ├── toarray@0.0.1 
+  └── underscore@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/amdify/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","join","RegExp","sort","reduce","apply","pop","stringify","toString","lastIndexOf","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0659 took 17.769s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to arguments in strict mode (7:28) on program (function(locals, filters, escape, rethrow) { var __stack = { lineno: 1, input: "\n<% \n    var search;\n    if(~content.search(search = /[\\s\\r\\t\\n]+define\\(/g)) {\n        content = content.replace(search, \"\\n(function(){})(\");\n    }\n%>\n\ndefine([<%-[\"\\\"require\\\"\"].concat(dependencies.map(function(dep) {\n  return \"\\\"\" + dep.name.replace(\".js\", \"\") + \"\\\"\";\n})).join(\", \") %>], function(require) {\n\n    var module        = { exports: {} },\n    exports       = module.exports,\n    define        = undefined,\n    global        = window;\n\n    <%\n      dependencies.forEach(function(dep) {\n        content = content.replace(new RegExp(\"[\\\"\\']\"+dep.relPath+\"[\\\"\\']\", \"g\"), \"\\\"\"+dep.name.replace(\".js\", \"\")+\"\\\"\")\n      });\n    %>\n\n    <%-content %>\n\n    return module.exports;\n});", filename: undefined };
+function rethrow(err, str, filename, lineno) {
+                jalangiLabel612:
+                    while (true) {
+                        try {
+                            J$.Fe(1401, arguments.callee, this, arguments);
+                            arguments = J$.N(1409, 'arguments', arguments, 4);
+                            err = J$.N(1417, 'err', err, 4);
+                            str = J$.N(1425, 'str', str, 4);
+                            filename = J$.N(1433, 'filename', filename, 4);
+                            lineno = J$.N(1441, 'lineno', lineno, 4);
+                            J$.N(1449, 'lines', lines, 0);
+                            J$.N(1457, 'start', start, 0);
+                            J$.N(1465, 'end', end, 0);
+                            J$.N(1473, 'context', context, 0);
+                            var lines = J$.X1(977, J$.W(969, 'lines', J$.M(873, J$.R(857, 'str', str, 0), 'split', 0)(J$.T(865, '\n', 21, false)), lines, 1)), start = J$.X1(993, J$.W(985, 'start', J$.M(913, J$.R(881, 'Math', Math, 2), 'max', 0)(J$.B(58, '-', J$.R(889, 'lineno', lineno, 0), J$.T(897, 3, 22, false), 0), J$.T(905, 0, 22, false)), start, 1)), end = J$.X1(1009, J$.W(1001, 'end', J$.M(961, J$.R(921, 'Math', Math, 2), 'min', 0)(J$.G(937, J$.R(929, 'lines', lines, 0), 'length', 0), J$.B(66, '+', J$.R(945, 'lineno', lineno, 0), J$.T(953, 3, 22, false), 0)), end, 1));
+                            var context = J$.X1(1241, J$.W(1233, 'context', J$.M(1225, J$.M(1209, J$.M(1041, J$.R(1017, 'lines', lines, 0), 'slice', 0)(J$.R(1025, 'start', start, 0), J$.R(1033, 'end', end, 0)), 'map', 0)(J$.T(1201, function (line, i) {
+                                jalangiLabel611:
+                                    while (true) {
+                                        try {
+                                            J$.Fe(1161, arguments.callee, this, arguments);
+                                            arguments = J$.N(1169, 'arguments', arguments, 4);
+                                            line = J$.N(1177, 'line', line, 4);
+                                            i = J$.N(1185, 'i', i, 4);
+                                            J$.N(1193, 'curr', curr, 0);
+                                            var curr = J$.X1(1081, J$.W(1073, 'curr', J$.B(82, '+', J$.B(74, '+', J$.R(1049, 'i', i, 0), J$.R(1057, 'start', start, 0), 0), J$.T(1065, 1, 22, false), 0), curr, 1));
+                                            return J$.X1(1153, J$.Rt(1145, J$.B(114, '+', J$.B(106, '+', J$.B(98, '+', J$.X1(7129, J$.C(24, J$.B(90, '==', J$.R(1089, 'curr', curr, 0), J$.R(1097, 'lineno', lineno, 0), 0))) ? J$.T(1105, ' >> ', 21, false) : J$.T(1113, '    ', 21, false), J$.R(1121, 'curr', curr, 0), 0), J$.T(1129, '| ', 21, false), 0), J$.R(1137, 'line', line, 0), 0)));
+                                        } catch (J$e) {
+                                            J$.Ex(7137, J$e);
+                                        } finally {
+                                            if (J$.Fr(7145))
+                                                continue jalangiLabel611;
+                                            else
+                                                return J$.Ra();
+                                        }
+                                    }
+                            }, 12, false, 1161)), 'join', 0)(J$.T(1217, '\n', 21, false)), context, 1));
+                            J$.X1(1273, J$.P(1265, J$.R(1249, 'err', err, 0), 'path', J$.R(1257, 'filename', filename, 0), 0));
+                            J$.X1(1369, J$.P(1361, J$.R(1281, 'err', err, 0), 'message', J$.B(162, '+', J$.B(154, '+', J$.B(146, '+', J$.B(138, '+', J$.B(130, '+', J$.B(122, '+', J$.C(32, J$.R(1289, 'filename', filename, 0)) ? J$._() : J$.T(1297, 'ejs', 21, false), J$.T(1305, ':', 21, false), 0), J$.R(1313, 'lineno', lineno, 0), 0), J$.T(1321, '\n', 21, false), 0), J$.R(1329, 'context', context, 0), 0), J$.T(1337, '\n\n', 21, false), 0), J$.G(1353, J$.R(1345, 'err', err, 0), 'message', 0), 0), 0));
+                            throw J$.X1(1393, J$.Th(1385, J$.R(1377, 'err', err, 0)));
+                        } catch (J$e) {
+                            J$.Ex(7153, J$e);
+                        } finally {
+                            if (J$.Fr(7161))
+                                continue jalangiLabel612;
+                            else
+                                return J$.Ra();
+                        }
+                    }
+            }
+try {
+var buf = [];
+with (locals || {}) { (function(){ 
+ buf.push('\n');__stack.lineno=2; 
+    var search;
+    if(~content.search(search = /[\s\r\t\n]+define\(/g)) {
+        content = content.replace(search, "\n(function(){})(");
+    }
+; buf.push('\n\ndefine([', (__stack.lineno=9, ["\"require\""].concat(dependencies.map(function(dep) {
+  return "\"" + dep.name.replace(".js", "") + "\"";
+})).join(", ") ), '], function(require) {\n\n    var module        = { exports: {} },\n    exports       = module.exports,\n    define        = undefined,\n    global        = window;\n\n    ');__stack.lineno=18;
+      dependencies.forEach(function(dep) {
+        content = content.replace(new RegExp("[\"\']"+dep.relPath+"[\"\']", "g"), "\""+dep.name.replace(".js", "")+"\"")
+      });
+    ; buf.push('\n\n    ', (__stack.lineno=24, content ), '\n\n    return module.exports;\n});'); })();
+} 
+return buf.join('');
+} catch (err) {
+  rethrow(err, __stack.input, __stack.filename, __stack.lineno);
+} }) at SyntaxError: Assigning to arguments in strict mode (7:28)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1472:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1606:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseTryStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:897:23)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:702:31)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/amdify/node_modules/amdify/lib/index.js. Coverage (Term): 50% Coverage (LOC): 47%
+*- File /root/Targets/amdify/node_modules/structr/lib/index.js. Coverage (Term): 43% Coverage (LOC): 56%
+*- File /root/Targets/amdify/node_modules/asyngleton/lib/index.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/amdify/node_modules/amdify/lib/analyzeDeps.js. Coverage (Term): 8% Coverage (LOC): 4%
+*- File /root/Targets/amdify/node_modules/outcome/lib/index.js. Coverage (Term): 29% Coverage (LOC): 46%
+*- File /root/Targets/amdify/node_modules/stepc/lib/step.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /root/Targets/amdify/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/amdify/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/amdify/node_modules/flatten/index.js. Coverage (Term): 19% Coverage (LOC): 31%
+*- File /root/Targets/amdify/node_modules/amdify/lib/pathInfo.js. Coverage (Term): 7% Coverage (LOC): 3%
+*- File /root/Targets/amdify/node_modules/resolve/index.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /root/Targets/amdify/node_modules/resolve/lib/core.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/amdify/node_modules/resolve/lib/async.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/amdify/node_modules/resolve/lib/sync.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/amdify/node_modules/crc32/lib/crc32.js. Coverage (Term): 33% Coverage (LOC): 45%
+*- File /root/Targets/amdify/node_modules/amdify/lib/dependencies.js. Coverage (Term): 41% Coverage (LOC): 43%
+*- File /root/Targets/amdify/node_modules/amdify/lib/bundle.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/amdify/node_modules/toarray/index.js. Coverage (Term): 37% Coverage (LOC): 57%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/index.js. Coverage (Term): 58% Coverage (LOC): 67%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/concat.js. Coverage (Term): 30% Coverage (LOC): 47%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/decor.js. Coverage (Term): 31% Coverage (LOC): 48%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/none.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/base.js. Coverage (Term): 49% Coverage (LOC): 75%
+*- File /root/Targets/amdify/node_modules/amdify/lib/transformers/template.js. Coverage (Term): 11% Coverage (LOC): 17%
+*- File /root/Targets/amdify/node_modules/amdify/lib/templates/index.js. Coverage (Term): 69% Coverage (LOC): 75%
+*- File /root/Targets/amdify/node_modules/amdify/lib/templates/renderer.js. Coverage (Term): 89% Coverage (LOC): 100%
+*- File /root/Targets/amdify/node_modules/ejs/lib/ejs.js. Coverage (Term): 48% Coverage (LOC): 56%
+*- File /root/Targets/amdify/node_modules/ejs/lib/utils.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/amdify/node_modules/ejs/lib/filters.js. Coverage (Term): 20% Coverage (LOC): 54%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

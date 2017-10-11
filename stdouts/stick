@@ -1,0 +1,702 @@
+
+> fibers@2.0.0 install /root/Targets/stick/node_modules/fibers
+> node build.js || nodejs build.js
+
+make: Entering directory '/root/Targets/stick/node_modules/fibers/build'
+  CXX(target) Release/obj.target/fibers/src/fibers.o
+  CXX(target) Release/obj.target/fibers/src/coroutine.o
+  CC(target) Release/obj.target/fibers/src/libcoro/coro.o
+  SOLINK_MODULE(target) Release/obj.target/fibers.node
+  COPY Release/fibers.node
+make: Leaving directory '/root/Targets/stick/node_modules/fibers/build'
+Installed in `/root/Targets/stick/node_modules/fibers/bin/linux-x64-51/fibers.node`
+/root/Targets/stick
+└─┬ stick@0.2.14 
+  ├─┬ common-node@0.10.20 
+  │ └── fibers@2.0.0 
+  └── common-utils@0.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/stick/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0665 took 8.8675s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Assigning to rvalue (573:7) on program var binary = require("binary");
+var ByteArray = binary.ByteArray, ByteString = binary.ByteString;
+var MemoryStream = require("io").MemoryStream;
+var Buffer = require("buffer").Buffer;
+var strings = require("common-utils/strings");
+
+/**
+ * A utility class for implementing JSGI response filters. Each part of the
+ * response is first passed to the filter function. If the filter function
+ * returns a value, that value is passed on to the JSGI response stream.
+ *
+ * @param {Object}
+ *            body a JSGI response body
+ * @param {Function}
+ *            filter a filter function
+ */
+var ResponseFilter = exports.ResponseFilter = function(body, filter) {
+	/**
+	 * forEach function called by the JSGI connector.
+	 *
+	 * @param {Function}
+	 *            fn the response handler callback function
+	 */
+	this.forEach = function(fn) {
+		body.forEach(function(block) {
+			var filtered = filter(block);
+			if (filtered != null) {
+				fn(filtered);
+			}
+		});
+	};
+}
+
+/**
+ * Returns an object for use as a HTTP header collection. The returned object
+ * provides methods for setting, getting, and deleting its properties in a
+ * case-insensitive and case-preserving way.
+ *
+ * This function can be used as mixin for an existing JavaScript object or as a
+ * constructor.
+ *
+ * @param {Object}
+ *            headers an existing JS object. If undefined, a new object is
+ *            created
+ */
+var Headers = exports.Headers = function(headers) {
+	// when is a duck a duck?
+	if (headers && headers.get && headers.set) {
+		return headers;
+	}
+
+	headers = headers || {};
+	var keys = {};
+	// populate internal lower case to original case map
+	for ( var key in headers) {
+		keys[String(key).toLowerCase()] = key;
+	}
+
+	/**
+	 * Get the value of the header with the given name
+	 *
+	 * @param {String}
+	 *            name the header name
+	 * @returns the header value
+	 * @name Headers.instance.get
+	 */
+	Object.defineProperty(headers, "get", {
+		value : function(key) {
+			var value = this[key];
+			if (value === undefined) {
+				value = (key = keys[key.toLowerCase()]) && this[key];
+			}
+			return value && value[0];
+		}
+	});
+
+	/**
+	 * Set the header with the given name to the given value.
+	 *
+	 * @param {String}
+	 *            name the header name
+	 * @param {String}
+	 *            value the header value
+	 * @name Headers.instance.set
+	 */
+	Object.defineProperty(headers, "set", {
+		value : function(key, value) {
+			var oldkey = keys[key.toLowerCase()];
+			if (oldkey) {
+				delete this[oldkey];
+			}
+			this[key] = [value];
+			keys[key.toLowerCase()] = key;
+		}
+	});
+
+	/**
+	 * Add a header with the given name and value.
+	 *
+	 * @param {String}
+	 *            name the header name
+	 * @param {String}
+	 *            value the header value
+	 * @name Headers.instance.add
+	 */
+	Object.defineProperty(headers, "add", {
+		value : function(key, value) {
+			if (this[key]) {
+				// shortcut
+				this[key].push(value);
+				return;
+			}
+			var lowerkey = key.toLowerCase();
+			var oldkey = keys[lowerkey];
+			if (oldkey) {
+				var tmp = this[oldkey];
+				tmp.push(value);
+				value = tmp;
+				if (key !== oldkey)
+					delete this[oldkey];
+			}
+			this[key] = value;
+			keys[lowerkey] = key;
+		}
+
+	});
+
+	/**
+	 * Queries whether a header with the given name is set
+	 *
+	 * @param {String}
+	 *            name the header name
+	 * @returns {Boolean} true if a header with this name is set
+	 * @name Headers.instance.contains
+	 */
+	Object.defineProperty(headers, "contains", {
+		value : function(key) {
+			return Boolean(this[key] !== undefined
+					|| (key = keys[key.toLowerCase()])
+					&& this[key] !== undefined);
+		}
+	});
+
+	/**
+	 * Unsets any cookies with the given name
+	 *
+	 * @param {String}
+	 *            name the header name
+	 * @name Headers.instance.unset
+	 */
+	Object.defineProperty(headers, "unset", {
+		value : function(key) {
+			key = key.toLowerCase();
+			if (key in keys) {
+				delete this[keys[key]]
+				delete keys[key];
+			}
+		}
+	});
+
+	/**
+	 * Returns a string representation of the headers in MIME format.
+	 *
+	 * @returns {String} a string representation of the headers
+	 * @name Headers.instance.toString
+	 */
+	Object.defineProperty(headers, "toString", {
+		value : function() {
+			var buffer = new Buffer();
+			for (var key in this) {
+				this[key].forEach(function(value) {
+					buffer.write(key).write(": ").writeln(value);
+				});
+			}
+			return buffer.toString();
+		}
+	});
+
+	return headers;
+};
+
+/**
+ * Get a parameter from a MIME header value. For example, calling this function
+ * with "Content-Type: text/plain; charset=UTF-8" and "charset" will return
+ * "UTF-8".
+ *
+ * @param {String}
+ *            headerValue a header value
+ * @param {String}
+ *            paramName a MIME parameter name
+ */
+var getMimeParameter = exports.getMimeParameter = function(headerValue,
+		paramName) {
+	if (!headerValue)
+		return null;
+	var start, end = 0;
+	paramName = paramName.toLowerCase();
+	while ((start = headerValue.indexOf(";", end)) > -1) {
+		end = headerValue.indexOf(";", ++start);
+		if (end < 0)
+			end = headerValue.length;
+		var eq = headerValue.indexOf("=", start);
+		if (eq > start && eq < end) {
+			var name = headerValue.slice(start, eq);
+			if (name.toLowerCase().trim() == paramName) {
+				var value = headerValue.slice(eq + 1, end).trim();
+				if (strings.startsWith(value, '"')
+						&& strings.endsWith(value, '"')) {
+					return value.slice(1, -1).replace('\\\\', '\\').replace(
+							'\\"', '"');
+				} else if (strings.startsWith(value, '<')
+						&& strings.endsWith(value, '>')) {
+					return value.slice(1, -1);
+				}
+
+				return value;
+			}
+		}
+	}
+	return null;
+}
+
+/**
+ * Encode an object's properties into an URL encoded string.
+ *
+ * @param {Object}
+ *            object an object
+ * @returns {String} a string containing the URL encoded properties of the
+ *          object
+ */
+var urlEncode = exports.urlEncode = function(object) {
+	var buf = new Buffer();
+	var key, value;
+	for (key in object) {
+		value = object[key];
+		if (value instanceof Array) {
+			for ( var i = 0; i < value.length; i++) {
+				if (buf.length)
+					buf.write("&");
+				buf.write(encodeURIComponent(key), "=",
+						encodeURIComponent(value[i]));
+			}
+		} else {
+			if (buf.length)
+				buf.write("&");
+			buf.write(encodeURIComponent(key), "=", encodeURIComponent(value));
+		}
+	}
+	return buf.toString();
+}
+
+/**
+* Creates value for the Set-Cookie header for creating a cookie with the given
+* name, value, and attributes.
+*
+* All arguments except for key and value are optional.
+* The days argument specifies the number of days until the cookie expires.
+* To delete a cookie immediately, set the days argument to 0. If days is
+* undefined or negative, the cookie is set for the current browser session.
+*
+* @example <pre>setCookie("username", "michi");
+* setCookie("password", "strenggeheim", 10,
+* {path: "/mypath", domain: ".mydomain.org"});</pre>
+*
+* @param {String} key the cookie name
+* @param {String} value the cookie value
+* @param {Number} days optional the number of days to keep the cookie.
+* If this is undefined or -1, the cookie is set for the current session.
+* If this is 0, the cookie will be deleted immediately.
+* @param {Object} options optional options argument which may contain the following properties:
+* <ul><li>path - the path on which to set the cookie (defaults to /)</li>
+* <li>domain - the domain on which to set the cookie (defaults to current domain)</li>
+* <li>secure - to only use this cookie for secure connections</li>
+* <li>httpOnly - to make the cookie inaccessible to client side scripts</li></ul>
+* @since 0.8
+* @return {String} the Set-Cookie header value
+*/
+var setCookie = exports.setCookie = function(key, value, days, options) {
+   if (value) {
+       // remove newline chars to prevent response splitting attack as value may be user-provided
+       value = value.replace(/[\r\n]/g, "");
+   }
+   var buffer = new Buffer(key, "=", value);
+   if (typeof days == "number" && days > -1) {
+       var expires = days == 0 ?
+               new Date(0) : new Date(Date.now() + days * 1000 * 60 * 60 * 24);
+       var cookieDateFormat = "EEE, dd-MMM-yyyy HH:mm:ss zzz";
+       buffer.write("; expires=");
+       buffer.write(dates.format(expires, cookieDateFormat, "en", "GMT"));
+   }
+   options = options || {};
+   var path = options.path || "/";
+   buffer.write("; path=", encodeURI(path));
+   if (options.domain) {
+       buffer.write("; domain=", options.domain.toLowerCase());
+   }
+   if (options.secure) {
+       buffer.write("; secure");
+   }
+   if (options.httpOnly) {
+       buffer.write("; HttpOnly");
+   }
+   return buffer.toString();
+}
+
+// character codes used for slicing and decoding
+var SPACE = " ".charCodeAt(0);
+var PERCENT = "%".charCodeAt(0);
+var AMPERSAND = "&".charCodeAt(0);
+var PLUS = "+".charCodeAt(0);
+var EQUALS = "=".charCodeAt(0);
+
+// character codes used for hex decoding
+var CHAR_0 = "0".charCodeAt(0);
+var CHAR_9 = "9".charCodeAt(0);
+var CHAR_A = "A".charCodeAt(0);
+var CHAR_F = "F".charCodeAt(0);
+var CHAR_a = "a".charCodeAt(0);
+var CHAR_f = "f".charCodeAt(0);
+
+// used for multipart parsing
+var HYPHEN = "-".charCodeAt(0);
+var CR = "\r".charCodeAt(0);
+var CRLF = new ByteString("\r\n", "ASCII");
+var EMPTY_LINE = new ByteString("\r\n\r\n", "ASCII");
+
+/**
+ * Find out whether the content type denotes a format this module can parse.
+ *
+ * @param {String}
+ *            contentType a HTTP request Content-Type header
+ * @returns true if the content type can be parsed as form data by this module
+ */
+var isUrlEncoded = exports.isUrlEncoded = function(contentType) {
+	return contentType
+			&& strings.startsWith(String(contentType).toLowerCase(),
+					"application/x-www-form-urlencoded");
+}
+
+/**
+ * Find out whether the content type denotes a format this module can parse.
+ *
+ * @param {String}
+ *            contentType a HTTP request Content-Type header
+ * @return true if the content type can be parsed as form data by this module
+ */
+var isFileUpload = exports.isFileUpload = function(contentType) {
+	return contentType
+			&& strings.startsWith(String(contentType).toLowerCase(),
+					"multipart/form-data");
+}
+
+/**
+ * Parse a string or binary object representing a query string or post data into
+ * a JavaScript object structure using the specified encoding.
+ *
+ * @param {Binary|String}
+ *            input a Binary object or string containing the URL-encoded
+ *            parameters
+ * @param {Object}
+ *            params optional parameter object to parse into. If undefined a new
+ *            object is created and returned.
+ * @param {String}
+ *            encoding a valid encoding name, defaults to UTF-8
+ * @returns the parsed parameter object
+ */
+var parseParameters = exports.parseParameters = function(input, params,
+		encoding) {
+	if (!input) {
+		return params || {};
+	} else if (typeof input === "string" || input instanceof ByteString) {
+		// stream.read() should really return ByteArray in the first place...
+		input = input.toByteArray();
+	}
+	params = params || {};
+	encoding = encoding || "UTF-8";
+	var inputs = input.split(AMPERSAND);
+	for ( var p in inputs) {
+		var param = inputs[p];
+		var s = param.split(EQUALS);
+		var name = s[0], value = s[1];
+		if (name !== undefined) {
+			name = decodeToString(name, encoding);
+			value = decodeToString(value || '', encoding);
+			mergeParameter(params, name.trim(), value);
+		}
+	}
+	return params;
+}
+
+/**
+ * Adds a value to a parameter object using a square bracket property syntax.
+ * For example, parameter <code>foo[bar][][baz]=hello</code> will result in
+ * object structure <code>{foo: {bar: [{baz : "hello"}]}}</code>.
+ *
+ * @param {Object}
+ *            params the top level parameter object
+ * @param {String}
+ *            name the parameter name
+ * @param {String}
+ *            value the parameter value
+ */
+var mergeParameter = exports.mergeParameter = function(params, name, value) {
+	// split "foo[bar][][baz]" into ["foo", "bar", "", "baz", ""]
+	if (name.match(/^[\w_\-\.]+(?:\[[^\]]*\]\s*)+$/)) {
+		var names = name.split(/\]\s*\[|\[|\]/).map(function(s) {
+			return s.trim();
+		}).slice(0, -1);
+		mergeParameterInternal(params, names, value);
+	} else {
+		// not matching the foo[bar] pattern, add param as is
+		params[name] = value;
+	}
+}
+
+function mergeParameterInternal(params, names, value) {
+	if (names.length == 1) {
+		// a simple property - push or set depending on params' type
+		Array.isArray(params) ? params.push(value) : params[names[0]] = value;
+	} else {
+		// we have a property path - consume first token and recurse
+		var name = names.shift();
+		if (names[0]) {
+			// foo[bar] - parse as object property
+			var obj = params[name];
+			if (!(obj instanceof Object)) {
+				obj = {};
+				Array.isArray(params) ? params.push(obj) : params[name] = obj;
+			}
+			mergeParameterInternal(obj, names, value);
+		} else {
+			// foo[] - parse as array
+			var array = params[name];
+			if (!Array.isArray(array)) {
+				array = array == null ? [] : [ array ];
+				Array.isArray(params) ? params.push(array)
+						: params[name] = array;
+			}
+			mergeParameterInternal(array, names, value);
+		}
+	}
+}
+
+// convert + to spaces, decode %ff hex sequences,
+// then decode to string using the specified encoding.
+function decodeToString(bytes, encoding) {
+	if (!(bytes instanceof ByteArray))
+		bytes = bytes.toByteArray();
+	var k = 0;
+	while ((k = bytes.indexOf(PLUS, k)) > -1) {
+		bytes.set(k++, SPACE);
+	}
+	var i, j = 0;
+	while ((i = bytes.indexOf(PERCENT, j)) > -1) {
+		j = i;
+		while (bytes.get(i) == PERCENT && i++ <= bytes.length - 3) {
+			bytes.set(j++, (convertHexDigit(bytes.get(i++)) << 4)
+					+ convertHexDigit(bytes.get(i++)));
+		}
+		if (i < bytes.length) {
+			//bytes.copy(i, bytes.length, bytes, j);
+			for(var k = i, l = j; k < bytes.length; k ++, l ++)
+				bytes.set(l, bytes.get(k));
+		}
+		bytes.length -= i - j;
+	}
+	return bytes.decodeToString(encoding);
+}
+
+function convertHexDigit(byte) {
+	if (byte >= CHAR_0 && byte <= CHAR_9)
+		return byte - CHAR_0;
+	if (byte >= CHAR_a && byte <= CHAR_f)
+		return byte - CHAR_a + 10;
+	if (byte >= CHAR_A && byte <= CHAR_F)
+		return byte - CHAR_A + 10;
+	return 0;
+}
+
+/**
+ * Parses a multipart MIME input stream. Parses a multipart MIME input stream.
+ *
+ * @param {Object}
+ *            request the JSGI request object
+ * @param {Object}
+ *            params the parameter object to parse into. If not defined a new
+ *            object is created and returned.
+ * @param {string}
+ *            encoding optional encoding to apply to non-file parameters.
+ *            Defaults to "UTF-8".
+ * @param {function}
+ *            streamFactory factory function to create streams for mime parts
+ * @returns {Object} the parsed parameter object
+ */
+var parseFileUpload = exports.parseFileUpload = function(request, params,
+		encoding, streamFactory) {
+	params = params || {};
+	encoding = encoding || "UTF-8";
+	streamFactory = streamFactory || BufferFactory;
+	var boundary = getMimeParameter(Headers(request.headers).get("content-type"), "boundary");
+	if (!boundary) {
+		return params;
+	}
+	boundary = new ByteArray("--" + boundary, "ASCII");
+	var input = request.input;
+	var buflen = 8192;
+	var refillThreshold = 1024; // minimum fill to start parsing
+	var buffer = new ByteArray(buflen); // input buffer
+	var data; // data object for current mime part properties
+	var stream; // stream to write current mime part to
+	var eof = false;
+	// the central variables for managing the buffer:
+	// current position and end of read bytes
+	var position = 0, limit = 0;
+
+	var refill = function(waitForMore) {
+		if (position > 0) {
+			// "compact" buffer
+			if (position < limit) {
+				buffer.copy(position, limit, buffer, 0);
+				limit -= position;
+				position = 0;
+			} else {
+				position = limit = 0;
+			}
+		}
+		// read into buffer starting at limit
+		var totalRead = 0;
+		do {
+			var read = input.readInto(buffer, limit, buffer.length);
+			if (read > -1) {
+				totalRead += read;
+				limit += read;
+			} else {
+				eof = true;
+			}
+		} while (waitForMore && !eof && limit < buffer.length);
+		return totalRead;
+	};
+
+	refill();
+
+	while (position < limit) {
+		if (!data) {
+			// refill buffer if we don't have enough fresh bytes
+			if (!eof && limit - position < refillThreshold) {
+				refill(true);
+			}
+			var boundaryPos = buffer.indexOf(boundary, position, limit);
+			if (boundaryPos < 0) {
+				throw new Error("boundary not found in multipart stream");
+			}
+			// move position past boundary to beginning of multipart headers
+			position = boundaryPos + boundary.length + CRLF.length;
+			if (buffer[position - 2] == HYPHEN
+					&& buffer[position - 1] == HYPHEN) {
+				// reached final boundary
+				break;
+			}
+			var b = buffer.indexOf(EMPTY_LINE, position, limit);
+			if (b < 0) {
+				throw new Error("could not parse headers");
+			}
+			data = {};
+			var headers = [];
+			buffer.slice(position, b).split(CRLF).forEach(
+					function(line) {
+						line = line.decodeToString(encoding);
+						// unfold multiline headers
+						if ((strings.startsWith(line, " ") || strings
+								.startsWith(line, "\t"))
+								&& headers.length) {
+							arrays.peek(headers) += line;
+						} else {
+							headers.push(line);
+						}
+					});
+			for ( var h in headers) {
+				var header = headers[h];
+				if (strings.startsWith(header.toLowerCase(),
+						"content-disposition:")) {
+					data.name = getMimeParameter(header, "name");
+					data.filename = getMimeParameter(header, "filename");
+				} else if (strings.startsWith(header.toLowerCase(),
+						"content-type:")) {
+					data.contentType = header.substring(13).trim();
+				}
+			}
+			// move position after the empty line that separates headers from
+			// body
+			position = b + EMPTY_LINE.length;
+			// create stream for mime part
+			stream = streamFactory(data, encoding);
+		}
+		boundaryPos = buffer.indexOf(boundary, position, limit);
+		if (boundaryPos < 0) {
+			// no terminating boundary found, slurp bytes and check for
+			// partial boundary at buffer end which we know starts with "\r\n--"
+			// but we just check for \r to keep it simple.
+			var cr = buffer.indexOf(CR, Math.max(position, limit
+					- boundary.length - 2), limit);
+			var end = (cr < 0) ? limit : cr;
+			stream.write(buffer, position, end);
+			// stream.flush();
+			position = end;
+			if (!eof) {
+				refill();
+			}
+		} else {
+			// found terminating boundary, complete data and merge into
+			// parameters
+			stream.write(buffer, position, boundaryPos - 2);
+			stream.close();
+			position = boundaryPos;
+			if (typeof data.value === "string") {
+				mergeParameter(params, data.name, data.value);
+			} else {
+				mergeParameter(params, data.name, data);
+			}
+			data = stream = null;
+		}
+	}
+	return params;
+}
+
+/**
+ * A stream factory that stores file upload in a memory buffer. This function is
+ * not meant to be called directly but to be passed as streamFactory argument to
+ * [parseFileUpload()](#parseFileUpload).
+ *
+ * The buffer is stored in the `value` property of the parameter's data object.
+ *
+ * @param {Object}
+ *            data
+ * @param {String}
+ *            encoding
+ */
+var BufferFactory = exports.BufferFactory = function(data, encoding) {
+	var isFile = data.filename != null;
+	var stream = new MemoryStream();
+	var close = stream.close;
+	// overwrite stream.close to set the part's content in data
+	stream.close = function() {
+		close.apply(stream);
+		// set value property to binary for file uploads, string for form data
+		if (isFile) {
+			data.value = stream.content;
+		} else {
+			data.value = stream.content.decodeToString(encoding);
+		}
+	};
+	return stream;
+}
+ at SyntaxError: Assigning to rvalue (573:7)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$2.checkLVal (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1509:12)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1606:12)
+    at Parser.pp$3.parseExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1573:21)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:727:47)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:709:33)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseIfStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:824:28)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/stick/node_modules/stick/lib/stick.js. Coverage (Term): 4% Coverage (LOC): 5%
+*- File /root/Targets/stick/node_modules/stick/lib/helpers.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/stick/node_modules/common-utils/objects.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

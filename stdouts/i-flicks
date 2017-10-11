@@ -1,0 +1,488 @@
+
+> bcrypt@0.8.7 install /root/Targets/i-flicks/node_modules/bcrypt
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/i-flicks/node_modules/bcrypt/build'
+  CXX(target) Release/obj.target/bcrypt_lib/src/blowfish.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt.o
+  CXX(target) Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/bcrypt_lib.node
+  COPY Release/bcrypt_lib.node
+make: Leaving directory '/root/Targets/i-flicks/node_modules/bcrypt/build'
+/root/Targets/i-flicks
+└─┬ i-flicks@1.0.5 
+  ├─┬ archiver@0.14.4 
+  │ ├── async@0.9.2 
+  │ ├── buffer-crc32@0.2.13 
+  │ ├─┬ glob@4.3.5 
+  │ │ ├─┬ inflight@1.0.6 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├─┬ minimatch@2.0.10 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ └── once@1.4.0 
+  │ ├── lazystream@0.1.0 
+  │ ├── lodash@3.2.0 
+  │ ├─┬ readable-stream@1.0.34 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@0.0.1 
+  │ │ └── string_decoder@0.10.31 
+  │ ├─┬ tar-stream@1.1.5 
+  │ │ ├── bl@0.9.5 
+  │ │ ├── end-of-stream@1.4.0 
+  │ │ └── xtend@4.0.1 
+  │ └─┬ zip-stream@0.5.2 
+  │   └─┬ compress-commons@0.2.9 
+  │     ├── crc32-stream@0.3.4 
+  │     └── node-int64@0.3.3 
+  ├─┬ bcrypt@0.8.7 
+  │ ├── bindings@1.2.1 
+  │ └── nan@2.3.5 
+  ├─┬ body-parser@1.12.4 
+  │ ├── bytes@1.0.0 
+  │ ├── content-type@1.0.4 
+  │ ├── debug@2.2.0 
+  │ ├── depd@1.0.1 
+  │ ├── iconv-lite@0.4.8 
+  │ ├─┬ on-finished@2.2.1 
+  │ │ └── ee-first@1.1.0 
+  │ ├── qs@2.4.2 
+  │ ├─┬ raw-body@2.0.2 
+  │ │ └── bytes@2.1.0 
+  │ └─┬ type-is@1.6.15 
+  │   └── media-typer@0.3.0 
+  ├── classlist-polyfill@1.2.0 
+  ├─┬ compression@1.7.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ └── negotiator@0.6.1 
+  │ ├── bytes@3.0.0 
+  │ ├─┬ compressible@2.0.11 
+  │ │ └── mime-db@1.30.0 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── on-headers@1.0.1 
+  │ ├── safe-buffer@5.1.1 
+  │ └── vary@1.1.2 
+  ├─┬ connect-nedb-session-two@1.0.3 
+  │ └─┬ nedb@0.11.1 
+  │   ├── async@0.2.10 
+  │   ├── binary-search-tree@0.2.4 
+  │   └── mkdirp@0.3.5 
+  ├─┬ cookie-parser@1.3.5 
+  │ ├── cookie@0.1.3 
+  │ └── cookie-signature@1.0.6 
+  ├─┬ debug@2.1.3 
+  │ └── ms@0.7.0 
+  ├─┬ decompress-zip@0.2.1 
+  │ ├─┬ binary@0.3.0 
+  │ │ ├── buffers@0.1.1 
+  │ │ └─┬ chainsaw@0.1.0 
+  │ │   └── traverse@0.3.9 
+  │ ├── graceful-fs@4.1.11 
+  │ ├── mkpath@0.1.0 
+  │ ├─┬ nopt@3.0.6 
+  │ │ └── abbrev@1.1.1 
+  │ ├── q@1.5.0 
+  │ ├── readable-stream@1.1.14 
+  │ └─┬ touch@0.0.3 
+  │   └── nopt@1.0.10 
+  ├── es6-promise@2.3.0 
+  ├─┬ express@4.12.4 
+  │ ├─┬ accepts@1.2.13 
+  │ │ └── negotiator@0.5.3 
+  │ ├── content-disposition@0.5.0 
+  │ ├── cookie@0.1.2 
+  │ ├── debug@2.2.0 
+  │ ├── escape-html@1.0.1 
+  │ ├─┬ etag@1.6.0 
+  │ │ └── crc@3.2.1 
+  │ ├─┬ finalhandler@0.3.6 
+  │ │ └── debug@2.2.0 
+  │ ├── fresh@0.2.4 
+  │ ├── merge-descriptors@1.0.0 
+  │ ├── methods@1.1.2 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.3 
+  │ ├─┬ proxy-addr@1.0.10 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.0.5 
+  │ ├── range-parser@1.0.3 
+  │ ├─┬ send@0.12.3 
+  │ │ ├── debug@2.2.0 
+  │ │ ├── destroy@1.0.3 
+  │ │ └── mime@1.3.4 
+  │ ├── serve-static@1.9.3 
+  │ ├── utils-merge@1.0.0 
+  │ └── vary@1.0.1 
+  ├─┬ express-session@1.15.6 
+  │ ├── cookie@0.3.1 
+  │ ├── crc@3.4.4 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├─┬ uid-safe@2.1.5 
+  │ │ └── random-bytes@1.0.0 
+  │ └── utils-merge@1.0.1 
+  ├── fetch-polyfill@0.8.2 
+  ├─┬ fluent-ffmpeg@2.1.2 
+  │ └─┬ which@1.3.0 
+  │   └── isexe@2.0.0 
+  ├─┬ form-data@1.0.1 
+  │ ├─┬ async@2.5.0 
+  │ │ └── lodash@4.17.4 
+  │ ├─┬ combined-stream@1.0.5 
+  │ │ └── delayed-stream@1.0.0 
+  │ └── mime-types@2.1.17 
+  ├─┬ gm@1.23.0 
+  │ ├── array-parallel@0.1.3 
+  │ ├── array-series@0.1.5 
+  │ ├─┬ cross-spawn@4.0.2 
+  │ │ └─┬ lru-cache@4.1.1 
+  │ │   ├── pseudomap@1.0.2 
+  │ │   └── yallist@2.1.2 
+  │ └── debug@2.2.0 
+  ├─┬ hbs@2.9.0 
+  │ ├─┬ handlebars@2.0.0 
+  │ │ ├─┬ optimist@0.3.7 
+  │ │ │ └── wordwrap@0.0.3 
+  │ │ └─┬ uglify-js@2.3.6 
+  │ │   ├── async@0.2.10 
+  │ │   └─┬ source-map@0.1.43 
+  │ │     └── amdefine@1.0.1 
+  │ └─┬ walk@2.2.1 
+  │   └─┬ forEachAsync@2.2.1 
+  │     └── sequence@2.2.1 
+  ├── html5-history-api@4.2.8 
+  ├── marked@0.3.6 
+  ├─┬ mkdirp@0.5.1 
+  │ └── minimist@0.0.8 
+  ├─┬ morgan@1.5.3 
+  │ ├── basic-auth@1.0.4 
+  │ └── debug@2.2.0 
+  ├─┬ mssql@2.5.0 
+  │ ├── generic-pool@2.5.4 
+  │ ├─┬ promise@7.3.1 
+  │ │ └── asap@2.0.6 
+  │ └─┬ tedious@1.13.2 
+  │   ├─┬ babel-runtime@5.8.38 
+  │   │ └── core-js@1.2.7 
+  │   ├── big-number@0.3.1 
+  │   ├── bl@1.2.1 
+  │   ├── iconv-lite@0.4.19 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── sprintf@0.1.5 
+  ├─┬ multer@0.1.8 
+  │ ├─┬ busboy@0.2.14 
+  │ │ ├─┬ dicer@0.2.5 
+  │ │ │ ├── readable-stream@1.1.14 
+  │ │ │ └── streamsearch@0.1.2 
+  │ │ └── readable-stream@1.1.14 
+  │ ├── mkdirp@0.3.5 
+  │ ├── qs@1.2.2 
+  │ └─┬ type-is@1.5.7 
+  │   └─┬ mime-types@2.0.14 
+  │     └── mime-db@1.12.0 
+  ├─┬ nedb@1.8.0 
+  │ ├── async@0.2.10 
+  │ ├── binary-search-tree@0.2.5 
+  │ ├─┬ localforage@1.5.0 
+  │ │ └─┬ lie@3.0.2 
+  │ │   ├─┬ es3ify@0.1.4 
+  │ │   │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
+  │ │   │ ├─┬ jstransform@3.0.0 
+  │ │   │ │ ├── base62@0.1.1 
+  │ │   │ │ └── source-map@0.1.31 
+  │ │   │ └── through@2.3.8 
+  │ │   ├── immediate@3.0.6 
+  │ │   ├─┬ inline-process-browser@1.0.0 
+  │ │   │ ├─┬ falafel@1.2.0 
+  │ │   │ │ ├── acorn@1.2.2 
+  │ │   │ │ ├── foreach@2.0.5 
+  │ │   │ │ └── object-keys@1.0.11 
+  │ │   │ └── through2@0.6.5 
+  │ │   └─┬ unreachable-branch-transform@0.3.0 
+  │ │     ├── esmangle-evaluator@1.0.1 
+  │ │     └─┬ recast@0.10.43 
+  │ │       ├── ast-types@0.8.15 
+  │ │       ├── esprima-fb@15001.1001.0-dev-harmony-fb 
+  │ │       ├── private@0.1.7 
+  │ │       └── source-map@0.5.7 
+  │ └── underscore@1.4.4 
+  ├─┬ nodemailer@1.11.0 
+  │ ├─┬ libmime@1.2.0 
+  │ │ ├── iconv-lite@0.4.19 
+  │ │ ├── libbase64@0.1.0 
+  │ │ └── libqp@1.1.0 
+  │ ├─┬ mailcomposer@2.1.0 
+  │ │ └─┬ buildmail@2.0.0 
+  │ │   ├── addressparser@0.3.2 
+  │ │   └── needle@0.10.0 
+  │ ├── needle@0.11.0 
+  │ ├─┬ nodemailer-direct-transport@1.1.0 
+  │ │ └── smtp-connection@1.3.8 
+  │ └─┬ nodemailer-smtp-transport@1.1.0 
+  │   ├── clone@1.0.2 
+  │   └── nodemailer-wellknown@0.1.10 
+  ├─┬ nodemailer-mailgun-transport@1.3.5 
+  │ ├── async-series@0.0.1 
+  │ ├─┬ consolidate@0.14.5 
+  │ │ └── bluebird@3.5.0 
+  │ ├── lodash.pickby@4.6.0 
+  │ ├── lodash.some@4.6.0 
+  │ ├── lodash.startswith@4.2.1 
+  │ └─┬ mailgun-js@0.7.10 
+  │   ├── async@1.5.2 
+  │   ├── debug@2.2.0 
+  │   ├── inflection@1.7.2 
+  │   ├─┬ path-proxy@1.0.0 
+  │   │ └── inflection@1.3.8 
+  │   ├─┬ proxy-agent@2.0.0 
+  │   │ ├─┬ agent-base@2.1.1 
+  │   │ │ └── semver@5.0.3 
+  │   │ ├── http-proxy-agent@1.0.0 
+  │   │ ├── https-proxy-agent@1.0.0 
+  │   │ ├── lru-cache@2.6.5 
+  │   │ ├─┬ pac-proxy-agent@1.1.0 
+  │   │ │ ├─┬ get-uri@2.0.1 
+  │   │ │ │ ├── data-uri-to-buffer@1.2.0 
+  │   │ │ │ ├── file-uri-to-path@1.0.0 
+  │   │ │ │ ├─┬ ftp@0.3.10 
+  │   │ │ │ │ ├── readable-stream@1.1.14 
+  │   │ │ │ │ └── xregexp@2.0.0 
+  │   │ │ │ └─┬ readable-stream@2.3.3 
+  │   │ │ │   ├── isarray@1.0.0 
+  │   │ │ │   └── string_decoder@1.0.3 
+  │   │ │ └─┬ pac-resolver@2.0.0 
+  │   │ │   ├── co@3.0.6 
+  │   │ │   ├─┬ degenerator@1.0.4 
+  │   │ │   │ ├─┬ escodegen@1.9.0 
+  │   │ │   │ │ ├── esprima@3.1.3 
+  │   │ │   │ │ ├── estraverse@4.2.0 
+  │   │ │   │ │ ├── esutils@2.0.2 
+  │   │ │   │ │ ├─┬ optionator@0.8.2 
+  │   │ │   │ │ │ ├── deep-is@0.1.3 
+  │   │ │   │ │ │ ├── fast-levenshtein@2.0.6 
+  │   │ │   │ │ │ ├── levn@0.3.0 
+  │   │ │   │ │ │ ├── prelude-ls@1.1.2 
+  │   │ │   │ │ │ ├── type-check@0.3.2 
+  │   │ │   │ │ │ └── wordwrap@1.0.0 
+  │   │ │   │ │ └── source-map@0.5.7 
+  │   │ │   │ └── esprima@3.1.3 
+  │   │ │   ├── ip@1.0.1 
+  │   │ │   ├── netmask@1.0.6 
+  │   │ │   └── thunkify@2.1.2 
+  │   │ └─┬ socks-proxy-agent@2.1.1 
+  │   │   └─┬ socks@1.1.10 
+  │   │     ├── ip@1.1.5 
+  │   │     └── smart-buffer@1.1.15 
+  │   ├── q@1.4.1 
+  │   └── scmp@1.0.2 
+  ├─┬ passport@0.2.2 
+  │ ├── passport-strategy@1.0.0 
+  │ └── pause@0.0.1 
+  ├─┬ passport-http@0.2.2 
+  │ ├── passport@0.1.18 
+  │ └── pkginfo@0.2.3 
+  ├── passport-local@1.0.0 
+  ├── promise-polyfill@2.1.4 
+  ├─┬ request@2.83.0 
+  │ ├── aws-sign2@0.7.0 
+  │ ├── aws4@1.6.0 
+  │ ├── caseless@0.12.0 
+  │ ├── extend@3.0.1 
+  │ ├── forever-agent@0.6.1 
+  │ ├─┬ form-data@2.3.1 
+  │ │ └── asynckit@0.4.0 
+  │ ├─┬ har-validator@5.0.3 
+  │ │ ├─┬ ajv@5.2.3 
+  │ │ │ ├── co@4.6.0 
+  │ │ │ ├── fast-deep-equal@1.0.0 
+  │ │ │ ├── json-schema-traverse@0.3.1 
+  │ │ │ └─┬ json-stable-stringify@1.0.1 
+  │ │ │   └── jsonify@0.0.0 
+  │ │ └── har-schema@2.0.0 
+  │ ├─┬ hawk@6.0.2 
+  │ │ ├── boom@4.3.1 
+  │ │ ├─┬ cryptiles@3.1.2 
+  │ │ │ └── boom@5.2.0 
+  │ │ ├── hoek@4.2.0 
+  │ │ └── sntp@2.0.2 
+  │ ├─┬ http-signature@1.2.0 
+  │ │ ├── assert-plus@1.0.0 
+  │ │ ├─┬ jsprim@1.4.1 
+  │ │ │ ├── extsprintf@1.3.0 
+  │ │ │ ├── json-schema@0.2.3 
+  │ │ │ └── verror@1.10.0 
+  │ │ └─┬ sshpk@1.13.1 
+  │ │   ├── asn1@0.2.3 
+  │ │   ├── bcrypt-pbkdf@1.0.1 
+  │ │   ├── dashdash@1.14.1 
+  │ │   ├── ecc-jsbn@0.1.1 
+  │ │   ├── getpass@0.1.7 
+  │ │   ├── jsbn@0.1.1 
+  │ │   └── tweetnacl@0.14.5 
+  │ ├── is-typedarray@1.0.0 
+  │ ├── isstream@0.1.2 
+  │ ├── json-stringify-safe@5.0.1 
+  │ ├── oauth-sign@0.8.2 
+  │ ├── performance-now@2.1.0 
+  │ ├── qs@6.5.1 
+  │ ├── stringstream@0.0.5 
+  │ ├─┬ tough-cookie@2.3.3 
+  │ │ └── punycode@1.4.1 
+  │ ├── tunnel-agent@0.6.0 
+  │ └── uuid@3.1.0 
+  ├─┬ rimraf@2.6.2 
+  │ └─┬ glob@7.1.2 
+  │   ├── fs.realpath@1.0.0 
+  │   ├── minimatch@3.0.4 
+  │   └── path-is-absolute@1.0.1 
+  ├─┬ serve-favicon@2.2.1 
+  │ └── ms@0.7.1 
+  ├─┬ spdy@2.1.0 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── handle-thing@1.2.5 
+  │ ├── http-deceiver@1.2.7 
+  │ ├── select-hose@2.0.0 
+  │ └─┬ spdy-transport@1.2.1 
+  │   ├─┬ debug@2.6.9 
+  │   │ └── ms@2.0.0 
+  │   ├─┬ hpack.js@2.1.6 
+  │   │ └─┬ readable-stream@2.3.3 
+  │   │   ├── isarray@1.0.0 
+  │   │   └── string_decoder@1.0.3 
+  │   ├── obuf@1.1.1 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── isarray@1.0.0 
+  │   │ └── string_decoder@1.0.3 
+  │   └─┬ wbuf@1.7.2 
+  │     └── minimalistic-assert@1.0.0 
+  ├── statsd-client@0.1.0 
+  ├─┬ vid-streamer@1.0.0 
+  │ ├── commander@2.11.0 
+  │ └─┬ throttle@1.0.3 
+  │   └── stream-parser@0.3.1 
+  ├─┬ video.js@4.12.15 
+  │ ├── videojs-swf@4.7.5 
+  │ └── vtt.js@0.12.1  (git+https://github.com/gkatsev/vtt.js.git#8ea664e257ec7b5c092f58ac989e3134ff536a7a)
+  └── whatwg-fetch@0.8.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/i-flicks/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 43% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","parseInt","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Int32Array","call","RegExp","getOwnPropertyDescriptor","reduce","charCodeAt","abs"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0476 took 39.5191s
+*-- Errors occured in test {"_bound":0}
+* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/i-flicks/node_modules/i-flicks/app.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/i-flicks/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/i-flicks/node_modules/express/lib/express.js. Coverage (Term): 66% Coverage (LOC): 74%
+*- File /root/Targets/i-flicks/node_modules/merge-descriptors/index.js. Coverage (Term): 24% Coverage (LOC): 23%
+*- File /root/Targets/i-flicks/node_modules/express/lib/application.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/i-flicks/node_modules/finalhandler/index.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/i-flicks/node_modules/finalhandler/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/i-flicks/node_modules/finalhandler/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/i-flicks/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/i-flicks/node_modules/escape-html/index.js. Coverage (Term): 35% Coverage (LOC): 80%
+*- File /root/Targets/i-flicks/node_modules/on-finished/index.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/i-flicks/node_modules/ee-first/index.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/i-flicks/node_modules/express/lib/utils.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/i-flicks/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/i-flicks/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/depd/index.js. Coverage (Term): 43% Coverage (LOC): 48%
+*- File /root/Targets/i-flicks/node_modules/depd/lib/compat/index.js. Coverage (Term): 81% Coverage (LOC): 94%
+*- File /root/Targets/i-flicks/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /root/Targets/i-flicks/node_modules/send/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/i-flicks/node_modules/send/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/i-flicks/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
+*- File /root/Targets/i-flicks/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/i-flicks/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/i-flicks/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/i-flicks/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc1.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/create.js. Coverage (Term): 72% Coverage (LOC): 90%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc8.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc8_1wire.js. Coverage (Term): 83% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc16.js. Coverage (Term): 82% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc16_ccitt.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc16_modbus.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc24.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File /root/Targets/i-flicks/node_modules/crc/lib/crc32.js. Coverage (Term): 80% Coverage (LOC): 97%
+*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/i-flicks/node_modules/proxy-addr/index.js. Coverage (Term): 11% Coverage (LOC): 21%
+*- File /root/Targets/i-flicks/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
+*- File /root/Targets/i-flicks/node_modules/qs/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/i-flicks/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/i-flicks/node_modules/qs/lib/stringify.js. Coverage (Term): 10% Coverage (LOC): 22%
+*- File /root/Targets/i-flicks/node_modules/qs/lib/utils.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /root/Targets/i-flicks/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 11%
+*- File /root/Targets/i-flicks/node_modules/express/lib/router/route.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/i-flicks/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/path-to-regexp/index.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/i-flicks/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/i-flicks/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/i-flicks/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/express/lib/middleware/init.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/i-flicks/node_modules/express/lib/middleware/query.js. Coverage (Term): 34% Coverage (LOC): 35%
+*- File /root/Targets/i-flicks/node_modules/express/lib/view.js. Coverage (Term): 24% Coverage (LOC): 34%
+*- File /root/Targets/i-flicks/node_modules/express/lib/request.js. Coverage (Term): 28% Coverage (LOC): 45%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/negotiator/index.js. Coverage (Term): 47% Coverage (LOC): 67%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/negotiator/lib/charset.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/negotiator/lib/encoding.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/negotiator/lib/language.js. Coverage (Term): 7% Coverage (LOC): 13%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 11%
+*- File /root/Targets/i-flicks/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/i-flicks/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/i-flicks/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/i-flicks/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/i-flicks/node_modules/express/lib/response.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/i-flicks/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/cookie/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/i-flicks/node_modules/express/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/i-flicks/node_modules/serve-static/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/serve-favicon/index.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /root/Targets/i-flicks/node_modules/morgan/index.js. Coverage (Term): 23% Coverage (LOC): 37%
+*- File /root/Targets/i-flicks/node_modules/basic-auth/index.js. Coverage (Term): 21% Coverage (LOC): 30%
+*- File /root/Targets/i-flicks/node_modules/morgan/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/i-flicks/node_modules/morgan/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/i-flicks/node_modules/cookie-parser/index.js. Coverage (Term): 34% Coverage (LOC): 37%
+*- File /root/Targets/i-flicks/node_modules/cookie/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/i-flicks/node_modules/cookie-parser/lib/parse.js. Coverage (Term): 16% Coverage (LOC): 30%
+*- File /root/Targets/i-flicks/node_modules/body-parser/index.js. Coverage (Term): 50% Coverage (LOC): 51%
+*- File /root/Targets/i-flicks/node_modules/compression/index.js. Coverage (Term): 12% Coverage (LOC): 13%
+*- File /root/Targets/i-flicks/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/i-flicks/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/i-flicks/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/i-flicks/node_modules/compression/node_modules/bytes/index.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/i-flicks/node_modules/compressible/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/i-flicks/node_modules/compression/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/i-flicks/node_modules/compression/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/i-flicks/node_modules/compression/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/i-flicks/node_modules/compression/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/i-flicks/node_modules/on-headers/index.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/i-flicks/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/i-flicks/node_modules/statsd-client/lib/statsd-client.js. Coverage (Term): 14% Coverage (LOC): 38%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

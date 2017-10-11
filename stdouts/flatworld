@@ -1,0 +1,71 @@
+/root/Targets/flatworld
+└─┬ flatworld@0.6.5 
+  ├── babel-plugin-add-module-exports@0.2.1 
+  ├── eventemitter3@2.0.3 
+  ├── hammerjs@2.0.8 
+  ├── hamsterjs@1.1.2 
+  ├─┬ handlebars@4.0.10 
+  │ ├── async@1.5.2 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ ├─┬ source-map@0.4.4 
+  │ │ └── amdefine@1.0.1 
+  │ └─┬ uglify-js@2.8.29 
+  │   ├── source-map@0.5.7 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.10.0 
+  │     ├── camelcase@1.2.1 
+  │     ├─┬ cliui@2.1.0 
+  │     │ ├─┬ center-align@0.1.3 
+  │     │ │ ├─┬ align-text@0.1.4 
+  │     │ │ │ ├─┬ kind-of@3.2.2 
+  │     │ │ │ │ └── is-buffer@1.1.5 
+  │     │ │ │ ├── longest@1.0.1 
+  │     │ │ │ └── repeat-string@1.6.1 
+  │     │ │ └── lazy-cache@1.0.4 
+  │     │ ├── right-align@0.1.3 
+  │     │ └── wordwrap@0.0.2 
+  │     ├── decamelize@1.2.0 
+  │     └── window-size@0.1.0 
+  ├─┬ handlebars-loader@1.6.0 
+  │ ├── async@0.2.10 
+  │ ├── fastparse@1.1.1 
+  │ ├─┬ loader-utils@1.0.4 
+  │ │ ├── big.js@3.2.0 
+  │ │ ├── emojis-list@2.1.0 
+  │ │ └── json5@0.5.1 
+  │ └── object-assign@4.1.1 
+  ├── howler@2.0.4 
+  ├── javascript-state-machine@2.4.0 
+  ├── loglevel@1.5.0 
+  ├─┬ pixi.js@4.5.6 
+  │ ├── bit-twiddle@1.0.2 
+  │ ├── earcut@2.1.1 
+  │ ├── ismobilejs@0.4.1 
+  │ ├── pixi-gl-core@1.1.0 
+  │ ├── remove-array-items@1.0.0 
+  │ └─┬ resource-loader@2.0.9 
+  │   ├── mini-signals@1.2.0 
+  │   └── parse-uri@1.0.0 
+  └── whatwg-fetch@2.0.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/flatworld/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0382 took 40.3128s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: navigator is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/flatworld/node_modules/flatworld/dist/flatworld.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

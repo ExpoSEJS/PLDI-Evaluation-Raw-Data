@@ -1,0 +1,574 @@
+
+> secp256k1@2.0.10 install /root/Targets/react-lightwallet/node_modules/secp256k1
+> npm run rebuild
+
+
+> secp256k1@2.0.10 rebuild /root/Targets/react-lightwallet/node_modules/secp256k1
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/react-lightwallet/node_modules/secp256k1/build'
+  CXX(target) Release/obj.target/secp256k1/src/addon.o
+  CXX(target) Release/obj.target/secp256k1/src/secretkey.o
+  CXX(target) Release/obj.target/secp256k1/src/publickey.o
+  CXX(target) Release/obj.target/secp256k1/src/signature.o
+  CXX(target) Release/obj.target/secp256k1/src/sign.o
+  CXX(target) Release/obj.target/secp256k1/src/verify.o
+  CXX(target) Release/obj.target/secp256k1/src/recover.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdh.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/src/secp256k1.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_privatekey_parsing.o
+  SOLINK_MODULE(target) Release/obj.target/secp256k1.node
+  COPY Release/secp256k1.node
+make: Leaving directory '/root/Targets/react-lightwallet/node_modules/secp256k1/build'
+
+> sha3@1.2.0 install /root/Targets/react-lightwallet/node_modules/sha3
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/react-lightwallet/node_modules/sha3/build'
+  CXX(target) Release/obj.target/sha3/src/addon.o
+  CXX(target) Release/obj.target/sha3/src/displayIntermediateValues.o
+  CXX(target) Release/obj.target/sha3/src/KeccakF-1600-reference.o
+  CXX(target) Release/obj.target/sha3/src/KeccakNISTInterface.o
+  CXX(target) Release/obj.target/sha3/src/KeccakSponge.o
+  SOLINK_MODULE(target) Release/obj.target/sha3.node
+  COPY Release/sha3.node
+make: Leaving directory '/root/Targets/react-lightwallet/node_modules/sha3/build'
+/root/Targets/react-lightwallet
+└─┬ react-lightwallet@0.1.10 
+  ├─┬ eth-lightwallet@0.1.2 
+  │ ├── bignumber.js@2.0.7  (git://github.com/debris/bignumber.js.git#c7a38de919ed75e6fb6ba38051986e294b328df9)
+  │ ├─┬ bitcore-mnemonic@1.2.5 
+  │ │ ├─┬ bitcore-lib@0.14.0 
+  │ │ │ ├── bn.js@2.0.4 
+  │ │ │ ├── bs58@2.0.0 
+  │ │ │ ├── buffer-compare@1.0.0 
+  │ │ │ ├─┬ elliptic@3.0.3 
+  │ │ │ │ ├── brorand@1.0.5 
+  │ │ │ │ └── hash.js@1.0.3 
+  │ │ │ ├── inherits@2.0.1 
+  │ │ │ └── lodash@3.10.1 
+  │ │ └── unorm@1.4.1 
+  │ ├── crypto-js@3.1.8 
+  │ ├─┬ elliptic@3.1.0 
+  │ │ ├── bn.js@2.2.0 
+  │ │ ├── brorand@1.1.0 
+  │ │ ├─┬ hash.js@1.1.3 
+  │ │ │ └── minimalistic-assert@1.0.0 
+  │ │ └── inherits@2.0.3 
+  │ ├── rlp@2.0.0 
+  │ └── web3@0.14.1 
+  ├─┬ ethereumjs-tx@0.6.14 
+  │ ├── ethereum-common@0.0.13 
+  │ ├─┬ ethereumjs-util@2.6.0 
+  │ │ ├── bn.js@4.11.8 
+  │ │ ├─┬ browserify-sha3@0.0.1 
+  │ │ │ └── js-sha3@0.3.1 
+  │ │ └── sha3@1.2.0 
+  │ └─┬ secp256k1@2.0.10 
+  │   ├── bindings@1.3.0 
+  │   ├── bluebird@3.5.0 
+  │   ├── bn.js@4.11.8 
+  │   ├─┬ elliptic@6.4.0 
+  │   │ ├── hmac-drbg@1.0.1 
+  │   │ └── minimalistic-crypto-utils@1.0.1 
+  │   ├── nan@2.7.0 
+  │   └── object-assign@4.1.1 
+  ├── hooked-web3-provider@0.0.3 
+  ├─┬ react@0.13.3 
+  │ └─┬ envify@3.4.1 
+  │   ├─┬ jstransform@11.0.3 
+  │   │ ├── base62@1.2.0 
+  │   │ ├─┬ commoner@0.10.8 
+  │   │ │ ├── commander@2.11.0 
+  │   │ │ ├─┬ detective@4.5.0 
+  │   │ │ │ ├── acorn@4.0.13 
+  │   │ │ │ └── defined@1.0.0 
+  │   │ │ ├─┬ glob@5.0.15 
+  │   │ │ │ ├─┬ inflight@1.0.6 
+  │   │ │ │ │ └── wrappy@1.0.2 
+  │   │ │ │ ├─┬ minimatch@3.0.4 
+  │   │ │ │ │ └─┬ brace-expansion@1.1.8 
+  │   │ │ │ │   ├── balanced-match@1.0.0 
+  │   │ │ │ │   └── concat-map@0.0.1 
+  │   │ │ │ ├── once@1.4.0 
+  │   │ │ │ └── path-is-absolute@1.0.1 
+  │   │ │ ├── graceful-fs@4.1.11 
+  │   │ │ ├── iconv-lite@0.4.19 
+  │   │ │ ├─┬ mkdirp@0.5.1 
+  │   │ │ │ └── minimist@0.0.8 
+  │   │ │ ├── private@0.1.7 
+  │   │ │ ├── q@1.5.0 
+  │   │ │ └─┬ recast@0.11.23 
+  │   │ │   ├── ast-types@0.9.6 
+  │   │ │   ├── esprima@3.1.3 
+  │   │ │   └── source-map@0.5.7 
+  │   │ ├── esprima-fb@15001.1.0-dev-harmony-fb 
+  │   │ ├── object-assign@2.1.1 
+  │   │ └─┬ source-map@0.4.4 
+  │   │   └── amdefine@1.0.1 
+  │   └── through@2.3.8 
+  └─┬ web3@0.12.2 
+    ├── utf8@2.1.2 
+    └── xmlhttprequest@1.8.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-lightwallet/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0416 took 3.3758s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (300:20) on program var React              = require('react');
+var web3               = require('web3');
+var ethlightjs         = require('eth-lightwallet');
+var HookedWeb3Provider = require('hooked-web3-provider');
+var Transaction        = require('ethereumjs-tx');
+
+var LightWallet = React.createClass({
+
+    getInitialState: function() {
+        return {
+            keystore: null,
+            selectedAddressIndex: 0,
+            walletPassword: null
+        };
+    },
+
+    enableHookedWeb3Provider: function() {
+        var _this = this;
+        var host = this.props.web3RPCAddress || 'http://localhost:8545';
+        var provider = new HookedWeb3Provider({
+            host: host,
+            transaction_signer: {
+                hasAddress: function(address, callback) {
+                    try {
+                        var accounts = web3.eth.accounts;
+                        var found = false;
+                        var addrToCheck = address;
+                        if (!addrToCheck.startsWith('0x')) {
+                            addrToCheck = '0x' + addrToCheck;
+                        }
+                        for (var i = 0; i < accounts.length; i++) {
+                            if (addrToCheck == accounts[i]) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        //console.log('found: ' + found);
+                        callback(null, !found);
+                    } catch (err) {
+                        callback(err, null);
+                    }
+                },
+                signTransaction: function(tx_params, callback) {
+                    //console.log('signTransaction: ' + JSON.stringify(tx_params));
+                    if (_this.props.gasPrice) {
+                        tx_params.gasPrice = _this.props.gasPrice;
+                    } else {
+                        tx_params.gasPrice = web3.eth.gasPrice.toString(16);
+                    }
+                    if (_this.props.gasLimit) {
+                        tx_params.gasLimit = _this.props.gasLimit;
+                    } else {
+                        tx_params.gasLimit = tx_params.gas;
+                    }
+                    var from = tx_params.from;
+                    if (!from.startsWith('0x')) {
+                        from = '0x' + from;
+                        tx_params.from = from;
+                    }
+                    var tx = new Transaction(tx_params);
+                    var rawTx = tx.serialize().toString('hex');
+                    _this.walletPassword(null, null, function(password) {
+                        if (!password) return;
+                        //console.log('password = [' + password + ']');
+                        try {
+                            var signed = _this.state.keystore.signTx(rawTx, password, tx_params.from.substring(2));
+                            //console.log('signed: ' + signed);
+                            callback(null, signed);
+                        } catch (err) {
+                            //console.log('deu merda');
+                            _this.setState({walletPassword: null});
+                            callback(err, null);
+                        }
+                    });
+                }
+            }
+        });
+        web3.setProvider(provider);
+    },
+
+    componentDidMount: function() {
+
+        if (this.props.enableHookedWeb3Provider == 'true') {
+            this.enableHookedWeb3Provider();
+        }
+
+        if (typeof(Storage) !== 'undefined') {
+            var wallet = localStorage.getItem('wallet');
+            if (wallet && wallet != '') {
+                this.loadWalletFromLocalStorage();
+            }
+        }
+    },
+
+    formatValue: function(value) {
+        var decs = 5;
+        if (this.props.numberOfDecimalsForBalance) {
+            decs = this.props.numberOfDecimalsForBalance;
+        }
+        return (value / Math.pow(10, 18)).toFixed(decs) + ' Ether';
+    },
+
+    onChangeSelectedAddress: function(address) {
+        var _this = this;
+        if (this.props.sendBalanceOnAddressChange == 'true') {
+            web3.eth.getBalance(address, function(err, balance) {
+                if (err) {
+                    console.log('Error getting balance for ' + address + ': ' + err);
+                    balance = '0';
+                }
+                _this.props.onChangeSelectedAddress(_this.treatAddress(address), balance);
+            });
+        } else {
+            this.props.onChangeSelectedAddress(this.treatAddress(address));
+        }
+    },
+
+    onChangeSelectedAddressIndex: function(index) {
+        var address = this.state.keystore.getAddresses()[index];
+        if (this.props.onChangeSelectedAddress) {
+            this.onChangeSelectedAddress(address);
+        }
+        this.setState({selectedAddressIndex: index});
+    },
+
+    onChangeKeystore: function(keystore) {
+
+        if (this.props.saveKeystoreToDiskAfterChanges == 'true') {
+            this.saveKeystoreToDisk(keystore);
+        }
+
+        if (this.props.saveKeystoreToLocalStorageAfterChanges == 'true') {
+            this.saveKeystoreToLocalStorage(keystore);
+        }
+
+        if (this.props.onChangeKeystore) {
+            this.props.onChangeKeystore(keystore);
+        }
+
+        this.setState({keystore: keystore});
+    },
+
+    saveKeystoreToLocalStorage: function(keystore) {
+        if (typeof(Storage) !== 'undefined') {
+            //console.log('Wallet saved to localStorage');
+            localStorage.setItem('wallet', keystore.serialize());
+        } else {
+            console.log('Browser does not support localStorage');
+            alert('Your browser does not support saving your wallet in local storage.');
+        }
+    },
+
+    saveKeystoreToDisk: function(keystore) {
+        var serialized = keystore ? keystore.serialize() : this.state.keystore.serialize();
+        var blob = new Blob([serialized], {type: 'text/plain;charset=utf-8'});
+        // for non-IE
+        if (!window.ActiveXObject) {
+            var save = document.createElement('a');
+            save.href = window.URL.createObjectURL(blob);
+            save.target = '_blank';
+            save.download = 'lightwallet.dat';
+
+            var event = document.createEvent('Event');
+            event.initEvent('click', true, true);
+            save.dispatchEvent(event);
+            (window.URL || window.webkitURL).revokeObjectURL(save.href);
+        }
+
+        // for IE
+        else if ( !! window.ActiveXObject && document.execCommand)     {
+            var _window = window.open(fileURL, '_blank');
+            _window.document.close();
+            _window.document.execCommand('SaveAs', true, fileName || fileURL)
+            _window.close();
+        }
+    },
+
+    openWalletFile: function() {
+        if (!(window.File && window.FileReader && window.FileList && window.Blob)) {
+            alert('The File APIs are not fully supported in this browser.');
+        } else {
+            this.refs.hbLoad.getDOMNode().click();
+        }
+    },
+
+    newAddress: function() {
+        var _this = this;
+        this.walletPassword(null, null, function(password) {
+            if (!password) return;
+            var keystore = _this.state.keystore;
+            try {
+                keystore.generateNewAddress(password, 1);
+            } catch (err) {
+                alert(err);
+                _this.setState({walletPassword: null});
+                return;
+            }
+            var addresses = keystore.getAddresses();
+            _this.onChangeKeystore(keystore);
+        });
+    },
+
+    loadWalletFromLocalStorage: function() {
+        var serialized = localStorage.getItem('wallet');
+        var keystore = ethlightjs.keystore.deserialize(serialized);
+        var addresses = keystore.getAddresses();
+        var _this = this;
+        if (this.props.onChangeSelectedAddress) {
+            this.onChangeSelectedAddress(addresses[0]);
+        }
+        this.onChangeKeystore(keystore);
+        this.setState({selectedAddressIndex: 0, walletPassword: null});
+    },
+
+    loadWalletFromDisk: function(evt) {
+        var _this = this;
+        var reader = new FileReader();
+        reader.onload = function() {
+            var text = reader.result;
+            var keystore = ethlightjs.keystore.deserialize(text);
+            var addresses = keystore.getAddresses();
+            if (_this.props.onChangeSelectedAddress) {
+                _this.onChangeSelectedAddress(addresses[0]);
+            }
+            _this.onChangeKeystore(keystore);
+            _this.setState({selectedAddressIndex: 0, walletPassword: null});
+        };
+
+        reader.readAsText(evt.target.files[0]);
+        this.refs.hbLoad.getDOMNode().value = '';
+    },
+
+    newWallet: function() {
+        var _this = this;
+        this.walletPassword(
+            'Enter a password to encrypt your wallet. DO NOT FORGET THIS PASSWORD!',
+            'true',
+            function(password) {
+                if (!password) return;
+                var secretSeed = ethlightjs.keystore.generateRandomSeed();
+                var keystore = new ethlightjs.keystore(secretSeed, password);
+                keystore.generateNewAddress(password, 1);
+                var addresses = keystore.getAddresses();
+                if (_this.props.onChangeSelectedAddress) {
+                    _this.onChangeSelectedAddress(addresses[0]);
+                }
+                _this.onChangeKeystore(keystore);
+                _this.setState({selectedAddressIndex: 0});
+            }
+        );
+    },
+
+    walletPassword: function(text, forceAsking, callback) {
+
+        var _this = this;
+
+        var password = this.state.walletPassword;
+
+        if (forceAsking || !password) {
+
+            if (this.props.passwordPopupForm) {
+                this.props.passwordPopupForm((forceAsking != null), function(password) {
+                    if (!password) return;
+                    if (_this.props.reusePasswordInSession == 'true') {
+                        _this.setState({walletPassword: password});
+                    }
+                    callback(password);
+                });
+            } else {
+                var textToShow = text || 'Enter your wallet password';
+                password = window.prompt(textToShow);
+                if (!password) return;
+                if (this.props.reusePasswordInSession == 'true') {
+                    this.setState({walletPassword: password});
+                }
+                callback(password);
+            }
+
+        } else {
+            callback(password);
+        }
+    },
+
+    treatAddress: function(address) {
+        if (this.props.prefix0xWhenShowingAddresses == 'false') {
+            if (address.startsWith('0x')) {
+                return address.substring(2);
+            }
+        } else {
+            if (!address.startsWith('0x')) {
+                return '0x' + address;
+            }
+        }
+        return address;
+    },
+
+    render: function() {
+
+        if (this.props.hidden == 'true') {
+            return (<div></div>);
+        }
+
+        var _this = this;
+        var addrOptions = [];
+        var hidden = {display: 'none'};
+
+        var showAddrs = true;
+        if (this.props.showAddresses) {
+            showAddrs = this.props.showAddresses == 'true';
+        }
+
+        var above = true;
+        if (this.props.showAddressesAboveButtons) {
+            above = this.props.showAddressesAboveButtons == 'true';
+        }
+
+        if (this.state.keystore != null) {
+            var addresses = this.state.keystore.getAddresses();
+            var index = -1;
+            var errorMsg = this.props.getBalanceErrorMessage || 'Node not running';
+            if (showAddrs) {
+                this.props.labelBeforeAddresses ? addrOptions.push(<div key='lbAddr'><label>{this.props.labelBeforeAddresses}</label></div>) : null;
+                addresses.forEach(function(address) {
+                    address = _this.treatAddress(address);
+                    index++;
+                    var label = address;
+                    if (_this.props.maxAddressLengthToShow) {
+                        label = address.substring(0, _this.props.maxAddressLengthToShow) + '...';
+                    }
+                    var index2 = index;
+                    web3.eth.getBalance(address, function(err, balance) {
+                        var lb = '';
+                        if (err) {
+                            console.log('Could not get balance for address (node not running?).');
+                            lb = ': ' + errorMsg;
+                        } else {
+                            lb = ': ' + _this.formatValue(balance);
+                        }
+                        if (_this.props.showAddressBalance == 'true') {
+                            _this.refs['labelRef_' + index2].getDOMNode().innerHTML = lb;
+                        }
+                        _this.refs['spanRef_' +  index2].getDOMNode().innerHTML = balance;
+                    });
+                    var checked = _this.state.selectedAddressIndex == index;
+                    var labelRef = 'labelRef_' + index;
+                    var spanRef  = 'spanRef_' + index;
+                    addrOptions.push(
+                        <label key={labelRef} className={_this.props.addressClassName} style={_this.props.addressStyle}>
+                            <input
+                                className={_this.props.radioClassName}
+                                style    ={_this.props.radioStyle}
+                                type='radio' checked={checked}
+                                onChange={_this.onChangeSelectedAddressIndex.bind(null, index)}/>
+                            {label}<span ref={labelRef}></span>
+                            <span style={hidden} ref={spanRef}></span>
+                        </label>
+                    );
+                });
+            }
+        }
+
+        var bcn = this.props.buttonClassName;
+        var bs = this.props.buttonStyle;
+
+        var newWalletButtonLabel = this.props.newWalletButtonLabel ?
+            this.props.newWalletButtonLabel
+            : 'New Wallet';
+
+        var newAddressButtonLabel = this.props.newAddressButtonLabel ?
+            this.props.newAddressButtonLabel
+            : 'New Address';
+
+        var loadWalletButtonLabel = this.props.loadWalletButtonLabel ?
+            this.props.loadWalletButtonLabel
+            : 'Load';
+
+        var saveWalletButtonLabel = this.props.saveWalletButtonLabel ?
+            this.props.saveWalletButtonLabel
+            : 'Save';
+
+        var buttons = [];
+
+        var btnLoadWallet =
+            <button key='btn1' className={bcn} style={bs} onClick={this.openWalletFile}>
+                {loadWalletButtonLabel}
+            </button>;
+        var btnNewWallet  =
+            <button key='btn2' className={bcn} style={bs} onClick={this.newWallet}>
+                {newWalletButtonLabel}
+            </button>;
+        var btnSaveWallet =
+            <button key='btn3' className={bcn} style={bs} onClick={this.saveKeystoreToDisk.bind(null, null)}>
+                {saveWalletButtonLabel}
+            </button>;
+        var btnNewAddress =
+            <button key='btn4' className={bcn} style={bs} onClick={this.newAddress}>
+                {newAddressButtonLabel}
+            </button>;
+
+        //var btnShowSeed   = <button className={bcn} style={bs} onClick={this.showSeed}>{showSeedButtonLabel}</button>;
+        //var btnLoadSeed   = <button className={bcn} style={bs} onClick={this.loadFromSeed}>{loadSeedButtonLabel}</button>;
+
+        if (this.state.keystore) {
+            // A wallet has already been loaded/created.
+            if (this.props.allowReplaceWallet == 'true') {
+                buttons.push(btnLoadWallet);
+                buttons.push(btnNewWallet);
+            }
+            buttons.push(btnSaveWallet);
+            buttons.push(btnNewAddress);
+        } else {
+            buttons.push(btnLoadWallet);
+            buttons.push(btnNewWallet);
+        }
+
+        return (
+            <div className={this.props.mainDivClassName} style={this.props.mainDivStyle}>
+                <div className={this.props.addressesDivClassName} style={this.props.addressesDivStyle}>
+                    {above ? addrOptions : null}
+                </div>
+                <div className={this.props.buttonsDivClassName} style={this.props.buttonsDivStyle}>
+                    {buttons}
+                </div>
+                <div className={this.props.addressesDivClassName} style={this.props.addressesDivStyle}>
+                    {!above ? addrOptions : null}
+                </div>
+                <input style={hidden} ref='hbLoad' type='file' onChange={this.loadWalletFromDisk} />
+            </div>
+        );
+    }
+});
+
+module.exports = LightWallet;
+ at SyntaxError: Unexpected token (300:20)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

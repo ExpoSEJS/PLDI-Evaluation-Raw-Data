@@ -1,0 +1,128 @@
+
+> geckodriver@1.9.0 postinstall /root/Targets/debugger.html/node_modules/geckodriver
+> node index.js
+
+Downloading geckodriver... Extracting... Complete.
+/root/Targets/debugger.html
+└─┬ debugger.html@0.0.13 
+  ├─┬ devtools-launchpad@0.0.26
+  │ └── geckodriver@1.9.0 
+  └── workerjs@0.1.1  (git://github.com/jlongster/workerjs.git#918a1aff3728751143f806bfb464f7d71002e7f0)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/debugger.html/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0341 took 2.7785s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (63:52) on program // @flow
+
+const React = require("react");
+const { bindActionCreators, combineReducers } = require("redux");
+const ReactDOM = require("react-dom");
+
+const { getClient, firefox } = require("devtools-client-adapters");
+const { renderRoot, bootstrap, L10N } = require("devtools-launchpad");
+const { getValue, isFirefoxPanel } = require("devtools-config");
+
+const configureStore = require("./utils/create-store");
+const { onConnect, onFirefoxConnect } = require("./utils/client");
+
+const reducers = require("./reducers");
+const selectors = require("./selectors");
+
+const App = require("./components/App");
+
+const createStore = configureStore({
+  log: getValue("logging.actions"),
+  makeThunkArgs: (args, state) => {
+    return Object.assign({}, args, { client: getClient(state) });
+  }
+});
+
+const store = createStore(combineReducers(reducers));
+const actions = bindActionCreators(require("./actions"), store.dispatch);
+
+if (!isFirefoxPanel()) {
+  window.L10N = L10N;
+  window.L10N.setBundle(require("./strings.json"));
+}
+
+window.appStore = store;
+
+// Expose the bound actions so external things can do things like
+// selecting a source.
+window.actions = {
+  selectSource: actions.selectSource,
+  selectSourceURL: actions.selectSourceURL
+};
+
+// Globals needed for mocha integration tests
+window.getGlobalsForTesting = () => {
+  return {
+    debuggerStore: store,
+    launchpadStore: window.launchpadStore,
+    selectors,
+    actions
+  };
+};
+
+function unmountRoot() {
+  const mount = document.querySelector("#mount");
+  ReactDOM.unmountComponentAtNode(mount);
+}
+
+if (isFirefoxPanel()) {
+  const sourceMap = require("./utils/source-map");
+  const prettyPrint = require("./utils/pretty-print");
+
+  module.exports = {
+    bootstrap: ({ threadClient, tabTarget, toolbox }: any) => {
+      // jlast: remove when docker updates
+      if (!window.L10N) {
+        window.L10N = L10N;
+        window.L10N.setBundle(require("./strings.json"));
+      }
+
+      firefox.setThreadClient(threadClient);
+      firefox.setTabTarget(tabTarget);
+      renderRoot(React, ReactDOM, App, store);
+      firefox.initPage(actions);
+      return onFirefoxConnect(actions, firefox);
+    },
+    destroy: () => {
+      unmountRoot();
+      sourceMap.destroyWorker();
+      prettyPrint.destroyWorker();
+    },
+    store: store,
+    actions: actions,
+    selectors: selectors,
+    client: firefox.clientCommands
+  };
+} else {
+  bootstrap(React, ReactDOM, App, actions, store)
+    .then(conn => onConnect(conn, actions));
+}
+ at SyntaxError: Unexpected token (63:52)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1852:40)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1796:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

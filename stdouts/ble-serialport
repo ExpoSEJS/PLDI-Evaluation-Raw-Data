@@ -1,0 +1,38 @@
+
+> usb@1.2.0 install /root/Targets/ble-serialport/node_modules/usb
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/root/Targets/ble-serialport/node_modules/usb/build'
+  CC(target) Release/obj.target/libusb/libusb/libusb/core.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/descriptor.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/hotplug.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/io.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/strerror.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/sync.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/os/poll_posix.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/os/threads_posix.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/os/linux_usbfs.o
+  CC(target) Release/obj.target/libusb/libusb/libusb/os/linux_udev.o
+libusb.target.mk:133: recipe for target 'Release/obj.target/libusb/libusb/libusb/os/linux_udev.o' failed
+make: Leaving directory '/root/Targets/ble-serialport/node_modules/usb/build'
+Failed to execute '/root/.nvm/versions/node/v7.5.0/bin/node /root/.nvm/versions/node/v7.5.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/root/Targets/ble-serialport/node_modules/usb/src/binding/usb_bindings.node --module_name=usb_bindings --module_path=/root/Targets/ble-serialport/node_modules/usb/src/binding' (1)
+/root/Targets/ble-serialport
+└── ble-serialport@0.1.8 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ble-serialport/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 0% coverage ] ***
+*-- Stat Module Output --*
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0383 took 12.1003s
+*-- Errors occured in test {"_bound":0}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

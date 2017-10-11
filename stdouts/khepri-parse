@@ -1,0 +1,47 @@
+/root/Targets/khepri-parse
+└─┬ khepri-parse@2.8.1 
+  ├─┬ bennu@17.2.2 
+  │ └── seshet@0.1.0 
+  ├── khepri-ast@4.8.0 
+  ├── nu-stream@3.3.1 
+  ├── require-directory@1.2.0 
+  └── xregexp@2.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/khepri-parse/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 56.00000000000001% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","lastIndexOf","bind","Error","defineProperties","bound call","RegExp","apply","join","bound ","SyntaxError"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0425 took 15.209s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: invalid or unknown Unicode property \p{Lu}
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/index.js. Coverage (Term): 89% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/require-directory/index.js. Coverage (Term): 75% Coverage (LOC): 76%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/boolean_lexer.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/bennu/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/bennu/dist_node/parse.js. Coverage (Term): 34% Coverage (LOC): 54%
+*- File /root/Targets/khepri-parse/node_modules/nu-stream/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/nu-stream/dist_node/stream.js. Coverage (Term): 45% Coverage (LOC): 55%
+*- File /root/Targets/khepri-parse/node_modules/nu-stream/dist_node/gen.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/khepri-parse/node_modules/nu-stream/dist_node/quantifier.js. Coverage (Term): 46% Coverage (LOC): 53%
+*- File /root/Targets/khepri-parse/node_modules/nu-stream/dist_node/select.js. Coverage (Term): 37% Coverage (LOC): 43%
+*- File /root/Targets/khepri-parse/node_modules/seshet/dist_node/seshet.js. Coverage (Term): 19% Coverage (LOC): 45%
+*- File /root/Targets/khepri-parse/node_modules/bennu/dist_node/incremental.js. Coverage (Term): 29% Coverage (LOC): 43%
+*- File /root/Targets/khepri-parse/node_modules/bennu/dist_node/lang.js. Coverage (Term): 35% Coverage (LOC): 37%
+*- File /root/Targets/khepri-parse/node_modules/bennu/dist_node/text.js. Coverage (Term): 58% Coverage (LOC): 71%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/comment_lexer.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/common.js. Coverage (Term): 85% Coverage (LOC): 91%
+*- File /root/Targets/khepri-parse/node_modules/xregexp/xregexp-all.js. Coverage (Term): 41% Coverage (LOC): 62%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/line_terminator_lexer.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/identifier_lexer.js. Coverage (Term): 54% Coverage (LOC): 31%
+*- File /root/Targets/khepri-parse/node_modules/khepri-parse/dist_node/lex/reserved_word_lexer.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

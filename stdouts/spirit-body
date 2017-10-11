@@ -1,0 +1,160 @@
+/root/Targets/spirit-body
+└─┬ spirit-body@1.2.2 
+  ├─┬ body@5.1.0 
+  │ ├── continuable-cache@0.3.1 
+  │ ├─┬ error@7.0.2 
+  │ │ ├── string-template@0.2.1 
+  │ │ └── xtend@4.0.1 
+  │ ├─┬ raw-body@1.1.7 
+  │ │ ├── bytes@1.0.0 
+  │ │ └── string_decoder@0.10.31 
+  │ └── safe-json-parse@1.0.1 
+  └── content-type@1.0.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/spirit-body/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0493 took 2.7678s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (50:15) on program 'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _rawBody = require('raw-body');
+
+var _rawBody2 = _interopRequireDefault(_rawBody);
+
+var _contentType = require('content-type');
+
+var _contentType2 = _interopRequireDefault(_contentType);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var httpError = function httpError(error) {
+	return {
+		status: 400,
+		body: JSON.stringify({
+			error: error
+		}, null, '\t'),
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8'
+		}
+	};
+};
+
+var bodyPromise = function bodyPromise(req, options) {
+	return new Promise(function (resolve, reject) {
+		(0, _rawBody2.default)(req, options, function (error, data) {
+			return error ? reject(error) : resolve(data);
+		});
+	});
+};
+
+/**
+ * @description Body-parsing middleware
+ * This is a curried function with options, so you have to
+ * call it once before passing it to spirit
+ * @param {Object} options The parsing components to be used.
+ * @return {function} Middleware to be used.
+ * @example const body = spiritBody({json: true, urlEncoded: true})
+ */
+
+exports.default = function () {
+	var _options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+	return function (handler) {
+		return async function (request) {
+			var options = Object.assign({
+				json: false,
+				form: false,
+				text: false,
+				limit: 4 * 1024 * 1024,
+				error: true,
+				allowEmptyBody: true
+			}, _options);
+
+			if (options.allowEmptyBody && (!request.headers['content-length'] || request.headers['content-length'] === '0')) return handler(request
+
+			// detect encoding
+			);
+			var _contentType$parse = _contentType2.default.parse(request.headers['content-type']
+
+			// retrieve raw body
+			),
+			    type = _contentType$parse.type,
+			    encoding = _contentType$parse.parameters.charset;
+
+			var body = await bodyPromise(request.req(), {
+				lenght: request.headers['content-length'],
+				limit: options.limit,
+				encoding: encoding
+			});
+
+			if (!request.headers['content-type']) {
+				if (options.error) return httpError('No Content-Type.');
+				return request;
+			}
+
+			if (options.json && type === 'application/json') {
+				try {
+					request.body = JSON.parse(body);
+				} catch (error) {
+					request.invalidBody = true;
+					if (options.error) return httpError('Invalid JSON.');
+				}
+			} else if (options.form && type === 'application/x-www-form-urlencoded') {
+				try {
+					// request.body = await promisify(formBody, request.req(), {
+					// 	limit: options.limit
+					// })
+				} catch (error) {
+					request.invalidBody = true;
+					if (options.error) return httpError('Invalid form.');
+				}
+			} else if (options.text) {
+				try {
+					request.body = body;
+				} catch (error) {
+					request.invalidBody = true;
+					if (options.error) return httpError('Invalid body.');
+				}
+			} else {
+				if (options.error) return {
+					status: 415,
+					body: JSON.stringify({
+						error: 'Unsupported Media Type'
+					}, null, '\t'),
+					headers: {
+						'Content-Type': 'application/json; charset=utf-8'
+					}
+				};
+			}
+
+			return handler(request);
+		};
+	};
+}; at SyntaxError: Unexpected token (50:15)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseReturnStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:839:57)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:699:34)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,112 @@
+/root/Targets/unique-model
+└─┬ unique-model@0.2.0 
+  ├─┬ ktoolkit@1.1.1 
+  │ ├─┬ http-proxy-agent@2.0.0 
+  │ │ ├─┬ agent-base@4.1.1 
+  │ │ │ └─┬ es6-promisify@5.0.0 
+  │ │ │   └── es6-promise@4.1.1 
+  │ │ └─┬ debug@2.6.9 
+  │ │   └── ms@2.0.0 
+  │ ├─┬ log4js@1.1.1 
+  │ │ ├── semver@5.4.1 
+  │ │ └─┬ streamroller@0.4.1 
+  │ │   ├── date-format@0.0.0 
+  │ │   ├── debug@0.7.4 
+  │ │   ├─┬ mkdirp@0.5.1 
+  │ │   │ └── minimist@0.0.8 
+  │ │   └─┬ readable-stream@1.1.14 
+  │ │     ├── isarray@0.0.1 
+  │ │     └── string_decoder@0.10.31 
+  │ ├── mime@2.0.3 
+  │ ├── qs@6.5.1 
+  │ └── uuid@3.1.0 
+  └─┬ mongodb@2.2.31 
+    ├── es6-promise@3.2.1 
+    ├─┬ mongodb-core@2.1.15 
+    │ ├── bson@1.0.4 
+    │ └─┬ require_optional@1.0.1 
+    │   └── resolve-from@2.0.0 
+    └─┬ readable-stream@2.2.7 
+      ├── buffer-shims@1.0.0 
+      ├── core-util-is@1.0.2 
+      ├── inherits@2.0.3 
+      ├── isarray@1.0.0 
+      ├── process-nextick-args@1.0.7 
+      ├─┬ string_decoder@1.0.3 
+      │ └── safe-buffer@5.1.1 
+      └── util-deprecate@1.0.2 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/unique-model/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0271 took 3.2879s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (26:6) on program 'use strict'
+
+/**
+ * Create the persistent session for unique model.
+ *
+ * @public
+ *
+ * @param {Object} options - The options of session
+ * @param {String} options.backend - The backend name
+ * @param {String} options.uri - The uri passed to backend
+ * @param {Object} options.options - The other options passed to backend
+ *
+ * @return {Session}    The persistent session object.
+ *                      Return null if the persistent module is disabled.
+ *
+ * @example
+ * let session = um.createSession({
+ *     backend: 'mongodb',
+ *     uri: 'mongodb://localhost/userman',
+ *     options: {
+ *         user: 'user',
+ *         pass: '123456'
+ *     }
+ * });
+ */
+async function createSession(options) {
+    let backendSessionClass = options.backend;
+    let Session = require('./session/session').Session;
+    let backendSession = new backendSessionClass({
+        uri: options.uri,
+        options: options.options
+    });
+
+    await backendSession.connect();
+    return new Session(backendSession);
+}
+
+module.exports = {
+    createSession,
+    backend: {
+        mongo: require('./backend/mongo')
+    },
+    model: require('./model'),
+    type: require('./type')
+};
+ at SyntaxError: Unexpected token (26:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/unique-model/node_modules/unique-model/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,393 @@
+/root/Targets/passport-waad
+└─┬ passport-waad@0.0.5 
+  ├── async@0.2.10 
+  ├─┬ express@3.2.6 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.11 
+  │ │ ├── bytes@0.2.0 
+  │ │ ├── cookie@0.0.5 
+  │ │ ├── formidable@1.0.14 
+  │ │ ├── qs@0.6.5 
+  │ │ └── send@0.1.1 
+  │ ├── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.1 
+  │ ├─┬ debug@3.0.1 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.4 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├─┬ jade@1.8.2 
+  │ ├── character-parser@1.2.1 
+  │ ├── commander@2.5.1 
+  │ ├─┬ constantinople@3.0.2 
+  │ │ └── acorn@2.7.0 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   ├─┬ optimist@0.3.7 
+  │ │   │ └── wordwrap@0.0.3 
+  │ │   └─┬ source-map@0.1.43 
+  │ │     └── amdefine@1.0.1 
+  │ └── void-elements@1.0.0 
+  ├── json-query@1.4.0 
+  ├─┬ passport@0.1.18 
+  │ ├── pause@0.0.1 
+  │ └── pkginfo@0.2.3 
+  ├─┬ request@2.16.6 
+  │ ├── aws-sign@0.2.0 
+  │ ├── cookie-jar@0.2.0 
+  │ ├── forever-agent@0.2.0 
+  │ ├─┬ form-data@0.0.10 
+  │ │ └─┬ combined-stream@0.0.7 
+  │ │   └── delayed-stream@0.0.5 
+  │ ├─┬ hawk@0.10.2 
+  │ │ ├── boom@0.3.8 
+  │ │ ├── cryptiles@0.1.3 
+  │ │ ├── hoek@0.7.6 
+  │ │ └── sntp@0.1.4 
+  │ ├── json-stringify-safe@3.0.0 
+  │ ├── mime@1.2.11 
+  │ ├── node-uuid@1.4.8 
+  │ ├── oauth-sign@0.2.0 
+  │ ├── qs@0.5.6 
+  │ └── tunnel-agent@0.2.0 
+  ├── underscore@1.4.4 
+  ├─┬ with@4.0.0 
+  │ ├── acorn@0.8.0 
+  │ └── acorn-globals@1.0.9 
+  ├─┬ xml-crypto@0.0.23 
+  │ ├── xmldom@0.1.16 
+  │ ├── xmldom-fork-fixed@0.0.1 
+  │ └── xpath.js@1.0.7 
+  ├─┬ xml2js@0.2.6 
+  │ └── sax@0.4.2 
+  ├── xmldom@0.1.27 
+  └─┬ xtend@2.0.6 
+    ├── is-object@0.1.2 
+    └─┬ object-keys@0.2.0 
+      ├── foreach@2.0.5 
+      ├── indexof@0.0.1 
+      └── is@0.2.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/passport-waad/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 26% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","isArray","parse","create","reduce","Object","RegExp","join","sort","randomBytes","toString"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0223 took 28.8732s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (8:4) on program 'use strict'
+
+var net = require('net')
+  , tls = require('tls')
+  , http = require('http')
+  , https = require('https')
+  , events = require('events')
+  , assert = require('assert')
+  , util = require('util')
+  ;
+
+exports.httpOverHttp = httpOverHttp
+exports.httpsOverHttp = httpsOverHttp
+exports.httpOverHttps = httpOverHttps
+exports.httpsOverHttps = httpsOverHttps
+
+
+function httpOverHttp(options) {
+  var agent = new TunnelingAgent(options)
+  agent.request = http.request
+  return agent
+}
+
+function httpsOverHttp(options) {
+  var agent = new TunnelingAgent(options)
+  agent.request = http.request
+  agent.createSocket = createSecureSocket
+  return agent
+}
+
+function httpOverHttps(options) {
+  var agent = new TunnelingAgent(options)
+  agent.request = https.request
+  return agent
+}
+
+function httpsOverHttps(options) {
+  var agent = new TunnelingAgent(options)
+  agent.request = https.request
+  agent.createSocket = createSecureSocket
+  return agent
+}
+
+
+function TunnelingAgent(options) {
+  var self = this
+  self.options = options || {}
+  self.proxyOptions = self.options.proxy || {}
+  self.maxSockets = self.options.maxSockets || http.Agent.defaultMaxSockets
+  self.requests = []
+  self.sockets = []
+
+  self.on('free', function onFree(socket, host, port) {
+    for (var i = 0, len = self.requests.length; i < len; ++i) {
+      var pending = self.requests[i]
+      if (pending.host === host && pending.port === port) {
+        // Detect the request to connect same origin server,
+        // reuse the connection.
+        self.requests.splice(i, 1)
+        pending.request.onSocket(socket)
+        return
+      }
+    }
+    socket.destroy()
+    self.removeSocket(socket)
+  })
+}
+util.inherits(TunnelingAgent, events.EventEmitter)
+
+TunnelingAgent.prototype.addRequest = function addRequest(req, host, port) {
+  var self = this
+
+  if (self.sockets.length >= this.maxSockets) {
+    // We are over limit so we'll add it to the queue.
+    self.requests.push({host: host, port: port, request: req})
+    return
+  }
+
+  // If we are under maxSockets create a new one.
+  self.createSocket({host: host, port: port, request: req}, function(socket) {
+    socket.on('free', onFree)
+    socket.on('close', onCloseOrRemove)
+    socket.on('agentRemove', onCloseOrRemove)
+    req.onSocket(socket)
+
+    function onFree() {
+      self.emit('free', socket, host, port)
+    }
+
+    function onCloseOrRemove(err) {
+      self.removeSocket()
+      socket.removeListener('free', onFree)
+      socket.removeListener('close', onCloseOrRemove)
+      socket.removeListener('agentRemove', onCloseOrRemove)
+    }
+  })
+}
+
+TunnelingAgent.prototype.createSocket = function createSocket(options, cb) {
+  var self = this
+  var placeholder = {}
+  self.sockets.push(placeholder)
+
+  var connectOptions = mergeOptions({}, self.proxyOptions, 
+    { method: 'CONNECT'
+    , path: options.host + ':' + options.port
+    , agent: false
+    }
+  )
+  if (connectOptions.proxyAuth) {
+    connectOptions.headers = connectOptions.headers || {}
+    connectOptions.headers['Proxy-Authorization'] = 'Basic ' +
+        new Buffer(connectOptions.proxyAuth).toString('base64')
+  }
+
+  debug('making CONNECT request')
+  var connectReq = self.request(connectOptions)
+  connectReq.useChunkedEncodingByDefault = false // for v0.6
+  connectReq.once('response', onResponse) // for v0.6
+  connectReq.once('upgrade', onUpgrade)   // for v0.6
+  connectReq.once('connect', onConnect)   // for v0.7 or later
+  connectReq.once('error', onError)
+  connectReq.end()
+
+  function onResponse(res) {
+    // Very hacky. This is necessary to avoid http-parser leaks.
+    res.upgrade = true
+  }
+
+  function onUpgrade(res, socket, head) {
+    // Hacky.
+    process.nextTick(function() {
+      onConnect(res, socket, head)
+    })
+  }
+
+  function onConnect(res, socket, head) {
+    connectReq.removeAllListeners()
+    socket.removeAllListeners()
+
+    if (res.statusCode === 200) {
+      assert.equal(head.length, 0)
+      debug('tunneling connection has established')
+      self.sockets[self.sockets.indexOf(placeholder)] = socket
+      cb(socket)
+    } else {
+      debug('tunneling socket could not be established, statusCode=%d', res.statusCode)
+      var error = new Error('tunneling socket could not be established, ' + 'statusCode=' + res.statusCode)
+      error.code = 'ECONNRESET'
+      options.request.emit('error', error)
+      self.removeSocket(placeholder)
+    }
+  }
+
+  function onError(cause) {
+    connectReq.removeAllListeners()
+
+    debug('tunneling socket could not be established, cause=%s\n', cause.message, cause.stack)
+    var error = new Error('tunneling socket could not be established, ' + 'cause=' + cause.message)
+    error.code = 'ECONNRESET'
+    options.request.emit('error', error)
+    self.removeSocket(placeholder)
+  }
+}
+
+TunnelingAgent.prototype.removeSocket = function removeSocket(socket) {
+  var pos = this.sockets.indexOf(socket)
+  if (pos === -1) return
+  
+  this.sockets.splice(pos, 1)
+
+  var pending = this.requests.shift()
+  if (pending) {
+    // If we have pending requests and a socket gets closed a new one
+    // needs to be created to take over in the pool for the one that closed.
+    this.createSocket(pending, function(socket) {
+      pending.request.onSocket(socket)
+    })
+  }
+}
+
+function createSecureSocket(options, cb) {
+  var self = this
+  TunnelingAgent.prototype.createSocket.call(self, options, function(socket) {
+    // 0 is dummy port for v0.6
+    var secureSocket = tls.connect(0, mergeOptions({}, self.options, 
+      { servername: options.host
+      , socket: socket
+      }
+    ))
+    cb(secureSocket)
+  })
+}
+
+
+function mergeOptions(target) {
+  for (var i = 1, len = arguments.length; i < len; ++i) {
+    var overrides = arguments[i]
+    if (typeof overrides === 'object') {
+      var keys = Object.keys(overrides)
+      for (var j = 0, keyLen = keys.length; j < keyLen; ++j) {
+        var k = keys[j]
+        if (overrides[k] !== undefined) {
+          target[k] = overrides[k]
+        }
+      }
+    }
+  }
+  return target
+}
+
+
+var debug
+if (process.env.NODE_DEBUG && /\btunnel\b/.test(process.env.NODE_DEBUG)) {
+  debug = function() {
+    var args = Array.prototype.slice.call(arguments)
+    if (typeof args[0] === 'string') {
+      args[0] = 'TUNNEL: ' + args[0]
+    } else {
+      args.unshift('TUNNEL:')
+    }
+    console.error.apply(console, args)
+  }
+} else {
+  debug = function() {}
+}
+exports.debug = debug // for test
+ at SyntaxError: Unexpected token (8:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/index.js. Coverage (Term): 53% Coverage (LOC): 83%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/samlstrategy.js. Coverage (Term): 12% Coverage (LOC): 14%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/index.js. Coverage (Term): 29% Coverage (LOC): 34%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/strategy.js. Coverage (Term): 72% Coverage (LOC): 88%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/strategies/session.js. Coverage (Term): 32% Coverage (LOC): 26%
+*- File /root/Targets/passport-waad/node_modules/pause/index.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/middleware/initialize.js. Coverage (Term): 23% Coverage (LOC): 29%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/middleware/authenticate.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/context/http/actions.js. Coverage (Term): 28% Coverage (LOC): 46%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/context/http/context.js. Coverage (Term): 43% Coverage (LOC): 50%
+*- File /root/Targets/passport-waad/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
+*- File /root/Targets/passport-waad/node_modules/passport/lib/passport/http/request.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/saml.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/passport-waad/node_modules/xml2js/lib/xml2js.js. Coverage (Term): 17% Coverage (LOC): 28%
+*- File /root/Targets/passport-waad/node_modules/sax/lib/sax.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/passport-waad/node_modules/xml-crypto/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/xml-crypto/lib/signed-xml.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/passport-waad/node_modules/xpath.js/xpath.js. Coverage (Term): 16% Coverage (LOC): 40%
+*- File /root/Targets/passport-waad/node_modules/xmldom-fork-fixed/dom-parser.js. Coverage (Term): 11% Coverage (LOC): 24%
+*- File /root/Targets/passport-waad/node_modules/xmldom-fork-fixed/sax.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/passport-waad/node_modules/xmldom-fork-fixed/dom.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/passport-waad/node_modules/xml-crypto/lib/utils.js. Coverage (Term): 25% Coverage (LOC): 50%
+*- File /root/Targets/passport-waad/node_modules/xml-crypto/lib/exclusive-canonicalization.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/passport-waad/node_modules/xml-crypto/lib/enveloped-signature.js. Coverage (Term): 48% Coverage (LOC): 64%
+*- File /root/Targets/passport-waad/node_modules/xmldom/dom-parser.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/passport-waad/node_modules/xmldom/sax.js. Coverage (Term): 6% Coverage (LOC): 10%
+*- File /root/Targets/passport-waad/node_modules/xmldom/dom.js. Coverage (Term): 17% Coverage (LOC): 27%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/validator.js. Coverage (Term): 27% Coverage (LOC): 37%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/templates/templates.js. Coverage (Term): 27% Coverage (LOC): 44%
+*- File /root/Targets/passport-waad/node_modules/underscore/underscore.js. Coverage (Term): 18% Coverage (LOC): 32%
+*- File /root/Targets/passport-waad/node_modules/async/lib/async.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/pem.js. Coverage (Term): 25% Coverage (LOC): 44%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/aadutils.js. Coverage (Term): 19% Coverage (LOC): 33%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/samlutils.js. Coverage (Term): 9% Coverage (LOC): 20%
+*- File /root/Targets/passport-waad/node_modules/passport-waad/lib/passport-waad/metadata.js. Coverage (Term): 5% Coverage (LOC): 6%
+*- File /root/Targets/passport-waad/node_modules/request/index.js. Coverage (Term): 2% Coverage (LOC): 1%
+*- File /root/Targets/passport-waad/node_modules/request/node_modules/qs/index.js. Coverage (Term): 6% Coverage (LOC): 13%
+*- File /root/Targets/passport-waad/node_modules/oauth-sign/index.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/passport-waad/node_modules/hawk/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/boom/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/boom/lib/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/passport-waad/node_modules/hoek/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/hoek/lib/index.js. Coverage (Term): 9% Coverage (LOC): 22%
+*- File /root/Targets/passport-waad/node_modules/hoek/lib/escape.js. Coverage (Term): 34% Coverage (LOC): 46%
+*- File /root/Targets/passport-waad/node_modules/sntp/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/sntp/lib/index.js. Coverage (Term): 6% Coverage (LOC): 14%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/server.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/passport-waad/node_modules/cryptiles/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/passport-waad/node_modules/cryptiles/lib/index.js. Coverage (Term): 20% Coverage (LOC): 32%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/crypto.js. Coverage (Term): 21% Coverage (LOC): 46%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/client.js. Coverage (Term): 11% Coverage (LOC): 13%
+*- File /root/Targets/passport-waad/node_modules/hawk/lib/uri.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/passport-waad/node_modules/aws-sign/index.js. Coverage (Term): 26% Coverage (LOC): 51%
+*- File /root/Targets/passport-waad/node_modules/node-uuid/uuid.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/passport-waad/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

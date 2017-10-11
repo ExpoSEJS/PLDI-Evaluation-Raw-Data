@@ -1,0 +1,25 @@
+/root/Targets/astro-sdk
+└─┬ astro-sdk@0.18.0 
+  ├── bluebird@2.9.34 
+  ├── mobify-push-android-client@0.8.0 
+  ├── mobify-push-ios-client@0.8.0 
+  └── sandy-tracking-pixel-client@0.1.23  (git+https://cec4b06defcd91894a434b8ad512542daca2c50a@github.com/mobify/sandy-tracking-pixel-client.git#a48acb6faf025e1d9247941ad82d3aec50cdd0b1)
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/astro-sdk/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0579 took 4.6457s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'astro-sdk'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

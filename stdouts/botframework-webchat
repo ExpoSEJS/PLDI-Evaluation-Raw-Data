@@ -1,0 +1,480 @@
+/root/Targets/botframework-webchat
+└─┬ botframework-webchat@0.11.2 
+  ├── @types/react@15.0.38 
+  ├── botframework-directlinejs@0.9.11 
+  ├── core-js@2.4.1 
+  ├─┬ markdown-it@8.3.1 
+  │ ├─┬ argparse@1.0.9 
+  │ │ └── sprintf-js@1.0.3 
+  │ ├── entities@1.1.1 
+  │ ├── linkify-it@2.0.3 
+  │ ├── mdurl@1.0.1 
+  │ └── uc.micro@1.0.3 
+  ├── microsoft-adaptivecards@0.6.1 
+  ├── microsoft-speech-browser-sdk@0.0.1 
+  ├─┬ react@15.6.1 
+  │ ├── create-react-class@15.6.2 
+  │ ├─┬ fbjs@0.8.16 
+  │ │ ├── core-js@1.2.7 
+  │ │ ├─┬ isomorphic-fetch@2.2.1 
+  │ │ │ ├─┬ node-fetch@1.7.3 
+  │ │ │ │ ├─┬ encoding@0.1.12 
+  │ │ │ │ │ └── iconv-lite@0.4.19 
+  │ │ │ │ └── is-stream@1.1.0 
+  │ │ │ └── whatwg-fetch@2.0.3 
+  │ │ ├─┬ promise@7.3.1 
+  │ │ │ └── asap@2.0.6 
+  │ │ ├── setimmediate@1.0.5 
+  │ │ └── ua-parser-js@0.7.14 
+  │ ├─┬ loose-envify@1.3.1 
+  │ │ └── js-tokens@3.0.2 
+  │ ├── object-assign@4.1.1 
+  │ └── prop-types@15.6.0 
+  ├── react-dom@15.6.1 
+  ├─┬ react-redux@5.0.5 
+  │ ├── hoist-non-react-statics@1.2.0 
+  │ ├── invariant@2.2.2 
+  │ ├── lodash@4.17.4 
+  │ └── lodash-es@4.17.4 
+  ├─┬ redux@3.7.2 
+  │ └── symbol-observable@1.0.4 
+  ├── redux-observable@0.13.0 
+  ├── rxjs@5.3.3 
+  └── tslib@1.7.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/botframework-webchat/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","fromCharCode","join","assign","freeze","for","call","RegExp","Map","Set","bind","random","toString","Proxy","toUpperCase","Symbol","apply","pow","Error","create","setPrototypeOf","charCodeAt","reduce","Boolean","stringify","getOwnPropertySymbols","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0456 took 55.1012s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/BotChat.js. Coverage (Term): 90% Coverage (LOC): 95%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/App.js. Coverage (Term): 57% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/tslib/tslib.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react/react.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/React.js. Coverage (Term): 64% Coverage (LOC): 79%
+*- File /root/Targets/botframework-webchat/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactBaseClasses.js. Coverage (Term): 46% Coverage (LOC): 62%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactNoopUpdateQueue.js. Coverage (Term): 28% Coverage (LOC): 60%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/warning.js. Coverage (Term): 31% Coverage (LOC): 47%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/emptyFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/canDefineProperty.js. Coverage (Term): 87% Coverage (LOC): 92%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/emptyObject.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/invariant.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/lowPriorityWarning.js. Coverage (Term): 18% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactChildren.js. Coverage (Term): 22% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/PooledClass.js. Coverage (Term): 34% Coverage (LOC): 45%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactElement.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactCurrentOwner.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactDOMFactories.js. Coverage (Term): 100% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactElementValidator.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactComponentTreeHook.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactPropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/prop-types/factory.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/prop-types/factoryWithTypeCheckers.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/botframework-webchat/node_modules/prop-types/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/prop-types/checkPropTypes.js. Coverage (Term): 27% Coverage (LOC): 41%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/createClass.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/create-react-class/factory.js. Coverage (Term): 11% Coverage (LOC): 23%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/onlyChild.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOM.js. Coverage (Term): 42% Coverage (LOC): 49%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMComponentTree.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DOMProperty.js. Coverage (Term): 69% Coverage (LOC): 81%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMComponentFlags.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDefaultInjection.js. Coverage (Term): 94% Coverage (LOC): 96%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ARIADOMPropertyConfig.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/BeforeInputEventPlugin.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/EventPropagators.js. Coverage (Term): 25% Coverage (LOC): 43%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/EventPluginHub.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/EventPluginRegistry.js. Coverage (Term): 20% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/EventPluginUtils.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactErrorUtils.js. Coverage (Term): 30% Coverage (LOC): 41%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/accumulateInto.js. Coverage (Term): 28% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/forEachAccumulated.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/ExecutionEnvironment.js. Coverage (Term): 73% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/FallbackCompositionState.js. Coverage (Term): 24% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/PooledClass.js. Coverage (Term): 40% Coverage (LOC): 52%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getTextContentAccessor.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticCompositionEvent.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticEvent.js. Coverage (Term): 26% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticInputEvent.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ChangeEventPlugin.js. Coverage (Term): 22% Coverage (LOC): 36%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactUpdates.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/CallbackQueue.js. Coverage (Term): 38% Coverage (LOC): 53%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactFeatureFlags.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactReconciler.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactRef.js. Coverage (Term): 19% Coverage (LOC): 29%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactOwner.js. Coverage (Term): 26% Coverage (LOC): 56%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactInstrumentation.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDebugTool.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactInvalidSetStateWarningHook.js. Coverage (Term): 54% Coverage (LOC): 76%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactHostOperationHistoryHook.js. Coverage (Term): 49% Coverage (LOC): 60%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/performanceNow.js. Coverage (Term): 58% Coverage (LOC): 73%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/performance.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/Transaction.js. Coverage (Term): 20% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/inputValueTracking.js. Coverage (Term): 12% Coverage (LOC): 21%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getEventTarget.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/isEventSupported.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/isTextInputElement.js. Coverage (Term): 49% Coverage (LOC): 72%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DefaultEventPluginOrder.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/EnterLeaveEventPlugin.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticMouseEvent.js. Coverage (Term): 36% Coverage (LOC): 73%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticUIEvent.js. Coverage (Term): 37% Coverage (LOC): 44%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ViewportMetrics.js. Coverage (Term): 62% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getEventModifierState.js. Coverage (Term): 38% Coverage (LOC): 58%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/HTMLDOMPropertyConfig.js. Coverage (Term): 79% Coverage (LOC): 95%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DOMChildrenOperations.js. Coverage (Term): 17% Coverage (LOC): 19%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DOMLazyTree.js. Coverage (Term): 30% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DOMNamespaces.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/setInnerHTML.js. Coverage (Term): 28% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js. Coverage (Term): 54% Coverage (LOC): 67%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/setTextContent.js. Coverage (Term): 38% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/escapeTextContentForBrowser.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/Danger.js. Coverage (Term): 38% Coverage (LOC): 60%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/createNodesFromMarkup.js. Coverage (Term): 26% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/createArrayFromMixed.js. Coverage (Term): 11% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/getMarkupWrap.js. Coverage (Term): 63% Coverage (LOC): 87%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMIDOperations.js. Coverage (Term): 64% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMComponent.js. Coverage (Term): 11% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/AutoFocusUtils.js. Coverage (Term): 75% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/focusNode.js. Coverage (Term): 66% Coverage (LOC): 71%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/CSSPropertyOperations.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/CSSProperty.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/camelizeStyleName.js. Coverage (Term): 67% Coverage (LOC): 88%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/camelize.js. Coverage (Term): 51% Coverage (LOC): 67%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/dangerousStyleValue.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/hyphenateStyleName.js. Coverage (Term): 67% Coverage (LOC): 88%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/hyphenate.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/memoizeStringOnly.js. Coverage (Term): 53% Coverage (LOC): 64%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/DOMPropertyOperations.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/quoteAttributeValueForBrowser.js. Coverage (Term): 64% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactBrowserEventEmitter.js. Coverage (Term): 35% Coverage (LOC): 62%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactEventEmitterMixin.js. Coverage (Term): 46% Coverage (LOC): 67%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getVendorPrefixedEventName.js. Coverage (Term): 73% Coverage (LOC): 73%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMInput.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/LinkedValueUtils.js. Coverage (Term): 21% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMOption.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMSelect.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMTextarea.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactMultiChild.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactComponentEnvironment.js. Coverage (Term): 81% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactInstanceMap.js. Coverage (Term): 40% Coverage (LOC): 69%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactChildReconciler.js. Coverage (Term): 20% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/instantiateReactComponent.js. Coverage (Term): 19% Coverage (LOC): 24%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactCompositeComponent.js. Coverage (Term): 6% Coverage (LOC): 13%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactNodeTypes.js. Coverage (Term): 42% Coverage (LOC): 57%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/shallowEqual.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/shouldUpdateReactComponent.js. Coverage (Term): 20% Coverage (LOC): 31%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactEmptyComponent.js. Coverage (Term): 77% Coverage (LOC): 91%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactHostComponent.js. Coverage (Term): 56% Coverage (LOC): 84%
+*- File /root/Targets/botframework-webchat/node_modules/react/lib/getNextDebugID.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/flattenChildren.js. Coverage (Term): 28% Coverage (LOC): 29%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactServerRenderingTransaction.js. Coverage (Term): 62% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactServerUpdateQueue.js. Coverage (Term): 29% Coverage (LOC): 46%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactUpdateQueue.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/validateDOMNesting.js. Coverage (Term): 16% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMEmptyComponent.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMTreeTraversal.js. Coverage (Term): 10% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMTextComponent.js. Coverage (Term): 18% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js. Coverage (Term): 65% Coverage (LOC): 79%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactEventListener.js. Coverage (Term): 29% Coverage (LOC): 43%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/EventListener.js. Coverage (Term): 20% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/getUnboundedScrollPosition.js. Coverage (Term): 35% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactInjection.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactReconcileTransaction.js. Coverage (Term): 52% Coverage (LOC): 71%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactInputSelection.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMSelection.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getNodeForCharacterOffset.js. Coverage (Term): 20% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/containsNode.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/isTextNode.js. Coverage (Term): 63% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/isNode.js. Coverage (Term): 27% Coverage (LOC): 63%
+*- File /root/Targets/botframework-webchat/node_modules/fbjs/lib/getActiveElement.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SVGDOMPropertyConfig.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SelectEventPlugin.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SimpleEventPlugin.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticAnimationEvent.js. Coverage (Term): 68% Coverage (LOC): 92%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticClipboardEvent.js. Coverage (Term): 52% Coverage (LOC): 82%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticFocusEvent.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticKeyboardEvent.js. Coverage (Term): 41% Coverage (LOC): 59%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getEventCharCode.js. Coverage (Term): 29% Coverage (LOC): 29%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getEventKey.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticDragEvent.js. Coverage (Term): 67% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticTouchEvent.js. Coverage (Term): 73% Coverage (LOC): 94%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticTransitionEvent.js. Coverage (Term): 68% Coverage (LOC): 92%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/SyntheticWheelEvent.js. Coverage (Term): 36% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactMount.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMContainerInfo.js. Coverage (Term): 32% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMFeatureFlags.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactMarkupChecksum.js. Coverage (Term): 36% Coverage (LOC): 55%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/adler32.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/findDOMNode.js. Coverage (Term): 29% Coverage (LOC): 35%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/getHostComponentFromComposite.js. Coverage (Term): 42% Coverage (LOC): 43%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/renderSubtreeIntoContainer.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMUnknownPropertyHook.js. Coverage (Term): 21% Coverage (LOC): 41%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMNullInputValuePropHook.js. Coverage (Term): 31% Coverage (LOC): 48%
+*- File /root/Targets/botframework-webchat/node_modules/react-dom/lib/ReactDOMInvalidARIAHook.js. Coverage (Term): 18% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Chat.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-directlinejs/built/directLine.js. Coverage (Term): 16% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/BehaviorSubject.js. Coverage (Term): 54% Coverage (LOC): 66%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Subject.js. Coverage (Term): 33% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Observable.js. Coverage (Term): 25% Coverage (LOC): 32%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/root.js. Coverage (Term): 79% Coverage (LOC): 92%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/toSubscriber.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Subscriber.js. Coverage (Term): 25% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isFunction.js. Coverage (Term): 64% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Subscription.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isArray.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isObject.js. Coverage (Term): 57% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/tryCatch.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/errorObject.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/UnsubscriptionError.js. Coverage (Term): 51% Coverage (LOC): 67%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Observer.js. Coverage (Term): 56% Coverage (LOC): 90%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/symbol/rxSubscriber.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/symbol/observable.js. Coverage (Term): 89% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/ObjectUnsubscribedError.js. Coverage (Term): 67% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/SubjectSubscription.js. Coverage (Term): 49% Coverage (LOC): 51%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/catch.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/catch.js. Coverage (Term): 46% Coverage (LOC): 56%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/OuterSubscriber.js. Coverage (Term): 64% Coverage (LOC): 85%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/subscribeToResult.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isArrayLike.js. Coverage (Term): 56% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isPromise.js. Coverage (Term): 50% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/symbol/iterator.js. Coverage (Term): 45% Coverage (LOC): 47%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/InnerSubscriber.js. Coverage (Term): 54% Coverage (LOC): 70%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/combineLatest.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/combineLatest.js. Coverage (Term): 31% Coverage (LOC): 41%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/ArrayObservable.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/ScalarObservable.js. Coverage (Term): 42% Coverage (LOC): 42%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/EmptyObservable.js. Coverage (Term): 57% Coverage (LOC): 70%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isScheduler.js. Coverage (Term): 58% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/count.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/count.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/delay.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/delay.js. Coverage (Term): 34% Coverage (LOC): 46%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/scheduler/async.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/scheduler/AsyncAction.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/scheduler/Action.js. Coverage (Term): 70% Coverage (LOC): 79%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/scheduler/AsyncScheduler.js. Coverage (Term): 61% Coverage (LOC): 59%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Scheduler.js. Coverage (Term): 64% Coverage (LOC): 76%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isDate.js. Coverage (Term): 55% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/Notification.js. Coverage (Term): 33% Coverage (LOC): 45%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/do.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/do.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/filter.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/filter.js. Coverage (Term): 48% Coverage (LOC): 61%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/map.js. Coverage (Term): 48% Coverage (LOC): 62%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/mergeMap.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/mergeMap.js. Coverage (Term): 29% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/retryWhen.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/retryWhen.js. Coverage (Term): 33% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/share.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/share.js. Coverage (Term): 59% Coverage (LOC): 82%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/multicast.js. Coverage (Term): 30% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/ConnectableObservable.js. Coverage (Term): 39% Coverage (LOC): 47%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/take.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/take.js. Coverage (Term): 49% Coverage (LOC): 56%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/ArgumentOutOfRangeError.js. Coverage (Term): 67% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/dom/ajax.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/dom/ajax.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/dom/AjaxObservable.js. Coverage (Term): 20% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/empty.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/empty.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/from.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/from.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/FromObservable.js. Coverage (Term): 46% Coverage (LOC): 54%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/PromiseObservable.js. Coverage (Term): 27% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/IteratorObservable.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/ArrayLikeObservable.js. Coverage (Term): 35% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/observeOn.js. Coverage (Term): 45% Coverage (LOC): 62%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/interval.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/interval.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/IntervalObservable.js. Coverage (Term): 39% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/util/isNumeric.js. Coverage (Term): 54% Coverage (LOC): 88%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/of.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/of.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/throw.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/throw.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/ErrorObservable.js. Coverage (Term): 52% Coverage (LOC): 61%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Store.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Strings.js. Coverage (Term): 61% Coverage (LOC): 88%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/SpeechModule.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Konsole.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/index.js. Coverage (Term): 88% Coverage (LOC): 96%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/createStore.js. Coverage (Term): 17% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/isPlainObject.js. Coverage (Term): 52% Coverage (LOC): 53%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_baseGetTag.js. Coverage (Term): 58% Coverage (LOC): 64%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_Symbol.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_root.js. Coverage (Term): 76% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_freeGlobal.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_getRawTag.js. Coverage (Term): 46% Coverage (LOC): 43%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_objectToString.js. Coverage (Term): 71% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_getPrototype.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/_overArg.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/botframework-webchat/node_modules/lodash/isObjectLike.js. Coverage (Term): 54% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/symbol-observable/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/symbol-observable/lib/index.js. Coverage (Term): 78% Coverage (LOC): 75%
+*- File /root/Targets/botframework-webchat/node_modules/symbol-observable/lib/ponyfill.js. Coverage (Term): 80% Coverage (LOC): 82%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/combineReducers.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/utils/warning.js. Coverage (Term): 47% Coverage (LOC): 55%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/bindActionCreators.js. Coverage (Term): 18% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/applyMiddleware.js. Coverage (Term): 25% Coverage (LOC): 32%
+*- File /root/Targets/botframework-webchat/node_modules/redux/lib/compose.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/merge.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/merge.js. Coverage (Term): 22% Coverage (LOC): 31%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/mergeAll.js. Coverage (Term): 40% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/throttleTime.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/throttleTime.js. Coverage (Term): 45% Coverage (LOC): 57%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/operator/takeUntil.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/takeUntil.js. Coverage (Term): 54% Coverage (LOC): 74%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/bindCallback.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/bindCallback.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/BoundCallbackObservable.js. Coverage (Term): 21% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/AsyncSubject.js. Coverage (Term): 44% Coverage (LOC): 51%
+*- File /root/Targets/botframework-webchat/node_modules/redux-observable/lib/index.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /root/Targets/botframework-webchat/node_modules/redux-observable/lib/createEpicMiddleware.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/operator/switchMap.js. Coverage (Term): 35% Coverage (LOC): 47%
+*- File /root/Targets/botframework-webchat/node_modules/redux-observable/lib/ActionsObservable.js. Coverage (Term): 48% Coverage (LOC): 65%
+*- File /root/Targets/botframework-webchat/node_modules/redux-observable/lib/EPIC_END.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/redux-observable/lib/combineEpics.js. Coverage (Term): 19% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/merge.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/components/Provider.js. Coverage (Term): 57% Coverage (LOC): 71%
+*- File /root/Targets/botframework-webchat/node_modules/prop-types/index.js. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/utils/PropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/utils/warning.js. Coverage (Term): 46% Coverage (LOC): 55%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/components/connectAdvanced.js. Coverage (Term): 43% Coverage (LOC): 53%
+*- File /root/Targets/botframework-webchat/node_modules/hoist-non-react-statics/index.js. Coverage (Term): 93% Coverage (LOC): 97%
+*- File /root/Targets/botframework-webchat/node_modules/invariant/invariant.js. Coverage (Term): 48% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/utils/Subscription.js. Coverage (Term): 21% Coverage (LOC): 33%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/connect.js. Coverage (Term): 74% Coverage (LOC): 77%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/utils/shallowEqual.js. Coverage (Term): 19% Coverage (LOC): 30%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/mapDispatchToProps.js. Coverage (Term): 54% Coverage (LOC): 79%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/wrapMapToProps.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/utils/verifyPlainObject.js. Coverage (Term): 65% Coverage (LOC): 80%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/mapStateToProps.js. Coverage (Term): 81% Coverage (LOC): 94%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/mergeProps.js. Coverage (Term): 40% Coverage (LOC): 51%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/selectorFactory.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/botframework-webchat/node_modules/react-redux/lib/connect/verifySubselectors.js. Coverage (Term): 39% Coverage (LOC): 52%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/History.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/ActivityView.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Attachment.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/CardBuilder.js. Coverage (Term): 24% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/AdaptiveCardContainer.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/adaptive-cards.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/card-elements.js. Coverage (Term): 22% Coverage (LOC): 37%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/enums.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/utils.js. Coverage (Term): 21% Coverage (LOC): 34%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/index.js. Coverage (Term): 40% Coverage (LOC): 54%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/common/utils.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/common/entities.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/categories/P/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/mdurl/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/mdurl/encode.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/botframework-webchat/node_modules/mdurl/decode.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/botframework-webchat/node_modules/mdurl/format.js. Coverage (Term): 14% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/mdurl/parse.js. Coverage (Term): 15% Coverage (LOC): 27%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/properties/Any/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/categories/Cc/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/categories/Cf/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/uc.micro/categories/Z/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/helpers/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/helpers/parse_link_label.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/helpers/parse_link_destination.js. Coverage (Term): 13% Coverage (LOC): 11%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/helpers/parse_link_title.js. Coverage (Term): 14% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/renderer.js. Coverage (Term): 13% Coverage (LOC): 27%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/parser_core.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/ruler.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/normalize.js. Coverage (Term): 50% Coverage (LOC): 70%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/block.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/inline.js. Coverage (Term): 25% Coverage (LOC): 42%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/linkify.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/replacements.js. Coverage (Term): 13% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/smartquotes.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_core/state_core.js. Coverage (Term): 53% Coverage (LOC): 58%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/token.js. Coverage (Term): 16% Coverage (LOC): 24%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/parser_block.js. Coverage (Term): 50% Coverage (LOC): 72%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/table.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/code.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/fence.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/blockquote.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/hr.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/list.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/reference.js. Coverage (Term): 5% Coverage (LOC): 5%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/heading.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/lheading.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/html_block.js. Coverage (Term): 25% Coverage (LOC): 45%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/common/html_blocks.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/common/html_re.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/paragraph.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_block/state_block.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/parser_inline.js. Coverage (Term): 44% Coverage (LOC): 61%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/text.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/newline.js. Coverage (Term): 16% Coverage (LOC): 21%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/escape.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/backticks.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/strikethrough.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/emphasis.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/link.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/image.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/autolink.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/html_inline.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/entity.js. Coverage (Term): 22% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/balance_pairs.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/text_collapse.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/rules_inline/state_inline.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/botframework-webchat/node_modules/linkify-it/index.js. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/presets/default.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/presets/zero.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/markdown-it/lib/presets/commonmark.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/linkify-it/lib/re.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/text-formatters.js. Coverage (Term): 39% Coverage (LOC): 50%
+*- File /root/Targets/botframework-webchat/node_modules/microsoft-adaptivecards/built/host-config.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Carousel.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/HScroll.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/fromEvent.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/fromEvent.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/observable/FromEventObservable.js. Coverage (Term): 25% Coverage (LOC): 38%
+*- File /root/Targets/botframework-webchat/node_modules/rxjs/add/observable/merge.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/FormattedText.js. Coverage (Term): 24% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/MessagePane.js. Coverage (Term): 29% Coverage (LOC): 39%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/Shell.js. Coverage (Term): 21% Coverage (LOC): 29%
+*- File /root/Targets/botframework-webchat/node_modules/botframework-webchat/built/SpeechOptions.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/botframework-webchat/node_modules/core-js/modules/es6.string.starts-with.js. Coverage (Term): 18% Coverage (LOC): 56%
+*- File /root/Targets/botframework-webchat/node_modules/core-js/modules/_export.js. Coverage (Term): 8% Coverage (LOC): 14%
+*- File /root/Targets/botframework-webchat/node_modules/core-js/modules/_global.js. Coverage (Term): 55% Coverage (LOC): 80%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

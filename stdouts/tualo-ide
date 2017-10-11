@@ -1,0 +1,490 @@
+
+> uws@0.14.5 install /root/Targets/tualo-ide/node_modules/uws
+> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+/root/Targets/tualo-ide
+└─┬ tualo-ide@0.0.14 
+  ├── diff@3.3.1 
+  ├─┬ express@4.16.1 
+  │ ├─┬ accepts@1.3.4 
+  │ │ ├─┬ mime-types@2.1.17 
+  │ │ │ └── mime-db@1.30.0 
+  │ │ └── negotiator@0.6.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├─┬ body-parser@1.18.2 
+  │ │ ├── bytes@3.0.0 
+  │ │ ├─┬ http-errors@1.6.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ └── setprototypeof@1.0.3 
+  │ │ ├── iconv-lite@0.4.19 
+  │ │ └── raw-body@2.3.2 
+  │ ├── content-disposition@0.5.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.3.1 
+  │ ├── cookie-signature@1.0.6 
+  │ ├─┬ debug@2.6.9 
+  │ │ └── ms@2.0.0 
+  │ ├── depd@1.1.1 
+  │ ├── encodeurl@1.0.1 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.1.0 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.2 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.2 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.5.2 
+  │ ├── qs@6.5.1 
+  │ ├── range-parser@1.2.0 
+  │ ├── safe-buffer@5.1.1 
+  │ ├─┬ send@0.16.1 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── mime@1.4.1 
+  │ ├── serve-static@1.13.1 
+  │ ├── setprototypeof@1.1.0 
+  │ ├── statuses@1.3.1 
+  │ ├─┬ type-is@1.6.15 
+  │ │ └── media-typer@0.3.0 
+  │ ├── utils-merge@1.0.1 
+  │ └── vary@1.1.2 
+  ├─┬ forever@0.15.3 
+  │ ├─┬ cliff@0.1.10 
+  │ │ ├── colors@1.0.3 
+  │ │ └── eyes@0.1.8 
+  │ ├── clone@1.0.2 
+  │ ├── colors@0.6.2 
+  │ ├─┬ flatiron@0.4.3 
+  │ │ ├─┬ broadway@0.3.6 
+  │ │ │ ├── cliff@0.1.9 
+  │ │ │ └── winston@0.8.0 
+  │ │ ├── director@1.2.7 
+  │ │ ├── optimist@0.6.0 
+  │ │ └─┬ prompt@0.2.14 
+  │ │   ├─┬ read@1.0.7 
+  │ │   │ └── mute-stream@0.0.7 
+  │ │   └── revalidator@0.1.8 
+  │ ├─┬ forever-monitor@1.7.1 
+  │ │ ├─┬ chokidar@1.7.0 
+  │ │ │ ├─┬ anymatch@1.3.2 
+  │ │ │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ │ │ ├── array-unique@0.2.1 
+  │ │ │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │ │ │   └─┬ randomatic@1.1.7 
+  │ │ │ │ │ │ │     ├─┬ is-number@3.0.0 
+  │ │ │ │ │ │ │     │ └── kind-of@3.2.2 
+  │ │ │ │ │ │ │     └── kind-of@4.0.0 
+  │ │ │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ │ │ ├── extglob@0.3.2 
+  │ │ │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │ │ │     └── is-primitive@2.0.0 
+  │ │ │ │ └─┬ normalize-path@2.1.1 
+  │ │ │ │   └── remove-trailing-separator@1.1.0 
+  │ │ │ ├── async-each@1.0.1 
+  │ │ │ ├── glob-parent@2.0.0 
+  │ │ │ ├─┬ is-binary-path@1.0.1 
+  │ │ │ │ └── binary-extensions@1.10.0 
+  │ │ │ ├─┬ is-glob@2.0.1 
+  │ │ │ │ └── is-extglob@1.0.0 
+  │ │ │ └─┬ readdirp@2.1.0 
+  │ │ │   ├── graceful-fs@4.1.11 
+  │ │ │   ├─┬ readable-stream@2.3.3 
+  │ │ │   │ ├── core-util-is@1.0.2 
+  │ │ │   │ ├── isarray@1.0.0 
+  │ │ │   │ ├── process-nextick-args@1.0.7 
+  │ │ │   │ ├── string_decoder@1.0.3 
+  │ │ │   │ └── util-deprecate@1.0.2 
+  │ │ │   └── set-immediate-shim@1.0.1 
+  │ │ ├─┬ minimatch@3.0.4 
+  │ │ │ └─┬ brace-expansion@1.1.8 
+  │ │ │   ├── balanced-match@1.0.0 
+  │ │ │   └── concat-map@0.0.1 
+  │ │ └─┬ ps-tree@0.0.3 
+  │ │   └─┬ event-stream@0.5.3 
+  │ │     └── optimist@0.2.8 
+  │ ├─┬ nconf@0.6.9 
+  │ │ ├── async@0.2.9 
+  │ │ ├── ini@1.3.4 
+  │ │ └── optimist@0.6.0 
+  │ ├─┬ nssocket@0.5.3 
+  │ │ ├── eventemitter2@0.4.14 
+  │ │ └── lazy@1.0.11 
+  │ ├── object-assign@3.0.0 
+  │ ├─┬ optimist@0.6.1 
+  │ │ ├── minimist@0.0.10 
+  │ │ └── wordwrap@0.0.3 
+  │ ├── path-is-absolute@1.0.1 
+  │ ├─┬ prettyjson@1.2.1 
+  │ │ ├── colors@1.1.2 
+  │ │ └── minimist@1.2.0 
+  │ ├─┬ shush@1.0.0 
+  │ │ ├─┬ caller@0.0.1 
+  │ │ │ └─┬ tape@2.3.3 
+  │ │ │   ├── deep-equal@0.1.2 
+  │ │ │   ├── defined@0.0.0 
+  │ │ │   ├── jsonify@0.0.0 
+  │ │ │   ├── resumer@0.0.0 
+  │ │ │   └── through@2.3.8 
+  │ │ └── strip-json-comments@0.1.3 
+  │ ├── timespan@2.3.0 
+  │ ├─┬ utile@0.2.1 
+  │ │ ├── async@0.2.10 
+  │ │ ├── deep-equal@1.0.1 
+  │ │ ├── i@0.3.5 
+  │ │ ├── ncp@0.4.2 
+  │ │ └─┬ rimraf@2.6.2 
+  │ │   └─┬ glob@7.1.2 
+  │ │     ├── fs.realpath@1.0.0 
+  │ │     ├─┬ inflight@1.0.6 
+  │ │     │ └── wrappy@1.0.2 
+  │ │     └── once@1.4.0 
+  │ └─┬ winston@0.8.3 
+  │   ├── cycle@1.0.3 
+  │   ├── isstream@0.1.2 
+  │   ├── pkginfo@0.3.1 
+  │   └── stack-trace@0.0.10 
+  ├─┬ jade@1.11.0 
+  │ ├── character-parser@1.2.1 
+  │ ├─┬ clean-css@3.4.28 
+  │ │ ├─┬ commander@2.8.1 
+  │ │ │ └── graceful-readlink@1.0.1 
+  │ │ └─┬ source-map@0.4.4 
+  │ │   └── amdefine@1.0.1 
+  │ ├── commander@2.6.0 
+  │ ├─┬ constantinople@3.0.2 
+  │ │ └── acorn@2.7.0 
+  │ ├─┬ jstransformer@0.0.2 
+  │ │ ├── is-promise@2.1.0 
+  │ │ └─┬ promise@6.1.0 
+  │ │   └── asap@1.0.0 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├─┬ transformers@2.1.0 
+  │ │ ├─┬ css@1.0.8 
+  │ │ │ ├── css-parse@1.0.4 
+  │ │ │ └── css-stringify@1.0.5 
+  │ │ ├─┬ promise@2.0.0 
+  │ │ │ └── is-promise@1.0.1 
+  │ │ └─┬ uglify-js@2.2.5 
+  │ │   ├── optimist@0.3.7 
+  │ │   └── source-map@0.1.43 
+  │ ├─┬ uglify-js@2.8.29 
+  │ │ ├── source-map@0.5.7 
+  │ │ ├── uglify-to-browserify@1.0.2 
+  │ │ └─┬ yargs@3.10.0 
+  │ │   ├── camelcase@1.2.1 
+  │ │   ├─┬ cliui@2.1.0 
+  │ │   │ ├─┬ center-align@0.1.3 
+  │ │   │ │ ├─┬ align-text@0.1.4 
+  │ │   │ │ │ ├── longest@1.0.1 
+  │ │   │ │ │ └── repeat-string@1.6.1 
+  │ │   │ │ └── lazy-cache@1.0.4 
+  │ │   │ ├── right-align@0.1.3 
+  │ │   │ └── wordwrap@0.0.2 
+  │ │   ├── decamelize@1.2.0 
+  │ │   └── window-size@0.1.0 
+  │ ├── void-elements@2.0.1 
+  │ └─┬ with@4.0.3 
+  │   ├── acorn@1.2.2 
+  │   └── acorn-globals@1.0.9 
+  ├─┬ path-extra@4.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ └── replace-ext@1.0.0 
+  ├── session.socket.io@0.2.1 
+  ├─┬ socket.io@2.0.3 
+  │ ├─┬ engine.io@3.1.2 
+  │ │ ├── accepts@1.3.3 
+  │ │ ├── base64id@1.0.0 
+  │ │ ├─┬ engine.io-parser@2.1.1 
+  │ │ │ ├── after@0.8.2 
+  │ │ │ ├── arraybuffer.slice@0.0.6 
+  │ │ │ └── blob@0.0.4 
+  │ │ ├── uws@0.14.5 
+  │ │ └─┬ ws@2.3.1 
+  │ │   ├── safe-buffer@5.0.1 
+  │ │   └── ultron@1.1.0 
+  │ ├── object-assign@4.1.1 
+  │ ├── socket.io-adapter@1.1.1 
+  │ └─┬ socket.io-parser@3.1.2 
+  │   ├─┬ has-binary2@1.0.2 
+  │   │ └── isarray@2.0.1 
+  │   └── isarray@2.0.1 
+  ├─┬ socket.io-client@2.0.3 
+  │ ├── backo2@1.0.2 
+  │ ├── base64-arraybuffer@0.1.5 
+  │ ├── component-bind@1.0.0 
+  │ ├── component-emitter@1.2.1 
+  │ ├─┬ engine.io-client@3.1.2 
+  │ │ ├── component-inherit@0.0.3 
+  │ │ ├── xmlhttprequest-ssl@1.5.3 
+  │ │ └── yeast@0.1.2 
+  │ ├── has-cors@1.1.0 
+  │ ├── indexof@0.0.1 
+  │ ├── object-component@0.0.3 
+  │ ├─┬ parseqs@0.0.5 
+  │ │ └─┬ better-assert@1.0.2 
+  │ │   └── callsite@1.0.0 
+  │ ├── parseuri@0.0.5 
+  │ └── to-array@0.1.4 
+  ├── tualo-extjs@4.2.1 
+  ├─┬ tualo-extjs-codemirror@3.21.1 
+  │ └── codemirror@3.21.0 
+  └─┬ uglify-js@3.1.3 
+    ├── commander@2.11.0 
+    └── source-map@0.5.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/tualo-ide/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","reduce","parseInt","charCodeAt","abs","Number","toString","toUpperCase","join","call","RegExp","getOwnPropertyNames","fromCharCode","assign"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0321 took 43.0094s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Octal literal in strict mode (80:14) on program /*!
+ * socket.io-node
+ * Copyright(c) 2011 LearnBoost <dev@learnboost.com>
+ * MIT Licensed
+ */
+
+/**
+ * Module dependencies.
+ */
+
+var util = require('./util')
+  , toArray = util.toArray;
+
+/**
+ * Log levels.
+ */
+
+var levels = [
+    'error'
+  , 'warn'
+  , 'info'
+  , 'debug'
+];
+
+/**
+ * Colors for log levels.
+ */
+
+var colors = [
+    31
+  , 33
+  , 36
+  , 90
+];
+
+/**
+ * Pads the nice output to the longest log level.
+ */
+
+function pad (str) {
+  var max = 0;
+
+  for (var i = 0, l = levels.length; i < l; i++)
+    max = Math.max(max, levels[i].length);
+
+  if (str.length < max)
+    return str + new Array(max - str.length + 1).join(' ');
+
+  return str;
+};
+
+/**
+ * Logger (console).
+ *
+ * @api public
+ */
+
+var Logger = module.exports = function (opts) {
+  opts = opts || {}
+  this.colors = false !== opts.colors;
+  this.level = 3;
+  this.enabled = true;
+};
+
+/**
+ * Log method.
+ *
+ * @api public
+ */
+
+Logger.prototype.log = function (type) {
+  var index = levels.indexOf(type);
+
+  if (index > this.level || !this.enabled)
+    return this;
+
+  console.log.apply(
+      console
+    , [this.colors
+        ? '   \033[' + colors[index] + 'm' + pad(type) + ' -\033[39m'
+        : type + ':'
+      ].concat(toArray(arguments).slice(1))
+  );
+
+  return this;
+};
+
+/**
+ * Generate methods.
+ */
+
+levels.forEach(function (name) {
+  Logger.prototype[name] = function () {
+    this.log.apply(this, [name].concat(toArray(arguments)));
+  };
+}); at SyntaxError: Octal literal in strict mode (80:14)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$7.readEscapedChar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3023:16)
+    at Parser.pp$7.readString (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2935:23)
+    at Parser.pp$7.getTokenFromCode (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2724:19)
+    at Parser.pp$7.readToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2477:17)
+    at Parser.readToken (/root/ExpoSE/lib/Tropigate/bin/Tokens.js:124:26)
+    at Parser.pp$7.nextToken (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2468:15)
+    at Parser.pp$7.next (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2413:10)
+    at Parser.pp.eat (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:536:12)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1622:14)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/tualo-ide/node_modules/tualo-ide/app.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/tualo-ide/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/express.js. Coverage (Term): 64% Coverage (LOC): 68%
+*- File /root/Targets/tualo-ide/node_modules/body-parser/index.js. Coverage (Term): 63% Coverage (LOC): 70%
+*- File /root/Targets/tualo-ide/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
+*- File /root/Targets/tualo-ide/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
+*- File eval. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/tualo-ide/node_modules/merge-descriptors/index.js. Coverage (Term): 26% Coverage (LOC): 26%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/application.js. Coverage (Term): 17% Coverage (LOC): 25%
+*- File /root/Targets/tualo-ide/node_modules/finalhandler/index.js. Coverage (Term): 15% Coverage (LOC): 21%
+*- File /root/Targets/tualo-ide/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/tualo-ide/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
+*- File /root/Targets/tualo-ide/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/tualo-ide/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/tualo-ide/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
+*- File /root/Targets/tualo-ide/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/tualo-ide/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/tualo-ide/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/tualo-ide/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /root/Targets/tualo-ide/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/router/layer.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /root/Targets/tualo-ide/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
+*- File /root/Targets/tualo-ide/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
+*- File /root/Targets/tualo-ide/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/middleware/init.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/middleware/query.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /root/Targets/tualo-ide/node_modules/qs/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/tualo-ide/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/qs/lib/utils.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/qs/lib/formats.js. Coverage (Term): 61% Coverage (LOC): 87%
+*- File /root/Targets/tualo-ide/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/view.js. Coverage (Term): 21% Coverage (LOC): 28%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/utils.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/tualo-ide/node_modules/safe-buffer/index.js. Coverage (Term): 36% Coverage (LOC): 44%
+*- File /root/Targets/tualo-ide/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /root/Targets/tualo-ide/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/send/index.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/tualo-ide/node_modules/http-errors/index.js. Coverage (Term): 46% Coverage (LOC): 40%
+*- File /root/Targets/tualo-ide/node_modules/http-errors/node_modules/setprototypeof/index.js. Coverage (Term): 32% Coverage (LOC): 38%
+*- File /root/Targets/tualo-ide/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
+*- File /root/Targets/tualo-ide/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/tualo-ide/node_modules/etag/index.js. Coverage (Term): 16% Coverage (LOC): 32%
+*- File /root/Targets/tualo-ide/node_modules/fresh/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/tualo-ide/node_modules/mime/mime.js. Coverage (Term): 55% Coverage (LOC): 75%
+*- File /root/Targets/tualo-ide/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
+*- File /root/Targets/tualo-ide/node_modules/proxy-addr/index.js. Coverage (Term): 12% Coverage (LOC): 22%
+*- File /root/Targets/tualo-ide/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 25% Coverage (LOC): 47%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 40%
+*- File /root/Targets/tualo-ide/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/tualo-ide/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
+*- File /root/Targets/tualo-ide/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
+*- File /root/Targets/tualo-ide/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/tualo-ide/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
+*- File /root/Targets/tualo-ide/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- File /root/Targets/tualo-ide/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
+*- File /root/Targets/tualo-ide/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
+*- File /root/Targets/tualo-ide/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/tualo-ide/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/tualo-ide/node_modules/body-parser/lib/types/json.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/tualo-ide/node_modules/bytes/index.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /root/Targets/tualo-ide/node_modules/body-parser/lib/read.js. Coverage (Term): 12% Coverage (LOC): 12%
+*- File /root/Targets/tualo-ide/node_modules/raw-body/index.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/tualo-ide/node_modules/iconv-lite/lib/index.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/tualo-ide/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
+*- File /root/Targets/tualo-ide/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/tualo-ide/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 8%
+*- File /root/Targets/tualo-ide/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/tualo-ide/node_modules/body-parser/lib/types/urlencoded.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/tualo-ide/node_modules/socket.io/lib/index.js. Coverage (Term): 19% Coverage (LOC): 27%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/engine.io.js. Coverage (Term): 38% Coverage (LOC): 44%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/server.js. Coverage (Term): 22% Coverage (LOC): 53%
+*- File /root/Targets/tualo-ide/node_modules/base64id/lib/base64id.js. Coverage (Term): 13% Coverage (LOC): 15%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transports/index.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transports/polling-xhr.js. Coverage (Term): 32% Coverage (LOC): 41%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transports/polling.js. Coverage (Term): 12% Coverage (LOC): 16%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transport.js. Coverage (Term): 38% Coverage (LOC): 55%
+*- File /root/Targets/tualo-ide/node_modules/engine.io-parser/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/tualo-ide/node_modules/engine.io-parser/lib/index.js. Coverage (Term): 8% Coverage (LOC): 16%
+*- File /root/Targets/tualo-ide/node_modules/engine.io-parser/lib/utf8.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /root/Targets/tualo-ide/node_modules/has-binary2/index.js. Coverage (Term): 30% Coverage (LOC): 26%
+*- File /root/Targets/tualo-ide/node_modules/has-binary2/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/tualo-ide/node_modules/after/index.js. Coverage (Term): 20% Coverage (LOC): 24%
+*- File /root/Targets/tualo-ide/node_modules/engine.io-parser/lib/keys.js. Coverage (Term): 33% Coverage (LOC): 33%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transports/polling-jsonp.js. Coverage (Term): 33% Coverage (LOC): 52%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/transports/websocket.js. Coverage (Term): 24% Coverage (LOC): 31%
+*- File /root/Targets/tualo-ide/node_modules/engine.io/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
+*- File /root/Targets/tualo-ide/node_modules/socket.io/lib/client.js. Coverage (Term): 13% Coverage (LOC): 21%
+*- File /root/Targets/tualo-ide/node_modules/socket.io-parser/index.js. Coverage (Term): 18% Coverage (LOC): 27%
+*- File /root/Targets/tualo-ide/node_modules/component-emitter/index.js. Coverage (Term): 27% Coverage (LOC): 38%
+*- File /root/Targets/tualo-ide/node_modules/socket.io-parser/binary.js. Coverage (Term): 17% Coverage (LOC): 16%
+*- File /root/Targets/tualo-ide/node_modules/socket.io-parser/node_modules/isarray/index.js. Coverage (Term): 62% Coverage (LOC): 83%
+*- File /root/Targets/tualo-ide/node_modules/socket.io-parser/is-buffer.js. Coverage (Term): 45% Coverage (LOC): 80%
+*- File /root/Targets/tualo-ide/node_modules/socket.io/lib/namespace.js. Coverage (Term): 25% Coverage (LOC): 35%
+*- File /root/Targets/tualo-ide/node_modules/socket.io/lib/socket.js. Coverage (Term): 16% Coverage (LOC): 26%
+*- File /root/Targets/tualo-ide/node_modules/socket.io/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
+*- File /root/Targets/tualo-ide/node_modules/socket.io-adapter/index.js. Coverage (Term): 10% Coverage (LOC): 17%
+*- File /root/Targets/tualo-ide/node_modules/session.socket.io/session.socket.io.js. Coverage (Term): 7% Coverage (LOC): 11%
+*- File /root/Targets/tualo-ide/node_modules/tualo-extjs/lib/ext.js. Coverage (Term): 67% Coverage (LOC): 76%
+*- File /root/Targets/tualo-ide/node_modules/tualo-extjs-codemirror/lib/ext.js. Coverage (Term): 34% Coverage (LOC): 41%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

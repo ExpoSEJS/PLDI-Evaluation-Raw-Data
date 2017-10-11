@@ -1,0 +1,74 @@
+/root/Targets/nextlevel-frontend
+└─┬ nextlevel-frontend@0.0.10 
+  ├── bottlejs@1.5.0 
+  ├── feature.js@1.0.0 
+  ├─┬ found@0.1.3 
+  │ ├─┬ babel-runtime@6.26.0 
+  │ │ ├── core-js@2.5.1 
+  │ │ └── regenerator-runtime@0.11.0 
+  │ ├─┬ farce@0.1.0 
+  │ │ ├── dom-helpers@3.2.1 
+  │ │ └─┬ query-string@4.3.4 
+  │ │   ├── object-assign@4.1.1 
+  │ │   └── strict-uri-encode@1.1.0 
+  │ ├─┬ invariant@2.2.2 
+  │ │ └─┬ loose-envify@1.3.1 
+  │ │   └── js-tokens@3.0.2 
+  │ ├── is-promise@2.1.0 
+  │ ├── lodash@4.17.4 
+  │ ├─┬ path-to-regexp@1.7.0 
+  │ │ └── isarray@0.0.1 
+  │ ├── UNMET PEER DEPENDENCY react@>=0.14.0
+  │ ├── react-prop-types@0.4.0 
+  │ ├─┬ react-redux@5.0.6 
+  │ │ ├── hoist-non-react-statics@2.3.1 
+  │ │ ├── lodash-es@4.17.4 
+  │ │ └─┬ prop-types@15.6.0 
+  │ │   └─┬ fbjs@0.8.16 
+  │ │     ├── core-js@1.2.7 
+  │ │     ├─┬ isomorphic-fetch@2.2.1 
+  │ │     │ ├─┬ node-fetch@1.7.3 
+  │ │     │ │ ├─┬ encoding@0.1.12 
+  │ │     │ │ │ └── iconv-lite@0.4.19 
+  │ │     │ │ └── is-stream@1.1.0 
+  │ │     │ └── whatwg-fetch@2.0.3 
+  │ │     ├─┬ promise@7.3.1 
+  │ │     │ └── asap@2.0.6 
+  │ │     ├── setimmediate@1.0.5 
+  │ │     └── ua-parser-js@0.7.14 
+  │ ├── react-static-container@1.0.1 
+  │ ├─┬ redux@3.7.2 
+  │ │ └── symbol-observable@1.0.4 
+  │ └── warning@3.0.0 
+  ├─┬ nextlevel-helpers@0.0.4 
+  │ └── webpack-node-externals@1.6.0 
+  ├── preact@6.3.0 
+  ├─┬ preact-compat@3.8.2 
+  │ ├─┬ preact-render-to-string@3.6.3 
+  │ │ └── pretty-format@3.8.0 
+  │ ├── preact-transition-group@1.1.1 
+  │ └── proptypes@0.14.4 
+  ├── UNMET PEER DEPENDENCY react@>=0.14.0
+  └─┬ xtpoints@2.0.2 
+    └── underscore@1.8.3 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/nextlevel-frontend/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 8% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0439 took 39.2748s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/nextlevel-frontend/node_modules/nextlevel-frontend/dist/bundle.js. Coverage (Term): 2% Coverage (LOC): 7%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

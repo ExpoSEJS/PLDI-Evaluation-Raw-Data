@@ -1,0 +1,67 @@
+
+> npm-zepto@1.1.7 install /root/Targets/npm-zepto/node_modules/npm-zepto
+> script/build
+
+zepto@1.1.6 /root/Targets/npm-zepto/node_modules/npm-zepto/zepto
+├── coffee-script@1.5.0 
+├─┬ express@3.1.2 
+│ ├── buffer-crc32@0.2.13 
+│ ├── commander@0.6.1 
+│ ├─┬ connect@2.7.5 
+│ │ ├── buffer-crc32@0.1.1 
+│ │ ├── bytes@0.2.0 
+│ │ ├── formidable@1.0.11 
+│ │ ├── pause@0.0.1 
+│ │ └── qs@0.5.1 
+│ ├── cookie@0.0.5 
+│ ├── cookie-signature@1.0.0 
+│ ├─┬ debug@3.1.0 
+│ │ └── ms@2.0.0 
+│ ├── fresh@0.1.0 
+│ ├── methods@0.0.1 
+│ ├── mkdirp@0.3.5 
+│ ├── range-parser@0.0.4 
+│ └─┬ send@0.1.0 
+│   └── mime@1.2.6 
+├── shelljs@0.1.4 
+└─┬ uglify-js@2.4.24 
+  ├── async@0.2.10 
+  ├─┬ source-map@0.1.34 
+  │ └── amdefine@1.0.1 
+  ├── uglify-to-browserify@1.0.2 
+  └─┬ yargs@3.5.4 
+    ├── camelcase@1.2.1 
+    ├── decamelize@1.2.0 
+    ├── window-size@0.1.0 
+    └── wordwrap@0.0.2 
+
+
+> zepto@1.1.6 dist /root/Targets/npm-zepto/node_modules/npm-zepto/zepto
+> coffee make dist
+
+dist/zepto.js: 54.6 KiB
+dist/zepto.min.js: 24.6 KiB
+dist/zepto.min.gz: 9.2 KiB
+compression factor: 5.0
+/root/Targets/npm-zepto
+└── npm-zepto@1.1.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/npm-zepto/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 7.000000000000001% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0381 took 8.7582s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: window is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/npm-zepto/node_modules/npm-zepto/index.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

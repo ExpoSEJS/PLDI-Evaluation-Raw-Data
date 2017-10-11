@@ -1,0 +1,125 @@
+/root/Targets/pillow
+└─┬ pillow@0.0.9 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ dox@0.9.0 
+  │ ├─┬ commander@2.9.0 
+  │ │ └── graceful-readlink@1.0.1 
+  │ ├─┬ jsdoctypeparser@1.2.0 
+  │ │ └── lodash@3.10.1 
+  │ └─┬ markdown-it@7.0.1 
+  │   ├─┬ argparse@1.0.9 
+  │   │ └── sprintf-js@1.0.3 
+  │   ├── entities@1.1.1 
+  │   ├── linkify-it@2.0.3 
+  │   ├── mdurl@1.0.1 
+  │   └── uc.micro@1.0.3 
+  ├── jqtpl@1.1.0 
+  ├── JSLint-commonJS@0.0.1 
+  └── jsmin@1.0.1 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/pillow/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","Object","call","binding","RegExp","join","charCodeAt","reduce","Function","Error"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0631 took 58.6572s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: CompilationError: Tropigate failed because SyntaxError: 'with' in strict mode (1:131) on program (function($, $item) { var call,_=[],$data=$item.data;with($data){_.push("\n\ndefine('");if(typeof(filepath)!=="undefined" && (filepath)!=null){_.push($.encode((typeof(filepath)==="function"?(filepath).call($item):(filepath))));}_.push("', [ ");if(typeof(dependencies)!=="undefined" && (dependencies)!=null){$.each((typeof(dependencies)==="function"?(dependencies).call($item):(dependencies)),function($index, $value){with(this){_.push("'");if(typeof($value)!=="undefined" && ($value)!=null){_.push($.encode((typeof($value)==="function"?($value).call($item):($value))));}_.push("',");}});}_.push(" ], function (require, exports, module) {\n");if(typeof(code)!=="undefined" && (code)!=null){_.push((typeof(code)==="function"?(code).call($item):(code)));}_.push("\n});");}return _.join(""); }) at SyntaxError: 'with' in strict mode (1:131)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
+    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
+    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+Template: srcTemplate
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/pillow/node_modules/pillow/lib/main.js. Coverage (Term): 23% Coverage (LOC): 27%
+*- File /root/Targets/pillow/node_modules/pillow/lib/scan.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/pillow/node_modules/async/dist/async.js. Coverage (Term): 23% Coverage (LOC): 32%
+*- File /root/Targets/pillow/node_modules/jqtpl/index.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/jqtpl/lib/jqtpl.js. Coverage (Term): 57% Coverage (LOC): 72%
+*- File /root/Targets/pillow/node_modules/jqtpl/lib/jqtpl.express.js. Coverage (Term): 32% Coverage (LOC): 50%
+*- File /root/Targets/pillow/node_modules/jsmin/jsmin.js. Coverage (Term): 3% Coverage (LOC): 3%
+*- File /root/Targets/pillow/node_modules/JSLint-commonJS/fulljslint.js. Coverage (Term): 14% Coverage (LOC): 30%
+*- File /root/Targets/pillow/node_modules/dox/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/dox/lib/dox.js. Coverage (Term): 4% Coverage (LOC): 11%
+*- File /root/Targets/pillow/node_modules/markdown-it/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/index.js. Coverage (Term): 41% Coverage (LOC): 56%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/common/utils.js. Coverage (Term): 31% Coverage (LOC): 35%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/common/entities.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/uc.micro/categories/P/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/mdurl/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/mdurl/encode.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/pillow/node_modules/mdurl/decode.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/pillow/node_modules/mdurl/format.js. Coverage (Term): 14% Coverage (LOC): 28%
+*- File /root/Targets/pillow/node_modules/mdurl/parse.js. Coverage (Term): 15% Coverage (LOC): 27%
+*- File /root/Targets/pillow/node_modules/uc.micro/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/uc.micro/properties/Any/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/uc.micro/categories/Cc/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/uc.micro/categories/Cf/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/uc.micro/categories/Z/regex.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/helpers/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/helpers/parse_link_label.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/helpers/parse_link_destination.js. Coverage (Term): 13% Coverage (LOC): 11%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/helpers/parse_link_title.js. Coverage (Term): 14% Coverage (LOC): 14%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/renderer.js. Coverage (Term): 13% Coverage (LOC): 27%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/parser_core.js. Coverage (Term): 74% Coverage (LOC): 89%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/ruler.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/normalize.js. Coverage (Term): 50% Coverage (LOC): 70%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/block.js. Coverage (Term): 26% Coverage (LOC): 31%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/inline.js. Coverage (Term): 25% Coverage (LOC): 42%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/linkify.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/replacements.js. Coverage (Term): 13% Coverage (LOC): 28%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/smartquotes.js. Coverage (Term): 8% Coverage (LOC): 10%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_core/state_core.js. Coverage (Term): 53% Coverage (LOC): 58%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/token.js. Coverage (Term): 16% Coverage (LOC): 24%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/parser_block.js. Coverage (Term): 48% Coverage (LOC): 70%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/table.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/code.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/fence.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/blockquote.js. Coverage (Term): 4% Coverage (LOC): 6%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/hr.js. Coverage (Term): 15% Coverage (LOC): 17%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/list.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/reference.js. Coverage (Term): 7% Coverage (LOC): 7%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/heading.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/lheading.js. Coverage (Term): 6% Coverage (LOC): 9%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/html_block.js. Coverage (Term): 27% Coverage (LOC): 47%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/common/html_blocks.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/common/html_re.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/paragraph.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_block/state_block.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/parser_inline.js. Coverage (Term): 44% Coverage (LOC): 61%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/text.js. Coverage (Term): 13% Coverage (LOC): 14%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/newline.js. Coverage (Term): 12% Coverage (LOC): 18%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/escape.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/backticks.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/strikethrough.js. Coverage (Term): 7% Coverage (LOC): 9%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/emphasis.js. Coverage (Term): 7% Coverage (LOC): 12%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/link.js. Coverage (Term): 10% Coverage (LOC): 10%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/image.js. Coverage (Term): 10% Coverage (LOC): 9%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/autolink.js. Coverage (Term): 9% Coverage (LOC): 11%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/html_inline.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/entity.js. Coverage (Term): 22% Coverage (LOC): 25%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/balance_pairs.js. Coverage (Term): 15% Coverage (LOC): 23%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/text_collapse.js. Coverage (Term): 14% Coverage (LOC): 25%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/rules_inline/state_inline.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /root/Targets/pillow/node_modules/linkify-it/index.js. Coverage (Term): 41% Coverage (LOC): 50%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/presets/default.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/presets/zero.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/markdown-it/lib/presets/commonmark.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/linkify-it/lib/re.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /root/Targets/pillow/node_modules/dox/lib/api.js. Coverage (Term): 6% Coverage (LOC): 14%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

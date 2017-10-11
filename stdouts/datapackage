@@ -1,0 +1,414 @@
+/root/Targets/datapackage
+└── datapackage@1.0.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/datapackage/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.999999999999996% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","getPrototypeOf","create","RegExp","Object","binding","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","pow"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.071 took 16.7209s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program 'use strict';
+var url = require('url');
+var assert = require('assert');
+var http = require('http');
+var https = require('https');
+var Writable = require('stream').Writable;
+var debug = require('debug')('follow-redirects');
+
+var nativeProtocols = {'http:': http, 'https:': https};
+var schemes = {};
+var exports = module.exports = {
+	maxRedirects: 21
+};
+// RFC7231§4.2.1: Of the request methods defined by this specification,
+// the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe.
+var safeMethods = {GET: true, HEAD: true, OPTIONS: true, TRACE: true};
+
+// Create handlers that pass events from native requests
+var eventHandlers = Object.create(null);
+['abort', 'aborted', 'error', 'socket'].forEach(function (event) {
+	eventHandlers[event] = function (arg) {
+		this._redirectable.emit(event, arg);
+	};
+});
+
+// An HTTP(S) request that can be redirected
+function RedirectableRequest(options, responseCallback) {
+	// Initialize the request
+	Writable.call(this);
+	this._options = options;
+	this._redirectCount = 0;
+	this._bufferedWrites = [];
+
+	// Attach a callback if passed
+	if (responseCallback) {
+		this.on('response', responseCallback);
+	}
+
+	// React to responses of native requests
+	var self = this;
+	this._onNativeResponse = function (response) {
+		self._processResponse(response);
+	};
+
+	// Complete the URL object when necessary
+	if (!options.pathname && options.path) {
+		var searchPos = options.path.indexOf('?');
+		if (searchPos < 0) {
+			options.pathname = options.path;
+		} else {
+			options.pathname = options.path.substring(0, searchPos);
+			options.search = options.path.substring(searchPos);
+		}
+	}
+
+	// Perform the first request
+	this._performRequest();
+}
+RedirectableRequest.prototype = Object.create(Writable.prototype);
+
+// Executes the next native request (initial or redirect)
+RedirectableRequest.prototype._performRequest = function () {
+	// If specified, use the agent corresponding to the protocol
+	// (HTTP and HTTPS use different types of agents)
+	var protocol = this._options.protocol;
+	if (this._options.agents) {
+		this._options.agent = this._options.agents[schemes[protocol]];
+	}
+
+	// Create the native request
+	var nativeProtocol = nativeProtocols[protocol];
+	var request = this._currentRequest =
+				nativeProtocol.request(this._options, this._onNativeResponse);
+	this._currentUrl = url.format(this._options);
+
+	// Set up event handlers
+	request._redirectable = this;
+	for (var event in eventHandlers) {
+		/* istanbul ignore else */
+		if (event) {
+			request.on(event, eventHandlers[event]);
+		}
+	}
+
+	// End a redirected request
+	// (The first request must be ended explicitly with RedirectableRequest#end)
+	if (this._isRedirect) {
+		// If the request doesn't have en entity, end directly.
+		var bufferedWrites = this._bufferedWrites;
+		if (bufferedWrites.length === 0) {
+			request.end();
+		// Otherwise, write the request entity and end afterwards.
+		} else {
+			var i = 0;
+			(function writeNext() {
+				if (i < bufferedWrites.length) {
+					var bufferedWrite = bufferedWrites[i++];
+					request.write(bufferedWrite.data, bufferedWrite.encoding, writeNext);
+				} else {
+					request.end();
+				}
+			})();
+		}
+	}
+};
+
+// Processes a response from the current native request
+RedirectableRequest.prototype._processResponse = function (response) {
+	// RFC7231§6.4: The 3xx (Redirection) class of status code indicates
+	// that further action needs to be taken by the user agent in order to
+	// fulfill the request. If a Location header field is provided,
+	// the user agent MAY automatically redirect its request to the URI
+	// referenced by the Location field value,
+	// even if the specific status code is not understood.
+	var location = response.headers.location;
+	if (location && this._options.followRedirects !== false &&
+			response.statusCode >= 300 && response.statusCode < 400) {
+		// RFC7231§6.4: A client SHOULD detect and intervene
+		// in cyclical redirections (i.e., "infinite" redirection loops).
+		if (++this._redirectCount > this._options.maxRedirects) {
+			return this.emit('error', new Error('Max redirects exceeded.'));
+		}
+
+		// RFC7231§6.4: Automatic redirection needs to done with
+		// care for methods not known to be safe […],
+		// since the user might not wish to redirect an unsafe request.
+		// RFC7231§6.4.7: The 307 (Temporary Redirect) status code indicates
+		// that the target resource resides temporarily under a different URI
+		// and the user agent MUST NOT change the request method
+		// if it performs an automatic redirection to that URI.
+		var header;
+		var headers = this._options.headers;
+		if (response.statusCode !== 307 && !(this._options.method in safeMethods)) {
+			this._options.method = 'GET';
+			// Drop a possible entity and headers related to it
+			this._bufferedWrites = [];
+			for (header in headers) {
+				if (/^content-/i.test(header)) {
+					delete headers[header];
+				}
+			}
+		}
+
+		// Drop the Host header, as the redirect might lead to a different host
+		if (!this._isRedirect) {
+			for (header in headers) {
+				if (/^host$/i.test(header)) {
+					delete headers[header];
+				}
+			}
+		}
+
+		// Perform the redirected request
+		var redirectUrl = url.resolve(this._currentUrl, location);
+		debug('redirecting to', redirectUrl);
+		Object.assign(this._options, url.parse(redirectUrl));
+		this._isRedirect = true;
+		this._performRequest();
+	} else {
+		// The response is not a redirect; return it as-is
+		response.responseUrl = this._currentUrl;
+		this.emit('response', response);
+
+		// Clean up
+		delete this._options;
+		delete this._bufferedWrites;
+	}
+};
+
+// Aborts the current native request
+RedirectableRequest.prototype.abort = function () {
+	this._currentRequest.abort();
+};
+
+// Flushes the headers of the current native request
+RedirectableRequest.prototype.flushHeaders = function () {
+	this._currentRequest.flushHeaders();
+};
+
+// Sets the noDelay option of the current native request
+RedirectableRequest.prototype.setNoDelay = function (noDelay) {
+	this._currentRequest.setNoDelay(noDelay);
+};
+
+// Sets the socketKeepAlive option of the current native request
+RedirectableRequest.prototype.setSocketKeepAlive = function (enable, initialDelay) {
+	this._currentRequest.setSocketKeepAlive(enable, initialDelay);
+};
+
+// Sets the timeout option of the current native request
+RedirectableRequest.prototype.setTimeout = function (timeout, callback) {
+	this._currentRequest.setTimeout(timeout, callback);
+};
+
+// Writes buffered data to the current native request
+RedirectableRequest.prototype.write = function (data, encoding, callback) {
+	this._currentRequest.write(data, encoding, callback);
+	this._bufferedWrites.push({data: data, encoding: encoding});
+};
+
+// Ends the current native request
+RedirectableRequest.prototype.end = function (data, encoding, callback) {
+	this._currentRequest.end(data, encoding, callback);
+	if (data) {
+		this._bufferedWrites.push({data: data, encoding: encoding});
+	}
+};
+
+// Export a redirecting wrapper for each native protocol
+Object.keys(nativeProtocols).forEach(function (protocol) {
+	var scheme = schemes[protocol] = protocol.substr(0, protocol.length - 1);
+	var nativeProtocol = nativeProtocols[protocol];
+	var wrappedProtocol = exports[scheme] = Object.create(nativeProtocol);
+
+	// Executes an HTTP request, following redirects
+	wrappedProtocol.request = function (options, callback) {
+		if (typeof options === 'string') {
+			options = url.parse(options);
+			options.maxRedirects = exports.maxRedirects;
+		} else {
+			options = Object.assign({
+				maxRedirects: exports.maxRedirects,
+				protocol: protocol
+			}, options);
+		}
+		assert.equal(options.protocol, protocol, 'protocol mismatch');
+		debug('options', options);
+
+		return new RedirectableRequest(options, callback);
+	};
+
+	// Executes a GET request, following redirects
+	wrappedProtocol.get = function (options, callback) {
+		var request = wrappedProtocol.request(options, callback);
+		request.end();
+		return request;
+	};
+});
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/datapackage/node_modules/datapackage/lib/index.js. Coverage (Term): 35% Coverage (LOC): 33%
+*- File /root/Targets/datapackage/node_modules/regenerator-runtime/runtime.js. Coverage (Term): 17% Coverage (LOC): 22%
+*- File /root/Targets/datapackage/node_modules/datapackage/lib/package.js. Coverage (Term): 4% Coverage (LOC): 4%
+*- File /root/Targets/datapackage/node_modules/lodash/isEqual.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseIsEqual.js. Coverage (Term): 36% Coverage (LOC): 42%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseIsEqualDeep.js. Coverage (Term): 29% Coverage (LOC): 24%
+*- File /root/Targets/datapackage/node_modules/lodash/_Stack.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_ListCache.js. Coverage (Term): 60% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_listCacheClear.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /root/Targets/datapackage/node_modules/lodash/_listCacheDelete.js. Coverage (Term): 38% Coverage (LOC): 39%
+*- File /root/Targets/datapackage/node_modules/lodash/_assocIndexOf.js. Coverage (Term): 42% Coverage (LOC): 42%
+*- File /root/Targets/datapackage/node_modules/lodash/eq.js. Coverage (Term): 49% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_listCacheGet.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_listCacheHas.js. Coverage (Term): 61% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_listCacheSet.js. Coverage (Term): 36% Coverage (LOC): 33%
+*- File /root/Targets/datapackage/node_modules/lodash/_stackClear.js. Coverage (Term): 64% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_stackDelete.js. Coverage (Term): 41% Coverage (LOC): 57%
+*- File /root/Targets/datapackage/node_modules/lodash/_stackGet.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_stackHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_stackSet.js. Coverage (Term): 37% Coverage (LOC): 27%
+*- File /root/Targets/datapackage/node_modules/lodash/_Map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_getNative.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseIsNative.js. Coverage (Term): 95% Coverage (LOC): 94%
+*- File /root/Targets/datapackage/node_modules/lodash/isFunction.js. Coverage (Term): 84% Coverage (LOC): 91%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseGetTag.js. Coverage (Term): 87% Coverage (LOC): 91%
+*- File /root/Targets/datapackage/node_modules/lodash/_Symbol.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_root.js. Coverage (Term): 76% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_freeGlobal.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_getRawTag.js. Coverage (Term): 91% Coverage (LOC): 90%
+*- File /root/Targets/datapackage/node_modules/lodash/_objectToString.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/isObject.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_isMasked.js. Coverage (Term): 81% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_coreJsData.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_toSource.js. Coverage (Term): 79% Coverage (LOC): 69%
+*- File /root/Targets/datapackage/node_modules/lodash/_getValue.js. Coverage (Term): 92% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_MapCache.js. Coverage (Term): 60% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapCacheClear.js. Coverage (Term): 64% Coverage (LOC): 45%
+*- File /root/Targets/datapackage/node_modules/lodash/_Hash.js. Coverage (Term): 60% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_hashClear.js. Coverage (Term): 57% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_nativeCreate.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_hashDelete.js. Coverage (Term): 39% Coverage (LOC): 57%
+*- File /root/Targets/datapackage/node_modules/lodash/_hashGet.js. Coverage (Term): 48% Coverage (LOC): 57%
+*- File /root/Targets/datapackage/node_modules/lodash/_hashHas.js. Coverage (Term): 57% Coverage (LOC): 78%
+*- File /root/Targets/datapackage/node_modules/lodash/_hashSet.js. Coverage (Term): 42% Coverage (LOC): 60%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapCacheDelete.js. Coverage (Term): 46% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_getMapData.js. Coverage (Term): 45% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_isKeyable.js. Coverage (Term): 35% Coverage (LOC): 67%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapCacheGet.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapCacheHas.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapCacheSet.js. Coverage (Term): 38% Coverage (LOC): 56%
+*- File /root/Targets/datapackage/node_modules/lodash/_equalArrays.js. Coverage (Term): 17% Coverage (LOC): 14%
+*- File /root/Targets/datapackage/node_modules/lodash/_SetCache.js. Coverage (Term): 55% Coverage (LOC): 58%
+*- File /root/Targets/datapackage/node_modules/lodash/_setCacheAdd.js. Coverage (Term): 59% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_setCacheHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_arraySome.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /root/Targets/datapackage/node_modules/lodash/_cacheHas.js. Coverage (Term): 59% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_equalByTag.js. Coverage (Term): 36% Coverage (LOC): 17%
+*- File /root/Targets/datapackage/node_modules/lodash/_Uint8Array.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_mapToArray.js. Coverage (Term): 32% Coverage (LOC): 33%
+*- File /root/Targets/datapackage/node_modules/lodash/_setToArray.js. Coverage (Term): 33% Coverage (LOC): 44%
+*- File /root/Targets/datapackage/node_modules/lodash/_equalObjects.js. Coverage (Term): 13% Coverage (LOC): 17%
+*- File /root/Targets/datapackage/node_modules/lodash/_getAllKeys.js. Coverage (Term): 74% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseGetAllKeys.js. Coverage (Term): 53% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_arrayPush.js. Coverage (Term): 32% Coverage (LOC): 44%
+*- File /root/Targets/datapackage/node_modules/lodash/isArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_getSymbols.js. Coverage (Term): 57% Coverage (LOC): 56%
+*- File /root/Targets/datapackage/node_modules/lodash/_arrayFilter.js. Coverage (Term): 23% Coverage (LOC): 33%
+*- File /root/Targets/datapackage/node_modules/lodash/stubArray.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/keys.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_arrayLikeKeys.js. Coverage (Term): 33% Coverage (LOC): 50%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseTimes.js. Coverage (Term): 35% Coverage (LOC): 44%
+*- File /root/Targets/datapackage/node_modules/lodash/isArguments.js. Coverage (Term): 70% Coverage (LOC): 92%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseIsArguments.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/isObjectLike.js. Coverage (Term): 94% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/isBuffer.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/stubFalse.js. Coverage (Term): 70% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/lodash/_isIndex.js. Coverage (Term): 37% Coverage (LOC): 75%
+*- File /root/Targets/datapackage/node_modules/lodash/isTypedArray.js. Coverage (Term): 96% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseIsTypedArray.js. Coverage (Term): 90% Coverage (LOC): 91%
+*- File /root/Targets/datapackage/node_modules/lodash/isLength.js. Coverage (Term): 46% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseUnary.js. Coverage (Term): 68% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_nodeUtil.js. Coverage (Term): 97% Coverage (LOC): 91%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseKeys.js. Coverage (Term): 47% Coverage (LOC): 41%
+*- File /root/Targets/datapackage/node_modules/lodash/_isPrototype.js. Coverage (Term): 44% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_nativeKeys.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_overArg.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/isArrayLike.js. Coverage (Term): 60% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_getTag.js. Coverage (Term): 69% Coverage (LOC): 38%
+*- File /root/Targets/datapackage/node_modules/lodash/_DataView.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_Promise.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_Set.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_WeakMap.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/isBoolean.js. Coverage (Term): 58% Coverage (LOC): 86%
+*- File /root/Targets/datapackage/node_modules/lodash/cloneDeep.js. Coverage (Term): 70% Coverage (LOC): 86%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseClone.js. Coverage (Term): 55% Coverage (LOC): 19%
+*- File /root/Targets/datapackage/node_modules/lodash/_arrayEach.js. Coverage (Term): 30% Coverage (LOC): 40%
+*- File /root/Targets/datapackage/node_modules/lodash/_assignValue.js. Coverage (Term): 49% Coverage (LOC): 64%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseAssignValue.js. Coverage (Term): 45% Coverage (LOC): 36%
+*- File /root/Targets/datapackage/node_modules/lodash/_defineProperty.js. Coverage (Term): 94% Coverage (LOC): 89%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseAssign.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_copyObject.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseAssignIn.js. Coverage (Term): 63% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/keysIn.js. Coverage (Term): 65% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseKeysIn.js. Coverage (Term): 46% Coverage (LOC): 41%
+*- File /root/Targets/datapackage/node_modules/lodash/_nativeKeysIn.js. Coverage (Term): 39% Coverage (LOC): 36%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneBuffer.js. Coverage (Term): 66% Coverage (LOC): 60%
+*- File /root/Targets/datapackage/node_modules/lodash/_copyArray.js. Coverage (Term): 32% Coverage (LOC): 40%
+*- File /root/Targets/datapackage/node_modules/lodash/_copySymbols.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_copySymbolsIn.js. Coverage (Term): 66% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_getSymbolsIn.js. Coverage (Term): 65% Coverage (LOC): 54%
+*- File /root/Targets/datapackage/node_modules/lodash/_getPrototype.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/lodash/_getAllKeysIn.js. Coverage (Term): 74% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_initCloneArray.js. Coverage (Term): 38% Coverage (LOC): 50%
+*- File /root/Targets/datapackage/node_modules/lodash/_initCloneByTag.js. Coverage (Term): 52% Coverage (LOC): 19%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneArrayBuffer.js. Coverage (Term): 49% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneDataView.js. Coverage (Term): 46% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneMap.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/datapackage/node_modules/lodash/_addMapEntry.js. Coverage (Term): 49% Coverage (LOC): 67%
+*- File /root/Targets/datapackage/node_modules/lodash/_arrayReduce.js. Coverage (Term): 25% Coverage (LOC): 33%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneRegExp.js. Coverage (Term): 47% Coverage (LOC): 63%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneSet.js. Coverage (Term): 56% Coverage (LOC): 75%
+*- File /root/Targets/datapackage/node_modules/lodash/_addSetEntry.js. Coverage (Term): 56% Coverage (LOC): 67%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneSymbol.js. Coverage (Term): 67% Coverage (LOC): 86%
+*- File /root/Targets/datapackage/node_modules/lodash/_cloneTypedArray.js. Coverage (Term): 46% Coverage (LOC): 71%
+*- File /root/Targets/datapackage/node_modules/lodash/_initCloneObject.js. Coverage (Term): 59% Coverage (LOC): 83%
+*- File /root/Targets/datapackage/node_modules/lodash/_baseCreate.js. Coverage (Term): 48% Coverage (LOC): 44%
+*- File /root/Targets/datapackage/node_modules/lodash/isUndefined.js. Coverage (Term): 63% Coverage (LOC): 80%
+*- File /root/Targets/datapackage/node_modules/datapackage/lib/profile.js. Coverage (Term): 7% Coverage (LOC): 8%
+*- File /root/Targets/datapackage/node_modules/tv4/tv4.js. Coverage (Term): 9% Coverage (LOC): 18%
+*- File /root/Targets/datapackage/node_modules/axios/index.js. Coverage (Term): 80% Coverage (LOC): 100%
+*- File /root/Targets/datapackage/node_modules/axios/lib/axios.js. Coverage (Term): 22% Coverage (LOC): 30%
+*- File /root/Targets/datapackage/node_modules/axios/lib/utils.js. Coverage (Term): 17% Coverage (LOC): 46%
+*- File /root/Targets/datapackage/node_modules/axios/lib/helpers/bind.js. Coverage (Term): 27% Coverage (LOC): 45%
+*- File /root/Targets/datapackage/node_modules/is-buffer/index.js. Coverage (Term): 22% Coverage (LOC): 67%
+*- File /root/Targets/datapackage/node_modules/axios/lib/core/Axios.js. Coverage (Term): 8% Coverage (LOC): 9%
+*- File /root/Targets/datapackage/node_modules/axios/lib/defaults.js. Coverage (Term): 19% Coverage (LOC): 22%
+*- File /root/Targets/datapackage/node_modules/axios/lib/helpers/normalizeHeaderName.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /root/Targets/datapackage/node_modules/axios/lib/adapters/http.js. Coverage (Term): 6% Coverage (LOC): 6%
+*- File /root/Targets/datapackage/node_modules/axios/lib/core/settle.js. Coverage (Term): 35% Coverage (LOC): 55%
+*- File /root/Targets/datapackage/node_modules/axios/lib/core/createError.js. Coverage (Term): 49% Coverage (LOC): 75%
+*- File /root/Targets/datapackage/node_modules/axios/lib/core/enhanceError.js. Coverage (Term): 37% Coverage (LOC): 42%
+*- File /root/Targets/datapackage/node_modules/axios/lib/helpers/buildURL.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

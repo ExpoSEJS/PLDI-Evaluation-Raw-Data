@@ -1,0 +1,38 @@
+/root/Targets/humon
+└─┬ humon@0.0.0 
+  └─┬ jison@0.4.18 
+    ├─┬ cjson@0.3.0 
+    │ └─┬ jsonlint@1.6.0 
+    │   └── JSV@4.0.2 
+    ├── ebnf-parser@0.1.10 
+    ├─┬ escodegen@1.3.3 
+    │ ├── estraverse@1.5.1 
+    │ ├── esutils@1.0.0 
+    │ └─┬ source-map@0.1.43 
+    │   └── amdefine@1.0.1 
+    ├── esprima@1.1.1 
+    ├── jison-lex@0.3.4 
+    ├── JSONSelect@0.4.0 
+    ├── lex-parser@0.1.4 
+    └─┬ nomnom@1.5.2 
+      ├── colors@0.5.1 
+      └── underscore@1.1.7 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/humon/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0467 took 2.5128s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'humon'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

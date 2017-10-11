@@ -1,0 +1,160 @@
+
+> hiredis@0.5.0 install /root/Targets/ebook-indexer/node_modules/hiredis
+> node-gyp rebuild
+
+make: Entering directory '/root/Targets/ebook-indexer/node_modules/hiredis/build'
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/sds.o
+  CC(target) Release/obj.target/hiredis-c/deps/hiredis/read.o
+  AR(target) Release/obj.target/deps/hiredis-c.a
+  COPY Release/hiredis-c.a
+  CXX(target) Release/obj.target/hiredis/src/hiredis.o
+  CXX(target) Release/obj.target/hiredis/src/reader.o
+  SOLINK_MODULE(target) Release/obj.target/hiredis.node
+  COPY Release/hiredis.node
+make: Leaving directory '/root/Targets/ebook-indexer/node_modules/hiredis/build'
+/root/Targets/ebook-indexer
+└─┬ ebook-indexer@0.0.1 
+  ├─┬ async@2.5.0 
+  │ └── lodash@4.17.4 
+  ├─┬ ebook-db@0.0.14 
+  │ ├── escape-regexp@0.0.1 
+  │ ├─┬ jugglingdb@1.0.2 
+  │ │ ├── inflection@1.2.7 
+  │ │ ├─┬ should@6.0.3 
+  │ │ │ ├── should-equal@0.3.1 
+  │ │ │ ├── should-format@0.0.7 
+  │ │ │ └── should-type@0.0.4 
+  │ │ └── when@3.7.3 
+  │ ├─┬ jugglingdb-redis@0.0.2 
+  │ │ └─┬ redis@0.7.2 
+  │ │   └─┬ hiredis@0.5.0 
+  │ │     ├── bindings@1.3.0 
+  │ │     └── nan@2.7.0 
+  │ ├── underscore@1.8.3 
+  │ └─┬ underscore.string@3.3.4 
+  │   ├── sprintf-js@1.1.1 
+  │   └── util-deprecate@1.0.2 
+  ├─┬ express@3.4.7 
+  │ ├── buffer-crc32@0.2.1 
+  │ ├─┬ commander@1.3.2 
+  │ │ └── keypress@0.1.0 
+  │ ├─┬ connect@2.12.0 
+  │ │ ├── batch@0.5.0 
+  │ │ ├── bytes@0.2.1 
+  │ │ ├─┬ multiparty@2.2.0 
+  │ │ │ ├─┬ readable-stream@1.1.14 
+  │ │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ │ ├── inherits@2.0.3 
+  │ │ │ │ ├── isarray@0.0.1 
+  │ │ │ │ └── string_decoder@0.10.31 
+  │ │ │ └── stream-counter@0.2.0 
+  │ │ ├── negotiator@0.3.0 
+  │ │ ├── pause@0.0.1 
+  │ │ ├── qs@0.6.6 
+  │ │ ├── raw-body@1.1.2 
+  │ │ └── uid2@0.0.3 
+  │ ├── cookie@0.1.0 
+  │ ├── cookie-signature@1.0.1 
+  │ ├── debug@0.8.1 
+  │ ├── fresh@0.2.0 
+  │ ├── merge-descriptors@0.0.1 
+  │ ├── methods@0.1.0 
+  │ ├── mkdirp@0.3.5 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.4 
+  │   └── mime@1.2.11 
+  └─┬ jade@1.11.0 
+    ├── character-parser@1.2.1 
+    ├─┬ clean-css@3.4.28 
+    │ ├─┬ commander@2.8.1 
+    │ │ └── graceful-readlink@1.0.1 
+    │ └─┬ source-map@0.4.4 
+    │   └── amdefine@1.0.1 
+    ├── commander@2.6.0 
+    ├─┬ constantinople@3.0.2 
+    │ └── acorn@2.7.0 
+    ├─┬ jstransformer@0.0.2 
+    │ ├── is-promise@2.1.0 
+    │ └─┬ promise@6.1.0 
+    │   └── asap@1.0.0 
+    ├─┬ mkdirp@0.5.1 
+    │ └── minimist@0.0.8 
+    ├─┬ transformers@2.1.0 
+    │ ├─┬ css@1.0.8 
+    │ │ ├── css-parse@1.0.4 
+    │ │ └── css-stringify@1.0.5 
+    │ ├─┬ promise@2.0.0 
+    │ │ └── is-promise@1.0.1 
+    │ └─┬ uglify-js@2.2.5 
+    │   ├─┬ optimist@0.3.7 
+    │   │ └── wordwrap@0.0.3 
+    │   └── source-map@0.1.43 
+    ├─┬ uglify-js@2.8.29 
+    │ ├── source-map@0.5.7 
+    │ ├── uglify-to-browserify@1.0.2 
+    │ └─┬ yargs@3.10.0 
+    │   ├── camelcase@1.2.1 
+    │   ├─┬ cliui@2.1.0 
+    │   │ ├─┬ center-align@0.1.3 
+    │   │ │ ├─┬ align-text@0.1.4 
+    │   │ │ │ ├─┬ kind-of@3.2.2 
+    │   │ │ │ │ └── is-buffer@1.1.5 
+    │   │ │ │ ├── longest@1.0.1 
+    │   │ │ │ └── repeat-string@1.6.1 
+    │   │ │ └── lazy-cache@1.0.4 
+    │   │ ├── right-align@0.1.3 
+    │   │ └── wordwrap@0.0.2 
+    │   ├── decamelize@1.2.0 
+    │   └── window-size@0.1.0 
+    ├── void-elements@2.0.1 
+    └─┬ with@4.0.3 
+      ├── acorn@1.2.2 
+      └── acorn-globals@1.0.9 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/ebook-indexer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0626 took 3.8634s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (6:8) on program express = require("express")
+routes = require("./routes")
+http = require("http")
+path = require("path")
+app = express()
+app.set "port", process.env.PORT or 3000
+app.set "views", path.join(__dirname, "views")
+app.set "view engine", "jade"
+app.use express.favicon()
+app.use express.logger("dev")
+app.use express.json()
+app.use express.urlencoded()
+app.use express.methodOverride()
+app.use app.router
+app.use express.static(path.join(__dirname, "public"))
+app.use express.errorHandler()  if "development" is app.get("env")
+app.get "/", routes.index
+app.post "/search", routes.search
+http.createServer(app).listen app.get("port"), ->
+  console.log "Express server listening on port " + app.get("port") at SyntaxError: Unexpected token (6:8)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
+    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
+    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

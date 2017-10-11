@@ -1,0 +1,136 @@
+/root/Targets/wireless-tools
+└── wireless-tools@0.19.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/wireless-tools/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0729 took 3.9433s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: The keyword 'interface' is reserved (57:17) on program /*
+ * Copyright (c) 2015 Christopher M. Baker
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ */
+
+var child_process = require('child_process');
+
+/**
+ * The **hostpad** command is used to configure wireless access points.
+ *
+ * @static
+ * @category hostapd
+ *
+ */
+var hostapd = module.exports = {
+  exec: child_process.exec,
+  disable: disable,
+  enable: enable
+};
+
+/**
+ * The **hostpad disable** command is used to stop hosting an access point
+ * on a specific wireless interface.
+ *
+ * @static
+ * @category hostapd
+ * @param {string} interface The network interface of the access point.
+ * @param {function} callback The callback function.
+ * @returns {process} The child process.
+ * @example
+ *
+ * var hostapd = require('wireless-tools/hostapd');
+ *
+ * hostapd.disable('wlan0', function(err) {
+ *   // no longer hosting the access point
+ * });
+ *
+ */
+function disable(interface, callback) {
+  var file = interface + '-hostapd.conf';
+
+  return this.exec('kill `pgrep -f "^hostapd -B ' + file + '"` || true',
+    callback);
+}
+
+/**
+ * The **hostpad enable** command is used to host an access point
+ * on a specific wireless interface.
+ *
+ * @static
+ * @category hostapd
+ * @param {object} options The access point configuration.
+ * @param {function} callback The callback function.
+ * @returns {process} The child process.
+ * @example
+ *
+ * var hostapd = require('wireless-tools/hostapd');
+ *
+ * var options = {
+ *   channel: 6,
+ *   driver: 'rtl871xdrv',
+ *   hw_mode: 'g',
+ *   interface: 'wlan0',
+ *   ssid: 'RaspberryPi',
+ *   wpa: 2,
+ *   wpa_passphrase: 'raspberry'
+ * };
+ *
+ * hostapd.enable(options, function(err) {
+ *   // the access point was created
+ * });
+ *
+ */
+function enable(options, callback) {
+  var file = options.interface + '-hostapd.conf';
+
+  var commands = [
+    'cat <<EOF >' + file + ' && hostapd -B ' + file + ' && rm -f ' + file
+  ];
+
+  Object.getOwnPropertyNames(options).forEach(function(key) {
+    commands.push(key + '=' + options[key]);
+  });
+
+  return this.exec(commands.join('\n'), callback);
+}
+ at SyntaxError: The keyword 'interface' is reserved (57:17)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp$3.parseIdent (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2182:14)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:41:34)
+    at Parser.pp$2.parseMaybeDefault (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1455:25)
+    at Parser.pp$2.parseBindingList (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1440:27)
+    at Parser.pp$1.parseFunctionParams (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1072:24)
+    at Parser.parseFunctionParams (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:24:19)
+    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1064:10)
+    at Parser.pp$1.parseFunctionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:818:17)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:694:19)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/wireless-tools/node_modules/wireless-tools/wireless-tools.js. Coverage (Term): 36% Coverage (LOC): 38%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,85 @@
+/root/Targets/requireware
+└─┬ requireware@0.2.0 
+  ├─┬ express@3.0.6 
+  │ ├── buffer-crc32@0.1.1 
+  │ ├── commander@0.6.1 
+  │ ├─┬ connect@2.7.2 
+  │ │ ├── bytes@0.1.0 
+  │ │ ├── formidable@1.0.11 
+  │ │ ├── pause@0.0.1 
+  │ │ ├── qs@0.5.1 
+  │ │ └── send@0.1.0 
+  │ ├── cookie@0.0.5 
+  │ ├── cookie-signature@0.0.1 
+  │ ├─┬ debug@3.1.0 
+  │ │ └── ms@2.0.0 
+  │ ├── fresh@0.1.0 
+  │ ├── methods@0.0.1 
+  │ ├── mkdirp@0.3.3 
+  │ ├── range-parser@0.0.4 
+  │ └─┬ send@0.1.0 
+  │   └── mime@1.2.6 
+  ├─┬ fs-watch-tree@0.2.5 
+  │ ├─┬ minimatch@0.2.14 
+  │ │ ├── lru-cache@2.7.3 
+  │ │ └── sigmund@1.0.1 
+  │ └── when@1.3.0 
+  ├─┬ send@0.1.4 
+  │ ├── fresh@0.2.0 
+  │ └── mime@1.2.11 
+  ├─┬ temporary@0.0.5 
+  │ └── package@1.0.1 
+  ├─┬ uglify-js@2.2.5 
+  │ ├─┬ optimist@0.3.7 
+  │ │ └── wordwrap@0.0.3 
+  │ └─┬ source-map@0.1.43 
+  │   └── amdefine@1.0.1 
+  └── wrench@1.4.4 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/requireware/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","reduce","charCodeAt","abs","create","isArray","apply","join"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.032 took 12.3984s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: Identifier 'addWatch' has already been declared
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/requireware/node_modules/requireware/index.js. Coverage (Term): 15% Coverage (LOC): 10%
+*- File /root/Targets/requireware/node_modules/send/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/requireware/node_modules/send/lib/send.js. Coverage (Term): 16% Coverage (LOC): 23%
+*- File /root/Targets/requireware/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
+*- File /root/Targets/requireware/node_modules/debug/src/node.js. Coverage (Term): 32% Coverage (LOC): 28%
+*- File /root/Targets/requireware/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
+*- File /root/Targets/requireware/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
+*- File /root/Targets/requireware/node_modules/range-parser/index.js. Coverage (Term): 10% Coverage (LOC): 15%
+*- File /root/Targets/requireware/node_modules/send/node_modules/mime/mime.js. Coverage (Term): 77% Coverage (LOC): 92%
+*- File /root/Targets/requireware/node_modules/send/node_modules/fresh/index.js. Coverage (Term): 14% Coverage (LOC): 16%
+*- File /root/Targets/requireware/node_modules/send/lib/utils.js. Coverage (Term): 29% Coverage (LOC): 62%
+*- File /root/Targets/requireware/node_modules/wrench/lib/wrench.js. Coverage (Term): 5% Coverage (LOC): 12%
+*- File /root/Targets/requireware/node_modules/uglify-js/tools/node.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/source-map-generator.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /root/Targets/requireware/node_modules/amdefine/amdefine.js. Coverage (Term): 49% Coverage (LOC): 54%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/base64-vlq.js. Coverage (Term): 28% Coverage (LOC): 38%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/base64.js. Coverage (Term): 61% Coverage (LOC): 68%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/util.js. Coverage (Term): 13% Coverage (LOC): 16%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/array-set.js. Coverage (Term): 29% Coverage (LOC): 47%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/mapping-list.js. Coverage (Term): 32% Coverage (LOC): 43%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/source-map-consumer.js. Coverage (Term): 12% Coverage (LOC): 17%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/binary-search.js. Coverage (Term): 27% Coverage (LOC): 36%
+*- File /root/Targets/requireware/node_modules/source-map/lib/source-map/source-node.js. Coverage (Term): 10% Coverage (LOC): 14%
+*- File /root/Targets/requireware/node_modules/temporary/lib/file.js. Coverage (Term): 39% Coverage (LOC): 73%
+*- File /root/Targets/requireware/node_modules/temporary/lib/generator.js. Coverage (Term): 42% Coverage (LOC): 55%
+*- File /root/Targets/requireware/node_modules/temporary/lib/detector.js. Coverage (Term): 29% Coverage (LOC): 46%
+*- File /root/Targets/requireware/node_modules/temporary/lib/base.js. Coverage (Term): 30% Coverage (LOC): 46%
+*- File /root/Targets/requireware/node_modules/fs-watch-tree/lib/fs-watch-tree.js. Coverage (Term): 68% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

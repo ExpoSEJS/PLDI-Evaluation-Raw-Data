@@ -1,0 +1,126 @@
+/root/Targets/bless
+└─┬ bless@4.0.4 
+  └─┬ fs-promise@0.5.0
+    ├─┬ fs-extra@0.26.7
+    │ └── rimraf@2.6.2 
+    └── mz@2.7.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/bless/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 34% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","getOwnPropertyDescriptor","call","create","apply"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0484 took 8.6229s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (3:4) on program 
+var Promise = require('any-promise')
+var assert = require('assert')
+
+module.exports = thenify
+
+/**
+ * Turn async functions into promises
+ *
+ * @param {Function} $$__fn__$$
+ * @return {Function}
+ * @api public
+ */
+
+function thenify($$__fn__$$, options) {
+  assert(typeof $$__fn__$$ === 'function')
+  return eval(createWrapper($$__fn__$$.name, options))
+}
+
+/**
+ * Turn async functions into promises and backward compatible with callback
+ *
+ * @param {Function} $$__fn__$$
+ * @return {Function}
+ * @api public
+ */
+
+thenify.withCallback = function ($$__fn__$$, options) {
+  assert(typeof $$__fn__$$ === 'function')
+  options = options || {}
+  options.withCallback = true
+  if (options.multiArgs === undefined) options.multiArgs = true
+  return eval(createWrapper($$__fn__$$.name, options))
+}
+
+function createCallback(resolve, reject, multiArgs) {
+  return function(err, value) {
+    if (err) return reject(err)
+    var length = arguments.length
+
+    if (length <= 2 || !multiArgs) return resolve(value)
+
+    if (Array.isArray(multiArgs)) {
+      var values = {}
+      for (var i = 1; i < length; i++) values[multiArgs[i - 1]] = arguments[i]
+      return resolve(values)
+    }
+
+    var values = new Array(length - 1)
+    for (var i = 1; i < length; ++i) values[i - 1] = arguments[i]
+    resolve(values)
+  }
+}
+
+function createWrapper(name, options) {
+  name = (name || '').replace(/\s|bound(?!$)/g, '')
+  options = options || {}
+  // default to true
+  var multiArgs = options.multiArgs !== undefined ? options.multiArgs : true
+  multiArgs = 'var multiArgs = ' + JSON.stringify(multiArgs) + '\n'
+
+  var withCallback = options.withCallback ?
+    'var lastType = typeof arguments[len - 1]\n'
+    + 'if (lastType === "function") return $$__fn__$$.apply(self, arguments)\n'
+   : ''
+
+  return '(function ' + name + '() {\n'
+    + 'var self = this\n'
+    + 'var len = arguments.length\n'
+    + multiArgs
+    + withCallback
+    + 'var args = new Array(len + 1)\n'
+    + 'for (var i = 0; i < len; ++i) args[i] = arguments[i]\n'
+    + 'var lastIndex = i\n'
+    + 'return new Promise(function (resolve, reject) {\n'
+      + 'args[lastIndex] = createCallback(resolve, reject, multiArgs)\n'
+      + '$$__fn__$$.apply(self, args)\n'
+    + '})\n'
+  + '})'
+}
+ at SyntaxError: Unexpected token (3:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/bless/node_modules/bless/lib/index.js. Coverage (Term): 22% Coverage (LOC): 33%
+*- File /root/Targets/bless/node_modules/fs-promise/index.js. Coverage (Term): 11% Coverage (LOC): 6%
+*- File /root/Targets/bless/node_modules/mz/fs.js. Coverage (Term): 54% Coverage (LOC): 75%
+*- File /root/Targets/bless/node_modules/any-promise/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/bless/node_modules/any-promise/register.js. Coverage (Term): 48% Coverage (LOC): 45%
+*- File /root/Targets/bless/node_modules/any-promise/loader.js. Coverage (Term): 76% Coverage (LOC): 86%
+*- File /root/Targets/bless/node_modules/graceful-fs/graceful-fs.js. Coverage (Term): 27% Coverage (LOC): 33%
+*- File /root/Targets/bless/node_modules/graceful-fs/polyfills.js. Coverage (Term): 31% Coverage (LOC): 39%
+*- File /root/Targets/bless/node_modules/graceful-fs/fs.js. Coverage (Term): 87% Coverage (LOC): 100%
+*- File /root/Targets/bless/node_modules/graceful-fs/legacy-streams.js. Coverage (Term): 6% Coverage (LOC): 5%
+*- File /root/Targets/bless/node_modules/thenify-all/index.js. Coverage (Term): 11% Coverage (LOC): 16%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

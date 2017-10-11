@@ -1,0 +1,289 @@
+/root/Targets/sable
+└─┬ sable@0.1.7 
+  ├─┬ chokidar@1.7.0 
+  │ ├─┬ anymatch@1.3.2 
+  │ │ ├─┬ micromatch@2.3.11 
+  │ │ │ ├─┬ arr-diff@2.0.0 
+  │ │ │ │ └── arr-flatten@1.1.0 
+  │ │ │ ├── array-unique@0.2.1 
+  │ │ │ ├─┬ braces@1.8.5 
+  │ │ │ │ ├─┬ expand-range@1.8.2 
+  │ │ │ │ │ └─┬ fill-range@2.2.3 
+  │ │ │ │ │   ├── is-number@2.1.0 
+  │ │ │ │ │   ├── isobject@2.1.0 
+  │ │ │ │ │   ├─┬ randomatic@1.1.7 
+  │ │ │ │ │   │ ├─┬ is-number@3.0.0 
+  │ │ │ │ │   │ │ └── kind-of@3.2.2 
+  │ │ │ │ │   │ └── kind-of@4.0.0 
+  │ │ │ │ │   └── repeat-string@1.6.1 
+  │ │ │ │ ├── preserve@0.2.0 
+  │ │ │ │ └── repeat-element@1.1.2 
+  │ │ │ ├─┬ expand-brackets@0.1.5 
+  │ │ │ │ └── is-posix-bracket@0.1.1 
+  │ │ │ ├── extglob@0.3.2 
+  │ │ │ ├── filename-regex@2.0.1 
+  │ │ │ ├─┬ kind-of@3.2.2 
+  │ │ │ │ └── is-buffer@1.1.5 
+  │ │ │ ├─┬ object.omit@2.0.1 
+  │ │ │ │ ├─┬ for-own@0.1.5 
+  │ │ │ │ │ └── for-in@1.0.2 
+  │ │ │ │ └── is-extendable@0.1.1 
+  │ │ │ ├─┬ parse-glob@3.0.4 
+  │ │ │ │ ├── glob-base@0.3.0 
+  │ │ │ │ └── is-dotfile@1.0.3 
+  │ │ │ └─┬ regex-cache@0.4.4 
+  │ │ │   └─┬ is-equal-shallow@0.1.3 
+  │ │ │     └── is-primitive@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@1.0.1 
+  │ ├── glob-parent@2.0.0 
+  │ ├── inherits@2.0.3 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.10.0 
+  │ ├─┬ is-glob@2.0.1 
+  │ │ └── is-extglob@1.0.0 
+  │ ├── path-is-absolute@1.0.1 
+  │ └─┬ readdirp@2.1.0 
+  │   ├── graceful-fs@4.1.11 
+  │   ├─┬ minimatch@3.0.4 
+  │   │ └─┬ brace-expansion@1.1.8 
+  │   │   ├── balanced-match@1.0.0 
+  │   │   └── concat-map@0.0.1 
+  │   ├─┬ readable-stream@2.3.3 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── string_decoder@1.0.3 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── set-immediate-shim@1.0.1 
+  ├── commander@2.11.0 
+  ├─┬ j1@0.0.31 
+  │ └─┬ chalk@1.1.3 
+  │   ├── ansi-styles@2.2.1 
+  │   ├── escape-string-regexp@1.0.5 
+  │   ├─┬ has-ansi@2.0.0 
+  │   │ └── ansi-regex@2.1.1 
+  │   ├── strip-ansi@3.0.1 
+  │   └── supports-color@2.0.0 
+  └─┬ ws@3.2.0 
+    ├── async-limiter@1.0.0 
+    ├── safe-buffer@5.1.1 
+    └── ultron@1.1.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/sable/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0279 took 3.5584s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (57:7) on program const http = require('http');
+const path = require('path');
+const chokidar = require('chokidar');
+const {Server: WebSocketServer} = require('ws');
+const console = require('j1/console');
+const isArray = require('j1/isArray');
+const promisify = require('j1/promisify');
+
+const staticFile = require('./middleware/staticFile');
+const watcher = require('./middleware/watcher');
+const {SERVER_ERROR: HTTP_SERVER_ERROR} = require('./statusCodes');
+const MAX_PORT_NUMBER = 0xffff;
+
+class SableServer extends http.Server {
+
+	constructor(config = {}) {
+		super();
+		this.console = console.create(config.console || 'SableServer');
+		this.config = config;
+		this.on('request', (...args) => {
+			this.onRequest(...args);
+		});
+		this.resetConfig();
+	}
+
+	resetConfig() {
+		this.config = Object.assign({
+			port: 4000,
+			chokidar: {}
+		}, this.config);
+		this.resetMiddlewares();
+		this.resetDocumentRoot();
+	}
+
+	resetMiddlewares() {
+		const {middlewares} = this.config;
+		this.middlewares = [watcher];
+		if (middlewares) {
+			this.middlewares.push(...middlewares);
+		}
+		this.middlewares.push(staticFile);
+	}
+
+	resetDocumentRoot() {
+		const {documentRoot} = this.config;
+		this.documentRoot = [];
+		if (isArray(documentRoot)) {
+			this.documentRoot.push(...documentRoot);
+		} else if (documentRoot) {
+			this.documentRoot.push(documentRoot);
+		}
+		if (this.documentRoot.length === 0) {
+			this.documentRoot.push(process.cwd());
+		}
+	}
+
+	async startWebSocketServer() {
+		const server = new SableServer({
+			port: this.config.wsport || this.config.port + 1,
+			console: 'SableWebSocketServer'
+		});
+		server.console.logLevel = server.console.LOGLEVEL_ERROR;
+		await server.listen();
+		const {port} = server.address();
+		await server.close();
+		return new Promise((resolve, reject) => {
+			const wss = new WebSocketServer({port})
+			.on('connection', () => {
+				this.console.debug('connected');
+			})
+			.once('error', reject)
+			.once('listening', () => {
+				this.wss = wss;
+				resolve();
+			});
+		});
+	}
+
+	startWatcher() {
+		if (this.watcher) {
+			this.watcher.close();
+		}
+		return new Promise((resolve, reject) => {
+			this.watcher = chokidar.watch(this.documentRoot, Object.assign({
+				ignoreInitial: true,
+				awaitWriteFinish: {stabilityThreshold: 200},
+				ignored: [
+					/\/node_modules\//,
+					/\/\.git\//
+				]
+			}, this.config.chokidar))
+			.on('all', (event, file) => {
+				this.console.info(event, file);
+				const rootDir = this.documentRoot.find((dir) => {
+					return file.startsWith(dir);
+				});
+				const pathname = path.relative(rootDir, file)
+				.split(path.sep)
+				.join('/');
+				switch (event) {
+				case 'change':
+					if (this.wss) {
+						for (const client of this.wss.clients) {
+							if (client.readyState === client.OPEN) {
+								client.send(pathname);
+							} else {
+								console.error(`Client state is ${client.readyState}`);
+							}
+						}
+					}
+					break;
+				default:
+				}
+			})
+			.once('error', reject)
+			.once('ready', resolve);
+		});
+	}
+
+	listen(...args) {
+		return new Promise((resolve, reject) => {
+			const removeListener = () => {
+				this.removeListener('listening', onListen);
+				this.removeListener('error', onError);
+			};
+			function onListen() {
+				this.console.debug(`listening ${this.address().port}`);
+				removeListener();
+				resolve(this);
+			}
+			function onError(error) {
+				removeListener();
+				switch (error && error.code) {
+				case 'EADDRINUSE':
+				case 'EACCES':
+					if (error.port < MAX_PORT_NUMBER) {
+						resolve(this.listen(error.port + 1));
+					}
+					break;
+				default:
+					reject(error);
+				}
+			}
+			if (args.length === 0) {
+				args.push(this.config.port);
+			}
+			this
+			.once('listening', onListen)
+			.once('error', onError);
+			super.listen(...args);
+		});
+	}
+
+	onRequest(req, res) {
+		const middlewares = this.middlewares.slice();
+		const next = () => {
+			const middleware = middlewares.shift();
+			if (middleware) {
+				middleware.call(this, req, res, next);
+			} else {
+				res.statusCode = HTTP_SERVER_ERROR;
+				res.end('No middlewares matched');
+			}
+		};
+		next();
+	}
+
+	close() {
+		if (this.watcher) {
+			this.watcher.close();
+		}
+		if (this.wss) {
+			this.wss.close();
+		}
+		return promisify(super.close, this)();
+	}
+
+	async start() {
+		await this.listen();
+		await Promise.all([
+			this.startWatcher(),
+			this.startWebSocketServer()
+		]);
+	}
+
+}
+
+module.exports = SableServer;
+ at SyntaxError: Unexpected token (57:7)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp.expect (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:597:28)
+    at Parser.pp$3.parseMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2071:10)
+    at Parser.pp$1.parseClassMethod (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1137:25)
+    at Parser.pp$1.parseClass (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1118:14)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:697:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,55 @@
+/root/Targets/transparent-tank
+└─┬ transparent-tank@2.1.0 
+  ├─┬ babel-polyfill@6.26.0 
+  │ ├── core-js@2.5.1 
+  │ └── regenerator-runtime@0.10.5 
+  ├─┬ babel-runtime@6.26.0 
+  │ └── regenerator-runtime@0.11.0 
+  ├─┬ nools@0.4.4 
+  │ ├── arguments-extended@0.0.3 
+  │ ├── array-extended@0.0.11 
+  │ ├─┬ commander@1.1.1 
+  │ │ └── keypress@0.1.0 
+  │ ├── date-extended@0.0.6 
+  │ ├── declare.js@0.0.8 
+  │ ├─┬ extended@0.0.6 
+  │ │ └── extender@0.0.10 
+  │ ├── function-extended@0.0.9 
+  │ ├── ht@0.0.2 
+  │ ├── is-extended@0.0.10 
+  │ ├── leafy@0.0.3 
+  │ ├── object-extended@0.0.7 
+  │ ├── promise-extended@0.0.9 
+  │ ├── string-extended@0.0.8 
+  │ └─┬ uglify-js@2.4.24 
+  │   ├── async@0.2.10 
+  │   ├─┬ source-map@0.1.34 
+  │   │ └── amdefine@1.0.1 
+  │   ├── uglify-to-browserify@1.0.2 
+  │   └─┬ yargs@3.5.4 
+  │     ├── camelcase@1.2.1 
+  │     ├── decamelize@1.2.0 
+  │     ├── window-size@0.1.0 
+  │     └── wordwrap@0.0.2 
+  └── transparent-lang@0.0.10 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/transparent-tank/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 2% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log","call","Function"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0742 took 142.842s
+*-- Errors occured in test {"_bound":0}
+* Error: ReferenceError: require is not defined
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/transparent-tank/node_modules/transparent-tank/lib/tank.js. Coverage (Term): 1% Coverage (LOC): 2%
+*- File evalIndirect. Coverage (Term): 17% Coverage (LOC): 25%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

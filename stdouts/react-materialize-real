@@ -1,0 +1,84 @@
+/root/Targets/react-materialize-real
+├── UNMET PEER DEPENDENCY react@>=0.12
+└── react-materialize-real@0.12.0 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-materialize-real/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 31% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.029 took 4.2041s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (33:6) on program /** @jsx React.DOM */
+
+var React = require('react'),
+    cx = React.addons.classSet,
+    joinClasses = require('react/lib/joinClasses'),
+    constants = require('./constants'),
+    BaseMixin = require('./BaseMixin');
+
+var Button = React.createClass({
+  propTypes: {
+    node: React.PropTypes.node,
+    waves: React.PropTypes.oneOf(['effect', 'light']),
+    large: React.PropTypes.bool,
+    floating: React.PropTypes.bool,
+    disabled: React.PropTypes.bool
+  },
+  render() {
+    var C = this.props.node || 'button';
+    var classes = {
+      btn: true,
+      disabled: this.props.disabled,
+      'waves-effect': !!this.props.waves
+    };
+
+    if (constants.WAVES.indexOf(this.props.waves) > -1) {
+      classes['waves-' + this.props.waves] = true;
+    }
+
+    constants.STYLES.forEach(style => {
+      classes['btn-' + style] = this.props[style];
+    });
+    return (
+      <C {...this.props} className={cx(classes)}>
+        {this.props.children}
+      </C>
+    );
+  },
+  renderAnchor(classes) {
+    var C = this.props.node || 'a';
+    var href = this.props.href || '#';
+    return (
+      <C {...this.props}
+        href={href}
+        className={cx(classes)}>
+        {this.props.children}
+      </C>
+    );
+  }
+});
+
+module.exports = Button;
+ at SyntaxError: Unexpected token (33:6)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1822:12)
+    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
+    at Parser.pp$3.parseExprSubscripts (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1715:21)
+    at Parser.parseMaybeUnary (/root/ExpoSE/lib/Tropigate/bin/Unary.js:34:29)
+    at Parser.pp$3.parseExprOps (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1637:21)
+    at Parser.pp$3.parseMaybeConditional (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1620:21)
+    at Parser.pp$3.parseMaybeAssign (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1597:21)
+    at Parser.pp$3.parseParenAndDistinguishExpression (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1861:32)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/react-materialize-real/node_modules/react-materialize-real/src/index.js. Coverage (Term): 19% Coverage (LOC): 19%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,0 +1,86 @@
+/root/Targets/a2g
+└─┬ a2g@0.1.5 
+  ├─┬ bows@1.7.0 
+  │ └── andlog@1.0.0 
+  ├─┬ rxjs@5.4.3 
+  │ └── symbol-observable@1.0.4 
+  ├─┬ typedoc@0.7.2 
+  │ ├─┬ @types/fs-extra@3.0.3 
+  │ │ └── @types/node@8.0.31 
+  │ ├── @types/handlebars@4.0.36 
+  │ ├── @types/highlight.js@9.1.10 
+  │ ├── @types/lodash@4.14.76 
+  │ ├── @types/marked@0.0.28 
+  │ ├── @types/minimatch@2.0.29 
+  │ ├─┬ @types/shelljs@0.7.4 
+  │ │ └── @types/glob@5.0.32 
+  │ ├─┬ fs-extra@3.0.1 
+  │ │ ├── graceful-fs@4.1.11 
+  │ │ ├── jsonfile@3.0.1 
+  │ │ └── universalify@0.1.1 
+  │ ├─┬ handlebars@4.0.10 
+  │ │ ├── async@1.5.2 
+  │ │ ├─┬ optimist@0.6.1 
+  │ │ │ ├── minimist@0.0.10 
+  │ │ │ └── wordwrap@0.0.3 
+  │ │ ├─┬ source-map@0.4.4 
+  │ │ │ └── amdefine@1.0.1 
+  │ │ └─┬ uglify-js@2.8.29 
+  │ │   ├── source-map@0.5.7 
+  │ │   ├── uglify-to-browserify@1.0.2 
+  │ │   └─┬ yargs@3.10.0 
+  │ │     ├── camelcase@1.2.1 
+  │ │     ├─┬ cliui@2.1.0 
+  │ │     │ ├─┬ center-align@0.1.3 
+  │ │     │ │ ├─┬ align-text@0.1.4 
+  │ │     │ │ │ ├─┬ kind-of@3.2.2 
+  │ │     │ │ │ │ └── is-buffer@1.1.5 
+  │ │     │ │ │ ├── longest@1.0.1 
+  │ │     │ │ │ └── repeat-string@1.6.1 
+  │ │     │ │ └── lazy-cache@1.0.4 
+  │ │     │ ├── right-align@0.1.3 
+  │ │     │ └── wordwrap@0.0.2 
+  │ │     ├── decamelize@1.2.0 
+  │ │     └── window-size@0.1.0 
+  │ ├── highlight.js@9.12.0 
+  │ ├── lodash@4.17.4 
+  │ ├── marked@0.3.6 
+  │ ├─┬ minimatch@3.0.4 
+  │ │ └─┬ brace-expansion@1.1.8 
+  │ │   ├── balanced-match@1.0.0 
+  │ │   └── concat-map@0.0.1 
+  │ ├── progress@2.0.0 
+  │ ├─┬ shelljs@0.7.8 
+  │ │ ├─┬ glob@7.1.2 
+  │ │ │ ├── fs.realpath@1.0.0 
+  │ │ │ ├─┬ inflight@1.0.6 
+  │ │ │ │ └── wrappy@1.0.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ ├── once@1.4.0 
+  │ │ │ └── path-is-absolute@1.0.1 
+  │ │ ├── interpret@1.0.4 
+  │ │ └─┬ rechoir@0.6.2 
+  │ │   └─┬ resolve@1.4.0 
+  │ │     └── path-parse@1.0.5 
+  │ ├── typedoc-default-themes@0.5.0 
+  │ └── typescript@2.3.4 
+  └── typescript-collections@1.2.5 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/a2g/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0129 took 4.9843s
+*-- Errors occured in test {"_bound":0}
+* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (3:0)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

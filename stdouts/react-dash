@@ -1,0 +1,31 @@
+/root/Targets/react-dash
+├── UNMET PEER DEPENDENCY react@>=0.14.0
+├─┬ react-dash@0.6.12 
+│ ├── csv-es6-data-backend@0.0.1  (git+https://github.com/NuCivic/csv-es6-data-backend.git#f6bd5fbee3b1df3e144b201545d2a9c0248d1c32)
+│ ├── dkan-es6-data-backend@0.0.1  (git+https://github.com/NuCivic/dkan-es6-data-backend.git#81116c6a4a554040ce9800c0fad035c67cfaeefe)
+│ ├── UNMET PEER DEPENDENCY react@>=0.13.0 || ^0.14.0-beta3
+│ ├── UNMET PEER DEPENDENCY react-dom@>=0.14.0 || ^0.14.0-beta3
+│ ├── react-nvd3@0.5.7  (git+https://github.com/NuCivic/react-nvd3.git#df1ce741a0bfb163b9dd4b737de8d1dd328782dd)
+│ ├── react-responsive-accordion@1.0.0  (git+https://github.com/NuCivic/react-responsive-accordion.git#029fcb63704224711cd316253f72835ac28d8ff0)
+│ └─┬ react-select@1.0.0-rc.1  (git+https://github.com/JedWatson/react-select.git#3e4ebfcd12bb193b156e58514805087975647f38)
+│   └── UNMET PEER DEPENDENCY react@^0.14 || ^15.0.0-rc || ^15.0
+└── UNMET PEER DEPENDENCY react-dom@>=0.14.0
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/react-dash/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.0591 took 2.9345s
+*-- Errors occured in test {"_bound":0}
+* Error: Error: Cannot find module 'react-dash'
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **

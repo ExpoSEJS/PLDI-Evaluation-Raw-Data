@@ -1,0 +1,128 @@
+
+> electron-usb@0.0.11 install /root/Targets/electron-usb/node_modules/electron-usb
+> node-pre-gyp install --fallback-to-build
+
+[electron-usb] Success: "/root/Targets/electron-usb/node_modules/electron-usb/build/Release/electron-v0.36-linux-x64/usb_bindings.node" is installed via remote
+/root/Targets/electron-usb
+└── electron-usb@0.0.11 
+
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/root/Targets/electron-usb/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 16% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound log"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0} start 0.1093 took 16.1198s
+*-- Errors occured in test {"_bound":0}
+* Error: Tropigate failed because SyntaxError: Unexpected token (23:4) on program 
+/**
+ * Accepts any node Stream instance and hijacks its "write()" function,
+ * so that it can count any newlines that get written to the output.
+ *
+ * When a '\n' byte is encountered, then a "newline" event will be emitted
+ * on the stream, with no arguments. It is up to the listeners to determine
+ * any necessary deltas required for their use-case.
+ *
+ * Ex:
+ *
+ *   var cursor = ansi(process.stdout)
+ *     , ln = 0
+ *   process.stdout.on('newline', function () {
+ *    ln++
+ *   })
+ */
+
+/**
+ * Module dependencies.
+ */
+
+var assert = require('assert')
+var NEWLINE = '\n'.charCodeAt(0)
+
+function emitNewlineEvents (stream) {
+  if (stream._emittingNewlines) {
+    // already emitting newline events
+    return
+  }
+
+  var write = stream.write
+
+  stream.write = function (data) {
+    // first write the data
+    var rtn = write.apply(stream, arguments)
+
+    if (stream.listeners('newline').length > 0) {
+      var len = data.length
+        , i = 0
+      // now try to calculate any deltas
+      if (typeof data == 'string') {
+        for (; i<len; i++) {
+          processByte(stream, data.charCodeAt(i))
+        }
+      } else {
+        // buffer
+        for (; i<len; i++) {
+          processByte(stream, data[i])
+        }
+      }
+    }
+
+    return rtn
+  }
+
+  stream._emittingNewlines = true
+}
+module.exports = emitNewlineEvents
+
+
+/**
+ * Processes an individual byte being written to a stream
+ */
+
+function processByte (stream, b) {
+  assert.equal(typeof b, 'number')
+  if (b === NEWLINE) {
+    stream.emit('newline')
+  }
+}
+ at SyntaxError: Unexpected token (23:4)
+    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
+    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
+    at Parser.pp$2.parseBindingAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1417:12)
+    at Parser.parseBindingAtom (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:49:30)
+    at Parser.pp$1.parseVarId (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1049:20)
+    at Parser.pp$1.parseVar (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1032:14)
+    at Parser.pp$1.parseVarStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:917:10)
+    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:706:19)
+    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
+    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
+*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Coverage Data
+*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
+*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/usb.js. Coverage (Term): 2% Coverage (LOC): 3%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/lib/node-pre-gyp.js. Coverage (Term): 8% Coverage (LOC): 7%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/nopt/lib/nopt.js. Coverage (Term): 6% Coverage (LOC): 12%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/nopt/node_modules/abbrev/abbrev.js. Coverage (Term): 9% Coverage (LOC): 13%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/log.js. Coverage (Term): 3% Coverage (LOC): 2%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/index.js. Coverage (Term): 23% Coverage (LOC): 38%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/readable.js. Coverage (Term): 94% Coverage (LOC): 92%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/lib/_stream_readable.js. Coverage (Term): 8% Coverage (LOC): 12%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/node_modules/process-nextick-args/index.js. Coverage (Term): 42% Coverage (LOC): 44%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/node_modules/inherits/inherits.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/lib/_stream_writable.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/node_modules/util-deprecate/node.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/lib/_stream_duplex.js. Coverage (Term): 42% Coverage (LOC): 49%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/lib/_stream_transform.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/readable-stream/lib/_stream_passthrough.js. Coverage (Term): 59% Coverage (LOC): 73%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/are-we-there-yet/node_modules/delegates/index.js. Coverage (Term): 39% Coverage (LOC): 51%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/gauge/progress-bar.js. Coverage (Term): 3% Coverage (LOC): 4%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/gauge/node_modules/has-unicode/index.js. Coverage (Term): 37% Coverage (LOC): 43%
+*- File /root/Targets/electron-usb/node_modules/electron-usb/node_modules/node-pre-gyp/node_modules/npmlog/node_modules/ansi/lib/ansi.js. Coverage (Term): 3% Coverage (LOC): 5%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 1 paths with 1 errors **
