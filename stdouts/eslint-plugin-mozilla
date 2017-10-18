@@ -1,32 +1,0 @@
-/root/Targets/eslint-plugin-mozilla
-├── UNMET PEER DEPENDENCY eslint@^3.0.0 || ^4.0.0
-├─┬ eslint-plugin-mozilla@0.4.4 
-│ ├── ini-parser@0.0.2 
-│ └── sax@1.2.4 
-└── UNMET PEER DEPENDENCY eslint-plugin-no-unsanitized@^2.0.1
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/eslint-plugin-mozilla/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 64% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0774 took 3.3393s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: rootDir is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/index.js. Coverage (Term): 23% Coverage (LOC): 18%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/configs/browser-test.js. Coverage (Term): 99% Coverage (LOC): 100%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/configs/chrome-test.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/configs/mochitest-test.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/configs/recommended.js. Coverage (Term): 100% Coverage (LOC): 100%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/configs/xpcshell-test.js. Coverage (Term): 99% Coverage (LOC): 100%
-*- File /root/Targets/eslint-plugin-mozilla/node_modules/eslint-plugin-mozilla/lib/environments/browser-window.js. Coverage (Term): 3% Coverage (LOC): 2%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

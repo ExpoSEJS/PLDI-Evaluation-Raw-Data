@@ -1,37 +1,0 @@
-/root/Targets/jdflux
-└── jdflux@0.5.41 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/jdflux/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 24% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 24% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 24% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound ","call"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.047 took 7.8333s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1} start 7.9665 took 17.8607s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1}
-* Error: TypeError: Cannot read property 'helpers' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 57% Coverage (LOC): 62%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/server/index.js. Coverage (Term): 74% Coverage (LOC): 86%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/config.js. Coverage (Term): 10% Coverage (LOC): 18%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/utils.js. Coverage (Term): 8% Coverage (LOC): 18%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/server/renderServer.js. Coverage (Term): 18% Coverage (LOC): 17%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/helpers/log.js. Coverage (Term): 34% Coverage (LOC): 47%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/templates.js. Coverage (Term): 35% Coverage (LOC): 47%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/server/componentServer.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/component/Constructor.js. Coverage (Term): 18% Coverage (LOC): 19%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/dataStore.js. Coverage (Term): 24% Coverage (LOC): 53%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/action.js. Coverage (Term): 6% Coverage (LOC): 6%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/error.js. Coverage (Term): 19% Coverage (LOC): 33%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/store.js. Coverage (Term): 10% Coverage (LOC): 17%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/sharedData.js. Coverage (Term): 21% Coverage (LOC): 30%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/router.js. Coverage (Term): 22% Coverage (LOC): 39%
-*- File /root/Targets/jdflux/node_modules/jdflux/src/server/server.js. Coverage (Term): 5% Coverage (LOC): 7%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 2 paths with 1 errors **

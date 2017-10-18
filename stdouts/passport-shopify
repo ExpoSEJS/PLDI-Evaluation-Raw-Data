@@ -1,50 +1,0 @@
-/root/Targets/passport-shopify
-└─┬ passport-shopify@0.1.2 
-  ├── lodash@3.10.1 
-  ├─┬ passport-oauth2@1.4.0 
-  │ ├── oauth@0.9.15 
-  │ ├── passport-strategy@1.0.0 
-  │ ├── uid2@0.0.3 
-  │ └── utils-merge@1.0.1 
-  └── pkginfo@0.3.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/passport-shopify/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 32% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 32% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 32% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","RegExp","WeakMap","max","Array","create","setPrototypeOf","isArray","parse","toString","apply","bound Strategy","getPrototypeOf","TypeError"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0579 took 26.7408s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
-* Error: TypeError: OAuth2Strategy requires a verify callback
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 27.2449 took 31.0234s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/passport-shopify/node_modules/passport-shopify/lib/passport-shopify/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/passport-shopify/node_modules/passport-shopify/lib/passport-shopify/strategy.js. Coverage (Term): 47% Coverage (LOC): 56%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/strategy.js. Coverage (Term): 14% Coverage (LOC): 12%
-*- File /root/Targets/passport-shopify/node_modules/passport-strategy/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/passport-shopify/node_modules/passport-strategy/lib/strategy.js. Coverage (Term): 60% Coverage (LOC): 86%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 38%
-*- File /root/Targets/passport-shopify/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
-*- File /root/Targets/passport-shopify/node_modules/oauth/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/passport-shopify/node_modules/oauth/lib/oauth.js. Coverage (Term): 12% Coverage (LOC): 25%
-*- File /root/Targets/passport-shopify/node_modules/oauth/lib/sha1.js. Coverage (Term): 5% Coverage (LOC): 16%
-*- File /root/Targets/passport-shopify/node_modules/oauth/lib/_utils.js. Coverage (Term): 56% Coverage (LOC): 80%
-*- File /root/Targets/passport-shopify/node_modules/oauth/lib/oauth2.js. Coverage (Term): 16% Coverage (LOC): 19%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/state/null.js. Coverage (Term): 52% Coverage (LOC): 80%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/state/session.js. Coverage (Term): 17% Coverage (LOC): 21%
-*- File /root/Targets/passport-shopify/node_modules/uid2/index.js. Coverage (Term): 25% Coverage (LOC): 35%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/errors/authorizationerror.js. Coverage (Term): 26% Coverage (LOC): 24%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/errors/tokenerror.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/passport-shopify/node_modules/passport-oauth2/lib/errors/internaloautherror.js. Coverage (Term): 23% Coverage (LOC): 29%
-*- File /root/Targets/passport-shopify/node_modules/lodash/index.js. Coverage (Term): 22% Coverage (LOC): 32%
-*- File /root/Targets/passport-shopify/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 2 paths with 1 errors **

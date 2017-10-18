@@ -1,40 +1,0 @@
-/root/Targets/acid-reflux-js
-└─┬ acid-reflux-js@0.2.0 
-  ├─┬ fbjs@0.8.16 
-  │ ├── core-js@1.2.7 
-  │ ├─┬ isomorphic-fetch@2.2.1 
-  │ │ ├─┬ node-fetch@1.7.3 
-  │ │ │ ├─┬ encoding@0.1.12 
-  │ │ │ │ └── iconv-lite@0.4.19 
-  │ │ │ └── is-stream@1.1.0 
-  │ │ └── whatwg-fetch@2.0.3 
-  │ ├─┬ loose-envify@1.3.1 
-  │ │ └── js-tokens@3.0.2 
-  │ ├── object-assign@4.1.1 
-  │ ├─┬ promise@7.3.1 
-  │ │ └── asap@2.0.6 
-  │ ├── setimmediate@1.0.5 
-  │ └── ua-parser-js@0.7.14 
-  └── lodash@4.17.4 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/acid-reflux-js/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 36% coverage ] ****** [3 done /0 queued / 0 running / 0 errors / 36% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","toString","bound Store"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.056 took 36.1577s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 36.7849 took 35.9977s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":2} start 73.1887 took 28.7661s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/acid-reflux-js/node_modules/acid-reflux-js/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/acid-reflux-js/node_modules/acid-reflux-js/es5/Store.js. Coverage (Term): 30% Coverage (LOC): 50%
-*- File /root/Targets/acid-reflux-js/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 35%
-*- File /root/Targets/acid-reflux-js/node_modules/fbjs/lib/areEqual.js. Coverage (Term): 7% Coverage (LOC): 10%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 3 paths with 0 errors **

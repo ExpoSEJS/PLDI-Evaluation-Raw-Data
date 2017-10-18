@@ -1,27 +1,0 @@
-/root/Targets/guaycuru
-└─┬ guaycuru@0.2.4 
-  └── node-simple-router@0.10.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/guaycuru/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 20% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","cwd","defineProperties","parseInt","isNaN"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0682 took 10.2472s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
-* Error: Error: listen EADDRINUSE :::8000
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 39% Coverage (LOC): 43%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/guaycuru/node_modules/guaycuru/lib/guaycuru.js. Coverage (Term): 42% Coverage (LOC): 54%
-*- File /root/Targets/guaycuru/node_modules/node-simple-router/lib/router.js. Coverage (Term): 9% Coverage (LOC): 17%
-*- File /root/Targets/guaycuru/node_modules/node-simple-router/lib/async.js. Coverage (Term): 6% Coverage (LOC): 8%
-*- File /root/Targets/guaycuru/node_modules/node-simple-router/lib/promises.js. Coverage (Term): 11% Coverage (LOC): 19%
-*- File /root/Targets/guaycuru/node_modules/node-simple-router/lib/stringstream.js. Coverage (Term): 31% Coverage (LOC): 44%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

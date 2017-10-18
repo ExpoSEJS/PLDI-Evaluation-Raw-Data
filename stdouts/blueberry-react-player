@@ -1,30 +1,0 @@
-/root/Targets/blueberry-react-player
-├─┬ blueberry-react-player@0.5.6 
-│ ├── es6-promise@3.3.1 
-│ ├── load-script@1.0.0 
-│ ├─┬ query-string@3.0.3 
-│ │ └── strict-uri-encode@1.1.0 
-│ └── whatwg-fetch@0.11.1 
-└── UNMET PEER DEPENDENCY react@^0.14.0
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/blueberry-react-player/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Array","random","toString","resolve"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0682 took 8.7185s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'react'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/blueberry-react-player/node_modules/blueberry-react-player/lib/ReactPlayer.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/blueberry-react-player/node_modules/es6-promise/dist/es6-promise.js. Coverage (Term): 18% Coverage (LOC): 26%
-*- File /root/Targets/blueberry-react-player/node_modules/whatwg-fetch/fetch.js. Coverage (Term): 13% Coverage (LOC): 25%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

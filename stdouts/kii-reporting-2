@@ -1,31 +1,0 @@
-/root/Targets/kii-reporting-2
-└─┬ kii-reporting-2@1.0.8 
-  ├─┬ echarts@3.7.1 
-  │ └── zrender@3.6.1 
-  ├── ie-shim@0.1.0 
-  ├── jasmine-core@2.8.0 
-  ├── reflect-metadata@0.1.10 
-  ├─┬ rxjs@5.0.3 
-  │ └── symbol-observable@1.0.4 
-  ├── ts-helpers@1.1.2 
-  └── UNMET PEER DEPENDENCY typescript@>=1.8.0  <2.1.0 || >=1.9.0-dev || >=2.0.0-dev || || >=2.1.0-dev
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/kii-reporting-2/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0532 took 5.766s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'core-js/es6/symbol'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/kii-reporting-2/node_modules/kii-reporting-2/dist/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

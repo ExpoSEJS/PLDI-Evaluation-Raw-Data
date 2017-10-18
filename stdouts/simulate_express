@@ -1,27 +1,0 @@
-/root/Targets/simulate_express
-└── simulate_express@1.0.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/simulate_express/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 41% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0467 took 6.5238s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
-* Error: Error: listen EADDRINUSE :::3000
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 39% Coverage (LOC): 43%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/index.js. Coverage (Term): 53% Coverage (LOC): 52%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/cust_module/app.js. Coverage (Term): 42% Coverage (LOC): 62%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/cust_module/parseUrl.js. Coverage (Term): 14% Coverage (LOC): 15%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/cust_module/staticPath.js. Coverage (Term): 58% Coverage (LOC): 65%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/cust_module/viewEngine.js. Coverage (Term): 24% Coverage (LOC): 29%
-*- File /root/Targets/simulate_express/node_modules/simulate_express/cust_module/enhanceFs.js. Coverage (Term): 32% Coverage (LOC): 35%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

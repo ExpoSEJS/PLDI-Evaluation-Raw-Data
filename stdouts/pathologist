@@ -1,43 +1,0 @@
-/root/Targets/pathologist
-└── pathologist@0.1.9 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/pathologist/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 21% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 21% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 21% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 21% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 21% coverage ] ****** [3 done /1 queued / 2 running / 3 errors / 21% coverage ] ****** [3 done /0 queued / 3 running / 3 errors / 21% coverage ] ****** [3 done /0 queued / 3 running / 3 errors / 21% coverage ] ****** [4 done /0 queued / 2 running / 4 errors / 21% coverage ] ****** [5 done /0 queued / 1 running / 5 errors / 21% coverage ] ****** [6 done /0 queued / 0 running / 5 errors / 21% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","freeze","toString","apply","bound transform","bound parse"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.0455 took 6.6033s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2} start 6.7208 took 11.0499s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'length' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1} start 6.7746 took 12.0743s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3} start 17.8209 took 11.3085s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3}
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
-* Error: Error extracting final output - a fatal error must have occured
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3} start 18.9366 took 12.4896s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3}
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
-* Error: Error extracting final output - a fatal error must have occured
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"_bound":2} start 18.9732 took 12.5472s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 81% Coverage (LOC): 86%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
-*- File /root/Targets/pathologist/node_modules/pathologist/dist/pathologist.umd.js. Coverage (Term): 10% Coverage (LOC): 16%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 6 paths with 5 errors **

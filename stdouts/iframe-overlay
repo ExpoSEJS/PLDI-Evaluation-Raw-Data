@@ -1,26 +1,0 @@
-/root/Targets/iframe-overlay
-└─┬ iframe-overlay@0.1.4 
-  ├── basic-ds@0.1.0  (git://github.com/kevinb7/basic-ds.git#89c2efca01f9ac6f4bd653e89002147f70728bb4)
-  ├── eventsim@0.0.2  (git://github.com/kevinb7/eventsim.git#69a0bc5392d0bbb7d01459c6b2399a04c2a9a8a6)
-  └── poster@0.1.0  (git://github.com/kevinb7/poster.git#5a8881ca2b7a5b4931c3aa0c9a749147c86ca493)
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/iframe-overlay/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 18% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.047 took 3.5669s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: self is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/iframe-overlay/node_modules/iframe-overlay/lib/iframe-overlay.js. Coverage (Term): 4% Coverage (LOC): 5%
-*- File /root/Targets/iframe-overlay/node_modules/poster/lib/poster.js. Coverage (Term): 4% Coverage (LOC): 5%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

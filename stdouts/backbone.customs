@@ -1,32 +1,0 @@
-/root/Targets/backbone.customs
-└─┬ backbone.customs@0.5.2 
-  ├── backbone@1.1.2 
-  ├── backbone.epoxy@1.5.0  (git://github.com/firstopinion/backbone.epoxy.git#13ae3299cf783df7999172be9add703ba971ec45)
-  ├─┬ customs.js@0.5.0 
-  │ └── utl.js@0.1.3 
-  ├── jquery@1.11.3 
-  └── underscore@1.6.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/backbone.customs/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Object","join","RegExp","sort","apply"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0462 took 14.3365s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'customs/customs'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/backbone.customs/node_modules/backbone.customs/dist/common/backbone.customs.js. Coverage (Term): 46% Coverage (LOC): 40%
-*- File /root/Targets/backbone.customs/node_modules/backbone.customs/dist/common/model.js. Coverage (Term): 17% Coverage (LOC): 20%
-*- File /root/Targets/backbone.customs/node_modules/underscore/underscore.js. Coverage (Term): 21% Coverage (LOC): 34%
-*- File /root/Targets/backbone.customs/node_modules/backbone.epoxy/backbone.epoxy.js. Coverage (Term): 9% Coverage (LOC): 23%
-*- File /root/Targets/backbone.customs/node_modules/backbone/backbone.js. Coverage (Term): 11% Coverage (LOC): 25%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

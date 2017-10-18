@@ -1,30 +1,0 @@
-/root/Targets/ipfs-daemon
-└─┬ ipfs-daemon@0.3.1 
-  ├─┬ ipfs@0.22.1
-  │ ├─┬ ipld-resolver@0.9.0
-  │ │ └─┬ ipld-eth-tx-trie@1.0.1
-  │ │   └─┬ aegir@9.4.0
-  │ │     └── uglify-es@3.1.1  extraneous (git://github.com/mishoo/UglifyJS2.git#e8235657e469dfae701e24701045731daf678e41)
-  │ └─┬ libp2p-ipfs-browser@0.19.0
-  │   └─┬ libp2p-multiplex@0.4.4
-  │     └── multiplex@6.7.0  (git://github.com/dignifiedquire/multiplex.git#b5d5edd30454e2c978ee8c52df86f5f4840d2eab)
-  └── ipfsd-ctl@0.20.0  (git://github.com/ipfs/js-ipfsd-ctl.git#ad4d2d00fd2e99f6fc1b4706d495b2df3867531d)
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/ipfs-daemon/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0903 took 5.085s
-*-- Errors occured in test {"_bound":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

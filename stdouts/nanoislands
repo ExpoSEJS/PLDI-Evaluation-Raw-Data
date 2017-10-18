@@ -1,35 +1,0 @@
-/root/Targets/nanoislands
-└─┬ nanoislands@0.6.17 
-  ├── es5-shim@4.0.5 
-  ├─┬ stylobate@0.24.3 
-  │ ├── if-ie.styl@0.5.0 
-  │ └── utilus.styl@0.15.0 
-  ├── stylobate-islands@0.27.5 
-  └─┬ yate@0.0.82 
-    ├── nommon@0.0.23 
-    ├─┬ nopt@4.0.1 
-    │ ├── abbrev@1.1.0 
-    │ └─┬ osenv@0.1.4 
-    │   ├── os-homedir@1.0.2 
-    │   └── os-tmpdir@1.0.2 
-    └─┬ parse-tools@0.0.17 
-      └── no.colors@0.0.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/nanoislands/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0752 took 3.5648s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'nanoislands'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,29 +1,0 @@
-/root/Targets/remotedev-app
-├── UNMET PEER DEPENDENCY react-dom@^15.4.0
-└─┬ remotedev-app@0.10.8 
-  ├── UNMET PEER DEPENDENCY react-dom@^15.0.0
-  └─┬ remotedev-monitor-components@0.0.5
-    └── codemirror@5.30.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/remotedev-app/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 5% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0501 took 48.4328s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: navigator is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/remotedev-app/node_modules/remotedev-app/lib/index.js. Coverage (Term): 11% Coverage (LOC): 13%
-*- File /root/Targets/remotedev-app/node_modules/remotedev-monitor-components/lib/presets.js. Coverage (Term): 27% Coverage (LOC): 43%
-*- File /root/Targets/remotedev-app/node_modules/codemirror/mode/javascript/javascript.js. Coverage (Term): 1% Coverage (LOC): 1%
-*- File /root/Targets/remotedev-app/node_modules/codemirror/lib/codemirror.js. Coverage (Term): 2% Coverage (LOC): 4%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

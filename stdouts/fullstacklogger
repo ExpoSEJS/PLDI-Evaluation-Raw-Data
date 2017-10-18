@@ -1,829 +1,0 @@
-/root/Targets/fullstacklogger
-└─┬ fullstacklogger@1.0.1 
-  ├─┬ body-parser@1.15.2 
-  │ ├── bytes@2.4.0 
-  │ ├── content-type@1.0.4 
-  │ ├─┬ debug@2.2.0 
-  │ │ └── ms@0.7.1 
-  │ ├── depd@1.1.1 
-  │ ├─┬ http-errors@1.5.1 
-  │ │ ├── inherits@2.0.3 
-  │ │ ├── setprototypeof@1.0.2 
-  │ │ └── statuses@1.3.1 
-  │ ├── iconv-lite@0.4.13 
-  │ ├─┬ on-finished@2.3.0 
-  │ │ └── ee-first@1.1.1 
-  │ ├── qs@6.2.0 
-  │ ├─┬ raw-body@2.1.7 
-  │ │ └── unpipe@1.0.0 
-  │ └─┬ type-is@1.6.15 
-  │   ├── media-typer@0.3.0 
-  │   └─┬ mime-types@2.1.17 
-  │     └── mime-db@1.30.0 
-  ├── bulma@0.1.2 
-  ├─┬ express@4.14.0 
-  │ ├─┬ accepts@1.3.4 
-  │ │ └── negotiator@0.6.1 
-  │ ├── array-flatten@1.1.1 
-  │ ├── content-disposition@0.5.1 
-  │ ├── cookie@0.3.1 
-  │ ├── cookie-signature@1.0.6 
-  │ ├── encodeurl@1.0.1 
-  │ ├── escape-html@1.0.3 
-  │ ├── etag@1.7.0 
-  │ ├── finalhandler@0.5.0 
-  │ ├── fresh@0.3.0 
-  │ ├── merge-descriptors@1.0.1 
-  │ ├── methods@1.1.2 
-  │ ├── parseurl@1.3.2 
-  │ ├── path-to-regexp@0.1.7 
-  │ ├─┬ proxy-addr@1.1.5 
-  │ │ ├── forwarded@0.1.2 
-  │ │ └── ipaddr.js@1.4.0 
-  │ ├── range-parser@1.2.0 
-  │ ├─┬ send@0.14.1 
-  │ │ ├── destroy@1.0.4 
-  │ │ └── mime@1.3.4 
-  │ ├─┬ serve-static@1.11.2 
-  │ │ └─┬ send@0.14.2 
-  │ │   └── ms@0.7.2 
-  │ ├── utils-merge@1.0.0 
-  │ └── vary@1.1.2 
-  ├─┬ helmet@2.1.2 
-  │ ├─┬ connect@3.4.1 
-  │ │ └── finalhandler@0.4.1 
-  │ ├── dns-prefetch-control@0.1.0 
-  │ ├── dont-sniff-mimetype@1.0.0 
-  │ ├── frameguard@2.0.0 
-  │ ├─┬ helmet-csp@1.2.2 
-  │ │ ├── camelize@1.0.0 
-  │ │ ├─┬ content-security-policy-builder@1.0.0 
-  │ │ │ └── dashify@0.2.2 
-  │ │ ├── lodash.reduce@4.5.0 
-  │ │ └── platform@1.3.1 
-  │ ├── hide-powered-by@1.0.0 
-  │ ├── hpkp@1.1.0 
-  │ ├─┬ hsts@1.0.0 
-  │ │ └── core-util-is@1.0.2 
-  │ ├── ienoopen@1.0.0 
-  │ ├─┬ nocache@1.0.1 
-  │ │ └── depd@1.1.0 
-  │ └── x-xss-protection@1.0.0 
-  ├─┬ nedb@1.8.0 
-  │ ├── async@0.2.10 
-  │ ├── binary-search-tree@0.2.5 
-  │ ├─┬ localforage@1.5.0 
-  │ │ └─┬ lie@3.0.2 
-  │ │   ├─┬ es3ify@0.1.4 
-  │ │   │ ├── esprima-fb@3001.1.0-dev-harmony-fb 
-  │ │   │ ├─┬ jstransform@3.0.0 
-  │ │   │ │ ├── base62@0.1.1 
-  │ │   │ │ └─┬ source-map@0.1.31 
-  │ │   │ │   └── amdefine@1.0.1 
-  │ │   │ └── through@2.3.8 
-  │ │   ├── immediate@3.0.6 
-  │ │   ├─┬ inline-process-browser@1.0.0 
-  │ │   │ ├─┬ falafel@1.2.0 
-  │ │   │ │ ├── acorn@1.2.2 
-  │ │   │ │ ├── foreach@2.0.5 
-  │ │   │ │ └── object-keys@1.0.11 
-  │ │   │ └─┬ through2@0.6.5 
-  │ │   │   ├─┬ readable-stream@1.0.34 
-  │ │   │   │ └── string_decoder@0.10.31 
-  │ │   │   └── xtend@4.0.1 
-  │ │   └─┬ unreachable-branch-transform@0.3.0 
-  │ │     ├── esmangle-evaluator@1.0.1 
-  │ │     └─┬ recast@0.10.43 
-  │ │       ├── ast-types@0.8.15 
-  │ │       ├── esprima-fb@15001.1001.0-dev-harmony-fb 
-  │ │       ├── private@0.1.7 
-  │ │       └── source-map@0.5.7 
-  │ ├─┬ mkdirp@0.5.1 
-  │ │ └── minimist@0.0.8 
-  │ └── underscore@1.4.4 
-  └─┬ socket.io@1.4.8 
-    ├─┬ engine.io@1.6.11 
-    │ ├─┬ accepts@1.1.4 
-    │ │ ├─┬ mime-types@2.0.14 
-    │ │ │ └── mime-db@1.12.0 
-    │ │ └── negotiator@0.4.9 
-    │ ├── base64id@0.1.0 
-    │ ├─┬ engine.io-parser@1.2.4 
-    │ │ ├── after@0.8.1 
-    │ │ ├── arraybuffer.slice@0.0.6 
-    │ │ ├── base64-arraybuffer@0.1.2 
-    │ │ ├── blob@0.0.4 
-    │ │ ├── has-binary@0.1.6 
-    │ │ └── utf8@2.1.0 
-    │ └─┬ ws@1.1.0 
-    │   ├── options@0.0.6 
-    │   └── ultron@1.0.2 
-    ├─┬ has-binary@0.1.7 
-    │ └── isarray@0.0.1 
-    ├─┬ socket.io-adapter@0.4.0 
-    │ └─┬ socket.io-parser@2.2.2 
-    │   ├── debug@0.7.4 
-    │   └── json3@3.2.6 
-    ├─┬ socket.io-client@1.4.8 
-    │ ├── backo2@1.0.2 
-    │ ├── component-bind@1.0.0 
-    │ ├── component-emitter@1.2.0 
-    │ ├─┬ engine.io-client@1.6.11 
-    │ │ ├── component-inherit@0.0.3 
-    │ │ ├── has-cors@1.1.0 
-    │ │ ├── parsejson@0.0.1 
-    │ │ ├── parseqs@0.0.2 
-    │ │ ├── ws@1.0.1 
-    │ │ ├── xmlhttprequest-ssl@1.5.1 
-    │ │ └── yeast@0.1.2 
-    │ ├── indexof@0.0.1 
-    │ ├── object-component@0.0.3 
-    │ ├─┬ parseuri@0.0.4 
-    │ │ └─┬ better-assert@1.0.2 
-    │ │   └── callsite@1.0.0 
-    │ └── to-array@0.1.4 
-    └─┬ socket.io-parser@2.2.6 
-      ├── benchmark@1.0.0 
-      ├── component-emitter@1.1.2 
-      └── json3@3.3.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/fullstacklogger/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 30% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 30% coverage ] ****** [2 done /1 queued / 1 running / 1 errors / 24% coverage ] ****** [2 done /0 queued / 2 running / 1 errors / 24% coverage ] ****** [2 done /0 queued / 2 running / 1 errors / 24% coverage ] ****** [3 done /1 queued / 2 running / 2 errors / 24% coverage ] ****** [3 done /0 queued / 3 running / 2 errors / 24% coverage ] ****** [3 done /0 queued / 3 running / 2 errors / 24% coverage ] ****** [4 done /0 queued / 3 running / 3 errors / 24% coverage ] ****** [4 done /0 queued / 3 running / 3 errors / 24% coverage ] ****** [5 done /0 queued / 3 running / 4 errors / 24% coverage ] ****** [5 done /0 queued / 3 running / 4 errors / 24% coverage ] ****** [6 done /1 queued / 3 running / 5 errors / 24% coverage ] ****** [6 done /0 queued / 4 running / 5 errors / 24% coverage ] ****** [6 done /0 queued / 4 running / 5 errors / 24% coverage ] ****** [7 done /0 queued / 4 running / 6 errors / 24% coverage ] ****** [7 done /0 queued / 4 running / 6 errors / 24% coverage ] ****** [8 done /1 queued / 4 running / 7 errors / 24% coverage ] ****** [8 done /0 queued / 5 running / 7 errors / 24% coverage ] ****** [8 done /0 queued / 5 running / 7 errors / 24% coverage ] ****** [9 done /0 queued / 4 running / 8 errors / 24% coverage ] ****** [10 done /1 queued / 4 running / 9 errors / 24% coverage ] ****** [10 done /0 queued / 5 running / 9 errors / 24% coverage ] ****** [10 done /0 queued / 5 running / 9 errors / 24% coverage ] ****** [11 done /0 queued / 5 running / 10 errors / 24% coverage ] ****** [11 done /0 queued / 5 running / 10 errors / 24% coverage ] ****** [12 done /2 queued / 5 running / 11 errors / 24% coverage ] ****** [12 done /1 queued / 6 running / 11 errors / 24% coverage ] ****** [12 done /0 queued / 7 running / 11 errors / 24% coverage ] ****** [12 done /0 queued / 7 running / 11 errors / 24% coverage ] ****** [13 done /2 queued / 7 running / 12 errors / 24% coverage ] ****** [13 done /1 queued / 8 running / 12 errors / 24% coverage ] ****** [13 done /0 queued / 9 running / 12 errors / 24% coverage ] ****** [13 done /0 queued / 9 running / 12 errors / 24% coverage ] ****** [14 done /1 queued / 9 running / 13 errors / 24% coverage ] ****** [14 done /0 queued / 10 running / 13 errors / 24% coverage ] ****** [14 done /0 queued / 10 running / 13 errors / 24% coverage ] ****** [15 done /4 queued / 10 running / 14 errors / 24% coverage ] ****** [15 done /3 queued / 11 running / 14 errors / 24% coverage ] ****** [15 done /2 queued / 12 running / 14 errors / 24% coverage ] ****** [15 done /1 queued / 13 running / 14 errors / 24% coverage ] ****** [15 done /0 queued / 14 running / 14 errors / 24% coverage ] ****** [15 done /0 queued / 14 running / 14 errors / 24% coverage ] ****** [16 done /0 queued / 13 running / 15 errors / 24% coverage ] ****** [17 done /1 queued / 13 running / 16 errors / 24% coverage ] ****** [17 done /0 queued / 14 running / 16 errors / 24% coverage ] ****** [17 done /0 queued / 14 running / 16 errors / 24% coverage ] ****** [18 done /3 queued / 14 running / 17 errors / 24% coverage ] ****** [18 done /2 queued / 15 running / 17 errors / 24% coverage ] ****** [18 done /1 queued / 16 running / 17 errors / 24% coverage ] ****** [18 done /1 queued / 16 running / 17 errors / 24% coverage ] ****** [19 done /2 queued / 16 running / 18 errors / 24% coverage ] ****** [19 done /2 queued / 16 running / 18 errors / 24% coverage ] ****** [20 done /4 queued / 16 running / 19 errors / 24% coverage ] ****** [20 done /4 queued / 16 running / 19 errors / 24% coverage ] ****** [21 done /5 queued / 16 running / 20 errors / 24% coverage ] ****** [21 done /5 queued / 16 running / 20 errors / 24% coverage ] ****** [22 done /6 queued / 16 running / 21 errors / 24% coverage ] ****** [22 done /6 queued / 16 running / 21 errors / 24% coverage ] ****** [23 done /5 queued / 16 running / 22 errors / 24% coverage ] ****** [23 done /5 queued / 16 running / 22 errors / 24% coverage ] ****** [24 done /4 queued / 16 running / 23 errors / 24% coverage ] ****** [24 done /4 queued / 16 running / 23 errors / 24% coverage ] ****** [25 done /3 queued / 16 running / 24 errors / 24% coverage ] ****** [25 done /3 queued / 16 running / 24 errors / 24% coverage ] ****** [26 done /2 queued / 16 running / 25 errors / 24% coverage ] ****** [26 done /2 queued / 16 running / 25 errors / 24% coverage ] ****** [27 done /1 queued / 16 running / 26 errors / 24% coverage ] ****** [27 done /1 queued / 16 running / 26 errors / 24% coverage ] ****** [28 done /0 queued / 16 running / 27 errors / 24% coverage ] ****** [28 done /0 queued / 16 running / 27 errors / 24% coverage ] ****** [29 done /0 queued / 15 running / 28 errors / 24% coverage ] ****** [30 done /0 queued / 15 running / 29 errors / 24% coverage ] ****** [30 done /0 queued / 15 running / 29 errors / 24% coverage ] ****** [31 done /1 queued / 15 running / 30 errors / 24% coverage ] ****** [31 done /0 queued / 16 running / 30 errors / 24% coverage ] ****** [31 done /0 queued / 16 running / 30 errors / 24% coverage ] ****** [32 done /2 queued / 16 running / 31 errors / 24% coverage ] ****** [32 done /2 queued / 16 running / 31 errors / 24% coverage ] ****** [33 done /1 queued / 16 running / 32 errors / 24% coverage ] ****** [33 done /1 queued / 16 running / 32 errors / 24% coverage ] ****** [34 done /1 queued / 16 running / 33 errors / 24% coverage ] ****** [34 done /1 queued / 16 running / 33 errors / 24% coverage ] ****** [35 done /0 queued / 16 running / 34 errors / 24% coverage ] ****** [35 done /0 queued / 16 running / 34 errors / 24% coverage ] ****** [36 done /1 queued / 16 running / 35 errors / 24% coverage ] ****** [36 done /1 queued / 16 running / 35 errors / 24% coverage ] ****** [37 done /0 queued / 16 running / 36 errors / 24% coverage ] ****** [37 done /0 queued / 16 running / 36 errors / 24% coverage ] ****** [38 done /0 queued / 15 running / 37 errors / 24% coverage ] ****** [39 done /1 queued / 15 running / 38 errors / 24% coverage ] ****** [39 done /0 queued / 16 running / 38 errors / 24% coverage ] ****** [39 done /0 queued / 16 running / 38 errors / 24% coverage ] ****** [40 done /0 queued / 16 running / 39 errors / 24% coverage ] ****** [40 done /0 queued / 16 running / 39 errors / 24% coverage ] ****** [41 done /0 queued / 15 running / 40 errors / 24% coverage ] ****** [42 done /1 queued / 15 running / 41 errors / 24% coverage ] ****** [42 done /0 queued / 16 running / 41 errors / 24% coverage ] ****** [42 done /0 queued / 16 running / 41 errors / 24% coverage ] ****** [43 done /2 queued / 16 running / 42 errors / 24% coverage ] ****** [43 done /2 queued / 16 running / 42 errors / 24% coverage ] ****** [44 done /3 queued / 16 running / 43 errors / 24% coverage ] ****** [44 done /3 queued / 16 running / 43 errors / 24% coverage ] ****** [45 done /6 queued / 16 running / 44 errors / 24% coverage ] ****** [45 done /6 queued / 16 running / 44 errors / 24% coverage ] ****** [46 done /9 queued / 16 running / 45 errors / 24% coverage ] ****** [46 done /9 queued / 16 running / 45 errors / 24% coverage ] ****** [47 done /10 queued / 16 running / 46 errors / 24% coverage ] ****** [47 done /10 queued / 16 running / 46 errors / 24% coverage ] ****** [48 done /13 queued / 16 running / 47 errors / 24% coverage ] ****** [48 done /13 queued / 16 running / 47 errors / 24% coverage ] ****** [49 done /14 queued / 16 running / 48 errors / 24% coverage ] ****** [49 done /14 queued / 16 running / 48 errors / 24% coverage ] ****** [50 done /15 queued / 16 running / 49 errors / 24% coverage ] ****** [50 done /15 queued / 16 running / 49 errors / 24% coverage ] ****** [51 done /15 queued / 16 running / 50 errors / 24% coverage ] ****** [51 done /15 queued / 16 running / 50 errors / 24% coverage ] ****** [52 done /17 queued / 16 running / 51 errors / 24% coverage ] ****** [52 done /17 queued / 16 running / 51 errors / 24% coverage ] ****** [53 done /18 queued / 16 running / 52 errors / 24% coverage ] ****** [53 done /18 queued / 16 running / 52 errors / 24% coverage ] ****** [54 done /19 queued / 16 running / 53 errors / 24% coverage ] ****** [54 done /19 queued / 16 running / 53 errors / 24% coverage ] ****** [55 done /19 queued / 16 running / 54 errors / 24% coverage ] ****** [55 done /19 queued / 16 running / 54 errors / 24% coverage ] ****** [56 done /20 queued / 16 running / 55 errors / 24% coverage ] ****** [56 done /20 queued / 16 running / 55 errors / 24% coverage ] ****** [57 done /22 queued / 16 running / 56 errors / 24% coverage ] ****** [57 done /22 queued / 16 running / 56 errors / 24% coverage ] ****** [58 done /24 queued / 16 running / 57 errors / 24% coverage ] ****** [58 done /24 queued / 16 running / 57 errors / 24% coverage ] ****** [59 done /26 queued / 16 running / 58 errors / 24% coverage ] ****** [59 done /26 queued / 16 running / 58 errors / 24% coverage ] ****** [60 done /27 queued / 16 running / 59 errors / 24% coverage ] ****** [60 done /27 queued / 16 running / 59 errors / 24% coverage ] ****** [61 done /28 queued / 16 running / 60 errors / 24% coverage ] ****** [61 done /28 queued / 16 running / 60 errors / 24% coverage ] ****** [62 done /29 queued / 16 running / 61 errors / 24% coverage ] ****** [62 done /29 queued / 16 running / 61 errors / 24% coverage ] ****** [63 done /31 queued / 16 running / 62 errors / 24% coverage ] ****** [63 done /31 queued / 16 running / 62 errors / 24% coverage ] ****** [64 done /32 queued / 16 running / 63 errors / 24% coverage ] ****** [64 done /32 queued / 16 running / 63 errors / 24% coverage ] ****** [65 done /32 queued / 16 running / 64 errors / 24% coverage ] ****** [65 done /32 queued / 16 running / 64 errors / 24% coverage ] ****** [66 done /32 queued / 16 running / 65 errors / 24% coverage ] ****** [66 done /32 queued / 16 running / 65 errors / 24% coverage ] ****** [67 done /35 queued / 16 running / 66 errors / 24% coverage ] ****** [67 done /35 queued / 16 running / 66 errors / 24% coverage ] ****** [68 done /35 queued / 16 running / 67 errors / 24% coverage ] ****** [68 done /35 queued / 16 running / 67 errors / 24% coverage ] ****** [69 done /34 queued / 16 running / 68 errors / 24% coverage ] ****** [69 done /34 queued / 16 running / 68 errors / 24% coverage ] ****** [70 done /34 queued / 16 running / 69 errors / 24% coverage ] ****** [70 done /34 queued / 16 running / 69 errors / 24% coverage ] ****** [71 done /36 queued / 16 running / 70 errors / 24% coverage ] ****** [71 done /36 queued / 16 running / 70 errors / 24% coverage ] ****** [72 done /37 queued / 16 running / 71 errors / 24% coverage ] ****** [72 done /37 queued / 16 running / 71 errors / 24% coverage ] ****** [73 done /39 queued / 16 running / 72 errors / 24% coverage ] ****** [73 done /39 queued / 16 running / 72 errors / 24% coverage ] ****** [74 done /41 queued / 16 running / 73 errors / 24% coverage ] ****** [74 done /41 queued / 16 running / 73 errors / 24% coverage ] ****** [75 done /40 queued / 16 running / 74 errors / 24% coverage ] ****** [75 done /40 queued / 16 running / 74 errors / 24% coverage ] ****** [76 done /39 queued / 16 running / 75 errors / 24% coverage ] ****** [76 done /39 queued / 16 running / 75 errors / 24% coverage ] ****** [77 done /39 queued / 16 running / 76 errors / 24% coverage ] ****** [77 done /39 queued / 16 running / 76 errors / 24% coverage ] ****** [78 done /40 queued / 16 running / 77 errors / 24% coverage ] ****** [78 done /40 queued / 16 running / 77 errors / 24% coverage ] ****** [79 done /41 queued / 16 running / 78 errors / 24% coverage ] ****** [79 done /41 queued / 16 running / 78 errors / 24% coverage ] ****** [80 done /42 queued / 16 running / 79 errors / 24% coverage ] ****** [80 done /42 queued / 16 running / 79 errors / 24% coverage ] ****** [81 done /44 queued / 16 running / 80 errors / 24% coverage ] ****** [81 done /44 queued / 16 running / 80 errors / 24% coverage ] ****** [82 done /44 queued / 16 running / 81 errors / 24% coverage ] ****** [82 done /44 queued / 16 running / 81 errors / 24% coverage ] ****** [83 done /45 queued / 16 running / 82 errors / 24% coverage ] ****** [83 done /45 queued / 16 running / 82 errors / 24% coverage ] ****** [84 done /47 queued / 16 running / 83 errors / 24% coverage ] ****** [84 done /47 queued / 16 running / 83 errors / 24% coverage ] ****** [85 done /48 queued / 16 running / 84 errors / 24% coverage ] ****** [85 done /48 queued / 16 running / 84 errors / 24% coverage ] ****** [86 done /49 queued / 16 running / 85 errors / 24% coverage ] ****** [86 done /49 queued / 16 running / 85 errors / 24% coverage ] ****** [87 done /49 queued / 16 running / 86 errors / 24% coverage ] ****** [87 done /49 queued / 16 running / 86 errors / 24% coverage ] ****** [88 done /50 queued / 16 running / 87 errors / 24% coverage ] ****** [88 done /50 queued / 16 running / 87 errors / 24% coverage ] ****** [89 done /52 queued / 16 running / 88 errors / 24% coverage ] ****** [89 done /52 queued / 16 running / 88 errors / 24% coverage ] ****** [90 done /53 queued / 16 running / 89 errors / 24% coverage ] ****** [90 done /53 queued / 16 running / 89 errors / 24% coverage ] ****** [91 done /55 queued / 16 running / 90 errors / 24% coverage ] ****** [91 done /55 queued / 16 running / 90 errors / 24% coverage ] ****** [92 done /56 queued / 16 running / 91 errors / 24% coverage ] ****** [92 done /56 queued / 16 running / 91 errors / 24% coverage ] ****** [93 done /56 queued / 16 running / 92 errors / 24% coverage ] ****** [93 done /56 queued / 16 running / 92 errors / 24% coverage ] ****** [94 done /57 queued / 16 running / 93 errors / 24% coverage ] ****** [94 done /57 queued / 16 running / 93 errors / 24% coverage ] ****** [95 done /59 queued / 16 running / 94 errors / 24% coverage ] ****** [95 done /59 queued / 16 running / 94 errors / 24% coverage ] ****** [96 done /59 queued / 16 running / 95 errors / 24% coverage ] ****** [96 done /59 queued / 16 running / 95 errors / 24% coverage ] ****** [97 done /61 queued / 16 running / 96 errors / 24% coverage ] ****** [97 done /61 queued / 16 running / 96 errors / 24% coverage ] ****** [98 done /62 queued / 16 running / 97 errors / 24% coverage ] ****** [98 done /62 queued / 16 running / 97 errors / 24% coverage ] ****** [99 done /63 queued / 16 running / 98 errors / 24% coverage ] ****** [99 done /63 queued / 16 running / 98 errors / 24% coverage ] ****** [100 done /63 queued / 16 running / 99 errors / 24% coverage ] ****** [100 done /63 queued / 16 running / 99 errors / 24% coverage ] ****** [101 done /64 queued / 16 running / 100 errors / 24% coverage ] ****** [101 done /64 queued / 16 running / 100 errors / 24% coverage ] ****** [102 done /65 queued / 16 running / 101 errors / 24% coverage ] ****** [102 done /65 queued / 16 running / 101 errors / 24% coverage ] ****** [103 done /67 queued / 16 running / 102 errors / 24% coverage ] ****** [103 done /67 queued / 16 running / 102 errors / 24% coverage ] ****** [104 done /68 queued / 16 running / 103 errors / 24% coverage ] ****** [104 done /68 queued / 16 running / 103 errors / 24% coverage ] ****** [105 done /70 queued / 16 running / 104 errors / 24% coverage ] ****** [105 done /70 queued / 16 running / 104 errors / 24% coverage ] ****** [106 done /72 queued / 16 running / 105 errors / 24% coverage ] ****** [106 done /72 queued / 16 running / 105 errors / 24% coverage ] ****** [107 done /73 queued / 16 running / 106 errors / 24% coverage ] ****** [107 done /73 queued / 16 running / 106 errors / 24% coverage ] ****** [108 done /72 queued / 16 running / 107 errors / 24% coverage ] ****** [108 done /72 queued / 16 running / 107 errors / 24% coverage ] ****** [109 done /75 queued / 16 running / 108 errors / 24% coverage ] ****** [109 done /75 queued / 16 running / 108 errors / 24% coverage ] ****** [110 done /76 queued / 16 running / 109 errors / 24% coverage ] ****** [110 done /76 queued / 16 running / 109 errors / 24% coverage ] ****** [111 done /77 queued / 16 running / 110 errors / 24% coverage ] ****** [111 done /77 queued / 16 running / 110 errors / 24% coverage ] ****** [112 done /76 queued / 16 running / 111 errors / 24% coverage ] ****** [112 done /76 queued / 16 running / 111 errors / 24% coverage ] ****** [113 done /77 queued / 16 running / 112 errors / 24% coverage ] ****** [113 done /77 queued / 16 running / 112 errors / 24% coverage ] ****** [114 done /78 queued / 16 running / 113 errors / 24% coverage ] ****** [114 done /78 queued / 16 running / 113 errors / 24% coverage ] ****** [115 done /80 queued / 16 running / 114 errors / 24% coverage ] ****** [115 done /80 queued / 16 running / 114 errors / 24% coverage ] ****** [116 done /81 queued / 16 running / 115 errors / 24% coverage ] ****** [116 done /81 queued / 16 running / 115 errors / 24% coverage ] ****** [117 done /84 queued / 16 running / 116 errors / 24% coverage ] ****** [117 done /84 queued / 16 running / 116 errors / 24% coverage ] ****** [118 done /85 queued / 16 running / 117 errors / 24% coverage ] ****** [118 done /85 queued / 16 running / 117 errors / 24% coverage ] ****** [119 done /85 queued / 16 running / 118 errors / 24% coverage ] ****** [119 done /85 queued / 16 running / 118 errors / 24% coverage ] ****** [120 done /86 queued / 16 running / 119 errors / 24% coverage ] ****** [120 done /86 queued / 16 running / 119 errors / 24% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound ","parseInt","Number","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Array","toUpperCase","join","call","RegExp","pow","binding","ArrayBuffer","DataView","Map","resolve","Set","WeakMap","Error","getOwnPropertyNames","getOwnPropertyDescriptor","isArray","Date","getUTCFullYear","getUTCMonth","getUTCDate","getUTCHours","getUTCMinutes","getUTCSeconds","getUTCMilliseconds","stringify","parse"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.056 took 5.6454s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0} start 5.8239 took 103.8158s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"_bound":2} start 111.0467 took 103.6018s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"_bound":2}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"_bound":2}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"_bound":3} start 110.7064 took 105.5545s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"_bound":3}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"_bound":3}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0} start 216.6642 took 47.58s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0} start 216.038 took 48.865s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":5,"ExpansionArg_string":"PureString"} start 264.6835 took 47.2042s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0} start 215.7226 took 98.5259s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5} start 265.4963 took 90.1706s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4,"ExpansionArg_string":"PureString"} start 314.5777 took 41.5843s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 265.3066 took 95.3151s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":5,"ExpansionArg_string":"PureString"} start 314.6966 took 86.4976s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_array_length":0} start 356.5174 took 45.823s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":6,"ExpansionArg_array_length":0} start 312.2798 took 91.0135s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":6,"ExpansionArg_array_length":0} start 356.6725 took 88.911s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":6} start 401.7009 took 45.4587s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":6}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 401.9084 took 46.239s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":5,"_bound":8,"ExpansionArg_bool":false} start 403.0458 took 46.3481s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":5,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":5,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 360.8678 took 90.9277s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 402.8892 took 50.1541s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":8,"ExpansionArg_array_element_0_type":0} start 403.8616 took 49.8934s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":8,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0} start 448.5782 took 46.8791s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 446.334 took 49.9372s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_int":0} start 446.5012 took 50.6521s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 448.4097 took 50.6427s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":9} start 453.4943 took 46.1785s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":9}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":1,"ExpansionArg_bool":false,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":7,"ExpansionArg_int_2":0} start 402.0767 took 98.6257s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":7,"ExpansionArg_int_2":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 452.055 took 52.064s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":7,"ExpansionArg_bool":false} start 403.7068 took 102.9621s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":7,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_bool":false} start 402.709 took 104.5038s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":2,"_bound":10,"ExpansionArg_int":0} start 497.3859 took 50.7141s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":2,"_bound":10,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":2,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":9,"ExpansionArg_array_element_0_int":0} start 500.0221 took 49.7537s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":9,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":7} start 446.0632 took 113.253s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":7}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":12,"ExpansionArg_array_length_2":0} start 449.7822 took 110.4035s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":12,"ExpansionArg_array_length_2":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_string_2":"PureString"} start 446.6543 took 114.1001s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0} start 446.2008 took 115.6185s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":10,"ExpansionArg_int":0} start 449.6439 took 112.9912s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":10,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":2,"ExpansionArg_bool":false,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":11,"ExpansionArg_string":"PureString"} start 449.9183 took 114.6092s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":11,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":3,"ExpansionArg_bool":false,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0} start 454.1079 took 111.9053s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":12,"ExpansionArg_string":"PureString"} start 548.6599 took 48.1194s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":12,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":11} start 548.4695 took 49.2301s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":11}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 495.8842 took 102.1974s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":9,"ExpansionArg_array_element_1_type":0} start 496.6384 took 102.2785s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":9,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":10,"ExpansionArg_array_element_1_type":0} start 499.4554 took 103.9922s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":10,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_type_2":0,"_bound":8,"ExpansionArg_array_element_0_int":0} start 501.0668 took 106.7143s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_type_2":0,"_bound":8,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_type_2":0,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"_bound":11,"ExpansionArg_array_element_0_string":"PureString"} start 504.5363 took 104.1873s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"_bound":11,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":11,"ExpansionArg_array_element_0_string":"PureString"} start 561.182 took 48.3667s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":11,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":6,"_bound":7,"ExpansionArg_bool_2":false} start 507.6011 took 104.5183s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":6,"_bound":7,"ExpansionArg_bool_2":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":6,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"_bound":13,"ExpansionArg_array_element_0_type":0} start 560.5344 took 52.184s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"_bound":13,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 550.0748 took 93.1612s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":13,"ExpansionArg_bool":false} start 597.0803 took 48.4704s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":13,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":10} start 603.7513 took 47.296s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":10}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":12,"ExpansionArg_array_element_0_bool":false} start 609.8571 took 44.3983s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":12,"ExpansionArg_array_element_0_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 566.3704 took 92.3007s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":10} start 559.7221 took 99.4481s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":10}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13,"ExpansionArg_array_element_1_type":0} start 562.2348 took 97.6134s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":12,"ExpansionArg_array_element_0_int":0} start 563.2004 took 97.4306s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":12,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":10,"ExpansionArg_array_element_0_int":0} start 566.5467 took 95.5004s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":10,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_2_type":0} start 599.2949 took 90.0822s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":14,"ExpansionArg_array_element_2_type":0} start 598.4438 took 95.6531s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":14,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":13} start 598.6514 took 96.8517s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":13}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":14,"ExpansionArg_array_element_0_bool":false} start 609.1253 took 92.9298s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":14,"ExpansionArg_array_element_0_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":10,"ExpansionArg_array_element_0_string":"PureString"} start 608.2177 took 94.8575s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":10,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":13,"ExpansionArg_array_element_0_array_length":0} start 654.616 took 48.99s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":13,"ExpansionArg_array_element_0_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_0_int":0} start 612.4639 took 93.77s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_string":"","_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":4,"ExpansionArg_bool_2":false,"_bound":11,"ExpansionArg_array_length":0} start 613.1629 took 93.8135s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":4,"ExpansionArg_bool_2":false,"_bound":11,"ExpansionArg_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":4,"ExpansionArg_bool_2":false,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_1_string":"PureString"} start 660.9814 took 51.9323s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_1_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"ExpansionArg_type_2":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_string":"","_bound":12} start 643.6968 took 89.4997s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_string":"","_bound":12}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_string":"","_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":1,"ExpansionArg_bool_2":false,"_bound":8} start 651.3239 took 88.1834s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":1,"ExpansionArg_bool_2":false,"_bound":8}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":1,"ExpansionArg_bool_2":false,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":14,"ExpansionArg_array_length_2":0} start 645.8434 took 94.1675s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":14,"ExpansionArg_array_length_2":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":4,"ExpansionArg_bool":false,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_int":0,"_bound":14,"ExpansionArg_array_element_0_bool":false} start 694.376 took 46.1722s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_int":0,"_bound":14,"ExpansionArg_array_element_0_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_int":0,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":15,"ExpansionArg_array_element_1_type":0} start 695.8689 took 47.7609s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":15,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":14,"ExpansionArg_array_element_1_string":"PureString"} start 703.9507 took 44.6738s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":14,"ExpansionArg_array_element_1_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_0_bool":false} start 703.4444 took 45.9924s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_0_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","ExpansionArg_type_2":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":3,"ExpansionArg_bool_2":false,"_bound":10,"ExpansionArg_string":"PureString"} start 659.5878 took 90.4179s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":3,"ExpansionArg_bool_2":false,"_bound":10,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":3,"ExpansionArg_bool_2":false,"_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":2,"ExpansionArg_bool_2":false,"_bound":9,"ExpansionArg_int":0} start 660.2995 took 91.1438s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":2,"ExpansionArg_bool_2":false,"_bound":9,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":5,"ExpansionArg_bool":false,"ExpansionArg_type_2":2,"ExpansionArg_bool_2":false,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":11} start 706.6555 took 46.064s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":11}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":12,"ExpansionArg_array_element_0_string":"PureString"} start 662.441 took 90.7072s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":12,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_1_type":0} start 707.3306 took 47.4489s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_string":"","_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":9} start 658.9769 took 96.4218s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":9}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":13,"ExpansionArg_array_element_1_bool":false} start 713.2267 took 49.9095s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":13,"ExpansionArg_array_element_1_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":13} start 689.7844 took 91.3275s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":13}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":1,"ExpansionArg_array_element_0_int":0,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":12,"ExpansionArg_array_element_2_type":0} start 739.8075 took 43.7732s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":12,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 740.2755 took 46.784s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":0,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":16,"ExpansionArg_array_element_0_array_length":0} start 740.8801 took 46.6922s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":16,"ExpansionArg_array_element_0_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":16}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":15,"ExpansionArg_array_element_0_array_length":0} start 702.5434 took 86.6478s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":15,"ExpansionArg_array_element_0_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_int":0} start 750.3794 took 42.3921s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":16,"ExpansionArg_array_element_1_bool":false} start 748.9272 took 45.7723s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":16,"ExpansionArg_array_element_1_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":16}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":3,"_bound":12,"ExpansionArg_string":"PureString"} start 751.8514 took 46.6964s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":3,"_bound":12,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":3,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":0,"_bound":14,"ExpansionArg_array_element_2_type":0} start 755.9408 took 43.0773s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":0,"_bound":14,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":0,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"ExpansionArg_type_2":0,"_bound":14,"ExpansionArg_array_element_1_array_length":0} start 763.5201 took 40.3041s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"ExpansionArg_type_2":0,"_bound":14,"ExpansionArg_array_element_1_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"ExpansionArg_type_2":0,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_1_int":0} start 733.5625 took 81.6407s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_1_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","ExpansionArg_type_2":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_bool":false,"_bound":15,"ExpansionArg_array_element_0_string":"PureString"} start 743.9914 took 76.9496s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_bool":false,"_bound":15,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_bool":false,"_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":1,"_bound":13} start 781.4998 took 41.4991s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":1,"_bound":13}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":1,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_0_array_length":0} start 749.8028 took 76.1666s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_0_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"ExpansionArg_type_2":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":1,"_bound":12} start 752.9955 took 74.7451s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":1,"_bound":12}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":1,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_2_type":0} start 793.1404 took 37.5787s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":12,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":0,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_0_bool":false} start 753.5361 took 77.7847s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":13,"ExpansionArg_array_element_0_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_string":"","_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":11} start 755.1722 took 76.1491s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":11}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":15,"ExpansionArg_bool":false} start 804.1721 took 36.3089s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":15,"ExpansionArg_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":5,"ExpansionArg_string":"","_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":14} start 815.4745 took 37.5857s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":14}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13,"ExpansionArg_array_element_2_type":0} start 783.9517 took 70.1736s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":2,"_bound":14,"ExpansionArg_array_element_0_int":0} start 787.9459 took 68.5694s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":2,"_bound":14,"ExpansionArg_array_element_0_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":2,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0} start 787.376 took 69.6741s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":2,"ExpansionArg_array_element_0_type":0,"_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":3,"_bound":14,"ExpansionArg_array_element_1_string":"PureString"} start 823.3278 took 36.4126s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":3,"_bound":14,"ExpansionArg_array_element_1_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":3,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":3,"_bound":13,"ExpansionArg_string":"PureString"} start 789.8131 took 70.4944s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":3,"_bound":13,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":1,"ExpansionArg_type_2":3,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_array_element_2_type":1,"_bound":15} start 821.1987 took 40.8941s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_array_element_2_type":1,"_bound":15}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_array_element_2_type":1,"_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":14,"ExpansionArg_int":0} start 799.3487 took 63.1953s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":14,"ExpansionArg_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12,"ExpansionArg_array_element_1_string":"PureString"} start 826.2002 took 37.346s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12,"ExpansionArg_array_element_1_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"_bound":17,"ExpansionArg_array_element_1_array_length":0} start 794.9962 took 69.1006s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"_bound":17,"ExpansionArg_array_element_1_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":4,"ExpansionArg_array_element_1_bool":false,"_bound":17}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":3,"_bound":13,"ExpansionArg_string":"PureString"} start 828.0764 took 36.5501s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":3,"_bound":13,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_2":3,"_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":13} start 798.889 took 66.3432s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":13}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":13}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":1,"_bound":11,"ExpansionArg_array_element_1_type":0} start 831.1048 took 38.0317s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":1,"_bound":11,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":1,"_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":14,"ExpansionArg_array_element_0_array_length":0} start 831.627 took 38.3158s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":14,"ExpansionArg_array_element_0_array_length":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":4,"ExpansionArg_array_element_0_bool":false,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12,"ExpansionArg_array_element_1_string":"PureString"} start 832.0711 took 39.0567s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12,"ExpansionArg_array_element_1_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":3,"_bound":12}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_bool":false,"_bound":14,"ExpansionArg_array_element_1_type":0} start 854.5715 took 34.7233s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_bool":false,"_bound":14,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":5,"ExpansionArg_array_element_0_bool":false,"_bound":14}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"_bound":15,"ExpansionArg_array_element_1_bool":false} start 853.2631 took 38.2003s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"_bound":15,"ExpansionArg_array_element_1_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":16,"ExpansionArg_array_element_0_string":"PureString"} start 856.7928 took 36.8934s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":16,"ExpansionArg_array_element_0_string":"PureString"}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_array_length":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length_2":1,"ExpansionArg_array_element_0_type":3,"ExpansionArg_array_element_0_int":0,"_bound":16}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_int":0} start 860.1293 took 34.7777s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_int":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":2,"ExpansionArg_array_element_0_int":0,"ExpansionArg_array_element_1_type":2,"ExpansionArg_array_element_1_string":"","_bound":15}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_bool":false} start 864.3939 took 35.0388s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":15,"ExpansionArg_array_element_1_bool":false}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":5,"ExpansionArg_array_element_1_string":"","_bound":15}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/index.js. Coverage (Term): 54% Coverage (LOC): 52%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/core/fsLogger-router.js. Coverage (Term): 41% Coverage (LOC): 50%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/core/servernode/rest_api_logs.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/core/fsLogger.js. Coverage (Term): 28% Coverage (LOC): 46%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/core/fsLogger-environment.js. Coverage (Term): 51% Coverage (LOC): 46%
-*- File /root/Targets/fullstacklogger/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/express.js. Coverage (Term): 85% Coverage (LOC): 97%
-*- File /root/Targets/fullstacklogger/node_modules/merge-descriptors/index.js. Coverage (Term): 83% Coverage (LOC): 83%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/application.js. Coverage (Term): 33% Coverage (LOC): 43%
-*- File /root/Targets/fullstacklogger/node_modules/finalhandler/index.js. Coverage (Term): 15% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/fullstacklogger/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/fullstacklogger/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
-*- File /root/Targets/fullstacklogger/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/router/index.js. Coverage (Term): 8% Coverage (LOC): 12%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/router/route.js. Coverage (Term): 18% Coverage (LOC): 23%
-*- File /root/Targets/fullstacklogger/node_modules/array-flatten/array-flatten.js. Coverage (Term): 17% Coverage (LOC): 26%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/router/layer.js. Coverage (Term): 15% Coverage (LOC): 19%
-*- File /root/Targets/fullstacklogger/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
-*- File /root/Targets/fullstacklogger/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
-*- File /root/Targets/fullstacklogger/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
-*- File /root/Targets/fullstacklogger/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/fullstacklogger/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/fullstacklogger/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/middleware/init.js. Coverage (Term): 23% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/middleware/query.js. Coverage (Term): 28% Coverage (LOC): 32%
-*- File /root/Targets/fullstacklogger/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/qs/lib/utils.js. Coverage (Term): 13% Coverage (LOC): 20%
-*- File /root/Targets/fullstacklogger/node_modules/qs/lib/parse.js. Coverage (Term): 7% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/view.js. Coverage (Term): 23% Coverage (LOC): 32%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/utils.js. Coverage (Term): 38% Coverage (LOC): 53%
-*- File /root/Targets/fullstacklogger/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
-*- File /root/Targets/fullstacklogger/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/send/index.js. Coverage (Term): 14% Coverage (LOC): 21%
-*- File /root/Targets/fullstacklogger/node_modules/http-errors/index.js. Coverage (Term): 50% Coverage (LOC): 47%
-*- File /root/Targets/fullstacklogger/node_modules/setprototypeof/index.js. Coverage (Term): 35% Coverage (LOC): 45%
-*- File /root/Targets/fullstacklogger/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
-*- File /root/Targets/fullstacklogger/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/encodeurl/index.js. Coverage (Term): 63% Coverage (LOC): 89%
-*- File /root/Targets/fullstacklogger/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 34%
-*- File /root/Targets/fullstacklogger/node_modules/fresh/index.js. Coverage (Term): 13% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
-*- File /root/Targets/fullstacklogger/node_modules/range-parser/index.js. Coverage (Term): 8% Coverage (LOC): 15%
-*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
-*- File /root/Targets/fullstacklogger/node_modules/proxy-addr/index.js. Coverage (Term): 22% Coverage (LOC): 32%
-*- File /root/Targets/fullstacklogger/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 27% Coverage (LOC): 52%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/request.js. Coverage (Term): 26% Coverage (LOC): 41%
-*- File /root/Targets/fullstacklogger/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
-*- File /root/Targets/fullstacklogger/node_modules/negotiator/index.js. Coverage (Term): 33% Coverage (LOC): 47%
-*- File /root/Targets/fullstacklogger/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
-*- File /root/Targets/fullstacklogger/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
-*- File /root/Targets/fullstacklogger/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
-*- File /root/Targets/fullstacklogger/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 16%
-*- File /root/Targets/fullstacklogger/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
-*- File /root/Targets/fullstacklogger/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/vary/index.js. Coverage (Term): 10% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/serve-static/index.js. Coverage (Term): 14% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/serve-static/node_modules/send/index.js. Coverage (Term): 14% Coverage (LOC): 21%
-*- File /root/Targets/fullstacklogger/node_modules/serve-static/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/body-parser/index.js. Coverage (Term): 40% Coverage (LOC): 49%
-*- File /root/Targets/fullstacklogger/node_modules/helmet/index.js. Coverage (Term): 44% Coverage (LOC): 41%
-*- File /root/Targets/fullstacklogger/node_modules/connect/index.js. Coverage (Term): 14% Coverage (LOC): 19%
-*- File /root/Targets/fullstacklogger/node_modules/connect/node_modules/finalhandler/index.js. Coverage (Term): 20% Coverage (LOC): 22%
-*- File /root/Targets/fullstacklogger/node_modules/helmet/lib/values.js. Coverage (Term): 93% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/dns-prefetch-control/index.js. Coverage (Term): 24% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/dont-sniff-mimetype/index.js. Coverage (Term): 40% Coverage (LOC): 57%
-*- File /root/Targets/fullstacklogger/node_modules/frameguard/index.js. Coverage (Term): 17% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/frameguard/lib/isstring.js. Coverage (Term): 52% Coverage (LOC): 80%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/index.js. Coverage (Term): 21% Coverage (LOC): 18%
-*- File /root/Targets/fullstacklogger/node_modules/camelize/index.js. Coverage (Term): 15% Coverage (LOC): 28%
-*- File /root/Targets/fullstacklogger/node_modules/content-security-policy-builder/index.js. Coverage (Term): 19% Coverage (LOC): 21%
-*- File /root/Targets/fullstacklogger/node_modules/dashify/index.js. Coverage (Term): 30% Coverage (LOC): 42%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/is-function.js. Coverage (Term): 59% Coverage (LOC): 80%
-*- File /root/Targets/fullstacklogger/node_modules/platform/platform.js. Coverage (Term): 48% Coverage (LOC): 68%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/contains-function.js. Coverage (Term): 32% Coverage (LOC): 29%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/get-header-keys-for-browser.js. Coverage (Term): 13% Coverage (LOC): 24%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/all-headers.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/transform-directives-for-browser.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/assign.js. Coverage (Term): 26% Coverage (LOC): 31%
-*- File /root/Targets/fullstacklogger/node_modules/lodash.reduce/index.js. Coverage (Term): 25% Coverage (LOC): 30%
-*- File /root/Targets/fullstacklogger/node_modules/helmet-csp/lib/parse-dynamic-directives.js. Coverage (Term): 27% Coverage (LOC): 30%
-*- File /root/Targets/fullstacklogger/node_modules/hide-powered-by/index.js. Coverage (Term): 23% Coverage (LOC): 31%
-*- File /root/Targets/fullstacklogger/node_modules/hpkp/index.js. Coverage (Term): 10% Coverage (LOC): 12%
-*- File /root/Targets/fullstacklogger/node_modules/hsts/index.js. Coverage (Term): 13% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/core-util-is/lib/util.js. Coverage (Term): 33% Coverage (LOC): 64%
-*- File /root/Targets/fullstacklogger/node_modules/ienoopen/index.js. Coverage (Term): 40% Coverage (LOC): 57%
-*- File /root/Targets/fullstacklogger/node_modules/nocache/index.js. Coverage (Term): 26% Coverage (LOC): 26%
-*- File /root/Targets/fullstacklogger/node_modules/nocache/node_modules/depd/index.js. Coverage (Term): 25% Coverage (LOC): 29%
-*- File /root/Targets/fullstacklogger/node_modules/nocache/node_modules/depd/lib/compat/index.js. Coverage (Term): 83% Coverage (LOC): 95%
-*- File /root/Targets/fullstacklogger/node_modules/x-xss-protection/index.js. Coverage (Term): 17% Coverage (LOC): 24%
-*- File /root/Targets/fullstacklogger/node_modules/fullstacklogger/core/fsLogger-socket.js. Coverage (Term): 25% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io/lib/index.js. Coverage (Term): 5% Coverage (LOC): 5%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/engine.io.js. Coverage (Term): 38% Coverage (LOC): 46%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/server.js. Coverage (Term): 12% Coverage (LOC): 16%
-*- File /root/Targets/fullstacklogger/node_modules/base64id/lib/base64id.js. Coverage (Term): 13% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transports/index.js. Coverage (Term): 64% Coverage (LOC): 71%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transports/polling-xhr.js. Coverage (Term): 35% Coverage (LOC): 43%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transports/polling.js. Coverage (Term): 11% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transport.js. Coverage (Term): 37% Coverage (LOC): 51%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-parser/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-parser/lib/index.js. Coverage (Term): 7% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/utf8/utf8.js. Coverage (Term): 15% Coverage (LOC): 19%
-*- File /root/Targets/fullstacklogger/node_modules/after/index.js. Coverage (Term): 20% Coverage (LOC): 24%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-parser/lib/keys.js. Coverage (Term): 33% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/accepts/index.js. Coverage (Term): 21% Coverage (LOC): 28%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/negotiator/lib/negotiator.js. Coverage (Term): 68% Coverage (LOC): 75%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/negotiator/lib/charset.js. Coverage (Term): 7% Coverage (LOC): 12%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/negotiator/lib/encoding.js. Coverage (Term): 6% Coverage (LOC): 10%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/negotiator/lib/language.js. Coverage (Term): 6% Coverage (LOC): 10%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 9%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/mime-types/index.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transports/polling-jsonp.js. Coverage (Term): 31% Coverage (LOC): 50%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/transports/websocket.js. Coverage (Term): 24% Coverage (LOC): 28%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
-*- File /root/Targets/fullstacklogger/node_modules/ultron/index.js. Coverage (Term): 17% Coverage (LOC): 27%
-*- File /root/Targets/fullstacklogger/node_modules/options/lib/options.js. Coverage (Term): 6% Coverage (LOC): 6%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Sender.js. Coverage (Term): 9% Coverage (LOC): 11%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 6% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 9%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Validation.js. Coverage (Term): 86% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 67% Coverage (LOC): 83%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 13%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 5% Coverage (LOC): 4%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/lib/index.js. Coverage (Term): 38% Coverage (LOC): 38%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/lib/url.js. Coverage (Term): 14% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/parseuri/index.js. Coverage (Term): 21% Coverage (LOC): 57%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-parser/index.js. Coverage (Term): 18% Coverage (LOC): 26%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-parser/node_modules/json3/lib/json3.js. Coverage (Term): 19% Coverage (LOC): 16%
-*- File /root/Targets/fullstacklogger/node_modules/isarray/index.js. Coverage (Term): 53% Coverage (LOC): 80%
-*- File /root/Targets/fullstacklogger/node_modules/component-emitter/index.js. Coverage (Term): 26% Coverage (LOC): 35%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-parser/binary.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-parser/is-buffer.js. Coverage (Term): 45% Coverage (LOC): 80%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/lib/manager.js. Coverage (Term): 14% Coverage (LOC): 21%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/index.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/socket.js. Coverage (Term): 9% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transports/index.js. Coverage (Term): 30% Coverage (LOC): 30%
-*- File /root/Targets/fullstacklogger/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js. Coverage (Term): 15% Coverage (LOC): 25%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transports/polling-xhr.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transports/polling.js. Coverage (Term): 21% Coverage (LOC): 24%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transport.js. Coverage (Term): 22% Coverage (LOC): 33%
-*- File /root/Targets/fullstacklogger/node_modules/parseqs/index.js. Coverage (Term): 16% Coverage (LOC): 27%
-*- File /root/Targets/fullstacklogger/node_modules/component-inherit/index.js. Coverage (Term): 94% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/yeast/index.js. Coverage (Term): 40% Coverage (LOC): 46%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transports/polling-jsonp.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/lib/transports/websocket.js. Coverage (Term): 19% Coverage (LOC): 23%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/index.js. Coverage (Term): 47% Coverage (LOC): 52%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/WebSocket.js. Coverage (Term): 8% Coverage (LOC): 10%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Sender.js. Coverage (Term): 9% Coverage (LOC): 11%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/ErrorCodes.js. Coverage (Term): 46% Coverage (LOC): 94%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.js. Coverage (Term): 86% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/BufferUtil.fallback.js. Coverage (Term): 7% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/PerMessageDeflate.js. Coverage (Term): 8% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Receiver.js. Coverage (Term): 5% Coverage (LOC): 10%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Validation.js. Coverage (Term): 86% Coverage (LOC): 100%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Validation.fallback.js. Coverage (Term): 68% Coverage (LOC): 83%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/BufferPool.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Sender.hixie.js. Coverage (Term): 17% Coverage (LOC): 28%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Receiver.hixie.js. Coverage (Term): 10% Coverage (LOC): 14%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/Extensions.js. Coverage (Term): 10% Coverage (LOC): 15%
-*- File /root/Targets/fullstacklogger/node_modules/engine.io-client/node_modules/ws/lib/WebSocketServer.js. Coverage (Term): 6% Coverage (LOC): 4%
-*- File /root/Targets/fullstacklogger/node_modules/indexof/index.js. Coverage (Term): 33% Coverage (LOC): 42%
-*- File /root/Targets/fullstacklogger/node_modules/parsejson/index.js. Coverage (Term): 37% Coverage (LOC): 50%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/lib/socket.js. Coverage (Term): 19% Coverage (LOC): 29%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/node_modules/component-emitter/index.js. Coverage (Term): 26% Coverage (LOC): 37%
-*- File /root/Targets/fullstacklogger/node_modules/to-array/index.js. Coverage (Term): 30% Coverage (LOC): 40%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io-client/lib/on.js. Coverage (Term): 40% Coverage (LOC): 50%
-*- File /root/Targets/fullstacklogger/node_modules/component-bind/index.js. Coverage (Term): 28% Coverage (LOC): 42%
-*- File /root/Targets/fullstacklogger/node_modules/has-binary/index.js. Coverage (Term): 15% Coverage (LOC): 17%
-*- File /root/Targets/fullstacklogger/node_modules/backo2/index.js. Coverage (Term): 22% Coverage (LOC): 45%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io/lib/client.js. Coverage (Term): 13% Coverage (LOC): 21%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io/lib/namespace.js. Coverage (Term): 4% Coverage (LOC): 4%
-*- File /root/Targets/fullstacklogger/node_modules/socket.io/lib/socket.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 120 paths with 119 errors **

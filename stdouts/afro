@@ -1,46 +1,0 @@
-/root/Targets/afro
-└─┬ afro@3.0.1 
-  ├── deep-extend@0.4.1 
-  ├─┬ inline-style-prefixer@2.0.1 
-  │ ├── bowser@1.7.3 
-  │ └── hyphenate-style-name@1.0.2 
-  ├── object-assign@4.1.0 
-  ├── sliced@1.0.1 
-  ├─┬ to-camel-case@1.0.0 
-  │ └─┬ to-space-case@1.0.0 
-  │   └── to-no-case@1.0.2 
-  └── to-slug-case@1.0.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/afro/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 41% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 41% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 44% coverage ] ****** [3 done /1 queued / 1 running / 0 errors / 45% coverage ] ****** [3 done /0 queued / 2 running / 0 errors / 45% coverage ] ****** [3 done /0 queued / 2 running / 0 errors / 45% coverage ] ****** [4 done /0 queued / 1 running / 0 errors / 45% coverage ] ****** [5 done /2 queued / 1 running / 0 errors / 45% coverage ] ****** [5 done /1 queued / 2 running / 0 errors / 45% coverage ] ****** [5 done /0 queued / 3 running / 0 errors / 45% coverage ] ****** [5 done /0 queued / 3 running / 0 errors / 45% coverage ] ****** [6 done /0 queued / 2 running / 0 errors / 45% coverage ] ****** [7 done /0 queued / 1 running / 0 errors / 45% coverage ] ****** [8 done /1 queued / 1 running / 1 errors / 45% coverage ] ****** [8 done /0 queued / 2 running / 1 errors / 45% coverage ] ****** [8 done /0 queued / 2 running / 1 errors / 45% coverage ] ****** [9 done /1 queued / 2 running / 1 errors / 47% coverage ] ****** [9 done /0 queued / 3 running / 1 errors / 47% coverage ] ****** [9 done /0 queued / 3 running / 1 errors / 47% coverage ] ****** [10 done /0 queued / 2 running / 1 errors / 47% coverage ] ****** [11 done /0 queued / 2 running / 1 errors / 47% coverage ] ****** [11 done /0 queued / 2 running / 1 errors / 47% coverage ] ****** [12 done /1 queued / 2 running / 1 errors / 47% coverage ] ****** [12 done /0 queued / 3 running / 1 errors / 47% coverage ] ****** [12 done /0 queued / 3 running / 1 errors / 47% coverage ] ****** [13 done /3 queued / 3 running / 1 errors / 47% coverage ] ****** [13 done /2 queued / 4 running / 1 errors / 47% coverage ] ****** [13 done /1 queued / 5 running / 1 errors / 47% coverage ] ****** [13 done /0 queued / 6 running / 1 errors / 47% coverage ] ****** [13 done /0 queued / 6 running / 1 errors / 47% coverage ] ****** [14 done /0 queued / 5 running / 1 errors / 47% coverage ] ****** [15 done /1 queued / 5 running / 1 errors / 47% coverage ] ****** [15 done /0 queued / 6 running / 1 errors / 47% coverage ] ****** [15 done /0 queued / 6 running / 1 errors / 47% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","freeze","toString","apply","bound Afro","reduce","bound ","bound compile","join"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.8889 took 206.3001s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0,"ExpandedSwitcher":0} start 216.4811 took 166.1478s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpandedSwitcher":0,"_bound":2,"ExpansionArg_type":0} start 389.1811 took 157.0284s
-*-- Test Case {"Switcher":true,"Target_Switcher":2,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":3} start 551.134 took 91.0753s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":2,"ExpandedSwitcher":0,"_bound":4,"ExpansionArg_int":0} start 550.5216 took 91.774s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":2,"ExpansionArg_int":3,"ExpandedSwitcher":0,"_bound":7} start 642.4366 took 52.3887s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":5} start 642.8055 took 52.7486s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":6,"ExpansionArg_string":"PureString"} start 642.3109 took 58.0168s
-*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0,"ExpandedSwitcher":0} start 701.917 took 134.5889s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":3,"ExpansionArg_string":"","_bound":8,"ExpandedSwitcher":0} start 703.4611 took 133.0451s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"_bound":8,"ExpansionArg_bool":false} start 843.8673 took 32.6344s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"_bound":9,"ExpansionArg_array_element_0_type":0} start 842.9422 took 33.7504s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_array_element_0_type":2,"ExpandedSwitcher":0,"_bound":10,"ExpansionArg_array_element_0_int":0} start 876.7528 took 6.8249s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":5,"ExpansionArg_bool":true,"ExpandedSwitcher":0,"_bound":9} start 876.6643 took 9.0525s
-*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpandedSwitcher":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 876.7927 took 8.9242s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 96% Coverage (LOC): 97%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 37% Coverage (LOC): 55%
-*- File /root/Targets/afro/node_modules/afro/dist/index.js. Coverage (Term): 33% Coverage (LOC): 45%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 15 paths with 1 errors **

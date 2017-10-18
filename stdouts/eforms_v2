@@ -1,567 +1,0 @@
-/root/Targets/eforms_v2
-└─┬ eforms_v2@1.0.1 
-  ├─┬ body-parser@1.13.3 
-  │ ├── bytes@2.1.0 
-  │ ├── content-type@1.0.4 
-  │ ├── depd@1.0.1 
-  │ ├─┬ http-errors@1.3.1 
-  │ │ ├── inherits@2.0.3 
-  │ │ └── statuses@1.3.1 
-  │ ├── iconv-lite@0.4.11 
-  │ ├─┬ on-finished@2.3.0 
-  │ │ └── ee-first@1.1.1 
-  │ ├── qs@4.0.0 
-  │ ├─┬ raw-body@2.1.7 
-  │ │ ├── bytes@2.4.0 
-  │ │ ├── iconv-lite@0.4.13 
-  │ │ └── unpipe@1.0.0 
-  │ └─┬ type-is@1.6.15 
-  │   ├── media-typer@0.3.0 
-  │   └─┬ mime-types@2.1.17 
-  │     └── mime-db@1.30.0 
-  ├─┬ cookie-parser@1.3.5 
-  │ ├── cookie@0.1.3 
-  │ └── cookie-signature@1.0.6 
-  ├─┬ debug@2.2.0 
-  │ └── ms@0.7.1 
-  ├─┬ express@4.13.4 
-  │ ├─┬ accepts@1.2.13 
-  │ │ └── negotiator@0.5.3 
-  │ ├── array-flatten@1.1.1 
-  │ ├── content-disposition@0.5.1 
-  │ ├── cookie@0.1.5 
-  │ ├── depd@1.1.1 
-  │ ├── escape-html@1.0.3 
-  │ ├── etag@1.7.0 
-  │ ├── finalhandler@0.4.1 
-  │ ├── fresh@0.3.0 
-  │ ├── merge-descriptors@1.0.1 
-  │ ├── methods@1.1.2 
-  │ ├── parseurl@1.3.2 
-  │ ├── path-to-regexp@0.1.7 
-  │ ├─┬ proxy-addr@1.0.10 
-  │ │ ├── forwarded@0.1.2 
-  │ │ └── ipaddr.js@1.0.5 
-  │ ├── range-parser@1.0.3 
-  │ ├─┬ send@0.13.1 
-  │ │ ├── depd@1.1.1 
-  │ │ ├── destroy@1.0.4 
-  │ │ ├── mime@1.3.4 
-  │ │ └── statuses@1.2.1 
-  │ ├─┬ serve-static@1.10.3 
-  │ │ └─┬ send@0.13.2 
-  │ │   ├── depd@1.1.1 
-  │ │   └── statuses@1.2.1 
-  │ ├── utils-merge@1.0.0 
-  │ └── vary@1.0.1 
-  ├─┬ jade@1.11.0 
-  │ ├── character-parser@1.2.1 
-  │ ├─┬ clean-css@3.4.28 
-  │ │ ├─┬ commander@2.8.1 
-  │ │ │ └── graceful-readlink@1.0.1 
-  │ │ └─┬ source-map@0.4.4 
-  │ │   └── amdefine@1.0.1 
-  │ ├── commander@2.6.0 
-  │ ├─┬ constantinople@3.0.2 
-  │ │ └── acorn@2.7.0 
-  │ ├─┬ jstransformer@0.0.2 
-  │ │ ├── is-promise@2.1.0 
-  │ │ └─┬ promise@6.1.0 
-  │ │   └── asap@1.0.0 
-  │ ├─┬ mkdirp@0.5.1 
-  │ │ └── minimist@0.0.8 
-  │ ├─┬ transformers@2.1.0 
-  │ │ ├─┬ css@1.0.8 
-  │ │ │ ├── css-parse@1.0.4 
-  │ │ │ └── css-stringify@1.0.5 
-  │ │ ├─┬ promise@2.0.0 
-  │ │ │ └── is-promise@1.0.1 
-  │ │ └─┬ uglify-js@2.2.5 
-  │ │   ├─┬ optimist@0.3.7 
-  │ │   │ └── wordwrap@0.0.3 
-  │ │   └── source-map@0.1.43 
-  │ ├─┬ uglify-js@2.8.29 
-  │ │ ├── source-map@0.5.7 
-  │ │ ├── uglify-to-browserify@1.0.2 
-  │ │ └─┬ yargs@3.10.0 
-  │ │   ├── camelcase@1.2.1 
-  │ │   ├─┬ cliui@2.1.0 
-  │ │   │ ├─┬ center-align@0.1.3 
-  │ │   │ │ ├─┬ align-text@0.1.4 
-  │ │   │ │ │ ├─┬ kind-of@3.2.2 
-  │ │   │ │ │ │ └── is-buffer@1.1.5 
-  │ │   │ │ │ ├── longest@1.0.1 
-  │ │   │ │ │ └── repeat-string@1.6.1 
-  │ │   │ │ └── lazy-cache@1.0.4 
-  │ │   │ ├── right-align@0.1.3 
-  │ │   │ └── wordwrap@0.0.2 
-  │ │   ├── decamelize@1.2.0 
-  │ │   └── window-size@0.1.0 
-  │ ├── void-elements@2.0.1 
-  │ └─┬ with@4.0.3 
-  │   ├── acorn@1.2.2 
-  │   └── acorn-globals@1.0.9 
-  ├─┬ mongodb@2.2.31 
-  │ ├── es6-promise@3.2.1 
-  │ ├─┬ mongodb-core@2.1.15 
-  │ │ ├── bson@1.0.4 
-  │ │ └─┬ require_optional@1.0.1 
-  │ │   ├── resolve-from@2.0.0 
-  │ │   └── semver@5.4.1 
-  │ └─┬ readable-stream@2.2.7 
-  │   ├── buffer-shims@1.0.0 
-  │   ├── core-util-is@1.0.2 
-  │   ├── isarray@1.0.0 
-  │   ├── process-nextick-args@1.0.7 
-  │   ├─┬ string_decoder@1.0.3 
-  │   │ └── safe-buffer@5.1.1 
-  │   └── util-deprecate@1.0.2 
-  ├─┬ morgan@1.6.1 
-  │ ├── basic-auth@1.0.4 
-  │ └── on-headers@1.0.1 
-  ├─┬ serve-favicon@2.3.2 
-  │ └── ms@0.7.2 
-  └─┬ validator@4.9.0 
-    └── depd@1.1.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/eforms_v2/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /2 queued / 1 running / 1 errors / 28.000000000000004% coverage ] ****** [1 done /1 queued / 2 running / 1 errors / 28.000000000000004% coverage ] ****** [1 done /0 queued / 3 running / 1 errors / 28.000000000000004% coverage ] ****** [1 done /0 queued / 3 running / 1 errors / 28.000000000000004% coverage ] ****** [2 done /2 queued / 3 running / 2 errors / 28.000000000000004% coverage ] ****** [2 done /1 queued / 4 running / 2 errors / 28.000000000000004% coverage ] ****** [2 done /0 queued / 5 running / 2 errors / 28.000000000000004% coverage ] ****** [2 done /0 queued / 5 running / 2 errors / 28.000000000000004% coverage ] ****** [3 done /0 queued / 5 running / 3 errors / 28.000000000000004% coverage ] ****** [3 done /0 queued / 5 running / 3 errors / 28.000000000000004% coverage ] ****** [4 done /0 queued / 5 running / 4 errors / 28.000000000000004% coverage ] ****** [4 done /0 queued / 5 running / 4 errors / 28.000000000000004% coverage ] ****** [5 done /0 queued / 5 running / 5 errors / 28.000000000000004% coverage ] ****** [5 done /0 queued / 5 running / 5 errors / 28.000000000000004% coverage ] ****** [6 done /1 queued / 5 running / 6 errors / 28.000000000000004% coverage ] ****** [6 done /0 queued / 6 running / 6 errors / 28.000000000000004% coverage ] ****** [6 done /0 queued / 6 running / 6 errors / 28.000000000000004% coverage ] ****** [7 done /2 queued / 6 running / 7 errors / 28.000000000000004% coverage ] ****** [7 done /1 queued / 7 running / 7 errors / 28.000000000000004% coverage ] ****** [7 done /0 queued / 8 running / 7 errors / 28.000000000000004% coverage ] ****** [7 done /0 queued / 8 running / 7 errors / 28.000000000000004% coverage ] ****** [8 done /0 queued / 8 running / 8 errors / 28.000000000000004% coverage ] ****** [8 done /0 queued / 8 running / 8 errors / 28.000000000000004% coverage ] ****** [9 done /1 queued / 8 running / 9 errors / 28.000000000000004% coverage ] ****** [9 done /0 queued / 9 running / 9 errors / 28.000000000000004% coverage ] ****** [9 done /0 queued / 9 running / 9 errors / 28.000000000000004% coverage ] ****** [10 done /0 queued / 9 running / 10 errors / 28.000000000000004% coverage ] ****** [10 done /0 queued / 9 running / 10 errors / 28.000000000000004% coverage ] ****** [11 done /2 queued / 9 running / 11 errors / 28.000000000000004% coverage ] ****** [11 done /1 queued / 10 running / 11 errors / 28.000000000000004% coverage ] ****** [11 done /0 queued / 11 running / 11 errors / 28.000000000000004% coverage ] ****** [11 done /0 queued / 11 running / 11 errors / 28.000000000000004% coverage ] ****** [12 done /1 queued / 11 running / 12 errors / 28.000000000000004% coverage ] ****** [12 done /0 queued / 12 running / 12 errors / 28.000000000000004% coverage ] ****** [12 done /0 queued / 12 running / 12 errors / 28.000000000000004% coverage ] ****** [13 done /1 queued / 12 running / 13 errors / 28.000000000000004% coverage ] ****** [13 done /0 queued / 13 running / 13 errors / 28.000000000000004% coverage ] ****** [13 done /0 queued / 13 running / 13 errors / 28.000000000000004% coverage ] ****** [14 done /2 queued / 13 running / 14 errors / 28.000000000000004% coverage ] ****** [14 done /1 queued / 14 running / 14 errors / 28.000000000000004% coverage ] ****** [14 done /0 queued / 15 running / 14 errors / 28.000000000000004% coverage ] ****** [14 done /0 queued / 15 running / 14 errors / 28.000000000000004% coverage ] ****** [15 done /2 queued / 15 running / 15 errors / 28.000000000000004% coverage ] ****** [15 done /1 queued / 16 running / 15 errors / 28.000000000000004% coverage ] ****** [15 done /1 queued / 16 running / 15 errors / 28.000000000000004% coverage ] ****** [16 done /3 queued / 16 running / 16 errors / 28.000000000000004% coverage ] ****** [16 done /3 queued / 16 running / 16 errors / 28.000000000000004% coverage ] ****** [17 done /5 queued / 16 running / 17 errors / 28.000000000000004% coverage ] ****** [17 done /5 queued / 16 running / 17 errors / 28.000000000000004% coverage ] ****** [18 done /7 queued / 16 running / 18 errors / 28.000000000000004% coverage ] ****** [18 done /7 queued / 16 running / 18 errors / 28.000000000000004% coverage ] ****** [19 done /8 queued / 16 running / 19 errors / 28.000000000000004% coverage ] ****** [19 done /8 queued / 16 running / 19 errors / 28.000000000000004% coverage ] ****** [20 done /11 queued / 16 running / 20 errors / 28.000000000000004% coverage ] ****** [20 done /11 queued / 16 running / 20 errors / 28.000000000000004% coverage ] ****** [21 done /14 queued / 16 running / 21 errors / 28.000000000000004% coverage ] ****** [21 done /14 queued / 16 running / 21 errors / 28.000000000000004% coverage ] ****** [22 done /14 queued / 16 running / 22 errors / 28.000000000000004% coverage ] ****** [22 done /14 queued / 16 running / 22 errors / 28.000000000000004% coverage ] ****** [23 done /15 queued / 16 running / 23 errors / 28.000000000000004% coverage ] ****** [23 done /15 queued / 16 running / 23 errors / 28.000000000000004% coverage ] ****** [24 done /16 queued / 16 running / 24 errors / 28.000000000000004% coverage ] ****** [24 done /16 queued / 16 running / 24 errors / 28.000000000000004% coverage ] ****** [25 done /19 queued / 16 running / 25 errors / 28.000000000000004% coverage ] ****** [25 done /19 queued / 16 running / 25 errors / 28.000000000000004% coverage ] ****** [26 done /20 queued / 16 running / 26 errors / 28.000000000000004% coverage ] ****** [26 done /20 queued / 16 running / 26 errors / 28.000000000000004% coverage ] ****** [27 done /19 queued / 16 running / 27 errors / 28.000000000000004% coverage ] ****** [27 done /19 queued / 16 running / 27 errors / 28.000000000000004% coverage ] ****** [28 done /21 queued / 16 running / 28 errors / 28.000000000000004% coverage ] ****** [28 done /21 queued / 16 running / 28 errors / 28.000000000000004% coverage ] ****** [29 done /20 queued / 16 running / 29 errors / 28.000000000000004% coverage ] ****** [29 done /20 queued / 16 running / 29 errors / 28.000000000000004% coverage ] ****** [30 done /19 queued / 16 running / 30 errors / 28.000000000000004% coverage ] ****** [30 done /19 queued / 16 running / 30 errors / 28.000000000000004% coverage ] ****** [31 done /20 queued / 16 running / 31 errors / 28.000000000000004% coverage ] ****** [31 done /20 queued / 16 running / 31 errors / 28.000000000000004% coverage ] ****** [32 done /19 queued / 16 running / 32 errors / 28.000000000000004% coverage ] ****** [32 done /19 queued / 16 running / 32 errors / 28.000000000000004% coverage ] ****** [33 done /20 queued / 16 running / 33 errors / 28.000000000000004% coverage ] ****** [33 done /20 queued / 16 running / 33 errors / 28.000000000000004% coverage ] ****** [34 done /22 queued / 16 running / 34 errors / 28.000000000000004% coverage ] ****** [34 done /22 queued / 16 running / 34 errors / 28.000000000000004% coverage ] ****** [35 done /21 queued / 16 running / 35 errors / 28.000000000000004% coverage ] ****** [35 done /21 queued / 16 running / 35 errors / 28.000000000000004% coverage ] ****** [36 done /20 queued / 16 running / 36 errors / 28.000000000000004% coverage ] ****** [36 done /20 queued / 16 running / 36 errors / 28.000000000000004% coverage ] ****** [37 done /21 queued / 16 running / 37 errors / 28.000000000000004% coverage ] ****** [37 done /21 queued / 16 running / 37 errors / 28.000000000000004% coverage ] ****** [38 done /23 queued / 16 running / 38 errors / 28.000000000000004% coverage ] ****** [38 done /23 queued / 16 running / 38 errors / 28.000000000000004% coverage ] ****** [39 done /22 queued / 16 running / 39 errors / 28.000000000000004% coverage ] ****** [39 done /22 queued / 16 running / 39 errors / 28.000000000000004% coverage ] ****** [40 done /23 queued / 16 running / 40 errors / 28.000000000000004% coverage ] ****** [40 done /23 queued / 16 running / 40 errors / 28.000000000000004% coverage ] ****** [41 done /24 queued / 16 running / 41 errors / 28.000000000000004% coverage ] ****** [41 done /24 queued / 16 running / 41 errors / 28.000000000000004% coverage ] ****** [42 done /23 queued / 16 running / 42 errors / 28.000000000000004% coverage ] ****** [42 done /23 queued / 16 running / 42 errors / 28.000000000000004% coverage ] ****** [43 done /25 queued / 16 running / 43 errors / 28.000000000000004% coverage ] ****** [43 done /25 queued / 16 running / 43 errors / 28.000000000000004% coverage ] ****** [44 done /24 queued / 16 running / 44 errors / 28.000000000000004% coverage ] ****** [44 done /24 queued / 16 running / 44 errors / 28.000000000000004% coverage ] ****** [45 done /23 queued / 16 running / 45 errors / 28.000000000000004% coverage ] ****** [45 done /23 queued / 16 running / 45 errors / 28.000000000000004% coverage ] ****** [46 done /24 queued / 16 running / 46 errors / 28.000000000000004% coverage ] ****** [46 done /24 queued / 16 running / 46 errors / 28.000000000000004% coverage ] ****** [47 done /25 queued / 16 running / 47 errors / 28.000000000000004% coverage ] ****** [47 done /25 queued / 16 running / 47 errors / 28.000000000000004% coverage ] ****** [48 done /27 queued / 16 running / 48 errors / 28.000000000000004% coverage ] ****** [48 done /27 queued / 16 running / 48 errors / 28.000000000000004% coverage ] ****** [49 done /30 queued / 16 running / 49 errors / 28.000000000000004% coverage ] ****** [49 done /30 queued / 16 running / 49 errors / 28.000000000000004% coverage ] ****** [50 done /30 queued / 16 running / 50 errors / 28.000000000000004% coverage ] ****** [50 done /30 queued / 16 running / 50 errors / 28.000000000000004% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","parseInt","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","Array","toString","toUpperCase","Number","join","call","RegExp","getOwnPropertyDescriptor","random","reverse","pow","isNaN","isFinite","parse","Error","getOSType","getOSRelease","sort","pop","decodeURIComponent","assign","isArray","stringify","bind","apply","getOwnPropertyNames","Boolean","parseFloat","bound setMaxListeners","splice","Promise","t","bound ","bound getMaxListeners","bound emit","bound addListener","bound prependListener"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.0544 took 177.4303s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"ExpansionArg_type":0,"_bound":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 179.4124 took 122.2246s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"ExpansionArg_type":0,"_bound":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"ExpansionArg_type":0,"_bound":1}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":3} start 178.8813 took 169.8914s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":3}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":2,"ExpandedSwitcher":0} start 179.8557 took 172.8489s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":2,"ExpandedSwitcher":0}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":2}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":4,"ExpansionArg_int":0} start 349.8547 took 123.1116s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3} start 302.9447 took 170.6385s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2} start 303.3637 took 170.2196s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4} start 303.7979 took 169.7856s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":3,"ExpansionArg_type":0} start 353.9624 took 147.3588s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":3,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":5,"ExpansionArg_string":"PureString"} start 473.4328 took 137.5967s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 474.8381 took 160.511s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 475.1231 took 162.9639s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 473.8964 took 164.1976s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 474.7064 took 163.3877s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0} start 474.6002 took 163.4938s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 473.8027 took 173.967s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"ExpandedSwitcher":0,"_bound":5,"ExpansionArg_string":"PureString"} start 503.1935 took 164.4974s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"ExpandedSwitcher":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"ExpandedSwitcher":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":4,"ExpansionArg_type_2":0} start 502.8074 took 167.141s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":4,"ExpansionArg_type_2":0}
-* Error: TypeError: "listener" argument must be a function
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 639.7523 took 99.582s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"} start 637.1242 took 103.6485s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 647.2187 took 93.554s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5} start 636.757 took 104.0156s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":6,"ExpansionArg_array_length":0} start 611.9012 took 128.8713s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 641.4208 took 99.3519s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"} start 641.8396 took 105.415s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"} start 636.3132 took 111.49s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 643.5667 took 104.2367s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"} start 646.6697 took 101.1337s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6} start 644.4798 took 103.3245s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7} start 639.3292 took 108.4768s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"_bound":8,"ExpansionArg_array_length":0} start 668.9183 took 78.8879s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 648.605 took 99.2012s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 644.0287 took 103.7776s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":5} start 671.1385 took 76.6678s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":5}
-* Error: TypeError: "listener" argument must be a function
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10} start 747.5862 took 95.1605s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11} start 741.4879 took 101.2591s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 740.6442 took 103.4227s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0} start 742.0675 took 102.0002s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9} start 753.2708 took 90.7969s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":8,"ExpansionArg_array_element_0_type":0} start 744.0018 took 100.0659s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":8,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"_bound":10,"ExpansionArg_array_element_0_type":0} start 752.0978 took 91.9699s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"_bound":10,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":7,"ExpansionArg_bool":false} start 742.9528 took 101.1149s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":7,"ExpansionArg_bool":false}
-* Error: TypeError: "n" argument must be a positive number
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6} start 753.7638 took 90.3041s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6}
-* Error: TypeError: "listener" argument must be a function
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8} start 748.9275 took 95.1402s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"_bound":9,"ExpansionArg_bool":false} start 752.573 took 91.4953s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"_bound":9}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 750.7451 took 99.2821s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0} start 742.5776 took 108.0621s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'method' of null
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0} start 748.2681 took 102.9955s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'method' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0} start 749.8822 took 101.3815s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0} start 751.3893 took 101.8849s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot read property 'indexOf' of undefined
-* Error: TypeError: Cannot read property 'collection' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 89% Coverage (LOC): 92%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/app.js. Coverage (Term): 67% Coverage (LOC): 68%
-*- File /root/Targets/eforms_v2/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/express.js. Coverage (Term): 91% Coverage (LOC): 98%
-*- File /root/Targets/eforms_v2/node_modules/merge-descriptors/index.js. Coverage (Term): 83% Coverage (LOC): 83%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/application.js. Coverage (Term): 50% Coverage (LOC): 59%
-*- File /root/Targets/eforms_v2/node_modules/finalhandler/index.js. Coverage (Term): 28% Coverage (LOC): 28%
-*- File /root/Targets/eforms_v2/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/eforms_v2/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/eforms_v2/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
-*- File /root/Targets/eforms_v2/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/router/index.js. Coverage (Term): 24% Coverage (LOC): 28%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/router/route.js. Coverage (Term): 37% Coverage (LOC): 40%
-*- File /root/Targets/eforms_v2/node_modules/array-flatten/array-flatten.js. Coverage (Term): 54% Coverage (LOC): 63%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/router/layer.js. Coverage (Term): 34% Coverage (LOC): 35%
-*- File /root/Targets/eforms_v2/node_modules/path-to-regexp/index.js. Coverage (Term): 37% Coverage (LOC): 37%
-*- File /root/Targets/eforms_v2/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
-*- File /root/Targets/eforms_v2/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
-*- File /root/Targets/eforms_v2/node_modules/express/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/express/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/eforms_v2/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/middleware/init.js. Coverage (Term): 31% Coverage (LOC): 40%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/middleware/query.js. Coverage (Term): 57% Coverage (LOC): 59%
-*- File /root/Targets/eforms_v2/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/eforms_v2/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 19%
-*- File /root/Targets/eforms_v2/node_modules/qs/lib/utils.js. Coverage (Term): 11% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/qs/lib/parse.js. Coverage (Term): 6% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/view.js. Coverage (Term): 23% Coverage (LOC): 32%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/utils.js. Coverage (Term): 39% Coverage (LOC): 51%
-*- File /root/Targets/eforms_v2/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/http-errors/index.js. Coverage (Term): 42% Coverage (LOC): 37%
-*- File /root/Targets/eforms_v2/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
-*- File /root/Targets/eforms_v2/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
-*- File /root/Targets/eforms_v2/node_modules/send/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/send/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/eforms_v2/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
-*- File /root/Targets/eforms_v2/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
-*- File /root/Targets/eforms_v2/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
-*- File /root/Targets/eforms_v2/node_modules/fresh/index.js. Coverage (Term): 13% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/send/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
-*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
-*- File /root/Targets/eforms_v2/node_modules/proxy-addr/index.js. Coverage (Term): 21% Coverage (LOC): 30%
-*- File /root/Targets/eforms_v2/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/request.js. Coverage (Term): 27% Coverage (LOC): 43%
-*- File /root/Targets/eforms_v2/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
-*- File /root/Targets/eforms_v2/node_modules/negotiator/index.js. Coverage (Term): 47% Coverage (LOC): 67%
-*- File /root/Targets/eforms_v2/node_modules/negotiator/lib/charset.js. Coverage (Term): 8% Coverage (LOC): 15%
-*- File /root/Targets/eforms_v2/node_modules/negotiator/lib/encoding.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/eforms_v2/node_modules/negotiator/lib/language.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/eforms_v2/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 11%
-*- File /root/Targets/eforms_v2/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
-*- File /root/Targets/eforms_v2/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/eforms_v2/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
-*- File /root/Targets/eforms_v2/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 15%
-*- File /root/Targets/eforms_v2/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
-*- File /root/Targets/eforms_v2/node_modules/express/node_modules/cookie/index.js. Coverage (Term): 11% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/serve-static/index.js. Coverage (Term): 30% Coverage (LOC): 33%
-*- File /root/Targets/eforms_v2/node_modules/serve-static/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/serve-static/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/serve-static/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/eforms_v2/node_modules/serve-static/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
-*- File /root/Targets/eforms_v2/node_modules/serve-favicon/index.js. Coverage (Term): 18% Coverage (LOC): 21%
-*- File /root/Targets/eforms_v2/node_modules/serve-favicon/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/eforms_v2/node_modules/morgan/index.js. Coverage (Term): 31% Coverage (LOC): 47%
-*- File /root/Targets/eforms_v2/node_modules/basic-auth/index.js. Coverage (Term): 21% Coverage (LOC): 30%
-*- File /root/Targets/eforms_v2/node_modules/depd/index.js. Coverage (Term): 43% Coverage (LOC): 48%
-*- File /root/Targets/eforms_v2/node_modules/depd/lib/compat/index.js. Coverage (Term): 81% Coverage (LOC): 94%
-*- File /root/Targets/eforms_v2/node_modules/on-headers/index.js. Coverage (Term): 10% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/cookie-parser/index.js. Coverage (Term): 40% Coverage (LOC): 41%
-*- File /root/Targets/eforms_v2/node_modules/cookie/index.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/cookie-parser/lib/parse.js. Coverage (Term): 16% Coverage (LOC): 30%
-*- File /root/Targets/eforms_v2/node_modules/body-parser/index.js. Coverage (Term): 63% Coverage (LOC): 70%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/index.js. Coverage (Term): 48% Coverage (LOC): 53%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/index.js. Coverage (Term): 90% Coverage (LOC): 93%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/index.js. Coverage (Term): 94% Coverage (LOC): 92%
-*- File /root/Targets/eforms_v2/node_modules/bson/index.js. Coverage (Term): 100% Coverage (LOC): 100%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/bson.js. Coverage (Term): 56% Coverage (LOC): 69%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/float_parser.js. Coverage (Term): 5% Coverage (LOC): 11%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/map.js. Coverage (Term): 7% Coverage (LOC): 7%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/long.js. Coverage (Term): 29% Coverage (LOC): 36%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/double.js. Coverage (Term): 45% Coverage (LOC): 60%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/timestamp.js. Coverage (Term): 17% Coverage (LOC): 28%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/objectid.js. Coverage (Term): 20% Coverage (LOC): 28%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/regexp.js. Coverage (Term): 19% Coverage (LOC): 33%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/symbol.js. Coverage (Term): 44% Coverage (LOC): 62%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/int_32.js. Coverage (Term): 47% Coverage (LOC): 60%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/code.js. Coverage (Term): 42% Coverage (LOC): 47%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/decimal128.js. Coverage (Term): 7% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/min_key.js. Coverage (Term): 56% Coverage (LOC): 63%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/max_key.js. Coverage (Term): 56% Coverage (LOC): 63%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/db_ref.js. Coverage (Term): 34% Coverage (LOC): 41%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/binary.js. Coverage (Term): 10% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/parser/deserializer.js. Coverage (Term): 11% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/parser/serializer.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/eforms_v2/node_modules/bson/lib/bson/parser/calculate_size.js. Coverage (Term): 12% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/require_optional/index.js. Coverage (Term): 66% Coverage (LOC): 67%
-*- File /root/Targets/eforms_v2/node_modules/resolve-from/index.js. Coverage (Term): 88% Coverage (LOC): 95%
-*- File /root/Targets/eforms_v2/node_modules/semver/semver.js. Coverage (Term): 23% Coverage (LOC): 25%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/error.js. Coverage (Term): 66% Coverage (LOC): 74%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/connection.js. Coverage (Term): 40% Coverage (LOC): 46%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/utils.js. Coverage (Term): 31% Coverage (LOC): 35%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/commands.js. Coverage (Term): 6% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/logger.js. Coverage (Term): 29% Coverage (LOC): 38%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/server.js. Coverage (Term): 35% Coverage (LOC): 46%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/read_preference.js. Coverage (Term): 52% Coverage (LOC): 71%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/pool.js. Coverage (Term): 24% Coverage (LOC): 31%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/connection/command_result.js. Coverage (Term): 45% Coverage (LOC): 64%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/utils.js. Coverage (Term): 19% Coverage (LOC): 22%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/mongocr.js. Coverage (Term): 16% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/x509.js. Coverage (Term): 17% Coverage (LOC): 21%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/plain.js. Coverage (Term): 21% Coverage (LOC): 22%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/gssapi.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/sspi.js. Coverage (Term): 13% Coverage (LOC): 15%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/auth/scram.js. Coverage (Term): 11% Coverage (LOC): 13%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/wireprotocol/2_4_support.js. Coverage (Term): 8% Coverage (LOC): 9%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/wireprotocol/commands.js. Coverage (Term): 4% Coverage (LOC): 10%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/wireprotocol/shared.js. Coverage (Term): 42% Coverage (LOC): 35%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js. Coverage (Term): 11% Coverage (LOC): 10%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/wireprotocol/3_2_support.js. Coverage (Term): 7% Coverage (LOC): 7%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/cursor.js. Coverage (Term): 8% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/shared.js. Coverage (Term): 26% Coverage (LOC): 26%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/replset.js. Coverage (Term): 7% Coverage (LOC): 10%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/replset_state.js. Coverage (Term): 5% Coverage (LOC): 8%
-*- File /root/Targets/eforms_v2/node_modules/mongodb-core/lib/topologies/mongos.js. Coverage (Term): 9% Coverage (LOC): 11%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/apm.js. Coverage (Term): 7% Coverage (LOC): 6%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/aggregation_cursor.js. Coverage (Term): 52% Coverage (LOC): 71%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/metadata.js. Coverage (Term): 85% Coverage (LOC): 82%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/cursor.js. Coverage (Term): 21% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/utils.js. Coverage (Term): 24% Coverage (LOC): 32%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/read_preference.js. Coverage (Term): 40% Coverage (LOC): 61%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/command_cursor.js. Coverage (Term): 53% Coverage (LOC): 65%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/bulk/ordered.js. Coverage (Term): 15% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/bulk/common.js. Coverage (Term): 11% Coverage (LOC): 13%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/bulk/unordered.js. Coverage (Term): 13% Coverage (LOC): 20%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/gridfs/grid_store.js. Coverage (Term): 8% Coverage (LOC): 16%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/gridfs/chunk.js. Coverage (Term): 15% Coverage (LOC): 26%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/collection.js. Coverage (Term): 9% Coverage (LOC): 19%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/db.js. Coverage (Term): 18% Coverage (LOC): 30%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/authenticate.js. Coverage (Term): 7% Coverage (LOC): 6%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/admin.js. Coverage (Term): 14% Coverage (LOC): 27%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/mongo_client.js. Coverage (Term): 53% Coverage (LOC): 56%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/url_parser.js. Coverage (Term): 36% Coverage (LOC): 38%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/server.js. Coverage (Term): 64% Coverage (LOC): 80%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/topology_base.js. Coverage (Term): 13% Coverage (LOC): 21%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/mongos.js. Coverage (Term): 29% Coverage (LOC): 43%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/replset.js. Coverage (Term): 27% Coverage (LOC): 41%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/gridfs-stream/index.js. Coverage (Term): 13% Coverage (LOC): 18%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/gridfs-stream/download.js. Coverage (Term): 6% Coverage (LOC): 10%
-*- File /root/Targets/eforms_v2/node_modules/mongodb/lib/gridfs-stream/upload.js. Coverage (Term): 6% Coverage (LOC): 8%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/categoryRouter.js. Coverage (Term): 50% Coverage (LOC): 54%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/dao/categories.js. Coverage (Term): 38% Coverage (LOC): 42%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/catalogHandler.js. Coverage (Term): 11% Coverage (LOC): 10%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/dao/catalogs.js. Coverage (Term): 6% Coverage (LOC): 5%
-*- File /root/Targets/eforms_v2/node_modules/validator/validator.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/userHandler.js. Coverage (Term): 31% Coverage (LOC): 33%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/dao/users.js. Coverage (Term): 17% Coverage (LOC): 16%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/orderHandler.js. Coverage (Term): 25% Coverage (LOC): 23%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/dao/orders.js. Coverage (Term): 16% Coverage (LOC): 14%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/approvalHandler.js. Coverage (Term): 18% Coverage (LOC): 21%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/dao/approvals.js. Coverage (Term): 5% Coverage (LOC): 5%
-*- File /root/Targets/eforms_v2/node_modules/eforms_v2/routes/users.js. Coverage (Term): 73% Coverage (LOC): 88%
-*- File /root/Targets/eforms_v2/node_modules/body-parser/lib/types/json.js. Coverage (Term): 40% Coverage (LOC): 40%
-*- File /root/Targets/eforms_v2/node_modules/bytes/index.js. Coverage (Term): 36% Coverage (LOC): 43%
-*- File /root/Targets/eforms_v2/node_modules/body-parser/lib/read.js. Coverage (Term): 13% Coverage (LOC): 15%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/index.js. Coverage (Term): 7% Coverage (LOC): 9%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/node_modules/bytes/index.js. Coverage (Term): 21% Coverage (LOC): 29%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/node_modules/iconv-lite/lib/index.js. Coverage (Term): 25% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 24% Coverage (LOC): 35%
-*- File /root/Targets/eforms_v2/node_modules/raw-body/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 6% Coverage (LOC): 7%
-*- File /root/Targets/eforms_v2/node_modules/iconv-lite/lib/index.js. Coverage (Term): 25% Coverage (LOC): 34%
-*- File /root/Targets/eforms_v2/node_modules/iconv-lite/lib/bom-handling.js. Coverage (Term): 27% Coverage (LOC): 42%
-*- File /root/Targets/eforms_v2/node_modules/iconv-lite/lib/streams.js. Coverage (Term): 24% Coverage (LOC): 35%
-*- File /root/Targets/eforms_v2/node_modules/iconv-lite/lib/extend-node.js. Coverage (Term): 5% Coverage (LOC): 7%
-*- File /root/Targets/eforms_v2/node_modules/body-parser/lib/types/urlencoded.js. Coverage (Term): 40% Coverage (LOC): 39%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 50 paths with 50 errors **

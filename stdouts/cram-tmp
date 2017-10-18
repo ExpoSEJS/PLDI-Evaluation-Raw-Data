@@ -1,27 +1,0 @@
-/root/Targets/cram-tmp
-└── cram-tmp@0.8.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/cram-tmp/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 20% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 20% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 22% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 22% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 22% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 22% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","bind","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.064 took 3.1944s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 3.319 took 3.6941s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'cramFolder' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 7.0673 took 4.2046s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'cramFolder' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
-*- File /root/Targets/cram-tmp/node_modules/cram-tmp/cram.js. Coverage (Term): 7% Coverage (LOC): 8%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 3 paths with 2 errors **

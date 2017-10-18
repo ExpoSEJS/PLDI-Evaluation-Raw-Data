@@ -1,32 +1,0 @@
-/root/Targets/pep
-└─┬ pep@1.0.13 
-  ├── articles@0.2.1 
-  ├─┬ ephemeral@0.0.6 
-  │ └── moment@2.5.1 
-  └── i@0.3.3 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/pep/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 46% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toUpperCase","RegExp"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0371 took 4.3613s
-*-- Errors occured in test {"_bound":0}
-* Error: TypeError: Object.prototype.__defineGetter__: Expecting function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/pep/node_modules/pep/pep.js. Coverage (Term): 10% Coverage (LOC): 12%
-*- File /root/Targets/pep/node_modules/i/lib/inflect.js. Coverage (Term): 83% Coverage (LOC): 89%
-*- File /root/Targets/pep/node_modules/i/lib/methods.js. Coverage (Term): 13% Coverage (LOC): 31%
-*- File /root/Targets/pep/node_modules/i/lib/util.js. Coverage (Term): 10% Coverage (LOC): 23%
-*- File /root/Targets/pep/node_modules/i/lib/inflections.js. Coverage (Term): 81% Coverage (LOC): 72%
-*- File /root/Targets/pep/node_modules/i/lib/defaults.js. Coverage (Term): 99% Coverage (LOC): 100%
-*- File /root/Targets/pep/node_modules/i/lib/native.js. Coverage (Term): 80% Coverage (LOC): 96%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

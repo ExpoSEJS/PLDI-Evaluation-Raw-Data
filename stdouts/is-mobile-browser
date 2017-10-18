@@ -1,51 +1,0 @@
-/root/Targets/is-mobile-browser
-└─┬ is-mobile-browser@0.0.1 
-  └─┬ mocha@2.5.3 
-    ├── commander@2.3.0 
-    ├─┬ debug@2.2.0 
-    │ └── ms@0.7.1 
-    ├── diff@1.4.0 
-    ├── escape-string-regexp@1.0.2 
-    ├─┬ glob@3.2.11 
-    │ ├── inherits@2.0.3 
-    │ └─┬ minimatch@0.3.0 
-    │   ├── lru-cache@2.7.3 
-    │   └── sigmund@1.0.1 
-    ├── growl@1.9.2 
-    ├─┬ jade@0.26.3 
-    │ ├── commander@0.6.1 
-    │ └── mkdirp@0.3.0 
-    ├─┬ mkdirp@0.5.1 
-    │ └── minimist@0.0.8 
-    ├── supports-color@1.2.0 
-    └── to-iso-string@0.0.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/is-mobile-browser/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 44% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 44% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 45% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 45% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound isMobileUser"]
-*-- regex: 1
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0438 took 5.3314s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 5.436 took 3.1642s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'substr' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 8.6309 took 5.3952s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'substr' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 14.061 took 3.7261s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":2,"_bound":3}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
-*- File /root/Targets/is-mobile-browser/node_modules/is-mobile-browser/index.js. Coverage (Term): 74% Coverage (LOC): 63%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 4 paths with 3 errors **

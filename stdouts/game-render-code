@@ -1,32 +1,0 @@
-/root/Targets/game-render-code
-└─┬ game-render-code@0.0.0 
-  ├── crypto-js@3.1.8 
-  ├── jquery@3.2.2-pre  (git+https://github.com/jquery/jquery.git#94ddf620224d6555aaa7eaac20c583b15c6f50d8)
-  ├─┬ jszip@2.6.1 
-  │ └── pako@1.0.6 
-  ├─┬ strip-bom@1.0.0 
-  │ ├── first-chunk-stream@1.0.0 
-  │ └── is-utf8@0.2.1 
-  └─┬ xml@0.0.0  (git+https://github.com/bdunford/xml.git#28d6e5430c90ca14258f3b999bf6b505f4f85cd0)
-    └─┬ xml2js@0.4.19 
-      ├── sax@1.2.4 
-      └── xmlbuilder@9.0.4 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/game-render-code/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0441 took 4.4754s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'game-render-code'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

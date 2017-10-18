@@ -1,23 +1,0 @@
-/root/Targets/typescript-plus
-└── typescript-plus@2.4.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/typescript-plus/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 21% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 21% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 21% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 21% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","Collator","","Map","parseInt","toUpperCase","call","set","charCodeAt","lastIndexOf","get","setPrototypeOf","toString","apply","bound OperationCanceledException","bound now"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.0436 took 342.7309s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1} start 344.7367 took 311.4943s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1}
-* Error: TypeError: Constructor is not a constructor
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/typescript-plus/node_modules/typescript-plus/lib/typescript.js. Coverage (Term): 11% Coverage (LOC): 21%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 2 paths with 1 errors **

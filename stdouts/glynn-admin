@@ -1,34 +1,0 @@
-/root/Targets/glynn-admin
-└─┬ glynn-admin@0.1.5 
-  ├── bootstrap@4.0.0-beta 
-  ├─┬ bootstrap-social@5.1.1 
-  │ └── bootstrap@3.3.7 
-  ├─┬ chart.js@2.7.0 
-  │ └─┬ chartjs-color@2.2.0 
-  │   ├─┬ chartjs-color-string@0.5.0 
-  │   │ └── color-name@1.1.3 
-  │   └── color-convert@0.5.3 
-  ├── font-awesome@4.7.0 
-  ├── jquery@3.2.1 
-  ├── moment@2.18.1 
-  ├── UNMET PEER DEPENDENCY popper.js@^1.11.0
-  └── tether@1.4.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/glynn-admin/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0484 took 3.6942s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'glynn-admin'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **
