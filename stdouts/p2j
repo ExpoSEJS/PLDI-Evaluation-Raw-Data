@@ -1,50 +1,0 @@
-/root/Targets/p2j
-└── p2j@1.0.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/p2j/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 51% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 51% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 51% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 51% coverage ] ****** [2 done /0 queued / 2 running / 2 errors / 51% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 51% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 51% coverage ] ****** [4 done /0 queued / 1 running / 3 errors / 51% coverage ] ****** [5 done /0 queued / 1 running / 4 errors / 51% coverage ] ****** [5 done /0 queued / 1 running / 4 errors / 51% coverage ] ****** [6 done /1 queued / 1 running / 5 errors / 51% coverage ] ****** [6 done /0 queued / 2 running / 5 errors / 51% coverage ] ****** [6 done /0 queued / 2 running / 5 errors / 51% coverage ] ****** [7 done /0 queued / 1 running / 6 errors / 51% coverage ] ****** [8 done /1 queued / 1 running / 7 errors / 51% coverage ] ****** [8 done /0 queued / 2 running / 7 errors / 51% coverage ] ****** [8 done /0 queued / 2 running / 7 errors / 51% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Error","create","Uint8Array","Int32Array","Float32Array","pow","Uint32Array","resolve","toString","apply","bound run"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0} start 0.1132 took 109.5194s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property '2' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2} start 111.5015 took 91.0382s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property '2' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"_bound":2}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"_bound":1} start 110.6466 took 154.005s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0} start 204.6825 took 91.9602s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: path must be a string or Buffer
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"} start 298.5351 took 140.6829s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"}
-* Error: TypeError: path must be a string or Buffer
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":5,"ExpansionArg_array_length":0} start 440.5137 took 163.5263s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":5,"ExpansionArg_array_length":0}
-* Error: TypeError: path must be a string or Buffer
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":6,"ExpansionArg_bool":false} start 606.9003 took 86.2833s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":6,"ExpansionArg_bool":false}
-* Error: TypeError: path must be a string or Buffer
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":7,"ExpansionArg_array_element_0_type":0} start 608.3519 took 202.5191s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":7,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: path must be a string or Buffer
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"_bound":7}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 81% Coverage (LOC): 86%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 37% Coverage (LOC): 55%
-*- File /root/Targets/p2j/node_modules/p2j/index.js. Coverage (Term): 14% Coverage (LOC): 16%
-*- File /root/Targets/p2j/node_modules/p2j/lib/domparsermock.js. Coverage (Term): 8% Coverage (LOC): 14%
-*- File /root/Targets/p2j/node_modules/p2j/lib/pdf.combined.js. Coverage (Term): 17% Coverage (LOC): 51%
-*- File /root/Targets/p2j/node_modules/p2j/lib/domstubs.js. Coverage (Term): 8% Coverage (LOC): 22%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 8 paths with 7 errors **

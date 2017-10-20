@@ -1,35 +1,0 @@
-/root/Targets/makeup
-└─┬ makeup@1.0.1 
-  ├── baron@0.7.9  (git://github.com/Diokuz/baron.git#437f4c329480b2a033f93897c8642c62f2ab342f)
-  ├─┬ handlebars@3.0.3 
-  │ ├─┬ optimist@0.6.1 
-  │ │ ├── minimist@0.0.10 
-  │ │ └── wordwrap@0.0.3 
-  │ ├─┬ source-map@0.1.43 
-  │ │ └── amdefine@1.0.1 
-  │ └─┬ uglify-js@2.3.6 
-  │   ├── async@0.2.10 
-  │   └── optimist@0.3.7 
-  ├── jquery@1.11.1 
-  ├── lodash@3.8.0 
-  └── rader@0.2.2  (git://github.com/2gis/rader.git#48e6c0d4f926a8dc1fd6dc9e8969956dee14440d)
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/makeup/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Error","RegExp","ArrayBuffer","Float64Array","preventExtensions","pow","WeakMap","max","parseInt","Array"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0825 took 64.7165s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: baron is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/makeup/node_modules/makeup/dist/makeup.js. Coverage (Term): 12% Coverage (LOC): 29%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

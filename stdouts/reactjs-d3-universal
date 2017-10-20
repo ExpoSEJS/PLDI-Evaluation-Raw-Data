@@ -1,763 +1,0 @@
-/root/Targets/reactjs-d3-universal
-└─┬ reactjs-d3-universal@0.1.1 
-  ├─┬ d3@4.10.2 
-  │ ├── d3-array@1.2.0 
-  │ ├── d3-axis@1.0.8 
-  │ ├── d3-brush@1.0.4 
-  │ ├── d3-chord@1.0.4 
-  │ ├── d3-collection@1.0.4 
-  │ ├── d3-color@1.0.3 
-  │ ├── d3-dispatch@1.0.3 
-  │ ├── d3-drag@1.1.1 
-  │ ├─┬ d3-dsv@1.0.7 
-  │ │ ├── commander@2.11.0 
-  │ │ ├── iconv-lite@0.4.19 
-  │ │ └── rw@1.3.3 
-  │ ├── d3-ease@1.0.3 
-  │ ├── d3-force@1.0.6 
-  │ ├── d3-format@1.2.0 
-  │ ├── d3-geo@1.6.4 
-  │ ├── d3-hierarchy@1.1.5 
-  │ ├── d3-interpolate@1.1.5 
-  │ ├── d3-path@1.0.5 
-  │ ├── d3-polygon@1.0.3 
-  │ ├── d3-quadtree@1.0.3 
-  │ ├── d3-queue@3.0.7 
-  │ ├── d3-random@1.1.0 
-  │ ├─┬ d3-request@1.0.6 
-  │ │ └── xmlhttprequest@1.8.0 
-  │ ├── d3-scale@1.0.6 
-  │ ├── d3-selection@1.1.0 
-  │ ├── d3-shape@1.2.0 
-  │ ├── d3-time@1.0.7 
-  │ ├── d3-time-format@2.0.5 
-  │ ├── d3-timer@1.0.7 
-  │ ├── d3-transition@1.1.0 
-  │ ├── d3-voronoi@1.1.2 
-  │ └── d3-zoom@1.5.0 
-  ├── d3-scale-chromatic@1.1.1 
-  ├─┬ node-globals@0.1.5  (git://github.com/noahehall/node-globals.git#23240649a6226dcabdd963ff3c4e7e3e7df9a9ba)
-  │ ├─┬ babel-cli@6.26.0 
-  │ │ ├─┬ babel-core@6.26.0 
-  │ │ │ ├─┬ babel-code-frame@6.26.0 
-  │ │ │ │ ├─┬ chalk@1.1.3 
-  │ │ │ │ │ ├── ansi-styles@2.2.1 
-  │ │ │ │ │ ├── escape-string-regexp@1.0.5 
-  │ │ │ │ │ ├─┬ has-ansi@2.0.0 
-  │ │ │ │ │ │ └── ansi-regex@2.1.1 
-  │ │ │ │ │ ├── strip-ansi@3.0.1 
-  │ │ │ │ │ └── supports-color@2.0.0 
-  │ │ │ │ └── esutils@2.0.2 
-  │ │ │ ├─┬ babel-generator@6.26.0 
-  │ │ │ │ ├─┬ detect-indent@4.0.0 
-  │ │ │ │ │ └─┬ repeating@2.0.1 
-  │ │ │ │ │   └─┬ is-finite@1.0.2 
-  │ │ │ │ │     └── number-is-nan@1.0.1 
-  │ │ │ │ ├── jsesc@1.3.0 
-  │ │ │ │ └── trim-right@1.0.1 
-  │ │ │ ├── babel-helpers@6.24.1 
-  │ │ │ ├── babel-messages@6.23.0 
-  │ │ │ ├── babel-template@6.26.0 
-  │ │ │ ├─┬ babel-traverse@6.26.0 
-  │ │ │ │ ├── globals@9.18.0 
-  │ │ │ │ └── invariant@2.2.2 
-  │ │ │ ├─┬ babel-types@6.26.0 
-  │ │ │ │ └── to-fast-properties@1.0.3 
-  │ │ │ ├── babylon@6.18.0 
-  │ │ │ ├─┬ debug@2.6.8 
-  │ │ │ │ └── ms@2.0.0 
-  │ │ │ ├── json5@0.5.1 
-  │ │ │ ├─┬ minimatch@3.0.4 
-  │ │ │ │ └─┬ brace-expansion@1.1.8 
-  │ │ │ │   ├── balanced-match@1.0.0 
-  │ │ │ │   └── concat-map@0.0.1 
-  │ │ │ └── private@0.1.7 
-  │ │ ├─┬ babel-polyfill@6.26.0 
-  │ │ │ ├── core-js@2.5.1 
-  │ │ │ └── regenerator-runtime@0.10.5 
-  │ │ ├─┬ babel-register@6.26.0 
-  │ │ │ ├─┬ home-or-tmp@2.0.0 
-  │ │ │ │ ├── os-homedir@1.0.2 
-  │ │ │ │ └── os-tmpdir@1.0.2 
-  │ │ │ ├─┬ mkdirp@0.5.1 
-  │ │ │ │ └── minimist@0.0.8 
-  │ │ │ └── source-map-support@0.4.18 
-  │ │ ├─┬ babel-runtime@6.26.0 
-  │ │ │ └── regenerator-runtime@0.11.0 
-  │ │ ├─┬ chokidar@1.7.0 
-  │ │ │ ├─┬ anymatch@1.3.2 
-  │ │ │ │ ├─┬ micromatch@2.3.11 
-  │ │ │ │ │ ├─┬ arr-diff@2.0.0 
-  │ │ │ │ │ │ └── arr-flatten@1.1.0 
-  │ │ │ │ │ ├── array-unique@0.2.1 
-  │ │ │ │ │ ├─┬ braces@1.8.5 
-  │ │ │ │ │ │ ├─┬ expand-range@1.8.2 
-  │ │ │ │ │ │ │ └─┬ fill-range@2.2.3 
-  │ │ │ │ │ │ │   ├── is-number@2.1.0 
-  │ │ │ │ │ │ │   ├── isobject@2.1.0 
-  │ │ │ │ │ │ │   ├─┬ randomatic@1.1.7 
-  │ │ │ │ │ │ │   │ ├─┬ is-number@3.0.0 
-  │ │ │ │ │ │ │   │ │ └── kind-of@3.2.2 
-  │ │ │ │ │ │ │   │ └── kind-of@4.0.0 
-  │ │ │ │ │ │ │   └── repeat-string@1.6.1 
-  │ │ │ │ │ │ ├── preserve@0.2.0 
-  │ │ │ │ │ │ └── repeat-element@1.1.2 
-  │ │ │ │ │ ├─┬ expand-brackets@0.1.5 
-  │ │ │ │ │ │ └── is-posix-bracket@0.1.1 
-  │ │ │ │ │ ├── extglob@0.3.2 
-  │ │ │ │ │ ├── filename-regex@2.0.1 
-  │ │ │ │ │ ├── kind-of@3.2.2 
-  │ │ │ │ │ ├─┬ object.omit@2.0.1 
-  │ │ │ │ │ │ ├─┬ for-own@0.1.5 
-  │ │ │ │ │ │ │ └── for-in@1.0.2 
-  │ │ │ │ │ │ └── is-extendable@0.1.1 
-  │ │ │ │ │ ├─┬ parse-glob@3.0.4 
-  │ │ │ │ │ │ ├── glob-base@0.3.0 
-  │ │ │ │ │ │ └── is-dotfile@1.0.3 
-  │ │ │ │ │ └─┬ regex-cache@0.4.4 
-  │ │ │ │ │   └─┬ is-equal-shallow@0.1.3 
-  │ │ │ │ │     └── is-primitive@2.0.0 
-  │ │ │ │ └─┬ normalize-path@2.1.1 
-  │ │ │ │   └── remove-trailing-separator@1.1.0 
-  │ │ │ ├── async-each@1.0.1 
-  │ │ │ ├── glob-parent@2.0.0 
-  │ │ │ ├─┬ is-binary-path@1.0.1 
-  │ │ │ │ └── binary-extensions@1.10.0 
-  │ │ │ ├─┬ is-glob@2.0.1 
-  │ │ │ │ └── is-extglob@1.0.0 
-  │ │ │ └─┬ readdirp@2.1.0 
-  │ │ │   └── set-immediate-shim@1.0.1 
-  │ │ ├── convert-source-map@1.5.0 
-  │ │ ├── fs-readdir-recursive@1.0.0 
-  │ │ ├─┬ glob@7.1.2 
-  │ │ │ ├── fs.realpath@1.0.0 
-  │ │ │ ├─┬ inflight@1.0.6 
-  │ │ │ │ └── wrappy@1.0.2 
-  │ │ │ └── once@1.4.0 
-  │ │ ├─┬ output-file-sync@1.1.2 
-  │ │ │ └── graceful-fs@4.1.11 
-  │ │ ├── path-is-absolute@1.0.1 
-  │ │ ├── slash@1.0.0 
-  │ │ ├── source-map@0.5.7 
-  │ │ └─┬ v8flags@2.1.1 
-  │ │   └── user-home@1.1.1 
-  │ ├─┬ babel-plugin-module-resolver@2.7.1 
-  │ │ ├─┬ find-babel-config@1.1.0 
-  │ │ │ └── path-exists@3.0.0 
-  │ │ └─┬ resolve@1.4.0 
-  │ │   └── path-parse@1.0.5 
-  │ ├─┬ babel-preset-es2015@6.24.1 
-  │ │ ├── babel-plugin-check-es2015-constants@6.22.0 
-  │ │ ├── babel-plugin-transform-es2015-arrow-functions@6.22.0 
-  │ │ ├── babel-plugin-transform-es2015-block-scoped-functions@6.22.0 
-  │ │ ├── babel-plugin-transform-es2015-block-scoping@6.26.0 
-  │ │ ├─┬ babel-plugin-transform-es2015-classes@6.24.1 
-  │ │ │ ├── babel-helper-define-map@6.26.0 
-  │ │ │ ├── babel-helper-function-name@6.24.1 
-  │ │ │ ├── babel-helper-optimise-call-expression@6.24.1 
-  │ │ │ └── babel-helper-replace-supers@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-computed-properties@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-destructuring@6.23.0 
-  │ │ ├── babel-plugin-transform-es2015-duplicate-keys@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-for-of@6.23.0 
-  │ │ ├── babel-plugin-transform-es2015-function-name@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-literals@6.22.0 
-  │ │ ├── babel-plugin-transform-es2015-modules-amd@6.24.1 
-  │ │ ├─┬ babel-plugin-transform-es2015-modules-commonjs@6.26.0 
-  │ │ │ └── babel-plugin-transform-strict-mode@6.24.1 
-  │ │ ├─┬ babel-plugin-transform-es2015-modules-systemjs@6.24.1 
-  │ │ │ └── babel-helper-hoist-variables@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-modules-umd@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-object-super@6.24.1 
-  │ │ ├─┬ babel-plugin-transform-es2015-parameters@6.24.1 
-  │ │ │ ├── babel-helper-call-delegate@6.24.1 
-  │ │ │ └── babel-helper-get-function-arity@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-shorthand-properties@6.24.1 
-  │ │ ├── babel-plugin-transform-es2015-spread@6.22.0 
-  │ │ ├─┬ babel-plugin-transform-es2015-sticky-regex@6.24.1 
-  │ │ │ └── babel-helper-regex@6.26.0 
-  │ │ ├── babel-plugin-transform-es2015-template-literals@6.22.0 
-  │ │ ├── babel-plugin-transform-es2015-typeof-symbol@6.23.0 
-  │ │ ├─┬ babel-plugin-transform-es2015-unicode-regex@6.24.1 
-  │ │ │ └─┬ regexpu-core@2.0.0 
-  │ │ │   ├── regenerate@1.3.3 
-  │ │ │   ├── regjsgen@0.2.0 
-  │ │ │   └─┬ regjsparser@0.1.5 
-  │ │ │     └── jsesc@0.5.0 
-  │ │ └─┬ babel-plugin-transform-regenerator@6.26.0 
-  │ │   └── regenerator-transform@0.10.1 
-  │ ├─┬ babel-preset-latest@6.24.1 
-  │ │ ├─┬ babel-preset-es2016@6.24.1 
-  │ │ │ └─┬ babel-plugin-transform-exponentiation-operator@6.24.1 
-  │ │ │   ├─┬ babel-helper-builder-binary-assignment-operator-visitor@6.24.1 
-  │ │ │   │ └── babel-helper-explode-assignable-expression@6.24.1 
-  │ │ │   └── babel-plugin-syntax-exponentiation-operator@6.13.0 
-  │ │ └─┬ babel-preset-es2017@6.24.1 
-  │ │   ├── babel-plugin-syntax-trailing-function-commas@6.22.0 
-  │ │   └─┬ babel-plugin-transform-async-to-generator@6.24.1 
-  │ │     ├── babel-helper-remap-async-to-generator@6.24.1 
-  │ │     └── babel-plugin-syntax-async-functions@6.13.0 
-  │ ├─┬ babel-preset-stage-0@6.24.1 
-  │ │ ├─┬ babel-plugin-transform-do-expressions@6.22.0 
-  │ │ │ └── babel-plugin-syntax-do-expressions@6.13.0 
-  │ │ ├─┬ babel-plugin-transform-function-bind@6.22.0 
-  │ │ │ └── babel-plugin-syntax-function-bind@6.13.0 
-  │ │ └─┬ babel-preset-stage-1@6.24.1 
-  │ │   ├─┬ babel-plugin-transform-class-constructor-call@6.24.1 
-  │ │   │ └── babel-plugin-syntax-class-constructor-call@6.18.0 
-  │ │   ├─┬ babel-plugin-transform-export-extensions@6.22.0 
-  │ │   │ └── babel-plugin-syntax-export-extensions@6.13.0 
-  │ │   └─┬ babel-preset-stage-2@6.24.1 
-  │ │     ├── babel-plugin-syntax-dynamic-import@6.18.0 
-  │ │     ├─┬ babel-plugin-transform-class-properties@6.24.1 
-  │ │     │ └── babel-plugin-syntax-class-properties@6.13.0 
-  │ │     ├─┬ babel-plugin-transform-decorators@6.24.1 
-  │ │     │ ├─┬ babel-helper-explode-class@6.24.1 
-  │ │     │ │ └── babel-helper-bindify-decorators@6.24.1 
-  │ │     │ └── babel-plugin-syntax-decorators@6.13.0 
-  │ │     └─┬ babel-preset-stage-3@6.24.1 
-  │ │       ├─┬ babel-plugin-transform-async-generator-functions@6.24.1 
-  │ │       │ └── babel-plugin-syntax-async-generators@6.13.0 
-  │ │       └─┬ babel-plugin-transform-object-rest-spread@6.26.0 
-  │ │         └── babel-plugin-syntax-object-rest-spread@6.13.0 
-  │ ├─┬ browserify@13.3.0 
-  │ │ ├── assert@1.4.1 
-  │ │ ├─┬ browser-pack@6.0.2 
-  │ │ │ ├─┬ combine-source-map@0.7.2 
-  │ │ │ │ ├── convert-source-map@1.1.3 
-  │ │ │ │ ├── inline-source-map@0.6.2 
-  │ │ │ │ └── lodash.memoize@3.0.4 
-  │ │ │ └── umd@3.0.1 
-  │ │ ├─┬ browser-resolve@1.11.2 
-  │ │ │ └── resolve@1.1.7 
-  │ │ ├─┬ browserify-zlib@0.1.4 
-  │ │ │ └── pako@0.2.9 
-  │ │ ├─┬ buffer@4.9.1 
-  │ │ │ ├── base64-js@1.2.1 
-  │ │ │ ├── ieee754@1.1.8 
-  │ │ │ └── isarray@1.0.0 
-  │ │ ├── cached-path-relative@1.0.1 
-  │ │ ├─┬ concat-stream@1.5.2 
-  │ │ │ ├─┬ readable-stream@2.0.6 
-  │ │ │ │ └── string_decoder@0.10.31 
-  │ │ │ └── typedarray@0.0.6 
-  │ │ ├─┬ console-browserify@1.1.0 
-  │ │ │ └── date-now@0.1.4 
-  │ │ ├── constants-browserify@1.0.0 
-  │ │ ├─┬ crypto-browserify@3.11.1 
-  │ │ │ ├─┬ browserify-cipher@1.0.0 
-  │ │ │ │ ├─┬ browserify-aes@1.0.8 
-  │ │ │ │ │ └── buffer-xor@1.0.3 
-  │ │ │ │ ├─┬ browserify-des@1.0.0 
-  │ │ │ │ │ └── des.js@1.0.0 
-  │ │ │ │ └─┬ evp_bytestokey@1.0.3 
-  │ │ │ │   └─┬ md5.js@1.3.4 
-  │ │ │ │     └── hash-base@3.0.4 
-  │ │ │ ├─┬ browserify-sign@4.0.4 
-  │ │ │ │ ├── bn.js@4.11.8 
-  │ │ │ │ ├── browserify-rsa@4.0.1 
-  │ │ │ │ ├─┬ elliptic@6.4.0 
-  │ │ │ │ │ ├── brorand@1.1.0 
-  │ │ │ │ │ ├── hash.js@1.1.3 
-  │ │ │ │ │ ├── hmac-drbg@1.0.1 
-  │ │ │ │ │ ├── minimalistic-assert@1.0.0 
-  │ │ │ │ │ └── minimalistic-crypto-utils@1.0.1 
-  │ │ │ │ └─┬ parse-asn1@5.1.0 
-  │ │ │ │   └── asn1.js@4.9.1 
-  │ │ │ ├── create-ecdh@4.0.0 
-  │ │ │ ├─┬ create-hash@1.1.3 
-  │ │ │ │ ├── cipher-base@1.0.4 
-  │ │ │ │ └─┬ ripemd160@2.0.1 
-  │ │ │ │   └── hash-base@2.0.2 
-  │ │ │ ├── create-hmac@1.1.6 
-  │ │ │ ├─┬ diffie-hellman@5.0.2 
-  │ │ │ │ └── miller-rabin@4.0.0 
-  │ │ │ ├── pbkdf2@3.0.14 
-  │ │ │ ├── public-encrypt@4.0.0 
-  │ │ │ └── randombytes@2.0.5 
-  │ │ ├── defined@1.0.0 
-  │ │ ├── deps-sort@2.0.0 
-  │ │ ├── domain-browser@1.1.7 
-  │ │ ├── duplexer2@0.1.4 
-  │ │ ├── events@1.1.1 
-  │ │ ├─┬ has@1.0.1 
-  │ │ │ └── function-bind@1.1.1 
-  │ │ ├── htmlescape@1.1.1 
-  │ │ ├── https-browserify@0.0.1 
-  │ │ ├── inherits@2.0.3 
-  │ │ ├─┬ insert-module-globals@7.0.1 
-  │ │ │ ├── is-buffer@1.1.5 
-  │ │ │ └─┬ lexical-scope@1.2.0 
-  │ │ │   └── astw@2.2.0 
-  │ │ ├─┬ JSONStream@1.3.1 
-  │ │ │ ├── jsonparse@1.3.1 
-  │ │ │ └── through@2.3.8 
-  │ │ ├─┬ labeled-stream-splicer@2.0.0 
-  │ │ │ ├── isarray@0.0.1 
-  │ │ │ └── stream-splicer@2.0.0 
-  │ │ ├─┬ module-deps@4.1.1 
-  │ │ │ ├── detective@4.5.0 
-  │ │ │ └── stream-combiner2@1.1.1 
-  │ │ ├── os-browserify@0.1.2 
-  │ │ ├─┬ parents@1.0.1 
-  │ │ │ └── path-platform@0.11.15 
-  │ │ ├── path-browserify@0.0.0 
-  │ │ ├── process@0.11.10 
-  │ │ ├── punycode@1.4.1 
-  │ │ ├── querystring-es3@0.2.1 
-  │ │ ├── read-only-stream@2.0.0 
-  │ │ ├─┬ readable-stream@2.3.3 
-  │ │ │ ├── core-util-is@1.0.2 
-  │ │ │ ├── process-nextick-args@1.0.7 
-  │ │ │ ├── safe-buffer@5.1.1 
-  │ │ │ ├── string_decoder@1.0.3 
-  │ │ │ └── util-deprecate@1.0.2 
-  │ │ ├─┬ shasum@1.0.2 
-  │ │ │ ├── json-stable-stringify@0.0.1 
-  │ │ │ └── sha.js@2.4.8 
-  │ │ ├─┬ shell-quote@1.6.1 
-  │ │ │ ├── array-filter@0.0.1 
-  │ │ │ ├── array-map@0.0.0 
-  │ │ │ ├── array-reduce@0.0.0 
-  │ │ │ └── jsonify@0.0.0 
-  │ │ ├── stream-browserify@2.0.1 
-  │ │ ├─┬ stream-http@2.7.2 
-  │ │ │ ├── builtin-status-codes@3.0.0 
-  │ │ │ └── to-arraybuffer@1.0.1 
-  │ │ ├── string_decoder@0.10.31 
-  │ │ ├─┬ subarg@1.0.0 
-  │ │ │ └── minimist@1.2.0 
-  │ │ ├─┬ syntax-error@1.3.0 
-  │ │ │ └── acorn@4.0.13 
-  │ │ ├── through2@2.0.3 
-  │ │ ├── timers-browserify@1.4.2 
-  │ │ ├── tty-browserify@0.0.0 
-  │ │ ├─┬ url@0.11.0 
-  │ │ │ ├── punycode@1.3.2 
-  │ │ │ └── querystring@0.2.0 
-  │ │ ├─┬ util@0.10.3 
-  │ │ │ └── inherits@2.0.1 
-  │ │ ├─┬ vm-browserify@0.0.4 
-  │ │ │ └── indexof@0.0.1 
-  │ │ └── xtend@4.0.1 
-  │ ├── lodash@4.17.4 
-  │ ├── moment@2.18.1 
-  │ ├── moment-duration-format@1.3.0 
-  │ └── seamless-immutable@6.3.0 
-  ├─┬ react@15.6.1 
-  │ ├── create-react-class@15.6.0 
-  │ ├─┬ fbjs@0.8.15 
-  │ │ ├── core-js@1.2.7 
-  │ │ ├─┬ isomorphic-fetch@2.2.1 
-  │ │ │ ├─┬ node-fetch@1.7.3 
-  │ │ │ │ ├── encoding@0.1.12 
-  │ │ │ │ └── is-stream@1.1.0 
-  │ │ │ └── whatwg-fetch@2.0.3 
-  │ │ ├─┬ promise@7.3.1 
-  │ │ │ └── asap@2.0.6 
-  │ │ ├── setimmediate@1.0.5 
-  │ │ └── ua-parser-js@0.7.14 
-  │ ├─┬ loose-envify@1.3.1 
-  │ │ └── js-tokens@3.0.2 
-  │ ├── object-assign@4.1.1 
-  │ └── prop-types@15.5.10 
-  └── react-dom@15.6.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/reactjs-d3-universal/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /2 queued / 1 running / 0 errors / 28.999999999999996% coverage ] ****** [1 done /1 queued / 2 running / 0 errors / 28.999999999999996% coverage ] ****** [1 done /0 queued / 3 running / 0 errors / 28.999999999999996% coverage ] ****** [1 done /0 queued / 3 running / 0 errors / 28.999999999999996% coverage ] ****** [2 done /1 queued / 3 running / 0 errors / 28.999999999999996% coverage ] ****** [2 done /0 queued / 4 running / 0 errors / 28.999999999999996% coverage ] ****** [2 done /0 queued / 4 running / 0 errors / 28.999999999999996% coverage ] ****** [3 done /1 queued / 4 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 28.999999999999996% coverage ] ****** [4 done /0 queued / 4 running / 1 errors / 28.999999999999996% coverage ] ****** [5 done /0 queued / 4 running / 2 errors / 28.999999999999996% coverage ] ****** [5 done /0 queued / 4 running / 2 errors / 28.999999999999996% coverage ] ****** [6 done /1 queued / 4 running / 3 errors / 28.999999999999996% coverage ] ****** [6 done /0 queued / 5 running / 3 errors / 28.999999999999996% coverage ] ****** [6 done /0 queued / 5 running / 3 errors / 28.999999999999996% coverage ] ****** [7 done /1 queued / 5 running / 4 errors / 28.999999999999996% coverage ] ****** [7 done /0 queued / 6 running / 4 errors / 28.999999999999996% coverage ] ****** [7 done /0 queued / 6 running / 4 errors / 28.999999999999996% coverage ] ****** [8 done /1 queued / 6 running / 4 errors / 28.999999999999996% coverage ] ****** [8 done /0 queued / 7 running / 4 errors / 28.999999999999996% coverage ] ****** [8 done /0 queued / 7 running / 4 errors / 28.999999999999996% coverage ] ****** [9 done /2 queued / 7 running / 5 errors / 28.999999999999996% coverage ] ****** [9 done /1 queued / 8 running / 5 errors / 28.999999999999996% coverage ] ****** [9 done /0 queued / 9 running / 5 errors / 28.999999999999996% coverage ] ****** [9 done /0 queued / 9 running / 5 errors / 28.999999999999996% coverage ] ****** [10 done /0 queued / 8 running / 6 errors / 28.999999999999996% coverage ] ****** [11 done /2 queued / 8 running / 7 errors / 28.999999999999996% coverage ] ****** [11 done /1 queued / 9 running / 7 errors / 28.999999999999996% coverage ] ****** [11 done /0 queued / 10 running / 7 errors / 28.999999999999996% coverage ] ****** [11 done /0 queued / 10 running / 7 errors / 28.999999999999996% coverage ] ****** [12 done /0 queued / 10 running / 8 errors / 28.999999999999996% coverage ] ****** [12 done /0 queued / 10 running / 8 errors / 28.999999999999996% coverage ] ****** [13 done /0 queued / 10 running / 9 errors / 28.999999999999996% coverage ] ****** [13 done /0 queued / 10 running / 9 errors / 28.999999999999996% coverage ] ****** [14 done /1 queued / 10 running / 9 errors / 28.999999999999996% coverage ] ****** [14 done /0 queued / 11 running / 9 errors / 28.999999999999996% coverage ] ****** [14 done /0 queued / 11 running / 9 errors / 28.999999999999996% coverage ] ****** [15 done /4 queued / 11 running / 10 errors / 28.999999999999996% coverage ] ****** [15 done /3 queued / 12 running / 10 errors / 28.999999999999996% coverage ] ****** [15 done /2 queued / 13 running / 10 errors / 28.999999999999996% coverage ] ****** [15 done /1 queued / 14 running / 10 errors / 28.999999999999996% coverage ] ****** [15 done /0 queued / 15 running / 10 errors / 28.999999999999996% coverage ] ****** [15 done /0 queued / 15 running / 10 errors / 28.999999999999996% coverage ] ****** [16 done /4 queued / 15 running / 11 errors / 28.999999999999996% coverage ] ****** [16 done /3 queued / 16 running / 11 errors / 28.999999999999996% coverage ] ****** [16 done /3 queued / 16 running / 11 errors / 28.999999999999996% coverage ] ****** [17 done /4 queued / 16 running / 12 errors / 28.999999999999996% coverage ] ****** [17 done /4 queued / 16 running / 12 errors / 28.999999999999996% coverage ] ****** [18 done /8 queued / 16 running / 13 errors / 28.999999999999996% coverage ] ****** [18 done /8 queued / 16 running / 13 errors / 28.999999999999996% coverage ] ****** [19 done /13 queued / 16 running / 14 errors / 28.999999999999996% coverage ] ****** [19 done /13 queued / 16 running / 14 errors / 28.999999999999996% coverage ] ****** [20 done /14 queued / 16 running / 15 errors / 28.999999999999996% coverage ] ****** [20 done /14 queued / 16 running / 15 errors / 28.999999999999996% coverage ] ****** [21 done /15 queued / 16 running / 16 errors / 28.999999999999996% coverage ] ****** [21 done /15 queued / 16 running / 16 errors / 28.999999999999996% coverage ] ****** [22 done /19 queued / 16 running / 17 errors / 28.999999999999996% coverage ] ****** [22 done /19 queued / 16 running / 17 errors / 28.999999999999996% coverage ] ****** [23 done /24 queued / 16 running / 18 errors / 28.999999999999996% coverage ] ****** [23 done /24 queued / 16 running / 18 errors / 28.999999999999996% coverage ] ****** [24 done /24 queued / 16 running / 19 errors / 28.999999999999996% coverage ] ****** [24 done /24 queued / 16 running / 19 errors / 28.999999999999996% coverage ] ****** [25 done /28 queued / 16 running / 20 errors / 28.999999999999996% coverage ] ****** [25 done /28 queued / 16 running / 20 errors / 28.999999999999996% coverage ] ****** [26 done /29 queued / 16 running / 21 errors / 28.999999999999996% coverage ] ****** [26 done /29 queued / 16 running / 21 errors / 28.999999999999996% coverage ] ****** [27 done /31 queued / 16 running / 21 errors / 28.999999999999996% coverage ] ****** [27 done /31 queued / 16 running / 21 errors / 28.999999999999996% coverage ] ****** [28 done /32 queued / 16 running / 22 errors / 28.999999999999996% coverage ] ****** [28 done /32 queued / 16 running / 22 errors / 28.999999999999996% coverage ] ****** [29 done /31 queued / 16 running / 23 errors / 28.999999999999996% coverage ] ****** [29 done /31 queued / 16 running / 23 errors / 28.999999999999996% coverage ] ****** [30 done /36 queued / 16 running / 24 errors / 28.999999999999996% coverage ] ****** [30 done /36 queued / 16 running / 24 errors / 28.999999999999996% coverage ] ****** [31 done /35 queued / 16 running / 25 errors / 28.999999999999996% coverage ] ****** [31 done /35 queued / 16 running / 25 errors / 28.999999999999996% coverage ] ****** [32 done /34 queued / 16 running / 26 errors / 28.999999999999996% coverage ] ****** [32 done /34 queued / 16 running / 26 errors / 28.999999999999996% coverage ] ****** [33 done /33 queued / 16 running / 27 errors / 28.999999999999996% coverage ] ****** [33 done /33 queued / 16 running / 27 errors / 28.999999999999996% coverage ] ****** [34 done /33 queued / 16 running / 28 errors / 28.999999999999996% coverage ] ****** [34 done /33 queued / 16 running / 28 errors / 28.999999999999996% coverage ] ****** [35 done /33 queued / 16 running / 29 errors / 28.999999999999996% coverage ] ****** [35 done /33 queued / 16 running / 29 errors / 28.999999999999996% coverage ] ****** [36 done /34 queued / 16 running / 30 errors / 28.999999999999996% coverage ] ****** [36 done /34 queued / 16 running / 30 errors / 28.999999999999996% coverage ] ****** [37 done /34 queued / 16 running / 31 errors / 28.999999999999996% coverage ] ****** [37 done /34 queued / 16 running / 31 errors / 28.999999999999996% coverage ] ****** [38 done /36 queued / 16 running / 32 errors / 28.999999999999996% coverage ] ****** [38 done /36 queued / 16 running / 32 errors / 28.999999999999996% coverage ] ****** [39 done /35 queued / 16 running / 33 errors / 28.999999999999996% coverage ] ****** [39 done /35 queued / 16 running / 33 errors / 28.999999999999996% coverage ] ****** [40 done /35 queued / 16 running / 34 errors / 28.999999999999996% coverage ] ****** [40 done /35 queued / 16 running / 34 errors / 28.999999999999996% coverage ] ****** [41 done /36 queued / 16 running / 35 errors / 28.999999999999996% coverage ] ****** [41 done /36 queued / 16 running / 35 errors / 28.999999999999996% coverage ] ****** [42 done /36 queued / 16 running / 36 errors / 28.999999999999996% coverage ] ****** [42 done /36 queued / 16 running / 36 errors / 28.999999999999996% coverage ] ****** [43 done /35 queued / 16 running / 37 errors / 28.999999999999996% coverage ] ****** [43 done /35 queued / 16 running / 37 errors / 28.999999999999996% coverage ] ****** [44 done /34 queued / 16 running / 38 errors / 28.999999999999996% coverage ] ****** [44 done /34 queued / 16 running / 38 errors / 28.999999999999996% coverage ] ****** [45 done /33 queued / 16 running / 39 errors / 28.999999999999996% coverage ] ****** [45 done /33 queued / 16 running / 39 errors / 28.999999999999996% coverage ] ****** [46 done /33 queued / 16 running / 40 errors / 28.999999999999996% coverage ] ****** [46 done /33 queued / 16 running / 40 errors / 28.999999999999996% coverage ] ****** [47 done /33 queued / 16 running / 41 errors / 28.999999999999996% coverage ] ****** [47 done /33 queued / 16 running / 41 errors / 28.999999999999996% coverage ] ****** [48 done /33 queued / 16 running / 42 errors / 28.999999999999996% coverage ] ****** [48 done /33 queued / 16 running / 42 errors / 28.999999999999996% coverage ] ****** [49 done /32 queued / 16 running / 43 errors / 28.999999999999996% coverage ] ****** [49 done /32 queued / 16 running / 43 errors / 28.999999999999996% coverage ] ****** [50 done /32 queued / 16 running / 43 errors / 28.999999999999996% coverage ] ****** [50 done /32 queued / 16 running / 43 errors / 28.999999999999996% coverage ] ****** [51 done /33 queued / 16 running / 44 errors / 28.999999999999996% coverage ] ****** [51 done /33 queued / 16 running / 44 errors / 28.999999999999996% coverage ] ****** [52 done /33 queued / 16 running / 45 errors / 28.999999999999996% coverage ] ****** [52 done /33 queued / 16 running / 45 errors / 28.999999999999996% coverage ] ****** [53 done /33 queued / 16 running / 46 errors / 28.999999999999996% coverage ] ****** [53 done /33 queued / 16 running / 46 errors / 28.999999999999996% coverage ] ****** [54 done /34 queued / 16 running / 47 errors / 28.999999999999996% coverage ] ****** [54 done /34 queued / 16 running / 47 errors / 28.999999999999996% coverage ] ****** [55 done /33 queued / 16 running / 48 errors / 28.999999999999996% coverage ] ****** [55 done /33 queued / 16 running / 48 errors / 28.999999999999996% coverage ] ****** [56 done /35 queued / 16 running / 49 errors / 28.999999999999996% coverage ] ****** [56 done /35 queued / 16 running / 49 errors / 28.999999999999996% coverage ] ****** [57 done /34 queued / 16 running / 50 errors / 28.999999999999996% coverage ] ****** [57 done /34 queued / 16 running / 50 errors / 28.999999999999996% coverage ] ****** [58 done /35 queued / 16 running / 51 errors / 28.999999999999996% coverage ] ****** [58 done /35 queued / 16 running / 51 errors / 28.999999999999996% coverage ] ****** [59 done /37 queued / 16 running / 52 errors / 28.999999999999996% coverage ] ****** [59 done /37 queued / 16 running / 52 errors / 28.999999999999996% coverage ] ****** [60 done /37 queued / 16 running / 53 errors / 28.999999999999996% coverage ] ****** [60 done /37 queued / 16 running / 53 errors / 28.999999999999996% coverage ] ****** [61 done /37 queued / 16 running / 54 errors / 28.999999999999996% coverage ] ****** [61 done /37 queued / 16 running / 54 errors / 28.999999999999996% coverage ] ****** [62 done /39 queued / 16 running / 54 errors / 28.999999999999996% coverage ] ****** [62 done /39 queued / 16 running / 54 errors / 28.999999999999996% coverage ] ****** [63 done /38 queued / 16 running / 55 errors / 28.999999999999996% coverage ] ****** [63 done /38 queued / 16 running / 55 errors / 28.999999999999996% coverage ] ****** [64 done /37 queued / 16 running / 56 errors / 28.999999999999996% coverage ] ****** [64 done /37 queued / 16 running / 56 errors / 28.999999999999996% coverage ] ****** [65 done /40 queued / 16 running / 57 errors / 28.999999999999996% coverage ] ****** [65 done /40 queued / 16 running / 57 errors / 28.999999999999996% coverage ] ****** [66 done /41 queued / 16 running / 58 errors / 28.999999999999996% coverage ] ****** [66 done /41 queued / 16 running / 58 errors / 28.999999999999996% coverage ] ****** [67 done /40 queued / 16 running / 59 errors / 28.999999999999996% coverage ] ****** [67 done /40 queued / 16 running / 59 errors / 28.999999999999996% coverage ] ****** [68 done /40 queued / 16 running / 60 errors / 28.999999999999996% coverage ] ****** [68 done /40 queued / 16 running / 60 errors / 28.999999999999996% coverage ] ****** [69 done /43 queued / 16 running / 61 errors / 28.999999999999996% coverage ] ****** [69 done /43 queued / 16 running / 61 errors / 28.999999999999996% coverage ] ****** [70 done /46 queued / 16 running / 62 errors / 28.999999999999996% coverage ] ****** [70 done /46 queued / 16 running / 62 errors / 28.999999999999996% coverage ] ****** [71 done /48 queued / 16 running / 63 errors / 28.999999999999996% coverage ] ****** [71 done /48 queued / 16 running / 63 errors / 28.999999999999996% coverage ] ****** [72 done /49 queued / 16 running / 64 errors / 28.999999999999996% coverage ] ****** [72 done /49 queued / 16 running / 64 errors / 28.999999999999996% coverage ] ****** [73 done /51 queued / 16 running / 65 errors / 28.999999999999996% coverage ] ****** [73 done /51 queued / 16 running / 65 errors / 28.999999999999996% coverage ] ****** [74 done /54 queued / 16 running / 66 errors / 28.999999999999996% coverage ] ****** [74 done /54 queued / 16 running / 66 errors / 28.999999999999996% coverage ] ****** [75 done /55 queued / 16 running / 67 errors / 28.999999999999996% coverage ] ****** [75 done /55 queued / 16 running / 67 errors / 28.999999999999996% coverage ] ****** [76 done /57 queued / 16 running / 68 errors / 28.999999999999996% coverage ] ****** [76 done /57 queued / 16 running / 68 errors / 28.999999999999996% coverage ] ****** [77 done /56 queued / 16 running / 69 errors / 28.999999999999996% coverage ] ****** [77 done /56 queued / 16 running / 69 errors / 28.999999999999996% coverage ] ****** [78 done /55 queued / 16 running / 69 errors / 28.999999999999996% coverage ] ****** [78 done /55 queued / 16 running / 69 errors / 28.999999999999996% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","getOwnPropertyNames","fromCharCode","join","assign","freeze","for","call","RegExp","Map","Set","bind","Array","apply","bound warn","Error","sqrt","create","max","asin","charCodeAt","cos","Date","isNaN","sin","isArray","parseInt","setPrototypeOf","toString","bound Chart","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0} start 0.0823 took 128.8961s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":2} start 130.4949 took 131.854s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpandedSwitcher_2":0,"_bound":3,"ExpansionArg_type_2":0} start 131.4048 took 132.6711s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpandedSwitcher_2":0,"_bound":3,"ExpansionArg_type_2":0}
-* Error: TypeError: Cannot read property 'chartHeight' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpandedSwitcher_2":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":1} start 131.0113 took 135.6222s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4} start 264.4093 took 92.2768s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4}
-* Error: TypeError: Cannot read property 'chartType' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0} start 264.6325 took 96.0627s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4} start 263.7148 took 100.3043s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4}
-* Error: TypeError: Cannot read property 'chartType' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":3,"ExpansionArg_int":0} start 263.3795 took 102.6645s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":5,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 357.4874 took 68.5366s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":5,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6} start 361.0135 took 66.6367s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6}
-* Error: TypeError: Cannot read property 'chartHeight' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"_bound":6,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 364.8013 took 70.8286s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"_bound":6,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 361.2151 took 81.6408s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"_bound":5,"ExpansionArg_type_2":0} start 364.4785 took 85.2459s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"_bound":5,"ExpansionArg_type_2":0}
-* Error: TypeError: Cannot read property 'chartHeight' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_string":"PureString"} start 366.5967 took 83.8875s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 366.9283 took 84.5054s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpandedSwitcher_2":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0} start 426.6521 took 80.5426s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6} start 426.9244 took 81.6557s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":9,"ExpansionArg_array_length":0} start 436.4346 took 78.9918s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0} start 426.4991 took 94.686s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 443.4292 took 79.1508s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7} start 436.6348 took 87.1056s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_type_2":0} start 451.0243 took 79.3451s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_type_2":0}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpandedSwitcher_2":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0} start 436.1499 took 95.2796s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6} start 452.0264 took 83.0134s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}
-* Error: TypeError: Cannot read property 'chartHeight' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":10,"ExpansionArg_array_length":0} start 451.9048 took 88.3723s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":10,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8} start 452.9054 took 89.4525s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":5,"ExpansionArg_array_length":0} start 450.8004 took 98.0636s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":6,"ExpansionArg_int":0} start 450.0947 took 99.966s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":6,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":2,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7} start 452.3145 took 98.483s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_length":0} start 452.602 took 103.6385s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9} start 507.77 took 83.0863s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0} start 508.8681 took 84.5654s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string":"PureString"} start 507.9713 took 90.0842s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_bool":false} start 521.6287 took 89.3445s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_bool":false}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8} start 524.2853 took 88.4347s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":14,"ExpansionArg_array_element_0_type":0} start 515.9906 took 100.5005s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":14,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":14}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_string":"PureString"} start 532.0928 took 89.6885s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_string":"PureString"}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_0_type":0} start 523.0058 took 100.0383s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false} start 530.8677 took 98.5485s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_int":0} start 541.0088 took 89.7512s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_int":0}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13,"ExpansionArg_array_element_0_type":0} start 535.5696 took 102.1349s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_int":0} start 549.4391 took 93.7126s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_int":0}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_bool":false} start 551.1404 took 93.3036s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 543.2765 took 102.6787s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10} start 550.5917 took 95.3637s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_string":"PureString"} start 557.1623 took 92.3544s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_string":"PureString"}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_bool":false} start 591.2759 took 94.0544s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_bool":false}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_int_2":0} start 598.6978 took 97.3931s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_int_2":0}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_string":"PureString"} start 594.0378 took 113.5259s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":6,"ExpansionArg_bool":false} start 611.5173 took 97.3791s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0} start 613.1157 took 100.9167s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_string":"PureString"} start 617.645 took 101.9579s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_string":"PureString"}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_bool":false} start 631.1202 took 102.5122s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_bool":false}
-* Error: Invariant Violation: setState(...): takes an object of state variables to update or a function which returns an object of state variables.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":15,"ExpansionArg_array_element_0_type":0} start 622.3968 took 114.8201s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":15,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":15}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_int":0} start 623.7338 took 115.4514s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_0_type":0} start 629.895 took 117.2085s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":14}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":14,"ExpansionArg_bool":false} start 638.4426 took 114.4598s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":14,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":14}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":16,"ExpansionArg_array_element_1_type":0} start 648.3648 took 106.3493s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":16,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":16}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_array_element_0_type":0} start 645.3292 took 112.3289s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":13,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10} start 646.8363 took 113.0812s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9} start 643.8362 took 116.7111s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":3,"ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 650.225 took 117.215s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_int_2":0} start 685.8804 took 109.2191s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_string":"PureString"} start 709.5123 took 99.1692s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":13,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":8,"ExpansionArg_bool":false} start 696.9311 took 120.1821s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0} start 707.9334 took 113.8574s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":15}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":11} start 714.9795 took 110.7968s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":11}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":8,"ExpansionArg_string":"PureString"} start 719.9304 took 135.1008s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":8,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false} start 737.9561 took 118.641s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13,"ExpansionArg_bool":false} start 734.3281 took 123.1971s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":0,"ExpansionArg_type_3":5,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_1_type":0} start 755.1565 took 111.684s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":14}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":17,"ExpansionArg_array_element_1_type":0} start 739.7909 took 128.9315s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":17,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":17}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":16,"ExpansionArg_array_element_1_type":0} start 767.9718 took 105.4639s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":16,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'enqueueSetState' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":3,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":16}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":11,"ExpansionArg_bool":false} start 758.1994 took 116.8542s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":11,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'enqueueForceUpdate' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpandedSwitcher":4,"ExpansionArg_type_2":5,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 753.8577 took 121.1959s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"} start 760.8418 took 114.2119s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'toLowerCase' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpandedSwitcher":1,"ExpansionArg_type_2":3,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":7} start 747.8784 took 127.1753s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":7}
-* Error: TypeError: Cannot read property 'chartHeight' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":5,"ExpansionArg_type_2":0,"_bound":7} start 760.2716 took 114.7821s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/index.js. Coverage (Term): 44% Coverage (LOC): 39%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/barchart/bars.js. Coverage (Term): 33% Coverage (LOC): 29%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/svg/rect.js. Coverage (Term): 46% Coverage (LOC): 68%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/react.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/React.js. Coverage (Term): 69% Coverage (LOC): 83%
-*- File /root/Targets/reactjs-d3-universal/node_modules/object-assign/index.js. Coverage (Term): 54% Coverage (LOC): 53%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactBaseClasses.js. Coverage (Term): 69% Coverage (LOC): 75%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/reactProdInvariant.js. Coverage (Term): 22% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactNoopUpdateQueue.js. Coverage (Term): 69% Coverage (LOC): 85%
-*- File /root/Targets/reactjs-d3-universal/node_modules/fbjs/lib/warning.js. Coverage (Term): 93% Coverage (LOC): 94%
-*- File /root/Targets/reactjs-d3-universal/node_modules/fbjs/lib/emptyFunction.js. Coverage (Term): 68% Coverage (LOC): 83%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/canDefineProperty.js. Coverage (Term): 87% Coverage (LOC): 92%
-*- File /root/Targets/reactjs-d3-universal/node_modules/fbjs/lib/emptyObject.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/fbjs/lib/invariant.js. Coverage (Term): 76% Coverage (LOC): 91%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/lowPriorityWarning.js. Coverage (Term): 71% Coverage (LOC): 87%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactChildren.js. Coverage (Term): 22% Coverage (LOC): 39%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/PooledClass.js. Coverage (Term): 34% Coverage (LOC): 45%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactElement.js. Coverage (Term): 11% Coverage (LOC): 15%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactCurrentOwner.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactElementSymbol.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/traverseAllChildren.js. Coverage (Term): 14% Coverage (LOC): 19%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/getIteratorFn.js. Coverage (Term): 55% Coverage (LOC): 64%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/KeyEscapeUtils.js. Coverage (Term): 23% Coverage (LOC): 36%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactDOMFactories.js. Coverage (Term): 100% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactElementValidator.js. Coverage (Term): 16% Coverage (LOC): 23%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactComponentTreeHook.js. Coverage (Term): 16% Coverage (LOC): 22%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/checkReactTypeSpec.js. Coverage (Term): 27% Coverage (LOC): 34%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactPropTypeLocationNames.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactPropTypes.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/prop-types/factory.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/prop-types/factoryWithTypeCheckers.js. Coverage (Term): 18% Coverage (LOC): 26%
-*- File /root/Targets/reactjs-d3-universal/node_modules/prop-types/lib/ReactPropTypesSecret.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/prop-types/checkPropTypes.js. Coverage (Term): 28% Coverage (LOC): 41%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/ReactVersion.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/createClass.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/reactjs-d3-universal/node_modules/create-react-class/factory.js. Coverage (Term): 11% Coverage (LOC): 23%
-*- File /root/Targets/reactjs-d3-universal/node_modules/react/lib/onlyChild.js. Coverage (Term): 55% Coverage (LOC): 80%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/labels.js. Coverage (Term): 19% Coverage (LOC): 21%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/arcs.js. Coverage (Term): 19% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3/build/d3.node.js. Coverage (Term): 95% Coverage (LOC): 99%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-array/build/d3-array.js. Coverage (Term): 13% Coverage (LOC): 21%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-axis/build/d3-axis.js. Coverage (Term): 11% Coverage (LOC): 27%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-brush/build/d3-brush.js. Coverage (Term): 9% Coverage (LOC): 22%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-dispatch/build/d3-dispatch.js. Coverage (Term): 21% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-drag/build/d3-drag.js. Coverage (Term): 9% Coverage (LOC): 14%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-selection/build/d3-selection.js. Coverage (Term): 11% Coverage (LOC): 29%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-interpolate/build/d3-interpolate.js. Coverage (Term): 20% Coverage (LOC): 35%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-color/build/d3-color.js. Coverage (Term): 29% Coverage (LOC): 75%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-transition/build/d3-transition.js. Coverage (Term): 10% Coverage (LOC): 22%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-timer/build/d3-timer.js. Coverage (Term): 22% Coverage (LOC): 31%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-ease/build/d3-ease.js. Coverage (Term): 44% Coverage (LOC): 80%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-chord/build/d3-chord.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-path/build/d3-path.js. Coverage (Term): 11% Coverage (LOC): 36%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-collection/build/d3-collection.js. Coverage (Term): 14% Coverage (LOC): 27%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-dsv/build/d3-dsv.js. Coverage (Term): 26% Coverage (LOC): 38%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-force/build/d3-force.js. Coverage (Term): 5% Coverage (LOC): 8%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-quadtree/build/d3-quadtree.js. Coverage (Term): 8% Coverage (LOC): 15%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-format/build/d3-format.js. Coverage (Term): 15% Coverage (LOC): 39%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-geo/build/d3-geo.js. Coverage (Term): 8% Coverage (LOC): 18%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-hierarchy/build/d3-hierarchy.js. Coverage (Term): 6% Coverage (LOC): 15%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-polygon/build/d3-polygon.js. Coverage (Term): 12% Coverage (LOC): 22%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-queue/build/d3-queue.js. Coverage (Term): 14% Coverage (LOC): 21%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-random/build/d3-random.js. Coverage (Term): 39% Coverage (LOC): 56%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-request/build/d3-request.node.js. Coverage (Term): 15% Coverage (LOC): 21%
-*- File /root/Targets/reactjs-d3-universal/node_modules/xmlhttprequest/lib/XMLHttpRequest.js. Coverage (Term): 2% Coverage (LOC): 2%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-scale/build/d3-scale.js. Coverage (Term): 10% Coverage (LOC): 14%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-time/build/d3-time.js. Coverage (Term): 34% Coverage (LOC): 63%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-time-format/build/d3-time-format.js. Coverage (Term): 23% Coverage (LOC): 58%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-shape/build/d3-shape.js. Coverage (Term): 9% Coverage (LOC): 26%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-voronoi/build/d3-voronoi.js. Coverage (Term): 3% Coverage (LOC): 7%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-zoom/build/d3-zoom.js. Coverage (Term): 5% Coverage (LOC): 11%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/svg/text.js. Coverage (Term): 41% Coverage (LOC): 56%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/linechart/lines.js. Coverage (Term): 28% Coverage (LOC): 25%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/lines.js. Coverage (Term): 26% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/svg/path.js. Coverage (Term): 51% Coverage (LOC): 69%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/piechart/slices.js. Coverage (Term): 30% Coverage (LOC): 20%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/scatterplot/dots.js. Coverage (Term): 30% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/svg/circle.js. Coverage (Term): 48% Coverage (LOC): 69%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/svg/index.js. Coverage (Term): 48% Coverage (LOC): 62%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/axes.js. Coverage (Term): 28% Coverage (LOC): 43%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/data.js. Coverage (Term): 14% Coverage (LOC): 17%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/time.js. Coverage (Term): 46% Coverage (LOC): 50%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/lib/scales.js. Coverage (Term): 10% Coverage (LOC): 8%
-*- File /root/Targets/reactjs-d3-universal/node_modules/d3-scale-chromatic/build/d3-scale-chromatic.js. Coverage (Term): 97% Coverage (LOC): 99%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/table/index.js. Coverage (Term): 53% Coverage (LOC): 60%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/table/thead.js. Coverage (Term): 60% Coverage (LOC): 59%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/table/tr.js. Coverage (Term): 36% Coverage (LOC): 55%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/table/tbody.js. Coverage (Term): 60% Coverage (LOC): 63%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/forcelayout/index.js. Coverage (Term): 44% Coverage (LOC): 47%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/forcelayout/links.js. Coverage (Term): 38% Coverage (LOC): 38%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/forcelayout/nodes.js. Coverage (Term): 30% Coverage (LOC): 33%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/forcelayout/simulation.js. Coverage (Term): 32% Coverage (LOC): 55%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/index.js. Coverage (Term): 45% Coverage (LOC): 39%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/hierarchy.js. Coverage (Term): 35% Coverage (LOC): 46%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/nodesarray.js. Coverage (Term): 18% Coverage (LOC): 30%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/packg.js. Coverage (Term): 19% Coverage (LOC): 19%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/text.js. Coverage (Term): 40% Coverage (LOC): 56%
-*- File /root/Targets/reactjs-d3-universal/node_modules/reactjs-d3-universal/dist/pack/pack.js. Coverage (Term): 43% Coverage (LOC): 52%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 78 paths with 69 errors **

@@ -1,34 +1,0 @@
-/root/Targets/pandora-tabs
-└─┬ pandora-tabs@1.2.0 
-  ├── jquery@1.12.4 
-  └─┬ pandora-widget@1.2.3 
-    └─┬ pandora-base@1.2.0 
-      ├── pandora-class@1.2.0 
-      └── pandora-events@1.2.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/pandora-tabs/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 4% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","apply"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0429 took 23.3371s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: window is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-tabs/src/tabs.js. Coverage (Term): 9% Coverage (LOC): 9%
-*- File /root/Targets/pandora-tabs/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-widget/src/index.js. Coverage (Term): 11% Coverage (LOC): 25%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-base/src/index.js. Coverage (Term): 11% Coverage (LOC): 18%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-class/src/index.js. Coverage (Term): 82% Coverage (LOC): 90%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-events/src/index.js. Coverage (Term): 13% Coverage (LOC): 18%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-base/src/aspect.js. Coverage (Term): 18% Coverage (LOC): 31%
-*- File /root/Targets/pandora-tabs/node_modules/pandora-widget/src/lib/append.js. Coverage (Term): 9% Coverage (LOC): 13%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

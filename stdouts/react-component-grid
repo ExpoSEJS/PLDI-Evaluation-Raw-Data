@@ -1,35 +1,0 @@
-/root/Targets/react-component-grid
-├── UNMET PEER DEPENDENCY react@^15.3.2
-└─┬ react-component-grid@0.2.2 
-  ├─┬ babel-runtime@6.26.0 
-  │ ├── core-js@2.5.1 
-  │ └── regenerator-runtime@0.11.0 
-  ├── immutable@3.8.1 
-  └─┬ robust-point-in-polygon@1.0.3 
-    └─┬ robust-orientation@1.1.3 
-      ├─┬ robust-scale@1.0.2 
-      │ └── two-sum@1.0.0 
-      ├── robust-subtract@1.0.0 
-      ├── robust-sum@1.0.0 
-      └── two-product@1.0.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/react-component-grid/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 19% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.1369 took 8.9456s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'react'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/react-component-grid/node_modules/react-component-grid/lib/index.js. Coverage (Term): 52% Coverage (LOC): 80%
-*- File /root/Targets/react-component-grid/node_modules/react-component-grid/lib/Grid.js. Coverage (Term): 5% Coverage (LOC): 6%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

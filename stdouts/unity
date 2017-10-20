@@ -1,26 +1,0 @@
-/root/Targets/unity
-└─┬ unity@1.0.8 
-  ├── lodash@3.10.1 
-  ├── require-directory@2.1.1 
-  └── semver@5.4.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/unity/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 46% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","RegExp","join"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.067 took 10.5241s
-*-- Errors occured in test {"_bound":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/unity/node_modules/unity/lib/index.js. Coverage (Term): 75% Coverage (LOC): 86%
-*- File /root/Targets/unity/node_modules/semver/semver.js. Coverage (Term): 46% Coverage (LOC): 50%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

@@ -1,32 +1,0 @@
-/root/Targets/schibsted-bedrock
-└─┬ schibsted-bedrock@0.3.0 
-  └── normalize.css@4.2.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/schibsted-bedrock/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0544 took 3.5237s
-*-- Errors occured in test {"_bound":0}
-* Error: Tropigate failed because SyntaxError: Unexpected token (1:170) on program /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */progress,sub,sup{vertical-align:baseline}button,hr,input,select{overflow:visible}[type=checkbox],[type=radio],legend{padding:0;box-sizing:border-box}[hidden],template{display:none}*,legend{box-sizing:border-box}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}button:-moz-focusring,input:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}.right{float:right}.left{float:left}.bg-primary-blue{background-color:#005496}.bg-blue-1{background-color:#93d4e9}.bg-blue-2{background-color:#69c5e2}.bg-blue-3{background-color:#289fc5}.bg-blue-4{background-color:#0086b9}.bg-blue-5{background-color:#006ba1}.bg-blue-6{background-color:#005e88}.bg-energy{background-color:#d6291b}.bg-energy-dark{background-color:#b32014}.bg-forest{background-color:#67b52c}.bg-forest-dark{background-color:#008536}.bg-ash{background-color:#cecece}.bg-ash-dark{background-color:#505050}.bg-fire{background-color:#f6905b}.bg-fire-dark{background-color:#ec6b10}.bg-sun{background-color:#ffea96}.bg-sun-dark{background-color:#ffd534}.bg-black{background-color:#000}.bg-white{background-color:#fff}.palette{display:inline-block;width:6rem;height:6rem;border-radius:.25rem}.btn{padding:10px 50px;font-size:18px;color:#fff;cursor:pointer;background-color:#005496;border:0;border-radius:4px}.btn.secondary{background-color:#505050}.btn.disabled{cursor:default;background-color:#cecece}.btn:active{color:#005e88}body,button,input,select,textarea{font-family:"Open Sans","Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:14px}h1{margin:.67em 0;font-size:2.571rem;color:#006ba1}h2{font-size:1.714rem}.text-gray{color:#505050}.text-black{color:#000}.text-white{color:#fff}.text-inherit{color:inherit}.link-blue{color:#289fc5}.link-hover{color:#005496}.link-visited,a:visited{color:#ec6b10}a{color:#289fc5;text-decoration:none}a:active,a:hover{outline-width:0;color:#005496;text-decoration:underline} at SyntaxError: Unexpected token (1:170)
-    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
-    at Parser.pp.unexpected (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:603:10)
-    at Parser.pp.semicolon (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:581:61)
-    at Parser.pp$1.parseExpressionStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:966:10)
-    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:730:24)
-    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
-    at Parser.pp$1.parseTopLevel (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:638:25)
-    at Parser.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:516:17)
-    at Object.parse (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:3098:39)
-    at convert (/root/ExpoSE/lib/Tropigate/bin/main.js:50:18)
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

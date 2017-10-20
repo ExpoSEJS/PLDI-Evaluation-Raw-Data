@@ -1,35 +1,0 @@
-/root/Targets/ms-report-table
-└─┬ ms-report-table@1.1.32 
-  ├─┬ axios@0.12.0 
-  │ └─┬ follow-redirects@0.0.7 
-  │   ├─┬ debug@2.6.9 
-  │   │ └── ms@2.0.0 
-  │   └── stream-consume@0.1.0 
-  ├─┬ babel-polyfill@6.26.0 
-  │ ├─┬ babel-runtime@6.26.0 
-  │ │ └── regenerator-runtime@0.11.0 
-  │ ├── core-js@2.5.1 
-  │ └── regenerator-runtime@0.10.5 
-  ├── jquery@2.2.4 
-  ├── reqwest@2.0.5 
-  └── whatwg-fetch@0.11.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/ms-report-table/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 37% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","create","setPrototypeOf","apply"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0731 took 24.546s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: window is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/ms-report-table/node_modules/ms-report-table/build/main.js. Coverage (Term): 27% Coverage (LOC): 37%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

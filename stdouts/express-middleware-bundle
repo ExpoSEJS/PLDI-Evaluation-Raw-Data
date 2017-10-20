@@ -1,976 +1,0 @@
-/root/Targets/express-middleware-bundle
-└─┬ express-middleware-bundle@0.8.2 
-  ├─┬ body-parser@1.13.3 
-  │ ├── bytes@2.1.0 
-  │ ├── content-type@1.0.4 
-  │ ├─┬ debug@2.2.0 
-  │ │ └── ms@0.7.1 
-  │ ├── depd@1.0.1 
-  │ ├─┬ http-errors@1.3.1 
-  │ │ ├── inherits@2.0.3 
-  │ │ └── statuses@1.3.1 
-  │ ├── iconv-lite@0.4.11 
-  │ ├─┬ on-finished@2.3.0 
-  │ │ └── ee-first@1.1.1 
-  │ ├── qs@4.0.0 
-  │ ├─┬ raw-body@2.1.7 
-  │ │ ├── bytes@2.4.0 
-  │ │ ├── iconv-lite@0.4.13 
-  │ │ └── unpipe@1.0.0 
-  │ └─┬ type-is@1.6.15 
-  │   ├── media-typer@0.3.0 
-  │   └── mime-types@2.1.17 
-  ├─┬ compression@1.5.2 
-  │ ├─┬ accepts@1.2.13 
-  │ │ └── negotiator@0.5.3 
-  │ ├─┬ compressible@2.0.11 
-  │ │ └── mime-db@1.30.0 
-  │ ├── debug@2.2.0 
-  │ ├── on-headers@1.0.1 
-  │ └── vary@1.0.1 
-  ├─┬ connect-redis@2.4.1 
-  │ └─┬ debug@1.0.5 
-  │   └── ms@2.0.0 
-  ├─┬ cookie-parser@1.4.3 
-  │ ├── cookie@0.3.1 
-  │ └── cookie-signature@1.0.6 
-  ├─┬ debug@2.6.9 
-  │ └── ms@2.0.0 
-  ├─┬ express@5.0.0-alpha.2 
-  │ ├── array-flatten@1.1.0 
-  │ ├── content-disposition@0.5.0 
-  │ ├── cookie@0.1.3 
-  │ ├── debug@2.2.0 
-  │ ├── escape-html@1.0.2 
-  │ ├── etag@1.7.0 
-  │ ├─┬ finalhandler@0.4.0 
-  │ │ └── debug@2.2.0 
-  │ ├── fresh@0.3.0 
-  │ ├── merge-descriptors@1.0.0 
-  │ ├── methods@1.1.2 
-  │ ├── parseurl@1.3.2 
-  │ ├── path-is-absolute@1.0.0 
-  │ ├── path-to-regexp@0.1.6 
-  │ ├─┬ proxy-addr@1.0.10 
-  │ │ ├── forwarded@0.1.2 
-  │ │ └── ipaddr.js@1.0.5 
-  │ ├── range-parser@1.0.3 
-  │ ├─┬ router@1.1.5 
-  │ │ ├── array-flatten@2.1.1 
-  │ │ ├── debug@2.2.0 
-  │ │ ├── path-to-regexp@0.1.7 
-  │ │ └── setprototypeof@1.0.2 
-  │ ├─┬ send@0.13.0 
-  │ │ ├── debug@2.2.0 
-  │ │ ├── destroy@1.0.3 
-  │ │ ├── mime@1.3.4 
-  │ │ └── statuses@1.2.1 
-  │ ├─┬ serve-static@1.10.3 
-  │ │ ├── escape-html@1.0.3 
-  │ │ └─┬ send@0.13.2 
-  │ │   ├── debug@2.2.0 
-  │ │   ├── depd@1.1.1 
-  │ │   ├── destroy@1.0.4 
-  │ │   └── statuses@1.2.1 
-  │ └── utils-merge@1.0.0 
-  ├─┬ express-session@1.15.5 
-  │ ├── crc@3.4.4 
-  │ ├─┬ debug@2.6.8 
-  │ │ └── ms@2.0.0 
-  │ ├── depd@1.1.1 
-  │ └─┬ uid-safe@2.1.5 
-  │   └── random-bytes@1.0.0 
-  ├─┬ jade@1.11.0 
-  │ ├── character-parser@1.2.1 
-  │ ├─┬ clean-css@3.4.28 
-  │ │ ├─┬ commander@2.8.1 
-  │ │ │ └── graceful-readlink@1.0.1 
-  │ │ └─┬ source-map@0.4.4 
-  │ │   └── amdefine@1.0.1 
-  │ ├── commander@2.6.0 
-  │ ├─┬ constantinople@3.0.2 
-  │ │ └── acorn@2.7.0 
-  │ ├─┬ jstransformer@0.0.2 
-  │ │ ├── is-promise@2.1.0 
-  │ │ └─┬ promise@6.1.0 
-  │ │   └── asap@1.0.0 
-  │ ├─┬ mkdirp@0.5.1 
-  │ │ └── minimist@0.0.8 
-  │ ├─┬ transformers@2.1.0 
-  │ │ ├─┬ css@1.0.8 
-  │ │ │ ├── css-parse@1.0.4 
-  │ │ │ └── css-stringify@1.0.5 
-  │ │ ├─┬ promise@2.0.0 
-  │ │ │ └── is-promise@1.0.1 
-  │ │ └─┬ uglify-js@2.2.5 
-  │ │   ├─┬ optimist@0.3.7 
-  │ │   │ └── wordwrap@0.0.3 
-  │ │   └── source-map@0.1.43 
-  │ ├─┬ uglify-js@2.8.29 
-  │ │ ├── source-map@0.5.7 
-  │ │ ├── uglify-to-browserify@1.0.2 
-  │ │ └─┬ yargs@3.10.0 
-  │ │   ├── camelcase@1.2.1 
-  │ │   ├─┬ cliui@2.1.0 
-  │ │   │ ├─┬ center-align@0.1.3 
-  │ │   │ │ ├─┬ align-text@0.1.4 
-  │ │   │ │ │ ├─┬ kind-of@3.2.2 
-  │ │   │ │ │ │ └── is-buffer@1.1.5 
-  │ │   │ │ │ ├── longest@1.0.1 
-  │ │   │ │ │ └── repeat-string@1.6.1 
-  │ │   │ │ └── lazy-cache@1.0.4 
-  │ │   │ ├── right-align@0.1.3 
-  │ │   │ └── wordwrap@0.0.2 
-  │ │   ├── decamelize@1.2.0 
-  │ │   └── window-size@0.1.0 
-  │ ├── void-elements@2.0.1 
-  │ └─┬ with@4.0.3 
-  │   ├── acorn@1.2.2 
-  │   └── acorn-globals@1.0.9 
-  ├─┬ morgan@1.8.2 
-  │ ├── basic-auth@1.1.0 
-  │ ├─┬ debug@2.6.8 
-  │ │ └── ms@2.0.0 
-  │ └── depd@1.1.1 
-  ├─┬ mysql@2.9.0 
-  │ ├── bignumber.js@2.0.7 
-  │ └─┬ readable-stream@1.1.14 
-  │   ├── core-util-is@1.0.2 
-  │   ├── isarray@0.0.1 
-  │   └── string_decoder@0.10.31 
-  ├─┬ passport@0.2.2 
-  │ ├── passport-strategy@1.0.0 
-  │ └── pause@0.0.1 
-  ├── passport-local@1.0.0 
-  ├─┬ passport-localapikey@0.0.3 
-  │ ├── passport@0.1.18 
-  │ └── pkginfo@0.2.3 
-  ├─┬ passport-remember-me@0.0.1 
-  │ └── passport@0.1.18 
-  ├─┬ q@2.0.3 
-  │ ├── asap@2.0.6 
-  │ ├── pop-iterate@1.0.1 
-  │ └── weak-map@1.0.5 
-  ├─┬ rabbus@0.4.3 
-  │ ├── underscore@1.8.3 
-  │ └── when@3.7.8 
-  ├── redis@0.12.1 
-  └─┬ wascally@0.2.10 
-    ├─┬ amqplib@0.4.2 
-    │ ├── bitsyntax@0.0.4 
-    │ ├── buffer-more-ints@0.0.2 
-    │ └── when@3.6.4 
-    ├── lodash@3.10.1 
-    ├── machina@1.1.2 
-    ├─┬ monologue.js@0.3.5 
-    │ └─┬ riveter@0.2.0 
-    │   └── lodash@2.4.2 
-    ├── node-uuid@1.4.8 
-    ├─┬ postal@1.0.11 
-    │ └── lodash@4.17.4 
-    └─┬ whistlepunk@0.3.3 
-      ├── colors@1.0.3 
-      ├── debug@2.2.0 
-      └── moment@2.10.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/express-middleware-bundle/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /3 queued / 1 running / 1 errors / 40% coverage ] ****** [1 done /2 queued / 2 running / 1 errors / 40% coverage ] ****** [1 done /1 queued / 3 running / 1 errors / 40% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 40% coverage ] ****** [1 done /0 queued / 4 running / 1 errors / 40% coverage ] ****** [2 done /2 queued / 4 running / 2 errors / 40% coverage ] ****** [2 done /1 queued / 5 running / 2 errors / 40% coverage ] ****** [2 done /0 queued / 6 running / 2 errors / 40% coverage ] ****** [2 done /0 queued / 6 running / 2 errors / 40% coverage ] ****** [3 done /2 queued / 6 running / 3 errors / 40% coverage ] ****** [3 done /1 queued / 7 running / 3 errors / 40% coverage ] ****** [3 done /0 queued / 8 running / 3 errors / 40% coverage ] ****** [3 done /0 queued / 8 running / 3 errors / 40% coverage ] ****** [4 done /0 queued / 8 running / 4 errors / 40% coverage ] ****** [4 done /0 queued / 8 running / 4 errors / 40% coverage ] ****** [5 done /1 queued / 8 running / 5 errors / 40% coverage ] ****** [5 done /0 queued / 9 running / 5 errors / 40% coverage ] ****** [5 done /0 queued / 9 running / 5 errors / 40% coverage ] ****** [6 done /2 queued / 9 running / 6 errors / 40% coverage ] ****** [6 done /1 queued / 10 running / 6 errors / 40% coverage ] ****** [6 done /0 queued / 11 running / 6 errors / 40% coverage ] ****** [6 done /0 queued / 11 running / 6 errors / 40% coverage ] ****** [7 done /1 queued / 11 running / 7 errors / 40% coverage ] ****** [7 done /0 queued / 12 running / 7 errors / 40% coverage ] ****** [7 done /0 queued / 12 running / 7 errors / 40% coverage ] ****** [8 done /2 queued / 12 running / 8 errors / 40% coverage ] ****** [8 done /1 queued / 13 running / 8 errors / 40% coverage ] ****** [8 done /0 queued / 14 running / 8 errors / 40% coverage ] ****** [8 done /0 queued / 14 running / 8 errors / 40% coverage ] ****** [9 done /2 queued / 14 running / 9 errors / 40% coverage ] ****** [9 done /1 queued / 15 running / 9 errors / 40% coverage ] ****** [9 done /0 queued / 16 running / 9 errors / 40% coverage ] ****** [9 done /0 queued / 16 running / 9 errors / 40% coverage ] ****** [10 done /2 queued / 16 running / 10 errors / 40% coverage ] ****** [10 done /2 queued / 16 running / 10 errors / 40% coverage ] ****** [11 done /3 queued / 16 running / 11 errors / 40% coverage ] ****** [11 done /3 queued / 16 running / 11 errors / 40% coverage ] ****** [12 done /4 queued / 16 running / 12 errors / 40% coverage ] ****** [12 done /4 queued / 16 running / 12 errors / 40% coverage ] ****** [13 done /6 queued / 16 running / 13 errors / 40% coverage ] ****** [13 done /6 queued / 16 running / 13 errors / 40% coverage ] ****** [14 done /8 queued / 16 running / 14 errors / 40% coverage ] ****** [14 done /8 queued / 16 running / 14 errors / 40% coverage ] ****** [15 done /8 queued / 16 running / 15 errors / 40% coverage ] ****** [15 done /8 queued / 16 running / 15 errors / 40% coverage ] ****** [16 done /11 queued / 16 running / 16 errors / 41% coverage ] ****** [16 done /11 queued / 16 running / 16 errors / 41% coverage ] ****** [17 done /12 queued / 16 running / 17 errors / 41% coverage ] ****** [17 done /12 queued / 16 running / 17 errors / 41% coverage ] ****** [18 done /14 queued / 16 running / 18 errors / 41% coverage ] ****** [18 done /14 queued / 16 running / 18 errors / 41% coverage ] ****** [19 done /13 queued / 16 running / 19 errors / 41% coverage ] ****** [19 done /13 queued / 16 running / 19 errors / 41% coverage ] ****** [20 done /12 queued / 16 running / 20 errors / 41% coverage ] ****** [20 done /12 queued / 16 running / 20 errors / 41% coverage ] ****** [21 done /15 queued / 16 running / 21 errors / 41% coverage ] ****** [21 done /15 queued / 16 running / 21 errors / 41% coverage ] ****** [22 done /14 queued / 16 running / 22 errors / 41% coverage ] ****** [22 done /14 queued / 16 running / 22 errors / 41% coverage ] ****** [23 done /15 queued / 16 running / 23 errors / 41% coverage ] ****** [23 done /15 queued / 16 running / 23 errors / 41% coverage ] ****** [24 done /14 queued / 16 running / 24 errors / 41% coverage ] ****** [24 done /14 queued / 16 running / 24 errors / 41% coverage ] ****** [25 done /13 queued / 16 running / 25 errors / 41% coverage ] ****** [25 done /13 queued / 16 running / 25 errors / 41% coverage ] ****** [26 done /14 queued / 16 running / 26 errors / 41% coverage ] ****** [26 done /14 queued / 16 running / 26 errors / 41% coverage ] ****** [27 done /15 queued / 16 running / 27 errors / 41% coverage ] ****** [27 done /15 queued / 16 running / 27 errors / 41% coverage ] ****** [28 done /16 queued / 16 running / 28 errors / 41% coverage ] ****** [28 done /16 queued / 16 running / 28 errors / 41% coverage ] ****** [29 done /16 queued / 16 running / 29 errors / 41% coverage ] ****** [29 done /16 queued / 16 running / 29 errors / 41% coverage ] ****** [30 done /17 queued / 16 running / 30 errors / 41% coverage ] ****** [30 done /17 queued / 16 running / 30 errors / 41% coverage ] ****** [31 done /16 queued / 16 running / 31 errors / 41% coverage ] ****** [31 done /16 queued / 16 running / 31 errors / 41% coverage ] ****** [32 done /19 queued / 16 running / 32 errors / 41% coverage ] ****** [32 done /19 queued / 16 running / 32 errors / 41% coverage ] ****** [33 done /20 queued / 16 running / 33 errors / 41% coverage ] ****** [33 done /20 queued / 16 running / 33 errors / 41% coverage ] ****** [34 done /22 queued / 16 running / 34 errors / 41% coverage ] ****** [34 done /22 queued / 16 running / 34 errors / 41% coverage ] ****** [35 done /21 queued / 16 running / 35 errors / 41% coverage ] ****** [35 done /21 queued / 16 running / 35 errors / 41% coverage ] ****** [36 done /21 queued / 16 running / 36 errors / 41% coverage ] ****** [36 done /21 queued / 16 running / 36 errors / 41% coverage ] ****** [37 done /20 queued / 16 running / 37 errors / 41% coverage ] ****** [37 done /20 queued / 16 running / 37 errors / 41% coverage ] ****** [38 done /21 queued / 16 running / 38 errors / 41% coverage ] ****** [38 done /21 queued / 16 running / 38 errors / 41% coverage ] ****** [39 done /22 queued / 16 running / 39 errors / 41% coverage ] ****** [39 done /22 queued / 16 running / 39 errors / 41% coverage ] ****** [40 done /22 queued / 16 running / 40 errors / 41% coverage ] ****** [40 done /22 queued / 16 running / 40 errors / 41% coverage ] ****** [41 done /23 queued / 16 running / 41 errors / 41% coverage ] ****** [41 done /23 queued / 16 running / 41 errors / 41% coverage ] ****** [42 done /25 queued / 16 running / 42 errors / 41% coverage ] ****** [42 done /25 queued / 16 running / 42 errors / 41% coverage ] ****** [43 done /26 queued / 16 running / 43 errors / 41% coverage ] ****** [43 done /26 queued / 16 running / 43 errors / 41% coverage ] ****** [44 done /28 queued / 16 running / 44 errors / 41% coverage ] ****** [44 done /28 queued / 16 running / 44 errors / 41% coverage ] ****** [45 done /30 queued / 16 running / 45 errors / 41% coverage ] ****** [45 done /30 queued / 16 running / 45 errors / 41% coverage ] ****** [46 done /31 queued / 16 running / 46 errors / 41% coverage ] ****** [46 done /31 queued / 16 running / 46 errors / 41% coverage ] ****** [47 done /32 queued / 16 running / 47 errors / 41% coverage ] ****** [47 done /32 queued / 16 running / 47 errors / 41% coverage ] ****** [48 done /34 queued / 16 running / 48 errors / 41% coverage ] ****** [48 done /34 queued / 16 running / 48 errors / 41% coverage ] ****** [49 done /35 queued / 16 running / 49 errors / 41% coverage ] ****** [49 done /35 queued / 16 running / 49 errors / 41% coverage ] ****** [50 done /34 queued / 16 running / 50 errors / 41% coverage ] ****** [50 done /34 queued / 16 running / 50 errors / 41% coverage ] ****** [51 done /37 queued / 16 running / 51 errors / 41% coverage ] ****** [51 done /37 queued / 16 running / 51 errors / 41% coverage ] ****** [52 done /36 queued / 16 running / 52 errors / 41% coverage ] ****** [52 done /36 queued / 16 running / 52 errors / 41% coverage ] ****** [53 done /35 queued / 16 running / 53 errors / 41% coverage ] ****** [53 done /35 queued / 16 running / 53 errors / 41% coverage ] ****** [54 done /37 queued / 16 running / 54 errors / 41% coverage ] ****** [54 done /37 queued / 16 running / 54 errors / 41% coverage ] ****** [55 done /37 queued / 16 running / 55 errors / 41% coverage ] ****** [55 done /37 queued / 16 running / 55 errors / 41% coverage ] ****** [56 done /38 queued / 16 running / 56 errors / 41% coverage ] ****** [56 done /38 queued / 16 running / 56 errors / 41% coverage ] ****** [57 done /37 queued / 16 running / 57 errors / 41% coverage ] ****** [57 done /37 queued / 16 running / 57 errors / 41% coverage ] ****** [58 done /38 queued / 16 running / 58 errors / 41% coverage ] ****** [58 done /38 queued / 16 running / 58 errors / 41% coverage ] ****** [59 done /39 queued / 16 running / 59 errors / 41% coverage ] ****** [59 done /39 queued / 16 running / 59 errors / 41% coverage ] ****** [60 done /38 queued / 16 running / 60 errors / 41% coverage ] ****** [60 done /38 queued / 16 running / 60 errors / 41% coverage ] ****** [61 done /38 queued / 16 running / 61 errors / 41% coverage ] ****** [61 done /38 queued / 16 running / 61 errors / 41% coverage ] ****** [62 done /39 queued / 16 running / 62 errors / 41% coverage ] ****** [62 done /39 queued / 16 running / 62 errors / 41% coverage ] ****** [63 done /39 queued / 16 running / 63 errors / 41% coverage ] ****** [63 done /39 queued / 16 running / 63 errors / 41% coverage ] ****** [64 done /39 queued / 16 running / 64 errors / 41% coverage ] ****** [64 done /39 queued / 16 running / 64 errors / 41% coverage ] ****** [65 done /41 queued / 16 running / 65 errors / 41% coverage ] ****** [65 done /41 queued / 16 running / 65 errors / 41% coverage ] ****** [66 done /41 queued / 16 running / 66 errors / 41% coverage ] ****** [66 done /41 queued / 16 running / 66 errors / 41% coverage ] ****** [67 done /43 queued / 16 running / 67 errors / 41% coverage ] ****** [67 done /43 queued / 16 running / 67 errors / 41% coverage ] ****** [68 done /44 queued / 16 running / 68 errors / 41% coverage ] ****** [68 done /44 queued / 16 running / 68 errors / 41% coverage ] ****** [69 done /45 queued / 16 running / 69 errors / 41% coverage ] ****** [69 done /45 queued / 16 running / 69 errors / 41% coverage ] ****** [70 done /47 queued / 16 running / 70 errors / 41% coverage ] ****** [70 done /47 queued / 16 running / 70 errors / 41% coverage ] ****** [71 done /47 queued / 16 running / 71 errors / 41% coverage ] ****** [71 done /47 queued / 16 running / 71 errors / 41% coverage ] ****** [72 done /48 queued / 16 running / 72 errors / 41% coverage ] ****** [72 done /48 queued / 16 running / 72 errors / 41% coverage ] ****** [73 done /48 queued / 16 running / 73 errors / 41% coverage ] ****** [73 done /48 queued / 16 running / 73 errors / 41% coverage ] ****** [74 done /49 queued / 16 running / 74 errors / 41% coverage ] ****** [74 done /49 queued / 16 running / 74 errors / 41% coverage ] ****** [75 done /48 queued / 16 running / 75 errors / 41% coverage ] ****** [75 done /48 queued / 16 running / 75 errors / 41% coverage ] ****** [76 done /51 queued / 16 running / 76 errors / 41% coverage ] ****** [76 done /51 queued / 16 running / 76 errors / 41% coverage ] ****** [77 done /53 queued / 16 running / 77 errors / 41% coverage ] ****** [77 done /53 queued / 16 running / 77 errors / 41% coverage ] ****** [78 done /53 queued / 16 running / 78 errors / 41% coverage ] ****** [78 done /53 queued / 16 running / 78 errors / 41% coverage ] ****** [79 done /53 queued / 16 running / 79 errors / 41% coverage ] ****** [79 done /53 queued / 16 running / 79 errors / 41% coverage ] ****** [80 done /56 queued / 16 running / 80 errors / 41% coverage ] ****** [80 done /56 queued / 16 running / 80 errors / 41% coverage ] ****** [81 done /55 queued / 16 running / 81 errors / 41% coverage ] ****** [81 done /55 queued / 16 running / 81 errors / 41% coverage ] ****** [82 done /57 queued / 16 running / 82 errors / 41% coverage ] ****** [82 done /57 queued / 16 running / 82 errors / 41% coverage ] ****** [83 done /58 queued / 16 running / 83 errors / 41% coverage ] ****** [83 done /58 queued / 16 running / 83 errors / 41% coverage ] ****** [84 done /57 queued / 16 running / 84 errors / 41% coverage ] ****** [84 done /57 queued / 16 running / 84 errors / 41% coverage ] ****** [85 done /58 queued / 16 running / 85 errors / 41% coverage ] ****** [85 done /58 queued / 16 running / 85 errors / 41% coverage ] ****** [86 done /60 queued / 16 running / 86 errors / 41% coverage ] ****** [86 done /60 queued / 16 running / 86 errors / 41% coverage ] ****** [87 done /64 queued / 16 running / 87 errors / 41% coverage ] ****** [87 done /64 queued / 16 running / 87 errors / 41% coverage ] ****** [88 done /65 queued / 16 running / 88 errors / 41% coverage ] ****** [88 done /65 queued / 16 running / 88 errors / 41% coverage ] ****** [89 done /68 queued / 16 running / 89 errors / 41% coverage ] ****** [89 done /68 queued / 16 running / 89 errors / 41% coverage ] ****** [90 done /67 queued / 16 running / 90 errors / 41% coverage ] ****** [90 done /67 queued / 16 running / 90 errors / 41% coverage ] ****** [91 done /68 queued / 16 running / 91 errors / 41% coverage ] ****** [91 done /68 queued / 16 running / 91 errors / 41% coverage ] ****** [92 done /70 queued / 16 running / 92 errors / 41% coverage ] ****** [92 done /70 queued / 16 running / 92 errors / 41% coverage ] ****** [93 done /74 queued / 16 running / 93 errors / 41% coverage ] ****** [93 done /74 queued / 16 running / 93 errors / 41% coverage ] ****** [94 done /73 queued / 16 running / 94 errors / 41% coverage ] ****** [94 done /73 queued / 16 running / 94 errors / 41% coverage ] ****** [95 done /72 queued / 16 running / 95 errors / 41% coverage ] ****** [95 done /72 queued / 16 running / 95 errors / 41% coverage ] ****** [96 done /71 queued / 16 running / 96 errors / 41% coverage ] ****** [96 done /71 queued / 16 running / 96 errors / 41% coverage ] ****** [97 done /72 queued / 16 running / 97 errors / 41% coverage ] ****** [97 done /72 queued / 16 running / 97 errors / 41% coverage ] ****** [98 done /72 queued / 16 running / 98 errors / 41% coverage ] ****** [98 done /72 queued / 16 running / 98 errors / 41% coverage ] ****** [99 done /71 queued / 16 running / 99 errors / 41% coverage ] ****** [99 done /71 queued / 16 running / 99 errors / 41% coverage ] ****** [100 done /70 queued / 16 running / 100 errors / 41% coverage ] ****** [100 done /70 queued / 16 running / 100 errors / 41% coverage ] ****** [101 done /69 queued / 16 running / 101 errors / 41% coverage ] ****** [101 done /69 queued / 16 running / 101 errors / 41% coverage ] ****** [102 done /69 queued / 16 running / 102 errors / 41% coverage ] ****** [102 done /69 queued / 16 running / 102 errors / 41% coverage ] ****** [103 done /69 queued / 16 running / 103 errors / 41% coverage ] ****** [103 done /69 queued / 16 running / 103 errors / 41% coverage ] ****** [104 done /69 queued / 16 running / 104 errors / 41% coverage ] ****** [104 done /69 queued / 16 running / 104 errors / 41% coverage ] ****** [105 done /69 queued / 16 running / 105 errors / 41% coverage ] ****** [105 done /69 queued / 16 running / 105 errors / 41% coverage ] ****** [106 done /68 queued / 16 running / 106 errors / 41% coverage ] ****** [106 done /68 queued / 16 running / 106 errors / 41% coverage ] ****** [107 done /68 queued / 16 running / 107 errors / 41% coverage ] ****** [107 done /68 queued / 16 running / 107 errors / 41% coverage ] ****** [108 done /67 queued / 16 running / 108 errors / 41% coverage ] ****** [108 done /67 queued / 16 running / 108 errors / 41% coverage ] ****** [109 done /66 queued / 16 running / 109 errors / 41% coverage ] ****** [109 done /66 queued / 16 running / 109 errors / 41% coverage ] ****** [110 done /66 queued / 16 running / 110 errors / 41% coverage ] ****** [110 done /66 queued / 16 running / 110 errors / 41% coverage ] ****** [111 done /65 queued / 16 running / 111 errors / 41% coverage ] ****** [111 done /65 queued / 16 running / 111 errors / 41% coverage ] ****** [112 done /65 queued / 16 running / 111 errors / 41% coverage ] ****** [112 done /65 queued / 16 running / 111 errors / 41% coverage ] ****** [113 done /64 queued / 16 running / 112 errors / 41% coverage ] ****** [113 done /64 queued / 16 running / 112 errors / 41% coverage ] ****** [114 done /68 queued / 16 running / 113 errors / 41% coverage ] ****** [114 done /68 queued / 16 running / 113 errors / 41% coverage ] ****** [115 done /67 queued / 16 running / 114 errors / 41% coverage ] ****** [115 done /67 queued / 16 running / 114 errors / 41% coverage ] ****** [116 done /66 queued / 16 running / 115 errors / 41% coverage ] ****** [116 done /66 queued / 16 running / 115 errors / 41% coverage ] ****** [117 done /67 queued / 16 running / 116 errors / 41% coverage ] ****** [117 done /67 queued / 16 running / 116 errors / 41% coverage ] ****** [118 done /72 queued / 16 running / 117 errors / 41% coverage ] ****** [118 done /72 queued / 16 running / 117 errors / 41% coverage ] ****** [119 done /71 queued / 16 running / 118 errors / 41% coverage ] ****** [119 done /71 queued / 16 running / 118 errors / 41% coverage ] ****** [120 done /70 queued / 16 running / 119 errors / 41% coverage ] ****** [120 done /70 queued / 16 running / 119 errors / 41% coverage ] ****** [121 done /69 queued / 16 running / 120 errors / 41% coverage ] ****** [121 done /69 queued / 16 running / 120 errors / 41% coverage ] ****** [122 done /73 queued / 16 running / 121 errors / 41% coverage ] ****** [122 done /73 queued / 16 running / 121 errors / 41% coverage ] ****** [123 done /75 queued / 16 running / 122 errors / 41% coverage ] ****** [123 done /75 queued / 16 running / 122 errors / 41% coverage ] ****** [124 done /79 queued / 16 running / 123 errors / 41% coverage ] ****** [124 done /79 queued / 16 running / 123 errors / 41% coverage ] ****** [125 done /81 queued / 16 running / 124 errors / 41% coverage ] ****** [125 done /81 queued / 16 running / 124 errors / 41% coverage ] ****** [126 done /80 queued / 16 running / 125 errors / 41% coverage ] ****** [126 done /80 queued / 16 running / 125 errors / 41% coverage ] ****** [127 done /79 queued / 16 running / 126 errors / 41% coverage ] ****** [127 done /79 queued / 16 running / 126 errors / 41% coverage ] ****** [128 done /80 queued / 16 running / 127 errors / 41% coverage ] ****** [128 done /80 queued / 16 running / 127 errors / 41% coverage ] ****** [129 done /84 queued / 16 running / 128 errors / 41% coverage ] ****** [129 done /84 queued / 16 running / 128 errors / 41% coverage ] ****** [130 done /84 queued / 16 running / 129 errors / 41% coverage ] ****** [130 done /84 queued / 16 running / 129 errors / 41% coverage ] ****** [131 done /84 queued / 16 running / 130 errors / 41% coverage ] ****** [131 done /84 queued / 16 running / 130 errors / 41% coverage ] ****** [132 done /84 queued / 16 running / 131 errors / 41% coverage ] ****** [132 done /84 queued / 16 running / 131 errors / 41% coverage ] ****** [133 done /84 queued / 16 running / 132 errors / 41% coverage ] ****** [133 done /84 queued / 16 running / 132 errors / 41% coverage ] ****** [134 done /84 queued / 16 running / 133 errors / 41% coverage ] ****** [134 done /84 queued / 16 running / 133 errors / 41% coverage ] ****** [135 done /84 queued / 16 running / 134 errors / 41% coverage ] ****** [135 done /84 queued / 16 running / 134 errors / 41% coverage ] ****** [136 done /83 queued / 16 running / 135 errors / 41% coverage ] ****** [136 done /83 queued / 16 running / 135 errors / 41% coverage ] ****** [137 done /82 queued / 16 running / 136 errors / 41% coverage ] ****** [137 done /82 queued / 16 running / 136 errors / 41% coverage ] ****** [138 done /83 queued / 16 running / 137 errors / 41% coverage ] ****** [138 done /83 queued / 16 running / 137 errors / 41% coverage ] ****** [139 done /83 queued / 16 running / 138 errors / 41% coverage ] ****** [139 done /83 queued / 16 running / 138 errors / 41% coverage ] ****** [140 done /84 queued / 16 running / 138 errors / 41% coverage ] ****** [140 done /84 queued / 16 running / 138 errors / 41% coverage ] ****** [141 done /84 queued / 16 running / 139 errors / 41% coverage ] ****** [141 done /84 queued / 16 running / 139 errors / 41% coverage ] ****** [142 done /84 queued / 16 running / 140 errors / 41% coverage ] ****** [142 done /84 queued / 16 running / 140 errors / 41% coverage ] ****** [143 done /83 queued / 16 running / 141 errors / 41% coverage ] ****** [143 done /83 queued / 16 running / 141 errors / 41% coverage ] ****** [144 done /82 queued / 16 running / 142 errors / 41% coverage ] ****** [144 done /82 queued / 16 running / 142 errors / 41% coverage ] ****** [145 done /81 queued / 16 running / 143 errors / 41% coverage ] ****** [145 done /81 queued / 16 running / 143 errors / 41% coverage ] ****** [146 done /82 queued / 16 running / 144 errors / 41% coverage ] ****** [146 done /82 queued / 16 running / 144 errors / 41% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","reduce","parseInt","charCodeAt","abs","Number","toUpperCase","join","captureStackTrace","cwd","max","getFileName","getLineNumber","getColumnNumber","isEval","getFunctionName","create","call","RegExp","Array","toString","Int32Array","isArray","parse","pow","sort","getOwnPropertyNames","getOwnPropertyDescriptor","bind","apply","bound ","Boolean","bound bound set","bound bound use","TypeError","setPrototypeOf","bound bound ","bound morgan","Date","toUTCString","stringify","Function","bound debug"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 0.0512 took 100.9814s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2} start 101.5392 took 48.0299s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":2}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":1} start 101.7198 took 48.9492s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":1}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":1}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4} start 101.8996 took 50.8165s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3} start 102.0253 took 82.1748s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0} start 149.978 took 58.8097s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0} start 152.3791 took 57.2816s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 150.1216 took 83.4839s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0} start 152.1304 took 82.2407s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 150.2634 took 84.109s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":2} start 151.7361 took 82.6363s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":2}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":2}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 153.603 took 80.7695s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0} start 184.8056 took 62.2271s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"} start 209.1619 took 58.3625s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 210.0947 took 58.4269s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 209.3464 took 60.5248s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0} start 184.6248 took 97.3433s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"} start 235.6205 took 54.7357s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7} start 237.7729 took 54.9341s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 247.4111 took 62.2774s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"} start 209.4828 took 101.2748s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5} start 209.9135 took 102.4803s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_string":"PureString"} start 235.3963 took 99.3603s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'PureString' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6} start 234.1856 took 101.5144s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8} start 233.9334 took 101.8078s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":3,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 234.0711 took 102.9578s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"} start 236.4034 took 101.306s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"_bound":3} start 236.9986 took 101.3351s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"_bound":3}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4} start 235.218 took 104.1081s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4}
-* Error: TypeError: Cannot set property 'null' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"} start 312.7399 took 53.4359s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":3,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10} start 311.1878 took 55.6103s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0} start 268.0065 took 102.4299s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 269.091 took 104.8156s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0} start 270.4182 took 107.5225s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6} start 336.1664 took 55.3597s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":1,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0} start 336.8447 took 58.9616s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7} start 339.5276 took 59.1404s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"} start 282.8492 took 116.5521s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 290.6712 took 109.6074s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5} start 293.1463 took 109.9383s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":1,"ExpansionArg_int":0,"ExpansionArg_type_3":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"} start 310.0125 took 103.3105s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_int":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0} start 366.5829 took 59.2141s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_bool":false} start 370.8486 took 60.9633s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0} start 338.0191 took 102.3097s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_array_length":0} start 335.2314 took 108.5969s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property '[object Array]' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_string":"","ExpansionArg_type_2":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 337.5231 took 109.0458s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"_bound":4} start 338.9912 took 110.7173s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"_bound":4}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":4,"ExpansionArg_type":0,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0} start 396.1705 took 55.0099s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0} start 400.7985 took 51.3179s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8} start 399.9566 took 52.5996s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_element_0_type":0} start 399.0686 took 54.3098s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9} start 367.1831 took 102.2935s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 374.2485 took 104.8563s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_element_0_type":0} start 426.2133 took 58.5391s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_bool":false} start 378.674 took 109.5092s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0} start 392.1774 took 107.7055s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 403.4809 took 104.4866s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":5} start 451.3545 took 59.1181s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":5}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":5,"ExpansionArg_type":0,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 453.9108 took 62.7578s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9} start 413.8652 took 107.2143s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6} start 469.9303 took 53.4955s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}
-* Error: TypeError: Cannot set property 'req' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":1,"ExpansionArg_string":"","ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13,"ExpansionArg_array_element_1_type":0} start 479.793 took 55.9684s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 485.0886 took 53.9126s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_bool":false} start 432.1403 took 107.6838s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 488.3422 took 56.6615s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_bool":false} start 444.1959 took 101.7665s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":7,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'false' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"ExpansionArg_type_2":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_0_type":0} start 440.7957 took 105.1738s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":1,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0} start 447.1174 took 98.8521s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":10,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 453.0656 took 98.5097s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":8,"ExpansionArg_array_element_0_type":0} start 450.2281 took 102.1442s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":8,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property '[object Array]' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":1,"ExpansionArg_type_2":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_bool":false} start 452.4405 took 103.7993s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 500.4122 took 66.201s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 516.9965 took 58.6773s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":6,"ExpansionArg_type":0,"_bound":6} start 510.9979 took 65.3156s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":6,"ExpansionArg_type":0,"_bound":6}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":6,"ExpansionArg_type":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7} start 536.2643 took 56.8722s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_1_type":0} start 540.3651 took 61.5437s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"_bound":4,"ExpansionArg_string":"PureString"} start 508.2763 took 97.2143s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"_bound":4,"ExpansionArg_string":"PureString"}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":3,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 552.0893 took 57.7113s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0} start 523.801 took 98.5593s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"} start 521.5499 took 101.9533s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10} start 539.4849 took 97.2816s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_1_type":0} start 546.5551 took 103.6098s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0} start 545.5382 took 106.9995s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0} start 547.4419 took 106.0431s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":2,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0} start 548.3203 took 107.8431s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9,"ExpansionArg_array_element_0_type":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":1,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_1_type":0} start 602.2786 took 57.1071s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_3":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":7,"ExpansionArg_array_length":0} start 552.6896 took 107.0411s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":15,"ExpansionArg_array_element_2_type":0} start 556.771 took 104.518s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":15,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Cannot set property '0' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":15}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"} start 566.9924 took 100.671s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6,"ExpansionArg_string":"PureString"}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9} start 576.0307 took 96.1642s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0} start 623.8884 took 48.8313s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":7,"ExpansionArg_type":0,"_bound":7,"ExpansionArg_type_2":0} start 576.7635 took 98.8012s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":7,"ExpansionArg_type":0,"_bound":7,"ExpansionArg_type_2":0}
-* Error: ReferenceError: require is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":7,"ExpansionArg_type":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":7,"ExpansionArg_array_length":0} start 593.5679 took 100.3379s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property '' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":2,"ExpansionArg_string":"","_bound":6,"ExpansionArg_int":0} start 605.9942 took 94.6382s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":2,"ExpansionArg_string":"","_bound":6,"ExpansionArg_int":0}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":2,"ExpansionArg_string":"","_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":1,"ExpansionArg_string":"","_bound":5} start 650.6203 took 55.2645s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":1,"ExpansionArg_string":"","_bound":5}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":1,"ExpansionArg_string":"","_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11} start 653.8108 took 53.2463s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0} start 610.2689 took 97.8687s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7,"ExpansionArg_array_length":0}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0} start 656.932 took 53.6446s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8} start 659.5889 took 55.1311s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11} start 623.1065 took 99.3351s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9} start 637.1269 took 96.7654s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":1,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false} start 653.004 took 87.6768s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 701.1969 took 49.8308s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_int":0} start 660.0534 took 91.7329s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_string_2":"PureString"} start 661.7916 took 90.5325s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 706.5283 took 47.3487s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property '' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0} start 668.2514 took 89.5169s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_string":"","_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":8} start 672.9811 took 85.4203s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":8}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7} start 672.6076 took 87.0688s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":1,"ExpansionArg_string":"","_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false} start 707.7066 took 55.3879s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":3,"_bound":10} start 711.0052 took 52.7154s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":3,"_bound":10}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":2,"ExpansionArg_int_2":3,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":8,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"_bound":8,"ExpandedSwitcher":0} start 676.0437 took 87.677s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":8} start 694.6525 took 85.8479s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":8}
-* Error: TypeError: Cannot set property '' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0} start 734.3419 took 48.8185s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10} start 741.3344 took 48.5686s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10} start 715.0889 took 80.9395s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":3,"ExpansionArg_string":"","_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0} start 709.9855 took 87.4121s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":4,"ExpansionArg_string":"","_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0} start 752.1875 took 48.7171s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":6,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":4,"ExpansionArg_type_3":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_int":0} start 752.6998 took 49.1885s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":9,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property '' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_string_2":"PureString"} start 722.8469 took 79.0415s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Cannot set property '' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string_2":"","_bound":11} start 754.2722 took 49.0027s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string_2":"","_bound":11}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":3,"ExpansionArg_string_2":"","_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":9,"ExpansionArg_array_length":0} start 758.089 took 47.7916s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":9,"ExpansionArg_array_length":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":4,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":10,"ExpansionArg_array_element_1_type":0} start 764.0948 took 43.0577s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":10,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property '[object Array]' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"ExpansionArg_type_2":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"_bound":5,"ExpansionArg_array_length":0} start 760.0091 took 49.1081s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"_bound":5,"ExpansionArg_array_length":0}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":4,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_2_type":0} start 763.4525 took 48.5793s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":14,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"ExpansionArg_type_3":0,"_bound":14}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":12} start 751.2937 took 74.5199s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":12}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false} start 758.7509 took 73.0448s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":8,"ExpansionArg_bool":false}
-* Error: TypeError: app.use() requires middleware functions
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":2,"ExpansionArg_type":5,"ExpansionArg_array_length":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0} start 780.8778 took 51.3922s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":5,"ExpansionArg_int":0}
-* Error: TypeError: Cannot set property 'null' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"_bound":5}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":9,"ExpandedSwitcher":0,"_bound":9,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0} start 764.7885 took 75.0561s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":9,"ExpandedSwitcher":0,"_bound":9,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":9,"ExpandedSwitcher":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string_2":"PureString"} start 796.9403 took 45.088s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false} start 797.9988 took 45.9884s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7} start 803.0016 took 45.6526s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7}
-* Error: TypeError: Cannot set property 'req' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":1,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":7}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_string_2":"PureString"} start 803.7093 took 48.2351s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":3,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_string_2":"PureString"} start 812.3206 took 44.17s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_string_2":"PureString"}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":3,"ExpansionArg_array_length":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false} start 783.5088 took 78.8078s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":5,"ExpansionArg_array_length":0,"_bound":12}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9} start 790.2074 took 74.0132s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":9}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":1,"_bound":10} start 833.0694 took 42.3227s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":1,"_bound":10}
-* Error: TypeError: Cannot set property 'req' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_int":1,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13,"ExpansionArg_array_element_2_type":0} start 832.0841 took 44.3917s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13,"ExpansionArg_array_element_2_type":0}
-* Error: TypeError: Cannot set property 'undefined' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":4,"ExpansionArg_array_length":3,"ExpansionArg_array_element_0_type":0,"ExpansionArg_array_element_1_type":0,"_bound":13}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_bool":false} start 801.4878 took 80.3293s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10,"ExpansionArg_bool":false}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":5,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":10,"ExpandedSwitcher":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"_bound":10} start 840.1945 took 43.9539s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_int":0} start 802.3434 took 82.9351s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8,"ExpansionArg_int":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_string":"","ExpansionArg_type_2":2,"ExpansionArg_array_length":0,"ExpansionArg_type_3":0,"_bound":8}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_int_2":0} start 806.1644 took 81.3523s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11,"ExpansionArg_int_2":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":2,"ExpansionArg_array_length":0,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11} start 849.0393 took 39.272s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11}
-* Error: TypeError: Cannot set property 'res' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_int":0,"ExpansionArg_type_3":5,"ExpansionArg_bool":true,"_bound":11}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10} start 807.6111 took 82.5172s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_int":0,"ExpansionArg_type_2":3,"ExpansionArg_string":"","ExpansionArg_type_3":1,"ExpansionArg_array_length":0,"_bound":10}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"_bound":6} start 809.7461 took 81.0508s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"_bound":6}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":3,"ExpansionArg_type":1,"ExpansionArg_array_length":0,"_bound":6}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0} start 852.3304 took 44.5096s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12,"ExpansionArg_array_element_1_type":0}
-* Error: TypeError: Cannot set property 'res' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpansionArg_type_3":4,"ExpansionArg_array_length":2,"ExpansionArg_array_element_0_type":0,"_bound":12}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 38% Coverage (LOC): 56%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-middleware-bundle/index.js. Coverage (Term): 17% Coverage (LOC): 23%
-*- File /root/Targets/express-middleware-bundle/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
-*- File /root/Targets/express-middleware-bundle/node_modules/debug/src/node.js. Coverage (Term): 34% Coverage (LOC): 43%
-*- File /root/Targets/express-middleware-bundle/node_modules/debug/src/debug.js. Coverage (Term): 47% Coverage (LOC): 51%
-*- File /root/Targets/express-middleware-bundle/node_modules/debug/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/express.js. Coverage (Term): 90% Coverage (LOC): 98%
-*- File /root/Targets/express-middleware-bundle/node_modules/merge-descriptors/index.js. Coverage (Term): 83% Coverage (LOC): 82%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/application.js. Coverage (Term): 49% Coverage (LOC): 60%
-*- File /root/Targets/express-middleware-bundle/node_modules/finalhandler/index.js. Coverage (Term): 28% Coverage (LOC): 28%
-*- File /root/Targets/express-middleware-bundle/node_modules/finalhandler/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/express-middleware-bundle/node_modules/finalhandler/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/ms/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/express-middleware-bundle/node_modules/escape-html/index.js. Coverage (Term): 38% Coverage (LOC): 80%
-*- File /root/Targets/express-middleware-bundle/node_modules/on-finished/index.js. Coverage (Term): 13% Coverage (LOC): 17%
-*- File /root/Targets/express-middleware-bundle/node_modules/ee-first/index.js. Coverage (Term): 9% Coverage (LOC): 13%
-*- File /root/Targets/express-middleware-bundle/node_modules/unpipe/index.js. Coverage (Term): 16% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/methods/index.js. Coverage (Term): 59% Coverage (LOC): 27%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/view.js. Coverage (Term): 20% Coverage (LOC): 26%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/utils.js. Coverage (Term): 37% Coverage (LOC): 51%
-*- File /root/Targets/express-middleware-bundle/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/http-errors/index.js. Coverage (Term): 42% Coverage (LOC): 37%
-*- File /root/Targets/express-middleware-bundle/node_modules/statuses/index.js. Coverage (Term): 56% Coverage (LOC): 67%
-*- File /root/Targets/express-middleware-bundle/node_modules/inherits/inherits.js. Coverage (Term): 74% Coverage (LOC): 88%
-*- File /root/Targets/express-middleware-bundle/node_modules/send/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/express-middleware-bundle/node_modules/send/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/depd/lib/compat/index.js. Coverage (Term): 81% Coverage (LOC): 94%
-*- File /root/Targets/express-middleware-bundle/node_modules/destroy/index.js. Coverage (Term): 30% Coverage (LOC): 31%
-*- File /root/Targets/express-middleware-bundle/node_modules/range-parser/index.js. Coverage (Term): 12% Coverage (LOC): 19%
-*- File /root/Targets/express-middleware-bundle/node_modules/mime/mime.js. Coverage (Term): 56% Coverage (LOC): 75%
-*- File /root/Targets/express-middleware-bundle/node_modules/fresh/index.js. Coverage (Term): 13% Coverage (LOC): 14%
-*- File /root/Targets/express-middleware-bundle/node_modules/etag/index.js. Coverage (Term): 17% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/send/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
-*- File eval. Coverage (Term): 41% Coverage (LOC): 50%
-*- File /root/Targets/express-middleware-bundle/node_modules/content-type/index.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/array-flatten/array-flatten.js. Coverage (Term): 38% Coverage (LOC): 46%
-*- File /root/Targets/express-middleware-bundle/node_modules/proxy-addr/index.js. Coverage (Term): 21% Coverage (LOC): 30%
-*- File /root/Targets/express-middleware-bundle/node_modules/forwarded/index.js. Coverage (Term): 14% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/ipaddr.js/lib/ipaddr.js. Coverage (Term): 31% Coverage (LOC): 57%
-*- File /root/Targets/express-middleware-bundle/node_modules/qs/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/qs/lib/stringify.js. Coverage (Term): 8% Coverage (LOC): 19%
-*- File /root/Targets/express-middleware-bundle/node_modules/qs/lib/utils.js. Coverage (Term): 11% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/qs/lib/parse.js. Coverage (Term): 6% Coverage (LOC): 17%
-*- File /root/Targets/express-middleware-bundle/node_modules/utils-merge/index.js. Coverage (Term): 40% Coverage (LOC): 40%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/index.js. Coverage (Term): 14% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/node_modules/array-flatten/array-flatten.js. Coverage (Term): 20% Coverage (LOC): 30%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/lib/layer.js. Coverage (Term): 15% Coverage (LOC): 19%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/node_modules/path-to-regexp/index.js. Coverage (Term): 5% Coverage (LOC): 9%
-*- File /root/Targets/express-middleware-bundle/node_modules/parseurl/index.js. Coverage (Term): 15% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/router/lib/route.js. Coverage (Term): 17% Coverage (LOC): 22%
-*- File /root/Targets/express-middleware-bundle/node_modules/setprototypeof/index.js. Coverage (Term): 35% Coverage (LOC): 45%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/request.js. Coverage (Term): 25% Coverage (LOC): 43%
-*- File /root/Targets/express-middleware-bundle/node_modules/accepts/index.js. Coverage (Term): 16% Coverage (LOC): 23%
-*- File /root/Targets/express-middleware-bundle/node_modules/negotiator/index.js. Coverage (Term): 47% Coverage (LOC): 67%
-*- File /root/Targets/express-middleware-bundle/node_modules/negotiator/lib/charset.js. Coverage (Term): 8% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/negotiator/lib/encoding.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/express-middleware-bundle/node_modules/negotiator/lib/language.js. Coverage (Term): 7% Coverage (LOC): 13%
-*- File /root/Targets/express-middleware-bundle/node_modules/negotiator/lib/mediaType.js. Coverage (Term): 5% Coverage (LOC): 11%
-*- File /root/Targets/express-middleware-bundle/node_modules/mime-types/index.js. Coverage (Term): 48% Coverage (LOC): 51%
-*- File /root/Targets/express-middleware-bundle/node_modules/mime-db/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/type-is/index.js. Coverage (Term): 13% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/media-typer/index.js. Coverage (Term): 11% Coverage (LOC): 16%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/lib/response.js. Coverage (Term): 11% Coverage (LOC): 16%
-*- File /root/Targets/express-middleware-bundle/node_modules/content-disposition/index.js. Coverage (Term): 12% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/path-is-absolute/index.js. Coverage (Term): 39% Coverage (LOC): 57%
-*- File /root/Targets/express-middleware-bundle/node_modules/cookie-signature/index.js. Coverage (Term): 19% Coverage (LOC): 40%
-*- File /root/Targets/express-middleware-bundle/node_modules/express/node_modules/cookie/index.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/vary/index.js. Coverage (Term): 12% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/index.js. Coverage (Term): 13% Coverage (LOC): 16%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/escape-html/index.js. Coverage (Term): 16% Coverage (LOC): 18%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/send/index.js. Coverage (Term): 15% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/debug/node.js. Coverage (Term): 30% Coverage (LOC): 41%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/depd/index.js. Coverage (Term): 32% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/destroy/index.js. Coverage (Term): 32% Coverage (LOC): 33%
-*- File /root/Targets/express-middleware-bundle/node_modules/serve-static/node_modules/statuses/index.js. Coverage (Term): 50% Coverage (LOC): 63%
-*- File /root/Targets/express-middleware-bundle/node_modules/connect-redis/index.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/connect-redis/lib/connect-redis.js. Coverage (Term): 12% Coverage (LOC): 16%
-*- File /root/Targets/express-middleware-bundle/node_modules/connect-redis/node_modules/debug/node.js. Coverage (Term): 37% Coverage (LOC): 62%
-*- File /root/Targets/express-middleware-bundle/node_modules/connect-redis/node_modules/debug/debug.js. Coverage (Term): 35% Coverage (LOC): 42%
-*- File /root/Targets/express-middleware-bundle/node_modules/connect-redis/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/index.js. Coverage (Term): 11% Coverage (LOC): 22%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/util.js. Coverage (Term): 77% Coverage (LOC): 67%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/queue.js. Coverage (Term): 23% Coverage (LOC): 38%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/to_array.js. Coverage (Term): 32% Coverage (LOC): 44%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/parser/hiredis.js. Coverage (Term): 19% Coverage (LOC): 17%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/parser/javascript.js. Coverage (Term): 11% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/redis/lib/commands.js. Coverage (Term): 99% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/index.js. Coverage (Term): 9% Coverage (LOC): 7%
-*- File /root/Targets/express-middleware-bundle/node_modules/cookie/index.js. Coverage (Term): 10% Coverage (LOC): 13%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc1.js. Coverage (Term): 49% Coverage (LOC): 55%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/create_buffer.js. Coverage (Term): 81% Coverage (LOC): 89%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/define_crc.js. Coverage (Term): 75% Coverage (LOC): 92%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc8.js. Coverage (Term): 84% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc8_1wire.js. Coverage (Term): 84% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc16.js. Coverage (Term): 83% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc16_ccitt.js. Coverage (Term): 81% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc16_modbus.js. Coverage (Term): 81% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc16_xmodem.js. Coverage (Term): 37% Coverage (LOC): 43%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc16_kermit.js. Coverage (Term): 81% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc24.js. Coverage (Term): 81% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/crc/lib/crc32.js. Coverage (Term): 81% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/depd/index.js. Coverage (Term): 25% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File /root/Targets/express-middleware-bundle/node_modules/uid-safe/index.js. Coverage (Term): 25% Coverage (LOC): 36%
-*- File /root/Targets/express-middleware-bundle/node_modules/random-bytes/index.js. Coverage (Term): 22% Coverage (LOC): 25%
-*- File /root/Targets/express-middleware-bundle/node_modules/on-headers/index.js. Coverage (Term): 10% Coverage (LOC): 17%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/session/session.js. Coverage (Term): 29% Coverage (LOC): 45%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/session/memory.js. Coverage (Term): 22% Coverage (LOC): 37%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/session/store.js. Coverage (Term): 31% Coverage (LOC): 40%
-*- File /root/Targets/express-middleware-bundle/node_modules/express-session/session/cookie.js. Coverage (Term): 21% Coverage (LOC): 28%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/authenticator.js. Coverage (Term): 24% Coverage (LOC): 32%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/strategies/session.js. Coverage (Term): 32% Coverage (LOC): 26%
-*- File /root/Targets/express-middleware-bundle/node_modules/pause/index.js. Coverage (Term): 13% Coverage (LOC): 14%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-strategy/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-strategy/lib/strategy.js. Coverage (Term): 68% Coverage (LOC): 86%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/framework/connect.js. Coverage (Term): 95% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/middleware/initialize.js. Coverage (Term): 19% Coverage (LOC): 27%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/middleware/authenticate.js. Coverage (Term): 4% Coverage (LOC): 3%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/errors/authenticationerror.js. Coverage (Term): 43% Coverage (LOC): 50%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport/lib/http/request.js. Coverage (Term): 17% Coverage (LOC): 20%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-local/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-local/lib/strategy.js. Coverage (Term): 21% Coverage (LOC): 19%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-local/lib/utils.js. Coverage (Term): 18% Coverage (LOC): 21%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/lib/passport-localapikey/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/lib/passport-localapikey/strategy.js. Coverage (Term): 18% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/index.js. Coverage (Term): 29% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/strategy.js. Coverage (Term): 72% Coverage (LOC): 88%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/strategies/session.js. Coverage (Term): 32% Coverage (LOC): 26%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/middleware/initialize.js. Coverage (Term): 23% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/middleware/authenticate.js. Coverage (Term): 5% Coverage (LOC): 4%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/context/http/actions.js. Coverage (Term): 28% Coverage (LOC): 46%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/context/http/context.js. Coverage (Term): 43% Coverage (LOC): 50%
-*- File /root/Targets/express-middleware-bundle/node_modules/pkginfo/lib/pkginfo.js. Coverage (Term): 85% Coverage (LOC): 91%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/node_modules/passport/lib/passport/http/request.js. Coverage (Term): 19% Coverage (LOC): 25%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-localapikey/lib/passport-localapikey/errors/badrequesterror.js. Coverage (Term): 47% Coverage (LOC): 56%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/lib/strategy.js. Coverage (Term): 20% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/index.js. Coverage (Term): 29% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/strategy.js. Coverage (Term): 72% Coverage (LOC): 88%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/strategies/session.js. Coverage (Term): 32% Coverage (LOC): 26%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/middleware/initialize.js. Coverage (Term): 23% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/middleware/authenticate.js. Coverage (Term): 5% Coverage (LOC): 4%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/context/http/actions.js. Coverage (Term): 28% Coverage (LOC): 46%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/context/http/context.js. Coverage (Term): 43% Coverage (LOC): 50%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/node_modules/passport/lib/passport/http/request.js. Coverage (Term): 19% Coverage (LOC): 25%
-*- File /root/Targets/express-middleware-bundle/node_modules/passport-remember-me/lib/utils.js. Coverage (Term): 39% Coverage (LOC): 40%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/req-res/requester.js. Coverage (Term): 27% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/when.js. Coverage (Term): 48% Coverage (LOC): 62%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/timed.js. Coverage (Term): 33% Coverage (LOC): 49%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/env.js. Coverage (Term): 37% Coverage (LOC): 48%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/TimeoutError.js. Coverage (Term): 62% Coverage (LOC): 67%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/array.js. Coverage (Term): 19% Coverage (LOC): 25%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/state.js. Coverage (Term): 47% Coverage (LOC): 65%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/apply.js. Coverage (Term): 37% Coverage (LOC): 45%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/flow.js. Coverage (Term): 29% Coverage (LOC): 49%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/fold.js. Coverage (Term): 47% Coverage (LOC): 63%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/inspect.js. Coverage (Term): 78% Coverage (LOC): 93%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/iterate.js. Coverage (Term): 39% Coverage (LOC): 52%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/progress.js. Coverage (Term): 75% Coverage (LOC): 92%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/with.js. Coverage (Term): 63% Coverage (LOC): 71%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/decorators/unhandledRejection.js. Coverage (Term): 42% Coverage (LOC): 60%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/format.js. Coverage (Term): 38% Coverage (LOC): 60%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/Promise.js. Coverage (Term): 91% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/makePromise.js. Coverage (Term): 20% Coverage (LOC): 34%
-*- File /root/Targets/express-middleware-bundle/node_modules/when/lib/Scheduler.js. Coverage (Term): 43% Coverage (LOC): 56%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/req-res/defaults.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/producer.js. Coverage (Term): 44% Coverage (LOC): 58%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/optionParser/index.js. Coverage (Term): 21% Coverage (LOC): 37%
-*- File /root/Targets/express-middleware-bundle/node_modules/underscore/underscore.js. Coverage (Term): 19% Coverage (LOC): 33%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/consumer/index.js. Coverage (Term): 40% Coverage (LOC): 54%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/queue.js. Coverage (Term): 44% Coverage (LOC): 70%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/config.js. Coverage (Term): 64% Coverage (LOC): 82%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/consumer/handler.js. Coverage (Term): 22% Coverage (LOC): 27%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/consumer/actions.js. Coverage (Term): 33% Coverage (LOC): 57%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/producer/index.js. Coverage (Term): 43% Coverage (LOC): 52%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/producer/handler.js. Coverage (Term): 21% Coverage (LOC): 26%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/shire/producer/actions.js. Coverage (Term): 44% Coverage (LOC): 67%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/req-res/responder.js. Coverage (Term): 16% Coverage (LOC): 21%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/consumer.js. Coverage (Term): 49% Coverage (LOC): 59%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/send-rec/sender.js. Coverage (Term): 27% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/send-rec/defaults.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/send-rec/receiver.js. Coverage (Term): 17% Coverage (LOC): 21%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/pub-sub/publisher.js. Coverage (Term): 27% Coverage (LOC): 29%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/pub-sub/defaults.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/express-middleware-bundle/node_modules/rabbus/rabbus/lib/pub-sub/subscriber.js. Coverage (Term): 17% Coverage (LOC): 22%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/index.js. Coverage (Term): 36% Coverage (LOC): 50%
-*- File /root/Targets/express-middleware-bundle/node_modules/basic-auth/index.js. Coverage (Term): 22% Coverage (LOC): 31%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/debug/src/index.js. Coverage (Term): 81% Coverage (LOC): 83%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/debug/src/node.js. Coverage (Term): 35% Coverage (LOC): 44%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/debug/src/debug.js. Coverage (Term): 44% Coverage (LOC): 48%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/ms/index.js. Coverage (Term): 12% Coverage (LOC): 15%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/depd/index.js. Coverage (Term): 58% Coverage (LOC): 61%
-*- File /root/Targets/express-middleware-bundle/node_modules/morgan/node_modules/depd/lib/compat/index.js. Coverage (Term): 87% Coverage (LOC): 97%
-*- File evalIndirect. Coverage (Term): 3% Coverage (LOC): 20%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 146 paths with 144 errors **

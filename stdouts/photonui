@@ -1,34 +1,0 @@
-/root/Targets/photonui
-└─┬ photonui@1.7.2 
-  ├── abitbol@1.1.1 
-  ├── font-awesome@4.7.0 
-  ├── keyboardjs@2.3.4 
-  ├── lodash@4.17.4 
-  ├── stonejs@2.3.0 
-  └── uuid@3.1.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/photonui/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 22% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","Error"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.1805 took 5.1809s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find global functions addEventListener or attachEvent.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/photonui/node_modules/photonui/src/photonui.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/photonui/node_modules/abitbol/src/abitbol.js. Coverage (Term): 8% Coverage (LOC): 13%
-*- File /root/Targets/photonui/node_modules/abitbol/src/annotation.js. Coverage (Term): 6% Coverage (LOC): 8%
-*- File /root/Targets/photonui/node_modules/keyboardjs/index.js. Coverage (Term): 53% Coverage (LOC): 64%
-*- File /root/Targets/photonui/node_modules/keyboardjs/lib/keyboard.js. Coverage (Term): 20% Coverage (LOC): 27%
-*- File /root/Targets/photonui/node_modules/keyboardjs/lib/locale.js. Coverage (Term): 11% Coverage (LOC): 18%
-*- File /root/Targets/photonui/node_modules/keyboardjs/lib/key-combo.js. Coverage (Term): 10% Coverage (LOC): 16%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

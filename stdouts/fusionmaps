@@ -1,27 +1,0 @@
-/root/Targets/fusionmaps
-└── fusionmaps@3.12.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/fusionmaps/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 0% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 0% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 0% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 0% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0697 took 255.6599s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 258.0186 took 310.1546s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'document' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 570.2591 took 193.694s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'document' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
-*- File /root/Targets/fusionmaps/node_modules/fusionmaps/fusioncharts.js. Coverage (Term): 0% Coverage (LOC): 0%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 3 paths with 2 errors **

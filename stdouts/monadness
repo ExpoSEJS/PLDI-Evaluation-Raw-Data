@@ -1,36 +1,0 @@
-/root/Targets/monadness
-└── monadness@0.5.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/monadness/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 0 errors / 53% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 53% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 53% coverage ] ****** [2 done /0 queued / 2 running / 0 errors / 53% coverage ] ****** [2 done /0 queued / 2 running / 0 errors / 53% coverage ] ****** [3 done /1 queued / 2 running / 0 errors / 53% coverage ] ****** [3 done /0 queued / 3 running / 0 errors / 53% coverage ] ****** [3 done /0 queued / 3 running / 0 errors / 53% coverage ] ****** [4 done /0 queued / 3 running / 1 errors / 54% coverage ] ****** [4 done /0 queued / 3 running / 1 errors / 54% coverage ] ****** [5 done /1 queued / 3 running / 1 errors / 54% coverage ] ****** [5 done /0 queued / 4 running / 1 errors / 54% coverage ] ****** [5 done /0 queued / 4 running / 1 errors / 54% coverage ] ****** [6 done /0 queued / 4 running / 2 errors / 54% coverage ] ****** [6 done /0 queued / 4 running / 2 errors / 54% coverage ] ****** [7 done /0 queued / 4 running / 2 errors / 54% coverage ] ****** [7 done /0 queued / 4 running / 2 errors / 54% coverage ] ****** [8 done /0 queued / 3 running / 2 errors / 54% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","freeze","toString","apply","bound Either","bound ","bound Maybe","ReferenceError","bound Option","bound Tuples"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0} start 0.0483 took 6.6287s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":1,"ExpandedSwitcher_2":0,"_bound":2} start 6.8175 took 6.6394s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":1} start 6.7754 took 6.8399s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":3} start 13.492 took 6.0021s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":3}
-* Error: ReferenceError: This either is Right.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":3}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":2} start 13.6342 took 6.1308s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"_bound":4} start 19.5291 took 5.4898s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"_bound":4}
-* Error: ReferenceError: This either is Left.
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":3,"_bound":4}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":3,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":3} start 19.8124 took 5.7099s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":4,"ExpandedSwitcher":0,"_bound":4} start 25.5481 took 5.5066s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 82% Coverage (LOC): 86%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 20% Coverage (LOC): 38%
-*- File /root/Targets/monadness/node_modules/monadness/lib/index.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/monadness/node_modules/monadness/lib/either.js. Coverage (Term): 38% Coverage (LOC): 58%
-*- File /root/Targets/monadness/node_modules/monadness/lib/maybe.js. Coverage (Term): 36% Coverage (LOC): 56%
-*- File /root/Targets/monadness/node_modules/monadness/lib/option.js. Coverage (Term): 46% Coverage (LOC): 67%
-*- File /root/Targets/monadness/node_modules/monadness/lib/tuples.js. Coverage (Term): 28% Coverage (LOC): 40%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 8 paths with 2 errors **

@@ -1,27 +1,0 @@
-/root/Targets/citapplab
-└── citapplab@0.12.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/citapplab/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 45% coverage ] ****** [1 done /0 queued / 1 running / 1 errors / 45% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 45% coverage ] ****** [2 done /0 queued / 1 running / 2 errors / 45% coverage ] ****** [3 done /0 queued / 0 running / 2 errors / 45% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Array","reduce","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0522 took 7.2136s
-*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0}
-* Error: TypeError: Reduce of empty array with no initial value
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"_bound":1} start 7.3618 took 6.1559s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"_bound":1}
-* Error: TypeError: Reduce of empty array with no initial value
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"_bound":1}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":2,"_bound":2} start 13.5679 took 8.3544s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 76% Coverage (LOC): 84%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/citapplab/node_modules/citapplab/lib/bundle.js. Coverage (Term): 37% Coverage (LOC): 46%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 3 paths with 2 errors **

@@ -1,33 +1,0 @@
-/root/Targets/sd-expression-engine
-└─┬ sd-expression-engine@0.1.7 
-  ├─┬ mathjs@3.16.3 
-  │ ├── complex.js@2.0.4 
-  │ ├── decimal.js@7.2.3 
-  │ ├── fraction.js@4.0.2 
-  │ ├── javascript-natural-sort@0.7.1 
-  │ ├── seed-random@2.2.0 
-  │ ├── tiny-emitter@2.0.0 
-  │ └── typed-function@0.10.5 
-  ├── sd-random@0.1.0 
-  └─┬ sd-utils@0.1.8 
-    ├── lodash@4.17.4 
-    └── loglevel@1.5.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/sd-expression-engine/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0448 took 4.5256s
-*-- Errors occured in test {"_bound":0}
-* Error: SyntaxError: 'import' and 'export' may appear only with 'sourceType: module' (3:0)
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

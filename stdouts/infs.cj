@@ -1,23 +1,0 @@
-/root/Targets/infs.cj
-└── infs.cj@1.0.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/infs.cj/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 39% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 39% coverage ] ****** [2 done /0 queued / 0 running / 1 errors / 41% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0456 took 3.5262s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1} start 3.7049 took 1.9673s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1}
-* Error: TypeError: Constructor is not a constructor
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 57% Coverage (LOC): 62%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/infs.cj/node_modules/infs.cj/infs.cj.js. Coverage (Term): 94% Coverage (LOC): 100%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 2 paths with 1 errors **

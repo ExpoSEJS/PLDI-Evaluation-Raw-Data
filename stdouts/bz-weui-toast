@@ -1,31 +1,0 @@
-/root/Targets/bz-weui-toast
-└── bz-weui-toast@2.0.3 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/bz-weui-toast/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 33% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0461 took 2.4005s
-*-- Errors occured in test {"_bound":0}
-* Error: Tropigate failed because SyntaxError: 'with' in strict mode (1:1179) on program !function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.Bz=e():t.Bz=e()}(this,function(){return function(t){function e(i){if(n[i])return n[i].exports;var o=n[i]={exports:{},id:i,loaded:!1};return t[i].call(o.exports,o,o.exports,e),o.loaded=!0,o.exports}var n={};return e.m=t,e.c=n,e.p="/",e(0)}([function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o=n(3),s=i(o);e.default=s.default},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={props:{type:{type:String,required:!1,default:"loading"}},components:{},data:function(){return{}},ready:function(){},methods:{}}},function(t,e){},function(t,e,n){var i,o;n(2),i=n(1);var s=n(4);o=i=i||{},"object"!=typeof i.default&&"function"!=typeof i.default||(o=i=i.default),"function"==typeof o&&(o=o.options),o.render=s.render,o.staticRenderFns=s.staticRenderFns,t.exports=i},function(module,exports){module.exports={render:function(){with(this)return _h("div",{class:{weui_loading_toast:"loading"===type}},[_m(0)," ",_h("div",{staticClass:"weui_toast"},["loading"===type?_h("div",{staticClass:"weui_loading"},[_l(12,function(t){return _h("div",{staticClass:"weui_loading_leaf",class:"weui_loading_leaf_"+t})})]):_e()," ","success"===type?_h("i",{staticClass:"weui_icon_toast"}):_e()," ","warning"===type?_h("i",{staticClass:"warning sign icon"}):_e()," ","info"===type?_h("i",{staticClass:"info icon"}):_e()," ",_h("div",{staticClass:"weui_toast_content"},[_t("default")])])])},staticRenderFns:[function(){with(this)return _h("div",{staticClass:"weui_mask_transparent"})}]}}])}); at SyntaxError: 'with' in strict mode (1:1179)
-    at Parser.pp$4.raise (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2221:15)
-    at Parser.pp$1.parseWithStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:932:27)
-    at Parser.pp$1.parseStatement (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:708:32)
-    at Parser.parseStatement (/root/ExpoSE/lib/Tropigate/bin/Statements.js:104:30)
-    at Parser.pp$1.parseBlock (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:981:25)
-    at Parser.pp$3.parseFunctionBody (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:2105:24)
-    at Parser.parseFunctionBody (/root/ExpoSE/lib/Tropigate/bin/FunctionSignatures.js:14:32)
-    at Parser.pp$1.parseFunction (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1065:10)
-    at Parser.pp$3.parseExprAtom (/root/ExpoSE/lib/Tropigate/node_modules/acorn/dist/acorn.js:1810:19)
-    at Parser.parseExprAtom (/root/ExpoSE/lib/Tropigate/bin/Expression.js:28:30)
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

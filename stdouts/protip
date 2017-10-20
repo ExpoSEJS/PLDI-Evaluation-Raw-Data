@@ -1,30 +1,0 @@
-/root/Targets/protip
-└─┬ protip@1.4.16 
-  └── jquery@3.2.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/protip/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 4% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0382 took 23.2067s
-*-- Errors occured in test {"_bound":0}
-* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/protip/node_modules/protip/main.js. Coverage (Term): 83% Coverage (LOC): 100%
-*- File /root/Targets/protip/node_modules/protip/src/Plugin.js. Coverage (Term): 8% Coverage (LOC): 9%
-*- File /root/Targets/protip/node_modules/jquery/dist/jquery.js. Coverage (Term): 0% Coverage (LOC): 0%
-*- File /root/Targets/protip/node_modules/protip/src/Class.js. Coverage (Term): 4% Coverage (LOC): 5%
-*- File /root/Targets/protip/node_modules/protip/src/Constants.js. Coverage (Term): 90% Coverage (LOC): 98%
-*- File /root/Targets/protip/node_modules/protip/src/Item.js. Coverage (Term): 3% Coverage (LOC): 4%
-*- File /root/Targets/protip/node_modules/protip/src/GravityTester.js. Coverage (Term): 10% Coverage (LOC): 11%
-*- File /root/Targets/protip/node_modules/protip/src/GravityParser.js. Coverage (Term): 15% Coverage (LOC): 10%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

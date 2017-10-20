@@ -1,70 +1,0 @@
-/root/Targets/rapier
-└─┬ rapier@1.0.5 
-  ├── async@1.5.2 
-  ├─┬ bytebuffer@4.1.0 
-  │ └── bufferview@1.0.1 
-  ├── long@2.4.0 
-  └─┬ protobufjs@4.0.0 
-    ├─┬ ascli@1.0.1 
-    │ ├── colour@0.7.1 
-    │ └── optjs@3.2.2 
-    ├─┬ glob@5.0.15 
-    │ ├─┬ inflight@1.0.6 
-    │ │ └── wrappy@1.0.2 
-    │ ├── inherits@2.0.3 
-    │ ├─┬ minimatch@3.0.4 
-    │ │ └─┬ brace-expansion@1.1.8 
-    │ │   ├── balanced-match@1.0.0 
-    │ │   └── concat-map@0.0.1 
-    │ ├── once@1.4.0 
-    │ └── path-is-absolute@1.0.1 
-    └─┬ yargs@3.32.0 
-      ├── camelcase@2.1.1 
-      ├─┬ cliui@3.2.0 
-      │ ├─┬ strip-ansi@3.0.1 
-      │ │ └── ansi-regex@2.1.1 
-      │ └── wrap-ansi@2.1.0 
-      ├── decamelize@1.2.0 
-      ├─┬ os-locale@1.4.0 
-      │ └─┬ lcid@1.0.0 
-      │   └── invert-kv@1.0.0 
-      ├─┬ string-width@1.0.2 
-      │ ├── code-point-at@1.1.0 
-      │ └─┬ is-fullwidth-code-point@1.0.0 
-      │   └── number-is-nan@1.0.1 
-      ├── window-size@0.1.4 
-      └── y18n@3.2.1 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/rapier/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 22% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 22% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 22% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 22% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 22% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 22% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","ArrayBuffer","create","call","isArray","pop","parseInt","toUpperCase","bind","isNaN","isFinite","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.078 took 345.2925s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 345.9735 took 322.1085s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'byteLength' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 668.5477 took 228.2607s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'byteLength' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 63% Coverage (LOC): 65%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 22% Coverage (LOC): 40%
-*- File /root/Targets/rapier/node_modules/rapier/Parser.js. Coverage (Term): 10% Coverage (LOC): 10%
-*- File /root/Targets/rapier/node_modules/protobufjs/dist/ProtoBuf.js. Coverage (Term): 28% Coverage (LOC): 38%
-*- File /root/Targets/rapier/node_modules/bytebuffer/index.js. Coverage (Term): 98% Coverage (LOC): 100%
-*- File /root/Targets/rapier/node_modules/bytebuffer/dist/ByteBufferNB.js. Coverage (Term): 5% Coverage (LOC): 13%
-*- File /root/Targets/rapier/node_modules/long/dist/Long.js. Coverage (Term): 23% Coverage (LOC): 38%
-*- File /root/Targets/rapier/node_modules/bytebuffer/dist/ByteBufferAB.js. Coverage (Term): 6% Coverage (LOC): 15%
-*- File /root/Targets/rapier/node_modules/bytebuffer/dist/ByteBufferAB_DataView.js. Coverage (Term): 7% Coverage (LOC): 17%
-*- File /root/Targets/rapier/node_modules/rapier/snappy.js. Coverage (Term): 9% Coverage (LOC): 13%
-*- File /root/Targets/rapier/node_modules/rapier/BitStream.js. Coverage (Term): 11% Coverage (LOC): 18%
-*- File /root/Targets/rapier/node_modules/async/lib/async.js. Coverage (Term): 12% Coverage (LOC): 18%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 3 paths with 2 errors **

@@ -1,25 +1,0 @@
-/root/Targets/react-resolver
-├── UNMET PEER DEPENDENCY react@^0.14.6 || ^15.0.0-0
-├── UNMET PEER DEPENDENCY react-dom@^0.14.6 || ^15.0.0-0
-└── react-resolver@3.1.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/react-resolver/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0513 took 5.5817s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'react'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/react-resolver/node_modules/react-resolver/dist/index.js. Coverage (Term): 31% Coverage (LOC): 39%
-*- File /root/Targets/react-resolver/node_modules/react-resolver/dist/client.js. Coverage (Term): 9% Coverage (LOC): 12%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

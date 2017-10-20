@@ -1,32 +1,0 @@
-/root/Targets/fis3
-└── fis3@3.4.35 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/fis3/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 30% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","now","random","reduce","call","RegExp","join","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","Object","getPrototypeOf","apply"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0422 took 21.555s
-*-- Errors occured in test {"_bound":0}
-* Error: TypeError: Cannot read property 'apply' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/fis3/node_modules/fis3/index.js. Coverage (Term): 82% Coverage (LOC): 100%
-*- File /root/Targets/fis3/node_modules/fis3/lib/fis.js. Coverage (Term): 38% Coverage (LOC): 50%
-*- File /root/Targets/fis3/node_modules/fis3/lib/log.js. Coverage (Term): 24% Coverage (LOC): 44%
-*- File /root/Targets/fis3/node_modules/fis3-errors/index.js. Coverage (Term): 25% Coverage (LOC): 30%
-*- File /root/Targets/fis3/node_modules/fis3/lib/util.js. Coverage (Term): 9% Coverage (LOC): 26%
-*- File /root/Targets/fis3/node_modules/minimatch/minimatch.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/fis3/node_modules/brace-expansion/index.js. Coverage (Term): 12% Coverage (LOC): 17%
-*- File /root/Targets/fis3/node_modules/concat-map/index.js. Coverage (Term): 24% Coverage (LOC): 40%
-*- File /root/Targets/fis3/node_modules/balanced-match/index.js. Coverage (Term): 11% Coverage (LOC): 15%
-*- File /root/Targets/fis3/node_modules/lodash/lodash.js. Coverage (Term): 22% Coverage (LOC): 33%
-*- File /root/Targets/fis3/node_modules/fis3/lib/config.js. Coverage (Term): 8% Coverage (LOC): 22%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

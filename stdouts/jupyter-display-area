@@ -1,32 +1,0 @@
-/root/Targets/jupyter-display-area
-└─┬ jupyter-display-area@0.2.0 
-  ├── transformime@2.2.0 
-  └─┬ transformime-jupyter-transformers@0.1.0 
-    ├─┬ ansi-to-html@0.3.0 
-    │ └── entities@1.1.1 
-    ├─┬ katex@0.5.1 
-    │ └── match-at@0.1.1 
-    └─┬ transformime-commonmark@0.1.0 
-      └─┬ commonmark@0.21.0 
-        ├── mdurl@1.0.1 
-        └── string.prototype.repeat@0.2.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/jupyter-display-area/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 76% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","apply","sort","reduce","join","RegExp","toString"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0372 took 32.885s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: document is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/jupyter-display-area/node_modules/jupyter-display-area/dist/jupyter-display-area.js. Coverage (Term): 43% Coverage (LOC): 77%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

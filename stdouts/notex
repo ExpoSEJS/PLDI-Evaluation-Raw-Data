@@ -1,33 +1,0 @@
-/root/Targets/notex
-└─┬ notex@0.1.1 
-  └─┬ 101@0.14.1 
-    ├── clone@0.1.19 
-    ├─┬ deep-eql@0.1.3 
-    │ └── type-detect@0.1.1 
-    └─┬ keypather@1.10.2 
-      └─┬ 101@1.6.2 
-        └── clone@1.0.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/notex/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 25% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0497 took 3.1173s
-*-- Errors occured in test {"_bound":0}
-* Error: Error: Cannot find module 'debug'
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/notex/node_modules/notex/index.js. Coverage (Term): 41% Coverage (LOC): 50%
-*- File /root/Targets/notex/node_modules/notex/lib/notex.js. Coverage (Term): 8% Coverage (LOC): 12%
-*- File /root/Targets/notex/node_modules/notex/lib/logger.js. Coverage (Term): 14% Coverage (LOC): 26%
-*- File /root/Targets/notex/node_modules/notex/lib/traversal.js. Coverage (Term): 6% Coverage (LOC): 10%
-*- File /root/Targets/notex/node_modules/101/exists.js. Coverage (Term): 56% Coverage (LOC): 80%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

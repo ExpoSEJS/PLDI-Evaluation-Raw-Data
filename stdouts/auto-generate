@@ -1,25 +1,0 @@
-/root/Targets/auto-generate
-└── auto-generate@0.0.8 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/auto-generate/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 0 running / 1 errors / 6% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","Date","RegExp","join","parseInt","sort","setBlocking","Function"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0336 took 27.3316s
-*-- Errors occured in test {"_bound":0}
-* Error: ReferenceError: require is not defined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 18% Coverage (LOC): 24%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 16% Coverage (LOC): 34%
-*- File /root/Targets/auto-generate/node_modules/auto-generate/lib/auto-generate.js. Coverage (Term): 8% Coverage (LOC): 11%
-*- File /root/Targets/auto-generate/node_modules/lodash/dist/lodash.js. Coverage (Term): 19% Coverage (LOC): 27%
-*- File /root/Targets/auto-generate/node_modules/uglify-js/tools/node.js. Coverage (Term): 10% Coverage (LOC): 13%
-*- File evalIndirect. Coverage (Term): 0% Coverage (LOC): 0%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 1 paths with 1 errors **

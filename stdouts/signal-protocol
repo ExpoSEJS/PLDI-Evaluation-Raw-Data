@@ -1,159 +1,0 @@
-
-> node-webcrypto-ossl@1.0.31 install /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl
-> node-gyp rebuild
-
-make: Entering directory '/root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/build'
-  CXX(target) Release/obj.target/nodessl/src/main.o
-  CXX(target) Release/obj.target/nodessl/src/core/bn.o
-  CXX(target) Release/obj.target/nodessl/src/core/key_exp.o
-  CXX(target) Release/obj.target/nodessl/src/core/scoped_ssl.o
-  CXX(target) Release/obj.target/nodessl/src/core/logger.o
-  CXX(target) Release/obj.target/nodessl/src/core/excep.o
-  CXX(target) Release/obj.target/nodessl/src/core/digest.o
-  CXX(target) Release/obj.target/nodessl/src/rsa/rsa_gen.o
-  CXX(target) Release/obj.target/nodessl/src/rsa/rsa_jwk.o
-  CXX(target) Release/obj.target/nodessl/src/rsa/rsa_pkcs1.o
-  CXX(target) Release/obj.target/nodessl/src/rsa/rsa_oaep.o
-  CXX(target) Release/obj.target/nodessl/src/rsa/rsa_pss.o
-  CXX(target) Release/obj.target/nodessl/src/ec/ec_gen.o
-  CXX(target) Release/obj.target/nodessl/src/ec/ec_dsa.o
-  CXX(target) Release/obj.target/nodessl/src/ec/ec_dh.o
-  CXX(target) Release/obj.target/nodessl/src/ec/ec_jwk.o
-  CXX(target) Release/obj.target/nodessl/src/aes/aes_gen.o
-  CXX(target) Release/obj.target/nodessl/src/aes/aes_ecb.o
-  CXX(target) Release/obj.target/nodessl/src/aes/aes_cbc.o
-  CXX(target) Release/obj.target/nodessl/src/aes/aes_gcm.o
-  CXX(target) Release/obj.target/nodessl/src/aes/aes_ctr.o
-  CXX(target) Release/obj.target/nodessl/src/hmac/hmac_gen.o
-  CXX(target) Release/obj.target/nodessl/src/hmac/hmac_sign.o
-  CXX(target) Release/obj.target/nodessl/src/pbkdf2/pbkdf2_derive.o
-  CXX(target) Release/obj.target/nodessl/src/node/common.o
-  CXX(target) Release/obj.target/nodessl/src/node/w_key.o
-  CXX(target) Release/obj.target/nodessl/src/node/w_aes.o
-  CXX(target) Release/obj.target/nodessl/src/node/w_hmac.o
-  CXX(target) Release/obj.target/nodessl/src/node/w_pbkdf2.o
-  CXX(target) Release/obj.target/nodessl/src/node/w_core.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_rsa.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_ec.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_aes.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_hmac.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_pbkdf2.o
-  CXX(target) Release/obj.target/nodessl/src/node/async_core.o
-  SOLINK_MODULE(target) Release/obj.target/nodessl.node
-  COPY Release/nodessl.node
-make: Leaving directory '/root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/build'
-/root/Targets/signal-protocol
-└─┬ signal-protocol@0.1.2 
-  ├── bytebuffer@5.0.1 
-  ├─┬ chai@4.1.2 
-  │ ├── assertion-error@1.0.2 
-  │ ├── check-error@1.0.2 
-  │ ├── deep-eql@3.0.1 
-  │ ├── get-func-name@2.0.0 
-  │ ├── pathval@1.1.0 
-  │ └── type-detect@4.0.3 
-  ├── long@3.2.0 
-  ├─┬ node-webcrypto-ossl@1.0.31 
-  │ ├─┬ mkdirp@0.5.1 
-  │ │ └── minimist@0.0.8 
-  │ ├── nan@2.7.0 
-  │ ├── tslib@1.7.1 
-  │ └── webcrypto-core@0.1.17 
-  ├─┬ protobufjs@5.0.2 
-  │ ├─┬ ascli@1.0.1 
-  │ │ ├── colour@0.7.1 
-  │ │ └── optjs@3.2.2 
-  │ ├─┬ glob@7.1.2 
-  │ │ ├── fs.realpath@1.0.0 
-  │ │ ├─┬ inflight@1.0.6 
-  │ │ │ └── wrappy@1.0.2 
-  │ │ ├── inherits@2.0.3 
-  │ │ ├─┬ minimatch@3.0.4 
-  │ │ │ └─┬ brace-expansion@1.1.8 
-  │ │ │   ├── balanced-match@1.0.0 
-  │ │ │   └── concat-map@0.0.1 
-  │ │ ├── once@1.4.0 
-  │ │ └── path-is-absolute@1.0.1 
-  │ └─┬ yargs@3.32.0 
-  │   ├── camelcase@2.1.1 
-  │   ├─┬ cliui@3.2.0 
-  │   │ ├─┬ strip-ansi@3.0.1 
-  │   │ │ └── ansi-regex@2.1.1 
-  │   │ └── wrap-ansi@2.1.0 
-  │   ├── decamelize@1.2.0 
-  │   ├─┬ os-locale@1.4.0 
-  │   │ └─┬ lcid@1.0.0 
-  │   │   └── invert-kv@1.0.0 
-  │   ├─┬ string-width@1.0.2 
-  │   │ ├── code-point-at@1.1.0 
-  │   │ └─┬ is-fullwidth-code-point@1.0.0 
-  │   │   └── number-is-nan@1.0.1 
-  │   ├── window-size@0.1.4 
-  │   └── y18n@3.2.1 
-  ├── tiny-worker@2.1.1 
-  └── webworkify@1.4.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/signal-protocol/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /3 queued / 1 running / 0 errors / 57.99999999999999% coverage ] ****** [1 done /2 queued / 2 running / 0 errors / 57.99999999999999% coverage ] ****** [1 done /1 queued / 3 running / 0 errors / 57.99999999999999% coverage ] ****** [1 done /0 queued / 4 running / 0 errors / 57.99999999999999% coverage ] ****** [1 done /0 queued / 4 running / 0 errors / 57.99999999999999% coverage ] ****** [2 done /0 queued / 3 running / 1 errors / 57.99999999999999% coverage ] ****** [3 done /2 queued / 3 running / 1 errors / 57.99999999999999% coverage ] ****** [3 done /1 queued / 4 running / 1 errors / 57.99999999999999% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 57.99999999999999% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 57.99999999999999% coverage ] ****** [4 done /1 queued / 5 running / 1 errors / 57.99999999999999% coverage ] ****** [4 done /0 queued / 6 running / 1 errors / 57.99999999999999% coverage ] ****** [4 done /0 queued / 6 running / 1 errors / 57.99999999999999% coverage ] ****** [5 done /0 queued / 6 running / 1 errors / 57.99999999999999% coverage ] ****** [5 done /0 queued / 6 running / 1 errors / 57.99999999999999% coverage ] ****** [6 done /2 queued / 6 running / 1 errors / 57.99999999999999% coverage ] ****** [6 done /1 queued / 7 running / 1 errors / 57.99999999999999% coverage ] ****** [6 done /0 queued / 8 running / 1 errors / 57.99999999999999% coverage ] ****** [6 done /0 queued / 8 running / 1 errors / 57.99999999999999% coverage ] ****** [7 done /2 queued / 8 running / 1 errors / 57.99999999999999% coverage ] ****** [7 done /1 queued / 9 running / 1 errors / 57.99999999999999% coverage ] ****** [7 done /0 queued / 10 running / 1 errors / 57.99999999999999% coverage ] ****** [7 done /0 queued / 10 running / 1 errors / 57.99999999999999% coverage ] ****** [8 done /1 queued / 10 running / 1 errors / 57.99999999999999% coverage ] ****** [8 done /0 queued / 11 running / 1 errors / 57.99999999999999% coverage ] ****** [8 done /0 queued / 11 running / 1 errors / 57.99999999999999% coverage ] ****** [9 done /1 queued / 11 running / 1 errors / 57.99999999999999% coverage ] ****** [9 done /0 queued / 12 running / 1 errors / 57.99999999999999% coverage ] ****** [9 done /0 queued / 12 running / 1 errors / 57.99999999999999% coverage ] ****** [10 done /1 queued / 12 running / 1 errors / 57.99999999999999% coverage ] ****** [10 done /0 queued / 13 running / 1 errors / 57.99999999999999% coverage ] ****** [10 done /0 queued / 13 running / 1 errors / 57.99999999999999% coverage ] ****** [11 done /0 queued / 13 running / 1 errors / 57.99999999999999% coverage ] ****** [11 done /0 queued / 13 running / 1 errors / 57.99999999999999% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","setPrototypeOf","join","parseInt","apply","ArrayBuffer","Int8Array","Int16Array","Int32Array","Uint8Array","Uint16Array","Uint32Array","Float32Array","Float64Array","imul","set","max","ceil","Error","now","create","call","isArray","pop","toUpperCase","toString","bound ","bind","bound bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0} start 0.0484 took 227.1002s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":1} start 230.6251 took 261.3822s
-*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":1}
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
-* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
-* Error: Error extracting final output - a fatal error must have occured
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":1}'
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":2} start 237.1461 took 271.9156s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":3} start 238.5802 took 280.4406s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":1,"ExpandedSwitcher_2":0,"_bound":4} start 232.2765 took 286.7445s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":3,"ExpansionArg_int":0} start 511.8048 took 275.4167s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":2,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_int":0} start 515.7873 took 280.7447s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":1,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":5} start 522.4242 took 274.108s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpansionArg_type_2":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":5} start 514.025 took 282.5072s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpandedSwitcher":0,"ExpandedSwitcher_2":0,"_bound":4,"ExpansionArg_int":0} start 521.2975 took 275.2347s
-*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpandedSwitcher":2,"ExpandedSwitcher_2":0,"_bound":5} start 529.5236 took 299.9491s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 24% Coverage (LOC): 42%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/main.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/KeyHelper.js. Coverage (Term): 16% Coverage (LOC): 28%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/crypto.js. Coverage (Term): 15% Coverage (LOC): 29%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/node_polyfills.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/webcrypto.js. Coverage (Term): 53% Coverage (LOC): 68%
-*- File /root/Targets/signal-protocol/node_modules/webcrypto-core/dist/webcrypto-core.js. Coverage (Term): 20% Coverage (LOC): 33%
-*- File /root/Targets/signal-protocol/node_modules/tslib/tslib.js. Coverage (Term): 16% Coverage (LOC): 20%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/key_storage.js. Coverage (Term): 20% Coverage (LOC): 26%
-*- File /root/Targets/signal-protocol/node_modules/mkdirp/index.js. Coverage (Term): 14% Coverage (LOC): 13%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/key.js. Coverage (Term): 54% Coverage (LOC): 65%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/native.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/subtle.js. Coverage (Term): 13% Coverage (LOC): 18%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/crypto/aes.js. Coverage (Term): 12% Coverage (LOC): 16%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/crypto/ec.js. Coverage (Term): 10% Coverage (LOC): 13%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/crypto/hmac.js. Coverage (Term): 20% Coverage (LOC): 27%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/crypto/pbkdf2.js. Coverage (Term): 23% Coverage (LOC): 33%
-*- File /root/Targets/signal-protocol/node_modules/node-webcrypto-ossl/buildjs/crypto/rsa.js. Coverage (Term): 14% Coverage (LOC): 20%
-*- File /root/Targets/signal-protocol/node_modules/tiny-worker/lib/index.js. Coverage (Term): 27% Coverage (LOC): 37%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/Curve.js. Coverage (Term): 22% Coverage (LOC): 37%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/curve25519_wrapper.js. Coverage (Term): 12% Coverage (LOC): 26%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/build/curve25519_concat.js. Coverage (Term): 16% Coverage (LOC): 64%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/helpers.js. Coverage (Term): 22% Coverage (LOC): 33%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/build/dcodeIO.js. Coverage (Term): 25% Coverage (LOC): 38%
-*- File /root/Targets/signal-protocol/node_modules/bytebuffer/dist/bytebuffer-node.js. Coverage (Term): 6% Coverage (LOC): 14%
-*- File /root/Targets/signal-protocol/node_modules/long/dist/long.js. Coverage (Term): 20% Coverage (LOC): 35%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/SignalProtocolAddress.js. Coverage (Term): 60% Coverage (LOC): 74%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/SessionBuilder.js. Coverage (Term): 7% Coverage (LOC): 10%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/SessionLock.js. Coverage (Term): 37% Coverage (LOC): 50%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/SessionRecord.js. Coverage (Term): 11% Coverage (LOC): 17%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/BaseKeyType.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/ChainType.js. Coverage (Term): 96% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/SessionCipher.js. Coverage (Term): 4% Coverage (LOC): 8%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/build/protobufs_concat.js. Coverage (Term): 97% Coverage (LOC): 100%
-*- File /root/Targets/signal-protocol/node_modules/signal-protocol/src/NumericFingerprint.js. Coverage (Term): 14% Coverage (LOC): 28%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 11 paths with 1 errors **

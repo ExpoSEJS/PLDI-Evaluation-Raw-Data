@@ -1,46 +1,0 @@
-/root/Targets/service-proxy
-└─┬ service-proxy@0.2.5 
-  ├── lodash@4.17.4 
-  ├── moment@2.18.1 
-  └─┬ superagent@3.6.2 
-    ├── component-emitter@1.2.1 
-    ├── cookiejar@2.1.1 
-    ├─┬ debug@3.1.0 
-    │ └── ms@2.0.0 
-    ├── extend@3.0.1 
-    ├─┬ form-data@2.3.1 
-    │ ├── asynckit@0.4.0 
-    │ ├─┬ combined-stream@1.0.5 
-    │ │ └── delayed-stream@1.0.0 
-    │ └─┬ mime-types@2.1.17 
-    │   └── mime-db@1.30.0 
-    ├── formidable@1.1.1 
-    ├── methods@1.1.2 
-    ├── mime@2.0.3 
-    ├── qs@6.5.1 
-    └─┬ readable-stream@2.3.3 
-      ├── core-util-is@1.0.2 
-      ├── inherits@2.0.3 
-      ├── isarray@1.0.0 
-      ├── process-nextick-args@1.0.7 
-      ├── safe-buffer@5.1.1 
-      ├── string_decoder@1.0.3 
-      └── util-deprecate@1.0.2 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/service-proxy/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 0 running / 0 errors / 39% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","bound warn","toString","bound t"]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0748 took 31.6784s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0} start 32.1343 took 26.3611s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 69% Coverage (LOC): 76%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 19% Coverage (LOC): 37%
-*- File /root/Targets/service-proxy/node_modules/service-proxy/build/service-proxy.js. Coverage (Term): 24% Coverage (LOC): 38%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 2 paths with 0 errors **

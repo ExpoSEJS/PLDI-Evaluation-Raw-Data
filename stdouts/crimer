@@ -1,28 +1,0 @@
-/root/Targets/crimer
-└── crimer@0.1.0 
-
-Setup Done exists, not setting up
-:../FeatureTester/libs/:/root/Targets/crimer/node_modules
-Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
-ExpoSE Master: /root/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
-Setting timeout to 900000
-*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 31% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 31% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 35% coverage ] ****** [2 done /0 queued / 1 running / 1 errors / 35% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 36% coverage ] ****** [3 done /0 queued / 1 running / 2 errors / 36% coverage ] ****** [4 done /0 queued / 1 running / 2 errors / 38% coverage ] ****** [4 done /0 queued / 1 running / 2 errors / 38% coverage ] ***
-*-- Stat Module Output --*
-*-- concretizations: ["defineProperty","bound log","toString","apply","bound "]
-*-- Stat Module Done --*
-*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0462 took 4.6925s
-*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0} start 4.7872 took 3.8885s
-*-- Errors occured in test {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0}
-* Error: TypeError: Cannot read property 'length' of undefined
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switch_Base":0,"_bound":1}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"_bound":2} start 8.7126 took 5.1441s
-*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":1,"_bound":2}
-* Error: TypeError: Cannot read property 'length' of null
-*-- Replay with NO_COMPILE=1 expoSE replay '/root/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":1,"_bound":2}'
-*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"_bound":3,"ExpansionArg_int":0,"Target_Switcher":0} start 13.8651 took 5.3757s
-*-- Coverage Data
-*- File /root/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 70% Coverage (LOC): 70%
-*- File /root/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
-*- File /root/Targets/crimer/node_modules/crimer/crimer.js. Coverage (Term): 9% Coverage (LOC): 12%
-*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
-** ExpoSE Finished. 4 paths with 2 errors **
