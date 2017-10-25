@@ -1,0 +1,29 @@
++ lw-odata-json-parser@0.1.10
+updated 1 package in 0.421s
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/home/blake/Targets/lw-odata-json-parser/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /home/blake/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 15% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 15% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 27% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 27% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 27% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 27% coverage ] ****** [4 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ****** [4 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ****** [5 done /0 queued / 0 running / 1 errors / 28.000000000000004% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound consoleCall","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0056 took 0.827s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"ExpansionArg_type":0,"Target_Switcher":0} start 0.8443 took 1.3109s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":1,"Target_Switcher":0,"_bound":2} start 2.1621 took 0.9256s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":2,"Target_Switcher":0,"_bound":3,"ExpansionArg_int":0} start 3.0946 took 0.906s
+*-- Test Case {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4} start 4.0111 took 301.4797s
+*-- Errors occured in test {"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4}
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of test data on 
+* Error: Exception E: SyntaxError: Unexpected end of JSON input of coverage data on 
+* Error: Error extracting final output - a fatal error must have occured
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/blake/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"ExpansionArg_type":3,"ExpansionArg_int":0,"Target_Switcher":0,"_bound":4}'
+*-- Coverage Data
+*- File /home/blake/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 74% Coverage (LOC): 78%
+*- File /home/blake/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 23% Coverage (LOC): 41%
+*- File /home/blake/Targets/lw-odata-json-parser/node_modules/lw-odata-json-parser/parser.js. Coverage (Term): 24% Coverage (LOC): 26%
+*- File /home/blake/Targets/lw-odata-json-parser/node_modules/lw-odata-json-parser/flatten.js. Coverage (Term): 5% Coverage (LOC): 4%
+*- File /home/blake/Targets/lw-odata-json-parser/node_modules/lw-odata-json-parser/findBrackets.js. Coverage (Term): 8% Coverage (LOC): 8%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 5 paths with 1 errors **
