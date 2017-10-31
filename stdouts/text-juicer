@@ -1,0 +1,201 @@
++ text-juicer@0.0.7
+added 115 packages and updated 1 package in 6.45s
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/home/blake/Targets/text-juicer/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /home/blake/ExpoSE/lib/Harness/src/harness.js max concurrent: 16 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 38% coverage ] ****** [1 done /0 queued / 2 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 2 running / 0 errors / 38% coverage ] ****** [2 done /0 queued / 2 running / 0 errors / 38% coverage ] ****** [3 done /0 queued / 1 running / 0 errors / 38% coverage ] ****** [4 done /0 queued / 1 running / 1 errors / 38% coverage ] ****** [4 done /0 queued / 1 running / 1 errors / 38% coverage ] ****** [5 done /0 queued / 1 running / 2 errors / 38% coverage ] ****** [5 done /0 queued / 1 running / 2 errors / 38% coverage ] ****** [6 done /1 queued / 1 running / 2 errors / 38% coverage ] ****** [6 done /0 queued / 2 running / 2 errors / 38% coverage ] ****** [6 done /0 queued / 2 running / 2 errors / 38% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound consoleCall","call","RegExp","join","binding","Object","WeakMap","create","Set","Array","ArrayBuffer","DataView","Map","resolve","max","now","apply","toString","bound ","isArray","min","Date","sort"]
+*-- regex: 2
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":0,"ExpandedSwitcher":0} start 0.006 took 15.2965s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":1,"ExpandedSwitcher":0,"_bound":2} start 15.6651 took 71.7333s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpansionArg_type":0,"ExpandedSwitcher":0,"_bound":1} start 15.5684 took 84.6107s
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"_bound":3,"ExpansionArg_int":0} start 98.02 took 315.4946s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"_bound":3,"ExpansionArg_int":0}
+* Error: Word boundary currently unsupported 2 [a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\b parsing regex /\b[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\b/g
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/blake/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":2,"ExpandedSwitcher":0,"_bound":3}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"} start 413.6412 took 21.9071s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4,"ExpansionArg_string":"PureString"}
+* Error: Word boundary currently unsupported 2 [a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\b parsing regex /\b[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\b/g
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/blake/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":3,"ExpansionArg_int":0,"_bound":4}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpansionArg_type":4,"ExpansionArg_string":"","_bound":5,"ExpansionArg_array_length":0,"ExpandedSwitcher":0} start 436.6804 took 247.4146s
+*-- Coverage Data
+*- File /home/blake/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 88% Coverage (LOC): 89%
+*- File /home/blake/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 35% Coverage (LOC): 54%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/index.js. Coverage (Term): 67% Coverage (LOC): 80%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/commons.js. Coverage (Term): 65% Coverage (LOC): 69%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/utils.js. Coverage (Term): 9% Coverage (LOC): 12%
+*- File /home/blake/Targets/text-juicer/node_modules/lodash/lodash.js. Coverage (Term): 26% Coverage (LOC): 38%
+*- File /home/blake/Targets/text-juicer/node_modules/numeral/numeral.js. Coverage (Term): 11% Coverage (LOC): 28%
+*- File /home/blake/Targets/text-juicer/node_modules/numeral/locales/pt-br.js. Coverage (Term): 74% Coverage (LOC): 87%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/utils.js. Coverage (Term): 18% Coverage (LOC): 55%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/index.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/cep.js. Coverage (Term): 52% Coverage (LOC): 65%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/cnpj.js. Coverage (Term): 40% Coverage (LOC): 45%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/cpf.js. Coverage (Term): 42% Coverage (LOC): 46%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/date.js. Coverage (Term): 57% Coverage (LOC): 52%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/chrono.js. Coverage (Term): 78% Coverage (LOC): 89%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/options.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/parser.js. Coverage (Term): 82% Coverage (LOC): 84%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENISOFormatParser.js. Coverage (Term): 31% Coverage (LOC): 38%
+*- File /home/blake/Targets/text-juicer/node_modules/moment/moment.js. Coverage (Term): 22% Coverage (LOC): 37%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/result.js. Coverage (Term): 13% Coverage (LOC): 26%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENDeadlineFormatParser.js. Coverage (Term): 26% Coverage (LOC): 24%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/EN.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENRelativeDateFormatParser.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENMonthNameLittleEndianParser.js. Coverage (Term): 27% Coverage (LOC): 29%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENMonthNameMiddleEndianParser.js. Coverage (Term): 29% Coverage (LOC): 32%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENMonthNameParser.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENSlashDateFormatParser.js. Coverage (Term): 32% Coverage (LOC): 40%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENSlashDateFormatStartWithYearParser.js. Coverage (Term): 40% Coverage (LOC): 53%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENSlashMonthFormatParser.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENTimeAgoFormatParser.js. Coverage (Term): 22% Coverage (LOC): 21%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENTimeExpressionParser.js. Coverage (Term): 15% Coverage (LOC): 11%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENWeekdayParser.js. Coverage (Term): 28% Coverage (LOC): 42%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENCasualDateParser.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/EN/ENCasualTimeParser.js. Coverage (Term): 29% Coverage (LOC): 40%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/JP/JPStandardParser.js. Coverage (Term): 23% Coverage (LOC): 31%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/JP.js. Coverage (Term): 36% Coverage (LOC): 75%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/JP/JPCasualDateParser.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESCasualDateParser.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESDeadlineFormatParser.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESTimeAgoFormatParser.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESTimeExpressionParser.js. Coverage (Term): 16% Coverage (LOC): 12%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESWeekdayParser.js. Coverage (Term): 44% Coverage (LOC): 54%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESMonthNameLittleEndianParser.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/ES.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ES/ESSlashDateFormatParser.js. Coverage (Term): 31% Coverage (LOC): 41%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRCasualDateParser.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRDeadlineFormatParser.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/FR.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRMonthNameLittleEndianParser.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRSlashDateFormatParser.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRTimeAgoFormatParser.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRTimeExpressionParser.js. Coverage (Term): 16% Coverage (LOC): 12%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/FR/FRWeekdayParser.js. Coverage (Term): 45% Coverage (LOC): 52%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ZH-Hant/ZHHantDateParser.js. Coverage (Term): 46% Coverage (LOC): 39%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/ZH-Hant.js. Coverage (Term): 36% Coverage (LOC): 68%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ZH-Hant/ZHHantWeekdayParser.js. Coverage (Term): 46% Coverage (LOC): 41%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ZH-Hant/ZHHantTimeExpressionParser.js. Coverage (Term): 14% Coverage (LOC): 9%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ZH-Hant/ZHHantCasualDateParser.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/ZH-Hant/ZHHantDeadlineFormatParser.js. Coverage (Term): 24% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRCasualDateParser.js. Coverage (Term): 22% Coverage (LOC): 26%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRCasualTimeParser.js. Coverage (Term): 35% Coverage (LOC): 45%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRWeekdayParser.js. Coverage (Term): 27% Coverage (LOC): 30%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/PT-BR.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRDeadlineFormatParser.js. Coverage (Term): 26% Coverage (LOC): 25%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRMonthNameLittleEndianParser.js. Coverage (Term): 31% Coverage (LOC): 30%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRMonthNameParser.js. Coverage (Term): 28% Coverage (LOC): 30%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRRelativeDateFormatParser.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRSlashDateFormatParser.js. Coverage (Term): 31% Coverage (LOC): 31%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRTimeAgoFormatParser.js. Coverage (Term): 22% Coverage (LOC): 20%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRTimeExpressionParser.js. Coverage (Term): 17% Coverage (LOC): 13%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/PT-BR/PTBRSlashMonthFormatParser.js. Coverage (Term): 44% Coverage (LOC): 50%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DEDeadlineFormatParser.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/utils/DE.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DEMonthNameLittleEndianParser.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DEMonthNameParser.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DESlashDateFormatParser.js. Coverage (Term): 34% Coverage (LOC): 44%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DETimeAgoFormatParser.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DETimeExpressionParser.js. Coverage (Term): 15% Coverage (LOC): 11%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DEWeekdayParser.js. Coverage (Term): 29% Coverage (LOC): 42%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/parsers/DE/DECasualDateParser.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/refiner.js. Coverage (Term): 79% Coverage (LOC): 84%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/OverlapRemovalRefiner.js. Coverage (Term): 43% Coverage (LOC): 38%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/ExtractTimezoneOffsetRefiner.js. Coverage (Term): 40% Coverage (LOC): 44%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/ExtractTimezoneAbbrRefiner.js. Coverage (Term): 73% Coverage (LOC): 92%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/ForwardDateRefiner.js. Coverage (Term): 22% Coverage (LOC): 34%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/UnlikelyFormatFilter.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/EN/ENMergeDateTimeRefiner.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/EN/ENMergeDateRangeRefiner.js. Coverage (Term): 19% Coverage (LOC): 26%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/EN/ENPrioritizeSpecificDateRefiner.js. Coverage (Term): 17% Coverage (LOC): 21%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/JP/JPMergeDateRangeRefiner.js. Coverage (Term): 80% Coverage (LOC): 89%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/FR/FRMergeDateRangeRefiner.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/FR/FRMergeDateTimeRefiner.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/PT-BR/PTBRMergeDateTimeRefiner.js. Coverage (Term): 13% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/PT-BR/PTBRMergeDateRangeRefiner.js. Coverage (Term): 17% Coverage (LOC): 24%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/DE/DEMergeDateRangeRefiner.js. Coverage (Term): 80% Coverage (LOC): 89%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-ptbr/src/refiners/DE/DEMergeDateTimeRefiner.js. Coverage (Term): 10% Coverage (LOC): 16%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/phone.js. Coverage (Term): 19% Coverage (LOC): 25%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/pt-br/money.js. Coverage (Term): 45% Coverage (LOC): 43%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/en/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/en/date.js. Coverage (Term): 26% Coverage (LOC): 24%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/chrono.js. Coverage (Term): 59% Coverage (LOC): 72%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/options.js. Coverage (Term): 95% Coverage (LOC): 98%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/parser.js. Coverage (Term): 71% Coverage (LOC): 70%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENISOFormatParser.js. Coverage (Term): 30% Coverage (LOC): 36%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/result.js. Coverage (Term): 13% Coverage (LOC): 26%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENDeadlineFormatParser.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/EN.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENRelativeDateFormatParser.js. Coverage (Term): 16% Coverage (LOC): 20%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENMonthNameLittleEndianParser.js. Coverage (Term): 27% Coverage (LOC): 28%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENMonthNameMiddleEndianParser.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENMonthNameParser.js. Coverage (Term): 25% Coverage (LOC): 28%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENSlashDateFormatParser.js. Coverage (Term): 35% Coverage (LOC): 42%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENSlashDateFormatStartWithYearParser.js. Coverage (Term): 37% Coverage (LOC): 50%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENSlashMonthFormatParser.js. Coverage (Term): 41% Coverage (LOC): 47%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENTimeAgoFormatParser.js. Coverage (Term): 21% Coverage (LOC): 22%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENTimeExpressionParser.js. Coverage (Term): 15% Coverage (LOC): 11%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENTimeFromNowFormatParser.js. Coverage (Term): 20% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENWeekdayParser.js. Coverage (Term): 28% Coverage (LOC): 42%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENCasualDateParser.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/EN/ENCasualTimeParser.js. Coverage (Term): 29% Coverage (LOC): 40%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/JP/JPStandardParser.js. Coverage (Term): 23% Coverage (LOC): 31%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/JP.js. Coverage (Term): 36% Coverage (LOC): 75%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/JP/JPCasualDateParser.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESCasualDateParser.js. Coverage (Term): 14% Coverage (LOC): 18%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESDeadlineFormatParser.js. Coverage (Term): 21% Coverage (LOC): 27%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESTimeAgoFormatParser.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESTimeExpressionParser.js. Coverage (Term): 16% Coverage (LOC): 12%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESWeekdayParser.js. Coverage (Term): 44% Coverage (LOC): 54%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESMonthNameLittleEndianParser.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/ES.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ES/ESSlashDateFormatParser.js. Coverage (Term): 31% Coverage (LOC): 41%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRCasualDateParser.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRDeadlineFormatParser.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/FR.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRMonthNameLittleEndianParser.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRSlashDateFormatParser.js. Coverage (Term): 31% Coverage (LOC): 40%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRTimeAgoFormatParser.js. Coverage (Term): 15% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRTimeExpressionParser.js. Coverage (Term): 16% Coverage (LOC): 12%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRWeekdayParser.js. Coverage (Term): 45% Coverage (LOC): 52%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/FR/FRRelativeDateFormatParser.js. Coverage (Term): 18% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/moment/locale/fr.js. Coverage (Term): 58% Coverage (LOC): 82%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ZH-Hant/ZHHantDateParser.js. Coverage (Term): 46% Coverage (LOC): 39%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/ZH-Hant.js. Coverage (Term): 36% Coverage (LOC): 68%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ZH-Hant/ZHHantWeekdayParser.js. Coverage (Term): 46% Coverage (LOC): 41%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ZH-Hant/ZHHantTimeExpressionParser.js. Coverage (Term): 14% Coverage (LOC): 9%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ZH-Hant/ZHHantCasualDateParser.js. Coverage (Term): 16% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/ZH-Hant/ZHHantDeadlineFormatParser.js. Coverage (Term): 24% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DEDeadlineFormatParser.js. Coverage (Term): 23% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/utils/DE.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DEMonthNameLittleEndianParser.js. Coverage (Term): 26% Coverage (LOC): 28%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DEMonthNameParser.js. Coverage (Term): 27% Coverage (LOC): 32%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DESlashDateFormatParser.js. Coverage (Term): 34% Coverage (LOC): 44%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DETimeAgoFormatParser.js. Coverage (Term): 19% Coverage (LOC): 20%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DETimeExpressionParser.js. Coverage (Term): 15% Coverage (LOC): 11%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DEWeekdayParser.js. Coverage (Term): 29% Coverage (LOC): 42%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/parsers/DE/DECasualDateParser.js. Coverage (Term): 18% Coverage (LOC): 18%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/refiner.js. Coverage (Term): 66% Coverage (LOC): 72%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/OverlapRemovalRefiner.js. Coverage (Term): 28% Coverage (LOC): 31%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/ExtractTimezoneOffsetRefiner.js. Coverage (Term): 32% Coverage (LOC): 35%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/ExtractTimezoneAbbrRefiner.js. Coverage (Term): 69% Coverage (LOC): 90%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/ForwardDateRefiner.js. Coverage (Term): 15% Coverage (LOC): 26%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/UnlikelyFormatFilter.js. Coverage (Term): 59% Coverage (LOC): 67%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/EN/ENMergeDateTimeRefiner.js. Coverage (Term): 12% Coverage (LOC): 21%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/EN/ENMergeDateRangeRefiner.js. Coverage (Term): 10% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/EN/ENPrioritizeSpecificDateRefiner.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/JP/JPMergeDateRangeRefiner.js. Coverage (Term): 80% Coverage (LOC): 89%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/FR/FRMergeDateRangeRefiner.js. Coverage (Term): 14% Coverage (LOC): 24%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/FR/FRMergeDateTimeRefiner.js. Coverage (Term): 15% Coverage (LOC): 22%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/DE/DEMergeDateRangeRefiner.js. Coverage (Term): 80% Coverage (LOC): 89%
+*- File /home/blake/Targets/text-juicer/node_modules/chrono-node/src/refiners/DE/DEMergeDateTimeRefiner.js. Coverage (Term): 18% Coverage (LOC): 23%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/en/phone.js. Coverage (Term): 10% Coverage (LOC): 13%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/en/money.js. Coverage (Term): 10% Coverage (LOC): 7%
+*- File /home/blake/Targets/text-juicer/node_modules/text-juicer/dist/extractors/langs/en/utils.js. Coverage (Term): 99% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 6 paths with 2 errors **
