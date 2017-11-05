@@ -1,0 +1,80 @@
++ liberty@0.3.1
+updated 1 package in 40.752s
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/home/pbai002/Targets/liberty/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /home/pbai002/ExpoSE/lib/Harness/src/harness.js max concurrent: 32 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ****** [1 done /0 queued / 1 running / 0 errors / 28.000000000000004% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 28.999999999999996% coverage ] ****** [2 done /0 queued / 1 running / 0 errors / 28.999999999999996% coverage ] ****** [3 done /4 queued / 1 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /3 queued / 2 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /2 queued / 3 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /1 queued / 4 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 28.999999999999996% coverage ] ****** [3 done /0 queued / 5 running / 1 errors / 28.999999999999996% coverage ] ****** [4 done /4 queued / 5 running / 2 errors / 28.999999999999996% coverage ] ****** [4 done /3 queued / 6 running / 2 errors / 28.999999999999996% coverage ] ****** [4 done /2 queued / 7 running / 2 errors / 28.999999999999996% coverage ] ****** [4 done /1 queued / 8 running / 2 errors / 28.999999999999996% coverage ] ****** [4 done /0 queued / 9 running / 2 errors / 28.999999999999996% coverage ] ****** [4 done /0 queued / 9 running / 2 errors / 28.999999999999996% coverage ] ****** [5 done /2 queued / 9 running / 3 errors / 28.999999999999996% coverage ] ****** [5 done /1 queued / 10 running / 3 errors / 28.999999999999996% coverage ] ****** [5 done /0 queued / 11 running / 3 errors / 28.999999999999996% coverage ] ****** [5 done /0 queued / 11 running / 3 errors / 28.999999999999996% coverage ] ****** [6 done /1 queued / 11 running / 4 errors / 28.999999999999996% coverage ] ****** [6 done /0 queued / 12 running / 4 errors / 28.999999999999996% coverage ] ****** [6 done /0 queued / 12 running / 4 errors / 28.999999999999996% coverage ] ****** [7 done /2 queued / 12 running / 5 errors / 30% coverage ] ****** [7 done /1 queued / 13 running / 5 errors / 30% coverage ] ****** [7 done /0 queued / 14 running / 5 errors / 30% coverage ] ****** [7 done /0 queued / 14 running / 5 errors / 30% coverage ] ****** [8 done /3 queued / 14 running / 6 errors / 30% coverage ] ****** [8 done /2 queued / 15 running / 6 errors / 30% coverage ] ****** [8 done /1 queued / 16 running / 6 errors / 30% coverage ] ****** [8 done /0 queued / 17 running / 6 errors / 30% coverage ] ****** [8 done /0 queued / 17 running / 6 errors / 30% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound consoleCall","call","join","RegExp","sort","Date","pop","create","freeze","charCodeAt","isArray","toString","apply","bound "]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0} start 0.0304 took 154.8288s
+*-- Test Case {"Switcher":true,"Target_Switch_Base":0,"_bound":1,"Target_Switcher":0,"ExpandedSwitcher":0} start 154.9415 took 127.9003s
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpandedSwitcher":0,"_bound":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0} start 283.0853 took 310.9652s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpandedSwitcher":0,"_bound":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0}
+* Error: TypeError: Cannot read property 'replace' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpandedSwitcher":0,"_bound":2}'
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":4,"ExpansionArg_int":0} start 604.8972 took 197.7225s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":4,"ExpansionArg_int":0}
+* Error: TypeError: Function.prototype.apply was called on undefined, which is a undefined and not a function
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":2,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":4}'
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_type_4":0,"_bound":6,"ExpansionArg_int":0} start 607.9594 took 218.8793s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_type_4":0,"_bound":6,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'replace' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":2,"ExpansionArg_type_4":0,"_bound":6}'
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":2,"_bound":7,"ExpansionArg_int":0} start 607.9756 took 218.8629s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":2,"_bound":7,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'replace' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":2,"_bound":7}'
+*-- Test Case {"Switcher":true,"Target_Switcher":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":3} start 602.0955 took 229.7438s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":3}
+* Error: TypeError: Cannot read property 'setHours' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":2,"ExpansionArg_type":0,"ExpansionArg_type_2":0,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":3}'
+*-- Test Case {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":5,"ExpansionArg_int":0} start 598.8761 took 244.586s
+*-- Errors occured in test {"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":5,"ExpansionArg_int":0}
+* Error: TypeError: Cannot read property 'replace' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":true,"Target_Switcher":1,"ExpansionArg_type":0,"ExpansionArg_type_2":2,"ExpansionArg_type_3":0,"ExpansionArg_type_4":0,"_bound":5}'
+*-- Coverage Data
+*- File /home/pbai002/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 96% Coverage (LOC): 97%
+*- File /home/pbai002/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 24% Coverage (LOC): 41%
+*- File /home/pbai002/Targets/liberty/node_modules/liberty/index.js. Coverage (Term): 75% Coverage (LOC): 90%
+*- File /home/pbai002/Targets/liberty/node_modules/underscore/underscore.js. Coverage (Term): 20% Coverage (LOC): 34%
+*- File /home/pbai002/Targets/liberty/node_modules/liberty/liberty.js. Coverage (Term): 42% Coverage (LOC): 50%
+*- File /home/pbai002/Targets/liberty/node_modules/liberty/node_modules/rrule/lib/rrule.js. Coverage (Term): 12% Coverage (LOC): 20%
+*- File /home/pbai002/Targets/liberty/node_modules/moment/moment.js. Coverage (Term): 17% Coverage (LOC): 34%
+*- File /home/pbai002/Targets/liberty/node_modules/liberty/rules/index.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/index.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml.js. Coverage (Term): 93% Coverage (LOC): 97%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/loader.js. Coverage (Term): 46% Coverage (LOC): 50%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/common.js. Coverage (Term): 55% Coverage (LOC): 64%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/exception.js. Coverage (Term): 30% Coverage (LOC): 44%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/mark.js. Coverage (Term): 12% Coverage (LOC): 19%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema.js. Coverage (Term): 67% Coverage (LOC): 63%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type.js. Coverage (Term): 90% Coverage (LOC): 94%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema/core.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema/json.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/str.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/seq.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/map.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/null.js. Coverage (Term): 69% Coverage (LOC): 86%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/bool.js. Coverage (Term): 64% Coverage (LOC): 87%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/int.js. Coverage (Term): 30% Coverage (LOC): 54%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/float.js. Coverage (Term): 25% Coverage (LOC): 29%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/timestamp.js. Coverage (Term): 39% Coverage (LOC): 42%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/merge.js. Coverage (Term): 95% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/binary.js. Coverage (Term): 44% Coverage (LOC): 77%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/omap.js. Coverage (Term): 34% Coverage (LOC): 35%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/pairs.js. Coverage (Term): 36% Coverage (LOC): 43%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/set.js. Coverage (Term): 60% Coverage (LOC): 60%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/schema/default_full.js. Coverage (Term): 98% Coverage (LOC): 100%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js. Coverage (Term): 70% Coverage (LOC): 88%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js. Coverage (Term): 30% Coverage (LOC): 46%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/type/js/function.js. Coverage (Term): 29% Coverage (LOC): 57%
+*- File /home/pbai002/Targets/liberty/node_modules/esprima/esprima.js. Coverage (Term): 5% Coverage (LOC): 9%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/dumper.js. Coverage (Term): 15% Coverage (LOC): 24%
+*- File /home/pbai002/Targets/liberty/node_modules/js-yaml/lib/js-yaml/require.js. Coverage (Term): 97% Coverage (LOC): 100%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 8 paths with 6 errors **

@@ -1,0 +1,29 @@
++ node-jsrsasign@0.0.7
+updated 1 package in 27.022s
+Setup Done exists, not setting up
+:../FeatureTester/libs/:/home/pbai002/Targets/node-jsrsasign/node_modules
+Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
+ExpoSE Master: /home/pbai002/ExpoSE/lib/Harness/src/harness.js max concurrent: 32 max paths: 1000000
+Setting timeout to 900000
+*** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [0 done /0 queued / 1 running / 0 errors / 0% coverage ] ****** [1 done /1 queued / 1 running / 1 errors / 23% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 23% coverage ] ****** [1 done /0 queued / 2 running / 1 errors / 23% coverage ] ****** [2 done /2 queued / 2 running / 2 errors / 23% coverage ] ****** [2 done /1 queued / 3 running / 2 errors / 23% coverage ] ****** [2 done /0 queued / 4 running / 2 errors / 23% coverage ] ****** [2 done /0 queued / 4 running / 2 errors / 23% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 23% coverage ] ****** [3 done /0 queued / 4 running / 3 errors / 23% coverage ] ***
+*-- Stat Module Output --*
+*-- concretizations: ["defineProperty","bound consoleCall","pow","Array","charCodeAt","random","floor","Date","getTime","RegExp","compile","parseInt","toString","apply","bound X509","bound ","bound RSAKey","bound RSADoPublic"]
+*-- Stat Module Done --*
+*-- Test Case {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0} start 0.008 took 311.7053s
+*-- Errors occured in test {"_bound":0,"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":0}
+* Error: TypeError: Cannot read property 'substring' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1,"ExpansionArg_type":0} start 313.4633 took 290.2709s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1,"ExpansionArg_type":0}
+* Error: TypeError: Cannot read property 'modPowInt' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":1,"ExpandedSwitcher":0,"_bound":1}'
+*-- Test Case {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":1,"_bound":2} start 313.506 took 320.2903s
+*-- Errors occured in test {"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":1,"_bound":2}
+* Error: TypeError: Cannot read property 'substring' of undefined
+*-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"Switcher":false,"Target_Switch_Base":0,"ExpandedSwitcher":1,"_bound":2}'
+*-- Coverage Data
+*- File /home/pbai002/ExpoSE/lib/Harness/src/harness.js. Coverage (Term): 86% Coverage (LOC): 89%
+*- File /home/pbai002/ExpoSE/lib/S$/bin/symbols.js. Coverage (Term): 21% Coverage (LOC): 39%
+*- File /home/pbai002/Targets/node-jsrsasign/node_modules/node-jsrsasign/main.js. Coverage (Term): 11% Coverage (LOC): 22%
+*- Re-run with EXPOSE_PRINT_COVERAGE=1 to print line by line coverage information
+** ExpoSE Finished. 3 paths with 3 errors **
