@@ -1,5 +1,5 @@
 + sd.js@0.4.0
-updated 1 package in 25.061s
+updated 1 package in 0.399s
 Setup Done exists, not setting up
 :../FeatureTester/libs/:/home/pbai002/Targets/sd.js/node_modules
 Set Default Z3_PATH to ./node_modules/z3javascript/bin/libz3.so
@@ -9,7 +9,7 @@ Setting timeout to 900000
 *-- Stat Module Output --*
 *-- concretizations: ["defineProperty","bound consoleCall"]
 *-- Stat Module Done --*
-*-- Test Case {"_bound":0} start 0.0109 took 9.8742s
+*-- Test Case {"_bound":0} start 0.0073 took 0.5414s
 *-- Errors occured in test {"_bound":0}
 * Error: ReferenceError: common is not defined
 *-- Replay with NO_COMPILE=1 expoSE replay '/home/pbai002/ExpoSE/lib/Harness/src/harness.js' '{"_bound":0}'
